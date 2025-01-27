@@ -1,5 +1,4 @@
 mkdocs-material
 mkdocs-mermaid2-plugin
-markdown-header-filter
 mkdocs-macros-plugin
 mkdocs-awesome-pages-plugin
