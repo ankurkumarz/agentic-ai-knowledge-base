@@ -22,7 +22,7 @@ nav:
 plugins:
   - search
   - mermaid2
-  - markdown-header-filter:
+  - markdown-filter:
       levels: [1, 2]
   - macros
   - awesome-pages
