@@ -3,7 +3,7 @@
 A repository to consolidate knowledge articles, patterns, white papers, research, and relevant articles supporting Agentic AI
 
 <p align="center">
-<a href="https://agentic-ai.readthedocs.io"><img src="https://img.shields.io/badge/rag-@readthedocs.io-blue"></a>
+<a href="https://agentic-ai.readthedocs.io"><img src="https://img.shields.io/badge/agentic-@readthedocs.io-blue"></a>
 </p>
 
 <p align="center">
