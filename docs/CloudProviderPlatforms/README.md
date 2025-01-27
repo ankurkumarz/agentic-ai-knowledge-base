@@ -19,3 +19,7 @@ title: Cloud Provider Platforms
 ## Alibaba Cloud
 
 - [Alibaba Cloud Model Studio](https://www.alibabacloud.com/en/product/modelstudio)
+
+## IBM Cloud
+
+- [IBM watsonx.ai™](https://www.ibm.com/products/watsonx-ai/ai-agent-development), enterprise-grade artificial intelligence (AI) studio
