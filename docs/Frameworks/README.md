@@ -10,7 +10,7 @@ title: Agentic Frameworks
 
 ### High-level Architecture
 
-![LangChain Stack](https://vedcraft.com/wp-content/uploads/2025/01/LangChain-Stack.png)
+![LangChain Stack](https://vedcraft.com/wp-content/uploads/2025/01/langchain_stack.png)
 
 ### Key Features
 * De facto standard for building AI Apps with 1M+ builders and ~100K GitHub Stars
@@ -37,7 +37,7 @@ title: Agentic Frameworks
 
 ### High-level Architecture
 
-![LangGraph Platform Architecture](https://vedcraft.com/wp-content/uploads/2025/01/LangGraph-Platform-Architecture.png)
+![LangGraph Platform Architecture](https://vedcraft.com/wp-content/uploads/2025/01/lg_platform-1024x571.png)
 
 *Source: [LangGraph Platform Architecture](https://langchain-ai.github.io)*
 
@@ -67,7 +67,8 @@ title: Agentic Frameworks
 ## CrewAI
 
 ### High-level Architecture
-*CrewAI Framework Overview*
+
+![Platform Architecture](https://vedcraft.com/wp-content/uploads/2025/01/crewAI-mindmap-1024x702.png)
 Source: CrewAI Documentation
 
 ### Key Features
@@ -97,7 +98,7 @@ Source: CrewAI Documentation
 
 ### High-level Architecture
 
-![Microsoft AutoGen Architecture](https://vedcraft.com/wp-content/uploads/2025/01/Microsoft-AutoGen-Architecture.png)
+![Microsoft AutoGen Architecture](https://vedcraft.com/wp-content/uploads/2025/01/autogen.png)
 
 *Source: [Microsoft Research Documentation](https://aka.ms/autogen)*
 
@@ -128,7 +129,7 @@ Source: CrewAI Documentation
 
 ### High-level Architecture
 
-![Semantic Kernel Architecture](https://vedcraft.com/wp-content/uploads/2025/01/Semantic-Kernel-Architecture.png)
+![Semantic Kernel Architecture](https://vedcraft.com/wp-content/uploads/2025/01/sematic-kernel-v1-1024x482.png)
 
 *Source: [Microsoft Documentation](https://learn.microsoft.com/semantic-kernel)*
 
@@ -157,7 +158,9 @@ Source: CrewAI Documentation
 ## LlamaIndex
 
 ### High-level Architecture
-*LlamaIndex Framework*
+
+![Architecture](https://vedcraft.com/wp-content/uploads/2025/01/LlamaIndex-Arch.png)
+
 Source: LlamaIndex Framework
 
 ### Key Features
@@ -186,6 +189,9 @@ Source: LlamaIndex Framework
 ## AutoGPT
 
 ### High-level Architecture
+
+![Architecture](https://vedcraft.com/wp-content/uploads/2025/01/autogpt.drawio.png)
+
 *AutoGPT Platform Components*
 
 ### Key Features
@@ -214,6 +220,9 @@ Source: LlamaIndex Framework
 ## PydanticAI
 
 ### High-level Architecture
+
+![Architecture](https://vedcraft.com/wp-content/uploads/2025/01/pydantic.drawio.png)
+
 *PydanticAI Components*
 
 ### Key Features
@@ -242,7 +251,9 @@ Source: LlamaIndex Framework
 ## Spring AI
 
 ### High-level Architecture
-*Spring AI for Building Agentic Systems*
+
+![Architecture](https://vedcraft.com/wp-content/uploads/2025/01/spring-ai-agentic-systems-1024x677.jpg)
+
 Source: Spring AI Documentation
 
 ### Key Features
@@ -274,7 +285,7 @@ Source: Spring AI Documentation
 
 ### High-level Architecture
 
-![Haystack Architecture](https://vedcraft.com/wp-content/uploads/2025/01/Haystack-Architecture.png)
+![Haystack Architecture](https://vedcraft.com/wp-content/uploads/2025/01/haystack-768x462.png)
 
 *Source: [Haystack Documentation](https://haystack.ai)*
 
