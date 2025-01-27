@@ -14,9 +14,10 @@ theme:
 nav:
   - Home: 'index.md'
   - Frameworks: 'Frameworks/README.md'
-  - Cloud Providers: 'CloudProviderPlatforms/README.md'  
+  - Cloud Platforms: 'CloudProviderPlatforms/README.md'
+  - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
-  # Add more pages here
+  - Research: 'Research/README.md'
 
 plugins:
   - search
