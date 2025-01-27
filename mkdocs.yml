@@ -22,3 +22,5 @@ nav:
 plugins:
   - search
   - mermaid2
+  - markdown-header-filter:
+      levels: [1, 2]
