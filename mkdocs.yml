@@ -1,0 +1,23 @@
+site_name: 'Agentic AI Knowledge Base'
+site_description: 'A repository to consolidate knowledge articles, patterns, white papers, relevant articles supporting Agentic AI.'
+site_author: 'Ankur Kumar'
+docs_dir: 'docs'
+site_dir: 'html'
+theme:
+  name: 'material'
+  palette:
+    primary: indigo
+  features:
+    - navigation.instant
+    - search.highlight
+
+nav:
+  - Home: 'index.md'
+  - Frameworks: 'Frameworks/README.md'
+  - Cloud Providers: 'CloudProviderPlatforms/README.md'  
+  - Reference Architecture: 'ReferenceArchitecture/README.md'
+  # Add more pages here
+
+plugins:
+  - search
+  - mermaid2
