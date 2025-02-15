@@ -19,6 +19,8 @@ nav:
   - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
   - Research: 'Research/README.md'
+  - Benchmarks: 'Benchmarks/Readme.md'
+  - DevAgents: 'DevAgents/Readme.md'
 
 plugins:
   - search
