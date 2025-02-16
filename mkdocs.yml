@@ -22,7 +22,7 @@ nav:
   - Benchmarks: 'Benchmarks/Readme.md'
   - DevAgents: 'DevAgents/Readme.md'
   - SecurityFrameworks: 'SecurityFrameworks/Readme.md'
-
+  - RAG: 'RAG/Readme.md'
 plugins:
   - search
   - mermaid2
