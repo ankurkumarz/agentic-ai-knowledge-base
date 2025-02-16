@@ -23,3 +23,7 @@ title: Cloud Provider Platforms
 ## IBM Cloud
 
 - [IBM watsonx.ai™](https://www.ibm.com/products/watsonx-ai/ai-agent-development), enterprise-grade artificial intelligence (AI) studio
+
+## Cohere
+
+- [North](https://cohere.com/blog/north-eap): AI workspace to build Agents
