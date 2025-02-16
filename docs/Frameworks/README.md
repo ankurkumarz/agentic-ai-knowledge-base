@@ -322,7 +322,8 @@ Source: Spring AI Documentation
 * **Langflow**: DataStax-acquired framework for interactive GenAI apps
 * **OpenAGI**: Simple framework for human-like agents
 * **Camel-AI.org**: Research-inspired customizable multi-agent framework
-  **PraisonAI**: a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex tasks.
+* **PraisonAI**: a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex tasks.
+
 
 ## Comparative Analysis
 
