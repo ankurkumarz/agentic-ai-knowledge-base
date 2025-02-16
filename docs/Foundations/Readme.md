@@ -1,6 +1,7 @@
 
 ## Definition
 
+- [Definition by Harrison, LangChain Founder](https://blog.langchain.dev/what-is-an-agent/)
 
 ## Agent Architecture
 
