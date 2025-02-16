@@ -16,6 +16,7 @@ nav:
   - Frameworks: 'Frameworks/README.md'
   - Cloud Platforms: 'CloudProviderPlatforms/README.md'
   - Standards: 'Standards/README.md'
+  - DesignPatterns: 'DesignPatterns/Readme.md'
   - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
   - Research: 'Research/README.md'
