@@ -19,6 +19,7 @@ nav:
   - DesignPatterns: 'DesignPatterns/Readme.md'
   - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
+  - Observability: 'Observability/Reafme.md'
   - Research: 'Research/README.md'
   - Benchmarks: 'Benchmarks/Readme.md'
   - DevAgents: 'DevAgents/Readme.md'
