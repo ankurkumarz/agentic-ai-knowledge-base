@@ -314,7 +314,7 @@ Source: Spring AI Documentation
 * Complex setup requirements
 * Integration challenges
 
-## Other Frameworks
+## Other Frameworks/Platforms
 
 * **OpenAI Swarm**: Educational framework for lightweight multi-agent orchestration
 * **MetaGPT**: Research-based multi-agent framework promoting meta-programming
@@ -324,7 +324,8 @@ Source: Spring AI Documentation
 * **Camel-AI.org**: Research-inspired customizable multi-agent framework
 * **PraisonAI**: a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex tasks.
 * **[BroadAI](https://broad-ai.github.io)**: A Multi-Agent Framework for building powerful & intelligent AI Systems
-
+* **[Vellum](https://www.vellum.ai/)**: A platform with products for Orchestration, Evaluation, Prompting, Retrieval, and Deployment - as a GUI tool for building and testing complex workflows.
+* **[Rivet](https://rivet.ironcladapp.com/)**: a drag and drop GUI LLM workflow builder
 
 ## Comparative Analysis
 
