@@ -7,3 +7,4 @@
 
 - [Comet Opik](https://www.comet.com/docs/opik/)
 - [Langfuse](https://langfuse.com/): (YC W23) Traces, evals, prompt management and metrics to debug and observe
+- [LangSmith](https://www.langchain.com/langsmith): dev platform inc. observability
