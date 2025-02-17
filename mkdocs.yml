@@ -13,17 +13,18 @@ theme:
 
 nav:
   - Home: 'index.md'
+  - Foundations: 'Foundations/Readme.md'
   - Frameworks: 'Frameworks/README.md'
   - Cloud Platforms: 'CloudProviderPlatforms/README.md'
   - Standards: 'Standards/README.md'
-  - DesignPatterns: 'DesignPatterns/Readme.md'
+  - Design Patterns: 'DesignPatterns/Readme.md'
   - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
   - Observability: 'Observability/Reafme.md'
   - Research: 'Research/README.md'
   - Benchmarks: 'Benchmarks/Readme.md'
   - DevAgents: 'DevAgents/Readme.md'
-  - SecurityFrameworks: 'SecurityFrameworks/Readme.md'
+  - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - RAG: 'RAG/Readme.md'
 plugins:
   - search
