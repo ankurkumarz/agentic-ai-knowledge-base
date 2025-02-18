@@ -1,9 +1,10 @@
 
 ## LLM Evaluation
 
+- [LMSYS Chatbot Arena](https://lmarena.ai?leaderboard): Community-driven Evaluation for Best LLM and AI chatbots
 - [Vellum LLM Comparison Board](https://www.vellum.ai/llm-leaderboard)
 - [Galileo Agent Leaderboard](https://huggingface.co/spaces/galileo-ai/agent-leaderboard): LLM Performance in Agentic scenarios
-- 
+  
 ## Evaluation Benchmarks
 
 - [VisualWebArena](https://github.com/web-arena-x/visualwebarena): for multimodal agents
