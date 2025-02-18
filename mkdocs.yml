@@ -24,6 +24,7 @@ nav:
   - Research: 'Research/README.md'
   - Benchmarks: 'Benchmarks/Readme.md'
   - DevAgents: 'DevAgents/Readme.md'
+  - SampleApps: 'SampleApps/Readme.md'
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - RAG: 'RAG/Readme.md'
 plugins:
