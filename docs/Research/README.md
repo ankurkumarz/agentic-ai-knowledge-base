@@ -12,3 +12,7 @@ title: Research Papers
 ## Google Research
 
 - [Accelerating scientific breakthroughs with an AI co-scientist, 2025](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/)
+
+## OpenAI
+
+- [SWE-Lancer](https://github.com/openai/SWELancer-Benchmark)
