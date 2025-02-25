@@ -27,6 +27,7 @@ nav:
   - SampleApps: 'SampleApps/Readme.md'
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - RAG: 'RAG/Readme.md'
+  - Marketplace: 'Marketplace/Readme.md'
 plugins:
   - search
   - mermaid2
