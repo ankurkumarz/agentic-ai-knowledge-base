@@ -14,4 +14,4 @@
 
 ## AI Agents Evaluation
 
--[Meta - MLGym: A New Framework and Benchmark for Advancing AI Research Agents](https://arxiv.org/abs/2502.14499), [GitHub](https://github.com/facebookresearch/MLGym)
+- [Meta - MLGym: A Framework & Benchmark for Advancing AI Research Agents](https://arxiv.org/abs/2502.14499), [GitHub](https://github.com/facebookresearch/MLGym)
