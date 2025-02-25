@@ -28,6 +28,7 @@ nav:
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - RAG: 'RAG/Readme.md'
   - Marketplace: 'Marketplace/Readme.md'
+  - LLMGateway: 'LLMGateway.Readme.md'
 plugins:
   - search
   - mermaid2
