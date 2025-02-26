@@ -3,7 +3,7 @@
 ## LLM Evaluation Frameworks
 
 - [Confident AI DeepEval](https://docs.confident-ai.com/): the open-source LLM eval f/w with 14+ LLM evaluation metrics (both for RAG and fine-tuning use cases)
-- [MLFlow LLM Evaluate]: a modular and simplistic package that allows you to run evaluations in your own evaluation pipelines. It offers RAG evaluation and QA evaluation.
+- [MLFlow LLM Evaluate](https://mlflow.org/docs/latest/llms/llm-evaluate/): a modular and simplistic package that allows you to run evaluations in your own evaluation pipelines. It offers RAG evaluation and QA evaluation.
 
 ## AI Agents Evaluation
 
