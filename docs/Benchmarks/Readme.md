@@ -1,5 +1,5 @@
 
-## LLM Evaluation
+## LLM Evaluation Dashboards
 
 - [LMSYS Chatbot Arena](https://lmarena.ai?leaderboard): Community-driven Evaluation for Best LLM and AI chatbots
 - [Vellum LLM Comparison Board](https://www.vellum.ai/llm-leaderboard)
@@ -12,6 +12,3 @@
 - [OSWorld Benchmark for Multimodal Agents](https://os-world.github.io/): Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments
 - [SWE-Bench](https://www.swebench.com/): dataset that tests systems' ability to solve GitHub issues automatically.
 
-## AI Agents Evaluation
-
-- [Meta - MLGym: A Framework & Benchmark for Advancing AI Research Agents](https://arxiv.org/abs/2502.14499), [GitHub](https://github.com/facebookresearch/MLGym)
