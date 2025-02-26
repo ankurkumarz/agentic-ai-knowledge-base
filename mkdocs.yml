@@ -29,7 +29,7 @@ nav:
   - RAG: 'RAG/Readme.md'
   - Marketplace: 'Marketplace/Readme.md'
   - LLMGateway: 'LLMGateway.Readme.md'
-  - EvaluationFrameworks: 'EvaluationFrameworks/Readme.md'
+  - Evaluation Frameworks: 'EvaluationFrameworks/Readme.md'
 plugins:
   - search
   - mermaid2
