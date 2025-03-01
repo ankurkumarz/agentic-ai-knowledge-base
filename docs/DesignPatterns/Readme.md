@@ -2,6 +2,7 @@
 
 - [LangChain Multi-Agent Architectures](https://langchain-ai.github.io/langgraph/concepts/multi_agent/): Network, Supervisor, Hierarchical, Swarm
 ![Architecture by LangChain](https://langchain-ai.github.io/langgraph/concepts/img/multi_agent/architectures.png)
+![Swarm](https://github.com/langchain-ai/langgraph-swarm-py/blob/main/static/img/swarm.png)
 
 ## Design Patterns
 
