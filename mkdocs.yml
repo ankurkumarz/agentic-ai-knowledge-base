@@ -18,6 +18,7 @@ nav:
   - Cloud Platforms: 'CloudProviderPlatforms/README.md'
   - Standards: 'Standards/README.md'
   - Design Patterns: 'DesignPatterns/Readme.md'
+  - Retrieval Approaches: 'RetrievalApproaches/Readme.md'
   - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
   - Observability: 'Observability/Reafme.md'
