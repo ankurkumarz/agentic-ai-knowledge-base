@@ -12,12 +12,13 @@ A repository to consolidate knowledge articles, patterns, white papers, research
 
 ## Information Outline
 
-- Design Patterns
-- Best Practices
-- Frameworks
-- Vector Databases
-- Whitepapers
-- Evaluation and Testing
-- Measure LLM Performance
+- Architecture & Design Patterns
+- Agentic App Best Practices
+- Agentic Frameworks
+- Agentic Design Patterns
+- Retrieval Strategies & Vector Databases
+- Whitepapers and Research Papers
+- Agent & LLM Evaluation and Testing
+- LLM and AI Gateways
 - Production Best Practices
 - Tools
