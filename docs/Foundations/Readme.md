@@ -12,7 +12,7 @@
 
 ## Retrieval Strategies for Agents
 
-- [Generative Retrieval including traditional retrieval, hybrid retrieval, semantic retrieval, knowledge-based retrieval, and agentic contextual retrieva](https://arxiv.org/abs/2502.16866)
+- [Generative Retrieval including traditional retrieval, hybrid retrieval, semantic retrieval, knowledge-based retrieval, and agentic contextual retrieval](https://arxiv.org/abs/2502.16866)
 
 ## LLM Foundation
 
