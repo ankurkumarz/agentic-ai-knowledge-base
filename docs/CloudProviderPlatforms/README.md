@@ -1,7 +1,4 @@
----
-title: Cloud Provider Platforms
----
-
+# Cloud Provider Platforms
 
 ## Google Cloud
 
