@@ -7,6 +7,7 @@
 - [OpenHands (formerly OpenDevin)](https://github.com/All-Hands-AI/OpenHands): Open source agents for Devs (modify code, run commands, browse the web, call APIs, and yes—even copy code snippets from StackOverflow)
 - [Sourcegraph](https://sourcegraph.com): Code search, code migration, review agents
 - [CodeGuide](https://www.codeguide.dev/): AI Coding Companion for Agentic Development
+- [CodeRabbit](https://www.coderabbit.ai/): AI Code Reviews
 
 ## Toolkits
 
