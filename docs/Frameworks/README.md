@@ -326,7 +326,7 @@ Source: Spring AI Documentation
 * **[BroadAI](https://broad-ai.github.io)**: A Multi-Agent Framework for building powerful & intelligent AI Systems
 * **[Vellum](https://www.vellum.ai/)**: A platform with products for Orchestration, Evaluation, Prompting, Retrieval, and Deployment - as a GUI tool for building and testing complex workflows.
 * **[Rivet](https://rivet.ironcladapp.com/)**: a drag and drop GUI LLM workflow builder
-* **[Swarms AI](https://www.swarms.ai/): Choose from multiple swarm architectures to build sophisticated Enterprise AI systems
+* **[Swarms AI](https://www.swarms.ai/)**: Choose from multiple swarm architectures to build sophisticated Enterprise AI systems
 
 ## Comparative Analysis
 
