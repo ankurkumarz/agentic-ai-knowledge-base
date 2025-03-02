@@ -327,6 +327,7 @@ Source: Spring AI Documentation
 * **[Vellum](https://www.vellum.ai/)**: A platform with products for Orchestration, Evaluation, Prompting, Retrieval, and Deployment - as a GUI tool for building and testing complex workflows.
 * **[Rivet](https://rivet.ironcladapp.com/)**: a drag and drop GUI LLM workflow builder
 * **[Swarms AI](https://www.swarms.ai/)**: Choose from multiple swarm architectures to build sophisticated Enterprise AI systems
+* **[IBM Granite BeeAI](https://iambee.ai/)**: Build production-ready AI agents in both Python and Typescript
 
 ## Comparative Analysis
 
