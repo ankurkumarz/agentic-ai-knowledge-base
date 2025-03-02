@@ -29,7 +29,7 @@ nav:
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - RAG: 'RAG/Readme.md'
   - Marketplace: 'Marketplace/Readme.md'
-  - LLMGateway: 'LLMGateway.Readme.md'
+  - LLM/AI Gateway: 'LLMGateway.Readme.md'
   - Evaluation Frameworks: 'EvaluationFrameworks/Readme.md'
 plugins:
   - search
