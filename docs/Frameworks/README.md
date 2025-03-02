@@ -1,6 +1,4 @@
----
-title: Agentic Frameworks
----
+# Agentic Frameworks
 
 > Agentic AI will introduce a goal-driven digital workforce that autonomously makes plans and takes actions — an extension of the workforce that doesn't need vacations or other benefits.
 > 
