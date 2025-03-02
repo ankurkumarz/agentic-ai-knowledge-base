@@ -1,6 +1,4 @@
----
-title: Industry Standards
----
+# Industry Standards
 
 
 ## Model Context Protocol
