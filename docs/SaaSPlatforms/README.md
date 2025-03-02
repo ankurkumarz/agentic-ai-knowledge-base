@@ -1,6 +1,4 @@
----
-title: SaaS Platforms
----
+# SaaS Agent Platforms
 
 ## Agent.ai
 
