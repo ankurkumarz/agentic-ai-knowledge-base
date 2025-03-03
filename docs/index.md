@@ -1,6 +1,6 @@
 # Agentic AI Knowledge Base
 
-![Agentic AI](agentic-header.png)
+![Agentic AI](./Foundations/agentic-header.png)
 A repository to consolidate knowledge articles, patterns, white papers, research, and relevant articles supporting Agentic AI
 
 <p align="center">
