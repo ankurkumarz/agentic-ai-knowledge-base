@@ -13,12 +13,18 @@ A repository to consolidate knowledge articles, patterns, white papers, research
 
 ## Information Outline
 
-- Design Patterns
-- Best Practices
-- Frameworks
-- Vector Databases
-- Whitepapers
-- Evaluation and Testing
-- Measure LLM Performance
+- [Architecture & Design Patterns](https://agentic-ai.readthedocs.io/en/latest/DesignPatterns/Readme/)
+- [Agentic Frameworks](https://agentic-ai.readthedocs.io/en/latest/AgenticFrameworks/)
+- [Retrieval Strategies](https://agentic-ai.readthedocs.io/en/latest/RetrievalApproaches/) and RAG Augmentation
+- [Whitepapers and Research Papers](https://agentic-ai.readthedocs.io/en/latest/Research/)
+- Agents & LLMs Evaluation
+- LLM and AI Gateways
 - Production Best Practices
-- Tools
+- Observability and Tools
+- Agents Marketplace
+- Coding Agents, Research Agents
+- Reference Architecture
+- Security Frameworks for Agents
+- Industry Standards
+- Agents Industry Benchmarks
+- Cloud and SaaS Platforms for Building Agents
