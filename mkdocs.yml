@@ -39,3 +39,8 @@ plugins:
       levels: [1, 2]
   - macros
   - awesome-pages
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
