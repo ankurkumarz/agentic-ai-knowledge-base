@@ -39,6 +39,7 @@ plugins:
       levels: [1, 2]
   - macros
   - awesome-pages
+  - glightbox
 
 markdown_extensions:
   - attr_list

@@ -3,3 +3,4 @@ mkdocs-mermaid2-plugin
 mkdocs-macros-plugin
 mkdocs-awesome-pages-plugin
 mkdocs-markdown-filter
+mkdocs-glightbox
