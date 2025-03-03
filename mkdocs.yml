@@ -14,7 +14,7 @@ theme:
 nav:
   - Home: 'index.md'
   - Foundations: 'Foundations/Readme.md'
-  - Frameworks: 'Frameworks/README.md'
+  - Frameworks: 'AgenticFrameworks/README.md'
   - Cloud Platforms: 'CloudProviderPlatforms/README.md'
   - Standards: 'Standards/README.md'
   - Design Patterns: 'DesignPatterns/Readme.md'

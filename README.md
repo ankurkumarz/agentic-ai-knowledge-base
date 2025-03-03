@@ -12,9 +12,8 @@ A repository to consolidate knowledge articles, patterns, white papers, research
 
 ## Information Outline
 
-- Architecture & Design Patterns
-- Agentic App Best Practices
-- Agentic Frameworks
+- [Architecture & Design Patterns](https://agentic-ai.readthedocs.io/en/latest/DesignPatterns/Readme/)
+- [Agentic Frameworks]()
 - Agentic Design Patterns
 - Retrieval Strategies & Vector Databases
 - Whitepapers and Research Papers
