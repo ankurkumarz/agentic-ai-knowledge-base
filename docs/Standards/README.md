@@ -3,7 +3,7 @@
 ## Agent Protocol
 
 - [Agent Protocol](https://blog.langchain.dev/agent-protocol-interoperability-for-llm-agents/): a standard way for agents to communicate by LangChain
-- Agent Protocol: a common interface for agent communication. This standardizes how agents (LangGraph or otherwise) can interact.
+- [Agent Protocol](https://github.com/langchain-ai/agent-protocol): a common interface for agent communication. This standardizes how agents (LangGraph or otherwise) can interact.
 
 ## Model Context Protocol
 
