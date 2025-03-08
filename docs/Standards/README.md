@@ -1,5 +1,9 @@
 # Industry Standards
 
+## Agent Protocol
+
+- [Agent Protocol](https://blog.langchain.dev/agent-protocol-interoperability-for-llm-agents/): a standard way for agents to communicate by LangChain
+
 
 ## Model Context Protocol
 
