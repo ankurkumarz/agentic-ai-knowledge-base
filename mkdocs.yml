@@ -31,8 +31,9 @@ nav:
   - SampleApps: 'SampleApps/Readme.md'
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - Marketplace: 'Marketplace/Readme.md'
-  - LLM/AI Gateway: 'LLMGateway.Readme.md'
+  - LLM/AI Gateway: 'LLMGateway/Readme.md'
   - RAG: 'RAG/Readme.md'
+  - Newsletter & Blogs: 'NewsletterBlogs/README.md'
 plugins:
   - search
   - mermaid2
