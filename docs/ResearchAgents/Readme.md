@@ -1,6 +1,7 @@
 # Research Agents
 
 - [Jenni.ai](https://jenni.ai/): For researchers, team's & institutional usage, literature review generator
+- [Elicit](https://elicit.com/): Research Paper AI Agent
 
 ## Opensource
 
