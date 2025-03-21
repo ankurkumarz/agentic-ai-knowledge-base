@@ -1,5 +1,6 @@
 ## RAG Engines
 
+- [Contextual AI RAG Agents](https://contextual.ai): enterprise solution for building and deploying specialized RAG agents with Reranker
 - [Gigaspaces eRAG](https://www.gigaspaces.com/technology/erag-solution)
 
 ## Fine-tuning Models for RAG
