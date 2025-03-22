@@ -20,6 +20,7 @@ nav:
   - Reference Architecture: 'ReferenceArchitecture/README.md'
   - Dev/Coding Agents: 'DevAgents/Readme.md'
   - Research Agents: 'ResearchAgents/Readme.md'
+  - Web Seach & Crawl: 'WebSearchCrawl/README.md'
   - Standards: 'Standards/README.md'
   - Research: 'Research/README.md'
   - Benchmarks: 'Benchmarks/Readme.md'
