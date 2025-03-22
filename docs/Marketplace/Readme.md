@@ -1,5 +1,6 @@
 # Agens Marketplace
 
+- [Agents Marketplace by AgentOps](https://marketplace.agen.cy/)
 - [Agentic Era Curated Agents](https://www.agenticera.ai/)
 
 ## Agents Ecosystem 
