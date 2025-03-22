@@ -28,6 +28,7 @@ nav:
   - Evaluation Frameworks: 'EvaluationFrameworks/Readme.md'  
   - Cloud Platforms: 'CloudProviderPlatforms/README.md'
   - SaaS Platforms: 'SaaSPlatforms/README.md'
+  - Workflow Builders: 'WorkflowBuilders/README.md'
   - Observability: 'Observability/Reafme.md'
   - SampleApps: 'SampleApps/Readme.md'
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
