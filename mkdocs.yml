@@ -36,6 +36,7 @@ nav:
   - LLM/AI Gateway: 'LLMGateway/Readme.md'
   - RAG: 'RAG/Readme.md'
   - Newsletter & Blogs: 'NewsletterBlogs/README.md'
+  - Courses: 'Courses/README.md'
 plugins:
   - search
   - mermaid2
