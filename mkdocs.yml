@@ -17,6 +17,7 @@ nav:
   - Agentic Frameworks: 'AgenticFrameworks/README.md'  
   - Design Patterns: 'DesignPatterns/Readme.md'
   - Retrieval Approaches: 'RetrievalApproaches/README.md'
+  - MCP: 'MCP/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
   - Dev/Coding Agents: 'DevAgents/Readme.md'
   - Research Agents: 'ResearchAgents/Readme.md'
