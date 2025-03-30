@@ -24,3 +24,7 @@
 ## Cohere
 
 - [North](https://cohere.com/blog/north-eap): AI workspace to build Agents
+
+## Open Source Platforms
+
+- [Obot by Acorn](https://www.acorn.io/): offered as a SaaS and self-hosted deployments. [Helm Chart](https://charts.obot.ai/) available.
