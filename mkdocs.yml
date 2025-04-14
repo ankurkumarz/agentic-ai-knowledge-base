@@ -14,7 +14,8 @@ theme:
 nav:
   - Home: 'index.md'
   - Foundations: 'Foundations/Readme.md'
-  - Agentic Frameworks: 'AgenticFrameworks/README.md'  
+  - Agentic Frameworks: 'AgenticFrameworks/README.md'
+  - Prompt Engineering: 'PromptEngineering/README.md'
   - Design Patterns: 'DesignPatterns/Readme.md'
   - Retrieval Approaches: 'RetrievalApproaches/README.md'
   - MCP: 'MCP/README.md'
