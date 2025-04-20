@@ -328,6 +328,7 @@ Source: Spring AI Documentation
 * **[Rivet](https://rivet.ironcladapp.com/)**: a drag and drop GUI LLM workflow builder
 * **[Swarms AI](https://www.swarms.ai/)**: Choose from multiple swarm architectures to build sophisticated Enterprise AI systems
 * **[IBM Granite BeeAI](https://iambee.ai/)**: Build production-ready AI agents in both Python and Typescript
+* **[MetaGPT](https://github.com/geekan/MetaGPT)**: The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming
 
 ## Comparative Analysis
 
