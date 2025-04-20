@@ -1,5 +1,3 @@
-# Cloud Provider Platforms
-
 ## Google Cloud
 
 - [Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder)
