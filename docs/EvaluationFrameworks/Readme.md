@@ -10,3 +10,7 @@
 ## AI Agents Evaluation
 
 - [Meta - MLGym: A Framework & Benchmark for Advancing AI Research Agents](https://arxiv.org/abs/2502.14499), [GitHub](https://github.com/facebookresearch/MLGym)
+
+## Evaluation Platform 
+
+- [LastMile AI](https://lastmileai.dev/): an enterprise-grade evaluation platform that provides the essential tools to enable developers to test, evaluate, and benchmark AI applications.
