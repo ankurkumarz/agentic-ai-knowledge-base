@@ -12,6 +12,7 @@ Future Research Directions](https://arxiv.org/pdf/2503.23278v1)
 ## MCP Extensions / Third-party
 
 - [Enterprise Governance Layer by Microsoft](https://github.com/ithena-one/mcp-governance-sdk)
+- [MCPI](https://mcpintegrate.com/): extends the Model Context Protocol to create a bridge between AI and web services.
 
 ## MCP and A2A
 
