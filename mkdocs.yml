@@ -20,6 +20,7 @@ nav:
   - Retrieval Approaches: 'RetrievalApproaches/README.md'
   - MCP: 'MCP/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
+  - Best Practices: 'BestPractices/README.md'
   - Dev/Coding Agents: 'DevAgents/Readme.md'
   - Research Agents: 'ResearchAgents/Readme.md'
   - Web Seach & Crawl: 'WebSearchCrawl/README.md'
