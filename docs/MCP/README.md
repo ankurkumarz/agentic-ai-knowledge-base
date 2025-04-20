@@ -14,6 +14,10 @@ Future Research Directions](https://arxiv.org/pdf/2503.23278v1)
 - [Enterprise Governance Layer by Microsoft](https://github.com/ithena-one/mcp-governance-sdk)
 - [MCPI](https://mcpintegrate.com/): extends the Model Context Protocol to create a bridge between AI and web services.
 
+## MCP Frameworks
+
+- [Fastagent - MCP native Agents Framework](https://fast-agent.ai/)
+
 ## MCP and A2A
 
 - [A2A and MCP - Complimentary or Competitive](https://www.newsletter.swirlai.com/p/mcp-vs-a2a-friends-or-foes)
