@@ -8,6 +8,10 @@ Future Research Directions](https://arxiv.org/pdf/2503.23278v1)
 - [GH Repo of MCP Servers by Glamma.ai](https://github.com/punkpeye/awesome-mcp-servers)
 - [AWS MCP Servers — specialized MCP servers](https://github.com/awslabs/mcp/): AWS MCP servers enable enhanced cloud-native development, infrastructure management, and development workflows—making AI-assisted cloud computing more accessible and efficient.
 
+## MCP Extensions / Third-party
+
+- [Enterprise Governance Layer by Microsoft](https://github.com/ithena-one/mcp-governance-sdk)
+
 ## MCP and A2A
 
 - [A2A and MCP - Complimentary or Competitive](https://www.newsletter.swirlai.com/p/mcp-vs-a2a-friends-or-foes)
