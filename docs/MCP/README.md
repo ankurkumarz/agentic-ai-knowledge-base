@@ -7,6 +7,7 @@ Future Research Directions](https://arxiv.org/pdf/2503.23278v1)
 
 - [GH Repo of MCP Servers by Glamma.ai](https://github.com/punkpeye/awesome-mcp-servers)
 - [AWS MCP Servers — specialized MCP servers](https://github.com/awslabs/mcp/): AWS MCP servers enable enhanced cloud-native development, infrastructure management, and development workflows—making AI-assisted cloud computing more accessible and efficient.
+- [PulseMCP](https://www.pulsemcp.com/): MCP use cases, servers, clients, and news
 
 ## MCP Extensions / Third-party
 
