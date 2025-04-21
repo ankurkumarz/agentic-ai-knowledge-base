@@ -25,4 +25,5 @@
 
 ## Open Source Platforms
 
+- [Eclipse LMOS](https://eclipse.dev/lmos/): Open-source, cloud-native platform for building and running Multi-Agent systems (started with Kotlin, supports multiple frameworks)
 - [Obot by Acorn](https://www.acorn.io/): offered as a SaaS and self-hosted deployments. [Helm Chart](https://charts.obot.ai/) available.
