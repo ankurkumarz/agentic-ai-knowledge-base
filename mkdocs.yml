@@ -29,7 +29,7 @@ nav:
   - Benchmarks: 'Benchmarks/Readme.md'
   - LLMs: 'LLM/README.md'
   - Evaluation Frameworks: 'EvaluationFrameworks/Readme.md'  
-  - Cloud Platforms: 'CloudProviderPlatforms/README.md'
+  - Agent Platforms: 'AgentPlatforms/README.md'
   - SaaS Platforms: 'SaaSPlatforms/README.md'
   - Workflow Builders: 'WorkflowBuilders/README.md'
   - Observability: 'Observability/Reafme.md'
