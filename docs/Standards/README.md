@@ -30,7 +30,9 @@ flowchart LR
 ## Agent2Agent (A2A) Protocol
 
 - [Launched by Google](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/), A2A is becoming an standard for agent interoperability.
-- [GitHub](https://google.github.io/A2A/)
+- [GitHub](https://google.github.io/A2A/) Repository
+
+![A2A](https://google.github.io/A2A/assets/a2a-mcp-readme.png)
 
 
 ## Agent Protocol
