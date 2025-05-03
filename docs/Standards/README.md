@@ -33,6 +33,7 @@ flowchart LR
 - [GitHub](https://google.github.io/A2A/) Repository
 ![A2A](https://google.github.io/A2A/assets/a2a-mcp-readme.png)
 - [Building A Secure Agentic AI Application Leveraging Google’s A2A Protocol](https://arxiv.org/html/2504.16902v1)
+![End-to-end Processing](https://arxiv.org/html/2504.16902v1/extracted/6381309/sequence-diag.png)
 
 
 ## Agent Protocol
