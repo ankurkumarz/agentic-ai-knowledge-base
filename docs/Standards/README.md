@@ -1,10 +1,5 @@
 # Industry Standards
 
-## Agent Protocol
-
-- [Agent Protocol](https://blog.langchain.dev/agent-protocol-interoperability-for-llm-agents/): a standard way for agents to communicate by LangChain
-- [Agent Protocol](https://github.com/langchain-ai/agent-protocol): a common interface for agent communication. This standardizes how agents (LangGraph or otherwise) can interact.
-
 ## Model Context Protocol
 
 - [MCP](https://modelcontextprotocol.io/introduction) is an open protocol, built by Anthropic, that standardizes how applications provide context to LLMs.
@@ -31,4 +26,15 @@ flowchart LR
     client1 <-->|Transport Layer| server1
     client2 <-->|Transport Layer| server2
 ```
+
+## Agent2Agent (A2A) Protocol
+
+- [Launched by Google](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/), A2A is becoming an standard for agent interoperability.
+- [GitHub](https://google.github.io/A2A/)
+
+
+## Agent Protocol
+
+- [Agent Protocol](https://blog.langchain.dev/agent-protocol-interoperability-for-llm-agents/): a standard way for agents to communicate by LangChain
+- [Agent Protocol](https://github.com/langchain-ai/agent-protocol): a common interface for agent communication. This standardizes how agents (LangGraph or otherwise) can interact.
 
