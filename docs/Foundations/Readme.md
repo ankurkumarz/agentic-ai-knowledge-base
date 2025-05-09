@@ -17,3 +17,7 @@
 ## LLM Foundation
 
 - [Foundations of Large Language Models](https://arxiv.org/pdf/2501.09223)
+
+## Architecture Layers
+
+![layers](https://postimg.cc/MXTRnZNY)
