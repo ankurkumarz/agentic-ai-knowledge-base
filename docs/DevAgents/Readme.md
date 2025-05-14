@@ -9,6 +9,10 @@
 - [CodeGuide](https://www.codeguide.dev/): AI Coding Companion for Agentic Development
 - [CodeRabbit](https://www.coderabbit.ai/): AI Code Reviews
 
+## End-to-end Agents
+
+- [DeepAgent](https://deepagent.abacus.ai/): Built as super-assistant tailored for enterprises and professionals. Built by ex-AWS, ex-Uber, ex-Amazon experts (Indian founders).
+
 ## Toolkits
 
 - [CopilotKit](https://www.copilotkit.ai/): A open source UI tookit for Agents and UI components 
