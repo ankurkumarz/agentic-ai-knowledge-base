@@ -11,7 +11,7 @@
 
 ## End-to-end Agents
 
-- [DeepAgent](https://deepagent.abacus.ai/): Built as super-assistant tailored for enterprises and professionals. Built by ex-AWS, ex-Uber, ex-Amazon experts (Indian founders).
+- [DeepAgent](https://deepagent.abacus.ai/): Built as super-assistant tailored for enterprises and professionals. Built by ex-AWS, ex-Uber, ex-Amazon experts (Indian founders). Eric Schmidt (Google) is one of the investors.
 
 ## Toolkits
 
