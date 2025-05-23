@@ -37,6 +37,7 @@ nav:
   - Security Frameworks: 'SecurityFrameworks/Readme.md'
   - Marketplace: 'Marketplace/Readme.md'
   - LLM/AI Gateway: 'LLMGateway/Readme.md'
+  - Cloud Hosting: 'CloudHosting/README.md'
   - RAG: 'RAG/Readme.md'
   - Newsletter & Blogs: 'NewsletterBlogs/README.md'
   - Courses: 'Courses/README.md'
