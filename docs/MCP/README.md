@@ -18,6 +18,10 @@ Future Research Directions](https://arxiv.org/pdf/2503.23278v1)
 
 - [Fastagent - MCP native Agents Framework](https://fast-agent.ai/)
 
+## MCP Platforms
+
+- [KlavisAI](https://www.klavis.ai/): YC-backed MCP platform to connect hosted MCP servers
+
 ## MCP and A2A
 
 - [A2A and MCP - Complimentary or Competitive](https://www.newsletter.swirlai.com/p/mcp-vs-a2a-friends-or-foes)
