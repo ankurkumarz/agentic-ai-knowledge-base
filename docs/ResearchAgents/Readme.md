@@ -3,6 +3,7 @@
 - [Jenni.ai](https://jenni.ai/): For researchers, team's & institutional usage, literature review generator
 - [Elicit](https://elicit.com/): Research Paper AI Agent
 - [DeepAgent](https://deepagent.abacus.ai/): Built by Abacus AI (od-tier general-purpose agent capable of complex tasks.)
+- [Skywork.ai](https://skywork.ai): DeepResearch-Powered Workspace Super Agents (Singapore)
 
 ## Opensource
 
