@@ -11,7 +11,7 @@
 - [Cohere - How enterprises can start building Agentic AI](https://cohere.com/blog/how-enterprises-can-start-building-agentic-ai)
 - [AI Agents vs. Agentic AI](https://arxiv.org/abs/2505.10468)
 
-![AI Agents vs. Agentic AI](https://postimg.cc/5jxjgTPM)
+![AI Agents vs. Agentic AI](https://i.postimg.cc/y6R91zcW/IMG-0956.jpg)
 
 ## Retrieval Strategies for Agents
 
