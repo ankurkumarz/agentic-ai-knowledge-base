@@ -9,7 +9,7 @@
 - [Agents Intro - a Google Whitepaper](https://www.kaggle.com/whitepaper-agents)
 - [Building Effective Agents - Anthropic](https://www.anthropic.com/research/building-effective-agents)
 - [Cohere - How enterprises can start building Agentic AI](https://cohere.com/blog/how-enterprises-can-start-building-agentic-ai)
-- [AI Agents vs. Agentic AI](https://arxiv.org/abs/2505.10468)
+- [AI Agents vs. Agentic AI White paper](https://arxiv.org/abs/2505.10468)
 
 ![AI Agents vs. Agentic AI](https://i.postimg.cc/y6R91zcW/IMG-0956.jpg)
 
