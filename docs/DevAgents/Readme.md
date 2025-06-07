@@ -2,6 +2,7 @@
 
 - [Anthropic Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview): CLI or terminal based coding agent
 - [Replit Agent and Assistant](https://replit.com/ai)
+- [App.build](https://www.app.build/): An open-source AI agent (built by [Neon](https://neon.com/)) that builds full-stack apps.
 - [Codium Windsurf](https://codeium.com/windsurf): integrating advanced AI capabilities into IDE coding workflow
 - [StackckBlitz Bolt](https://bolt.new/): for building full-stack web app
 - [OpenHands (formerly OpenDevin)](https://github.com/All-Hands-AI/OpenHands): Open source agents for Devs (modify code, run commands, browse the web, call APIs, and yes—even copy code snippets from StackOverflow)
