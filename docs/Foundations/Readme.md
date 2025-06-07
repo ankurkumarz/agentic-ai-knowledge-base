@@ -3,6 +3,7 @@
 
 - [Definition by Harrison, LangChain Founder](https://blog.langchain.dev/what-is-an-agent/)
 - [Ambient Agents](https://blog.langchain.dev/introducing-ambient-agents/): Ambient agents listen to an event stream and act on it accordingly, potentially acting on multiple events at a time)
+- [12-Factor Agents - Principles for building reliable LLM applications](https://github.com/humanlayer/12-factor-agents/)
 
 ## Agentic Architecture
 
