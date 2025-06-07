@@ -8,7 +8,9 @@
 
 ## Super Agents
 
-- [Genspark](https://www.genspark.ai/): AI Agent Engine built by ex-Baidu leaders, One of Genspark's defining innovations is the concept of "Sparkpages"—custom-generated pages that are created in real-time in response to user queries.
+- [Genspark](https://www.genspark.ai/): AI Agent Engine built by ex-Baidu leaders, One of Genspark's defining innovations is the concept of "Sparkpages"—custom-generated pages that are created in real-time in response to user queries. 
+- [Manus AI](https://manus.im/): an autonomous artificial intelligence agent developed by startup company Monica, based in Singapore. A multi-agent system, combining different AI models, including a fine-tuned version of Alibaba's Qwen models and potentially Anthropic's Claude 3.5 Sonnet, to handle complex tasks autonomously. 
+- [AgentSeek](https://github.com/Fosowl/agenticSeek): Local alternative to Manus AI, this voice-enabled AI assistant autonomously browses the web, writes code, and plans tasks while keeping all data on your device.
 
 ## Opensource
 
