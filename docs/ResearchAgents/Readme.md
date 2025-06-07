@@ -3,7 +3,8 @@
 - [Jenni.ai](https://jenni.ai/): For researchers, team's & institutional usage, literature review generator
 - [Elicit](https://elicit.com/): Research Paper AI Agent
 - [DeepAgent](https://deepagent.abacus.ai/): Built by Abacus AI (od-tier general-purpose agent capable of complex tasks.)
-- [Skywork.ai](https://skywork.ai): DeepResearch-Powered Workspace Super Agents (Singapore). offers five expert agents—each dedicated to a key task: writing documents, analyzing spreadsheets, building presentations, producing podcasts, and creating websites. 
+- [Skywork.ai](https://skywork.ai): DeepResearch-Powered Workspace Super Agents (Singapore). offers five expert agents—each dedicated to a key task: writing documents, analyzing spreadsheets, building presentations, producing podcasts, and creating websites.
+- [Jina AI](https://jina.ai/): Berlin-based Jina.ai, an open source startup that uses neural search to help its users find information in their unstructured data. Xiao described Jina as akin to TensorFlow for search.
 
 ## Super Agents
 
