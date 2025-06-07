@@ -11,6 +11,10 @@
 
 - [Littlehorse](https://littlehorse.io/): A platform for microservices, workflows, integrations, and AI agents built on the open-source LittleHorse Kernel.
 
+## Business Process
+
+- [Celonis](https://www.celonis.com/platform/process-mining/): Built a Process Intelligence Graph to create a process digital twin of the enterprise across systems and departments.
+
 ## SaaS (No code) Solutions
 
 - [Zapier](https://zapier.com/): Basic free with no code automation for marketing, social media, lead generation, and many more.
