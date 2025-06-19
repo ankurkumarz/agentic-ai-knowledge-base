@@ -21,7 +21,7 @@
 ## End-to-end Agents
 
 - [DeepAgent](https://deepagent.abacus.ai/): Built as super-assistant tailored for enterprises and professionals. Built by ex-AWS, ex-Uber, ex-Amazon experts (Indian founders). Eric Schmidt (Google) is one of the investors.
-- [Factory.ai](https://www.factory.ai/) : Built Agentic system for software development with planning and implementation using their custom reasoning engine, agents (Droids), etc. [Code Droid](https://www.factory.ai/news/code-droid-technical-report)
+- [Factory.ai](https://www.factory.ai/) : Built Agentic system for software development with planning and implementation using their custom reasoning engine (micro and macro decisions developers make), focusing on inner loop (coding), keeping human-in-the-loop for outer loop, agents (Droids), environmental grounding, etc. [Code Droid](https://www.factory.ai/news/code-droid-technical-report)
 
 ## Toolkits
 
