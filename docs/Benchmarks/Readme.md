@@ -4,7 +4,7 @@
 - [LMSYS Chatbot Arena](https://lmarena.ai?leaderboard): Community-driven Evaluation for Best LLM and AI chatbots
 - [Vellum LLM Comparison Board](https://www.vellum.ai/llm-leaderboard)
 - [The Berkeley Function/Tool Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html): evaluates the LLM's ability to call functions (aka tools) accurately. This leaderboard consists of real-world data and will be updated periodically.
-- [Galileo Agent Leaderboard](https://huggingface.co/spaces/galileo-ai/agent-leaderboard): LLM Performance in Agentic scenarios
+- [Galileo Agent Leaderboard](https://huggingface.co/spaces/galileo-ai/agent-leaderboard): LLM Performance in Agentic scenarios. [Version 2](https://huggingface.co/spaces/galileo-ai/agent-leaderboard) is also available.
   
 ## Evaluation Benchmarks
 
