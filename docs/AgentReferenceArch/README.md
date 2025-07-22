@@ -1,6 +1,8 @@
 
 ## LangManus
 
+- Inspired by Manus project, Open source community-driven AI automation framework, particularly for a hierarchical multi-agent system
+
 ![LangManus](https://github.com/Darwin-lfl/langmanus/raw/main/assets/architecture.png)
 
 ## Video Search and Summarization Agent with NVIDIA AI Blueprint
