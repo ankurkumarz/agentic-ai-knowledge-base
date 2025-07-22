@@ -7,6 +7,10 @@
 - [RAGAS](https://www.ragas.io/): Metrics for evaluating RAG(8+ metrics), Agentic workflows (3 metrics) and more.
 - [LangChain OpenEvals](https://github.com/langchain-ai/openevals): Based on LLM-as-a-judge with pre-built prompts for conciseness, fairness, hallucination 
 
+## Evaluation Platforms
+
+- [Galileo](https://galileo.ai/): A custom-built platform promoting pre-built evaluation metrics, [custom metrics](https://galileo.ai/blog/closing-the-confidence-gap-how-custom-metrics-turn-genai-reliability-into-a-competitive-edge), Autotune (Improve evaluators with CLHF (Continuous Learning with Human Feedback), and more.
+
 ## AI Agents Evaluation
 
 - [Meta - MLGym: A Framework & Benchmark for Advancing AI Research Agents](https://arxiv.org/abs/2502.14499), [GitHub](https://github.com/facebookresearch/MLGym)
