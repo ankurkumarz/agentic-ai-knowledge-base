@@ -1,4 +1,7 @@
 
+## LangManus
+
+![LangManus](https://github.com/Darwin-lfl/langmanus/raw/main/assets/architecture.png)
 
 ## Video Search and Summarization Agent with NVIDIA AI Blueprint
 
