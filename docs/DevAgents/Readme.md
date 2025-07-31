@@ -9,6 +9,7 @@
 - [Sourcegraph](https://sourcegraph.com): Code search, code migration, review agents
 - [CodeGuide](https://www.codeguide.dev/): AI Coding Companion for Agentic Development
 - [CodeRabbit](https://www.coderabbit.ai/): AI Code Reviews
+- [Google Jules](https://jules.google.com/): an async development agent. Jules tackles bugs, small feature requests, and other software engineering tasks, with direct export to GitHub.
 
 ## Doc Agents
  
