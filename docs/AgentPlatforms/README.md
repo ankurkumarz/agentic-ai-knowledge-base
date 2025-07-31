@@ -4,7 +4,9 @@
 
 ## Amazon Web Services (AWS)
 
+- [AWS Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/): Launched in [July '25](https://aws.amazon.com/blogs/aws/introducing-amazon-bedrock-agentcore-securely-deploy-and-operate-ai-agents-at-any-scale/), AWS enables you to deploy and operate Enterprise AI agents securely, at scale. It has AgentCore Runtime, Memory, Observability, Identity, Gateway, Browser, and Code Interpreter. 
 - [Amazon Bedrock Agents](https://aws.amazon.com/bedrock/agents/)
+  
 
 ## Microsoft Azure
 
