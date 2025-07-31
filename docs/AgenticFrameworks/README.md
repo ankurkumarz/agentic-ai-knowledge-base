@@ -314,7 +314,7 @@ Source: Spring AI Documentation
 
 ## Other Frameworks/Platforms
 
-* **Strands**(https://strandsagents.com/): An Opensource Agent framework launched by AWS in July 25.
+* **[Strands]**(https://strandsagents.com/): An Opensource Agent framework launched by AWS in July 25.
 * **[OpenAI Agents SDK](https://platform.openai.com/docs/guides/agents)**
 * **[Dapr Agents](https://www.cncf.io/blog/2025/03/12/announcing-dapr-ai-agents/)**
 * **OpenAI Swarm**: Educational framework for lightweight multi-agent orchestration
