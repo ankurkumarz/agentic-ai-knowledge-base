@@ -314,7 +314,8 @@ Source: Spring AI Documentation
 
 ## Other Frameworks/Platforms
 
-* **[Strands](https://strandsagents.com/)**: An Opensource Agent framework launched by AWS in July 25.
+* **[Strands](https://strandsagents.com/)**: An open-source agent framework & SDK launched by **AWS** on [July 25](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/) promoting model-driven approach to building and running AI agents .
+* **[Google ADK](https://google.github.io/adk-docs/)**: Launched by **Google** on [Apr 25](https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/) (with a focus on multi-agent apps) as a modular framework for developing and deploying AI agents, particularly optimized for Gemini and the Google ecosystem.
 * **[OpenAI Agents SDK](https://platform.openai.com/docs/guides/agents)**: The OpenAI Agents SDK to build agentic AI apps in a lightweight, easy-to-use package with very few abstractions. It's a production-ready upgrade of our previous experimentation for agents, Swarm.
 * **[Dapr Agents](https://www.cncf.io/blog/2025/03/12/announcing-dapr-ai-agents/)**
 * **OpenAI Swarm**: Educational framework for lightweight multi-agent orchestration
