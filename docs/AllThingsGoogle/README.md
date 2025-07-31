@@ -1,4 +1,4 @@
->> Google has been a leading player in the field of AI and Agentic development (after all, it all started with the Transformer architecture, which was developed and introduced by Google researchers in their 2017 paper [Attention Is All You Need](https://research.google/pubs/attention-is-all-you-need/).
+> Google has been a leading player in the field of AI and Agentic development (after all, it all started with the Transformer architecture, which was developed and introduced by Google researchers in their 2017 paper [Attention Is All You Need](https://research.google/pubs/attention-is-all-you-need/).
 
 This page enlists key initiatives and project (in-progress/Alpha/Beta or GA). 
 
