@@ -42,6 +42,7 @@ nav:
   - Newsletter & Blogs: 'NewsletterBlogs/README.md'
   - Courses: 'Courses/README.md'
   - All Things Google: 'AllThingsGoogle/README.md'
+  - All Things AWS: 'AllThingsAWS/README.md'
 plugins:
   - search
   - mermaid2
