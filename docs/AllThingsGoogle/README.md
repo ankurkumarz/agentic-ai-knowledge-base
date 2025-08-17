@@ -2,7 +2,13 @@
 
 This page enlists key initiatives and project (in-progress/Alpha/Beta or GA). 
 
-# Project Mariner
+## Project Mariner
 
 - [Mariner](https://deepmind.google/models/project-mariner/): A research prototype (as part of DeepMind) exploring the future of human-agent interaction, starting with browsers. Project Mariner observes what’s displayed in the browser. It then reasons to interpret your goals, makes a plan — and takes action.
-- Currently, available with Google AI Ultra users.
+- Currently, available for Google AI Ultra users.
+
+## Best Practices / Guide
+
+- [25+ top gen AI how-to guides for enterprise](https://cloud.google.com/blog/products/ai-machine-learning/top-gen-ai-how-to-guides-for-enterprise/): Enlists consolidated curated blog posts on LLM deployment, GenAI RAG Apps, Fine-tuning, Integrations, etc.
+
+
