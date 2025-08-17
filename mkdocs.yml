@@ -43,6 +43,8 @@ nav:
   - Courses: 'Courses/README.md'
   - All Things Google: 'AllThingsGoogle/README.md'
   - All Things AWS: 'AllThingsAWS/README.md'
+  - All Things Microsoft: 'AllThingsMicrosoft/README.md'
+  - Gartner: 'Gartner.README.md'
 plugins:
   - search
   - mermaid2
