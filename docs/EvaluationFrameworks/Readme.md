@@ -7,6 +7,12 @@
 - [RAGAS](https://www.ragas.io/): Metrics for evaluating RAG(8+ metrics), Agentic workflows (3 metrics) and more.
 - [LangChain OpenEvals](https://github.com/langchain-ai/openevals): Based on LLM-as-a-judge with pre-built prompts for conciseness, fairness, hallucination 
 
+## Evaluation 
+
+- [METR](https://metr.org/): (pronounced ‘meter’) it researches, develops and runs evaluations of frontier AI systems’ ability to complete complex tasks without human input. GPT-5 report card:
+- ![GPT5-Report](https://metr.github.io/autonomy-evals-guide/image/gpt_5_report/models_50_time_horizon.png)
+
+
 ## Evaluation Platforms
 
 - [Galileo](https://galileo.ai/): A custom-built platform promoting pre-built evaluation metrics, [custom metrics](https://galileo.ai/blog/closing-the-confidence-gap-how-custom-metrics-turn-genai-reliability-into-a-competitive-edge), Autotune (Improve evaluators with CLHF (Continuous Learning with Human Feedback), and more.
