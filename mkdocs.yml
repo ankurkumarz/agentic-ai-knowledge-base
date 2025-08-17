@@ -18,6 +18,7 @@ nav:
   - Agent Platforms: 'AgentPlatforms/README.md'
   - Prompt Engineering: 'PromptEngineering/README.md'
   - Design Patterns: 'DesignPatterns/Readme.md'
+  - Agentic Maturity Models: 'MaturityModels/README.md'
   - Retrieval Approaches: 'RetrievalApproaches/README.md'
   - MCP: 'MCP/README.md'
   - Reference Architecture: 'ReferenceArchitecture/README.md'
