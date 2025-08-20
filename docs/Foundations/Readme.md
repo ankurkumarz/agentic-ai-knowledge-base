@@ -5,40 +5,41 @@
 
 ```mermaid
 flowchart TD
-    %% Define Styles
-    classDef env fill:#fdf2f8,stroke:#db2777,stroke-width:2px,color:#000,rx:15,ry:15
-    classDef agent fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#000,rx:15,ry:15
-    classDef comp fill:#e0f2fe,stroke:#0284c7,stroke-width:1.5px,color:#000,rx:10,ry:10
-    classDef action fill:#fef9c3,stroke:#eab308,stroke-width:1.5px,color:#000,rx:10,ry:10
+  %% --- Styles (safe) ---
+  classDef env fill:#f7e8f0,stroke:#c2185b,stroke-width:2px,rx:12,ry:12,color:#111;
+  classDef agent fill:#e8f7f0,stroke:#0f9d58,stroke-width:2px,rx:12,ry:12,color:#111;
+  classDef comp fill:#e6f0fb,stroke:#1a73e8,stroke-width:1.5px,rx:8,ry:8,color:#111;
+  classDef action fill:#fff5cc,stroke:#eab308,stroke-width:1.5px,rx:8,ry:8,color:#111;
 
-    %% Environment
-    subgraph ENV["🌍 Environment"]
-        P[🔎 Percepts]
-        A[🎯 Actions]
-    end
-    class ENV env
+  %% --- Environment ---
+  subgraph ENV["Environment"]
+    PERCEPTS["Percepts"]
+    ACTIONS["Actions"]
+  end
+  class ENV env
 
-    %% Agent
-    subgraph AG["🤖 AI Agent"]
-        S[📡 Sensors\n(Inputs, APIs, Webhooks)]
-        Perception[🧩 Perception Layer\nPreprocessing, Embeddings]
-        KB[(📚 Knowledge Base / Memory\nFacts, Vectors, State History)]
-        RE[🧠 Reasoning Engine\nLLM + Prompts, Rules, RL]
-        Plan[📋 Planning & Goals\nTask Decomposition, Scheduling]
-        L[📈 Learning Module\nRL, Fine-tuning, Feedback]
-        Act[⚙️ Actuators\nAPIs, Commands, Outputs]
-    end
-    class AG agent
-    class S,Perception,KB,RE,Plan,L,Act comp
+  %% --- Agent ---
+  subgraph AG["AI Agent"]
+    S["Sensors<br/>(inputs, APIs, webhooks)"]
+    PERCEPTION["Perception Layer<br/>(preprocess, embed)"]
+    KB["Knowledge Base / Memory<br/>(facts, vectors, state)"]
+    REASON["Reasoning Engine<br/>(LLM+prompts, rules, RL)"]
+    PLAN["Planning & Goals<br/>(decompose, schedule)"]
+    LEARN["Learning Module<br/>(feedback, fine-tune, RL)"]
+    ACT["Actuators<br/>(APIs, commands, outputs)"]
+  end
+  class AG agent
+  class S,PERCEPTION,KB,REASON,PLAN,LEARN,ACT comp
 
-    %% Connections
-    ENV -- Percepts --> S --> Perception --> KB
-    Perception --> RE
-    KB --> RE
-    RE --> Plan --> Act
-    L --> KB
-    L --> RE
-    Act --> ENV -- Actions -->
+  %% --- Flow ---
+  PERCEPTS --> S --> PERCEPTION --> KB
+  PERCEPTION --> REASON
+  KB --> REASON
+  REASON --> PLAN --> ACT
+  LEARN --> KB
+  LEARN --> REASON
+  ACT --> ACTIONS
+
 ```
 
 - [Definition by Harrison, LangChain Founder](https://blog.langchain.dev/what-is-an-agent/)
