@@ -3,6 +3,31 @@
 
 - [AI Agents by Berkley Book](https://aima.cs.berkeley.edu/). [N8N Blog](https://blog.n8n.io/ai-agents/) on AI Agent Flows.
 
+```mermaid
+flowchart TD
+    subgraph ENV["Environment"]
+        P[Percepts]
+        A[Actions]
+    end
+
+    subgraph AG["AI Agent"]
+        S[📡 Sensors\n(Inputs, APIs, Webhooks)]
+        Perception[🧩 Perception Layer\n(Preprocessing, embeddings)]
+        KB[(📚 Knowledge Base / Memory\nFacts, Vectors, State History)]
+        RE[🧠 Reasoning Engine\n(LLM + Prompts, Rules, RL)]
+        Plan[📋 Planning & Goal Mgmt\n(Task Decomposition, Scheduling)]
+        L[📈 Learning Module\n(RL, Fine-tuning, Feedback)]
+        Act[⚙️ Actuators\n(APIs, Commands, Outputs)]
+    end
+
+    %% Flow connections
+    ENV -- Percepts --> S --> Perception --> KB
+    Perception --> RE
+    KB --> RE
+    RE --> Plan --> Act
+    L --> KB
+    L --> RE
+    Act --> ENV -- Actions -->
   
 - [Definition by Harrison, LangChain Founder](https://blog.langchain.dev/what-is-an-agent/)
 - [Ambient Agents](https://blog.langchain.dev/introducing-ambient-agents/): Ambient agents listen to an event stream and act on it accordingly, potentially acting on multiple events at a time)
