@@ -2,6 +2,7 @@
 ## Definition
 
 - [AI Agents by Berkley Book](https://aima.cs.berkeley.edu/). [N8N Blog](https://blog.n8n.io/ai-agents/) on AI Agent Flows.
+![AI Agent Internal Arch](https://i.postimg.cc/ydGV1c3Q/ai-agents-arch.png)
 
 ```mermaid
 flowchart TD
