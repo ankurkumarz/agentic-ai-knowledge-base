@@ -5,22 +5,33 @@
 
 ```mermaid
 flowchart TD
-    subgraph ENV["Environment"]
-        P[Percepts]
-        A[Actions]
-    end
+    %% Define Styles
+    classDef env fill:#fdf2f8,stroke:#db2777,stroke-width:2px,color:#000,rx:15,ry:15
+    classDef agent fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#000,rx:15,ry:15
+    classDef comp fill:#e0f2fe,stroke:#0284c7,stroke-width:1.5px,color:#000,rx:10,ry:10
+    classDef action fill:#fef9c3,stroke:#eab308,stroke-width:1.5px,color:#000,rx:10,ry:10
 
-    subgraph AG["AI Agent"]
+    %% Environment
+    subgraph ENV["🌍 Environment"]
+        P[🔎 Percepts]
+        A[🎯 Actions]
+    end
+    class ENV env
+
+    %% Agent
+    subgraph AG["🤖 AI Agent"]
         S[📡 Sensors\n(Inputs, APIs, Webhooks)]
-        Perception[🧩 Perception Layer\n(Preprocessing, embeddings)]
+        Perception[🧩 Perception Layer\nPreprocessing, Embeddings]
         KB[(📚 Knowledge Base / Memory\nFacts, Vectors, State History)]
-        RE[🧠 Reasoning Engine\n(LLM + Prompts, Rules, RL)]
-        Plan[📋 Planning & Goal Mgmt\n(Task Decomposition, Scheduling)]
-        L[📈 Learning Module\n(RL, Fine-tuning, Feedback)]
-        Act[⚙️ Actuators\n(APIs, Commands, Outputs)]
+        RE[🧠 Reasoning Engine\nLLM + Prompts, Rules, RL]
+        Plan[📋 Planning & Goals\nTask Decomposition, Scheduling]
+        L[📈 Learning Module\nRL, Fine-tuning, Feedback]
+        Act[⚙️ Actuators\nAPIs, Commands, Outputs]
     end
+    class AG agent
+    class S,Perception,KB,RE,Plan,L,Act comp
 
-    %% Flow connections
+    %% Connections
     ENV -- Percepts --> S --> Perception --> KB
     Perception --> RE
     KB --> RE
@@ -29,7 +40,7 @@ flowchart TD
     L --> RE
     Act --> ENV -- Actions -->
 ```
-  
+
 - [Definition by Harrison, LangChain Founder](https://blog.langchain.dev/what-is-an-agent/)
 - [Ambient Agents](https://blog.langchain.dev/introducing-ambient-agents/): Ambient agents listen to an event stream and act on it accordingly, potentially acting on multiple events at a time)
 - [12-Factor Agents - Principles for building reliable LLM applications](https://github.com/humanlayer/12-factor-agents/)
