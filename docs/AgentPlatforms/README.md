@@ -27,6 +27,7 @@
 
 ## Open Source Platforms
 
+- [Sim AI](https://www.sim.ai/): Found in 2025 by Berkley Students (YC). It has - Visual AI Workflow Builder with Apache 2.0 License. Frontend/Interface: Built with Next.js (App Router), Tailwind CSS, Shadcn UI, and React Flow (for the visual workflow canvas). Uses Bun as the JavaScript runtime.
 - [Eclipse LMOS](https://eclipse.dev/lmos/): Open-source, cloud-native platform for building and running Multi-Agent systems (started with Kotlin, supports multiple frameworks)
 [InfoQ Reference](https://www.infoq.com/minibooks/from-chatbots-to-ai-agents/)
 ![Ref Arch MAS](https://pbs.twimg.com/media/Go_VVGlXsAAJ28i?format=jpg&name=medium)
