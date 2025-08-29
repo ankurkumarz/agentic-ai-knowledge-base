@@ -16,6 +16,7 @@
 ## Evaluation Platforms
 
 - [Galileo](https://galileo.ai/): A custom-built platform promoting pre-built evaluation metrics, [custom metrics](https://galileo.ai/blog/closing-the-confidence-gap-how-custom-metrics-turn-genai-reliability-into-a-competitive-edge), Autotune (Improve evaluators with CLHF (Continuous Learning with Human Feedback), and more.
+- [Google's Stax](https://stax.withgoogle.com/): A SaaS solution by Google for LLM evaluation with features such as *Managed Test Datasets*, *Pre-Built and Custom Evaluators*, and *Visually track aggregated AI performance*.
 
 ## AI Agents Evaluation
 
