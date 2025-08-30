@@ -23,7 +23,8 @@
 
 - [DeepAgent](https://deepagent.abacus.ai/): Built as super-assistant tailored for enterprises and professionals. Built by ex-AWS, ex-Uber, ex-Amazon experts (Indian founders). Eric Schmidt (Google) is one of the investors.
 - [Factory.ai](https://www.factory.ai/) : Built Agentic system for software development with planning and implementation using their custom reasoning engine (micro and macro decisions developers make), focusing on inner loop (coding), keeping human-in-the-loop for outer loop, agents (Droids), environmental grounding, etc. [Code Droid](https://www.factory.ai/news/code-droid-technical-report)
-- [Superblocks](https://www.superblocks.com/): Platform for building internal enterprise apps with multi-agent architecture **Clark** using Design, IT, Engineering and Security 
+- [Superblocks](https://www.superblocks.com/): Platform for building internal enterprise apps with multi-agent architecture **Clark** using Design, IT, Engineering and Security
+- [Varick Agents](https://www.varickagents.com/): Startup which builds highly specialized AI "agents" to automate key business workflows—like financial reconciliation, customer intake, lead gen, and more. Vas and Eyad, former big-tech software engineers, founded Varick Agents to create purpose-built AI agents that cost-effectively automate workflows.
 
 ## Toolkits
 
