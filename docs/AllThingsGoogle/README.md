@@ -14,4 +14,5 @@ This page enlists key initiatives and project (in-progress/Alpha/Beta or GA).
 ## SaaS AI Apps
 
 - [Opal](https://opal.withgoogle.com): Experimental NoCode product to build mini apps using AI (Google Models) such as deep research, create video, blog post, etc.
+- [Stax](stax.withgoogle.com): AI evaluation solution with multiple LLMs and pre-built evaluators
 
