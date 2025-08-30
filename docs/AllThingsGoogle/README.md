@@ -11,4 +11,7 @@ This page enlists key initiatives and project (in-progress/Alpha/Beta or GA).
 
 - [25+ top gen AI how-to guides for enterprise](https://cloud.google.com/blog/products/ai-machine-learning/top-gen-ai-how-to-guides-for-enterprise/): Enlists consolidated curated blog posts on LLM deployment, GenAI RAG Apps, Fine-tuning, Integrations, etc.
 
+## SaaS AI Apps
+
+- [Opal](https://opal.withgoogle.com): Experimental NoCode product to build mini apps using AI (Google Models) such as deep research, create video, blog post, etc.
 
