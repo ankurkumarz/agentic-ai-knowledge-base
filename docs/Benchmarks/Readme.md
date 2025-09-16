@@ -13,3 +13,13 @@
 - [OSWorld Benchmark for Multimodal Agents](https://os-world.github.io/): Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments
 - [SWE-Bench](https://www.swebench.com/): dataset that tests systems' ability to solve GitHub issues automatically.
 
+
+## LLM Inference Benchmarks Research
+
+- [Inference Benchmarking of Large Language Models on AI Accelerators](https://arxiv.org/html/2411.00136v1): LLM-Inference-Bench, a comprehensive benchmarking suite that evaluates the inference performance of the variety of llama-style LLMs across SOTA AI accelerators
+![Time to First Token TTFT](https://arxiv.org/html/2411.00136v1/x26.png)
+
+
+## Solutions Benchmark
+
+- [vLLM Benchmark for hosting inference LLM models](https://hud.pytorch.org/benchmark/llms): 
