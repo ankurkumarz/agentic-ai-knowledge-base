@@ -25,6 +25,11 @@
 
 - [North](https://cohere.com/blog/north-eap): AI workspace to build Agents
 
+## Other Third-party Platforms
+
+- [Arcade](https://www.arcade.dev/): Arcade is a Tool-calling platform for context engineering making it easy to do integration with 100+ data sources. Architecture pattern: Agent Platform ──▶ MCP Server (Arcade.dev) ──▶ 🔗 Connected Tools. [API Reference](https://reference.arcade.dev/api-reference)
+![Arcade Toolit](https://i.postimg.cc/25Nbd7qg/arcade.png)
+
 ## Open Source Platforms
 
 - [Sim Studio](https://www.sim.ai/): Found in 2025 by Berkley Students (YC). It has - Visual AI Workflow Builder with Apache 2.0 License. Frontend/Interface: Built with Next.js (App Router), Tailwind CSS, Shadcn UI, and React Flow (for the visual workflow canvas). Uses Bun as the JavaScript runtime.
