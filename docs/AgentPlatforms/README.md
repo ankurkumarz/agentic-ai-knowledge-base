@@ -37,3 +37,8 @@
 [InfoQ Reference](https://www.infoq.com/minibooks/from-chatbots-to-ai-agents/)
 ![Ref Arch MAS](https://pbs.twimg.com/media/Go_VVGlXsAAJ28i?format=jpg&name=medium)
 - [Obot by Acorn](https://www.acorn.io/): offered as a SaaS and self-hosted deployments. [Helm Chart](https://charts.obot.ai/) available.
+
+## MISC Research Reports
+
+- [AI Markets Platform](https://www.marketsandmarkets.com/Market-Reports/artificial-intelligence-ai-platform-market-113162926.html)
+  ![AI Platform]
