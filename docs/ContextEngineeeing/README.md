@@ -5,7 +5,18 @@
 ## Key Challenges in Context Management
 
 - [Context Rot](https://research.trychroma.com/context-rot)
-- 
+- Context Poisoning
+- Context Distraction
+- Context Confusion
+- Context Clash
+
+## Common Strategies for Context Management
+
+- **Offload context (file system)**
+  - Usage: Long-term memory, Notes, TODO List, Tool-heavy context (to keep reference to the detailed tool calling on file)
+  - [Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) and Anthropic heavily use offloading context to the file system, and so [others](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html).
+
+
 
 ## Manus
 
