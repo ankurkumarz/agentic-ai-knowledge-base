@@ -33,6 +33,10 @@
   - Multi-agents make conflicting decisions (see: Cognition/Walden Yan).
   - Sub-agents lower risk if avoid decisions (see: open-deep-research).
 
+- **Cache Context**
+  - Usage: Cached input token, Cache agent instructions, tool descriptions to prefix.
+  - Claude & [Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) shared applicability of it, Gemini has Context Caching
+
 ## Manus
 
 - [Context Engineering in Manus](https://rlancemartin.github.io/2025/10/15/manus/)
