@@ -17,6 +17,7 @@ nav:
   - Agentic Frameworks: 'AgenticFrameworks/README.md'
   - Agent Platforms: 'AgentPlatforms/README.md'
   - Agentic Tech Stack: 'AgenticTechStack/README.md'
+  - Context Engineering: 'ContextEngineeeing/README.md'
   - Prompt Engineering: 'PromptEngineering/README.md'
   - Design Patterns: 'DesignPatterns/Readme.md'
   - Agentic Maturity Models: 'MaturityModels/README.md'
