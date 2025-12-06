@@ -35,7 +35,7 @@
 
 - **Cache Context**
   - Usage: Cached input token, Cache agent instructions, tool descriptions to prefix.
-  - Claude & [Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) shared applicability of it, Gemini has Context Caching
+  - Claude & [Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) shared applicability of it, Gemini has [Context Caching](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview)
 
 ## Manus
 
