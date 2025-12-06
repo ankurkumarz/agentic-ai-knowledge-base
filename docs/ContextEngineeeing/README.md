@@ -15,8 +15,10 @@
 - **Offload context (file system)**
   - Usage: Long-term memory, Notes, TODO List, Tool-heavy context (to keep reference to the detailed tool calling on file)
   - [Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) and Anthropic heavily use offloading context to the file system, and so [others](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html).
-
-
+ 
+- **Reduce Context (compaction)**
+  - Usage: Summarization, Tool calls pruning, Summarize / prune at agent-agent handoffs, Prune irrelevant parts of message history, Be careful of information loss
+  - Claude code applying it + allows user to compact, LangGraph built Deepagent with summarization as middleware
 
 ## Manus
 
