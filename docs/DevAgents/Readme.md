@@ -12,6 +12,10 @@
 - [Google Jules](https://jules.google.com/): an async development agent. Jules tackles bugs, small feature requests, and other software engineering tasks, with direct export to GitHub.
 - [Qoder](https://qoder.com/): an Agentic coding platform
 
+## CLI Agents
+
+- [Cursor CLI](https://cursor.com/blog/cli) - ```cursor-agent chat "find one bug and fix it" ```
+
 ## Doc Agents
  
 - [DeepWiki](https://deepwiki.com/): AI documentation powered by Devin
