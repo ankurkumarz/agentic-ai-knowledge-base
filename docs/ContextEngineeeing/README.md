@@ -24,6 +24,14 @@
 - **Reduce Context (compaction)**
   - Usage: Summarization, Tool calls pruning, Summarize / prune at agent-agent handoffs, Prune irrelevant parts of message history, Be careful of information loss
   - Claude code applying it + allows user to compact, LangGraph built Deepagent with summarization as middleware
+ 
+- **Retrieve context**
+  - Usage: Retrieve contextual data (using RAG etc.), Populate Prompt with Retrieved Data
+
+- **Isolate context**
+  - Usage: Split context across multi-agents (see: Drew’s post, Anthropic).
+  - Multi-agents make conflicting decisions (see: Cognition/Walden Yan).
+  - Sub-agents lower risk if avoid decisions (see: open-deep-research).
 
 ## Manus
 
