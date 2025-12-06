@@ -10,6 +10,11 @@
 - Context Confusion
 - Context Clash
 
+### References
+
+- [Fix Your Context](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html)
+
+
 ## Common Strategies for Context Management
 
 - **Offload context (file system)**
