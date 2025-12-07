@@ -17,6 +17,8 @@
 - [Aider](https://aider.chat/): ``` aider --show-repo-map ```
 - [Cursor CLI](https://cursor.com/blog/cli) - ```cursor-agent chat "find one bug and fix it" ```
 - [Gemini CLI](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli): [Code Lab](https://codelabs.developers.google.com/gemini-cli-hands-on) ``` gemini -p "analyze this codebase" -m "gemini-2.5-flash"  ```
+- [Opencode](https://opencode.ai/): open source coding agent, includes free models or connect from any provider to
+use other models, including Claude, GPT, Gemini and more.
 
 ## Doc Agents
  
