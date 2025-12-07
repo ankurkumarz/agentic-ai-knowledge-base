@@ -5,7 +5,7 @@
 - [Portkey Guide to LLM observability for 2026](https://portkey.ai/blog/the-complete-guide-to-llm-observability/)
 
 ![End-to-end Agent Observability](https://i.postimg.cc/8CzhFKZx/IMG_2615.png)
-![Observability Metrics](https://i.postimg.cc/GmQFmwjr/IMG_2616.png)
+![Observability Metrics](https://i.postimg.cc/j23VbkkT/IMG-2619.jpg)
 
 ## Solutions
 
