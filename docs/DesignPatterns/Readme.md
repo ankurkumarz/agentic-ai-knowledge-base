@@ -9,3 +9,4 @@
 ## Design Patterns
 
 - [Gartner: Emerging Patterns for Building LLM-Based AI Agents](https://www.gartner.com/en/documents/6142159)
+- [17 Agentic Architecture Patterns](https://github.com/FareedKhan-dev/all-agentic-architectures)
