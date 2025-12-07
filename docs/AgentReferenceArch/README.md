@@ -1,4 +1,8 @@
 
+## Stanford Research
+
+- [Agentic Reviewer](https://paperreview.ai/)
+
 ## LangManus
 
 - Inspired by Manus project, Open source community-driven AI automation framework, particularly for a hierarchical multi-agent system
