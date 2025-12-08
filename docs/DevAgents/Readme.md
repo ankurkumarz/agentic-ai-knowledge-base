@@ -19,7 +19,7 @@
 - [Gemini CLI](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli): [Code Lab](https://codelabs.developers.google.com/gemini-cli-hands-on) ``` gemini -p "analyze this codebase" -m "gemini-2.5-flash"  ```
 - [Opencode](https://opencode.ai/): open source coding agent, includes free models or connect from any provider to
 use other models, including Claude, GPT, Gemini and more.
-- [Deep Agents](https://docs.langchain.com/oss/python/deepagents/cli#cli-commands):LangGraph community-driven, most of the Claude code features without vendor lock-in such as Subagents, Skills. ``` deepagents --agent NAME --auto-approve --```
+- [Deep Agents](https://docs.langchain.com/oss/python/deepagents/cli#cli-commands):LangGraph community-driven, most of the Claude code features without vendor lock-in such as Subagents, Skills. ``` deepagents --agent NAME --auto-approve```
 
 ## Doc Agents
  
