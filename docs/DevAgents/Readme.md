@@ -11,6 +11,7 @@
 - [CodeRabbit](https://www.coderabbit.ai/): AI Code Reviews
 - [Google Jules](https://jules.google.com/): an async development agent. Jules tackles bugs, small feature requests, and other software engineering tasks, with direct export to GitHub.
 - [Qoder](https://qoder.com/): an Agentic coding platform
+- [Mux](https://mux.coder.com/): Coding Agent Multiplexer for AI-assisted development
 
 ## CLI Agents
 
