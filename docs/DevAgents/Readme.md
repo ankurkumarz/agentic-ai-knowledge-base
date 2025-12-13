@@ -21,6 +21,7 @@
 - [Opencode](https://opencode.ai/): open source coding agent, includes free models or connect from any provider to
 use other models, including Claude, GPT, Gemini and more.
 - [Deep Agents](https://docs.langchain.com/oss/python/deepagents/cli#cli-commands):LangGraph community-driven, most of the Claude code features without vendor lock-in such as Subagents, Skills. ``` deepagents --agent NAME --auto-approve```
+- [Goose](https://block.github.io/goose/): Local AI Agent framework for automation of engineering tasks
 
 ## Doc Agents
  
