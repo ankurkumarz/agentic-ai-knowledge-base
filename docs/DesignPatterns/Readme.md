@@ -1,3 +1,11 @@
+
+## GenAI Design Patterns
+
+- [GenAI Design Patterns (32) - Book by](https://learning.oreilly.com/library/view/generative-ai-design) - [GitHub](https://github.com/lakshmanok/generative-ai-design-patterns)
+  - [Code Examples](https://github.com/lakshmanok/generative-ai-design-patterns)
+![32 Design Patterns](https://i.postimg.cc/9f4kr4LW/gen-ai-patterns.png)
+
+
 ## Multi-agent Architecture Patterns
 
 - [LangChain Multi-Agent Architectures](https://langchain-ai.github.io/langgraph/concepts/multi_agent/): Network, Supervisor, Hierarchical, [Multi-agent Swarm](https://github.com/langchain-ai/langgraph-swarm-py/)
