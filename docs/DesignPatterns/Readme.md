@@ -5,6 +5,8 @@
   - [Code Examples](https://github.com/lakshmanok/generative-ai-design-patterns)
 ![32 Design Patterns](https://i.postimg.cc/9f4kr4LW/gen-ai-patterns.png)
 
+- [Agent Design by OpenAI](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)
+![Design Patterns](https://i.postimg.cc/v8gryh4N/CBC8047F-640E-45D0-84AB-944310D6BF8E.jpg)
 
 ## Multi-agent Architecture Patterns
 
