@@ -11,6 +11,7 @@ This page enlists key initiatives and project (in-progress/Alpha/Beta or GA).
 
 - [25+ top gen AI how-to guides for enterprise](https://cloud.google.com/blog/products/ai-machine-learning/top-gen-ai-how-to-guides-for-enterprise/): Enlists consolidated curated blog posts on LLM deployment, GenAI RAG Apps, Fine-tuning, Integrations, etc.
 - [Startup Technical Guide for Building AI Agents](https://services.google.com/fh/files/misc/startup_technical_guide_ai_agents_final.pdf) + [YouTube - AI Agent with Google Cloud](https://www.youtube.com/watch?v=qMp8a7gB8iU)
+- [Agentic AI architecture components](https://docs.cloud.google.com/architecture/choose-agentic-ai-architecture-components)
 
 ## SaaS AI Apps
 
