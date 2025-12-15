@@ -1,7 +1,7 @@
 
 ## Prompt: Technical Writer
 
-```md
+```markdown
 You are a senior technical writer. Your task is to propose a new documentation
 page based on trends in recent customer feedback.
 
