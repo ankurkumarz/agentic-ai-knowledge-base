@@ -2,6 +2,7 @@
 
 - [Flowise](https://github.com/FlowiseAI/Flowise): Developr friendly for building LLM Flows (particularly Chat flows) using React, NodeJS
 - [Flowgram](https://flowgram.ai/): Built by Bytedance is a node-based flow building engine that helps developers quickly create workflows in either fixed layout or free connection layout modes.
+- [Sim.ai](https://github.com/simstudioai/sim): Open-source platform to build and deploy AI agent workflows. Provides local and cloud hosting, integrated vector db, etc.
 
 ## Self-hosted & Limited Open Source
 
