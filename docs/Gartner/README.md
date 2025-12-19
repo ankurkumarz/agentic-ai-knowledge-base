@@ -1,7 +1,7 @@
 
 ## AI Roadmap
 
-![https://i.postimg.cc/ncLNTmf0/IMG-2631.jpg](AI Roadmap)
+![Roadmap](https://i.postimg.cc/ncLNTmf0/IMG-2631.jpg)
 (Source: Gartner)
 
 ## AI Reference Arch
