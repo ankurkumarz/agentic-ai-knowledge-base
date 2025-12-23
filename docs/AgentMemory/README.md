@@ -32,7 +32,7 @@
 | Vertex Memory | Google | Managed Bank | Google Cloud | Native "evolving" memory for the Gemini ecosystem. |
 | Foundry Memory | Azure | Managed State | Microsoft Cloud | Enterprise-grade state management within Azure OpenAI. |
 
-## Short-term Techniques
+## Short-term Memory Techniques
 
 | Technique | Logic | Primary Benefit |
 |---|---|---|
