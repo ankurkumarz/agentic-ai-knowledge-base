@@ -1,5 +1,5 @@
 
->>Memory management is the "engine" that enables an AI agent to move from a one-shot calculator to a persistent entity. It is essentially the art of deciding what to keep in the expensive, high-speed Context Window and what to offload to External Storage.
+>Memory management is the "engine" that enables an AI agent to move from a one-shot calculator to a persistent entity. It is essentially the art of deciding what to keep in the expensive, high-speed Context Window and what to offload to External Storage.
 Core Concepts of Memory Management
 
 | Concept | Description | Analogy |
