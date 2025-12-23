@@ -32,7 +32,7 @@
 | Vertex Memory | Google | Managed Bank | Google Cloud | Native "evolving" memory for the Gemini ecosystem. |
 | Foundry Memory | Azure | Managed State | Microsoft Cloud | Enterprise-grade state management within Azure OpenAI. |
 
-## Techniques
+## Short-term Techniques
 
 | Technique | Logic | Primary Benefit |
 |---|---|---|
@@ -43,3 +43,13 @@
 | Scratchpad / Working Memory | Provides a dedicated space (like a file or hidden block) for the agent to store intermediate thoughts and calculations. | Offloads technical complexity from the main chat history to keep the conversation clean. |
 | Context Pinning | Locks vital information (like system instructions or core user preferences) so they are never discarded by trimming. | Ensures the agent never forgets its primary persona or mission. |
 
+## Long-Term Memory (LTM) Strategies for AI Agents
+
+| Strategy | Mechanism | Best For | Storage Type |
+|---|---|---|---|
+| Vector RAG | Text is embedded into numerical vectors; retrieved based on mathematical "closeness" to a query. | Fuzzy matching, semantic search, and general knowledge retrieval. | Vector DB (Pinecone, Chroma) |
+| Knowledge Graphs | Maps data as nodes (entities) and edges (relationships), e.g., "User" -> "owns" -> "Macbook." | Relational reasoning, factual rigor, and multi-hop questions (e.g., "Who approved X's budget?"). | Graph DB (Neo4j, FalkorDB) |
+| Entity Extraction | LLM extracts specific facts (names, dates, preferences) into structured tables. | Personalization and fixed attributes (e.g., "The user is allergic to peanuts"). | SQL / NoSQL (Postgres, Redis) |
+| Incremental Summary | Periodically condenses old interaction logs into a running "narrative" or profile. | Long-term context without keeping every message word-for-word. | Text / Markdown files |
+| Reflection / Consolidation | A background loop where the agent reviews its own logs to extract "learnings" or success patterns. | Continuous improvement and self-correction (e.g., "Method A failed twice; use Method B next time"). | AgentFS / Specialized DB |
+| Episodic Memory | Stores specific past events as discrete "episodes" with timestamps. | Temporal reasoning and recalling "What exactly happened last Tuesday?" | Structured Logs / Metadata |
