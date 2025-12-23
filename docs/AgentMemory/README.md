@@ -53,3 +53,17 @@
 | Incremental Summary | Periodically condenses old interaction logs into a running "narrative" or profile. | Long-term context without keeping every message word-for-word. | Text / Markdown files |
 | Reflection / Consolidation | A background loop where the agent reviews its own logs to extract "learnings" or success patterns. | Continuous improvement and self-correction (e.g., "Method A failed twice; use Method B next time"). | AgentFS / Specialized DB |
 | Episodic Memory | Stores specific past events as discrete "episodes" with timestamps. | Temporal reasoning and recalling "What exactly happened last Tuesday?" | Structured Logs / Metadata |
+
+## AI Agent Memory: Research Papers & Technical Documentation
+
+| Resource Title | Source / Authors | Format | Link |
+|---|---|---|---|
+| MemGPT: Towards LLMs as Operating Systems | Packer et al. (UC Berkeley) | ArXiv Paper | https://arxiv.org/abs/2310.08560 |
+| Generative Agents: Interactive Simulacra | Park et al. (Stanford/Google) | ArXiv Paper | https://arxiv.org/abs/2304.03442 |
+| Cognitive Architectures for Language Agents (CoALA) | Sumers et al. (Princeton) | ArXiv Paper | https://arxiv.org/abs/2309.02427 |
+| MemoryBank: Enhancing LLMs with Long-Term Memory | Zhong et al. | ArXiv Paper | https://arxiv.org/abs/2305.10250 |
+| AgentFS: The Missing Abstraction | Turso | White Paper | https://turso.tech/blog/agentfs-the-missing-abstraction-for-the-agent-ic-world |
+| The Mem0 Memory Layer Architecture | Mem0.ai | Technical Blog | https://docs.mem0.ai/overview |
+| Graphiti: Temporal Knowledge Graphs | Zep | GitHub Docs | https://github.com/getzep/graphiti |
+| LangMem: Long-term Learning Specs | LangChain | Technical Blog | https://blog.langchain.dev/langmem/ |
+| Awesome-LLM-Memory (Curated List) | GitHub Community | Repo | https://github.com/mshumer/Awesome-LLM-Memory |
