@@ -32,3 +32,14 @@
 | Vertex Memory | Google | Managed Bank | Google Cloud | Native "evolving" memory for the Gemini ecosystem. |
 | Foundry Memory | Azure | Managed State | Microsoft Cloud | Enterprise-grade state management within Azure OpenAI. |
 
+## Techniques
+
+| Technique | Logic | Primary Benefit |
+|---|---|---|
+| Sliding Window | Retains only a fixed number of the most recent messages, discarding the oldest once the limit is reached. | Prevents "out of memory" errors and maintains low latency. |
+| Token Trimming | Dynamically calculates and removes the minimum number of tokens from the start of the history to fit the model's limit. | Maximizes the use of the available context window without crashing. |
+| Recursive Summarization | Periodically condenses older parts of the conversation into a short paragraph while keeping the recent messages in full. | Preserves long-term narrative context while saving significant token space. |
+| Message Selection | Uses a "supervisor" model to retrieve only the past messages that are relevant to the current user query. | Highly efficient for complex, non-linear tasks where only specific historical facts matter. |
+| Scratchpad / Working Memory | Provides a dedicated space (like a file or hidden block) for the agent to store intermediate thoughts and calculations. | Offloads technical complexity from the main chat history to keep the conversation clean. |
+| Context Pinning | Locks vital information (like system instructions or core user preferences) so they are never discarded by trimming. | Ensures the agent never forgets its primary persona or mission. |
+
