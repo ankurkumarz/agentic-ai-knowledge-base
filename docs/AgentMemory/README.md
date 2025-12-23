@@ -43,7 +43,7 @@
 | Scratchpad / Working Memory | Provides a dedicated space (like a file or hidden block) for the agent to store intermediate thoughts and calculations. | Offloads technical complexity from the main chat history to keep the conversation clean. |
 | Context Pinning | Locks vital information (like system instructions or core user preferences) so they are never discarded by trimming. | Ensures the agent never forgets its primary persona or mission. |
 
-## Long-Term Memory (LTM) Strategies for AI Agents
+## Long-Term Memory (LTM) Strategies
 
 | Strategy | Mechanism | Best For | Storage Type |
 |---|---|---|---|
