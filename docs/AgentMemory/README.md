@@ -27,6 +27,8 @@ Management Techniques in 2025
  * Implicit Management: A separate, smaller LLM monitors the conversation in the background, extracts key insights, and updates the memory database automatically.
  * Just-In-Time (JIT) Context: Instead of giving the agent a massive prompt, the agent uses tools to "lookup" what it needs (e.g., searching its own AgentFS files) only when a question requires it.
 
+![Memory Architecture](https://i.postimg.cc/bJcvKDqv/IMG-2692.png)
+
 ## Short-term Memory
 
 | Category | Solution / Technique | Memory Philosophy | Best For |
