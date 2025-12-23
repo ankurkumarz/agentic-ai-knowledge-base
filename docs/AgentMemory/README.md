@@ -1,5 +1,14 @@
 ## Short-term Memory
 
+| Category | Solution / Technique | Memory Philosophy | Best For |
+|---|---|---|---|
+| Frameworks | LangGraph Checkpoints | Stateful Threads | Saving the exact "snapshot" of a multi-step workflow. |
+| Frameworks | LangChain Window | Sliding Buffer | Keeping only the last N interactions to save tokens. |
+| Frameworks | Letta (MemGPT) | Virtual Context | Dynamically swapping info in/out of the context window. |
+| In-Memory | Redis / Upstash | Ephemeral Cache | Low-latency session storage for high-speed chat apps. |
+| Managed | OpenAI Threads | Stateful API | Hands-off management of current conversation history. |
+| Technique | Summarization | Recursive Compression | Condensing old messages into a brief "recap" to save space. |
+| Technique | Scratchpad | Working Draft | Agent-written notes used only for the current task logic. |
 
 ## Long-term Memory
 
