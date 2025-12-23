@@ -41,3 +41,6 @@ flowchart LR
 - [Agent Protocol](https://blog.langchain.dev/agent-protocol-interoperability-for-llm-agents/): a standard way for agents to communicate by LangChain
 - [Agent Protocol](https://github.com/langchain-ai/agent-protocol): a common interface for agent communication. This standardizes how agents (LangGraph or otherwise) can interact.
 
+## Emerging Standards 
+
+- [OpenSpecs](https://openspec.dev/): Spec-driven development, plans over multiple sessions, spec's living in the codebase, universal planning across multiple coding agents
