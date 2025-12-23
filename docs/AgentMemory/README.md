@@ -85,7 +85,7 @@ Management Techniques in 2025
 | Reflection / Consolidation | A background loop where the agent reviews its own logs to extract "learnings" or success patterns. | Continuous improvement and self-correction (e.g., "Method A failed twice; use Method B next time"). | AgentFS / Specialized DB |
 | Episodic Memory | Stores specific past events as discrete "episodes" with timestamps. | Temporal reasoning and recalling "What exactly happened last Tuesday?" | Structured Logs / Metadata |
 
-## Research Papers & Technical Documentation
+## Research Papers & Technical White Papers
 
 | Resource Title | Source / Authors | Format | Link |
 |---|---|---|---|
