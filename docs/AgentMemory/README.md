@@ -29,7 +29,7 @@ Management Techniques in 2025
 
 ![Memory Architecture](https://i.postimg.cc/bJcvKDqv/IMG-2692.png)
 
-## Short-term Memory
+## Short-term Memory Solutions
 
 | Category | Solution / Technique | Memory Philosophy | Best For |
 |---|---|---|---|
@@ -41,7 +41,7 @@ Management Techniques in 2025
 | Technique | Summarization | Recursive Compression | Condensing old messages into a brief "recap" to save space. |
 | Technique | Scratchpad | Working Draft | Agent-written notes used only for the current task logic. |
 
-## Long-term Memory
+## Long-term Memory Solutions
 
 - [Mem0](https://mem0.ai/):  a universal, self-improving memory layer that semantically extracts and stores user preferences and past interaction facts across sessions to provide highly personalized AI experiences.
 - [Zep](https://www.getzep.com/): a context engineering platform that uses a temporal knowledge graph to help AI agents remember, summarize, and retrieve relevant facts and conversation history across long-term user sessions.
