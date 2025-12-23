@@ -8,7 +8,9 @@ Core Concepts of Memory Management
 | Paging / Swapping | Moving data between the "Active Context" and "Long-term Storage" as needed. | RAM vs. Hard Drive. |
 | Context Engineering | Curating the prompt dynamically so only the most relevant 1% of data is sent to the LLM. | A desk where you only keep the files for your current task. |
 | Reflection | A background process where the agent "thinks" about past logs to update its own memory. | Journaling before bed to remember lessons learned. |
-The Three Functional Tiers
+
+## The Three Functional Tiers
+
  * Short-Term (Working Memory):
    * Logic: Managed via Checkpointers or Sliding Windows.
    * Goal: Maintain the flow of the current conversation thread.
@@ -24,7 +26,6 @@ Management Techniques in 2025
  * Explicit Management: The agent uses a tool (e.g., save_memory("user prefers dark mode")) to consciously store a fact.
  * Implicit Management: A separate, smaller LLM monitors the conversation in the background, extracts key insights, and updates the memory database automatically.
  * Just-In-Time (JIT) Context: Instead of giving the agent a massive prompt, the agent uses tools to "lookup" what it needs (e.g., searching its own AgentFS files) only when a question requires it.
-
 
 ## Short-term Memory
 
