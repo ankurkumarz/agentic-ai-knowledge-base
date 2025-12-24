@@ -12,6 +12,7 @@ Core Concepts of Memory Management
 ## The Three Functional Tiers
 
  * Short-Term (Working Memory):
+   * Purpose: Stores contextual information generated during the current task
    * Logic: Managed via Checkpointers or Sliding Windows.
    * Goal: Maintain the flow of the current conversation thread.
    * Cleanup: When it gets too full, it is either summarized or truncated.
