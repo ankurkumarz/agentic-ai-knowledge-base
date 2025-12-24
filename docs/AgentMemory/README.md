@@ -20,7 +20,7 @@ Core Concepts of Memory Management
    * Logic: A searchable log of specific events, often stored in Vector DBs or AgentFS.
    * Goal: Answering "What did we do last time?" or "Why did that tool fail yesterday?"
    * Storage: High-fidelity logs with timestamps and outcome metadata.
- * Long/term or Semantic Memory (Knowledge):
+ * Long-term or Semantic Memory (Knowledge):
    * Purpose: Persists across sessions to accumulate reusable knowledge and experience
    * Logic: Abstracted facts and rules (e.g., "The user hates Python"). Often stored in Knowledge Graphs.
    * Goal: Provide a consistent "personality" and set of core beliefs that don't change based on the current thread.
