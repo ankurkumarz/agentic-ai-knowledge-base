@@ -14,3 +14,7 @@
 ## Claude Agent SDK
 
 - [Quickstart Projects](https://github.com/anthropics/claude-quickstarts): Sample apps such as Customer Support Agent, Financial Data Analyst
+
+## Learning
+
+- [Anthropic Academy](https://www.anthropic.com/learn)
