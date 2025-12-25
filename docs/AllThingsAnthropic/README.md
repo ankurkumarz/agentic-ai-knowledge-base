@@ -7,6 +7,7 @@
 
 ### Key Plugins
 
+- [Anthropic Official Plugins Directory](https://github.com/anthropics/claude-plugins-official)
 - [Plugin Marketplaces](https://claudemarketplaces.com/)
 - [Claude Mem](https://github.com/thedotmack/claude-mem/): Automated Memory management for Claude Code
 
