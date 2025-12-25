@@ -7,6 +7,7 @@
 
 ### Key Plugins
 
+- [Plugin Marketplaces](https://claudemarketplaces.com/)
 - [Claude Mem](https://github.com/thedotmack/claude-mem/): Automated Memory management for Claude Code
 
 ## Claude Agent SDK
