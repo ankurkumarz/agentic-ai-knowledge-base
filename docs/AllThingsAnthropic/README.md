@@ -8,3 +8,7 @@
 ### Key Plugins
 
 - [Claude Mem](https://github.com/thedotmack/claude-mem/): Automated Memory management for Claude Code
+
+## Claude Agent SDK
+
+- [Quickstart Projects](https://github.com/anthropics/claude-quickstarts): Sample apps such as Customer Support Agent, Financial Data Analyst
