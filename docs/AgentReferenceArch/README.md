@@ -1,3 +1,9 @@
+## Key Considerations
+
+- **Orchestration** through standardized inter-agent protocols (e.g., MCP; others will emerge), memory management, routing, evaluation, recovery.  
+- **Capabilities** through tools, tool registries, and capability contracts allow GenAI based agents that are predictive (non-deterministic) by nature, to utilize deterministic capabilities through tools linked to mature hardened deterministic enterprise systems helping to reduce errors (e.g. hallucinations) that could occur within a pure GenAI based workflow.
+- **Governance** through identity management with enforced least privilege, observability, enforceable policies, human-in-the-loop (HITL), lineage with fall-backs to deterministic paths all play a vital role in not only providing confidence in what is achieved, but also in how it is being achieved. 
+(Source: [IDC](https://www.idc.com/resource-center/blog/the-agentic-archetype/))
 
 ## Stanford Research
 
