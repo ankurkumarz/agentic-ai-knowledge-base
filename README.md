@@ -11,6 +11,7 @@ A comprehensive, structured knowledge repository consolidating cutting-edge rese
 <p align="center">
 <a href="https://opensource.org/licenses/Apache"><img src="https://img.shields.io/badge/license-Apache--2.0-green"></a>
 </p>
+
 Curated & Organized by **Ankur Kumar** — Agentic AI Researcher & Engineer
 
 <p align="center">
