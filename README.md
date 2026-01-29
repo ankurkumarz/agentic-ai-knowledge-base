@@ -13,7 +13,7 @@ A comprehensive, structured knowledge repository consolidating cutting-edge rese
 </p>
 
 <p align="center">
-Curated & Organized by **Ankur Kumar** — Agentic AI Researcher & Engineer
+Curated & Organized by <b>Ankur Kumar</b> — Agentic AI Researcher & Engineer
 </p>
 
 <p align="center">
