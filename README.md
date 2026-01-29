@@ -12,6 +12,11 @@ A comprehensive, structured knowledge repository consolidating cutting-edge rese
 <a href="https://opensource.org/licenses/Apache"><img src="https://img.shields.io/badge/license-Apache--2.0-green"></a>
 </p>
 
+Curated & Organized by **[Ankur Kumar](https://www.linkedin.com/in/ankurkumarz/)**
+
+<a href="https://twitter.com/ankurkumarz?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @ankurkumarz</a>
+<script async src="https://platform.twitter.com/widgets.js"></script>
+
 ## Executive Overview
 
 The **Agentic AI Knowledge Base** serves as a consolidated knowledge hub designed to support the full lifecycle of agentic AI development—from foundational concepts and architectural patterns to production deployment, security, and operational excellence. This repository brings together curated knowledge articles, architecture patterns, white papers, research insights, and industry best practices spanning the entire agentic AI ecosystem.
