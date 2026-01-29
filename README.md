@@ -1,6 +1,6 @@
 # Agentic AI Knowledge Base
 
-![Agentic AI](docs/Foundations/agentic-header.png)
+![Agentic AI](docs/assets/images/agentic-header.png)
 
 A comprehensive, structured knowledge repository consolidating cutting-edge research, patterns, frameworks, and best practices for building, deploying, and operating agentic AI systems at scale.
 
