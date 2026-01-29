@@ -11,11 +11,23 @@ A comprehensive, structured knowledge repository consolidating cutting-edge rese
 <p align="center">
 <a href="https://opensource.org/licenses/Apache"><img src="https://img.shields.io/badge/license-Apache--2.0-green"></a>
 </p>
+Curated & Organized by **Ankur Kumar** — Agentic AI Researcher & Engineer
 
-Curated & Organized by **[Ankur Kumar](https://www.linkedin.com/in/ankurkumarz/)**
-
-<a href="https://twitter.com/ankurkumarz?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @ankurkumarz</a>
-<script async src="https://platform.twitter.com/widgets.js"></script>
+<p align="center">
+	<a href="https://www.linkedin.com/in/ankurkumarz/" aria-label="LinkedIn" title="LinkedIn">
+		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" style="vertical-align:middle">
+			<path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v13h-4zM8.5 8h3.84v1.78h.05c.54-1.02 1.86-2.1 3.83-2.1 4.1 0 4.86 2.7 4.86 6.21V21h-4V14.7c0-1.49-.03-3.4-2.07-3.4-2.07 0-2.38 1.61-2.38 3.3V21h-4z"/>
+		</svg>
+	</a>
+	&nbsp;
+	<a href="https://twitter.com/ankurkumarz" aria-label="Twitter" title="Twitter">
+		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1DA1F2" style="vertical-align:middle">
+			<path d="M23.95 4.57a9.83 9.83 0 0 1-2.83.78 4.93 4.93 0 0 0 2.16-2.72 9.86 9.86 0 0 1-3.12 1.19 4.92 4.92 0 0 0-8.38 4.48A13.96 13.96 0 0 1 1.64 3.16a4.92 4.92 0 0 0 1.52 6.57 4.87 4.87 0 0 1-2.23-.62v.06a4.92 4.92 0 0 0 3.95 4.82 4.9 4.9 0 0 1-2.22.08 4.92 4.92 0 0 0 4.6 3.42A9.87 9.87 0 0 1 .96 19.54a13.93 13.93 0 0 0 7.55 2.21c9.06 0 14.02-7.5 14.02-14.02l-.02-.64A9.98 9.98 0 0 0 24 4.59z"/>
+		</svg>
+	</a>
+	&nbsp;
+	<span style="vertical-align:middle">Connect: <a href="https://www.linkedin.com/in/ankurkumarz/">LinkedIn</a> · <a href="https://twitter.com/ankurkumarz">Twitter</a></span>
+</p>
 
 ## Executive Overview
 
