@@ -9,8 +9,8 @@ from pathlib import Path
 
 def main():
     """Run the property-based tests for MkDocs configuration."""
-    project_root = Path(__file__).parent
-    test_file = project_root / "tests" / "test_mkdocs_config.py"
+    project_root = Path(__file__).parent.parent
+    test_file = project_root / "tests" / "test_section_completeness.py"
     
     if not test_file.exists():
         print(f"Error: Test file not found at {test_file}")

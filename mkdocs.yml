@@ -8,58 +8,139 @@ theme:
   palette:
     primary: indigo
   features:
-    - navigation.instant
+    - navigation.top
     - search.highlight
+  custom_dir: docs/assets
+  extra_css:
+    - stylesheets/extra.css
 
 nav:
   - Home: 'index.md'
-  - Foundations: 'Foundations/Readme.md'
-  - Agentic Frameworks: 'AgenticFrameworks/README.md'
-  - Agent Platforms: 'AgentPlatforms/README.md'
-  - Agentic Tech Stack: 'AgenticTechStack/README.md'
-  - Context Engineering: 'ContextEngineeeing/README.md'
-  - Agent Memory: 'AgentMemory/README.md'
-  - Prompt Engineering: 'PromptEngineering/README.md'
-  - Agent Code Sandbox: 'CodeSandbox/README.md'
-  - Design Patterns: 'DesignPatterns/Readme.md'
-  - Agentic Maturity Models: 'MaturityModels/README.md'
-  - Retrieval Approaches: 'RetrievalApproaches/README.md'
-  - MCP: 'MCP/README.md'
-  - Reference Architecture: 'ReferenceArchitecture/README.md'
-  - Code Repositories: 'CodeExamples/README.md'
-  - Best Practices: 'BestPractices/README.md'
-  - Dev/Coding Agents: 'DevAgents/Readme.md'
-  - Research Agents: 'ResearchAgents/Readme.md'
-  - Web Search & Crawl: 'WebSearchCrawl/README.md'
-  - Standards: 'Standards/README.md'
-  - Research: 'Research/README.md'
-  - Benchmarks: 'Benchmarks/Readme.md'
-  - LLMs: 'LLM/README.md'
-  - Evaluation Frameworks: 'EvaluationFrameworks/Readme.md'  
-  - SaaS Platforms: 'SaaSPlatforms/README.md'
-  - Workflow Builders: 'WorkflowBuilders/README.md'
-  - Observability: 'Observability/Readme.md'
-  - SampleApps: 'SampleApps/Readme.md'
-  - Security Frameworks: 'SecurityFrameworks/Readme.md'
-  - Marketplace: 'Marketplace/Readme.md'
-  - LLM/AI Gateway: 'LLMGateway/Readme.md'
-  - Caching: 'Caching/README.md'
-  - Cloud Hosting: 'CloudHosting/README.md'
-  - RAG: 'RAG/Readme.md'
-  - Newsletter & Blogs: 'NewsletterBlogs/README.md'
-  - Courses: 'Courses/README.md'
-  - All Things Google: 'AllThingsGoogle/README.md'
-  - All Things AWS: 'AllThingsAWS/README.md'
-  - All Things Microsoft: 'AllThingsMicrosoft/README.md'
-  - All Things Anthropic: 'AllThingsAnthropic/README.md'
-  - Gartner: 'Gartner/README.md'
+  - 1. Introduction:
+    - 1.1 Introduction Overview: 'Introduction/README.md'
+    - 1.2 Disclaimer and Usage Guidelines: 'Introduction/disclaimer.md'
+  - 2. Concepts:
+    - 2.1 Concepts Overview: 'Concepts/README.md'
+    - 2.2 Agent Definition: 'Concepts/agent-definition.md'
+    - 2.3 Agent Types: 'Concepts/agent-types.md'
+    - 2.4 Foundations: 'Concepts/agent-foundational.md'
+    - 2.5 References: 'Concepts/references.md'
+  - 3. Architecture and Design Patterns:
+    - 3.1 Agentic Architecture Components Selection: 'Architecture/components-selection.md'
+    - 3.2 Agentic Design Pattern Selection:
+      - 3.2.1 Agentic Design Patterns by OpenAI: 'DesignPatterns/openai-patterns.md'
+    - 3.3 Multi-agent System: 'Architecture/multi-agent-system.md'
+    - 3.4 12-Factor Agents: 'Architecture/12-factor-agents.md'
+    - 3.5 Gartner LLM-based AI Design Patterns: 'DesignPatterns/gartner-patterns.md'
+    - 3.6 Miscellaneous: 'DesignPatterns/Readme.md'
+  - 4. Agent Development Frameworks:
+    - 4.1 LangChain: 'AgenticFrameworks/langchain.md'
+    - 4.2 LangGraph: 'AgenticFrameworks/langgraph.md'
+    - 4.3 Google ADK: 'AgenticFrameworks/google-adk.md'
+    - 4.4 AWS Strands Agents: 'AgenticFrameworks/aws-strands.md'
+    - 4.5 Microsoft Agent Framework: 'AgenticFrameworks/microsoft-framework.md'
+    - 4.6 Autogen: 'AgenticFrameworks/autogen.md'
+    - 4.7 Semantic Kernel: 'AgenticFrameworks/semantic-kernel.md'
+    - 4.8 LlamaIndex: 'AgenticFrameworks/llamaindex.md'
+    - 4.9 AutoGPT: 'AgenticFrameworks/autogpt.md'
+    - 4.10 CrewAI: 'AgenticFrameworks/crewai.md'
+    - 4.11 PydanticAI: 'AgenticFrameworks/pydantic-ai.md'
+    - 4.12 Spring AI: 'AgenticFrameworks/spring-ai.md'
+    - 4.13 Haystack: 'AgenticFrameworks/haystack.md'
+    - 4.14 Other Frameworks: 'AgenticFrameworks/README.md'
+  - 5. Agent Technology Stack:
+    - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
+    - 5.2 Agentic AI Platforms:
+      - 5.2.1 Google Vertex AI Agent Builder: 'AgentPlatforms/google-vertex.md'
+      - 5.2.2 AWS AgentCore: 'AgentPlatforms/aws-agentcore.md'
+      - 5.2.3 Microsoft Azure AI Agent Service: 'AgentPlatforms/microsoft-azure.md'
+      - 5.2.4 Other SaaS Platforms: 'AgentPlatforms/saas-platforms.md'
+    - 5.3 Workflow Engine/Frameworks:
+      - 5.3.1 Open Source (MIT or Apache): 'WorkflowBuilders/open-source.md'
+      - 5.3.2 Self-hosted & Limited Open Source: 'WorkflowBuilders/self-hosted.md'
+      - 5.3.3 Workflow Orchestration: 'WorkflowBuilders/orchestration.md'
+      - 5.3.4 Business Process: 'WorkflowBuilders/business-process.md'
+      - 5.3.5 SaaS (No-code) Solutions: 'WorkflowBuilders/README.md'
+    - 5.4 Popular AI Agents: 'AgentPlatforms/README.md'
+  - 6. Agentic AI Industry Standards:
+    - 6.1 Agentic AI Foundation: 'Standards/agentic-ai-foundation.md'
+    - 6.2 Model Context Protocol: 'Standards/mcp.md'
+    - 6.3 Agent2Agent (A2A) Protocol: 'Standards/agent2agent.md'
+    - 6.4 AGENTS.md: 'Standards/agents-md.md'
+    - 6.5 OpenSpec: 'Standards/openspec.md'
+    - 6.6 AG-UI: 'Standards/README.md'
+  - 7. Agentic AI Reference Architecture:
+    - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
+    - 7.2 AI Assistant Reference Architecture: 'ReferenceArchitecture/ai-assistant-architecture.md'
+    - 7.3 AI Assistant: 'ReferenceArchitecture/ai-assistant.md'
+    - 7.4 AI Automation:
+      - 7.4.1 AI Automation Overview: 'ReferenceArchitecture/ai-automation.md'
+      - 7.4.2 LangManus – AI Automation Framework: 'ReferenceArchitecture/langmanus.md'
+    - 7.5 Self-learning Agents:
+      - 7.5.1 Self-Learning Agents Overview: 'ReferenceArchitecture/self-learning-agents.md'
+      - 7.5.2 Agent0 Series - Self-Evolving Agents from Zero Data: 'ReferenceArchitecture/agent0.md'
+    - 7.6 RAG Reference Architecture: 'ReferenceArchitecture/rag-architecture.md'
+    - 7.7 Specialized Blueprints: 'ReferenceArchitecture/specialized-blueprints.md'
+    - 7.8 RAG Implementation: 'RAG/Readme.md'
+  - 8. Context Engineering:
+    - 8.1 Key Challenges in Context Management: 'ContextEngineering/challenges.md'
+    - 8.2 Common Strategies for Context Management: 'ContextEngineering/strategies.md'
+    - 8.3 Prompt Engineering: 'PromptEngineering/README.md'
+    - 8.4 Context Implementation References:
+      - 8.4.1 Manus: 'ContextEngineering/manus.md'
+      - 8.4.2 Anthropic: 'ContextEngineering/anthropic.md'
+      - 8.4.3 LangGraph: 'ContextEngineering/langgraph.md'
+      - 8.4.4 Devin (Cognition): 'ContextEngineering/devin.md'
+      - 8.4.5 Miscellaneous: 'ContextEngineering/README.md'
+  - 9. Agent Memory Management:
+    - 9.1 The Three Functional Tiers: 'AgentMemory/functional-tiers.md'
+    - 9.2 Long-Term Memory (LTM) Strategies: 'AgentMemory/ltm-strategies.md'
+    - 9.3 Research Papers & Technical White Papers: 'AgentMemory/research-papers.md'
+    - 9.4 Short-term Memory Management Solutions: 'AgentMemory/short-term.md'
+    - 9.5 Long-term Memory Management Solutions: 'AgentMemory/README.md'
+  - 10. Agentic AI Evaluation:
+    - 10.1 LLM Evaluation Frameworks: 'EvaluationFrameworks/llm-frameworks.md'
+    - 10.2 Agent Evaluation Benchmarks: 'Benchmarks/agent-benchmarks.md'
+    - 10.3 LLM Evaluation Benchmarks: 'Benchmarks/llm-benchmarks.md'
+    - 10.4 Agent Evaluation Platforms: 'EvaluationFrameworks/platforms.md'
+    - 10.5 Evaluation Reference Frameworks: 'EvaluationFrameworks/Readme.md'
+    - 10.6 Reference Documentation: 'Benchmarks/Readme.md'
+  - 11. Agentic AI Security:
+    - 11.1 Security Standards:
+      - 11.1.1 NIST AI RMF (Risk Management Framework): 'SecurityFrameworks/nist-ai-rmf.md'
+    - 11.2 Google Perspective:
+      - 11.2.1 SAIF Framework: 'SecurityFrameworks/google-saif.md'
+    - 11.3 AWS Perspective: 'SecurityFrameworks/Readme.md'
+  - 12. Agent Observability:
+    - 12.1 Goals & Objectives: 'Observability/goals.md'
+    - 12.2 Observability Solutions: 'Observability/solutions.md'
+    - 12.3 Best Practices and Guidelines: 'Observability/Readme.md'
+  - 13. Agentic AI Operations (AgentOps):
+    - 13.1 AgentOps Overview: 'AgentOps/README.md'
+    - 13.2 Google Cloud Perspective:
+      - 13.2.1 GenOps – Evolution of MLOps for GenAI: 'AgentOps/genops.md'
+  - 14. Agentic AI Maturity Models:
+    - 14.1 Gartner's Perspective: 'MaturityModels/gartner.md'
+    - 14.2 AWS's Perspective:
+      - 14.2.1 Maturity Model for Generative AI: 'MaturityModels/aws-genai.md'
+      - 14.2.2 AWS Maturity Model: 'MaturityModels/aws.md'
+    - 14.3 Google's Perspective: 'MaturityModels/google.md'
+    - 14.4 IDC's Perspective: 'MaturityModels/idc.md'
+    - 14.5 Maturity Models Overview: 'MaturityModels/README.md'
+  - 15. Agents Marketplace:
+    - 15.1 AWS AI Agents Marketplace: 'Marketplace/aws-marketplace.md'
+    - 15.2 AgentOps Marketplace: 'Marketplace/agentops.md'
+    - 15.3 Miscellaneous: 'Marketplace/Readme.md'
+  - 16. AI Agents Best Practices:
+    - 16.0 Overview: 'BestPractices/README.md'
+    - 16.1 Anthropic: 'AllThingsAnthropic/README.md'
+    - 16.2 Google: 'AllThingsGoogle/README.md'
+    - 16.3 Microsoft: 'AllThingsMicrosoft/README.md'
+    - 16.4 OpenAI: 'AllThingsOpenAI/README.md'
 plugins:
   - search
   - mermaid2
-  - markdown-filter:
-      levels: [1, 2]
   - macros
-  - awesome-pages
   - glightbox
 
 markdown_extensions:

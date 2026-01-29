@@ -352,6 +352,11 @@ Source: Spring AI Documentation
 * **[IBM Granite BeeAI](https://iambee.ai/)**: Build production-ready AI agents in both Python and Typescript
 * **[MetaGPT](https://github.com/geekan/MetaGPT)**: The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming
 
+## Additional Resources
+
+### Large Foundation Models for Enterprises
+* **[Liquid AI](https://www.liquid.ai/)**: LFMs (Liquid Foundation Models) for Enterprises
+
 ## Comparative Analysis
 
 | Key Attributes | LangChain | LangGraph | Autogen | Semantic Kernel | LlamaIndex | AutoGPT | CrewAI |

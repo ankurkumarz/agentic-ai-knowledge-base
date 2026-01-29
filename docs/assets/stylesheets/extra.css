@@ -1,0 +1,13 @@
+/* Hide the right-side table of contents */
+.md-sidebar--secondary {
+    display: none !important;
+}
+
+/* Adjust main content to use full width when right sidebar is hidden */
+.md-main__inner {
+    margin-right: 0 !important;
+}
+
+.md-content {
+    margin-right: 0 !important;
+}
