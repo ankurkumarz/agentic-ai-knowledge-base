@@ -54,6 +54,7 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 
 ### Popular LTM Solutions
 - **Mem0**: Personalized AI memory layer
+- **[Supermemory](https://supermemory.ai/)**: Built by a young entrepreneur and software engineer. 
 - **LangChain Memory**: Conversation and document memory
 - **Pinecone**: Vector database for semantic search
 - **Neo4j**: Graph database for relationship modeling

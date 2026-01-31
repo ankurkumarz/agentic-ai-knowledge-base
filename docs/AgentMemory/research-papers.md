@@ -68,6 +68,9 @@ This section contains key research papers and technical white papers related to 
   - Memory abstractions and interfaces
   - Integration patterns with language models
 
+- **[MemGPT](https://arxiv.org/abs/2310.08560)**: OS-inspired multi-level memory architecture
+![MemGPT Arch](../assets/images/memgpt-os.jpg)
+
 ## Emerging Research Areas
 
 ### Neuromorphic Memory
