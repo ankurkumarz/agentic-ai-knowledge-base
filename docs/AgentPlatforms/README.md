@@ -6,6 +6,9 @@ The AI agent ecosystem has exploded with specialized agents designed for specifi
 
 ## Agent Categories
 
+### Personal AI Agents
+Agents providing personalizes assistance
+
 ### Coding and Software Development Agents
 Specialized agents focused on software development tasks, code generation, and development workflow automation.
 
@@ -33,6 +36,11 @@ This section covers the following agent categories:
 - **Open Source Agents**: Community-developed agent implementations
 
 Each category provides detailed analysis of popular implementations, their capabilities, and use cases.
+
+### Personal AI Agents
+
+- [OpenClaw](https://openclaw.ai/): Evolutionary agentic platform proving the AI agents capabilities
+- Alternatives: TinyClaw, ZeroClaw, PicoClaw, NanoClaw, IronClaw, Nanobot
 
 ## Coding/Software Development Agents
 

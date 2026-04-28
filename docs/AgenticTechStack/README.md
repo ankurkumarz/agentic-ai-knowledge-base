@@ -77,7 +77,11 @@ The Agent Technology Stack closely integrates with:
 - **Section 11**: Security (platform security considerations)
 - **Section 12**: Observability (monitoring and operations)
 
-## See Also
+## Search and Vector Databases
+
+- [PageIndex AI](https://pageindex.ai/): vectorless, reasoning-based retrieval framework
+
+####See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Development tools and frameworks
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Cloud and SaaS platform options
