@@ -342,12 +342,14 @@ Source: Spring AI Documentation
 * **MetaGPT**: Research-based multi-agent framework promoting meta-programming
 * **Flowise**: Open-source drag-and-drop UI for agent building
 * **Langflow**: DataStax-acquired framework for interactive GenAI apps
-* **OpenAGI**: Simple framework for human-like agents
-* **Camel-AI.org**: Research-inspired customizable multi-agent framework
+* **[OpenAGI](https://openagi.aiplanet.com/)**: Simple framework, built by AI Planet, for building human-like agents
+* **[Camel-AI.org](http://camel-ai.org/)**: Research-inspired customizable multi-agent framework inspired by the [CAMEL research paper](https://arxiv.org/abs/2303.17760)
 * **PraisonAI**: a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex tasks.
 * **[BroadAI](https://broad-ai.github.io)**: A Multi-Agent Framework for building powerful & intelligent AI Systems
 * **[Vellum](https://www.vellum.ai/)**: A platform with products for Orchestration, Evaluation, Prompting, Retrieval, and Deployment - as a GUI tool for building and testing complex workflows.
 * **[Rivet](https://rivet.ironcladapp.com/)**: a drag and drop GUI LLM workflow builder
+* **Solace Agent Mesh**: Event-driven multi-agent framework built on the Solace messaging platform
+* **Akka Agent Platform**: Distributed agent platform built on the Akka actor model
 * **[Swarms AI](https://www.swarms.ai/)**: Choose from multiple swarm architectures to build sophisticated Enterprise AI systems
 * **[IBM Granite BeeAI](https://iambee.ai/)**: Build production-ready AI agents in both Python and Typescript
 * **[MetaGPT](https://github.com/geekan/MetaGPT)**: The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming

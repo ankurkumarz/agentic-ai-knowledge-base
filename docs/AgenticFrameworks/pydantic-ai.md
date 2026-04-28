@@ -2,77 +2,43 @@
 
 ## Overview
 
-PydanticAI is a Python framework for building type-safe AI agents with Pydantic models.
+[PydanticAI](https://ai.pydantic.dev/) is built by the Pydantic team to bring that FastAPI feeling to GenAI app development. It integrates with [Pydantic Logfire](https://pydantic.dev/logfire) for GenAI application observability along with support for multiple LLMs and ecosystem support.
+
+## High-level Architecture
+
+![PydanticAI Components](../assets/images/frameworks-pydantic-ai-architecture.png)
+
+*PydanticAI Components*
 
 ## Key Features
 
-- Feature 1: Description of key capability
-- Feature 2: Description of another capability  
-- Feature 3: Description of additional functionality
-- Feature 4: Description of integration capabilities
+- **Pydantic approach**: Familiar, type-safe development experience aligned with the Pydantic ecosystem
+- **Model agnostic implementation**: Supports multiple LLMs without vendor lock-in
+- **Real-time observability**: Integration with Pydantic Logfire for monitoring and tracing
+- **Type-safety**: Strong typing throughout the framework for safer development
+- **Graph support**: Graph-based workflows via [Pydantic Graph](https://ai.pydantic.dev/graph/)
+- **Dependency injection**: Built-in DI for clean, testable agent code
+- **Simplicity**: Minimal abstractions, easy to learn and use
 
-## Architecture
+## Suitable for (Pros)
 
-### Core Components
-- **Component 1**: Primary functionality and purpose
-- **Component 2**: Supporting services and tools
-- **Component 3**: Integration and orchestration layer
-- **Component 4**: Monitoring and management capabilities
+- **Applications leveraging Pydantic and FastAPI approach** and looking for a simple framework aligned with associated enterprise technology stack
+- **Type-safe development**: Ideal for teams that prioritize strong typing and validation
+- **Simple scenarios**: Well-suited as the framework is still evolving
 
-## Use Cases
+## Where other frameworks flare better (Cons)
 
-### Primary Use Cases
-1. **Use Case 1**: Description of primary application
-2. **Use Case 2**: Description of secondary application
-3. **Use Case 3**: Description of specialized application
-
-### Implementation Examples
-- Example 1: Basic implementation scenario
-- Example 2: Advanced integration scenario
-- Example 3: Enterprise deployment scenario
-
-## Getting Started
-
-```python
-# Basic usage example
-from framework import Agent
-
-# Initialize agent
-agent = Agent(
-    name="example_agent",
-    config={"key": "value"}
-)
-
-# Execute task
-result = agent.execute("sample_task")
-```
-
-## Best Practices
-
-1. **Practice 1**: Description of recommended approach
-2. **Practice 2**: Description of optimization technique
-3. **Practice 3**: Description of security consideration
-4. **Practice 4**: Description of monitoring approach
-
-## Integration
-
-### Supported Integrations
-- Integration with popular frameworks
-- API connectivity options
-- Cloud platform support
-- Third-party tool compatibility
-
-### Configuration Examples
-- Basic configuration setup
-- Advanced configuration options
-- Environment-specific settings
-- Security configuration
+- **This framework is still in the early stages (beta)** and is expected to introduce many changes as it progresses
+- **Limited production testing**: Not yet widely battle-tested in large enterprise deployments
+- **Evolving ecosystem**: Smaller community and tooling compared to mature frameworks like LangChain
 
 ## Resources
 
-- Official Documentation: [Link to be added]
-- Community Resources: [Link to be added]
-- Examples and Tutorials: [Link to be added]
-- Support and Forums: [Link to be added]
+- **Official Documentation**: [PydanticAI](https://ai.pydantic.dev/)
+- **Pydantic Logfire**: [Observability platform](https://pydantic.dev/logfire)
+- **Pydantic Graph**: [Graph support](https://ai.pydantic.dev/graph/)
 
-*This section is under development. More detailed content will be added soon.*
+## See Also
+- [Agent Development Frameworks](README.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [LangChain](langchain.md)

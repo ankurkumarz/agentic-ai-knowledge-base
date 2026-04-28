@@ -71,19 +71,23 @@ The [Agent Quality whitepaper](https://www.kaggle.com/whitepaper-agent-quality) 
 - **Performance Testing**: Evaluating agent performance under various conditions
 
 ### Production Deployment
-The ["Prototype to Production" whitepaper](https://www.kaggle.com/whitepaper-prototype-to-production) covers:
+The ["Prototype to Production" whitepaper](https://www.kaggle.com/whitepaper-prototype-to-production) (November 2025, authors: Sokratis Kartakis et al.) provides the most comprehensive Google guidance on the "last mile" production gap. Its key insight: roughly 80% of the effort in taking an agent to production is spent on infrastructure, security, and validation — not on the agent's core intelligence.
 
-#### Deployment Strategies
-- **Gradual Rollout**: Phased deployment approaches for risk mitigation
-- **Infrastructure Planning**: Scalable infrastructure for production agents
-- **Monitoring Implementation**: Comprehensive monitoring and alerting systems
-- **Maintenance Procedures**: Ongoing maintenance and update procedures
+#### Core Framework: The AgentOps Lifecycle
+Four sequential phases:
+1. **Developer Inner Loop**: Rapid local prototyping
+2. **Pre-Production** (Evaluation-Gated Deployment): No agent reaches users without passing a comprehensive evaluation — behavioral quality, not just functional correctness. Three-phase CI/CD: pre-merge CI (fast checks + eval), staging CD (load/integration/dogfood), production CD (human sign-off, promote validated artifact)
+3. **Operations in Production** (Observe → Act → Evolve): Continuous loop — real-time observation, tactical response (circuit breakers, HITL), strategic evolution (production failures feed back to eval dataset and CI/CD)
+4. **Interoperability** (A2A + MCP): A2A for stateful cross-agent collaboration; MCP for stateless tool calls. Agent Cards (JSON) enable dynamic discovery.
 
-#### Production Considerations
-- **Scalability**: Designing agents for production-scale workloads
-- **Security**: Production-grade security implementations
-- **Compliance**: Regulatory compliance considerations
-- **Performance Optimization**: Optimizing agents for production performance
+#### Practical Reference Implementation
+The **Google Cloud Platform Agent Starter Pack** — a Python package providing production-ready agent templates with pre-built agents, automated CI/CD setup, Terraform deployment, Vertex AI evaluation integration, and built-in observability. A working reference for all concepts in the whitepaper.
+
+#### Key Production Patterns
+- **Evaluation as Quality Gate**: Two modes — manual pre-PR (flexibility) or automated in-pipeline gate (maturity). Evaluates full agent trajectory, not just final answer.
+- **Safe Rollout**: Canary (1%), blue-green (zero-downtime switch), A/B testing, feature flags. All require rigorous versioning of code + prompts + tool schemas + eval datasets.
+- **Security from Start**: Three-layer defense — System Instructions (constitution) → Guardrails/Filtering (enforcement) → Continuous Assurance (adaptive). Security response playbook: contain → triage → resolve.
+- **Registry Architectures**: Tool Registry (centralized tool catalog via MCP) and Agent Registry (agent discovery via AgentCards) — build only when ecosystem scale demands it.
 
 ## Technical Architecture Guidance
 

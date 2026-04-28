@@ -2,77 +2,117 @@
 
 ## Overview
 
-Comprehensive benchmarks for evaluating AI agent performance across various tasks and domains.
+Agent benchmarks evaluate AI systems on complex, multi-step tasks that require planning, tool use, and autonomous decision-making. Unlike LLM benchmarks that test knowledge and reasoning in isolation, agent benchmarks assess end-to-end task completion in realistic environments.
 
-## Key Features
+## General-Purpose Agent Benchmarks
 
-- Feature 1: Description of key capability
-- Feature 2: Description of another capability  
-- Feature 3: Description of additional functionality
-- Feature 4: Description of integration capabilities
+### GAIA
+**Resource**: [GAIA: HF Benchmarking General AI Agents](https://huggingface.co/gaia-benchmark)
 
-## Architecture
+GAIA (General AI Assistants) is a benchmark for evaluating general-purpose AI agents across diverse tasks requiring multi-step reasoning, tool use, and real-world knowledge. Tasks are designed to be simple for humans but challenging for AI systems, requiring web browsing, file processing, and multi-modal reasoning.
 
-### Core Components
-- **Component 1**: Primary functionality and purpose
-- **Component 2**: Supporting services and tools
-- **Component 3**: Integration and orchestration layer
-- **Component 4**: Monitoring and management capabilities
+**Key Characteristics**:
+- Three difficulty levels (Level 1, 2, 3)
+- Tasks require tool use (web search, code execution, file reading)
+- Human baseline: ~92% accuracy; top AI systems: ~50-70%
+- Hosted on Hugging Face with public leaderboard
 
-## Use Cases
+### Terminal Bench
+**Resource**: [Terminal Bench](https://www.tbench.ai/)
 
-### Primary Use Cases
-1. **Use Case 1**: Description of primary application
-2. **Use Case 2**: Description of secondary application
-3. **Use Case 3**: Description of specialized application
+A comprehensive benchmark specifically designed for AI agents operating in terminal/command-line environments. Tests agents on system administration tasks, file manipulation, process management, and shell scripting.
 
-### Implementation Examples
-- Example 1: Basic implementation scenario
-- Example 2: Advanced integration scenario
-- Example 3: Enterprise deployment scenario
+**Key Characteristics**:
+- Real terminal environment execution
+- Tasks range from basic file operations to complex system administration
+- Evaluates both correctness and efficiency of solutions
+- Relevant for coding agents and DevOps automation
 
-## Getting Started
+### METR (Model Evaluation & Threat Research)
+**Resource**: [METR](https://metr.org/)
 
-```python
-# Basic usage example
-from framework import Agent
+METR is a research organization that develops and runs evaluations of frontier AI systems' ability to complete complex tasks without human input. Focuses on autonomous capability assessment for safety research, particularly evaluating whether AI systems can perform tasks that could pose risks if misused.
 
-# Initialize agent
-agent = Agent(
-    name="example_agent",
-    config={"key": "value"}
-)
+**Key Characteristics**:
+- Focus on long-horizon autonomous tasks
+- Safety-oriented evaluation methodology
+- Used by major AI labs for pre-deployment assessment
+- Evaluates tasks requiring sustained autonomy over hours
 
-# Execute task
-result = agent.execute("sample_task")
-```
+## Web and Computer Interaction Benchmarks
 
-## Best Practices
+### VisualWebArena
+**Resource**: [VisualWebArena](https://github.com/web-arena-x/visualwebarena)
 
-1. **Practice 1**: Description of recommended approach
-2. **Practice 2**: Description of optimization technique
-3. **Practice 3**: Description of security consideration
-4. **Practice 4**: Description of monitoring approach
+A benchmark for multimodal agents that interact with web interfaces using both visual and textual information. Extends WebArena with visual understanding requirements, testing agents on realistic web tasks that require interpreting screenshots and UI elements.
 
-## Integration
+**Key Characteristics**:
+- Multimodal (vision + text) agent evaluation
+- Realistic web application environments (shopping, forums, classifieds)
+- Tasks require understanding visual UI elements
+- Measures task completion rate and efficiency
 
-### Supported Integrations
-- Integration with popular frameworks
-- API connectivity options
-- Cloud platform support
-- Third-party tool compatibility
+### OSWorld
+**Resource**: [OSWorld Benchmark for Multimodal Agents](https://os-world.github.io/)
 
-### Configuration Examples
-- Basic configuration setup
-- Advanced configuration options
-- Environment-specific settings
-- Security configuration
+Benchmarks multimodal agents for open-ended tasks in real computer environments. Agents interact with actual operating systems (Windows, macOS, Ubuntu) through screenshots and keyboard/mouse actions, testing real-world computer use capabilities.
 
-## Resources
+**Key Characteristics**:
+- Real OS environments (not simulated)
+- Tasks span web browsing, office applications, coding, file management
+- Evaluates agents that control computers like humans
+- Relevant for computer-use agents (e.g., Claude Computer Use, Operator)
 
-- Official Documentation: [Link to be added]
-- Community Resources: [Link to be added]
-- Examples and Tutorials: [Link to be added]
-- Support and Forums: [Link to be added]
+## Software Development Benchmarks
 
-*This section is under development. More detailed content will be added soon.*
+### SWE-Bench
+**Resource**: [SWE-Bench](https://www.swebench.com/)
+
+A dataset that tests AI systems' ability to solve real GitHub issues automatically. Agents must understand codebases, reproduce bugs, and implement fixes that pass existing test suites. SWE-Bench Verified is a curated subset with human-verified solvability.
+
+**Key Characteristics**:
+- 2,294 real GitHub issues from popular Python repositories
+- Requires understanding large codebases
+- Evaluation via automated test suite execution
+- Industry standard for coding agent evaluation
+- Top systems (Devin, SWE-agent) achieve 40-50%+ on verified subset
+
+## Multi-Agent and Collaboration Benchmarks
+
+### AgentBench
+A comprehensive benchmark evaluating LLMs as agents across 8 distinct environments including operating systems, databases, knowledge graphs, digital card games, lateral thinking puzzles, house-holding tasks, web shopping, and web browsing.
+
+### τ-bench (Tau-bench)
+Evaluates agents on realistic customer service scenarios requiring multi-turn conversations, policy adherence, and tool use. Tests agents' ability to follow complex business rules while serving customers effectively.
+
+## Benchmark Selection Guide
+
+| Use Case | Recommended Benchmark |
+|----------|----------------------|
+| General agent capability | GAIA |
+| Web automation | VisualWebArena |
+| Computer use | OSWorld |
+| Software development | SWE-Bench |
+| Terminal/CLI tasks | Terminal Bench |
+| Safety evaluation | METR |
+| Customer service agents | τ-bench |
+
+## Evaluation Considerations
+
+### Reproducibility
+Agent benchmarks are harder to reproduce than static LLM benchmarks due to:
+- Non-deterministic LLM outputs
+- Dynamic web environments that change over time
+- Dependency on external APIs and services
+
+### Cost
+Running agent benchmarks is expensive — each task may require dozens of LLM calls and tool executions. Budget accordingly and use smaller evaluation subsets for rapid iteration.
+
+### Leaderboard Contamination
+As benchmarks become public, training data contamination becomes a concern. Prefer benchmarks with held-out test sets or those that regularly refresh their task sets.
+
+## See Also
+
+- [LLM Benchmarks](llm-benchmarks.md)
+- [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
+- [Observability](../Observability/Readme.md)

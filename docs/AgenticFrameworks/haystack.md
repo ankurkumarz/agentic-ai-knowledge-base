@@ -2,77 +2,44 @@
 
 ## Overview
 
-Haystack is an open-source framework for building search systems and question-answering applications.
+[Haystack](https://haystack.deepset.ai/) (built by deepset) is an open-source framework for building production-ready LLM applications, RAG pipelines, and complex search applications for enterprises. It has been built applying modular architecture principles combining technology from OpenAI, Chroma, Marqo, and other open-source projects like Hugging Face's Transformers and Elasticsearch.
+
+## High-level Architecture
+
+![Haystack Architecture](../assets/images/frameworks-haystack-architecture.png)
+
+*Source: [Haystack](https://haystack.deepset.ai/overview/intro)*
 
 ## Key Features
 
-- Feature 1: Description of key capability
-- Feature 2: Description of another capability  
-- Feature 3: Description of additional functionality
-- Feature 4: Description of integration capabilities
+- **Production-ready LLM framework**: Built for enterprise-grade LLM applications and RAG pipelines
+- **Modular architecture**: Combines technology from OpenAI, Chroma, Marqo, Hugging Face Transformers, and Elasticsearch
+- **RAG pipeline support**: First-class support for Retrieval-Augmented Generation workflows
+- **Complex search capabilities**: Advanced search and question-answering system construction
+- **deepsetCloud**: An LLM AI platform providing in-built LLMOps capabilities
+- **deepset Studio**: A free AI application development environment for Haystack that augments the development lifecycle
+- **Jinja templates**: Custom RAG pipeline components using Jinja templates
 
-## Architecture
+## Suitable for (Pros)
 
-### Core Components
-- **Component 1**: Primary functionality and purpose
-- **Component 2**: Supporting services and tools
-- **Component 3**: Integration and orchestration layer
-- **Component 4**: Monitoring and management capabilities
+- **Building LLM applications for any Cloud** with deepsetCloud as an LLM AI platform providing in-built LLMOps capabilities
+- **Custom RAG pipelines** with Jinja templates for components
+- **deepset Studio**: Free AI application development environment that augments the development lifecycle
+- **Production deployments**: Well-suited for enterprise-grade search and QA systems
 
-## Use Cases
+## Where other frameworks flare better (Cons)
 
-### Primary Use Cases
-1. **Use Case 1**: Description of primary application
-2. **Use Case 2**: Description of secondary application
-3. **Use Case 3**: Description of specialized application
-
-### Implementation Examples
-- Example 1: Basic implementation scenario
-- Example 2: Advanced integration scenario
-- Example 3: Enterprise deployment scenario
-
-## Getting Started
-
-```python
-# Basic usage example
-from framework import Agent
-
-# Initialize agent
-agent = Agent(
-    name="example_agent",
-    config={"key": "value"}
-)
-
-# Execute task
-result = agent.execute("sample_task")
-```
-
-## Best Practices
-
-1. **Practice 1**: Description of recommended approach
-2. **Practice 2**: Description of optimization technique
-3. **Practice 3**: Description of security consideration
-4. **Practice 4**: Description of monitoring approach
-
-## Integration
-
-### Supported Integrations
-- Integration with popular frameworks
-- API connectivity options
-- Cloud platform support
-- Third-party tool compatibility
-
-### Configuration Examples
-- Basic configuration setup
-- Advanced configuration options
-- Environment-specific settings
-- Security configuration
+- **Multi-agent capabilities are yet to be battle-tested** and the roadmap needs to be reflected to understand the bigger picture
+- **Less focus on agentic orchestration**: Primarily a pipeline/search framework rather than a full agent orchestration platform
+- **Complex setup**: Can require significant configuration for advanced use cases
 
 ## Resources
 
-- Official Documentation: [Link to be added]
-- Community Resources: [Link to be added]
-- Examples and Tutorials: [Link to be added]
-- Support and Forums: [Link to be added]
+- **Official Website**: [Haystack by deepset](https://haystack.deepset.ai/)
+- **deepsetCloud**: [LLMOps platform](https://www.deepset.ai/deepset-cloud)
+- **GitHub Repository**: [Haystack GitHub](https://github.com/deepset-ai/haystack)
 
-*This section is under development. More detailed content will be added soon.*
+## See Also
+- [Agent Development Frameworks](README.md)
+- [RAG Reference Architecture](../ReferenceArchitecture/rag-architecture.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)

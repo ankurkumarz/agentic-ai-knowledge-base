@@ -1,116 +1,160 @@
-# Research Papers & Technical White Papers
+# Research Papers & Technical White Papers on Agent Memory
 
 ## Overview
 
-This section contains key research papers and technical white papers related to agent memory management, covering theoretical foundations, practical implementations, and emerging approaches.
+This section curates key research papers and technical white papers that have shaped the field of agent memory management. These works provide the theoretical foundations and practical implementations that underpin modern memory systems for AI agents.
 
-## Foundational Research
+## Foundational Research Papers
 
-### Memory Architectures
-- **"Memory-Augmented Neural Networks"** - Graves et al.
-  - Introduces differentiable memory mechanisms
-  - Foundation for modern memory-augmented architectures
+### MemGPT: Towards LLMs as Operating Systems
+**Authors**: Packer et al. (UC Berkeley)
+**Resource**: [ArXiv Paper](https://arxiv.org/abs/2310.08560)
 
-- **"Neural Turing Machines"** - Graves et al.
-  - Combines neural networks with external memory
-  - Enables learning of algorithmic patterns
+Introduced the concept of treating LLMs like operating systems that manage their own memory hierarchy. MemGPT implements a virtual context management system where the LLM can explicitly move data between a limited "main context" (analogous to RAM) and unlimited "external storage" (analogous to disk). This paper established the foundation for the Letta framework.
 
-### Episodic Memory
-- **"Episodic Memory in Lifelong Language Learning"** - d'Autume et al.
-  - Episodic memory for continual learning
-  - Prevents catastrophic forgetting in language models
+![MemGPT Architecture](../assets/images/memgpt-os.jpg)
 
-- **"Memory-Based Parameter Adaptation"** - Sprechmann et al.
-  - Dynamic parameter adaptation using episodic memory
-  - Improves few-shot learning capabilities
+**Key Contributions**:
+- OS-inspired memory hierarchy for LLMs
+- Self-directed memory management via function calls
+- Demonstrated that LLMs can manage their own context window
+- Enabled unbounded conversation length without context overflow
 
-## Agent-Specific Memory Research
+---
 
-### Multi-Agent Memory
-- **"Shared Experience Actor-Critic for Multi-Agent Reinforcement Learning"**
-  - Memory sharing between agents
-  - Collaborative learning and knowledge transfer
+### Generative Agents: Interactive Simulacra of Human Behavior
+**Authors**: Park et al. (Stanford / Google)
+**Resource**: [ArXiv Paper](https://arxiv.org/abs/2304.03442)
 
-- **"Communication and Memory in Multi-Agent Systems"**
-  - Communication protocols for memory synchronization
-  - Distributed memory architectures
+Landmark paper demonstrating AI agents with believable human-like behavior in a simulated environment. Introduced the concept of agents that maintain a memory stream, perform reflection to extract higher-level insights, and use retrieved memories to plan future actions.
 
-### Contextual Memory
-- **"Context-Dependent Memory Networks"**
-  - Context-aware memory retrieval
-  - Adaptive memory organization
+**Key Contributions**:
+- Memory stream architecture (comprehensive log of agent experiences)
+- Reflection mechanism: agents periodically synthesize memories into higher-level insights
+- Retrieval function combining recency, importance, and relevance
+- Demonstrated emergent social behaviors from memory-driven agents
 
-- **"Hierarchical Memory Networks for Answer Selection"**
-  - Multi-level memory hierarchies
-  - Attention mechanisms for memory access
+---
 
-## Technical White Papers
+### Cognitive Architectures for Language Agents (CoALA)
+**Authors**: Sumers et al. (Princeton)
+**Resource**: [ArXiv Paper](https://arxiv.org/abs/2309.02427)
 
-### Industry Implementations
-- **"Building Conversational AI with Memory"** - OpenAI
-  - Practical approaches to conversation memory
-  - Scaling considerations and best practices
+Provides a systematic framework for understanding and designing cognitive architectures for language agents. Categorizes memory into working memory, episodic memory, semantic memory, and procedural memory — drawing parallels with human cognitive science.
 
-- **"Memory Systems for Large Language Models"** - Anthropic
-  - Memory integration with foundation models
-  - Safety and alignment considerations
+**Key Contributions**:
+- Unified taxonomy of agent memory types
+- Framework for comparing different agent architectures
+- Guidance for designing memory systems based on cognitive science principles
+- Analysis of existing systems (ReAct, Reflexion, AutoGPT) through the CoALA lens
 
-- **"Persistent Memory in Production AI Systems"** - Google DeepMind
-  - Production deployment experiences
-  - Performance optimization techniques
+---
 
-### Memory Frameworks
-- **"Mem0: The Memory Layer for Personalized AI"**
-  - Architecture and implementation details
-  - Use cases and performance benchmarks
+### MemoryBank: Enhancing LLMs with Long-Term Memory
+**Authors**: Zhong et al.
+**Resource**: [ArXiv Paper](https://arxiv.org/abs/2305.10250)
 
-- **"LangChain Memory: Design and Implementation"**
-  - Memory abstractions and interfaces
-  - Integration patterns with language models
+Proposes MemoryBank, a novel memory mechanism that equips LLMs with long-term memory capabilities. Implements a memory updating mechanism inspired by the Ebbinghaus Forgetting Curve — memories decay over time unless reinforced.
 
-- **[MemGPT](https://arxiv.org/abs/2310.08560)**: OS-inspired multi-level memory architecture
-![MemGPT Arch](../assets/images/memgpt-os.jpg)
+**Key Contributions**:
+- Long-term memory storage and retrieval for LLMs
+- Forgetting curve-inspired memory decay and reinforcement
+- Demonstrated improved personalization in long-term interactions
+- Memory summarization and consolidation strategies
 
-## Emerging Research Areas
+---
 
-### Neuromorphic Memory
-- Brain-inspired memory architectures
-- Spiking neural networks with memory
-- Energy-efficient memory systems
+## Technical White Papers and Blogs
 
-### Quantum Memory
-- Quantum-enhanced memory systems
-- Quantum associative memory
-- Hybrid classical-quantum approaches
+### AgentFS: The Missing Abstraction for the Agentic World
+**Source**: Turso
+**Resource**: [Technical Blog](https://turso.tech/blog/agentfs-the-missing-abstraction-for-the-agent-ic-world)
 
-### Federated Memory
-- Distributed memory across multiple agents
-- Privacy-preserving memory sharing
-- Consensus mechanisms for memory updates
+Introduces AgentFS, a portable SQLite-backed virtual filesystem that acts as a persistent "hard drive" for AI agents. Argues that agents need a filesystem abstraction — not just a vector database — to manage files, key-value state, and tool logs in a structured way.
 
-## Research Datasets and Benchmarks
+**Key Contributions**:
+- Filesystem metaphor for agent persistent storage
+- SQLite-backed implementation for portability
+- Framework-agnostic design
+- Single movable .db file architecture
 
-### Memory Benchmarks
-- **bAbI Tasks**: Reasoning and memory evaluation
-- **Memory Networks Dataset**: Question answering with memory
-- **Episodic Memory Benchmark**: Lifelong learning evaluation
+---
 
-### Evaluation Metrics
-- Memory capacity and efficiency
-- Retrieval accuracy and speed
-- Forgetting curves and retention
-- Interference and consolidation measures
+### The Mem0 Memory Layer Architecture
+**Source**: Mem0.ai
+**Resource**: [Technical Documentation](https://docs.mem0.ai/overview) | [Research Paper](https://arxiv.org/abs/2504.19413)
 
-## Future Directions
+Describes Mem0's architecture for providing a universal, self-improving memory layer for AI agents. The system automatically extracts user preferences and facts from conversations, stores them in a hybrid vector + graph store, and retrieves relevant memories for future interactions.
 
-### Open Research Questions
-- Optimal memory architectures for different agent types
-- Balancing memory capacity with computational efficiency
-- Memory safety and security in multi-agent systems
-- Integration of symbolic and neural memory approaches
+**Key Contributions**:
+- Automatic memory extraction without explicit agent instructions
+- Hybrid storage combining vector search and knowledge graphs
+- Cross-session memory persistence
+- Self-improving memory through contradiction resolution
 
-### Emerging Trends
-- Self-organizing memory systems
-- Adaptive memory architectures
-- Cross-modal memory integration
-- Continual learning with memory
+---
+
+### Graphiti: Temporal Knowledge Graphs for Agent Memory
+**Source**: Zep
+**Resource**: [GitHub Documentation](https://github.com/getzep/graphiti)
+
+Introduces Graphiti, an open-source temporal knowledge graph framework that tracks how facts and relationships evolve over time. Unlike static knowledge graphs, Graphiti maintains the history of fact changes, enabling agents to reason about when information was true.
+
+**Key Contributions**:
+- Temporal knowledge graph with fact versioning
+- Bi-temporal data model (valid time + transaction time)
+- Efficient graph traversal for multi-hop reasoning
+- Integration with Zep's memory platform
+
+---
+
+### LangMem: Long-term Learning for LangGraph
+**Source**: LangChain
+**Resource**: [Technical Blog](https://blog.langchain.dev/langmem/)
+
+Describes LangMem, LangChain's approach to long-term memory for LangGraph agents. Provides a managed service for storing and retrieving memories across sessions, with support for different memory types (semantic, episodic, procedural).
+
+**Key Contributions**:
+- Integrated long-term memory for LangGraph workflows
+- Multiple memory storage backends
+- Automatic memory extraction and consolidation
+- Memory namespacing for multi-user applications
+
+---
+
+### Awesome-LLM-Memory (Curated List)
+**Source**: GitHub Community
+**Resource**: [GitHub Repository](https://github.com/mshumer/Awesome-LLM-Memory)
+
+A community-maintained curated list of papers, tools, and resources related to LLM memory. Provides a comprehensive overview of the field with regular updates.
+
+---
+
+## Key Research Themes
+
+### Memory Retrieval
+How agents decide what to retrieve from memory:
+- **Recency**: Prefer more recent memories
+- **Relevance**: Semantic similarity to current context
+- **Importance**: Salience score assigned at storage time
+- **Combined scoring**: Weighted combination of multiple factors (as in Generative Agents)
+
+### Memory Consolidation
+How agents transform raw experiences into reusable knowledge:
+- **Summarization**: Compress multiple episodes into a summary
+- **Reflection**: Extract higher-level insights from patterns
+- **Abstraction**: Generalize from specific examples to rules
+- **Forgetting**: Decay or remove low-importance memories
+
+### Memory Architecture Patterns
+- **Flat memory**: Single undifferentiated store (simple but doesn't scale)
+- **Hierarchical memory**: Multiple tiers with different access speeds and capacities
+- **Associative memory**: Content-addressable retrieval based on similarity
+- **Structured memory**: Typed stores for different information categories
+
+## See Also
+
+- [Functional Memory Tiers](functional-tiers.md)
+- [Long-term Memory Strategies](ltm-strategies.md)
+- [Short-term Memory Management](short-term.md)
+- [Agent Memory README](README.md)

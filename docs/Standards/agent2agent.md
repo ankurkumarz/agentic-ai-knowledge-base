@@ -229,10 +229,137 @@ A2A represents Google's vision for a standardized ecosystem where AI agents can 
 - **Academic Research**: Partnerships with academic research institutions
 - **Open Source Projects**: Integration with major open source projects
 
-## Related Sections
+## The Critical Distinction: A2A vs. MCP
 
-- **Section 6.1**: Agentic AI Foundation (standardization governance)
-- **Section 6.2**: Model Context Protocol (complementary protocol)
-- **Section 4.3**: Google ADK (native A2A support)
-- **Section 5.2.1**: Google Vertex AI Agent Builder (A2A integration)
-- **Section 16.2**: Google Best Practices (A2A implementation guidance)
+A2A and MCP are **complementary, not competing** — they operate at different levels of abstraction.
+
+| Protocol | Domain | Interaction type | Analogy |
+|---|---|---|---|
+| **MCP** | Tools and resources | Stateless function call with structured inputs/outputs | "Do this specific thing" |
+| **A2A** | Intelligent agents | Stateful collaboration between systems that can reason, plan, and maintain state | "Achieve this complex goal" |
+
+**When to use MCP**: Need a simple, stateless function like fetching weather data or querying a database.
+
+**When to use A2A**: Need to delegate a complex goal such as "analyze last quarter's customer churn and recommend three intervention strategies" — requiring reasoning, planning, and multi-turn interaction.
+
+**Best suited for formal, cross-team integrations** that require a durable service contract. For tightly coupled tasks within a single application, lightweight local sub-agents are often more efficient.
+
+## A2A Protocol: Implementation
+
+### Agent Cards (Service Discovery)
+
+An **Agent Card** is a standardized JSON specification — the "business card" for each agent. It describes what an agent can do, its security requirements, its skills, and how to reach it (URL). Any agent in the ecosystem can discover peers using Agent Cards.
+
+```json
+{
+  "name": "check_prime_agent",
+  "version": "1.0.0",
+  "description": "An agent specialized in checking whether numbers are prime",
+  "capabilities": {},
+  "securitySchemes": {
+    "agent_oauth2_0": { "type": "oauth2" }
+  },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "prime_checking",
+      "name": "Prime Number Checking",
+      "description": "Check if numbers are prime using efficient algorithms",
+      "tags": ["mathematical", "computation", "prime"]
+    }
+  ],
+  "url": "http://localhost:8001/a2a/check_prime_agent"
+}
+```
+
+Agent Cards are served at `/.well-known/agent-card.json` on the agent's URL.
+
+### ADK Implementation
+
+**Exposing an existing agent via A2A** (single function call):
+
+```python
+from google.adk.a2a.utils.agent_to_a2a import to_a2a
+
+root_agent = Agent(name='hello_world_agent', ...)
+a2a_app = to_a2a(root_agent, port=8001)
+
+# Serve with uvicorn: uvicorn agent:a2a_app --host localhost --port 8001
+# Or via Vertex AI Agent Engine runtime
+```
+
+**Consuming a remote agent via A2A**:
+
+```python
+from google.adk.agents.remote_a2a_agent import RemoteA2aAgent
+
+prime_agent = RemoteA2aAgent(
+    name="prime_agent",
+    description="Agent that handles checking if numbers are prime.",
+    agent_card="http://localhost:8001/a2a/check_prime_agent/.well-known/agent-card.json"
+)
+```
+
+**Hierarchical composition** — a root orchestrator using both a local sub-agent and a remote A2A agent:
+
+```python
+# Local sub-agent
+roll_agent = Agent(name="roll_agent", instruction="You are an expert at rolling dice.")
+
+# Remote A2A agent
+prime_agent = RemoteA2aAgent(
+    name="prime_agent",
+    agent_card="http://localhost:8001/.well-known/agent-card.json"
+)
+
+# Root orchestrator combining both
+root_agent = Agent(
+    name="root_agent",
+    instruction="Delegate rolling dice to roll_agent, prime checking to prime_agent.",
+    sub_agents=[roll_agent, prime_agent]
+)
+```
+
+### Non-Negotiable Technical Requirements for A2A
+
+A2A interactions are inherently stateful and distributed. Two requirements become mandatory:
+
+1. **Distributed Tracing**: Every request must carry a unique trace ID to maintain a coherent audit trail across multiple agents. Essential for debugging multi-agent workflows.
+2. **Robust State Management**: A sophisticated persistence layer is required to track progress and ensure transactional integrity across agent boundaries.
+
+## Registry Architectures
+
+At scale, discovering and managing agents and tools requires centralized registries.
+
+### Tool Registry
+
+A **Tool Registry** catalogs all tools using a protocol like MCP. Instead of giving agents access to thousands of tools, it enables curated access lists:
+
+| Agent Type | Access Pattern |
+|---|---|
+| Generalist agents | Full catalog — trading speed/accuracy for scope |
+| Specialist agents | Predefined subsets — higher performance on specific tasks |
+| Dynamic agents | Query registry at runtime to adapt to new tools |
+
+Primary benefit: **human discovery** — developers find existing tools before rebuilding, security teams audit tool access, product owners understand capabilities.
+
+### Agent Registry
+
+An **Agent Registry** applies the same concept to agents, using formats like A2A's AgentCards. It helps teams discover and reuse existing agents, reducing redundant work and laying the groundwork for automated agent-to-agent delegation.
+
+**Decision framework:**
+
+| Registry | Build when... |
+|---|---|
+| Tool Registry | Tool discovery becomes a bottleneck, or security requires centralized auditing |
+| Agent Registry | Multiple teams need to discover and reuse specialized agents without tight coupling |
+
+Start without a registry and build it only when ecosystem scale demands centralized management.
+
+## See Also
+
+- [MCP Protocol](./mcp.md) — Complementary protocol for tool/resource access
+- [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md) — Deployment of A2A-compatible agents
+- [AgentOps](../AgentOps/README.md) — AgentOps lifecycle including multi-agent operations
+- [AllThingsGoogle](../AllThingsGoogle/README.md) — Google ADK, Vertex AI Agent Engine

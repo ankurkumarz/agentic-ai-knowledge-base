@@ -131,12 +131,15 @@ nav:
     - 15.1 AWS AI Agents Marketplace: 'Marketplace/aws-marketplace.md'
     - 15.2 AgentOps Marketplace: 'Marketplace/agentops.md'
     - 15.3 Miscellaneous: 'Marketplace/Readme.md'
-  - 16. AI Agents Best Practices:
-    - 16.0 Overview: 'BestPractices/README.md'
-    - 16.1 Anthropic: 'AllThingsAnthropic/README.md'
-    - 16.2 Google: 'AllThingsGoogle/README.md'
-    - 16.3 Microsoft: 'AllThingsMicrosoft/README.md'
-    - 16.4 OpenAI: 'AllThingsOpenAI/README.md'
+  - 16. Production Best Practices & Guidelines:
+    - 16.1 Overview: 'ProductionBestPractices/README.md'
+    - 16.2 Observability: 'ProductionBestPractices/observability.md'
+    - 16.3 State & Memory Management: 'ProductionBestPractices/state-memory.md'
+    - 16.4 Deployment: 'ProductionBestPractices/deployment.md'
+    - 16.5 Agent Testing & Evaluations: 'ProductionBestPractices/testing-evaluations.md'
+    - 16.6 Context Engineering: 'ProductionBestPractices/context-engineering.md'
+    - 16.7 Agent Security: 'ProductionBestPractices/security.md'
+    - 16.8 Cost Management: 'ProductionBestPractices/cost-management.md'
 plugins:
   - search
   - mermaid2

@@ -10,3 +10,10 @@ __pycache__/*
 Agent Development Frameworks*
 output.md
 images/
+raw/
+
+.cursor/
+.kiro/
+.pytest_cache/
+.venv/
+.vscode/

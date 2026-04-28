@@ -313,9 +313,77 @@ GenOps represents the natural evolution of MLOps (Machine Learning Operations) t
 
 This comprehensive AgentOps framework provides the foundation for successfully operating agentic AI systems at scale, ensuring reliability, performance, security, and continuous improvement in production environments.
 
+## The AgentOps Lifecycle (Google, November 2025)
+
+Google's "Prototype to Production" whitepaper (Nov 2025) defines the full AgentOps lifecycle as four sequential phases:
+
+### The "Last Mile" Gap
+
+~80% of the effort in taking an agent to production is spent **not** on the agent's core intelligence, but on the infrastructure, security, and validation needed to make it reliable and safe. Skipping these steps leads to:
+- Agents tricked into giving away products or unauthorized discounts (missing guardrails)
+- Users accessing confidential databases (misconfigured authentication)
+- Large unexpected bills (no monitoring)
+- Critical agents going silent with no diagnostics (no continuous evaluation)
+
+This is why an evolution in operational discipline — AgentOps — is required beyond standard DevOps/MLOps.
+
+### Phase 1: Developer Inner Loop
+
+Rapid local testing and prototyping to shape the agent's core logic. The agent is not yet near users.
+
+### Phase 2: Pre-Production (Evaluation-Gated Deployment)
+
+The core principle: **no agent version reaches users without passing a comprehensive evaluation**. Three pillars:
+1. **Evaluation as Quality Gate**: Behavioral quality assessment of the full reasoning trajectory — not just functional tests. Uses a golden dataset; gate can be manual pre-PR or automated in-pipeline.
+2. **Automated CI/CD Pipeline**: Three-phase funnel — CI (fast pre-merge checks + eval), CD staging (integration testing, load testing, dogfooding), CD production (human sign-off, promote validated artifact).
+3. **Safe Rollout Strategies**: Canary (1% of users, monitor, scale up), blue-green (zero-downtime switch), A/B testing (business metric comparison), feature flags (dynamic capability release). Foundation of all: rigorous versioning across code, prompts, tool schemas, and evaluation datasets.
+
+### Phase 3: Operations in Production (Observe → Act → Evolve)
+
+Managing autonomous agents at scale requires a continuous operational loop:
+- **Observe**: Logs (factual diary), Traces (causal narrative), Metrics (aggregated report card)
+- **Act**: Real-time levers — managing system health (performance, cost, scale) and managing risk (security response playbook: contain → triage → resolve)
+- **Evolve**: Strategic improvement — analyze production data, update evaluation datasets with failures, commit improvements to trigger the pipeline. With mature CI/CD, this loop closes in hours or days.
+
+### Phase 4: Interoperability (A2A + MCP)
+
+At scale (dozens of specialized agents across teams), isolated agents create massive inefficiency. The solution: standardized interoperability protocols.
+- **MCP**: Universal standard for tool integration (stateless, structured I/O)
+- **A2A**: Protocol for stateful collaboration between intelligent agents (governed by the Linux Foundation)
+
+These two protocols operate at different levels: A2A orchestrates high-level agent collaboration; each agent internally uses MCP to interact with its specific tools.
+
+## People and Process
+
+AgentOps is the intersection of People, Processes, and Technology. Behind every production-grade agent is a well-orchestrated team:
+
+**Traditional MLOps roles:**
+- Cloud Platform Team: infrastructure, security, access control, least-privilege roles
+- Data Engineering Team: data pipelines, ingestion, quality standards
+- Data Science and MLOps Team: experimentation, CI/CD pipeline infrastructure
+- ML Governance: centralized oversight, compliance, transparency, accountability
+
+**GenAI-specific additions:**
+- **Prompt Engineers**: Craft prompts, define expected behavior, design evaluation criteria
+- **AI Engineers**: Scale GenAI to production, build evaluation harnesses, integrate RAG and guardrails
+- **DevOps/App Developers**: Frontend components and user-facing interfaces
+
+## AgentOps Environments (Figure 5 Reference)
+
+A complete AgentOps platform spans four environment types:
+
+| Environment | Key Capabilities |
+|---|---|
+| Cloud Infrastructure | IaC, central security, observability, billing, env/user governance |
+| Development | Agent experimentation, AI application dev, context management, AI security (model gateway + guardrails), agent simulation |
+| Staging | A/B deployment, automatic testing at scale, automatic evaluation |
+| Production | Agent/app serving, short-term memory, observability/logs, monitoring, security/RAI/vulnerability response |
+| AI Governance | Repositories, CI/CD pipelines, Agent Registry, Agent Governance, Tool Registry, Tool Governance |
+
 ## See Also
 
 - **[Observability](../Observability/Readme.md)**: Monitoring and observability practices
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform operational features
 - **[Maturity Models](../MaturityModels/README.md)**: Operational maturity assessment
-- **[Best Practices](../BestPractices/README.md)**: Operational best practices
+- **[ProductionBestPractices](../ProductionBestPractices/README.md)**: Cross-cutting production guidance
+- **[Standards/A2A](../Standards/agent2agent.md)**: A2A protocol for multi-agent operations

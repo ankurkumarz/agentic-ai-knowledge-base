@@ -17,7 +17,7 @@ A comprehensive, structured knowledge repository consolidating cutting-edge rese
 
 The **Agentic AI Knowledge Base** serves as a consolidated knowledge hub designed to support the full lifecycle of agentic AI development—from foundational concepts and architectural patterns to production deployment, security, and operational excellence. This repository brings together curated knowledge articles, architecture patterns, white papers, research insights, and industry best practices spanning the entire agentic AI ecosystem.
 
-Our comprehensive 16-section structure provides systematic coverage of all aspects of agentic AI, enabling architects, engineers, researchers, and platform teams to design robust, secure, and production-ready agentic AI solutions. The knowledge base spans core topics including agent architectures and frameworks, technology stacks, industry standards, evaluation methodologies, security frameworks, and operational best practices.
+Our comprehensive knowledge base structure provides systematic coverage of all aspects of agentic AI, enabling architects, engineers, researchers, and platform teams to design robust, secure, and production-ready agentic AI solutions. The knowledge base spans core topics including agent architectures and frameworks, technology stacks, industry standards, evaluation methodologies, security frameworks, and operational best practices.
 
 ## Knowledge Base Structure
 
@@ -73,55 +73,65 @@ Comprehensive coverage of major development frameworks:
 - **RAG Architecture**: Retrieval-augmented generation patterns
 - **NVIDIA AI Blueprints**: Video search and summarization agents
 
-### **8. Context Engineering**
-- **Key Challenges**: Context rot, poisoning, distraction, and management issues
-- **Management Strategies**: Offloading, reduction, retrieval, isolation, and caching
-- **Implementation References**: Manus, Anthropic, LangGraph, and Devin approaches
-
-### **9. Agent Memory Management**
-- **Three Functional Tiers**: Short-term, episodic, and long-term memory systems
-- **LTM Strategies**: Vector RAG, knowledge graphs, entity extraction, and reflection
-- **Research Papers**: MemGPT, Generative Agents, and cognitive architectures
-- **Memory Solutions**: Mem0, MemMachine, Zep, and other memory frameworks
-
-### **10. Agentic AI Evaluation**
-- **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
-- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, and GAIA
-- **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
-- **Reference Frameworks**: Meta MLGym and Microsoft RELEVANCE
-
-### **11. Agentic AI Security**
-- **Security Standards**: NIST AI Risk Management Framework
-- **Google Perspective**: SAIF Framework and secure AI agents approach
-- **AWS Perspective**: Security best practices and compliance frameworks
-- **Risk Management**: Rogue actions, data disclosure, and mitigation strategies
-
-### **12. Agent Observability**
-- **Goals & Objectives**: Monitoring, debugging, and performance optimization
-- **Observability Solutions**: OpenTelemetry, logging, and metrics frameworks
-- **Best Practices**: Guidelines for production monitoring and troubleshooting
-
-### **13. Agentic AI Operations (AgentOps)**
-- **Google Cloud Perspective**: Operational practices and methodologies
-- **GenOps Evolution**: Evolution of MLOps for generative AI systems
-- **Production Operations**: Deployment, scaling, and lifecycle management
-
-### **14. Agentic AI Maturity Models**
+### **8. Agentic AI Maturity Models**
 - **Gartner's Perspective**: Industry maturity assessment frameworks
 - **AWS Perspective**: Generative AI maturity models and progression paths
 - **Google's Perspective**: Cloud-native maturity considerations
 - **IDC's Perspective**: Market evolution and adoption patterns
 
-### **15. Agents Marketplace**
+### **9. Agents Marketplace**
 - **AWS AI Agents Marketplace**: Enterprise agent solutions and platforms
 - **AgentOps Marketplace**: Operational tools and services
 - **Miscellaneous Platforms**: Community and specialized marketplaces
 
-### **16. AI Agents Best Practices**
+### **10. AI Agents Best Practices**
 - **Anthropic**: Building effective agents and safety considerations
 - **Google**: Enterprise deployment and scaling best practices
 - **Microsoft**: .NET and Azure integration patterns
 - **OpenAI**: Practical guide to building agents and agentic patterns
+
+---
+
+## Production Best Practices & Guidelines
+
+A dedicated section consolidating all production-readiness guidance — cross-cutting concerns for teams moving agents from prototype to production.
+
+### **Observability**
+- **Goals & Objectives**: Monitoring, debugging, and performance optimization
+- **Observability Solutions**: LangSmith, Langfuse, Openlit, Braintrust, W&B Weave
+- **Best Practices**: Distributed tracing, alerting, dashboards, and predictive observability
+
+### **State & Memory Management**
+- **Three Functional Tiers**: Short-term, episodic, and long-term memory systems
+- **LTM Strategies**: Vector RAG, knowledge graphs, entity extraction, and reflection
+- **Memory Solutions**: Mem0, MemMachine, Zep, AgentFS, and cloud-managed memory services
+
+### **Deployment**
+- **AgentOps & GenOps**: Evolution of MLOps for generative AI systems
+- **Lifecycle Management**: Development, testing, deployment, and operations
+- **Production Operations**: Container orchestration, auto-scaling, and multi-agent coordination
+
+### **Agent Testing & Evaluations**
+- **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
+- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, and GAIA
+- **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
+
+### **Context Engineering**
+- **Key Challenges**: Context rot, poisoning, distraction, and management issues
+- **Management Strategies**: Offloading, reduction, retrieval, isolation, and caching
+- **Implementation References**: Manus, Anthropic, LangGraph, and Devin approaches
+
+### **Agent Security**
+- **Security Standards**: NIST AI Risk Management Framework
+- **Google Perspective**: SAIF Framework and secure AI agents approach
+- **AWS Perspective**: Generative AI Security Scoping Matrix
+- **Risk Management**: Rogue actions, data disclosure, prompt injection, and mitigation strategies
+
+### **Cost Management**
+- **Token Optimization**: Model routing, prompt optimization, and caching strategies
+- **Budget Controls**: Per-request budgets, alerting thresholds, and hard stops
+- **Cost Monitoring**: Langfuse, Openlit, LangSmith, Braintrust cost tracking
+- **Vendor Guidance**: Anthropic, OpenAI, Google, and AWS cost optimization approaches
 
 ## Target Audiences
 
@@ -161,28 +171,28 @@ Comprehensive coverage of major development frameworks:
 ### **Intermediate Path: Implementation**
 1. **Deep Dive Frameworks**: Compare multiple frameworks for your use case
 2. **Architecture Design**: Reference Architecture → Context Engineering
-3. **Memory & State**: Agent Memory Management → Evaluation
-4. **Production Readiness**: Security → Observability → Operations
+3. **Memory & State**: State & Memory Management → Agent Testing & Evaluations
+4. **Production Readiness**: Agent Security → Observability → Deployment
 
 ### **Advanced Path: Production & Scale**
-1. **Enterprise Patterns**: Maturity Models → Security Frameworks
-2. **Operational Excellence**: AgentOps → Observability → Best Practices
+1. **Enterprise Patterns**: Maturity Models → Agent Security → Cost Management
+2. **Operational Excellence**: Deployment → Observability → Agent Testing & Evaluations
 3. **Marketplace & Ecosystem**: Agents Marketplace → Industry Standards
 4. **Innovation & Research**: Latest research papers and emerging patterns
 
 ### **Specialized Paths**
 
-**Security-Focused Path**: Security → Best Practices → Standards → Observability
+**Security-Focused Path**: Agent Security → Agent Testing & Evaluations → Standards → Observability
 
-**Research-Oriented Path**: Concepts → Reference Architecture → Evaluation → Memory Management
+**Research-Oriented Path**: Concepts → Reference Architecture → Agent Testing & Evaluations → State & Memory Management
 
-**Platform Engineering Path**: Technology Stack → Operations → Observability → Marketplace
+**Platform Engineering Path**: Technology Stack → Deployment → Observability → Cost Management → Marketplace
 
 ## Key Features
 
-- **Comprehensive Coverage**: 16 structured sections covering the entire agentic AI landscape
+- **Comprehensive Coverage**: Structured sections covering the entire agentic AI landscape
 - **Framework Comparison**: Detailed analysis of 14+ major development frameworks
-- **Production Focus**: Security, observability, and operational best practices
+- **Production Focus**: Dedicated Production Best Practices section covering security, observability, cost, deployment, and testing
 - **Industry Standards**: Coverage of emerging standards like MCP, A2A, and AGENTS.md
 - **Visual Documentation**: 60+ diagrams and architectural references with meaningful naming
 - **Research Integration**: Latest academic research and industry white papers
@@ -204,7 +214,7 @@ Comprehensive coverage of major development frameworks:
 
 ### **For Architects**
 - Begin with **Architecture and Design Patterns** for system design
-- Review **Security** and **Observability** for production considerations
+- Review **Production Best Practices & Guidelines** (Security, Observability, Cost Management) for production considerations
 - Study **Maturity Models** for organizational readiness assessment
 
 ### **For Researchers**

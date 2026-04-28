@@ -2,77 +2,111 @@
 
 ## Overview
 
-Key goals and objectives for implementing observability in AI agent systems.
+Observability for agentic AI systems goes beyond traditional application monitoring. It requires tracking AI-specific behaviors, decision-making processes, and quality metrics alongside standard operational metrics. The goal is to maintain full visibility into what agents are doing, why they are doing it, and how well they are performing.
 
-## Key Features
+## Core Observability Objectives
 
-- Feature 1: Description of key capability
-- Feature 2: Description of another capability  
-- Feature 3: Description of additional functionality
-- Feature 4: Description of integration capabilities
+### Performance Monitoring
+- Track response times, throughput, and resource utilization
+- Monitor model inference latency and token processing rates
+- Measure system availability and reliability metrics
+- Identify bottlenecks in agent reasoning and tool execution chains
 
-## Architecture
+### Behavior Analysis
+- Understand agent decision-making processes and reasoning paths
+- Track conversation flows and multi-turn interaction patterns
+- Monitor tool usage frequency, success rates, and failure modes
+- Detect unexpected or anomalous agent behaviors
 
-### Core Components
-- **Component 1**: Primary functionality and purpose
-- **Component 2**: Supporting services and tools
-- **Component 3**: Integration and orchestration layer
-- **Component 4**: Monitoring and management capabilities
+### Quality Assurance
+- Detect hallucinations and factual errors in agent outputs
+- Monitor output relevance, coherence, and accuracy
+- Track user satisfaction scores and feedback signals
+- Measure task completion rates and goal achievement
 
-## Use Cases
+### Cost Management
+- Monitor token usage per request, session, and model
+- Track infrastructure costs across different deployment configurations
+- Identify cost optimization opportunities (caching, model routing)
+- Set and enforce cost budgets with alerting
 
-### Primary Use Cases
-1. **Use Case 1**: Description of primary application
-2. **Use Case 2**: Description of secondary application
-3. **Use Case 3**: Description of specialized application
+### Security and Compliance
+- Monitor for sensitive data exposure in inputs and outputs
+- Track access patterns and authentication events
+- Detect prompt injection attempts and adversarial inputs
+- Ensure compliance with data protection regulations (GDPR, HIPAA, etc.)
 
-### Implementation Examples
-- Example 1: Basic implementation scenario
-- Example 2: Advanced integration scenario
-- Example 3: Enterprise deployment scenario
+## Key Metrics for AI Observability
 
-## Getting Started
+### Operational Metrics
+- Request volume and rate (requests per second)
+- Response latency (P50, P95, P99 percentiles)
+- Error rates and failure modes by category
+- Resource utilization (CPU, memory, GPU)
+- Queue depth and processing backlog
 
-```python
-# Basic usage example
-from framework import Agent
+### AI-Specific Metrics
+- Token consumption (input tokens, output tokens, total cost)
+- Model accuracy and confidence scores
+- Hallucination detection rates
+- Tool call success and failure rates
+- Context window utilization percentage
+- Retrieval relevance scores (for RAG systems)
 
-# Initialize agent
-agent = Agent(
-    name="example_agent",
-    config={"key": "value"}
-)
+### Business Metrics
+- User engagement and session duration
+- Task completion rates
+- Business outcome correlation (e.g., resolution rate for support agents)
+- ROI and value realization per agent interaction
+- Human escalation rate (for agents with human-in-the-loop)
 
-# Execute task
-result = agent.execute("sample_task")
-```
+## Observability Pillars for AI Agents
 
-## Best Practices
+### Traces
+End-to-end traces capture the full execution path of an agent request, including:
+- LLM calls with prompts and completions
+- Tool invocations and their results
+- Memory reads and writes
+- Sub-agent calls in multi-agent systems
+- Latency at each step
 
-1. **Practice 1**: Description of recommended approach
-2. **Practice 2**: Description of optimization technique
-3. **Practice 3**: Description of security consideration
-4. **Practice 4**: Description of monitoring approach
+### Metrics
+Aggregated numerical data for dashboards and alerting:
+- Time-series data for trend analysis
+- Histograms for latency distribution
+- Counters for event frequency
+- Gauges for current state (e.g., active sessions)
 
-## Integration
+### Logs
+Structured event records for debugging and audit:
+- Agent reasoning steps and intermediate outputs
+- Error messages and stack traces
+- User inputs and agent responses (with PII masking)
+- Configuration changes and deployments
 
-### Supported Integrations
-- Integration with popular frameworks
-- API connectivity options
-- Cloud platform support
-- Third-party tool compatibility
+### Evaluations
+Automated quality assessments:
+- LLM-as-judge scoring for response quality
+- Automated hallucination detection
+- Relevance and groundedness scoring
+- Regression testing against golden datasets
 
-### Configuration Examples
-- Basic configuration setup
-- Advanced configuration options
-- Environment-specific settings
-- Security configuration
+## Implementation Principles
 
-## Resources
+### Instrument Early
+Build observability into agent architecture from the start rather than retrofitting. Use OpenTelemetry-compatible instrumentation for portability across platforms.
 
-- Official Documentation: [Link to be added]
-- Community Resources: [Link to be added]
-- Examples and Tutorials: [Link to be added]
-- Support and Forums: [Link to be added]
+### Correlate Everything
+Use correlation IDs to link traces, logs, and metrics across distributed agent systems. This is critical for debugging multi-agent workflows.
 
-*This section is under development. More detailed content will be added soon.*
+### Balance Detail with Cost
+Full trace capture can be expensive at scale. Implement sampling strategies that capture 100% of errors and a representative sample of successful requests.
+
+### Protect Privacy
+Implement PII detection and masking before logging user inputs. Ensure observability data is subject to the same data governance policies as production data.
+
+## See Also
+
+- [Observability Solutions](solutions.md)
+- [Agent Ops](../AgentOps/README.md)
+- [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)

@@ -2,55 +2,39 @@
 
 ## Overview
 
-AutoGPT is an autonomous AI agent framework that can perform tasks with minimal human intervention. It uses GPT models to break down goals into sub-tasks and execute them iteratively.
+[AutoGPT](https://github.com/Significant-Gravitas/AutoGPT), built by Significant Gravitas, is a powerful platform that allows you to create, deploy, and manage continuous AI agents that automate complex workflows. It was originally built on top of OpenAI's GPT but extended to support additional LLMs (Anthropic, Groq, Llama).
+
+## High-level Architecture
+
+![AutoGPT Platform Components](../assets/images/frameworks-autogpt-platform-components.png)
+
+*AutoGPT Platform Components*
 
 ## Key Features
 
-- **Autonomous Operation**: Operates independently with minimal supervision
-- **Goal Decomposition**: Breaks complex goals into manageable sub-tasks
-- **Memory Management**: Maintains context and memory across task execution
-- **Tool Integration**: Uses various tools and APIs to accomplish tasks
-- **Self-Reflection**: Evaluates its own performance and adjusts strategies
+- **Seamless Integration and Low-Code Workflows**: Drag-and-drop interface for building agent workflows without deep coding knowledge
+- **Autonomous Operation and Continuous Agents**: Agents that run continuously and autonomously to complete complex tasks
+- **Intelligent Automation and Maximum Efficiency**: Smart task decomposition and execution
+- **Reliable Performance and Predictable Execution**: Consistent and repeatable agent behavior
+- **Multi-LLM support**: Originally built on OpenAI's GPT, extended to support Anthropic, Groq, and Llama
 
-## Architecture
+## Suitable for (Pros)
 
-### Core Components
-- **Agent Core**: Main reasoning and decision-making engine
-- **Memory System**: Short-term and long-term memory management
-- **Tool Interface**: Integration with external tools and services
-- **Planning Module**: Task planning and execution strategies
-- **Evaluation System**: Performance assessment and improvement
+- **No code or low-code-centric approach** for building agents is preferred with the ability to build the agents in the Cloud (while it offers a self-hosted solution, the setup complexity is higher)
+- **Quick prototyping**: Rapid development of autonomous agent workflows
+- **Simple autonomous workflows**: Well-suited for straightforward automation use cases
 
-## Use Cases
+## Where other frameworks flare better (Cons)
 
-- **Research and Analysis**: Autonomous research on complex topics
-- **Content Creation**: Automated content generation and curation
-- **Task Automation**: Automating repetitive business processes
-- **Data Processing**: Large-scale data analysis and processing
-- **Software Development**: Automated coding and testing tasks
+- **Vendor dependency and lock-in** to access advanced features can be key concerns for enterprises. The cloud-hosted solution is in the roadmap and currently being offered to waitlist consumers
+- **The complexity of licensing support**: Currently has dual licensing support while the majority is being offered as an MIT license
+- **Additional LLM support** such as Google's Gemini and more will continue to be a key challenge along with community support
 
-## Getting Started
+## Resources
 
-```python
-from autogpt import AutoGPT
+- **GitHub Repository**: [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
-# Initialize AutoGPT agent
-agent = AutoGPT(
-    name="ResearchAgent",
-    role="Research Assistant",
-    goals=["Research AI trends", "Create comprehensive report"]
-)
-
-# Execute autonomous task
-result = agent.run()
-```
-
-## Best Practices
-
-1. **Clear Goal Definition**: Provide specific and measurable goals
-2. **Resource Limits**: Set appropriate resource and time limits
-3. **Monitoring**: Implement monitoring for autonomous operations
-4. **Safety Measures**: Include safety checks and human oversight
-5. **Iterative Improvement**: Continuously refine agent performance
-
-*This section is under development. More detailed content will be added soon.*
+## See Also
+- [Agent Development Frameworks](README.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [CrewAI](crewai.md)

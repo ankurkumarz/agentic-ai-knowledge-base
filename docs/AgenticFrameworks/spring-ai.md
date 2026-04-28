@@ -2,77 +2,44 @@
 
 ## Overview
 
-Spring AI provides AI integration capabilities for Spring Framework applications.
+[Spring AI](https://spring.io/projects/spring-ai) is inspired by LangChain and leverages the Spring ecosystem to build GenAI applications in the Java ecosystem. It provides seamless integration with the broader Spring ecosystem to leverage libraries available for data connectivity, asynchronous processing, system integration, and more.
+
+## High-level Architecture
+
+![Spring AI for Building Agentic Systems](../assets/images/frameworks-spring-ai-architecture.jpeg)
+
+*Source: [Spring AI for Building Agentic Systems](https://spring.io/blog/2025/01/21/spring-ai-agentic-patterns)*
 
 ## Key Features
 
-- Feature 1: Description of key capability
-- Feature 2: Description of another capability  
-- Feature 3: Description of additional functionality
-- Feature 4: Description of integration capabilities
+- **Multiple LLM support**: Works with a wide range of language model providers
+- **Observability features**: Built-in observability within the Spring ecosystem
+- **Model evaluation**: Tools for evaluating model outputs and performance
+- **[Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html)**: Encapsulates recurring Generative AI patterns for reuse
+- **Chat conversations**: Native support for conversational AI patterns
+- **RAG support**: Retrieval-Augmented Generation capabilities built in
+- **Spring ecosystem integration**: Seamless integration with Spring Boot, Spring Data, Spring Integration, and more
 
-## Architecture
+## Suitable for (Pros)
 
-### Core Components
-- **Component 1**: Primary functionality and purpose
-- **Component 2**: Supporting services and tools
-- **Component 3**: Integration and orchestration layer
-- **Component 4**: Monitoring and management capabilities
+- **Enterprise GenAI applications leveraging the Spring ecosystem**: Alleviates the need for learning additional frameworks or languages
+- **Seamless integration** with the broader Spring ecosystem to leverage libraries available for data connectivity, asynchronous processing, system integration, and more
+- **Java-first teams**: Natural fit for organizations already standardized on Java and Spring
 
-## Use Cases
+## Where other frameworks flare better (Cons)
 
-### Primary Use Cases
-1. **Use Case 1**: Description of primary application
-2. **Use Case 2**: Description of secondary application
-3. **Use Case 3**: Description of specialized application
-
-### Implementation Examples
-- Example 1: Basic implementation scenario
-- Example 2: Advanced integration scenario
-- Example 3: Enterprise deployment scenario
-
-## Getting Started
-
-```python
-# Basic usage example
-from framework import Agent
-
-# Initialize agent
-agent = Agent(
-    name="example_agent",
-    config={"key": "value"}
-)
-
-# Execute task
-result = agent.execute("sample_task")
-```
-
-## Best Practices
-
-1. **Practice 1**: Description of recommended approach
-2. **Practice 2**: Description of optimization technique
-3. **Practice 3**: Description of security consideration
-4. **Practice 4**: Description of monitoring approach
-
-## Integration
-
-### Supported Integrations
-- Integration with popular frameworks
-- API connectivity options
-- Cloud platform support
-- Third-party tool compatibility
-
-### Configuration Examples
-- Basic configuration setup
-- Advanced configuration options
-- Environment-specific settings
-- Security configuration
+- **Spring AI is relatively novel and still in the early stages**: It needs to be compared with features required in a complex business scenario to consider alternative frameworks
+- **Limited complex scenario testing**: Not yet widely proven in highly complex enterprise agentic deployments
+- **Java-only**: Less suitable for teams working in Python or other languages
 
 ## Resources
 
-- Official Documentation: [Link to be added]
-- Community Resources: [Link to be added]
-- Examples and Tutorials: [Link to be added]
-- Support and Forums: [Link to be added]
+- **Official Documentation**: [Spring AI](https://spring.io/projects/spring-ai)
+- **Observability Docs**: [Spring AI Observability](https://docs.spring.io/spring-ai/reference/observability/index.html)
+- **Advisors API**: [Spring AI Advisors](https://docs.spring.io/spring-ai/reference/api/advisors.html)
+- **Blog**: [Spring AI Agentic Patterns](https://spring.io/blog/2025/01/21/spring-ai-agentic-patterns)
 
-*This section is under development. More detailed content will be added soon.*
+## See Also
+- [Agent Development Frameworks](README.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [LangChain](langchain.md)
