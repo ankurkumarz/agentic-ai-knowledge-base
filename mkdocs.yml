@@ -140,6 +140,11 @@ nav:
     - 16.6 Context Engineering: 'ProductionBestPractices/context-engineering.md'
     - 16.7 Agent Security: 'ProductionBestPractices/security.md'
     - 16.8 Cost Management: 'ProductionBestPractices/cost-management.md'
+  - Knowledge Graph: 'graph.md'
+
+hooks:
+  - hooks/graph_hook.py
+
 plugins:
   - search
   - mermaid2

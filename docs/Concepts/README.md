@@ -169,4 +169,4 @@ After understanding these foundational concepts, explore:
 
 - [Architecture & Design Patterns](../Architecture/components-selection.md) - Structural approaches to agent design
 - [Agent Development Frameworks](../AgenticFrameworks/README.md) - Tools and frameworks for implementation
-- [Best Practices](../BestPractices/README.md) - Industry recommendations for agent development
+- [Best Practices](../ProductionBestPractices/README.md) - Industry recommendations for agent development

@@ -93,4 +93,4 @@ When a threat is detected in production, the response follows: **contain → tri
 - [Observability](./observability.md) — Security monitoring as part of observability; Evolving Security section
 - [Deployment](./deployment.md) — Secure deployment practices
 - [Context Engineering](./context-engineering.md) — Context isolation and sanitization
-- [SecurityFrameworks](../SecurityFrameworks/) — NIST AI RMF, Google SAIF, AWS coverage
+- [SecurityFrameworks](../SecurityFrameworks/Readme.md) — NIST AI RMF, Google SAIF, AWS coverage

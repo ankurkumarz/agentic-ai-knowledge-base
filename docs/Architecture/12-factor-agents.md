@@ -301,4 +301,4 @@ class AgentManager:
 - [Architecture Components Selection](components-selection.md)
 - [Multi-Agent Systems](multi-agent-system.md)
 - [Agent Observability](../Observability/Readme.md)
-- [Best Practices](../BestPractices/README.md)
+- [Best Practices](../ProductionBestPractices/README.md)

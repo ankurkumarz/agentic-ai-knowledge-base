@@ -1,0 +1,6 @@
+{"type":"server-started","port":57527,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:57527","screen_dir":"/Users/ankkumar/sandbox/github/agentic-ai-knowledge-base/.superpowers/brainstorm/46623-1777493758/content","state_dir":"/Users/ankkumar/sandbox/github/agentic-ai-knowledge-base/.superpowers/brainstorm/46623-1777493758/state"}
+{"type":"screen-added","file":"/Users/ankkumar/sandbox/github/agentic-ai-knowledge-base/.superpowers/brainstorm/46623-1777493758/content/graph-placement.html"}
+{"type":"screen-added","file":"/Users/ankkumar/sandbox/github/agentic-ai-knowledge-base/.superpowers/brainstorm/46623-1777493758/content/graph-style.html"}
+{"type":"screen-added","file":"/Users/ankkumar/sandbox/github/agentic-ai-knowledge-base/.superpowers/brainstorm/46623-1777493758/content/waiting-1.html"}
+{"type":"screen-added","file":"/Users/ankkumar/sandbox/github/agentic-ai-knowledge-base/.superpowers/brainstorm/46623-1777493758/content/graph-page-mockup.html"}
+{"type":"server-stopped","reason":"idle timeout"}

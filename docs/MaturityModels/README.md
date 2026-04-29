@@ -86,6 +86,6 @@ Organizations beginning their agentic AI journey should:
 ## See Also
 
 - **[Evaluation Frameworks](../EvaluationFrameworks/Readme.md)**: Assessment and evaluation approaches
-- **[Best Practices](../BestPractices/README.md)**: Maturity-driven best practices
+- **[Best Practices](../ProductionBestPractices/README.md)**: Maturity-driven best practices
 - **[Agent Ops](../AgentOps/README.md)**: Operational maturity considerations
 - **[Standards](../Standards/README.md)**: Standards compliance and maturity

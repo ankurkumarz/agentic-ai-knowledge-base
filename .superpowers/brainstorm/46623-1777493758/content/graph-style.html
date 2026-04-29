@@ -1,0 +1,136 @@
+<h2>What visual style for the graph?</h2>
+<p class="subtitle">This determines the rendering library and how nodes arrange themselves. ~90 nodes total across 16 sections.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#0f0f23;border-radius:6px;min-height:160px;display:flex;align-items:center;justify-content:center">
+      <svg width="240" height="150" viewBox="0 0 240 150">
+        <!-- Force-directed simulation mockup -->
+        <!-- Edges -->
+        <line x1="120" y1="75" x2="60" y2="40" stroke="#4a4aff" stroke-width="1.2" opacity="0.6"/>
+        <line x1="120" y1="75" x2="180" y2="45" stroke="#4a4aff" stroke-width="1.2" opacity="0.6"/>
+        <line x1="120" y1="75" x2="160" y2="110" stroke="#4a4aff" stroke-width="1.2" opacity="0.6"/>
+        <line x1="120" y1="75" x2="70" y2="115" stroke="#4a4aff" stroke-width="1.2" opacity="0.6"/>
+        <line x1="120" y1="75" x2="45" y2="80" stroke="#4a4aff" stroke-width="1.2" opacity="0.6"/>
+        <line x1="60" y1="40" x2="30" y2="20" stroke="#4a4aff" stroke-width="0.8" opacity="0.4"/>
+        <line x1="60" y1="40" x2="90" y2="15" stroke="#4a4aff" stroke-width="0.8" opacity="0.4"/>
+        <line x1="180" y1="45" x2="210" y2="25" stroke="#4a4aff" stroke-width="0.8" opacity="0.4"/>
+        <line x1="180" y1="45" x2="215" y2="70" stroke="#4a4aff" stroke-width="0.8" opacity="0.4"/>
+        <line x1="160" y1="110" x2="185" y2="135" stroke="#4a4aff" stroke-width="0.8" opacity="0.4"/>
+        <line x1="70" y1="115" x2="40" y2="135" stroke="#4a4aff" stroke-width="0.8" opacity="0.4"/>
+        <!-- Hub node -->
+        <circle cx="120" cy="75" r="10" fill="#5b6af0" opacity="0.95"/>
+        <!-- Mid nodes -->
+        <circle cx="60" cy="40" r="7" fill="#7c8cf8" opacity="0.9"/>
+        <circle cx="180" cy="45" r="7" fill="#7c8cf8" opacity="0.9"/>
+        <circle cx="160" cy="110" r="6" fill="#9ba8f9" opacity="0.85"/>
+        <circle cx="70" cy="115" r="6" fill="#9ba8f9" opacity="0.85"/>
+        <circle cx="45" cy="80" r="5" fill="#9ba8f9" opacity="0.85"/>
+        <!-- Leaf nodes -->
+        <circle cx="30" cy="20" r="4" fill="#c2cafc" opacity="0.7"/>
+        <circle cx="90" cy="15" r="4" fill="#c2cafc" opacity="0.7"/>
+        <circle cx="210" cy="25" r="4" fill="#c2cafc" opacity="0.7"/>
+        <circle cx="215" cy="70" r="4" fill="#c2cafc" opacity="0.7"/>
+        <circle cx="185" cy="135" r="4" fill="#c2cafc" opacity="0.7"/>
+        <circle cx="40" cy="135" r="4" fill="#c2cafc" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3>A — Force-Directed (Obsidian style)</h3>
+      <p>Nodes repel, links attract. Organic, explorable. Highly connected pages (like Concepts, Architecture) naturally cluster to the centre. Drag nodes, zoom, pan. Built with <strong>D3.js</strong> or <strong>force-graph</strong> library.</p>
+      <p style="font-size:12px;color:#888">Best for: discovering hidden connections and seeing which pages are hubs.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#0f1a0f;border-radius:6px;min-height:160px;display:flex;align-items:center;justify-content:center">
+      <svg width="240" height="150" viewBox="0 0 240 150">
+        <!-- Sectioned cluster mockup -->
+        <!-- Section labels -->
+        <text x="40" y="18" fill="#4af04a" font-size="9" opacity="0.8">Concepts</text>
+        <text x="160" y="18" fill="#f0a04a" font-size="9" opacity="0.8">Frameworks</text>
+        <text x="30" y="105" fill="#4ab0f0" font-size="9" opacity="0.8">Architecture</text>
+        <text x="155" y="105" fill="#f04a8a" font-size="9" opacity="0.8">Standards</text>
+        <!-- Cluster circles (faint) -->
+        <circle cx="60" cy="48" r="30" fill="none" stroke="#4af04a" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/>
+        <circle cx="175" cy="48" r="30" fill="none" stroke="#f0a04a" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/>
+        <circle cx="60" cy="110" r="30" fill="none" stroke="#4ab0f0" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/>
+        <circle cx="175" cy="110" r="30" fill="none" stroke="#f04a8a" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/>
+        <!-- Cross-cluster edges -->
+        <line x1="85" y1="50" x2="150" y2="50" stroke="#aaa" stroke-width="0.8" opacity="0.3"/>
+        <line x1="70" y1="75" x2="160" y2="95" stroke="#aaa" stroke-width="0.8" opacity="0.3"/>
+        <line x1="80" y1="90" x2="155" y2="100" stroke="#aaa" stroke-width="0.8" opacity="0.3"/>
+        <!-- Cluster nodes -->
+        <circle cx="60" cy="48" r="7" fill="#4af04a" opacity="0.8"/>
+        <circle cx="45" cy="55" r="4" fill="#4af04a" opacity="0.6"/>
+        <circle cx="72" cy="38" r="4" fill="#4af04a" opacity="0.6"/>
+        <circle cx="55" cy="62" r="4" fill="#4af04a" opacity="0.6"/>
+
+        <circle cx="175" cy="48" r="7" fill="#f0a04a" opacity="0.8"/>
+        <circle cx="160" cy="40" r="4" fill="#f0a04a" opacity="0.6"/>
+        <circle cx="188" cy="42" r="4" fill="#f0a04a" opacity="0.6"/>
+        <circle cx="165" cy="58" r="4" fill="#f0a04a" opacity="0.6"/>
+
+        <circle cx="60" cy="110" r="7" fill="#4ab0f0" opacity="0.8"/>
+        <circle cx="45" cy="103" r="4" fill="#4ab0f0" opacity="0.6"/>
+        <circle cx="72" cy="118" r="4" fill="#4ab0f0" opacity="0.6"/>
+
+        <circle cx="175" cy="110" r="7" fill="#f04a8a" opacity="0.8"/>
+        <circle cx="162" cy="100" r="4" fill="#f04a8a" opacity="0.6"/>
+        <circle cx="188" cy="118" r="4" fill="#f04a8a" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3>B — Colour-Coded Clusters by Section</h3>
+      <p>Same force-directed physics, but nodes are colour-coded by their wiki section (Concepts = blue, Frameworks = orange, etc.) with faint cluster halos. Cross-section links shown in grey. Easier to orient yourself.</p>
+      <p style="font-size:12px;color:#888">Best for: understanding how sections relate to each other, not just individual pages.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#100818;border-radius:6px;min-height:160px;display:flex;align-items:center;justify-content:center">
+      <svg width="240" height="150" viewBox="0 0 240 150">
+        <!-- Hierarchical / tree layout -->
+        <!-- Root -->
+        <circle cx="120" cy="20" r="8" fill="#a855f7" opacity="0.9"/>
+        <text x="130" y="24" fill="#ccc" font-size="9">Knowledge Base</text>
+        <!-- Level 1 -->
+        <line x1="120" y1="28" x2="40" y2="60" stroke="#a855f7" stroke-width="1" opacity="0.5"/>
+        <line x1="120" y1="28" x2="120" y2="60" stroke="#a855f7" stroke-width="1" opacity="0.5"/>
+        <line x1="120" y1="28" x2="200" y2="60" stroke="#a855f7" stroke-width="1" opacity="0.5"/>
+        <circle cx="40" cy="65" r="6" fill="#c084fc" opacity="0.8"/>
+        <text x="48" y="69" fill="#ccc" font-size="8">Concepts</text>
+        <circle cx="120" cy="65" r="6" fill="#c084fc" opacity="0.8"/>
+        <text x="128" y="69" fill="#ccc" font-size="8">Frameworks</text>
+        <circle cx="200" cy="65" r="6" fill="#c084fc" opacity="0.8"/>
+        <text x="175" y="58" fill="#ccc" font-size="8">Architecture</text>
+        <!-- Level 2 -->
+        <line x1="40" y1="71" x2="20" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <line x1="40" y1="71" x2="55" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <line x1="120" y1="71" x2="95" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <line x1="120" y1="71" x2="120" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <line x1="120" y1="71" x2="145" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <line x1="200" y1="71" x2="180" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <line x1="200" y1="71" x2="215" y2="100" stroke="#c084fc" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="20" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <circle cx="55" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <circle cx="95" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <circle cx="120" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <circle cx="145" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <circle cx="180" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <circle cx="215" cy="103" r="4" fill="#dbb6fe" opacity="0.7"/>
+        <!-- Cross links (mess things up) -->
+        <line x1="55" y1="103" x2="95" y2="103" stroke="#f87" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.5"/>
+        <line x1="120" y1="103" x2="180" y2="103" stroke="#f87" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.5"/>
+        <text x="60" y="135" fill="#888" font-size="8" font-style="italic">cross-links break the tree shape</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3>C — Hierarchical / Tree Layout</h3>
+      <p>Nav structure drives the layout: sections at top, pages below. Cross-links (See Also) shown as dashed arcs. Predictable and structured, but a wiki with heavy cross-referencing tends to look cluttered.</p>
+      <p style="font-size:12px;color:#888">Best for: clearly showing the nav hierarchy, less good at surfacing organic connections.</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,1622 @@
+{
+  "nodes": [
+    {
+      "id": "AgentMemory/README.md",
+      "label": "Agent Memory Management",
+      "section": "AgentMemory",
+      "color": "#f05b8a",
+      "path": "AgentMemory/",
+      "degree": 15
+    },
+    {
+      "id": "AgentMemory/functional-tiers.md",
+      "label": "The Three Functional Tiers of Agent Memory",
+      "section": "AgentMemory",
+      "color": "#f05b8a",
+      "path": "AgentMemory/functional-tiers/",
+      "degree": 7
+    },
+    {
+      "id": "AgentMemory/ltm-strategies.md",
+      "label": "Long-Term Memory (LTM) Strategies",
+      "section": "AgentMemory",
+      "color": "#f05b8a",
+      "path": "AgentMemory/ltm-strategies/",
+      "degree": 7
+    },
+    {
+      "id": "AgentMemory/research-papers.md",
+      "label": "Research Papers & Technical White Papers on Agent Me",
+      "section": "AgentMemory",
+      "color": "#f05b8a",
+      "path": "AgentMemory/research-papers/",
+      "degree": 6
+    },
+    {
+      "id": "AgentMemory/short-term.md",
+      "label": "Short-term Memory Management",
+      "section": "AgentMemory",
+      "color": "#f05b8a",
+      "path": "AgentMemory/short-term/",
+      "degree": 6
+    },
+    {
+      "id": "AgentOps/README.md",
+      "label": "Agentic AI Operations (AgentOps)",
+      "section": "AgentOps",
+      "color": "#c05bf0",
+      "path": "AgentOps/",
+      "degree": 11
+    },
+    {
+      "id": "AgentOps/genops.md",
+      "label": "GenOps \u2013 Evolution of MLOps for GenAI",
+      "section": "AgentOps",
+      "color": "#c05bf0",
+      "path": "AgentOps/genops/",
+      "degree": 0
+    },
+    {
+      "id": "AgentPlatforms/README.md",
+      "label": "Popular AI Agents",
+      "section": "AgentPlatforms",
+      "color": "#e05bb8",
+      "path": "AgentPlatforms/",
+      "degree": 4
+    },
+    {
+      "id": "AgentPlatforms/aws-agentcore.md",
+      "label": "AWS AgentCore",
+      "section": "AgentPlatforms",
+      "color": "#e05bb8",
+      "path": "AgentPlatforms/aws-agentcore/",
+      "degree": 1
+    },
+    {
+      "id": "AgentPlatforms/google-vertex.md",
+      "label": "Google Vertex AI Agent Builder",
+      "section": "AgentPlatforms",
+      "color": "#e05bb8",
+      "path": "AgentPlatforms/google-vertex/",
+      "degree": 1
+    },
+    {
+      "id": "AgentPlatforms/microsoft-azure.md",
+      "label": "Microsoft Azure AI Agent Service",
+      "section": "AgentPlatforms",
+      "color": "#e05bb8",
+      "path": "AgentPlatforms/microsoft-azure/",
+      "degree": 0
+    },
+    {
+      "id": "AgentPlatforms/saas-platforms.md",
+      "label": "Other SaaS Platforms",
+      "section": "AgentPlatforms",
+      "color": "#e05bb8",
+      "path": "AgentPlatforms/saas-platforms/",
+      "degree": 0
+    },
+    {
+      "id": "AgenticFrameworks/README.md",
+      "label": "Agentic Frameworks",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/",
+      "degree": 21
+    },
+    {
+      "id": "AgenticFrameworks/autogen.md",
+      "label": "AutoGen",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/autogen/",
+      "degree": 7
+    },
+    {
+      "id": "AgenticFrameworks/autogpt.md",
+      "label": "AutoGPT",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/autogpt/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticFrameworks/aws-strands.md",
+      "label": "AWS Strands Agents",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/aws-strands/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticFrameworks/crewai.md",
+      "label": "CrewAI",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/crewai/",
+      "degree": 5
+    },
+    {
+      "id": "AgenticFrameworks/google-adk.md",
+      "label": "Google ADK (Agent Development Kit)",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/google-adk/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticFrameworks/haystack.md",
+      "label": "Haystack",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/haystack/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticFrameworks/langchain.md",
+      "label": "LangChain",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/langchain/",
+      "degree": 8
+    },
+    {
+      "id": "AgenticFrameworks/langgraph.md",
+      "label": "LangGraph",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/langgraph/",
+      "degree": 5
+    },
+    {
+      "id": "AgenticFrameworks/llamaindex.md",
+      "label": "LlamaIndex",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/llamaindex/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticFrameworks/microsoft-framework.md",
+      "label": "Microsoft Agent Framework",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/microsoft-framework/",
+      "degree": 6
+    },
+    {
+      "id": "AgenticFrameworks/pydantic-ai.md",
+      "label": "PydanticAI",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/pydantic-ai/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticFrameworks/semantic-kernel.md",
+      "label": "Semantic Kernel",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/semantic-kernel/",
+      "degree": 6
+    },
+    {
+      "id": "AgenticFrameworks/spring-ai.md",
+      "label": "Spring AI",
+      "section": "AgenticFrameworks",
+      "color": "#f0875b",
+      "path": "AgenticFrameworks/spring-ai/",
+      "degree": 3
+    },
+    {
+      "id": "AgenticTechStack/README.md",
+      "label": "Agent Technology Stack",
+      "section": "AgenticTechStack",
+      "color": "#f0c05b",
+      "path": "AgenticTechStack/",
+      "degree": 1
+    },
+    {
+      "id": "AllThingsAnthropic/README.md",
+      "label": "Anthropic Best Practices for AI Agents",
+      "section": "AllThingsAnthropic",
+      "color": "#d05bf0",
+      "path": "AllThingsAnthropic/",
+      "degree": 0
+    },
+    {
+      "id": "AllThingsGoogle/README.md",
+      "label": "Google Best Practices for AI Agents",
+      "section": "AllThingsGoogle",
+      "color": "#40c0f0",
+      "path": "AllThingsGoogle/",
+      "degree": 1
+    },
+    {
+      "id": "AllThingsMicrosoft/README.md",
+      "label": "Microsoft Best Practices for AI Agents",
+      "section": "AllThingsMicrosoft",
+      "color": "#5b80f0",
+      "path": "AllThingsMicrosoft/",
+      "degree": 0
+    },
+    {
+      "id": "AllThingsOpenAI/README.md",
+      "label": "OpenAI Best Practices for AI Agents",
+      "section": "AllThingsOpenAI",
+      "color": "#40e0b0",
+      "path": "AllThingsOpenAI/",
+      "degree": 0
+    },
+    {
+      "id": "Architecture/12-factor-agents.md",
+      "label": "12-Factor Agents",
+      "section": "Architecture",
+      "color": "#5bbff0",
+      "path": "Architecture/12-factor-agents/",
+      "degree": 6
+    },
+    {
+      "id": "Architecture/components-selection.md",
+      "label": "Agentic Architecture Components Selection",
+      "section": "Architecture",
+      "color": "#5bbff0",
+      "path": "Architecture/components-selection/",
+      "degree": 8
+    },
+    {
+      "id": "Architecture/multi-agent-system.md",
+      "label": "Multi-Agent Systems",
+      "section": "Architecture",
+      "color": "#5bbff0",
+      "path": "Architecture/multi-agent-system/",
+      "degree": 22
+    },
+    {
+      "id": "Benchmarks/Readme.md",
+      "label": "Readme",
+      "section": "Benchmarks",
+      "color": "#5baaf0",
+      "path": "Benchmarks/",
+      "degree": 4
+    },
+    {
+      "id": "Benchmarks/agent-benchmarks.md",
+      "label": "Agent Evaluation Benchmarks",
+      "section": "Benchmarks",
+      "color": "#5baaf0",
+      "path": "Benchmarks/agent-benchmarks/",
+      "degree": 4
+    },
+    {
+      "id": "Benchmarks/llm-benchmarks.md",
+      "label": "LLM Evaluation Benchmarks",
+      "section": "Benchmarks",
+      "color": "#5baaf0",
+      "path": "Benchmarks/llm-benchmarks/",
+      "degree": 4
+    },
+    {
+      "id": "Concepts/README.md",
+      "label": "Concepts",
+      "section": "Concepts",
+      "color": "#5b6af0",
+      "path": "Concepts/",
+      "degree": 0
+    },
+    {
+      "id": "Concepts/agent-definition.md",
+      "label": "Agent Definition",
+      "section": "Concepts",
+      "color": "#5b6af0",
+      "path": "Concepts/agent-definition/",
+      "degree": 4
+    },
+    {
+      "id": "Concepts/agent-foundational.md",
+      "label": "Agent Foundational",
+      "section": "Concepts",
+      "color": "#5b6af0",
+      "path": "Concepts/agent-foundational/",
+      "degree": 0
+    },
+    {
+      "id": "Concepts/agent-types.md",
+      "label": "Agent Types",
+      "section": "Concepts",
+      "color": "#5b6af0",
+      "path": "Concepts/agent-types/",
+      "degree": 5
+    },
+    {
+      "id": "Concepts/references.md",
+      "label": "References",
+      "section": "Concepts",
+      "color": "#5b6af0",
+      "path": "Concepts/references/",
+      "degree": 2
+    },
+    {
+      "id": "ContextEngineering/README.md",
+      "label": "Context Engineering",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/",
+      "degree": 11
+    },
+    {
+      "id": "ContextEngineering/anthropic.md",
+      "label": "Anthropic Context Engineering",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/anthropic/",
+      "degree": 13
+    },
+    {
+      "id": "ContextEngineering/challenges.md",
+      "label": "Key Challenges in Context Management",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/challenges/",
+      "degree": 10
+    },
+    {
+      "id": "ContextEngineering/context-graph.md",
+      "label": "Context Graph",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/context-graph/",
+      "degree": 0
+    },
+    {
+      "id": "ContextEngineering/devin.md",
+      "label": "Cognition / Devin: Context Engineering Principles",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/devin/",
+      "degree": 9
+    },
+    {
+      "id": "ContextEngineering/langgraph.md",
+      "label": "LangGraph Context Engineering",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/langgraph/",
+      "degree": 10
+    },
+    {
+      "id": "ContextEngineering/manus.md",
+      "label": "Manus Context Engineering",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/manus/",
+      "degree": 9
+    },
+    {
+      "id": "ContextEngineering/strategies.md",
+      "label": "Common Strategies for Context Management",
+      "section": "ContextEngineering",
+      "color": "#e05b5b",
+      "path": "ContextEngineering/strategies/",
+      "degree": 12
+    },
+    {
+      "id": "DesignPatterns/Readme.md",
+      "label": "Readme",
+      "section": "DesignPatterns",
+      "color": "#7c5bf0",
+      "path": "DesignPatterns/",
+      "degree": 0
+    },
+    {
+      "id": "DesignPatterns/gartner-patterns.md",
+      "label": "Gartner LLM-based AI Design Patterns",
+      "section": "DesignPatterns",
+      "color": "#7c5bf0",
+      "path": "DesignPatterns/gartner-patterns/",
+      "degree": 0
+    },
+    {
+      "id": "DesignPatterns/openai-patterns.md",
+      "label": "OpenAI Agent Design Patterns",
+      "section": "DesignPatterns",
+      "color": "#7c5bf0",
+      "path": "DesignPatterns/openai-patterns/",
+      "degree": 0
+    },
+    {
+      "id": "EvaluationFrameworks/Readme.md",
+      "label": "Agentic AI Evaluation",
+      "section": "EvaluationFrameworks",
+      "color": "#5b8af0",
+      "path": "EvaluationFrameworks/",
+      "degree": 13
+    },
+    {
+      "id": "EvaluationFrameworks/llm-frameworks.md",
+      "label": "LLM Evaluation Frameworks",
+      "section": "EvaluationFrameworks",
+      "color": "#5b8af0",
+      "path": "EvaluationFrameworks/llm-frameworks/",
+      "degree": 4
+    },
+    {
+      "id": "EvaluationFrameworks/platforms.md",
+      "label": "Agent Evaluation Platforms",
+      "section": "EvaluationFrameworks",
+      "color": "#5b8af0",
+      "path": "EvaluationFrameworks/platforms/",
+      "degree": 4
+    },
+    {
+      "id": "Introduction/README.md",
+      "label": "Introduction",
+      "section": "Introduction",
+      "color": "#888888",
+      "path": "Introduction/",
+      "degree": 0
+    },
+    {
+      "id": "Introduction/disclaimer.md",
+      "label": "Disclaimer and Usage Guidelines",
+      "section": "Introduction",
+      "color": "#888888",
+      "path": "Introduction/disclaimer/",
+      "degree": 0
+    },
+    {
+      "id": "Marketplace/Readme.md",
+      "label": "Agents Marketplace",
+      "section": "Marketplace",
+      "color": "#f0a05b",
+      "path": "Marketplace/",
+      "degree": 4
+    },
+    {
+      "id": "Marketplace/agentops.md",
+      "label": "AgentOps Marketplace",
+      "section": "Marketplace",
+      "color": "#f0a05b",
+      "path": "Marketplace/agentops/",
+      "degree": 0
+    },
+    {
+      "id": "Marketplace/aws-marketplace.md",
+      "label": "AWS AI Agents Marketplace",
+      "section": "Marketplace",
+      "color": "#f0a05b",
+      "path": "Marketplace/aws-marketplace/",
+      "degree": 0
+    },
+    {
+      "id": "MaturityModels/README.md",
+      "label": "Agentic AI Maturity Models",
+      "section": "MaturityModels",
+      "color": "#40b8e0",
+      "path": "MaturityModels/",
+      "degree": 5
+    },
+    {
+      "id": "MaturityModels/aws-genai.md",
+      "label": "AWS Maturity Model for Generative AI",
+      "section": "MaturityModels",
+      "color": "#40b8e0",
+      "path": "MaturityModels/aws-genai/",
+      "degree": 0
+    },
+    {
+      "id": "MaturityModels/aws.md",
+      "label": "AWS's Perspective on Agentic AI Maturity",
+      "section": "MaturityModels",
+      "color": "#40b8e0",
+      "path": "MaturityModels/aws/",
+      "degree": 0
+    },
+    {
+      "id": "MaturityModels/gartner.md",
+      "label": "Gartner's Perspective on Agentic AI Maturity",
+      "section": "MaturityModels",
+      "color": "#40b8e0",
+      "path": "MaturityModels/gartner/",
+      "degree": 0
+    },
+    {
+      "id": "MaturityModels/google.md",
+      "label": "Google's Perspective on Agentic AI Maturity",
+      "section": "MaturityModels",
+      "color": "#40b8e0",
+      "path": "MaturityModels/google/",
+      "degree": 0
+    },
+    {
+      "id": "MaturityModels/idc.md",
+      "label": "IDC's Perspective on Agentic AI Maturity",
+      "section": "MaturityModels",
+      "color": "#40b8e0",
+      "path": "MaturityModels/idc/",
+      "degree": 0
+    },
+    {
+      "id": "Observability/Readme.md",
+      "label": "Agent Observability",
+      "section": "Observability",
+      "color": "#5bd080",
+      "path": "Observability/",
+      "degree": 11
+    },
+    {
+      "id": "Observability/goals.md",
+      "label": "Observability Goals & Objectives",
+      "section": "Observability",
+      "color": "#5bd080",
+      "path": "Observability/goals/",
+      "degree": 4
+    },
+    {
+      "id": "Observability/solutions.md",
+      "label": "Observability Solutions",
+      "section": "Observability",
+      "color": "#5bd080",
+      "path": "Observability/solutions/",
+      "degree": 5
+    },
+    {
+      "id": "ProductionBestPractices/README.md",
+      "label": "Production Best Practices & Guidelines",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/",
+      "degree": 5
+    },
+    {
+      "id": "ProductionBestPractices/context-engineering.md",
+      "label": "Context Engineering",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/context-engineering/",
+      "degree": 8
+    },
+    {
+      "id": "ProductionBestPractices/cost-management.md",
+      "label": "Cost Management for Agentic AI",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/cost-management/",
+      "degree": 7
+    },
+    {
+      "id": "ProductionBestPractices/deployment.md",
+      "label": "Deployment",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/deployment/",
+      "degree": 9
+    },
+    {
+      "id": "ProductionBestPractices/observability.md",
+      "label": "Observability",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/observability/",
+      "degree": 7
+    },
+    {
+      "id": "ProductionBestPractices/security.md",
+      "label": "Agent Security",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/security/",
+      "degree": 5
+    },
+    {
+      "id": "ProductionBestPractices/state-memory.md",
+      "label": "State & Memory Management",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/state-memory/",
+      "degree": 4
+    },
+    {
+      "id": "ProductionBestPractices/testing-evaluations.md",
+      "label": "Agent Testing & Evaluations",
+      "section": "ProductionBestPractices",
+      "color": "#e04060",
+      "path": "ProductionBestPractices/testing-evaluations/",
+      "degree": 5
+    },
+    {
+      "id": "PromptEngineering/README.md",
+      "label": "Readme",
+      "section": "PromptEngineering",
+      "color": "#f07a5b",
+      "path": "PromptEngineering/",
+      "degree": 0
+    },
+    {
+      "id": "RAG/Readme.md",
+      "label": "Readme",
+      "section": "RAG",
+      "color": "#6b7af0",
+      "path": "RAG/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/README.md",
+      "label": "Agentic AI Reference Architecture",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/",
+      "degree": 5
+    },
+    {
+      "id": "ReferenceArchitecture/agent0.md",
+      "label": "Agent0 Series: Self-Evolving Agents from Zero Data",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/agent0/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/ai-assistant-architecture.md",
+      "label": "AI Assistant Reference Architecture",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/ai-assistant-architecture/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/ai-assistant.md",
+      "label": "AI Assistant Reference Architecture",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/ai-assistant/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/ai-automation.md",
+      "label": "AI Automation Reference Architecture",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/ai-automation/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/langmanus.md",
+      "label": "LangManus \u2013 AI Automation Framework",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/langmanus/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/rag-architecture.md",
+      "label": "RAG Reference Architecture",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/rag-architecture/",
+      "degree": 4
+    },
+    {
+      "id": "ReferenceArchitecture/self-learning-agents.md",
+      "label": "Self-Learning Agents Reference Architecture",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/self-learning-agents/",
+      "degree": 0
+    },
+    {
+      "id": "ReferenceArchitecture/specialized-blueprints.md",
+      "label": "Specialized Domain Blueprints",
+      "section": "ReferenceArchitecture",
+      "color": "#a05bf0",
+      "path": "ReferenceArchitecture/specialized-blueprints/",
+      "degree": 0
+    },
+    {
+      "id": "SecurityFrameworks/Readme.md",
+      "label": "Agentic AI Security",
+      "section": "SecurityFrameworks",
+      "color": "#e0c040",
+      "path": "SecurityFrameworks/",
+      "degree": 5
+    },
+    {
+      "id": "SecurityFrameworks/google-saif.md",
+      "label": "Google SAIF Framework",
+      "section": "SecurityFrameworks",
+      "color": "#e0c040",
+      "path": "SecurityFrameworks/google-saif/",
+      "degree": 0
+    },
+    {
+      "id": "SecurityFrameworks/nist-ai-rmf.md",
+      "label": "NIST AI RMF (Risk Management Framework)",
+      "section": "SecurityFrameworks",
+      "color": "#e0c040",
+      "path": "SecurityFrameworks/nist-ai-rmf/",
+      "degree": 0
+    },
+    {
+      "id": "Standards/README.md",
+      "label": "AG-UI Protocol",
+      "section": "Standards",
+      "color": "#5bf0a0",
+      "path": "Standards/",
+      "degree": 3
+    },
+    {
+      "id": "Standards/agent2agent.md",
+      "label": "Agent2Agent (A2A) Protocol",
+      "section": "Standards",
+      "color": "#5bf0a0",
+      "path": "Standards/agent2agent/",
+      "degree": 6
+    },
+    {
+      "id": "Standards/agentic-ai-foundation.md",
+      "label": "Agentic AI Foundation (AAIF)",
+      "section": "Standards",
+      "color": "#5bf0a0",
+      "path": "Standards/agentic-ai-foundation/",
+      "degree": 0
+    },
+    {
+      "id": "Standards/agents-md.md",
+      "label": "AGENTS.md Standard",
+      "section": "Standards",
+      "color": "#5bf0a0",
+      "path": "Standards/agents-md/",
+      "degree": 0
+    },
+    {
+      "id": "Standards/mcp.md",
+      "label": "Model Context Protocol (MCP)",
+      "section": "Standards",
+      "color": "#5bf0a0",
+      "path": "Standards/mcp/",
+      "degree": 1
+    },
+    {
+      "id": "Standards/openspec.md",
+      "label": "OpenSpec",
+      "section": "Standards",
+      "color": "#5bf0a0",
+      "path": "Standards/openspec/",
+      "degree": 0
+    },
+    {
+      "id": "WorkflowBuilders/README.md",
+      "label": "SaaS (No-code) Workflow Solutions",
+      "section": "WorkflowBuilders",
+      "color": "#40c8a0",
+      "path": "WorkflowBuilders/",
+      "degree": 0
+    },
+    {
+      "id": "WorkflowBuilders/business-process.md",
+      "label": "Business Process Workflow Engines",
+      "section": "WorkflowBuilders",
+      "color": "#40c8a0",
+      "path": "WorkflowBuilders/business-process/",
+      "degree": 0
+    },
+    {
+      "id": "WorkflowBuilders/open-source.md",
+      "label": "Open Source Workflow Engines (MIT or Apache)",
+      "section": "WorkflowBuilders",
+      "color": "#40c8a0",
+      "path": "WorkflowBuilders/open-source/",
+      "degree": 0
+    },
+    {
+      "id": "WorkflowBuilders/orchestration.md",
+      "label": "Workflow Orchestration",
+      "section": "WorkflowBuilders",
+      "color": "#40c8a0",
+      "path": "WorkflowBuilders/orchestration/",
+      "degree": 0
+    },
+    {
+      "id": "WorkflowBuilders/self-hosted.md",
+      "label": "Self-hosted & Limited Open Source",
+      "section": "WorkflowBuilders",
+      "color": "#40c8a0",
+      "path": "WorkflowBuilders/self-hosted/",
+      "degree": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "AgentMemory/README.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "AgentMemory/README.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgentMemory/README.md",
+      "target": "ReferenceArchitecture/README.md"
+    },
+    {
+      "source": "AgentMemory/README.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "AgentMemory/functional-tiers.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "AgentMemory/functional-tiers.md",
+      "target": "AgentMemory/ltm-strategies.md"
+    },
+    {
+      "source": "AgentMemory/functional-tiers.md",
+      "target": "AgentMemory/short-term.md"
+    },
+    {
+      "source": "AgentMemory/functional-tiers.md",
+      "target": "AgentMemory/research-papers.md"
+    },
+    {
+      "source": "AgentMemory/ltm-strategies.md",
+      "target": "AgentMemory/functional-tiers.md"
+    },
+    {
+      "source": "AgentMemory/ltm-strategies.md",
+      "target": "AgentMemory/short-term.md"
+    },
+    {
+      "source": "AgentMemory/ltm-strategies.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "AgentMemory/ltm-strategies.md",
+      "target": "AgentMemory/research-papers.md"
+    },
+    {
+      "source": "AgentMemory/research-papers.md",
+      "target": "AgentMemory/functional-tiers.md"
+    },
+    {
+      "source": "AgentMemory/research-papers.md",
+      "target": "AgentMemory/ltm-strategies.md"
+    },
+    {
+      "source": "AgentMemory/research-papers.md",
+      "target": "AgentMemory/short-term.md"
+    },
+    {
+      "source": "AgentMemory/research-papers.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "AgentMemory/short-term.md",
+      "target": "AgentMemory/functional-tiers.md"
+    },
+    {
+      "source": "AgentMemory/short-term.md",
+      "target": "AgentMemory/ltm-strategies.md"
+    },
+    {
+      "source": "AgentMemory/short-term.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "AgentOps/README.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "AgentOps/README.md",
+      "target": "AgentPlatforms/README.md"
+    },
+    {
+      "source": "AgentOps/README.md",
+      "target": "MaturityModels/README.md"
+    },
+    {
+      "source": "AgentOps/README.md",
+      "target": "ProductionBestPractices/README.md"
+    },
+    {
+      "source": "AgentOps/README.md",
+      "target": "Standards/agent2agent.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogen.md",
+      "target": "AgenticFrameworks/microsoft-framework.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogen.md",
+      "target": "AgenticFrameworks/semantic-kernel.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogen.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogen.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogpt.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogpt.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/autogpt.md",
+      "target": "AgenticFrameworks/crewai.md"
+    },
+    {
+      "source": "AgenticFrameworks/aws-strands.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/aws-strands.md",
+      "target": "AgentPlatforms/aws-agentcore.md"
+    },
+    {
+      "source": "AgenticFrameworks/aws-strands.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/crewai.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/crewai.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/crewai.md",
+      "target": "AgenticFrameworks/langchain.md"
+    },
+    {
+      "source": "AgenticFrameworks/crewai.md",
+      "target": "AgenticFrameworks/autogen.md"
+    },
+    {
+      "source": "AgenticFrameworks/google-adk.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/google-adk.md",
+      "target": "AgentPlatforms/google-vertex.md"
+    },
+    {
+      "source": "AgenticFrameworks/google-adk.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/haystack.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/haystack.md",
+      "target": "ReferenceArchitecture/rag-architecture.md"
+    },
+    {
+      "source": "AgenticFrameworks/haystack.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/langchain.md",
+      "target": "AgenticFrameworks/langgraph.md"
+    },
+    {
+      "source": "AgenticFrameworks/langchain.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/langchain.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/langchain.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/langgraph.md",
+      "target": "AgenticFrameworks/langchain.md"
+    },
+    {
+      "source": "AgenticFrameworks/langgraph.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/langgraph.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/langgraph.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "AgenticFrameworks/llamaindex.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/llamaindex.md",
+      "target": "ReferenceArchitecture/rag-architecture.md"
+    },
+    {
+      "source": "AgenticFrameworks/llamaindex.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/microsoft-framework.md",
+      "target": "AgenticFrameworks/semantic-kernel.md"
+    },
+    {
+      "source": "AgenticFrameworks/microsoft-framework.md",
+      "target": "AgenticFrameworks/autogen.md"
+    },
+    {
+      "source": "AgenticFrameworks/microsoft-framework.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/microsoft-framework.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/pydantic-ai.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/pydantic-ai.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/pydantic-ai.md",
+      "target": "AgenticFrameworks/langchain.md"
+    },
+    {
+      "source": "AgenticFrameworks/semantic-kernel.md",
+      "target": "AgenticFrameworks/microsoft-framework.md"
+    },
+    {
+      "source": "AgenticFrameworks/semantic-kernel.md",
+      "target": "AgenticFrameworks/autogen.md"
+    },
+    {
+      "source": "AgenticFrameworks/semantic-kernel.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/semantic-kernel.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/spring-ai.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "AgenticFrameworks/spring-ai.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "AgenticFrameworks/spring-ai.md",
+      "target": "AgenticFrameworks/langchain.md"
+    },
+    {
+      "source": "Architecture/12-factor-agents.md",
+      "target": "Architecture/components-selection.md"
+    },
+    {
+      "source": "Architecture/12-factor-agents.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "Architecture/12-factor-agents.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "Architecture/12-factor-agents.md",
+      "target": "ProductionBestPractices/README.md"
+    },
+    {
+      "source": "Architecture/components-selection.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "Architecture/components-selection.md",
+      "target": "Architecture/12-factor-agents.md"
+    },
+    {
+      "source": "Architecture/components-selection.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "Architecture/components-selection.md",
+      "target": "AgenticTechStack/README.md"
+    },
+    {
+      "source": "Architecture/multi-agent-system.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "Architecture/multi-agent-system.md",
+      "target": "Architecture/components-selection.md"
+    },
+    {
+      "source": "Architecture/multi-agent-system.md",
+      "target": "Architecture/12-factor-agents.md"
+    },
+    {
+      "source": "Architecture/multi-agent-system.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "Benchmarks/agent-benchmarks.md",
+      "target": "Benchmarks/llm-benchmarks.md"
+    },
+    {
+      "source": "Benchmarks/agent-benchmarks.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "Benchmarks/agent-benchmarks.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "Benchmarks/llm-benchmarks.md",
+      "target": "Benchmarks/agent-benchmarks.md"
+    },
+    {
+      "source": "Benchmarks/llm-benchmarks.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "Benchmarks/llm-benchmarks.md",
+      "target": "Benchmarks/Readme.md"
+    },
+    {
+      "source": "Concepts/agent-definition.md",
+      "target": "Concepts/agent-types.md"
+    },
+    {
+      "source": "Concepts/agent-definition.md",
+      "target": "Architecture/components-selection.md"
+    },
+    {
+      "source": "Concepts/agent-types.md",
+      "target": "Concepts/agent-definition.md"
+    },
+    {
+      "source": "Concepts/agent-types.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "Concepts/agent-types.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "Concepts/references.md",
+      "target": "Concepts/agent-definition.md"
+    },
+    {
+      "source": "Concepts/references.md",
+      "target": "Concepts/agent-types.md"
+    },
+    {
+      "source": "ContextEngineering/README.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "ContextEngineering/README.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "ContextEngineering/README.md",
+      "target": "ReferenceArchitecture/rag-architecture.md"
+    },
+    {
+      "source": "ContextEngineering/README.md",
+      "target": "ProductionBestPractices/context-engineering.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "ContextEngineering/strategies.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "ContextEngineering/challenges.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "ContextEngineering/manus.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "ContextEngineering/langgraph.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "ContextEngineering/devin.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "ContextEngineering/anthropic.md",
+      "target": "ProductionBestPractices/context-engineering.md"
+    },
+    {
+      "source": "ContextEngineering/challenges.md",
+      "target": "ContextEngineering/strategies.md"
+    },
+    {
+      "source": "ContextEngineering/challenges.md",
+      "target": "ContextEngineering/manus.md"
+    },
+    {
+      "source": "ContextEngineering/challenges.md",
+      "target": "ContextEngineering/anthropic.md"
+    },
+    {
+      "source": "ContextEngineering/challenges.md",
+      "target": "ContextEngineering/devin.md"
+    },
+    {
+      "source": "ContextEngineering/challenges.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "ContextEngineering/devin.md",
+      "target": "ContextEngineering/strategies.md"
+    },
+    {
+      "source": "ContextEngineering/devin.md",
+      "target": "ContextEngineering/challenges.md"
+    },
+    {
+      "source": "ContextEngineering/devin.md",
+      "target": "ContextEngineering/anthropic.md"
+    },
+    {
+      "source": "ContextEngineering/devin.md",
+      "target": "ContextEngineering/langgraph.md"
+    },
+    {
+      "source": "ContextEngineering/devin.md",
+      "target": "Architecture/multi-agent-system.md"
+    },
+    {
+      "source": "ContextEngineering/langgraph.md",
+      "target": "ContextEngineering/strategies.md"
+    },
+    {
+      "source": "ContextEngineering/langgraph.md",
+      "target": "ContextEngineering/challenges.md"
+    },
+    {
+      "source": "ContextEngineering/langgraph.md",
+      "target": "ContextEngineering/manus.md"
+    },
+    {
+      "source": "ContextEngineering/langgraph.md",
+      "target": "ContextEngineering/anthropic.md"
+    },
+    {
+      "source": "ContextEngineering/langgraph.md",
+      "target": "ContextEngineering/devin.md"
+    },
+    {
+      "source": "ContextEngineering/langgraph.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "ContextEngineering/manus.md",
+      "target": "ContextEngineering/strategies.md"
+    },
+    {
+      "source": "ContextEngineering/manus.md",
+      "target": "ContextEngineering/challenges.md"
+    },
+    {
+      "source": "ContextEngineering/manus.md",
+      "target": "ContextEngineering/anthropic.md"
+    },
+    {
+      "source": "ContextEngineering/manus.md",
+      "target": "ContextEngineering/langgraph.md"
+    },
+    {
+      "source": "ContextEngineering/manus.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "ContextEngineering/challenges.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "ContextEngineering/manus.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "ContextEngineering/anthropic.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "ContextEngineering/langgraph.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "ContextEngineering/devin.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "ContextEngineering/strategies.md",
+      "target": "ReferenceArchitecture/rag-architecture.md"
+    },
+    {
+      "source": "EvaluationFrameworks/Readme.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "EvaluationFrameworks/Readme.md",
+      "target": "Benchmarks/Readme.md"
+    },
+    {
+      "source": "EvaluationFrameworks/Readme.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "EvaluationFrameworks/Readme.md",
+      "target": "ProductionBestPractices/README.md"
+    },
+    {
+      "source": "EvaluationFrameworks/llm-frameworks.md",
+      "target": "EvaluationFrameworks/platforms.md"
+    },
+    {
+      "source": "EvaluationFrameworks/llm-frameworks.md",
+      "target": "Benchmarks/Readme.md"
+    },
+    {
+      "source": "EvaluationFrameworks/llm-frameworks.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "EvaluationFrameworks/platforms.md",
+      "target": "EvaluationFrameworks/llm-frameworks.md"
+    },
+    {
+      "source": "EvaluationFrameworks/platforms.md",
+      "target": "Benchmarks/Readme.md"
+    },
+    {
+      "source": "EvaluationFrameworks/platforms.md",
+      "target": "Observability/solutions.md"
+    },
+    {
+      "source": "Marketplace/Readme.md",
+      "target": "AgentPlatforms/README.md"
+    },
+    {
+      "source": "Marketplace/Readme.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "Marketplace/Readme.md",
+      "target": "Standards/README.md"
+    },
+    {
+      "source": "Marketplace/Readme.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "MaturityModels/README.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "MaturityModels/README.md",
+      "target": "ProductionBestPractices/README.md"
+    },
+    {
+      "source": "MaturityModels/README.md",
+      "target": "AgentOps/README.md"
+    },
+    {
+      "source": "MaturityModels/README.md",
+      "target": "Standards/README.md"
+    },
+    {
+      "source": "Observability/Readme.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "Observability/Readme.md",
+      "target": "AgentOps/README.md"
+    },
+    {
+      "source": "Observability/Readme.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "Observability/Readme.md",
+      "target": "AgentPlatforms/README.md"
+    },
+    {
+      "source": "Observability/goals.md",
+      "target": "Observability/solutions.md"
+    },
+    {
+      "source": "Observability/goals.md",
+      "target": "AgentOps/README.md"
+    },
+    {
+      "source": "Observability/goals.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "Observability/solutions.md",
+      "target": "Observability/goals.md"
+    },
+    {
+      "source": "Observability/solutions.md",
+      "target": "AgentOps/README.md"
+    },
+    {
+      "source": "Observability/solutions.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "ProductionBestPractices/context-engineering.md",
+      "target": "ProductionBestPractices/state-memory.md"
+    },
+    {
+      "source": "ProductionBestPractices/context-engineering.md",
+      "target": "ProductionBestPractices/cost-management.md"
+    },
+    {
+      "source": "ProductionBestPractices/context-engineering.md",
+      "target": "ProductionBestPractices/security.md"
+    },
+    {
+      "source": "ProductionBestPractices/cost-management.md",
+      "target": "Observability/Readme.md"
+    },
+    {
+      "source": "ProductionBestPractices/cost-management.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "ProductionBestPractices/cost-management.md",
+      "target": "AgentOps/README.md"
+    },
+    {
+      "source": "ProductionBestPractices/cost-management.md",
+      "target": "EvaluationFrameworks/Readme.md"
+    },
+    {
+      "source": "ProductionBestPractices/deployment.md",
+      "target": "ProductionBestPractices/observability.md"
+    },
+    {
+      "source": "ProductionBestPractices/deployment.md",
+      "target": "ProductionBestPractices/cost-management.md"
+    },
+    {
+      "source": "ProductionBestPractices/deployment.md",
+      "target": "ProductionBestPractices/testing-evaluations.md"
+    },
+    {
+      "source": "ProductionBestPractices/deployment.md",
+      "target": "Standards/agent2agent.md"
+    },
+    {
+      "source": "ProductionBestPractices/observability.md",
+      "target": "ProductionBestPractices/deployment.md"
+    },
+    {
+      "source": "ProductionBestPractices/observability.md",
+      "target": "ProductionBestPractices/cost-management.md"
+    },
+    {
+      "source": "ProductionBestPractices/observability.md",
+      "target": "ProductionBestPractices/testing-evaluations.md"
+    },
+    {
+      "source": "ProductionBestPractices/security.md",
+      "target": "ProductionBestPractices/observability.md"
+    },
+    {
+      "source": "ProductionBestPractices/security.md",
+      "target": "ProductionBestPractices/deployment.md"
+    },
+    {
+      "source": "ProductionBestPractices/security.md",
+      "target": "ProductionBestPractices/context-engineering.md"
+    },
+    {
+      "source": "ProductionBestPractices/security.md",
+      "target": "SecurityFrameworks/Readme.md"
+    },
+    {
+      "source": "ProductionBestPractices/state-memory.md",
+      "target": "ProductionBestPractices/context-engineering.md"
+    },
+    {
+      "source": "ProductionBestPractices/state-memory.md",
+      "target": "ProductionBestPractices/observability.md"
+    },
+    {
+      "source": "ProductionBestPractices/state-memory.md",
+      "target": "ProductionBestPractices/deployment.md"
+    },
+    {
+      "source": "ProductionBestPractices/testing-evaluations.md",
+      "target": "ProductionBestPractices/observability.md"
+    },
+    {
+      "source": "ProductionBestPractices/testing-evaluations.md",
+      "target": "ProductionBestPractices/deployment.md"
+    },
+    {
+      "source": "ProductionBestPractices/testing-evaluations.md",
+      "target": "ProductionBestPractices/context-engineering.md"
+    },
+    {
+      "source": "ReferenceArchitecture/README.md",
+      "target": "Architecture/components-selection.md"
+    },
+    {
+      "source": "ReferenceArchitecture/README.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "ReferenceArchitecture/README.md",
+      "target": "ContextEngineering/README.md"
+    },
+    {
+      "source": "ReferenceArchitecture/README.md",
+      "target": "AgentMemory/README.md"
+    },
+    {
+      "source": "SecurityFrameworks/Readme.md",
+      "target": "AgenticFrameworks/README.md"
+    },
+    {
+      "source": "SecurityFrameworks/Readme.md",
+      "target": "AgentPlatforms/README.md"
+    },
+    {
+      "source": "SecurityFrameworks/Readme.md",
+      "target": "Standards/README.md"
+    },
+    {
+      "source": "SecurityFrameworks/Readme.md",
+      "target": "ProductionBestPractices/README.md"
+    },
+    {
+      "source": "Standards/agent2agent.md",
+      "target": "Standards/mcp.md"
+    },
+    {
+      "source": "Standards/agent2agent.md",
+      "target": "ProductionBestPractices/deployment.md"
+    },
+    {
+      "source": "Standards/agent2agent.md",
+      "target": "AgentOps/README.md"
+    },
+    {
+      "source": "Standards/agent2agent.md",
+      "target": "AllThingsGoogle/README.md"
+    }
+  ]
+}

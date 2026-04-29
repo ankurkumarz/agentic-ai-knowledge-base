@@ -6,7 +6,7 @@
 
 ## High-level Architecture
 
-![PydanticAI Components](../assets/images/frameworks-pydantic-ai-architecture.png)
+![PydanticAI Components](pydantic-ai-architecture.png)
 
 *PydanticAI Components*
 

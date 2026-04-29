@@ -206,4 +206,4 @@ This security framework provides the foundation for building trustworthy, secure
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Security considerations for frameworks
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform security features
 - **[Standards](../Standards/README.md)**: Security standards and protocols
-- **[Best Practices](../BestPractices/README.md)**: Security best practices
+- **[Best Practices](../ProductionBestPractices/README.md)**: Security best practices

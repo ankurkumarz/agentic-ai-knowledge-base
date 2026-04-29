@@ -85,6 +85,6 @@ To begin exploring the knowledge base:
 1. **New to Agentic AI?** Start with the [Concepts](../Concepts/README.md) section
 2. **Ready to Build?** Jump to [Agent Development Frameworks](../AgenticFrameworks/README.md)
 3. **Planning Architecture?** Review [Architecture & Design Patterns](../Architecture/components-selection.md)
-4. **Need Best Practices?** Check [AI Agents Best Practices](../BestPractices/README.md)
+4. **Need Best Practices?** Check [AI Agents Best Practices](../ProductionBestPractices/README.md)
 
 Navigate through the sections using the sidebar or explore topics based on your specific needs and experience level.

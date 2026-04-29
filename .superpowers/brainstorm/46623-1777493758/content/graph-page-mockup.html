@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knowledge Graph Page Mockup</title>
+<style>
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; }
+
+  /* MkDocs Material nav simulation */
+  .site-header { background: #1e1e3f; padding: 12px 24px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #333; }
+  .site-header .logo { font-weight: 700; font-size: 15px; color: #a0a8f8; }
+  .site-header .nav-items { display: flex; gap: 16px; font-size: 13px; color: #999; }
+  .site-header .nav-items .active { color: #a0a8f8; border-bottom: 2px solid #5b6af0; padding-bottom: 2px; }
+
+  .layout { display: flex; height: calc(100vh - 49px); }
+
+  /* Left nav sidebar */
+  .sidebar { width: 220px; background: #16162a; border-right: 1px solid #2a2a4a; padding: 16px 0; font-size: 12px; overflow-y: auto; flex-shrink: 0; }
+  .sidebar-section { padding: 4px 16px; color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 12px; }
+  .sidebar-item { padding: 5px 16px; color: #aaa; cursor: pointer; }
+  .sidebar-item.active { color: #a0a8f8; background: rgba(91,106,240,0.1); border-left: 2px solid #5b6af0; }
+  .sidebar-item:hover { color: #ddd; }
+
+  /* Main content */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  .page-title { padding: 16px 24px 8px; border-bottom: 1px solid #2a2a4a; }
+  .page-title h1 { margin: 0; font-size: 20px; color: #e0e0f0; }
+  .page-title p { margin: 4px 0 0; font-size: 13px; color: #888; }
+
+  /* Graph controls bar */
+  .controls { display: flex; align-items: center; gap: 12px; padding: 8px 24px; background: #16162a; border-bottom: 1px solid #2a2a4a; flex-wrap: wrap; }
+  .search-box { background: #1e1e3f; border: 1px solid #3a3a6a; border-radius: 6px; padding: 5px 10px; color: #ddd; font-size: 12px; width: 180px; }
+  .search-box::placeholder { color: #555; }
+  .filter-label { font-size: 11px; color: #777; }
+  .section-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
+  .filter-chip { background: #2a2a4a; border: 1px solid #4a4a7a; border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #aaa; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+  .filter-chip.active { background: rgba(91,106,240,0.2); border-color: #5b6af0; color: #a0a8f8; }
+  .spacer { flex: 1; }
+  .stats { font-size: 11px; color: #555; }
+
+  /* Graph canvas area */
+  .graph-area { flex: 1; position: relative; background: #0d0d1a; }
+
+  /* SVG graph mockup */
+  .graph-svg { width: 100%; height: 100%; }
+
+  /* Legend */
+  .legend { position: absolute; bottom: 16px; left: 16px; background: rgba(22,22,42,0.92); border: 1px solid #2a2a4a; border-radius: 8px; padding: 12px 16px; font-size: 11px; }
+  .legend h4 { margin: 0 0 8px; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+  .legend-item { display: flex; align-items: center; gap: 6px; color: #aaa; margin-bottom: 4px; }
+
+  /* Tooltip simulation */
+  .tooltip { position: absolute; top: 120px; right: 180px; background: rgba(30,30,63,0.97); border: 1px solid #4a4a8a; border-radius: 8px; padding: 10px 14px; font-size: 12px; pointer-events: none; }
+  .tooltip h5 { margin: 0 0 4px; font-size: 13px; color: #e0e0ff; }
+  .tooltip p { margin: 0; color: #888; }
+  .tooltip .badge { display: inline-block; background: rgba(91,106,240,0.2); color: #a0a8f8; border-radius: 4px; padding: 1px 6px; font-size: 10px; margin-top: 6px; }
+
+  /* Zoom controls */
+  .zoom-controls { position: absolute; top: 16px; right: 16px; display: flex; flex-direction: column; gap: 4px; }
+  .zoom-btn { background: rgba(22,22,42,0.92); border: 1px solid #2a2a4a; color: #aaa; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="logo">Agentic AI KB</div>
+  <div class="nav-items">
+    <span>Home</span>
+    <span>Concepts</span>
+    <span>Frameworks</span>
+    <span>Architecture</span>
+    <span class="active">📊 Knowledge Graph</span>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="sidebar">
+    <div class="sidebar-section">Navigation</div>
+    <div class="sidebar-item">Home</div>
+    <div class="sidebar-section">Sections</div>
+    <div class="sidebar-item">1. Introduction</div>
+    <div class="sidebar-item">2. Concepts</div>
+    <div class="sidebar-item">3. Architecture</div>
+    <div class="sidebar-item">4. Frameworks</div>
+    <div class="sidebar-item">5. Tech Stack</div>
+    <div class="sidebar-item">...</div>
+    <div class="sidebar-section">Extras</div>
+    <div class="sidebar-item active">📊 Knowledge Graph</div>
+  </div>
+
+  <div class="main">
+    <div class="page-title">
+      <h1>Knowledge Graph</h1>
+      <p>~90 pages · 53 nodes with See Also links · colour-coded by section · click any node to open page</p>
+    </div>
+
+    <div class="controls">
+      <input class="search-box" placeholder="🔍  Search pages..." />
+      <span class="filter-label">Filter:</span>
+      <div class="filter-chip active"><span class="section-dot" style="background:#5b6af0"></span>Concepts</div>
+      <div class="filter-chip active"><span class="section-dot" style="background:#f0875b"></span>Frameworks</div>
+      <div class="filter-chip active"><span class="section-dot" style="background:#5bbff0"></span>Architecture</div>
+      <div class="filter-chip active"><span class="section-dot" style="background:#5bf0a0"></span>Standards</div>
+      <div class="filter-chip active"><span class="section-dot" style="background:#f05b8a"></span>Memory</div>
+      <div class="filter-chip"><span class="section-dot" style="background:#a0f05b"></span>Security</div>
+      <div class="spacer"></div>
+      <span class="stats">90 nodes · 68 edges</span>
+    </div>
+
+    <div class="graph-area">
+      <svg class="graph-svg" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#12122a"/>
+            <stop offset="100%" stop-color="#0d0d1a"/>
+          </radialGradient>
+        </defs>
+        <rect width="900" height="500" fill="url(#bg)"/>
+
+        <!-- Cluster halos -->
+        <ellipse cx="250" cy="180" rx="110" ry="90" fill="rgba(91,106,240,0.04)" stroke="#5b6af0" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+        <ellipse cx="580" cy="160" rx="130" ry="100" fill="rgba(240,135,91,0.04)" stroke="#f0875b" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+        <ellipse cx="430" cy="360" rx="120" ry="80" fill="rgba(91,191,240,0.04)" stroke="#5bbff0" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+        <ellipse cx="720" cy="320" rx="90" ry="70" fill="rgba(91,240,160,0.04)" stroke="#5bf0a0" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+        <ellipse cx="160" cy="360" rx="80" ry="65" fill="rgba(240,91,138,0.04)" stroke="#f05b8a" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+
+        <!-- Edges (grey, within clusters) -->
+        <!-- Concepts cluster edges -->
+        <line x1="250" y1="180" x2="190" y2="140" stroke="#5b6af0" stroke-width="1" opacity="0.25"/>
+        <line x1="250" y1="180" x2="310" y2="140" stroke="#5b6af0" stroke-width="1" opacity="0.25"/>
+        <line x1="250" y1="180" x2="220" y2="230" stroke="#5b6af0" stroke-width="1" opacity="0.25"/>
+        <line x1="250" y1="180" x2="300" y2="220" stroke="#5b6af0" stroke-width="1" opacity="0.25"/>
+        <line x1="190" y1="140" x2="160" y2="110" stroke="#5b6af0" stroke-width="0.7" opacity="0.2"/>
+        <line x1="310" y1="140" x2="340" y2="110" stroke="#5b6af0" stroke-width="0.7" opacity="0.2"/>
+
+        <!-- Frameworks cluster edges -->
+        <line x1="580" y1="160" x2="510" y2="130" stroke="#f0875b" stroke-width="1" opacity="0.25"/>
+        <line x1="580" y1="160" x2="640" y2="120" stroke="#f0875b" stroke-width="1" opacity="0.25"/>
+        <line x1="580" y1="160" x2="620" y2="200" stroke="#f0875b" stroke-width="1" opacity="0.25"/>
+        <line x1="580" y1="160" x2="530" y2="200" stroke="#f0875b" stroke-width="1" opacity="0.25"/>
+        <line x1="640" y1="120" x2="700" y2="100" stroke="#f0875b" stroke-width="0.7" opacity="0.2"/>
+        <line x1="510" y1="130" x2="470" y2="100" stroke="#f0875b" stroke-width="0.7" opacity="0.2"/>
+        <line x1="620" y1="200" x2="660" y2="230" stroke="#f0875b" stroke-width="0.7" opacity="0.2"/>
+
+        <!-- Architecture cluster edges -->
+        <line x1="430" y1="360" x2="370" y2="330" stroke="#5bbff0" stroke-width="1" opacity="0.25"/>
+        <line x1="430" y1="360" x2="490" y2="330" stroke="#5bbff0" stroke-width="1" opacity="0.25"/>
+        <line x1="430" y1="360" x2="400" y2="410" stroke="#5bbff0" stroke-width="1" opacity="0.25"/>
+        <line x1="370" y1="330" x2="330" y2="300" stroke="#5bbff0" stroke-width="0.7" opacity="0.2"/>
+
+        <!-- Cross-cluster edges (lighter) -->
+        <line x1="250" y1="180" x2="430" y2="360" stroke="#aaa" stroke-width="0.8" opacity="0.12"/>
+        <line x1="300" y1="220" x2="370" y2="330" stroke="#aaa" stroke-width="0.8" opacity="0.12"/>
+        <line x1="580" y1="160" x2="490" y2="330" stroke="#aaa" stroke-width="0.8" opacity="0.12"/>
+        <line x1="640" y1="120" x2="720" y2="320" stroke="#aaa" stroke-width="0.8" opacity="0.12"/>
+        <line x1="220" y1="230" x2="160" y2="360" stroke="#aaa" stroke-width="0.8" opacity="0.12"/>
+        <line x1="530" y1="200" x2="430" y2="360" stroke="#aaa" stroke-width="0.8" opacity="0.12"/>
+
+        <!-- Concepts cluster nodes -->
+        <circle cx="250" cy="180" r="14" fill="#5b6af0" opacity="0.95"/>
+        <text x="250" y="184" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Concepts</text>
+        <circle cx="190" cy="140" r="9" fill="#7c8cf8" opacity="0.9"/>
+        <text x="190" y="156" text-anchor="middle" fill="#9ba8f9" font-size="8">Definitions</text>
+        <circle cx="310" cy="140" r="8" fill="#7c8cf8" opacity="0.9"/>
+        <text x="310" y="156" text-anchor="middle" fill="#9ba8f9" font-size="8">Types</text>
+        <circle cx="220" cy="230" r="7" fill="#9ba8f9" opacity="0.85"/>
+        <text x="220" y="245" text-anchor="middle" fill="#9ba8f9" font-size="8">Foundations</text>
+        <circle cx="300" cy="220" r="6" fill="#9ba8f9" opacity="0.85"/>
+        <circle cx="160" cy="110" r="5" fill="#c2cafc" opacity="0.7"/>
+        <circle cx="340" cy="110" r="5" fill="#c2cafc" opacity="0.7"/>
+
+        <!-- Frameworks cluster nodes (highlighted — hovered) -->
+        <circle cx="580" cy="160" r="16" fill="#f0875b" opacity="0.95" stroke="#fff" stroke-width="2"/>
+        <text x="580" y="164" text-anchor="middle" fill="white" font-size="8" font-weight="bold">LangGraph</text>
+        <circle cx="510" cy="130" r="9" fill="#f8a87c" opacity="0.9"/>
+        <text x="510" y="146" text-anchor="middle" fill="#f8c0a0" font-size="8">LangChain</text>
+        <circle cx="640" cy="120" r="8" fill="#f8a87c" opacity="0.9"/>
+        <text x="640" y="136" text-anchor="middle" fill="#f8c0a0" font-size="8">CrewAI</text>
+        <circle cx="620" cy="200" r="8" fill="#f8a87c" opacity="0.9"/>
+        <text x="620" y="216" text-anchor="middle" fill="#f8c0a0" font-size="8">AutoGen</text>
+        <circle cx="530" cy="200" r="7" fill="#f8c0a0" opacity="0.85"/>
+        <circle cx="700" cy="100" r="5" fill="#fad4bc" opacity="0.7"/>
+        <circle cx="470" cy="100" r="5" fill="#fad4bc" opacity="0.7"/>
+        <circle cx="660" cy="230" r="5" fill="#fad4bc" opacity="0.7"/>
+
+        <!-- Architecture cluster nodes -->
+        <circle cx="430" cy="360" r="12" fill="#5bbff0" opacity="0.9"/>
+        <text x="430" y="364" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Arch.</text>
+        <circle cx="370" cy="330" r="8" fill="#7cd4f8" opacity="0.85"/>
+        <text x="370" y="346" text-anchor="middle" fill="#a0dff8" font-size="8">RAG</text>
+        <circle cx="490" cy="330" r="7" fill="#7cd4f8" opacity="0.85"/>
+        <text x="490" y="346" text-anchor="middle" fill="#a0dff8" font-size="8">Patterns</text>
+        <circle cx="400" cy="410" r="6" fill="#a0dff8" opacity="0.7"/>
+        <circle cx="330" cy="300" r="5" fill="#c0eafc" opacity="0.65"/>
+
+        <!-- Standards cluster nodes -->
+        <circle cx="720" cy="320" r="11" fill="#5bf0a0" opacity="0.9"/>
+        <text x="720" y="324" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Standards</text>
+        <circle cx="760" cy="280" r="7" fill="#7cf8b8" opacity="0.85"/>
+        <text x="760" y="296" text-anchor="middle" fill="#a0f8c8" font-size="8">MCP</text>
+        <circle cx="770" cy="350" r="6" fill="#7cf8b8" opacity="0.85"/>
+        <text x="770" y="366" text-anchor="middle" fill="#a0f8c8" font-size="8">A2A</text>
+        <circle cx="680" cy="360" r="5" fill="#b0f8d0" opacity="0.7"/>
+
+        <!-- Memory cluster nodes -->
+        <circle cx="160" cy="360" r="11" fill="#f05b8a" opacity="0.9"/>
+        <text x="160" y="364" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Memory</text>
+        <circle cx="110" cy="330" r="7" fill="#f87ca8" opacity="0.85"/>
+        <text x="110" y="346" text-anchor="middle" fill="#f8a0c0" font-size="7">LTM</text>
+        <circle cx="200" cy="390" r="6" fill="#f87ca8" opacity="0.85"/>
+        <text x="200" y="406" text-anchor="middle" fill="#f8a0c0" font-size="7">Short-term</text>
+        <circle cx="120" cy="400" r="5" fill="#f8b0c8" opacity="0.7"/>
+      </svg>
+
+      <!-- Tooltip (hover simulation on LangGraph) -->
+      <div class="tooltip">
+        <h5>LangGraph</h5>
+        <p>AgenticFrameworks/langgraph.md</p>
+        <p style="margin-top:4px;color:#777">6 See Also connections</p>
+        <div class="badge">4. Agent Development Frameworks</div>
+      </div>
+
+      <!-- Zoom controls -->
+      <div class="zoom-controls">
+        <div class="zoom-btn">+</div>
+        <div class="zoom-btn">−</div>
+        <div class="zoom-btn" style="font-size:11px">⊙</div>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <h4>Sections</h4>
+        <div class="legend-item"><span class="section-dot" style="background:#5b6af0"></span>Concepts</div>
+        <div class="legend-item"><span class="section-dot" style="background:#f0875b"></span>Frameworks</div>
+        <div class="legend-item"><span class="section-dot" style="background:#5bbff0"></span>Architecture</div>
+        <div class="legend-item"><span class="section-dot" style="background:#5bf0a0"></span>Standards</div>
+        <div class="legend-item"><span class="section-dot" style="background:#f05b8a"></span>Memory</div>
+        <div class="legend-item" style="color:#555">+ 11 more...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

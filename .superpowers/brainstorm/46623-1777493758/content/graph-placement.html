@@ -1,0 +1,55 @@
+<h2>Where should the Knowledge Graph live?</h2>
+<p class="subtitle">This decision shapes the whole architecture. Pick the placement that fits how you'd use it.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Dedicated Page</h3>
+      <p>A standalone <strong>/graph</strong> page in the nav. Users navigate there intentionally to explore connections across the whole wiki. Full-screen, immersive, full graph view.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Nav Preview</div>
+        <div class="mockup-body" style="font-size:13px">
+          <div class="mock-nav" style="display:flex;gap:16px;padding:8px">
+            <span>Home</span><span>Concepts</span><span>Frameworks</span><span style="border-bottom:2px solid #5b6af0;font-weight:bold">📊 Knowledge Graph</span><span>...</span>
+          </div>
+          <div style="text-align:center;padding:24px;color:#888;font-style:italic">[ Full-screen force-directed graph here ]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Per-Page Mini-Graph (Right Panel)</h3>
+      <p>Every article shows a small graph in the right sidebar, centered on the current page and its direct neighbours. Lets readers see "where am I in the knowledge base?" contextually.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Page Layout Preview</div>
+        <div class="mockup-body" style="display:flex;gap:8px;font-size:13px">
+          <div class="mock-sidebar" style="width:160px">Left Nav</div>
+          <div class="mock-content" style="flex:1">Article Content</div>
+          <div style="width:180px;background:#f0f2ff;border:1px solid #c7ceff;border-radius:6px;padding:8px;font-size:12px;text-align:center">
+            <div style="font-weight:bold;margin-bottom:4px">Local Graph</div>
+            <div style="color:#888;font-style:italic">[ mini graph: this page + links ]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Floating Button → Full Overlay</h3>
+      <p>A persistent floating button (like Obsidian's graph icon) on every page. Click to open a full-screen overlay with the complete graph, with the current page highlighted.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Page Layout Preview</div>
+        <div class="mockup-body" style="font-size:13px;position:relative">
+          <div class="mock-content" style="padding:12px">Article Content (full width)</div>
+          <div style="position:absolute;bottom:12px;right:12px;background:#5b6af0;color:white;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer">🕸</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
