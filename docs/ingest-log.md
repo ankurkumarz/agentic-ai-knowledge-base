@@ -78,3 +78,28 @@ Google's "Prototype to Production" whitepaper establishes a comprehensive AgentO
 Initial processing of the 2026 draft knowledge base document. Established the **Production Best Practices & Guidelines** section (16 in nav) as a new cross-cutting layer synthesizing production concerns from across the draft. Updated framework coverage for AutoGPT, Haystack, PydanticAI, and Spring AI. Extended Agent Memory section with LTM strategies and research papers. Expanded Evaluation and Benchmark coverage. Observability section updated with goals and solution landscape.
 
 **Uncommitted as of log creation** — working tree changes pending commit.
+
+---
+
+## [2026-04-28] ingest | Context Engineering Meetup-Lance-Martin.pptx | sections touched: ContextEngineering
+
+**Source**: `raw/Context Engineering Meetup-Lance-Martin.pptx`
+**Type**: Conference/meetup slide deck (26 slides)
+**Author**: Lance Martin, LangChain
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/ContextEngineering/README.md` | Rewritten | Replaced placeholder with structured section index and strategy summary table |
+| `docs/ContextEngineering/challenges.md` | Rewritten | Replaced placeholder with full coverage of 5 failure modes (rot, poisoning, distraction, confusion, clash) with production examples |
+| `docs/ContextEngineering/strategies.md` | Rewritten | Replaced placeholder with 5 strategies (offload, reduce, retrieve, isolate, cache) with production examples and comparison table |
+| `docs/ContextEngineering/manus.md` | Rewritten | Replaced placeholder with 6 Manus production principles from primary source |
+| `docs/ContextEngineering/anthropic.md` | Rewritten | Replaced placeholder with content from both Anthropic context engineering posts |
+| `docs/ContextEngineering/langgraph.md` | Rewritten | Replaced placeholder with Lance Martin's framework, open-deep-research walkthrough, DeepAgent pattern |
+| `docs/ContextEngineering/devin.md` | Rewritten | Replaced placeholder with Cognition's two core principles and architecture analysis |
+
+### Summary
+
+The slide deck is Lance Martin's meetup companion to his June 2025 blog post. Key additions over the blog post: explicit framing of context engineering as successor to prompt engineering (with Google Trends data), the open-deep-research walkthrough demonstrating all four strategies (offload brief to state, summarize tool observations, isolate across subagents), and two explicit design decisions — preferring offloading over compression when information loss risk is high, and limiting subagent scope to avoid coordination problems. All seven ContextEngineering sub-files were rewritten from placeholder stubs to substantive content drawing on the slide deck plus the primary web sources (Manus blog, Anthropic engineering posts, Cognition post, Drew Breunig post).
