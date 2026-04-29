@@ -12,7 +12,6 @@ output.md
 images/
 raw/
 
-.superpowers/
 .cursor/
 .kiro/
 .pytest_cache/
