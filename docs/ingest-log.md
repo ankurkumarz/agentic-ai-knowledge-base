@@ -166,3 +166,5 @@ Anthropic's context engineering cookbook provides an empirical comparison of thr
 ### Summary
 
 Two complementary sources on context graphs ingested together. The arxiv paper (IDEA Research, 2024) provides the formal definition: CGs extend KG triples to quadruples by attaching relation contexts (temporal, geographic, provenance, quantitative, event-specific) and entity contexts (descriptions, aliases, types, images). The CGR³ paradigm achieves +33% Hits@1 on FB15k-237 and new SOTA on KGQA benchmarks. The Foundation Capital essay (2025) reframes context graphs as the strategic asset produced when agent orchestration layers capture decision traces — the "why" behind every automated action — arguing this is the trillion-dollar opportunity incumbents (Salesforce, Snowflake) structurally cannot capture because they sit outside the execution path at commit time.
+
+## [2026-04-30] ingest | Introducing Gemini Enterprise Agent Platform (Google Cloud blog) | sections touched: AgentPlatforms, AllThingsGoogle, AgenticFrameworks, Concepts, Standards, ReferenceArchitecture, index

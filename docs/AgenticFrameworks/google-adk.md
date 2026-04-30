@@ -42,5 +42,5 @@ Agent Development Kit (ADK) is a flexible and modular framework for developing a
 
 ## See Also
 - [Agent Development Frameworks](README.md)
-- [Google Vertex AI Agent Builder](../AgentPlatforms/google-vertex.md)
+- [Google Gemini Enterprise Agent Platform](../AgentPlatforms/gemini-enterprise-agent-platform.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)

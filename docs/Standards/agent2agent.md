@@ -371,4 +371,4 @@ AWS explicitly distinguishes the two protocols and warns against misuse:
 - [MCP Protocol](./mcp.md) — Complementary protocol for tool/resource access
 - [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md) — Deployment of A2A-compatible agents
 - [AgentOps](../AgentOps/README.md) — AgentOps lifecycle including multi-agent operations
-- [AllThingsGoogle](../AllThingsGoogle/README.md) — Google ADK, Vertex AI Agent Engine
+- [AllThingsGoogle](../AllThingsGoogle/README.md) — Google ADK, Gemini Enterprise Agent Platform

@@ -55,7 +55,7 @@ Comprehensive coverage of major development frameworks:
 
 ### **5. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
-- **Agentic AI Platforms**: Google Vertex AI, AWS AgentCore, Microsoft Azure AI
+- **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform, AWS AgentCore, Microsoft Azure AI
 - **Workflow Engines**: Open source, self-hosted, and SaaS solutions
 - **Popular AI Agents**: Coding agents, research agents, and super agents
 

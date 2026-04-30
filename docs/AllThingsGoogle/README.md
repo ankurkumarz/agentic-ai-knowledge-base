@@ -9,7 +9,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
 | Google ADK | Agent Development Kit — open-source framework for building single and multi-agent systems | [AgenticFrameworks/google-adk.md](../AgenticFrameworks/google-adk.md) |
-| Vertex AI Agent Builder | Managed GCP platform for building, deploying, and monitoring agents | [AgentPlatforms/google-vertex.md](../AgentPlatforms/google-vertex.md) |
+| Gemini Enterprise Agent Platform | Google Cloud's comprehensive platform for building, scaling, governing, and optimizing agents — successor to Vertex AI | [AgentPlatforms/gemini-enterprise-agent-platform.md](../AgentPlatforms/gemini-enterprise-agent-platform.md) |
 | SAIF Framework | Secure AI Framework — Google's security reference model for AI workloads | [SecurityFrameworks/google-saif.md](../SecurityFrameworks/google-saif.md) |
 | GenOps | Google Cloud's evolution of MLOps adapted for generative AI and agent lifecycle management | [AgentOps/genops.md](../AgentOps/genops.md) |
 | Google Maturity Model | Google's perspective on agentic AI adoption maturity stages | [MaturityModels/google.md](../MaturityModels/google.md) |

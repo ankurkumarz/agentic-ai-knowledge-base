@@ -64,7 +64,7 @@ Industry-specific reference architectures and blueprints for domains like video 
 
 - [NVIDIA AI Blueprints](https://build.nvidia.com/blueprints)
 - [GenAI Agent Techniques Repository](https://github.com/NirDiamant/GenAI_Agents)
-- [Google Cloud Vertex AI Agent Builder](https://docs.cloud.google.com/agent-builder/overview)
+- [Google Gemini Enterprise Agent Platform](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
 
 ## See Also
 

@@ -51,7 +51,7 @@ nav:
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.2 Agentic AI Platforms:
-      - 5.2.1 Google Vertex AI Agent Builder: 'AgentPlatforms/google-vertex.md'
+      - 5.2.1 Google Gemini Enterprise Agent Platform: 'AgentPlatforms/gemini-enterprise-agent-platform.md'
       - 5.2.2 AWS AgentCore: 'AgentPlatforms/aws-agentcore.md'
       - 5.2.3 Microsoft Azure AI Agent Service: 'AgentPlatforms/microsoft-azure.md'
       - 5.2.4 Other SaaS Platforms: 'AgentPlatforms/saas-platforms.md'

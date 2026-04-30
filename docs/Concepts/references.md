@@ -44,7 +44,7 @@
 
 ### Vendor Documentation
 - **AWS Bedrock Agents** - Cloud-native agent services
-- **Google Vertex AI Agent Builder** - Enterprise agent platform
+- **Google Gemini Enterprise Agent Platform** - Enterprise agent platform (formerly Vertex AI Agent Builder)
 - **Microsoft Agent Framework** - .NET-based agent development
 - **Anthropic Claude** - Constitutional AI and safety research
 
