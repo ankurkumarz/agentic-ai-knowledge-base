@@ -9,6 +9,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
 | Context Engineering Guidance | Anthropic's practical guidance on managing context windows for long-running agents | [ContextEngineering/anthropic.md](../ContextEngineering/anthropic.md) |
+| Context Management API Primitives | First-party API primitives for compaction, tool-result clearing, and cross-session memory — empirically benchmarked on a 328K-token research corpus | [ContextEngineering/anthropic.md#context-management-api-primitives-cookbook](../ContextEngineering/anthropic.md) |
 | Model Context Protocol (MCP) | Open standard for tool and resource exposure to LLMs; co-developed by Anthropic | [Standards/mcp.md](../Standards/mcp.md) |
 | Building Effective Agents | Anthropic's canonical reference on agent design principles and patterns | [ProductionBestPractices/README.md](../ProductionBestPractices/README.md) |
 | Claude Models (Production) | Best practices for using Claude in production agentic workloads | [ProductionBestPractices/security.md](../ProductionBestPractices/security.md) |

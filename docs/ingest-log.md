@@ -129,3 +129,22 @@ Initial processing of the 2026 draft knowledge base document. Established the **
 ### Summary
 
 The slide deck is Lance Martin's meetup companion to his June 2025 blog post. Key additions over the blog post: explicit framing of context engineering as successor to prompt engineering (with Google Trends data), the open-deep-research walkthrough demonstrating all four strategies (offload brief to state, summarize tool observations, isolate across subagents), and two explicit design decisions — preferring offloading over compression when information loss risk is high, and limiting subagent scope to avoid coordination problems. All seven ContextEngineering sub-files were rewritten from placeholder stubs to substantive content drawing on the slide deck plus the primary web sources (Manus blog, Anthropic engineering posts, Cognition post, Drew Breunig post).
+
+## [2026-04-30] ingest | Tool Use Context Engineering Cookbook — Anthropic | sections touched: ContextEngineering/anthropic, ContextEngineering/strategies, ProductionBestPractices/context-engineering, AllThingsAnthropic
+
+**Source**: URL fetch — https://platform.claude.com/cookbook/tool-use-context-engineering-context-engineering-tools
+**Type**: Anthropic developer cookbook (technical notebook with empirical benchmarks)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/ContextEngineering/anthropic.md` | Extended | New section: "Context Management API Primitives (Cookbook)" — covers all three primitives (compaction, tool-result clearing, memory tool) with API identifiers, empirical benchmark results, implementation guidance, workload-to-primitive mapping table, and note on 1M-token context windows |
+| `docs/ContextEngineering/strategies.md` | Extended | Added API-level detail to the Reduce (Compaction) strategy section: `compact_20260112` and `clear_tool_uses_20250919` identifiers, knobs, and the `exclude_tools: ["memory"]` interaction rule; added cookbook to References |
+| `docs/ProductionBestPractices/context-engineering.md` | Extended | Added 4 new best-practice rows: tool-result bloat, compaction fidelity loss, memory tool hygiene, clearing+memory interaction; added cookbook to Implementation References table |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for Context Management API Primitives |
+
+### Summary
+
+Anthropic's context engineering cookbook provides an empirical comparison of three first-party API primitives on a 328K-token research corpus. Key new concepts: the `compact_20260112` / `clear_tool_uses_20250919` / `memory_20250818` API identifiers and their beta headers; the distinction between whole-transcript (compaction) vs. sub-transcript (clearing) operations; the `exclude_tools: ["memory"]` rule when combining clearing with the memory tool; the workload-to-primitive mapping framework; and the finding that on a 1M-token window, context rot still degrades recall even without hitting the hard limit (96.3% of baseline tokens were stale file-read results).

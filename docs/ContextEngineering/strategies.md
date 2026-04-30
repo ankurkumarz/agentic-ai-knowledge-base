@@ -38,6 +38,10 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 
 **Tradeoffs**: Risk of information loss. Knowing what to keep vs. discard is hard to get right. Cognition recommends fine-tuning a smaller model for this task in production. Anthropic recommends starting by maximizing recall, then iterating to improve precision.
 
+**API-level primitives (Anthropic)**: The Claude API provides two first-party context-reduction primitives:
+- `compact_20260112` (beta header `compact-2026-01-12`): server-side compaction triggered at a configurable token threshold (min 50K, default 150K). Returns a typed compaction block that replaces prior turns. The `instructions` parameter completely replaces the default summarization prompt — custom instructions must include the full framing, not just additions. High-level facts central to the task typically survive; obscure specifics (appendix table cells, exact phrasing) typically do not.
+- `clear_tool_uses_20250919` (beta header `context-management-2025-06-27`): surgically replaces `tool_result` content blocks with a short placeholder while leaving `tool_use` records, user messages, and assistant reasoning untouched. No inference cost. Key knobs: `trigger` (token threshold), `keep` (most-recent results to retain, default 3), `clear_at_least` (minimum tokens per firing — important for cache invalidation economics), `exclude_tools` (exempt specific tools, e.g., the memory tool). When combining with the memory tool, always set `exclude_tools: ["memory"]` to prevent the agent from losing track of what it just saved.
+
 ## Strategy 3: Retrieve Context (RAG and Just-in-Time Loading)
 
 **Core idea**: Pull relevant context into the window on demand rather than pre-loading everything.
@@ -115,3 +119,4 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 - [Context Engineering for AI Agents: Lessons from Building Manus — Yichao 'Peak' Ji](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)
 - [How we built our multi-agent research system — Anthropic](https://www.anthropic.com/engineering/multi-agent-research-system)
 - [Don't Build Multi-Agents — Cognition / Walden Yan](https://cognition.ai/blog/dont-build-multi-agents)
+- [Tool Use Context Engineering Cookbook — Anthropic](https://platform.claude.com/cookbook/tool-use-context-engineering-context-engineering-tools)
