@@ -493,7 +493,7 @@ Explore connections across the knowledge base. Nodes are colour-coded by section
   }
 
   loadCytoscape(function () {
-    fetch('../assets/graph-data.json')
+    fetch('../graph-data.json')
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();

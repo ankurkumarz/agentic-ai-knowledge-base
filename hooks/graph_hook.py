@@ -47,7 +47,7 @@ def _page_url(rel_path: Path) -> str:
 
 def on_pre_build(config):
     docs_dir = Path(config['docs_dir'])
-    output_path = docs_dir / 'assets' / 'graph-data.json'
+    output_path = docs_dir / 'graph-data.json'
 
     nodes: dict = {}
     raw_edges: list = []

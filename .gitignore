@@ -12,8 +12,11 @@ output.md
 images/
 raw/
 
+.superpowers/
 .cursor/
 .kiro/
 .pytest_cache/
 .venv/
 .vscode/
+docs/assets/graph-data.json
+docs/graph-data.json
