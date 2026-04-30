@@ -85,13 +85,14 @@ nav:
   - 8. Context Engineering:
     - 8.1 Key Challenges in Context Management: 'ContextEngineering/challenges.md'
     - 8.2 Common Strategies for Context Management: 'ContextEngineering/strategies.md'
-    - 8.3 Prompt Engineering: 'PromptEngineering/README.md'
-    - 8.4 Context Implementation References:
-      - 8.4.1 Manus: 'ContextEngineering/manus.md'
-      - 8.4.2 Anthropic: 'ContextEngineering/anthropic.md'
-      - 8.4.3 LangGraph: 'ContextEngineering/langgraph.md'
-      - 8.4.4 Devin (Cognition): 'ContextEngineering/devin.md'
-      - 8.4.5 Miscellaneous: 'ContextEngineering/README.md'
+    - 8.3 Context Graph: 'ContextEngineering/context-graph.md'
+    - 8.4 Prompt Engineering: 'PromptEngineering/README.md'
+    - 8.5 Context Implementation References:
+      - 8.5.1 Manus: 'ContextEngineering/manus.md'
+      - 8.5.2 Anthropic: 'ContextEngineering/anthropic.md'
+      - 8.5.3 LangGraph: 'ContextEngineering/langgraph.md'
+      - 8.5.4 Devin (Cognition): 'ContextEngineering/devin.md'
+      - 8.5.5 Miscellaneous: 'ContextEngineering/README.md'
   - 9. Agent Memory Management:
     - 9.1 The Three Functional Tiers: 'AgentMemory/functional-tiers.md'
     - 9.2 Long-Term Memory (LTM) Strategies: 'AgentMemory/ltm-strategies.md'

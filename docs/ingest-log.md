@@ -148,3 +148,21 @@ The slide deck is Lance Martin's meetup companion to his June 2025 blog post. Ke
 ### Summary
 
 Anthropic's context engineering cookbook provides an empirical comparison of three first-party API primitives on a 328K-token research corpus. Key new concepts: the `compact_20260112` / `clear_tool_uses_20250919` / `memory_20250818` API identifiers and their beta headers; the distinction between whole-transcript (compaction) vs. sub-transcript (clearing) operations; the `exclude_tools: ["memory"]` rule when combining clearing with the memory tool; the workload-to-primitive mapping framework; and the finding that on a 1M-token window, context rot still degrades recall even without hitting the hard limit (96.3% of baseline tokens were stale file-read results).
+
+## [2026-04-30] ingest | Context Graphs — Foundation Capital + arXiv:2406.11160v3 | sections touched: ContextEngineering/context-graph
+
+**Sources**:
+- URL fetch — https://foundationcapital.com/ideas/context-graphs-ais-trillion-dollar-opportunity
+- URL fetch — https://arxiv.org/html/2406.11160v3
+**Types**: VC essay (Foundation Capital, 2025) + academic paper (Xu et al., IDEA Research / CUHK, 2024)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/ContextEngineering/context-graph.md` | Rewritten | Replaced stub with full two-part page: (1) technical definition — CG formal structure, entity/relation context taxonomy, CGR³ Retrieve→Rank→Reason paradigm, benchmark results on FB15k-237/YAGO3-10/QALD10-en/WWQ; (2) business/agentic framing — decision traces as durable artifacts, why incumbents can't build this, three startup paths, signals for where to build |
+
+### Summary
+
+Two complementary sources on context graphs ingested together. The arxiv paper (IDEA Research, 2024) provides the formal definition: CGs extend KG triples to quadruples by attaching relation contexts (temporal, geographic, provenance, quantitative, event-specific) and entity contexts (descriptions, aliases, types, images). The CGR³ paradigm achieves +33% Hits@1 on FB15k-237 and new SOTA on KGQA benchmarks. The Foundation Capital essay (2025) reframes context graphs as the strategic asset produced when agent orchestration layers capture decision traces — the "why" behind every automated action — arguing this is the trillion-dollar opportunity incumbents (Salesforce, Snowflake) structurally cannot capture because they sit outside the execution path at commit time.
