@@ -140,6 +140,14 @@ nav:
     - 16.6 Context Engineering: 'ProductionBestPractices/context-engineering.md'
     - 16.7 Agent Security: 'ProductionBestPractices/security.md'
     - 16.8 Cost Management: 'ProductionBestPractices/cost-management.md'
+  - 17. Vendor Deep Dives:
+    - 17.1 Hyperscalers:
+      - 17.1.1 AWS: 'AllThingsAWS/README.md'
+      - 17.1.2 Google: 'AllThingsGoogle/README.md'
+      - 17.1.3 Microsoft: 'AllThingsMicrosoft/README.md'
+    - 17.2 AI Labs:
+      - 17.2.1 Anthropic: 'AllThingsAnthropic/README.md'
+      - 17.2.2 OpenAI: 'AllThingsOpenAI/README.md'
   - Knowledge Graph: 'graph.md'
 
 hooks:

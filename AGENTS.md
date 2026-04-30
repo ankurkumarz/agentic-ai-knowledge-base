@@ -50,10 +50,13 @@ docs/
 │   ├── context-engineering.md
 │   ├── security.md
 │   └── cost-management.md
-├── AllThingsAnthropic/
-├── AllThingsGoogle/
-├── AllThingsMicrosoft/
-└── AllThingsOpenAI/
+├── AllThingsAWS/                   # AWS vendor hub — one-liners + backlinks
+├── AllThingsGoogle/                # Google vendor hub — one-liners + backlinks
+├── AllThingsMicrosoft/             # Microsoft vendor hub — one-liners + backlinks
+├── AllThingsAnthropic/             # Anthropic vendor hub — one-liners + backlinks
+└── AllThingsOpenAI/                # OpenAI vendor hub — one-liners + backlinks
+                                    # Note: AllThings* pages are index hubs, not content stores.
+                                    # Detailed content lives in topical sections; vendor pages link back.
 
 raw/                                # Drop source documents here — agent reads, never modifies
 mkdocs.yml                          # Site nav — agent updates when pages are added
@@ -87,10 +90,13 @@ When a raw source arrives, use this table to decide which `docs/` directory and 
 | Maturity models | `MaturityModels/` | `gartner.md`, `aws.md`, `google.md`, `idc.md` |
 | Agent marketplaces | `Marketplace/` | `aws-marketplace.md`, `agentops.md`, `Readme.md` |
 | RAG, retrieval patterns | `RAG/` and `ReferenceArchitecture/rag-architecture.md` | Both |
-| Anthropic-specific content | `AllThingsAnthropic/` | Create or update relevant file |
-| Google-specific content | `AllThingsGoogle/` | Create or update relevant file |
-| Microsoft-specific content | `AllThingsMicrosoft/` | Create or update relevant file |
-| OpenAI-specific content | `AllThingsOpenAI/` | Create or update relevant file |
+| AWS-specific content (Strands, AgentCore, Marketplace, maturity) | `AllThingsAWS/README.md` | Add a backlink row to the hub table; detailed content goes in the topical section |
+| Google-specific content (ADK, Vertex AI, SAIF, GenOps, maturity) | `AllThingsGoogle/README.md` | Add a backlink row to the hub table; detailed content goes in the topical section |
+| Microsoft-specific content (Azure AI, Semantic Kernel, AutoGen) | `AllThingsMicrosoft/README.md` | Add a backlink row to the hub table; detailed content goes in the topical section |
+| Anthropic-specific content (Claude, MCP, context engineering) | `AllThingsAnthropic/README.md` | Add a backlink row to the hub table; detailed content goes in the topical section |
+| OpenAI-specific content (design patterns, AutoGPT, OpenSpec) | `AllThingsOpenAI/README.md` | Add a backlink row to the hub table; detailed content goes in the topical section |
+
+**Vendor hub rule:** `AllThings*` pages are index hubs — each row contains a one-liner and a relative backlink to the topical wiki page that holds the full content. Do **not** write detailed content in hub pages. If a vendor offering has no existing topical page, create one in the appropriate section first, then add the hub row.
 
 **When in doubt:** Look at the existing file closest to the topic and extend it. Only create a new file if the topic has no existing home.
 
@@ -102,7 +108,13 @@ Follow these steps in order when processing a raw source.
 
 ### Step 1 — Identify the source
 
-Read the raw file. Determine:
+Resolve the source using this priority order:
+1. **Local file first** — look for the file in `raw/`. If it exists, read it.
+2. **WebFetch fallback** — if no local file exists but a URL is provided, fetch the URL and treat the fetched content as the source. Do not save the fetched content into `raw/`.
+
+**Citation rule:** If a URL is provided (either as the fetch target or alongside a local file), use that URL as the canonical citation in the `References` section of every wiki page updated during this ingest. Do not omit or substitute it with a generic title link.
+
+Then determine:
 - **Source type**: research paper, vendor doc, blog post, whitepaper, framework doc, standard, benchmark report
 - **Primary topic**: what section does this primarily belong to?
 - **Secondary topics**: which other sections will it inform?

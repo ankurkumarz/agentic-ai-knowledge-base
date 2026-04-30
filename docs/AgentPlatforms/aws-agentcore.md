@@ -8,6 +8,28 @@ Launched in July 2025, Amazon Bedrock AgentCore enables you to deploy and operat
 
 *Source: [AWS Bedrock AgentCore Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)*
 
+## The 13 Agentic AI Capability Domains (AWS Framework)
+
+AWS organizes the full production-ready agentic stack into 13 capability domains, each mapped to specific AWS services:
+
+| Domain | Description | Key AWS Services |
+|---|---|---|
+| Agent Reasoning | Structuring the think-act-observe loop so agents decompose goals, plan steps, and act reliably | Amazon Bedrock, Amazon SageMaker AI |
+| Data & Retrieval | Ingestion, transformation, and lineage pipelines feeding agents accurate enterprise knowledge through dense, sparse, hybrid, and graph-based RAG | Amazon Bedrock Knowledge Bases, Amazon OpenSearch |
+| Evaluation & Experimentation | Measuring agent accuracy, faithfulness, and task completion through test suites and online metrics | Amazon Bedrock AgentCore (Evaluations), Amazon CloudWatch |
+| Deployment Lifecycle | Agent versioning, prompt promotion, rollback, and evaluation-gated CI/CD | AWS CodePipeline, Amazon SageMaker AI, AWS CDK |
+| Agent Routing | Classifying inputs and dispatching to the right agent, model, or workflow path based on intent, cost, and capability | Amazon EventBridge, Amazon Bedrock |
+| Observability | Distributed tracing, cost tracking, latency profiling, and anomaly detection | Amazon CloudWatch, AWS X-Ray, AWS Distro for OpenTelemetry |
+| Tools & Integration | Connecting agents to external systems, APIs, live data, and specialized capabilities through tools, MCP servers, and A2A protocols | AWS Lambda, Amazon API Gateway, Amazon Bedrock AgentCore (Gateway) |
+| Security Hardening | Securing compute, networking, containers, and dependencies against prompt injection, secrets exposure, and AI-specific attack vectors | Amazon GuardDuty, AWS Security Hub, Amazon Inspector |
+| Orchestration | Coordinating networks of specialized agents through a control plane that sequences work, manages shared context, supports HITL approval, and handles failures | AWS Step Functions, Amazon Bedrock Multi-Agent Collaboration |
+| Memory | Designing short-term, long-term, and episodic memory so agents maintain continuity, share context, and learn across sessions and agent boundaries | Amazon Bedrock AgentCore (Memory), Amazon DynamoDB, Amazon ElastiCache |
+| Scaling & Cost Governance | Optimizing inference capacity, latency, and GPU utilization while managing token budgets, model tiering, caching, and spend attribution | Amazon EKS, AWS Fargate, Amazon Bedrock AgentCore (Runtime) |
+| Guardrails & Safety | Enforcing input/output validation, content filtering, hallucination detection, and policy compliance | Amazon Bedrock Guardrails, Amazon Bedrock AgentCore (Policy) |
+| Secure Identity | Engineering agent identity distinct from user identity, with least-privilege access, credential vaulting, and full audit trails | Amazon Cognito, AWS Secrets Manager, Amazon Bedrock AgentCore (Identity) |
+
+AWS Marketplace provides 2,800+ agentic AI tools and capabilities mapped to these 13 domains.
+
 ## Key Components
 
 ### Core Services
@@ -155,3 +177,18 @@ AgentCore services work together or independently with any open-source framework
 - **Section 11.3**: AWS Security Perspective
 - **Section 14.2**: AWS Maturity Model for Generative AI
 - **Section 15.1**: AWS AI Agents Marketplace
+
+## See Also
+
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md) — Four planes, orchestration patterns, non-determinism math
+- [AWS Strands Agents](../AgenticFrameworks/aws-strands.md)
+- [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md)
+- [ProductionBestPractices/security.md](../ProductionBestPractices/security.md)
+- [ProductionBestPractices/observability.md](../ProductionBestPractices/observability.md)
+- [Standards/agent2agent.md](../Standards/agent2agent.md)
+- [Standards/mcp.md](../Standards/mcp.md)
+
+## References
+
+- [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop covering the 13-domain capability stack, four planes of multi-agent systems, and AWS service mappings
+- [AWS Bedrock AgentCore Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)

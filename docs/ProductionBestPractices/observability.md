@@ -15,7 +15,8 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
 | Retrofitting observability | Adding monitoring after deployment is costly and incomplete | Considered post-hoc log scraping; found it misses intermediate reasoning steps | Instrument agent architecture from day one using OpenTelemetry-compatible SDKs |
-| Trace correlation in multi-agent systems | Requests span multiple agents, tools, and services making debugging hard | Tried per-service logging; couldn't reconstruct full execution paths | Propagate correlation IDs across all agent calls; use distributed tracing (Jaeger, Langfuse) |
+| Trace correlation in multi-agent systems | Requests span multiple agents, tools, and services making debugging hard | Tried per-service logging; couldn't reconstruct full execution paths | Propagate a consistent trace ID through every agent and tool call — it is the only way to correlate logs into a single execution graph; use distributed tracing (Jaeger, Langfuse, Amazon CloudWatch Traces) |
+| Multi-agent cost attribution | In multi-agent systems, it is unclear which agent is responsible for the majority of inference costs | Tracked total cost per workflow; couldn't identify which agent to optimize | Use LangFuse token cost tracking across agents — it shows per-agent cost attribution for optimization decisions |
 | 100% trace capture cost | Full tracing at production scale is expensive | Evaluated always-on tracing; storage and egress costs were prohibitive | Sample intelligently — 100% of errors, 10–20% of successful requests |
 | PII in traces | User inputs logged verbatim expose sensitive data | Considered not logging inputs; lost too much debugging value | Implement PII detection and masking before writing to observability store |
 | Token cost visibility | Costs compound silently across sessions and models | Relied on monthly billing reports; caught overruns too late | Track token usage per trace in real time; set budget alerts at 70% and 90% thresholds |
@@ -77,6 +78,26 @@ For agents running on Google Cloud (Vertex AI Agent Engine, ADK):
 - **Cloud Logging**: Detailed logs for every tool call, error, and decision
 - **Cloud Monitoring**: Dashboard alerts when latency thresholds are exceeded
 - **ADK**: Built-in Cloud Trace integration for automatic instrumentation of agent operations
+
+## Google Cloud Observability Stack
+
+For agents running on Google Cloud (Vertex AI Agent Engine, ADK):
+- **Cloud Trace**: Each user request gets a unique trace ID linking Agent Engine invocation, model calls, and tool executions with visible durations
+- **Cloud Logging**: Detailed logs for every tool call, error, and decision
+- **Cloud Monitoring**: Dashboard alerts when latency thresholds are exceeded
+- **ADK**: Built-in Cloud Trace integration for automatic instrumentation of agent operations
+
+## AWS Multi-Agent Observability Stack
+
+For multi-agent systems on AWS, a layered approach is required:
+
+| Tool | Role |
+|---|---|
+| Amazon CloudWatch Traces | Distributed tracing across Lambda, Amazon Bedrock agent invocations, and Step Functions. Renders the full execution graph as a single navigable trace. |
+| LangSmith | Purpose-built LLM tracing — hierarchical tree view from orchestrator down to individual tool calls. Evaluation dataset management for per-agent and multi-agent testing. |
+| LangFuse | Token cost tracking across agents — shows which agent is responsible for the majority of inference costs. Strong cost attribution for optimization decisions. |
+
+Layered evaluation strategy for multi-agent systems: per-agent evaluations (isolated datasets) + full workflow evaluation (`Builtin.GoalSuccessRate`) + differential analysis correlating per-agent scores against system-level outcomes.
 
 ## See Also
 - [Deployment](./deployment.md)

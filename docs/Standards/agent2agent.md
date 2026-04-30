@@ -357,6 +357,15 @@ An **Agent Registry** applies the same concept to agents, using formats like A2A
 
 Start without a registry and build it only when ecosystem scale demands centralized management.
 
+## AWS Guidance: MCP vs. A2A in Multi-Agent Systems
+
+AWS explicitly distinguishes the two protocols and warns against misuse:
+
+| Protocol | Interface | Pattern | AWS Guidance |
+|---|---|---|---|
+| MCP | Agent → Tool | Client-server; agent is always the client, tool server is always the responder | Multi-agent MCP: server must implement per-agent access controls at the server level — not in system prompts. Tool schema quality directly determines agent behavior quality. Version-control MCP server versions in each agent's config; test before updating in prod. |
+| A2A | Agent → Agent | Peer protocol; any agent can initiate or receive — symmetric, unlike MCP's client-server model | A2A expands the attack surface: validate task objects against schema; apply Amazon Bedrock Guardrails at every A2A boundary. Do not use MCP for agent-to-agent delegation — it is the wrong abstraction. |
+
 ## See Also
 
 - [MCP Protocol](./mcp.md) — Complementary protocol for tool/resource access

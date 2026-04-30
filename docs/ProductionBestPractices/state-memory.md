@@ -64,6 +64,19 @@ Since LLMs are themselves stateless, persisting memory externally is **non-negot
 - **Idempotent tools**: Tools designed so calling them twice with the same inputs doesn't cause duplicate side effects (e.g., duplicate charges, duplicate messages). Critical for tools involving financial transactions or external writes.
 - **Exponential backoff**: Automatically retry with increasing delays, giving the downstream service time to recover.
 
+## Multi-Agent Shared State (AWS Pattern)
+
+In multi-agent systems, agents coordinate through shared state rather than direct coupling. AWS recommends a three-tier shared state architecture:
+
+| Tier | Store | Characteristics | Use For |
+|---|---|---|---|
+| Task state | Amazon DynamoDB | Single-digit ms reads, survives agent failures, full audit trail | Durable workflow execution state — every step recorded |
+| Session context | Amazon ElastiCache | Sub-ms access, TTL-managed | Conversation turns + recently accessed payloads |
+| Domain knowledge | Amazon Bedrock Knowledge Bases | Vector retrieval, governance-controlled, shared across all agents | No duplication of knowledge across agent instances |
+| Intermediate results | Amazon S3 | Cost-effective, durable | Referenced by pointer in DynamoDB task state — never forwarded in payloads |
+
+**Handoff payload principle**: include only what the next agent needs. Verbose payloads bloat context windows and degrade reasoning quality. Store large intermediate artifacts in S3 and pass a reference, not the content.
+
 ## See Also
 - [Context Engineering](./context-engineering.md)
 - [Observability](./observability.md)

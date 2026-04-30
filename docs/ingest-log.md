@@ -5,7 +5,33 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
-## [2026-04-28] ingest | Prototype to Production.pdf | sections touched: AgentOps, ProductionBestPractices, Standards/agent2agent, AllThingsGoogle
+## [2026-04-30] ingest | awsmp-buiding-agentic-systems-module-4.pdf | sections touched: Architecture/multi-agent-system, AgentPlatforms/aws-agentcore, Standards/agent2agent, ProductionBestPractices/deployment, ProductionBestPractices/security, ProductionBestPractices/observability, ProductionBestPractices/state-memory
+
+**Source**: `raw/4. awsmp-buiding-agentic-systems-module-4.pdf`
+**URL**: https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures
+**Type**: AWS Marketplace workshop slide deck (33 pages, 2026)
+**Authors**: Dr. James Bland (WW Tech Lead, Data & AI, AWS), Mike Brugnoni (Sr. Solutions Architect, AWS)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Architecture/multi-agent-system.md` | Extended | Four planes, when-to-move-to-multi-agent triggers, four orchestration patterns, non-determinism compounding math, shared state design, MCP vs A2A distinction, failure modes, security at agent boundaries, distributed observability |
+| `docs/AgentPlatforms/aws-agentcore.md` | Extended | 13-domain capability stack with AWS service mappings, See Also and References sections added |
+| `docs/Standards/agent2agent.md` | Extended | AWS-specific MCP vs A2A guidance section added |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Orchestration loop detection, schema-first handoffs, handoff payload bloat rows added to best practices table |
+| `docs/ProductionBestPractices/security.md` | Extended | Multi-agent boundary security rows: overprivileged subagents (AWS STS), prompt injection propagation, credential exposure in payloads, unauthorized agent discovery |
+| `docs/ProductionBestPractices/observability.md` | Extended | Multi-agent cost attribution row; AWS multi-agent observability stack section (CloudWatch Traces, LangSmith, LangFuse); layered evaluation strategy |
+| `docs/ProductionBestPractices/state-memory.md` | Extended | Multi-Agent Shared State (AWS Pattern) section with four-tier table and handoff payload principle |
+
+### Summary
+
+AWS Marketplace Module 4 workshop on multi-agent architectures. Key new concepts added: the four-plane model (control/execution/state/capability), four orchestration patterns with AWS implementations and watch-outs, non-determinism compounding math (90%^4 = 66%), the 13-domain agentic AI capability stack mapped to AWS services, and the explicit rule that MCP must not be used for agent-to-agent delegation. Zero-trust framing at every agent boundary is the central security principle.
+
+---
+
+
 
 **Source**: `raw/Prototype to Production.pdf`
 **Type**: Google whitepaper (40 pages, November 2025)
