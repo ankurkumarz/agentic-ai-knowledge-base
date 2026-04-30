@@ -8,7 +8,7 @@ The platform provides a single destination for technical teams to build agents t
 
 ## Key Components
 
-![Gemini Enterprise Agent Platform](../assets/images/gemini_enterprise_agent_platform.jpg)
+![Gemini Enterprise Agent Platform](../assets/images/gemini-enterprise-agent-platform.jpg)
 *Source: [Google Cloud - Gemini Enterprise Agent Platform](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)*
 
 
