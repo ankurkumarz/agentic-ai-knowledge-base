@@ -1,1 +1,9 @@
-pytest hypothesis pyyaml
+pytest
+hypothesis
+pyyaml
+mkdocs
+mkdocs-material
+mkdocs-mermaid2-plugin
+mkdocs-macros-plugin
+mkdocs-glightbox
+pymdown-extensions
