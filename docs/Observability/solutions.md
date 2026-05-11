@@ -16,6 +16,21 @@ A comprehensive development platform with built-in observability designed specif
 
 LangChain's observability and evaluation platform. Provides trace visualization, debugging tools, performance analytics, and dataset management. Tightly integrated with the LangChain/LangGraph ecosystem. Supports prompt versioning, A/B testing, and automated evaluation pipelines.
 
+### Galileo
+**Platform**: [Galileo](https://galileo.ai)
+
+Agent Reliability Platform purpose-built for multi-agent systems. Key capabilities:
+
+- **Graph Engine**: traces complex agent paths and maps multi-agent workflows — every branch, decision, and tool call at a glance
+- **Insights Engine**: identifies failure modes and provides actionable recommendations tied to specific components
+- **Trace View**: collapsible interface showing complete execution paths with nested agent calls and decision points
+- **Graph View**: maps multi-agent workflows, showing coordination patterns and information flow across sessions
+- **Timeline View**: temporal breakdown of time spent in each phase (agent communication, retrieval, generation) to identify bottlenecks
+- **Log Stream Insights**: real-time error detection with stack traces, automatic correlation of related events across distributed agents, pattern matching for recurring coordination issues
+- **Custom Metrics**: define business-specific metrics evaluated by an LLM judge (e.g., GPT-4o)
+
+Galileo tracks three distinct levels: Session (did it complete the task?), Step (were individual decisions correct?), and System (what patterns exist across sessions?). Native connectors for LangGraph, CrewAI, and other frameworks. Integrates via `GalileoAsyncCallback` in LangGraph pipelines.
+
 ## Specialized Observability Platforms
 
 ### Langfuse
@@ -49,6 +64,7 @@ Enterprise-grade ML observability platform with experiment tracking, model monit
 |----------|-------------|------------|---------------------|---------------|------------------|
 | AgentOps | ❌ | ✅ | ✅ | ✅ | ✅ |
 | LangSmith | ❌ | ✅ | ✅ | ✅ | ✅ |
+| Galileo | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Openlit | ✅ | ✅ | ✅ | ✅ | ✅ |
 | W&B Weave | ❌ | ✅ | ✅ | ✅ | ✅ |

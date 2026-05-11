@@ -34,21 +34,23 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 ### **3. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
 - **Design Pattern Selection**: Proven patterns including OpenAI's agentic patterns
-- **Multi-agent Systems**: Coordination and orchestration patterns
+- **Multi-agent Systems**: Four architectures (centralized, decentralized, hierarchical, hybrid); seven benefits; failure modes and decision framework; framework comparison for architecture selection
 - **12-Factor Agents**: Principles for building reliable LLM applications
 - **Gartner LLM Patterns**: Industry-recognized design patterns
 
 ### **4. Agent Development Frameworks**
 Comprehensive coverage of major development frameworks:
-- **LangChain & LangGraph**: Industry-standard frameworks with 1M+ builders
-- **Google ADK**: Model-agnostic framework optimized for Google Cloud
-- **AWS Strands Agents**: Model-driven autonomous agent framework
+- **LangChain & LangGraph**: Industry-standard frameworks with 1M+ builders; LangGraph excels at complex stateful multi-agent workflows
+- **Google ADK**: Model-agnostic framework optimized for Google Cloud; hierarchical agent composition with built-in evaluation
+- **AWS Strands Agents**: Model-driven autonomous agent framework with native MCP and A2A support
 - **Microsoft Agent Framework**: Unified .NET and Python framework
 - **AutoGen**: Multi-agent conversation framework by Microsoft
 - **Semantic Kernel**: Production-ready SDK for enterprise applications
 - **LlamaIndex**: Data-intensive LLM applications and knowledge management
 - **AutoGPT**: Continuous AI agents for workflow automation
-- **CrewAI**: Multi-agent collaboration framework
+- **CrewAI**: Role-based multi-agent collaboration framework; minimal configuration
+- **Agno**: High-performance multi-agent framework (~2μs agent creation, ~3.75 KiB per agent)
+- **Mastra**: TypeScript-first framework for web applications integrating with existing REST APIs
 - **PydanticAI**: Type-safe GenAI development
 - **Spring AI**: Java ecosystem integration
 - **Haystack**: Production-ready LLM applications and RAG pipelines
@@ -98,8 +100,8 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 
 ### **Observability**
 - **Goals & Objectives**: Monitoring, debugging, and performance optimization
-- **Observability Solutions**: LangSmith, Langfuse, Openlit, Braintrust, W&B Weave
-- **Best Practices**: Distributed tracing, alerting, dashboards, and predictive observability
+- **Observability Solutions**: LangSmith, Langfuse, Openlit, Braintrust, W&B Weave, Galileo (Graph/Trace/Timeline views, Insights Engine)
+- **Best Practices**: Distributed tracing, alerting, dashboards, and predictive observability; three-level tracking (session/step/system); production benchmarks (Action Completion, Tool Selection Quality)
 
 ### **State & Memory Management**
 - **Three Functional Tiers**: Short-term, episodic, and long-term memory systems
@@ -117,8 +119,9 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
 
 ### **Context Engineering**
-- **Key Challenges**: Context rot, poisoning, distraction, and management issues
-- **Management Strategies**: Offloading, reduction, retrieval, isolation, and caching
+- **Key Challenges**: Context rot, poisoning, distraction, confusion, and clash — with empirical evidence from DeepMind, Gemini 2.5, Berkeley, Microsoft/Salesforce research
+- **Memory vs. Context**: The 100:1 rule; what to keep in context vs. store in memory; four types of context
+- **Management Strategies**: Offloading, reduction, retrieval, isolation, and caching; context size thresholds; phased implementation roadmap
 - **Implementation References**: Manus, Anthropic, LangGraph, and Devin approaches
 
 ### **Agent Security**

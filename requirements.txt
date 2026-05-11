@@ -7,3 +7,4 @@ mkdocs-mermaid2-plugin
 mkdocs-macros-plugin
 mkdocs-glightbox
 pymdown-extensions
+pdfplumber==0.11.9

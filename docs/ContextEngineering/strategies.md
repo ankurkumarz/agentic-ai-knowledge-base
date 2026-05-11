@@ -101,6 +101,51 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 | Isolate (Multi-agent) | Breadth-first research, parallelizable tasks | Context clash, 15x token cost | Anthropic researcher, HuggingFace CodeAgent |
 | Cache | Stable system prompts, repeated tool descriptions | Cache invalidation, prefix instability | Manus KV-cache, Gemini Context Caching |
 
+## Strategy Selection by Priority
+
+| Priority | Recommended Approach |
+|---|---|
+| Parallelizable tasks | Evaluate multi-agent isolation regardless of context size |
+| Cost reduction | Prioritize caching and compression strategies |
+| Low latency | Focus on cache optimization and parallel processing |
+| High accuracy | Implement comprehensive retrieval and memory systems |
+
+## Retrieval Efficiency Benchmark
+
+When evaluating retrieval quality, track the ratio of used items to retrieved items:
+- **Below 40% efficiency**: retrieving too much noise — tighten retrieval criteria
+- **50–70% efficiency**: sweet spot with all critical information included
+- **Above 80% but missing key information**: retrieving too narrowly — broaden retrieval
+
+Windsurf achieves 3× better accuracy than single-technique retrieval by combining: embedding search (semantic similarity), grep (exact matches), knowledge graphs (concept relationships), and AST parsing (code structure).
+
+## Implementation Roadmap
+
+### Week 1: Foundation (Quick Wins)
+
+Start with measurement — you can't optimize what you don't understand. Deploy comprehensive logging to capture every agent interaction, token usage, cache hit rates, and failure patterns.
+
+High-impact, low-effort optimizations:
+1. **Optimize tool descriptions** for clarity and distinctiveness so the agent can distinguish between similar tools
+2. **Add basic error retention** — keep failed attempts in context to prevent repeated mistakes (costs nothing to implement)
+3. **Deploy production guardrails** for safety and reliability
+
+These changes often provide 80% of the benefit with 20% of the effort.
+
+### Month 1: Infrastructure
+
+1. **Implement dynamic tool retrieval** when you exceed 20 tools — agent sees only the most relevant options per query
+2. **Add reversible compression** — store URLs instead of web pages, file paths instead of contents (token savings with recovery path)
+3. **Deploy auto-summarization** at 80% context capacity to prevent hard failures
+4. **Create a simple memory system** with basic file storage so agents can access information without loading it all into context
+
+### Advanced Phase: Scale
+
+Only after mastering fundamentals:
+1. **Multi-agent architectures** for truly parallelizable tasks — Anthropic's research showed 90% improvement at 15× token cost
+2. **Attention manipulation** through to-do lists and goal recitation to reduce drift in long-running tasks
+3. **Evaluation insights** to catch emerging failure patterns before users notice them
+
 ## See Also
 
 - [Key Challenges in Context Management](./challenges.md)
@@ -110,6 +155,7 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 - [Cognition / Devin: Don't Build Multi-Agents](./devin.md)
 - [Agent Memory Management](../AgentMemory/README.md)
 - [RAG Architecture](../ReferenceArchitecture/rag-architecture.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 
 ## References
 
@@ -120,3 +166,4 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 - [How we built our multi-agent research system — Anthropic](https://www.anthropic.com/engineering/multi-agent-research-system)
 - [Don't Build Multi-Agents — Cognition / Walden Yan](https://cognition.ai/blog/dont-build-multi-agents)
 - [Tool Use Context Engineering Cookbook — Anthropic](https://platform.claude.com/cookbook/tool-use-context-engineering-context-engineering-tools)
+- [Mastering Multi-Agent Systems eBook](https://galileo.ai) — Galileo, 2026. Chapter 4 provides context size thresholds, priority-based strategy selection, anti-patterns, and a phased implementation roadmap.
