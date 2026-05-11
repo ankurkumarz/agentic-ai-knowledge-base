@@ -31,7 +31,7 @@ Curated & Organized by <b>Ankur Kumar</b> — Agentic AI Researcher & Engineer
 
 The **Agentic AI Knowledge Base** serves as a consolidated knowledge hub designed to support the full lifecycle of agentic AI development—from foundational concepts and architectural patterns to production deployment, security, and operational excellence. This repository brings together curated knowledge articles, architecture patterns, white papers, research insights, and industry best practices spanning the entire agentic AI ecosystem.
 
-Our comprehensive 16-section structure provides systematic coverage of all aspects of agentic AI, enabling architects, engineers, researchers, and platform teams to design robust, secure, and production-ready agentic AI solutions. The knowledge base spans core topics including agent architectures and frameworks, technology stacks, industry standards, evaluation methodologies, security frameworks, and operational best practices.
+Our comprehensive 18-section structure provides systematic coverage of all aspects of agentic AI, enabling architects, engineers, researchers, and platform teams to design robust, secure, and production-ready agentic AI solutions. The knowledge base spans core topics including agent architectures and frameworks, technology stacks, industry standards, evaluation methodologies, security frameworks, and operational best practices.
 
 ## Knowledge Base Structure
 
