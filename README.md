@@ -31,19 +31,19 @@ Curated & Organized by <b>Ankur Kumar</b> — Agentic AI Researcher & Engineer
 
 The **Agentic AI Knowledge Base** serves as a consolidated knowledge hub designed to support the full lifecycle of agentic AI development—from foundational concepts and architectural patterns to production deployment, security, and operational excellence. This repository brings together curated knowledge articles, architecture patterns, white papers, research insights, and industry best practices spanning the entire agentic AI ecosystem.
 
-Our comprehensive 18-section structure provides systematic coverage of all aspects of agentic AI, enabling architects, engineers, researchers, and platform teams to design robust, secure, and production-ready agentic AI solutions. The knowledge base spans core topics including agent architectures and frameworks, technology stacks, industry standards, evaluation methodologies, security frameworks, and operational best practices.
+Our comprehensive knowledge base spans 18 structured sections covering the entire agentic AI lifecycle, enabling architects, engineers, researchers, and platform teams to design robust, secure, and production-ready agentic AI solutions. Topics range from agent architectures and frameworks to industry standards, evaluation methodologies, security frameworks, AI governance, and operational best practices.
 
 ## Knowledge Base Structure
 
-### **1. Introduction**
-- **Overview**: Welcome and foundational information about the knowledge base
-- **Disclaimer and Usage Guidelines**: Important usage information and disclaimers
-- **Target Audience**: Architects, engineers, researchers, and platform teams working with agentic AI
-
-### **2. Concepts**
+### **1. Concepts**
+- **Introduction**: Welcome, disclaimer, and usage guidelines
 - **Agent Definition**: Fundamental definitions and terminology for agentic AI systems
 - **Agent Types**: Classification and comparison of different agent architectures
-- **References**: Key research papers and foundational materials
+- **Foundations & References**: Key research papers and foundational materials
+
+### **2. Agent Harness**
+- **Agent Harness Concepts**: Components, patterns, and what an agent harness is
+- **Harness Engineering**: Engineering practices and implementation guidance
 
 ### **3. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
@@ -53,7 +53,7 @@ Our comprehensive 18-section structure provides systematic coverage of all aspec
 - **Gartner LLM Patterns**: Industry-recognized design patterns
 
 ### **4. Agent Development Frameworks**
-Comprehensive coverage of major development frameworks:
+Comprehensive coverage of 15 major development frameworks:
 - **LangChain & LangGraph**: Industry-standard frameworks with 1M+ builders
 - **Google ADK**: Model-agnostic framework optimized for Google Cloud
 - **AWS Strands Agents**: Model-driven autonomous agent framework
@@ -66,11 +66,12 @@ Comprehensive coverage of major development frameworks:
 - **PydanticAI**: Type-safe GenAI development
 - **Spring AI**: Java ecosystem integration
 - **Haystack**: Production-ready LLM applications and RAG pipelines
+- **Mastra**: TypeScript-native agentic framework
 
 ### **5. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
-- **Agentic AI Platforms**: Google Vertex AI, AWS AgentCore, Microsoft Azure AI
-- **Workflow Engines**: Open source, self-hosted, and SaaS solutions
+- **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform, AWS AgentCore, Microsoft Azure AI Agent Service
+- **Workflow Engines**: Open source, self-hosted, business process, and SaaS solutions
 - **Popular AI Agents**: Coding agents, research agents, and super agents
 
 ### **6. Agentic AI Industry Standards**
@@ -85,11 +86,14 @@ Comprehensive coverage of major development frameworks:
 - **Self-learning Agents**: Agent0 series and self-evolving systems
 - **AI Assistant Architecture**: Reference implementations and blueprints
 - **RAG Architecture**: Retrieval-augmented generation patterns
-- **NVIDIA AI Blueprints**: Video search and summarization agents
+- **Specialized Blueprints**: NVIDIA AI Blueprints and other reference implementations
+- **RAG Implementation**: Practical RAG patterns and guidance
 
 ### **8. Context Engineering**
 - **Key Challenges**: Context rot, poisoning, distraction, and management issues
 - **Management Strategies**: Offloading, reduction, retrieval, isolation, and caching
+- **Context Graph**: Graph-based context management approaches
+- **Prompt Engineering**: Prompt design and optimization techniques
 - **Implementation References**: Manus, Anthropic, LangGraph, and Devin approaches
 
 ### **9. Agent Memory Management**
@@ -101,6 +105,7 @@ Comprehensive coverage of major development frameworks:
 ### **10. Agentic AI Evaluation**
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
 - **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, and GAIA
+- **LLM Benchmarks**: Model-level evaluation benchmarks and leaderboards
 - **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
 - **Reference Frameworks**: Meta MLGym and Microsoft RELEVANCE
 
@@ -108,7 +113,6 @@ Comprehensive coverage of major development frameworks:
 - **Security Standards**: NIST AI Risk Management Framework
 - **Google Perspective**: SAIF Framework and secure AI agents approach
 - **AWS Perspective**: Security best practices and compliance frameworks
-- **Risk Management**: Rogue actions, data disclosure, and mitigation strategies
 
 ### **12. Agent Observability**
 - **Goals & Objectives**: Monitoring, debugging, and performance optimization
@@ -116,13 +120,12 @@ Comprehensive coverage of major development frameworks:
 - **Best Practices**: Guidelines for production monitoring and troubleshooting
 
 ### **13. Agentic AI Operations (AgentOps)**
-- **Google Cloud Perspective**: Operational practices and methodologies
-- **GenOps Evolution**: Evolution of MLOps for generative AI systems
-- **Production Operations**: Deployment, scaling, and lifecycle management
+- **AgentOps Overview**: Lifecycle management and operational practices
+- **GenOps Evolution**: Evolution of MLOps for generative AI systems (Google Cloud perspective)
 
 ### **14. Agentic AI Maturity Models**
 - **Gartner's Perspective**: Industry maturity assessment frameworks
-- **AWS Perspective**: Generative AI maturity models and progression paths
+- **AWS Perspective**: Generative AI maturity models and progression paths (two models)
 - **Google's Perspective**: Cloud-native maturity considerations
 - **IDC's Perspective**: Market evolution and adoption patterns
 
@@ -131,11 +134,24 @@ Comprehensive coverage of major development frameworks:
 - **AgentOps Marketplace**: Operational tools and services
 - **Miscellaneous Platforms**: Community and specialized marketplaces
 
-### **16. AI Agents Best Practices**
-- **Anthropic**: Building effective agents and safety considerations
-- **Google**: Enterprise deployment and scaling best practices
-- **Microsoft**: .NET and Azure integration patterns
-- **OpenAI**: Practical guide to building agents and agentic patterns
+### **16. Production Best Practices & Guidelines**
+- **Observability**: Tracing, logging, metrics, and alerting for production agents
+- **State & Memory Management**: Session state, persistence patterns, and memory tooling
+- **Deployment**: CI/CD for agents, canary rollouts, prompt versioning, and orchestration
+- **Agent Testing & Evaluations**: LLM-as-judge, eval harnesses, red-teaming, and regression testing
+- **Context Engineering**: Context rot, compaction, retrieval strategies, and caching
+- **Agent Security**: Prompt injection, HITL, least privilege, and audit trails
+- **Cost Management**: Model routing, token budgets, caching for cost, and cost monitoring
+
+### **17. AI Governance**
+- **Governance Strategy**: Organizational strategy and frameworks for responsible AI
+- **Governance Best Practices**: Practical guidelines for AI governance implementation
+- **Governance Solutions**: Tools and platforms supporting AI governance
+
+### **18. Vendor Deep Dives**
+Curated hub pages linking to topical content across the knowledge base:
+- **Hyperscalers**: AWS, Google, Microsoft
+- **AI Labs**: Anthropic, OpenAI
 
 ## Target Audiences
 
@@ -194,9 +210,11 @@ Comprehensive coverage of major development frameworks:
 
 ## Key Features
 
-- **Comprehensive Coverage**: 16 structured sections covering the entire agentic AI landscape
-- **Framework Comparison**: Detailed analysis of 14+ major development frameworks
+- **Comprehensive Coverage**: 18 structured sections covering the entire agentic AI landscape
+- **Framework Comparison**: Detailed analysis of 15+ major development frameworks
 - **Production Focus**: Security, observability, and operational best practices
+- **AI Governance**: Dedicated section on governance strategy, best practices, and solutions
+- **Vendor Deep Dives**: Curated hub pages for AWS, Google, Microsoft, Anthropic, and OpenAI
 - **Industry Standards**: Coverage of emerging standards like MCP, A2A, and AGENTS.md
 - **Visual Documentation**: 60+ diagrams and architectural references with meaningful naming
 - **Research Integration**: Latest academic research and industry white papers
@@ -206,7 +224,7 @@ Comprehensive coverage of major development frameworks:
 ## Getting Started
 
 ### **Quick Start**
-1. **Explore the Structure**: Browse the 16-section navigation to understand the scope
+1. **Explore the Structure**: Browse the 18-section navigation to understand the scope
 2. **Choose Your Path**: Select a learning path based on your role and experience
 3. **Start with Concepts**: Begin with foundational concepts if new to agentic AI
 4. **Pick a Framework**: Choose a development framework that fits your technology stack
@@ -237,7 +255,7 @@ We welcome contributions from the community! This knowledge base is designed to 
 - **Documentation**: Improve existing content clarity and accuracy
 
 ### **Contribution Guidelines**
-- Follow the established 16-section structure
+- Follow the established 18-section structure
 - Include proper citations and references
 - Maintain vendor-neutral perspective where possible
 - Add visual diagrams with meaningful file names
