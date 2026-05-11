@@ -24,11 +24,12 @@ SECTION_COLORS = {
     'Marketplace':             '#f0a05b',
     'RAG':                     '#6b7af0',
     'ProductionBestPractices': '#e04060',
+    'AgentHarness':            '#f0d060',
+    'AIGovernance':            '#60d0a0',
     'AllThingsAnthropic':      '#d05bf0',
     'AllThingsGoogle':         '#40c0f0',
     'AllThingsMicrosoft':      '#5b80f0',
     'AllThingsOpenAI':         '#40e0b0',
-    'Introduction':            '#888888',
 }
 
 _SEE_ALSO_RE = re.compile(
@@ -58,6 +59,9 @@ def on_pre_build(config):
             continue
 
         section = rel_path.parts[0]
+        # Introduction is merged into Concepts in the nav — treat as same section in graph
+        if section == 'Introduction':
+            section = 'Concepts'
         rel_str = str(rel_path).replace('\\', '/')
 
         try:

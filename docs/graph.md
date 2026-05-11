@@ -190,9 +190,9 @@ Explore connections across the knowledge base. Nodes are colour-coded by section
     SecurityFrameworks: '#e0c040', AgentOps: '#c05bf0',
     MaturityModels: '#40b8e0', Marketplace: '#f0a05b',
     RAG: '#6b7af0', ProductionBestPractices: '#e04060',
+    AgentHarness: '#f0d060', AIGovernance: '#60d0a0',
     AllThingsAnthropic: '#d05bf0', AllThingsGoogle: '#40c0f0',
-    AllThingsMicrosoft: '#5b80f0', AllThingsOpenAI: '#40e0b0',
-    Introduction: '#888888'
+    AllThingsMicrosoft: '#5b80f0', AllThingsOpenAI: '#40e0b0'
   };
 
   function colorFor(sec) { return COLORS[sec] || '#888'; }
