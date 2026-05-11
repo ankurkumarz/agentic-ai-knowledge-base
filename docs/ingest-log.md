@@ -168,3 +168,60 @@ Anthropic's context engineering cookbook provides an empirical comparison of thr
 Two complementary sources on context graphs ingested together. The arxiv paper (IDEA Research, 2024) provides the formal definition: CGs extend KG triples to quadruples by attaching relation contexts (temporal, geographic, provenance, quantitative, event-specific) and entity contexts (descriptions, aliases, types, images). The CGR³ paradigm achieves +33% Hits@1 on FB15k-237 and new SOTA on KGQA benchmarks. The Foundation Capital essay (2025) reframes context graphs as the strategic asset produced when agent orchestration layers capture decision traces — the "why" behind every automated action — arguing this is the trillion-dollar opportunity incumbents (Salesforce, Snowflake) structurally cannot capture because they sit outside the execution path at commit time.
 
 ## [2026-04-30] ingest | Introducing Gemini Enterprise Agent Platform (Google Cloud blog) | sections touched: AgentPlatforms, AllThingsGoogle, AgenticFrameworks, Concepts, Standards, ReferenceArchitecture, index
+
+## [2026-05-10] ingest | The Anatomy of an Agent Harness — LangChain | sections touched: AgentHarness/agent-harness
+
+**Source**: URL fetch — https://www.langchain.com/blog/the-anatomy-of-an-agent-harness
+**Type**: Blog post (LangChain, March 10, 2026)
+**Author**: Vivek Trivedy
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/agent-harness.md` | Created | Full page: Agent = Model + Harness definition, five core components, why each exists (filesystem, bash, sandbox, memory, hooks), orchestration for long-horizon work, model–harness co-evolution loop |
+
+### Summary
+
+LangChain's foundational definition of the agent harness concept. Key contribution: the clean Agent = Model + Harness equation and the method of deriving harness components by working backwards from model limitations. Introduced the Ralph Loop pattern, skills/progressive disclosure for context rot prevention, and the observation that harness optimization for a specific task can outperform the model's native post-training harness.
+
+---
+
+## [2026-05-10] ingest | Harness Engineering: Leveraging Codex in an Agent-First World — OpenAI | sections touched: AgentHarness/agent-harness, AgentHarness/harness-engineering
+
+**Source**: URL fetch — https://openai.com/index/harness-engineering
+**Type**: Engineering blog post (OpenAI, February 11, 2026)
+**Author**: Ryan Lopopolo
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/agent-harness.md` | Extended | Added OpenAI reference; OpenAI source informed the long-horizon execution and co-evolution sections |
+| `docs/AgentHarness/harness-engineering.md` | Created | Architecture fitness harness section draws heavily on OpenAI's layered domain architecture, custom linters, garbage collection agents, and progressive disclosure patterns |
+
+### Summary
+
+OpenAI's account of building a million-line production codebase with zero manually-written code using Codex. Key contributions: repository-as-system-of-record (AGENTS.md as table of contents, not encyclopedia), agent legibility as the primary design goal, layered domain architecture enforced by custom linters, "golden principles" + recurring garbage collection agents for entropy management, and the Ralph Wiggum Loop for end-to-end autonomous PR delivery. Throughput metric: 3.5 PRs per engineer per day across ~1,500 merged PRs in 5 months.
+
+---
+
+## [2026-05-10] ingest | Harness Engineering for Coding Agent Users — martinfowler.com | sections touched: AgentHarness/harness-engineering
+
+**Source**: URL fetch — https://martinfowler.com/articles/harness-engineering.html
+**Type**: Technical article (martinfowler.com, April 2, 2026)
+**Author**: Birgitta Böckeler (Thoughtworks Distinguished Engineer)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/harness-engineering.md` | Primary source | Full page built from this article: feedforward/feedback framework, computational vs. inferential controls, steering loop, timing/shift-left, three regulation categories (maintainability/architecture fitness/behaviour), harnessability, ambient affordances, harness templates, Ashby's Law, role of the human, open questions |
+| `docs/AgentHarness/agent-harness.md` | Extended | Added Fowler reference to References section |
+
+### Summary
+
+Fowler.com's cybernetics-informed framework for harness engineering. Key contributions not in the LangChain/OpenAI sources: the feedforward/feedback distinction as a design principle; computational vs. inferential control taxonomy; the three regulation categories (maintainability, architecture fitness, behaviour) with explicit acknowledgment that the behaviour harness remains an unsolved problem; harnessability as a first-class codebase property; ambient affordances; harness templates as the evolution of service templates; and Ashby's Law as the theoretical justification for topology-based variety reduction.

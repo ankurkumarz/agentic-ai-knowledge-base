@@ -1,0 +1,102 @@
+# Agent Harness
+
+## Overview
+
+An agent harness is everything that wraps a model to make it useful — every piece of code, configuration, and execution logic that is not the model itself. The core equation is:
+
+> **Agent = Model + Harness**
+
+A raw model takes in data (text, images, audio, video) and outputs text. It cannot maintain durable state, execute code, access real-time knowledge, or set up environments. The harness provides all of these capabilities. If you are not the model, you are the harness.
+
+This framing, articulated by LangChain (Vivek Trivedy, March 2026), forces a clean separation of concerns: the model contains the intelligence; the harness makes that intelligence useful.
+
+## Core Components
+
+A harness concretely includes:
+
+| Component | Description |
+|---|---|
+| **System Prompts** | Instructions injected at agent start that shape behavior, persona, and constraints |
+| **Tools, Skills, MCPs** | Callable functions and their descriptions; the action space available to the model |
+| **Bundled Infrastructure** | Filesystem, sandbox, browser — the execution environment |
+| **Orchestration Logic** | Subagent spawning, handoffs, model routing, loop control |
+| **Hooks / Middleware** | Deterministic execution wrappers: compaction triggers, continuation logic, lint checks |
+
+## Why Harnesses Exist: Working Backwards from Model Limitations
+
+Each harness component exists to close a gap between what a model can do natively and what an agent needs to do in practice.
+
+### Filesystems — Durable Storage and Context Management
+
+Models can only operate on knowledge within their context window. Filesystems solve this by giving agents a workspace to read data, code, and documentation; a place to store intermediate outputs that outlast a single session; and a natural collaboration surface for multiple agents and humans.
+
+Git adds versioning to the filesystem so agents can track work, roll back errors, and branch experiments. The filesystem is arguably the most foundational harness primitive because it unlocks every other capability.
+
+### Bash + Code Execution — General-Purpose Tool
+
+Rather than forcing users to pre-build tools for every possible action, giving agents a bash tool lets them design their own tools on the fly via code. The standard agent execution pattern is a [ReAct loop](https://docs.langchain.com/oss/python/langchain/agents) — reason, act via tool call, observe result, repeat. Bash + code execution makes this loop general-purpose.
+
+### Sandboxes — Safe, Scalable Execution Environments
+
+Running agent-generated code locally is risky and does not scale. Sandboxes provide:
+- Secure, isolated code execution
+- Allow-listed commands and network isolation for security
+- On-demand environment creation and teardown for scale
+- Pre-installed runtimes, CLIs, and browsers for useful defaults
+
+Browsers, logs, screenshots, and test runners give agents self-verification loops: write code → run tests → inspect logs → fix errors.
+
+### Memory and Search — Continual Learning
+
+Models have no knowledge beyond their weights and current context. Harnesses extend this via:
+- **Memory file standards** (e.g., AGENTS.md) injected into context on agent start; as agents edit these files, updated knowledge persists across sessions — a form of continual learning
+- **Web search and MCP tools** (e.g., Context7) for up-to-date knowledge beyond the training cutoff
+
+### Hooks and Middleware — Deterministic Execution Control
+
+Hooks intercept model behavior at defined points to enforce deterministic outcomes:
+- **Compaction hooks**: triggered when context approaches the window limit; intelligently summarize and offload context so the agent can continue
+- **Tool call offloading**: keeps head and tail tokens of large tool outputs; offloads full output to filesystem
+- **Skills / progressive disclosure**: loads only relevant tool descriptions into context on demand, preventing context rot from too many tools at startup
+- **The Ralph Loop**: a hook pattern that intercepts the model's exit attempt and reinjects the original prompt in a clean context window, forcing the agent to continue toward a completion goal
+
+## Orchestration for Long-Horizon Work
+
+Long-horizon autonomous execution requires all harness primitives to compound:
+
+- **Filesystems + git** track work across sessions; new agents can quickly get up to speed on project history
+- **Planning tools** let agents decompose tasks, track progress, and adapt as they learn
+- **Subagent spawning** delegates independent subtasks in parallel, each with isolated context
+- **Self-verification loops** (test runners, lint checks, browser validation) ground solutions in observable outcomes
+
+## The Model–Harness Co-Evolution Loop
+
+Modern agent products (Claude Code, Codex) are post-trained with models and harnesses in the loop. This creates a feedback cycle:
+
+1. Useful harness primitives are discovered and added
+2. Models are trained with those primitives in the loop
+3. Models become more capable within that harness
+4. New primitives are discovered
+
+A side effect is overfitting: changing tool logic can degrade model performance because the model was trained expecting specific harness behavior. This also means the best harness for a given task is not necessarily the one a model was post-trained with — harness optimization for a specific task can yield significant performance gains independent of model capability.
+
+## Harness vs. Model Responsibility Over Time
+
+As models become more capable, some harness responsibilities will be absorbed natively (planning, self-verification, long-horizon coherence). However, harnesses will remain valuable because:
+- A well-configured environment, the right tools, durable state, and verification loops make any model more efficient regardless of base intelligence
+- Harnesses engineer systems *around* model intelligence, not just patch over deficiencies
+
+## See Also
+
+- [Harness Engineering](./harness-engineering.md)
+- [Context Engineering Strategies](../ContextEngineering/strategies.md)
+- [Agent Memory Management](../AgentMemory/functional-tiers.md)
+- [Agentic Design Patterns](../DesignPatterns/openai-patterns.md)
+- [Production Best Practices: Deployment](../ProductionBestPractices/deployment.md)
+- [Context Engineering: Key Challenges](../ContextEngineering/challenges.md)
+
+## References
+
+- [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — defines the harness concept and derives core components from model limitations
+- [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering lessons from building a million-line codebase with zero manually-written code
+- [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, and harnessability concepts

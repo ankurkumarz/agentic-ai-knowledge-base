@@ -22,6 +22,9 @@ docs/
 ├── index.md                        # Home page — executive overview + structure map
 ├── Introduction/
 ├── Concepts/                       # Agent definitions, types, foundations
+├── AgentHarness/                   # Agent harness concepts and engineering practices
+│   ├── agent-harness.md            # What an agent harness is, components, patterns
+│   └── harness-engineering.md      # Engineering practices, implementation guidance
 ├── Architecture/                   # Architecture components, multi-agent, 12-factor
 ├── DesignPatterns/                 # OpenAI, Gartner patterns
 ├── AgenticFrameworks/              # LangChain, LangGraph, ADK, CrewAI, etc.
@@ -71,6 +74,8 @@ When a raw source arrives, use this table to decide which `docs/` directory and 
 | Topic in Source | Primary Section | File(s) to Update |
 |---|---|---|
 | Agent definition, terminology, types | `Concepts/` | `agent-definition.md`, `agent-types.md`, `agent-foundational.md` |
+| Agent harness concepts, components, patterns | `AgentHarness/` | `agent-harness.md` |
+| Agent harness engineering, implementation, tooling | `AgentHarness/` | `harness-engineering.md` |
 | Architecture components, system design | `Architecture/` | `components-selection.md`, `multi-agent-system.md` |
 | Design patterns (OpenAI, Gartner, etc.) | `DesignPatterns/` | `openai-patterns.md`, `gartner-patterns.md`, `Readme.md` |
 | Development framework (LangChain, LangGraph, CrewAI, etc.) | `AgenticFrameworks/` | `<framework-name>.md` (create if new), `README.md` |
