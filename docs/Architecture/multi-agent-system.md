@@ -295,6 +295,165 @@ A consistent trace ID — propagated through every agent and tool call — is th
 
 Layered evaluation strategy: per-agent (isolated datasets) + full workflow (`Builtin.GoalSuccessRate`) + differential analysis correlating per-agent scores against system-level outcomes.
 
+## Seven Benefits of Multi-Agent Systems
+
+From *Mastering Multi-Agent Systems* (Galileo, 2026), the seven primary advantages over single-agent approaches:
+
+| Benefit | Single-Agent Limitation | Multi-Agent Solution |
+|---|---|---|
+| Specialization | One model handles all tasks, losing context as it switches domains | Specialized agents each maintain focused context, reducing hallucinations |
+| Validation (orthogonal checking) | No self-correction mechanism; confident when wrong | Peer-review layers: Generation → Logic → Fact → Safety agents catch errors the initial model misses |
+| Parallel processing | Sequential processing hits time and context limits | Dispatcher + parallel Analysis agents + Aggregator; 20 min → 3 min on 100-review workloads |
+| Fault tolerance | Single point of failure stops everything | Graceful degradation: failed agent spawns backup or flags for human review; partial work is preserved |
+| Dynamic routing | Same model for simple FAQs and complex reasoning | Route by confidence: >0.9 = fully automated; 0.7–0.9 = human review option; <0.7 = specialist or human |
+| Context preservation | Forgets early messages as context window fills | Separate Memory Agent + Consistency Checker maintains coherence across 50+ message sessions |
+| Observability | Black box — hard to know why something went wrong | Per-agent metrics, A/B testing of individual agents, token cost attribution per component |
+
+**Gartner prediction**: 40% of agentic AI projects will be canceled by 2027 due to reliability issues. The successful 60% will match architecture to actual needs.
+
+## When Multi-Agent Systems Actually Work
+
+Three patterns that successful implementations share (from Galileo research):
+
+1. **Problems that can be parallelized** — subtasks require zero communication during processing. Each agent works independently; results are aggregated at the end.
+2. **Read-heavy, write-light workloads** — agents primarily consume information rather than modify shared state. Coordination complexity drops dramatically.
+3. **Explicit coordination rules** — deterministic orchestration with clear handoff points, defined data formats, interaction protocols, and fallback behaviors.
+
+**Checklist before building**:
+- Can you break down the work into completely independent tasks?
+- Do agents primarily read and analyze rather than write and modify?
+- Can results be combined mechanically (concatenation, voting, averaging)?
+- Is parallel processing speed worth a 2–5× cost increase?
+- Can one agent failing be isolated from others?
+
+## When Multi-Agent Systems Fail
+
+### Coordination Cost Economics
+
+Two agents need one communication channel. Three need three. Four need six. Coordination overhead grows quadratically. Three high-impact failure scenarios:
+
+1. **Memory fragments across agents** — Agent B needs Agent A's output but gets either too much (expensive) or too little (broken functionality). No clean way to share only relevant details.
+2. **Operational costs multiply** — A task costing $0.10 for a single agent may cost $1.00 in a multi-agent system due to context sharing, handoffs, and verification.
+3. **Write conflicts cascade** — Agent A creates a user profile structure. Agent B creates a different one. Agent C reconciles both and creates a third. Three incompatible representations of the same data.
+
+### Concrete Cost Comparison (Customer Support)
+
+| Approach | Time | Cost | Failure Points |
+|---|---|---|---|
+| Single agent (reads ticket, searches docs, checks account, crafts reply) | 2s | $0.05 | 1 |
+| Multi-agent (Triage + Research + Account + Response + Orchestrator) | 3.8s | $0.40 | 5 agents, 10 potential interaction bugs |
+
+The multi-agent system costs 8× more, takes nearly twice as long, and creates exponentially more ways to fail.
+
+### The Model Evolution Challenge
+
+Rich Sutton's Bitter Lesson: general methods using more computation ultimately win over specialized structures. Multi-agent complexity often compensates for current model limitations that will disappear:
+
+- Context windows too small → distribute the load (but windows are growing)
+- Tool calling unreliable → create dedicated tool-use agents (but models are improving)
+- Complex reasoning fails in one pass → split into specialist agents (but newer models handle this natively)
+
+Teams that built complex orchestration layers for GPT-4 found them unnecessary with GPT-5. **Design for removal**: write orchestration code in a separate module that can be deleted when a better model arrives. Make agent boundaries collapsible so Agent A (research) and Agent B (summarize) can merge into one "research and summarize" agent later.
+
+### The Decision Framework (5 Questions)
+
+Before building a multi-agent system, answer in order:
+
+1. **Can better prompt engineering solve this?** In 80% of cases, a well-crafted single agent with good context management beats multi-agent.
+2. **Are your subtasks genuinely independent?** Real independence = zero shared state during processing. Sequential tasks with dependencies are not parallel work.
+3. **Can you afford the cost increase?** Expect 2–5× more than single agents due to coordination overhead, duplicate context, and retry logic.
+4. **Is your latency tolerance measured in seconds?** Each agent handoff adds 100–500ms. Five agents can add 2+ seconds.
+5. **Do you have debugging infrastructure?** Multi-agent failures require tracing through multiple execution paths, shared state changes, and inter-agent communication logs.
+
+## The Four Primary Architectures
+
+### 1. Centralized: The Orchestrator Pattern
+
+A single powerful agent serves as the central coordinator, allocating tasks, monitoring progress, and synthesizing results. All data flows through one hub.
+
+**Performance characteristics**:
+- Token efficiency: high (no duplicate work)
+- Latency: higher (sequential coordination)
+- Throughput: ceiling based on orchestrator capacity
+- Context: concentrated on the central agent
+
+**Best for**: Simple workflows requiring strong consistency; complex queries needing dynamic planning (e.g., Anthropic's Research agent spawning specialized subagents).
+
+**Watch out**: Orchestrator is a single point of failure. Becomes a choke point at 10–20 agents.
+
+**Map-reduce pattern**: Orchestrator maps work to parallel agents, then reduces their results into a single answer.
+
+### 2. Decentralized: Peer-to-Peer Coordination
+
+Agents communicate directly with neighbors, making local decisions without central coordination. Intelligence emerges from local interactions.
+
+**Performance characteristics**:
+- Token efficiency: lower (potential duplicate work)
+- Latency: lower for local decisions
+- Throughput: scales linearly with agents
+- Context: distributes evenly across the system
+
+**Best for**: Systems requiring resilience and local optimization; enterprise HR systems where benefits, payroll, retirement, and time-off agents coordinate directly.
+
+**Watch out**: Coordinating global behavior is challenging; maintaining consistency without central authority is difficult.
+
+### 3. Hierarchical: Multi-Level Management
+
+Multiple layers of supervision create a tree structure. Supervisor agents perform task planning, break down work, assign sub-tasks, and facilitate communication between specialists.
+
+**Performance characteristics**:
+- Token efficiency: moderate (some redundancy between levels)
+- Latency: moderate (multi-hop coordination)
+- Throughput: high (parallel teams)
+- Context: segments by level and team
+
+**Best for**: Complex multi-domain problems that naturally decompose into sub-problems; news aggregation platforms with content, fact-checking, and publishing teams. Google ADK exemplifies this pattern.
+
+**Watch out**: Coordination overhead between levels adds complexity. Each level should add meaningful abstraction, not bureaucracy.
+
+### 4. Hybrid: Strategic Center, Tactical Edges
+
+Combines centralized control with decentralized flexibility. Global decisions flow from central coordinators; local optimizations happen through peer interactions.
+
+**Performance characteristics**:
+- Token efficiency: varies based on task distribution
+- Latency: optimizes for both global and local operations
+- Throughput: combines benefits of both approaches
+- Context: strategic at center, tactical at edges
+
+**Best for**: Enterprise-scale systems with mixed requirements (e.g., food delivery: central orchestrator handles payments and order integrity; regional agent clusters handle routing and timing).
+
+**Watch out**: Highest complexity; requires careful definition of the boundary between centralized and decentralized zones.
+
+### Architecture Selection Matrix
+
+| Primary Need | Best Architecture |
+|---|---|
+| Simple workflows, strong consistency | Centralized |
+| Resilience, local optimization | Decentralized |
+| Complex domains with team structures | Hierarchical |
+| Enterprise systems with mixed requirements | Hybrid |
+
+### Architecture Decision Factors
+
+- **Consistency requirements**: Perfect sync across all agents → centralized. Agents can work with slightly stale data → decentralized.
+- **Scale trajectory**: 3–5 agents → centralized. Dozens to hundreds within months → hierarchical or hybrid.
+- **Team structure**: Clear reporting lines → hierarchical. Flat organization → peer-to-peer.
+- **Problem decomposition**: Completely independent chunks → decentralized. Tasks that build on each other → centralized or hierarchical.
+
+## Framework Comparison for Multi-Agent Architectures
+
+| Framework | Key Strengths | Best For |
+|---|---|---|
+| LangGraph | Directed graph modeling, persistent memory across turns, full state tracking, handles conditional flows | Complex workflows with state management; hierarchical and hybrid patterns |
+| Agno | ~2μs agent creation, ~3.75 KiB per agent, multi-modal support, minimal resource footprint | High-performance, high-volume operations (e.g., 500 simultaneous stock analysis agents) |
+| Mastra | Native TypeScript, works with existing REST APIs, graph-based workflows, no separate AI infrastructure | Web applications and TypeScript projects |
+| CrewAI | Predefined agent personas, minimal configuration, centralized orchestration, consistent role behaviors | Role-based collaboration and rapid prototyping |
+| Google ADK | Flexible orchestration (Sequential/Parallel/Loop), hierarchical composition, built-in evaluation framework, Vertex AI integration | Multi-agent systems on GCP; news aggregation, content pipelines |
+| AWS Strands | Model-driven approach, native MCP support, A2A protocol for agent discovery | Production-ready agents on AWS; code modernization systems |
+
+**Framework choice implies architectural decisions**: LangGraph suits hierarchical and hybrid patterns; CrewAI suits centralized; Agno suits decentralized high-throughput; Mastra suits hybrid web-integrated systems.
+
 ## See Also
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [Architecture Components Selection](components-selection.md)
@@ -310,3 +469,4 @@ Layered evaluation strategy: per-agent (isolated datasets) + full workflow (`Bui
 ## References
 
 - [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop slide deck covering the four planes, orchestration patterns, non-determinism math, shared state design, MCP/A2A distinction, security at agent boundaries, and distributed observability
+- [Mastering Multi-Agent Systems eBook](https://galileo.ai) — Galileo, 2026. Author: Pratik Bhavsar. Seven benefits, failure modes, decision framework, four architectures, context engineering, LangGraph production example with Galileo observability.

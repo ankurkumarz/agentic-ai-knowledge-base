@@ -32,10 +32,73 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | [Langfuse](https://langfuse.com/) | ✅ | ✅ | ✅ | Self-hosted, cost-conscious teams |
 | [Openlit](https://openlit.io/) | ✅ | ✅ | ✅ | OpenTelemetry-native stacks |
 | [LangSmith](https://www.langchain.com/langsmith) | ❌ | ✅ | ✅ | LangChain/LangGraph ecosystems |
+| [Galileo](https://galileo.ai) | ❌ | ✅ | ✅ | Multi-agent reliability; Graph/Trace/Timeline views; Insights Engine |
 | [Braintrust](https://www.braintrust.dev/) | ❌ | ✅ | ✅ | Regression detection on real user data |
 | [W&B Weave](https://weave-docs.wandb.ai/) | ❌ | ✅ | ✅ | Research and experiment-heavy teams |
 | [AgentOps](https://www.agentops.ai) | ❌ | ✅ | ✅ | Agent-specific monitoring and analytics |
 | [agenttrace](https://github.com/luoyuctl/agenttrace) | ✅ | ✅ | ✅ | Local-first AI coding-agent logs and CI regression gates |
+
+## Galileo Agent Observability Metrics Framework
+
+From *Mastering Multi-Agent Systems* (Galileo, 2026), a three-level tracking system for multi-agent production systems:
+
+### Three Levels of Tracking
+
+| Level | What It Tracks | Key Metrics |
+|---|---|---|
+| Session level | Did the agent complete the user's goal? | Action Completion, Action Advancement |
+| Step level | Were individual decisions correct? | Tool Selection Quality, Context Adherence |
+| System level | What patterns exist across sessions? | Error counts, API latency, token consumption, loop detection |
+
+### Production Performance Benchmarks
+
+| Metric | Excellent | Good | Needs Improvement |
+|---|---|---|---|
+| Action Completion | > 95% | 85–95% | < 80% |
+| Tool Selection Quality | > 90% | 85–90% | < 85% |
+Avg Response Time | < 2s | 2–4s | > 4s |
+| Supervisor Routing Accuracy | > 95% | 90–95% | < 90% |
+
+**Action Completion** measures whether agents complete tasks or just acknowledge them. An agent that says "I'll check the bill" scores low. An agent that retrieves the bill, identifies specific charges, and explains them scores high.
+
+**Tool Selection Quality** measures whether the right tools were chosen with the correct parameters. Two failure patterns: (1) wrong tool selection entirely; (2) correct tool but wrong parameters.
+
+**Context Adherence** checks if responses used provided context instead of hallucinating.
+
+### Continuous Improvement Cycle
+
+| Phase | What It Tracks | Why It Matters |
+|---|---|---|
+| Monitor | Agent selection, tool invocation, response latency, token usage, inter-agent communication flows | Establishes baseline; reveals bottlenecks and optimization opportunities |
+| Debug | Routing errors, tool execution failures, malformed API responses, context loss during handoffs | Enables root cause analysis via complete execution traces |
+| Improve | Prompt engineering effectiveness, retrieval accuracy, agent response quality, tool reliability scores | Drives iterative refinement through data-backed decisions |
+
+### Monitoring Routine
+
+- **Daily**: Check 12-hour view to catch overnight regressions
+- **Weekly**: Review weekly view during sprint planning to prioritize fixes by frequency
+- **Monthly**: Validate that improvements actually worked (e.g., revision cycles dropped from 4 to 2 after structured feedback)
+
+### Alert Configuration
+
+Key alert types to configure:
+- Action Completion drops below threshold (e.g., 95% → 85% signals immediate investigation)
+- Tool Selection Quality below 85%
+- Average response time exceeds 4s
+- API failure rate above 0%
+
+### Closing the Loop
+
+After applying a fix, monitor the same metric for 24–48 hours. Document each incident:
+- **Symptom**: What alert was triggered
+- **Root cause**: What investigation revealed
+- **Resolution**: What changes were made
+
+These incident records become a reference for troubleshooting and training.
+
+### Custom Business Metrics
+
+Beyond standard metrics, define custom metrics that reflect specific business goals. Example: `suggested_unlimited_plan` — tracks whether agents correctly identify upgrade opportunities for users approaching data limits. An LLM judge (e.g., GPT-4o) evaluates each interaction as Successful / Fail / Unrelated.
 
 ## Key Metrics Reference
 
@@ -46,6 +109,59 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 **Business**: task completion rate, human escalation rate, user satisfaction score, ROI per interaction
 
 ## The Observe → Act → Evolve Production Loop (Google AgentOps)
+
+Managing an autonomous agent in production requires a continuous operational cycle rather than static monitoring:
+
+- **Observe**: Understand the system's behavior in real time via logs, traces, and metrics. This is the sensory system for everything downstream.
+- **Act**: Pull real-time levers to maintain performance, safety, and cost. Think of this as the system's automated reflexes — not strategic improvements.
+- **Evolve**: Use production insights to make the agent fundamentally better. Turn raw observability data into durable improvements in architecture, logic, and behavior.
+
+The critical distinction: "Act" is tactical (circuit breakers, traffic rerouting, HITL escalation); "Evolve" is strategic (prompt refinements, new tools, updated guardrails deployed through the CI/CD pipeline).
+
+### Evolution Workflow
+
+Production data becomes the engine of improvement:
+1. **Analyze** production logs for trends — user behavior, task success rates, security incidents
+2. **Update evaluation datasets** — transform production failures into test cases, augmenting the golden dataset
+3. **Refine and deploy** — commit improvements (prompt changes, new tools, guardrail updates) to trigger the automated pipeline
+
+This creates a virtuous cycle where every user interaction is a potential improvement signal. With a mature CI/CD pipeline, the loop from observation to deployed improvement can close in hours or days, not weeks.
+
+### Evolving Security via the Production Loop
+
+Security is not a one-time setup. The Observe → Act → Evolve loop applies directly to security posture:
+1. **Observe**: Monitoring detects a new threat vector (e.g., a novel prompt injection technique)
+2. **Act**: Immediate containment via circuit breaker / feature flag to disable the affected capability
+3. **Evolve**: The new attack is added as a permanent test case; Prompt/AI Engineer refines filters or system prompt; change goes through full CI/CD pipeline, validated against the expanded eval set
+
+Every production incident makes the agent's defenses stronger.
+
+## Google Cloud Observability Stack
+
+For agents running on Google Cloud (Vertex AI Agent Engine, ADK):
+- **Cloud Trace**: Each user request gets a unique trace ID linking Agent Engine invocation, model calls, and tool executions with visible durations
+- **Cloud Logging**: Detailed logs for every tool call, error, and decision
+- **Cloud Monitoring**: Dashboard alerts when latency thresholds are exceeded
+- **ADK**: Built-in Cloud Trace integration for automatic instrumentation of agent operations
+
+## AWS Multi-Agent Observability Stack
+
+For multi-agent systems on AWS, a layered approach is required:
+
+| Tool | Role |
+|---|---|
+| Amazon CloudWatch Traces | Distributed tracing across Lambda, Amazon Bedrock agent invocations, and Step Functions. Renders the full execution graph as a single navigable trace. |
+| LangSmith | Purpose-built LLM tracing — hierarchical tree view from orchestrator down to individual tool calls. Evaluation dataset management for per-agent and multi-agent testing. |
+| LangFuse | Token cost tracking across agents — shows which agent is responsible for the majority of inference costs. Strong cost attribution for optimization decisions. |
+
+Layered evaluation strategy for multi-agent systems: per-agent evaluations (isolated datasets) + full workflow evaluation (`Builtin.GoalSuccessRate`) + differential analysis correlating per-agent scores against system-level outcomes.
+
+## See Also
+- [Deployment](./deployment.md)
+- [Cost Management](./cost-management.md)
+- [Agent Testing & Evaluations](./testing-evaluations.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [Observability Solutions](../Observability/solutions.md)
 
 Managing an autonomous agent in production requires a continuous operational cycle rather than static monitoring:
 

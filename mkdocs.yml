@@ -50,6 +50,7 @@ nav:
     - 4.12 Spring AI: 'AgenticFrameworks/spring-ai.md'
     - 4.13 Haystack: 'AgenticFrameworks/haystack.md'
     - 4.14 Other Frameworks: 'AgenticFrameworks/README.md'
+    - 4.15 Mastra: 'AgenticFrameworks/mastra.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.2 Agentic AI Platforms:

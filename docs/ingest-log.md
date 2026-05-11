@@ -245,3 +245,39 @@ OpenAI's account of building a million-line production codebase with zero manual
 ### Summary
 
 Fowler.com's cybernetics-informed framework for harness engineering. Key contributions not in the LangChain/OpenAI sources: the feedforward/feedback distinction as a design principle; computational vs. inferential control taxonomy; the three regulation categories (maintainability, architecture fitness, behaviour) with explicit acknowledgment that the behaviour harness remains an unsolved problem; harnessability as a first-class codebase property; ambient affordances; harness templates as the evolution of service templates; and Ashby's Law as the theoretical justification for topology-based variety reduction.
+
+## [2026-05-10] ingest | Mastering Multi-Agent Systems eBook.pdf | sections touched: Architecture/multi-agent-system, AgenticFrameworks/README, AgenticFrameworks/mastra, ContextEngineering/challenges, ContextEngineering/strategies, ProductionBestPractices/observability, Observability/solutions, index
+
+**Source**: `raw/Mastering Multi-Agent Systems eBook.pdf`
+**Type**: eBook (165 pages, 5 chapters, Galileo, 2026)
+**Author**: Pratik Bhavsar (@ptkbhv)
+**Publisher**: Galileo (galileo.ai) — Mastering GenAI Series
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Architecture/multi-agent-system.md` | Extended | Seven benefits table, when MAS actually works (3 patterns), coordination cost economics, concrete cost comparison ($0.05 vs $0.40), model evolution challenge + design-for-removal principle, 5-question decision framework, four primary architectures with performance characteristics, architecture selection matrix, framework comparison table for architecture selection |
+| `docs/ContextEngineering/challenges.md` | Extended | Memory vs. context distinction (100:1 rule, decision matrix, four context types), empirical evidence for all four failure modes (DeepMind Pokémon agent, Gemini 2.5 team, Berkeley Function-Calling Leaderboard, Microsoft/Salesforce 39% drop), context size thresholds, common anti-patterns table |
+| `docs/ContextEngineering/strategies.md` | Extended | Strategy selection by priority table, retrieval efficiency benchmark (40%/50-70%/80% thresholds), phased implementation roadmap (Week 1 / Month 1 / Advanced) |
+| `docs/ProductionBestPractices/observability.md` | Extended | Galileo three-level tracking system, production performance benchmarks (Action Completion/Tool Selection Quality/Response Time/Routing Accuracy), continuous improvement cycle table, monitoring routine (daily/weekly/monthly), alert configuration, incident documentation pattern, custom business metrics |
+| `docs/Observability/solutions.md` | Extended | Added Galileo platform entry (Graph Engine, Insights Engine, Trace/Graph/Timeline views, Log Stream Insights, custom metrics); added Galileo to platform comparison table |
+| `docs/AgenticFrameworks/README.md` | Extended | Updated Agno entry with performance specs (~2μs, ~3.75 KiB); added Mastra entry |
+| `docs/AgenticFrameworks/mastra.md` | Created | New page: TypeScript-first framework, graph-based state machines, existing API integration, e-commerce example, comparison table vs LangGraph/CrewAI |
+| `docs/index.md` | Updated | Architecture section updated with four architectures; Frameworks section updated with Agno/Mastra; Context Engineering updated with empirical evidence and roadmap; Observability updated with Galileo and production benchmarks |
+| `mkdocs.yml` | Updated | Added 4.15 Mastra entry |
+
+### Summary
+
+Galileo's *Mastering Multi-Agent Systems* eBook (165 pages, 5 chapters) provides a practitioner-focused treatment of multi-agent system design. Key new concepts added to the wiki:
+
+**Chapter 1 (Benefits)**: Seven-benefit framework with concrete single-vs-multi-agent comparisons; Gartner's 40% cancellation prediction for 2027; three patterns where MAS actually works (parallelizable, read-heavy, explicit coordination rules).
+
+**Chapter 2 (Failure Modes)**: Coordination cost economics with concrete dollar figures ($0.05 vs $0.40 for customer support); the Model Evolution Challenge (Rich Sutton's Bitter Lesson applied to MAS); design-for-removal principle; 5-question decision framework; framework comparison table (CrewAI/LangGraph/Swarm).
+
+**Chapter 3 (Architectures)**: Four primary architectures with performance characteristics (token efficiency, latency, throughput, context distribution); architecture selection matrix; framework-to-architecture mapping (LangGraph→hierarchical/hybrid, Agno→decentralized high-throughput, Mastra→hybrid web-integrated, CrewAI→centralized, ADK→hierarchical, Strands→AWS production).
+
+**Chapter 4 (Context Engineering)**: Memory vs. context distinction with the 100:1 rule; four context types (instructions/knowledge/tools/history); empirical evidence for all four failure modes with specific team citations; context size thresholds (10K/50K/100K); five anti-patterns; phased implementation roadmap.
+
+**Chapter 5 (LangGraph Production)**: ConnectTel multi-agent architecture (Supervisor + Billing + Technical Support + Plan Advisor); Galileo observability integration via `GalileoAsyncCallback`; three-level tracking; production benchmarks; continuous improvement cycle; custom business metrics pattern.
