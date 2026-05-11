@@ -102,6 +102,12 @@ Observability for agentic AI systems goes beyond traditional application monitor
 - GPU Monitoring capabilities
 - Integrated Guardrails, Evaluations, Prompt Management, Vault, and Playground
 
+**[agenttrace](https://github.com/luoyuctl/agenttrace)**
+- Open-source local TUI and report generator for AI coding-agent session history
+- Parses local logs from Claude Code, Codex CLI, Gemini CLI, Qwen Code, Cursor, Aider, OpenCode, and Copilot-style traces
+- Summarizes token usage, estimated cost, latency, tool failures, and session health
+- Supports local-first inspection and CI-friendly regression gates without a hosted backend
+
 **[Weights & Biases (W&B) Weave](https://weave-docs.wandb.ai/)**
 - Framework for tracking, experimenting, evaluating, deploying, and improving LLM-based applications
 - Comprehensive experiment tracking
@@ -123,6 +129,7 @@ Observability for agentic AI systems goes beyond traditional application monitor
 | LangSmith | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Openlit | ✅ | ✅ | ✅ | ✅ | ✅ |
+| agenttrace | ✅ | ❌ | ❌ | ✅ | ✅ |
 | W&B Weave | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Braintrust | ❌ | ✅ | ✅ | ✅ | ✅ |
 
@@ -210,6 +217,7 @@ Observability for agentic AI systems goes beyond traditional application monitor
 
 **Recommended Stack**
 - **Primary Platform**: LangSmith or Langfuse (open-source option)
+- **Local coding-agent traces**: agenttrace for terminal-first cost, latency, and health reports from local session logs
 - **Alerting**: Platform-native alerting with Slack/email integration
 - **Dashboards**: Platform-provided dashboards with custom business metrics
 
@@ -292,3 +300,4 @@ This comprehensive observability framework provides the foundation for maintaini
 - **[Agent Ops](../AgentOps/README.md)**: Operational practices and methodologies
 - **[Evaluation Frameworks](../EvaluationFrameworks/Readme.md)**: Evaluation and monitoring approaches
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform observability capabilities
+- **[Production Observability](../ProductionBestPractices/observability.md)**: Production tracing, cost visibility, and regression practices

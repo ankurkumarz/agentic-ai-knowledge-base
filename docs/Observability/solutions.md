@@ -43,6 +43,11 @@ AI observability platform focused on measuring, evaluating, and improving AI in 
 
 Enterprise-grade ML observability platform with experiment tracking, model monitoring, performance analytics, and team collaboration features. Extends Comet's established ML tracking capabilities to LLM and agent workloads.
 
+### agenttrace
+**Platform**: [agenttrace](https://github.com/luoyuctl/agenttrace)
+
+Open-source local TUI and report generator for AI coding-agent session history. It reads local logs from tools such as Claude Code, Codex CLI, Gemini CLI, Qwen Code, Cursor, Aider, OpenCode, and Copilot-style traces, then summarizes token usage, estimated cost, latency, tool failures, and session health without sending prompts or code to a hosted service.
+
 ## Platform Comparison
 
 | Platform | Open Source | Enterprise | Real-time Monitoring | Cost Tracking | Evaluation Tools |
@@ -54,6 +59,7 @@ Enterprise-grade ML observability platform with experiment tracking, model monit
 | W&B Weave | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Braintrust | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Comet Opik | ❌ | ✅ | ✅ | ✅ | ✅ |
+| agenttrace | ✅ | ❌ | ❌ | ✅ | ✅ |
 
 ## Infrastructure-Level Observability
 
@@ -71,6 +77,9 @@ For enterprise deployments, AI observability often integrates with existing APM 
 
 ### For Startups and Small Teams
 Start with **Langfuse** (open-source, self-hostable) or **LangSmith** (if using LangChain). Focus on traces and cost tracking initially, then add evaluations as the system matures.
+
+### For Coding-Agent Development
+Use **agenttrace** when traces already live in local coding-agent logs and the team needs terminal-first cost, latency, and regression reports without adopting a hosted observability backend.
 
 ### For Enterprise Organizations
 Consider **Braintrust** or **W&B Weave** for comprehensive coverage. Integrate with existing enterprise monitoring tools (Datadog, Splunk) for unified observability. Implement custom business metrics alongside technical metrics.
@@ -91,3 +100,4 @@ Consider **Braintrust** or **W&B Weave** for comprehensive coverage. Integrate w
 - [Observability Goals](goals.md)
 - [Agent Ops](../AgentOps/README.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
+- [Production Observability](../ProductionBestPractices/observability.md)

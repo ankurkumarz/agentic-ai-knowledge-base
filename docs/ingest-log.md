@@ -5,6 +5,26 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-10] ingest | agenttrace GitHub repository | sections touched: Observability/solutions, Observability/Readme, ProductionBestPractices/observability
+
+**Source**: URL fetch — https://github.com/luoyuctl/agenttrace
+**Type**: Open-source observability tool repository
+**Processed by**: OpenAI Codex
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Observability/solutions.md` | Extended | Added agenttrace as a local-first AI coding-agent trace analysis option with cost, latency, health, and CI regression coverage |
+| `docs/Observability/Readme.md` | Extended | Added agenttrace to specialized observability platforms and the platform comparison table |
+| `docs/ProductionBestPractices/observability.md` | Extended | Added local coding-agent trace review as a production practice and tooling row |
+
+### Summary
+
+agenttrace covers the local developer workflow that hosted observability platforms do not always capture: post-run inspection of AI coding-agent session logs across cost, token usage, latency, tool failures, and session health. The update positions it as complementary to production tracing platforms rather than a replacement for real-time monitoring.
+
+---
+
 ## [2026-04-30] ingest | awsmp-buiding-agentic-systems-module-4.pdf | sections touched: Architecture/multi-agent-system, AgentPlatforms/aws-agentcore, Standards/agent2agent, ProductionBestPractices/deployment, ProductionBestPractices/security, ProductionBestPractices/observability, ProductionBestPractices/state-memory
 
 **Source**: `raw/4. awsmp-buiding-agentic-systems-module-4.pdf`

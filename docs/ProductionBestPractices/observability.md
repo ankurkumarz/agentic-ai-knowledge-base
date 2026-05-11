@@ -20,6 +20,7 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | 100% trace capture cost | Full tracing at production scale is expensive | Evaluated always-on tracing; storage and egress costs were prohibitive | Sample intelligently — 100% of errors, 10–20% of successful requests |
 | PII in traces | User inputs logged verbatim expose sensitive data | Considered not logging inputs; lost too much debugging value | Implement PII detection and masking before writing to observability store |
 | Token cost visibility | Costs compound silently across sessions and models | Relied on monthly billing reports; caught overruns too late | Track token usage per trace in real time; set budget alerts at 70% and 90% thresholds |
+| Local coding-agent trace review | CLI coding agents often write useful traces locally, outside hosted observability stacks | Relied on final answers or raw JSONL logs; missed slow tool calls, retries, and token-heavy sessions | Use local-first trace analyzers such as agenttrace to summarize session cost, latency, tool failures, and health before changes are promoted |
 | Hallucination detection | Hard to know when agent outputs are factually wrong | Manual spot-checking doesn't scale | Integrate LLM-as-judge evaluation on sampled outputs; track hallucination rate as a KPI |
 | Tool call failure visibility | Tool failures silently degrade agent quality | Checked only final output quality; missed upstream tool errors | Log every tool invocation with input, output, latency, and success/failure status |
 | Business metric correlation | Technical metrics don't reflect actual agent value | Tracked only P99 latency; missed that task completion rate was declining | Define business KPIs (task completion rate, escalation rate, resolution rate) and correlate with technical traces |
@@ -34,6 +35,7 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | [Braintrust](https://www.braintrust.dev/) | ❌ | ✅ | ✅ | Regression detection on real user data |
 | [W&B Weave](https://weave-docs.wandb.ai/) | ❌ | ✅ | ✅ | Research and experiment-heavy teams |
 | [AgentOps](https://www.agentops.ai) | ❌ | ✅ | ✅ | Agent-specific monitoring and analytics |
+| [agenttrace](https://github.com/luoyuctl/agenttrace) | ✅ | ✅ | ✅ | Local-first AI coding-agent logs and CI regression gates |
 
 ## Key Metrics Reference
 
