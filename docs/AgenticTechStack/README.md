@@ -18,6 +18,12 @@ The modern agent technology stack encompasses multiple layers:
 - **Infrastructure**: Runtime environments, memory systems, and observability tools
 - **Integration Layer**: APIs, protocols, and connectors for external system integration
 
+Across these layers, this wiki maintains **Technology Radars** that summarize ecosystem choices:
+
+- **Frameworks Radar**: [Agentic Framework Solutions](../AgenticFrameworks/solutions.md) (Section 4.16)
+- **Agent Platforms & Stack**: Platform coverage in this section (5.2) plus vendor deep dives in Section 5 and 18
+- **Observability Radar**: [Agent Observability Tech Radar](../Observability/tech-radar.md) (Section 12.4)
+
 ## Key Components
 
 ### Platform Layer
@@ -72,18 +78,20 @@ Each subsection provides detailed technical analysis, architecture diagrams, and
 ## Integration with Other Sections
 
 The Agent Technology Stack closely integrates with:
-- **Section 4**: Agent Development Frameworks (the development layer)
+- **Section 4**: Agent Development Frameworks (the development layer) — see the **Agentic Framework Solutions Tech Radar** for framework selection
 - **Section 6**: Industry Standards (protocols and interoperability)
 - **Section 11**: Security (platform security considerations)
-- **Section 12**: Observability (monitoring and operations)
+- **Section 12**: Observability (monitoring and operations) — see the **Agent Observability Tech Radar** for tooling and platform choices
 
 ## Search and Vector Databases
 
 - [PageIndex AI](https://pageindex.ai/): vectorless, reasoning-based retrieval framework
 
-####See Also
+#### See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Development tools and frameworks
+- **[Frameworks Technology Radar](../AgenticFrameworks/solutions.md)**: Technology radar for development frameworks
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Cloud and SaaS platform options
 - **[Observability](../Observability/Readme.md)**: Monitoring and observability solutions
+- **[Observability Tech Radar](../Observability/tech-radar.md)**: Technology radar for observability tools and platforms
 - **[Security Frameworks](../SecurityFrameworks/Readme.md)**: Security considerations for tech stacks

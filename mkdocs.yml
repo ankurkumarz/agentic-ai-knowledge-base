@@ -121,6 +121,7 @@ nav:
     - 12.1 Goals & Objectives: 'Observability/goals.md'
     - 12.2 Observability Solutions: 'Observability/solutions.md'
     - 12.3 Best Practices and Guidelines: 'Observability/Readme.md'
+    - 12.4 Observability Tech Radar: 'Observability/tech-radar.md'
   - 13. Agentic AI Operations (AgentOps):
     - 13.1 AgentOps Overview: 'AgentOps/README.md'
     - 13.2 Google Cloud Perspective:
