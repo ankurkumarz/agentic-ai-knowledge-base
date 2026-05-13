@@ -40,12 +40,14 @@ Landmark paper demonstrating AI agents with believable human-like behavior in a 
 **Authors**: Sumers et al. (Princeton)
 **Resource**: [ArXiv Paper](https://arxiv.org/abs/2309.02427)
 
-Provides a systematic framework for understanding and designing cognitive architectures for language agents. Categorizes memory into working memory, episodic memory, semantic memory, and procedural memory — drawing parallels with human cognitive science.
+Provides a systematic framework for understanding and designing cognitive architectures for language agents. Defines the canonical four-type memory taxonomy — working memory, semantic memory, episodic memory, and procedural memory — drawing directly on cognitive science. This taxonomy has become the standard reference for agent memory design.
 
 **Key Contributions**:
-- Unified taxonomy of agent memory types
-- Framework for comparing different agent architectures
-- Guidance for designing memory systems based on cognitive science principles
+- **Working memory**: The active in-context state the agent reasons over at inference time
+- **Semantic memory**: Durable facts and knowledge about users, entities, and the world (preferences, definitions, reference data)
+- **Episodic memory**: Specific past experiences — what happened in prior sessions, how similar tasks resolved
+- **Procedural memory**: Behavioral rules, guidelines, and learned procedures that shape how the agent acts
+- Unified framework for comparing different agent architectures
 - Analysis of existing systems (ReAct, Reflexion, AutoGPT) through the CoALA lens
 
 ---

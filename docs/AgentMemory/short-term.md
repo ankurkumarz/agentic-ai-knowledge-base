@@ -1,18 +1,20 @@
-# Short-term Memory Management
+# Working Memory Management
 
 ## Overview
 
-Short-term memory (also called working memory) manages the information immediately available to an agent during a task or conversation. It lives in the LLM's context window — the most expensive and capacity-constrained part of the memory system. Effective short-term memory management is critical for maintaining coherent conversations, avoiding context overflow errors, and controlling inference costs.
+Working memory (also called short-term memory) is the active state the agent is reasoning over right now — the running conversation and the scratchpad the model sees at inference time. It lives in the LLM's context window — the most expensive and capacity-constrained part of the memory system. Effective working memory management is critical for maintaining coherent conversations, avoiding context overflow errors, and controlling inference costs.
+
+In the CoALA taxonomy, working memory is the only in-context memory type. The three long-term types (semantic, episodic, procedural) all live outside the context window and must be retrieved into working memory when needed.
 
 ## The Core Challenge
 
-LLMs have a fixed context window (ranging from 4K to 200K+ tokens depending on the model). As conversations grow longer, you must decide:
-- What to keep in the context window
+LLMs have a fixed context window (ranging from 4K to 1M+ tokens depending on the model). As conversations grow longer, you must decide:
+- What to keep in the context window (working memory)
 - What to summarize or compress
-- What to offload to external storage
+- What to offload to semantic, episodic, or procedural memory
 - What to discard entirely
 
-## Short-term Memory Techniques
+## Working Memory Techniques
 
 ### Sliding Window
 **Logic**: Retains only a fixed number of the most recent messages, discarding the oldest once the limit is reached.
@@ -95,7 +97,7 @@ memory = ConversationSummaryMemory(llm=ChatOpenAI())
 
 ---
 
-## Short-term Memory Solutions
+## Working Memory Solutions
 
 | Category | Solution | Memory Philosophy | Best For |
 |----------|----------|-------------------|----------|
@@ -150,6 +152,6 @@ The agent uses special memory management functions (`core_memory_append`, `archi
 
 ## See Also
 
-- [Functional Memory Tiers](functional-tiers.md)
+- [Four Memory Types](functional-tiers.md)
 - [Long-term Memory Strategies](ltm-strategies.md)
 - [Agent Memory README](README.md)

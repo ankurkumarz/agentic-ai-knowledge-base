@@ -2,11 +2,21 @@
 
 ## Overview
 
-Long-term memory strategies for AI agents focus on persistent storage and retrieval of knowledge, experiences, and learned behaviors across sessions. The right strategy depends on the type of information being stored, the retrieval patterns required, and the scale of the deployment.
+Long-term memory for AI agents spans three distinct types from the CoALA taxonomy: **semantic memory** (durable facts and knowledge), **episodic memory** (specific past experiences), and **procedural memory** (behavioral rules and learned procedures). Each type has different retrieval patterns, storage requirements, and update mechanisms. The right strategy depends on which type of long-term memory you are building.
+
+## Memory Type → Strategy Mapping
+
+| Memory Type | Primary Strategies | Storage Technologies |
+|---|---|---|
+| **Semantic** | Vector RAG, Knowledge Graphs, Entity Extraction | Vector DB, Graph DB, SQL/NoSQL |
+| **Episodic** | Episodic Logging, Incremental Summary, Vector Search over events | Structured Logs, Vector DB with timestamps |
+| **Procedural** | System Prompt encoding, Reflection/Consolidation, Fine-tuning | Instruction files, Model weights, Rule libraries |
 
 ## Core LTM Strategies
 
 ### 1. Vector RAG (Retrieval-Augmented Generation)
+
+**Memory type**: Semantic and Episodic
 
 **Mechanism**: Text is embedded into high-dimensional numerical vectors. Retrieval is based on mathematical "closeness" (cosine similarity or dot product) between the query vector and stored vectors.
 
@@ -25,6 +35,8 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 ---
 
 ### 2. Knowledge Graphs
+
+**Memory type**: Semantic
 
 **Mechanism**: Data is represented as nodes (entities) and edges (relationships). Example: `User` → `owns` → `MacBook Pro`.
 
@@ -45,6 +57,8 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 ---
 
 ### 3. Entity Extraction
+
+**Memory type**: Semantic
 
 **Mechanism**: An LLM extracts specific facts (names, dates, preferences, attributes) from conversations and stores them in structured tables.
 
@@ -78,6 +92,8 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 
 ### 4. Incremental Summary
 
+**Memory type**: Episodic
+
 **Mechanism**: Periodically condenses old interaction logs into a running "narrative" or profile summary.
 
 **Best For**: Long-term context without keeping every message word-for-word. Useful for maintaining a coherent user profile over hundreds of interactions.
@@ -96,6 +112,8 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 
 ### 5. Reflection / Consolidation
 
+**Memory type**: Procedural (and Semantic)
+
 **Mechanism**: A background process where the agent "thinks" about past logs to extract learnings, update beliefs, and improve future behavior.
 
 **Best For**: Continuous improvement and self-correction (e.g., "Method A failed twice; use Method B next time").
@@ -112,7 +130,9 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 
 ---
 
-### 6. Episodic Memory
+### 6. Episodic Logging
+
+**Memory type**: Episodic
 
 **Mechanism**: Stores specific past events as discrete "episodes" with timestamps and outcome metadata.
 
@@ -128,18 +148,50 @@ Long-term memory strategies for AI agents focus on persistent storage and retrie
 
 ---
 
-## LTM Solutions Comparison
+### 7. Procedural Memory Encoding
 
-| Solution | Provider | Core Technology | Key Strength |
-|----------|----------|-----------------|--------------|
-| **Mem0** | Independent | Vector + Graph | Automatically extracts and refines user facts/preferences |
-| **Zep** | Independent | Temporal Knowledge Graph | Tracks how facts evolve over time |
-| **Letta (MemGPT)** | Independent | Virtual Memory (OS-inspired) | Self-managed "RAM" and "Disk" for autonomous context |
-| **LangMem** | LangChain | Managed SaaS | Deeply integrated long-term learning for LangGraph |
-| **Bedrock Memory** | AWS | Managed AWS | Seamless scaling and compliance for Bedrock agents |
-| **Vertex Memory Bank** | Google | Google Cloud | Native "evolving" memory for the Gemini ecosystem |
-| **Azure Foundry Memory** | Microsoft | Microsoft Cloud | Enterprise-grade state management within Azure OpenAI |
-| **AgentFS** | Turso | Portable SQLite | Filesystem-like persistence in a single, movable .db file |
+**Memory type**: Procedural
+
+**Mechanism**: Behavioral rules, guidelines, and learned procedures are encoded into the agent's instruction layer — either as explicit text in a system prompt / AGENTS.md file, or baked into model weights via fine-tuning.
+
+**Best For**: Consistent agent behavior across sessions — tool preferences, escalation rules, communication style, negative constraints ("never do X").
+
+**Storage**: System prompts, instruction files (AGENTS.md), fine-tuned model weights, rule libraries
+
+**How It Works**:
+1. Rules are authored explicitly (by humans) or extracted by a reflection agent from episodic logs
+2. High-frequency, stable rules go into the system prompt or instruction file (immediate, zero retrieval cost)
+3. Large or dynamic rule sets are stored externally and retrieved at session start
+4. Fine-tuning encodes deeply ingrained procedures into model weights for zero-latency access
+
+**Example**:
+```
+# Behavioral rules (procedural memory in system prompt)
+- Always escalate billing disputes to a human agent
+- Prefer the search_knowledge_base tool over web_search for internal queries
+- Never reveal internal cost structures to external users
+- When a user expresses frustration, acknowledge before problem-solving
+```
+
+**Tradeoff**: Rules in the system prompt consume context window tokens. Large rule sets should be stored externally and retrieved selectively.
+
+---
+
+## LTM Solutions
+
+For a full vendor comparison with Technology Radar ratings, see **[Memory Solutions](solutions.md)**.
+
+Quick reference:
+
+| Solution | Memory Types | Open Source | Best For |
+|---|---|---|---|
+| **Mem0** | Semantic, Episodic | Yes (Apache 2.0) | Personalization, cross-session user facts |
+| **Graphiti (Zep)** | Semantic, Episodic | Yes (Apache 2.0) | Temporal/relational reasoning |
+| **Letta** | Working, Semantic, Episodic | Yes (Apache 2.0) | OS-inspired autonomous agents |
+| **LangMem** | Semantic, Episodic, Procedural | Yes (MIT) | LangGraph-native memory |
+| **AWS AgentCore Memory** | Working, Semantic, Episodic | No | AWS-native managed memory |
+| **Vertex Memory Bank** | Semantic | No | GCP-native managed memory |
+| **Azure Foundry Memory** | Working, Semantic | No | Azure-native managed memory |
 
 ## Hybrid Approaches
 
@@ -153,14 +205,17 @@ Most production systems combine multiple strategies:
 
 ### Choosing the Right Strategy
 
-| Factor | Recommendation |
-|--------|---------------|
-| Need semantic search | Vector RAG |
-| Need precise facts | Entity Extraction or Knowledge Graph |
-| Need relationship reasoning | Knowledge Graph |
-| Need temporal tracking | Episodic Memory or Zep |
-| Need personalization | Mem0 or Entity Extraction |
-| Need self-improvement | Reflection/Consolidation |
+| Factor | Memory Type | Recommendation |
+|--------|-------------|----------------|
+| Need semantic search over knowledge | Semantic | Vector RAG |
+| Need precise facts and relationships | Semantic | Entity Extraction or Knowledge Graph |
+| Need relationship reasoning | Semantic | Knowledge Graph |
+| Need to recall past events | Episodic | Episodic Logging + Vector search |
+| Need temporal tracking of facts | Episodic | Zep (temporal knowledge graph) |
+| Need personalization | Semantic | Mem0 or Entity Extraction |
+| Need consistent agent behavior | Procedural | System prompt / AGENTS.md |
+| Need self-improvement from experience | Procedural | Reflection/Consolidation |
+| Need to encode deep skills | Procedural | Fine-tuning |
 
 ### Privacy and Security
 - Encrypt sensitive user data at rest and in transit
@@ -170,7 +225,7 @@ Most production systems combine multiple strategies:
 
 ## See Also
 
-- [Functional Memory Tiers](functional-tiers.md)
-- [Short-term Memory Management](short-term.md)
+- [Four Memory Types](functional-tiers.md)
+- [Short-term / Working Memory Management](short-term.md)
 - [Agent Memory README](README.md)
 - [Research Papers](research-papers.md)

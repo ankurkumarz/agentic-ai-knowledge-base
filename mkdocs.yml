@@ -97,11 +97,12 @@ nav:
       - 8.5.4 Devin (Cognition): 'ContextEngineering/devin.md'
       - 8.5.5 Miscellaneous: 'ContextEngineering/README.md'
   - 9. Agent Memory Management:
-    - 9.1 The Three Functional Tiers: 'AgentMemory/functional-tiers.md'
+    - 9.1 The Four Memory Types: 'AgentMemory/functional-tiers.md'
     - 9.2 Long-Term Memory (LTM) Strategies: 'AgentMemory/ltm-strategies.md'
-    - 9.3 Research Papers & Technical White Papers: 'AgentMemory/research-papers.md'
-    - 9.4 Short-term Memory Management Solutions: 'AgentMemory/short-term.md'
-    - 9.5 Long-term Memory Management Solutions: 'AgentMemory/README.md'
+    - 9.3 Memory Solutions & Technology Radar: 'AgentMemory/solutions.md'
+    - 9.4 Research Papers & Technical White Papers: 'AgentMemory/research-papers.md'
+    - 9.5 Working Memory Management: 'AgentMemory/short-term.md'
+    - 9.6 Memory Management Overview: 'AgentMemory/README.md'
   - 10. Agentic AI Evaluation:
     - 10.1 LLM Evaluation Frameworks: 'EvaluationFrameworks/llm-frameworks.md'
     - 10.2 Agent Evaluation Benchmarks: 'Benchmarks/agent-benchmarks.md'
@@ -164,7 +165,8 @@ hooks:
 
 plugins:
   - search
-  - mermaid2
+  - mermaid2:
+      version: 11.4.1
   - macros
   - glightbox
 

@@ -281,3 +281,57 @@ Galileo's *Mastering Multi-Agent Systems* eBook (165 pages, 5 chapters) provides
 **Chapter 4 (Context Engineering)**: Memory vs. context distinction with the 100:1 rule; four context types (instructions/knowledge/tools/history); empirical evidence for all four failure modes with specific team citations; context size thresholds (10K/50K/100K); five anti-patterns; phased implementation roadmap.
 
 **Chapter 5 (LangGraph Production)**: ConnectTel multi-agent architecture (Supervisor + Billing + Technical Support + Plan Advisor); Galileo observability integration via `GalileoAsyncCallback`; three-level tracking; production benchmarks; continuous improvement cycle; custom business metrics pattern.
+
+## [2026-05-12] ingest | Cognitive Architectures for Language Agents (CoALA) — arXiv:2309.02427 | sections touched: AgentMemory/functional-tiers, AgentMemory/README, AgentMemory/ltm-strategies, AgentMemory/short-term, AgentMemory/research-papers, mkdocs.yml
+
+**Source**: URL fetch — https://arxiv.org/abs/2309.02427
+**Type**: Research paper (Princeton, 2023)
+**Authors**: Sumers et al.
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentMemory/functional-tiers.md` | Rewritten | Replaced three-tier model with CoALA four-type taxonomy: working, semantic, episodic, procedural |
+| `docs/AgentMemory/README.md` | Updated | Overview updated to four types; LTM strategies table updated with memory type column; management techniques updated |
+| `docs/AgentMemory/ltm-strategies.md` | Updated | Added memory type labels to each strategy; added Procedural Memory Encoding as strategy 7; updated choosing-the-right-strategy table |
+| `docs/AgentMemory/short-term.md` | Updated | Renamed to "Working Memory Management"; added CoALA framing in overview |
+| `docs/AgentMemory/research-papers.md` | Updated | Expanded CoALA entry with definitions of all four memory types |
+| `mkdocs.yml` | Updated | Section 9 nav labels updated: "Three Functional Tiers" → "The Four Memory Types", "Short-term Memory" → "Working Memory Management" |
+
+### Summary
+
+CoALA (Sumers et al., Princeton 2023) defines the canonical four-type memory taxonomy for language agents, grounded in cognitive science. The key change from the prior three-tier model: **procedural memory** is now a first-class type alongside semantic and episodic, and **working memory** is the precise term for in-context active state. The four types differ in *what kind of information* they store — not just duration:
+
+- **Working memory**: Active reasoning state at inference time (context window)
+- **Semantic memory**: Durable facts and knowledge — preferences, definitions, reference data ("what is true")
+- **Episodic memory**: Specific past experiences — prior sessions, task outcomes, event logs ("what happened")
+- **Procedural memory**: Behavioral rules, guidelines, learned procedures — how the agent acts ("how to behave")
+
+## [2026-05-12] restructure | Agent Memory vendor consolidation + Technology Radar | sections touched: AgentMemory/solutions, AgentMemory/README, AgentMemory/ltm-strategies, mkdocs.yml
+
+**Source**: Research synthesis — GitHub signals, vendor announcements, adoption data (May 2026)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentMemory/solutions.md` | Created | New consolidated vendor page with Thoughtworks-style Technology Radar (Adopt/Trial/Assess/Caution) |
+| `docs/AgentMemory/README.md` | Trimmed | Removed inline vendor profiles and comparison table; replaced with pointer to solutions.md |
+| `docs/AgentMemory/ltm-strategies.md` | Trimmed | Replaced full vendor comparison table with condensed quick-reference + pointer to solutions.md |
+| `mkdocs.yml` | Updated | Added 9.3 Memory Solutions & Technology Radar; renumbered 9.4–9.6 |
+
+### Radar Placements
+
+| Solution | Ring | Key Signal |
+|---|---|---|
+| Mem0 | 🟢 Adopt | ~54K stars, $24M Series A, 186M API calls Q3 2025 |
+| Graphiti (Zep) | 🟢 Adopt | ~25K stars, bi-temporal KG, Apache 2.0 |
+| AWS AgentCore Memory | 🟢 Adopt | GA (AWS Summit NYC 2025), fully managed |
+| Letta (MemGPT) | 🔵 Trial | ~21K stars, UC Berkeley research, OS-inspired |
+| Vertex AI Memory Bank | 🔵 Trial | GA on GCP, native ADK integration |
+| Azure AI Foundry Memory | 🔵 Trial | GA on Azure, enterprise compliance |
+| LangMem | 🟡 Assess | ~1.5K stars, only library with procedural memory support |
+| AgentFS | 🔴 Caution | ~2.5K stars, alpha, narrow scope (filesystem only) |
