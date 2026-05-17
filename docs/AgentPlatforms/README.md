@@ -246,9 +246,12 @@ Each category provides detailed analysis of popular implementations, their capab
 **Technology**: React frontend, FastAPI + LangGraph backend  
 **Key Features**: Full-stack research agent implementation, community-driven development
 
-## Related Sections
+## See Also
 
-- **Section 4**: Agent Development Frameworks
-- **Section 5.2**: Agentic AI Platforms  
-- **Section 15**: Agents Marketplace
-- **Section 16**: AI Agents Best Practices
+- [Hermes Agent (Nous Research)](hermes-agent.md)
+- [Agent Development Frameworks](../AgenticFrameworks/README.md)
+- [Agentic AI Platforms](../AgentPlatforms/gemini-enterprise-agent-platform.md)
+- [Agents Marketplace](../Marketplace/Readme.md)
+- [Production Best Practices](../ProductionBestPractices/README.md)
+- [Agent Tech Stack](../AgenticTechStack/README.md)
+- [Thoughtworks Tech Radar Vol. 34](../AgenticTechStack/thoughtworks-radar-vol34.md)
