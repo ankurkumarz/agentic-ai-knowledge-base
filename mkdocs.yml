@@ -23,8 +23,7 @@ nav:
     - 1.4 Agent Definition: 'Concepts/agent-definition.md'
     - 1.5 Agent Types: 'Concepts/agent-types.md'
     - 1.6 Foundations: 'Concepts/agent-foundational.md'
-    - 1.7 The 8 Levels of Agentic Engineering: 'Concepts/agentic-engineering-levels.md'
-    - 1.8 References: 'Concepts/references.md'
+    - 1.7 References: 'Concepts/references.md'
   - 2. Agent Harness:
     - 2.1 Agent Harness: 'AgentHarness/agent-harness.md'
     - 2.2 Harness Engineering: 'AgentHarness/harness-engineering.md'
@@ -135,7 +134,7 @@ nav:
     - 14.3 Google's Perspective: 'MaturityModels/google.md'
     - 14.4 IDC's Perspective: 'MaturityModels/idc.md'
     - 14.5 Maturity Models Overview: 'MaturityModels/README.md'
-    - 14.6 Agentic Engineering Levels: 'Concepts/agentic-engineering-levels.md'
+    - 14.6 Agentic Engineering Levels: 'MaturityModels/agentic-engineering-levels.md'
   - 15. Agents Marketplace:
     - 15.1 AWS AI Agents Marketplace: 'Marketplace/aws-marketplace.md'
     - 15.2 AgentOps Marketplace: 'Marketplace/agentops.md'

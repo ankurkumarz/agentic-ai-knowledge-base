@@ -115,7 +115,7 @@ Claude Code's experimental Agent Teams feature is an early implementation: multi
 - [Context Engineering Challenges](../ContextEngineering/challenges.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
-- [Agent Types](agent-types.md)
+- [Agent Types](../Concepts/agent-types.md)
 
 ## References
 
