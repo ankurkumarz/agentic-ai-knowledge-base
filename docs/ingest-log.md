@@ -377,3 +377,11 @@ CoALA (Sumers et al., Princeton 2023) defines the canonical four-type memory tax
 ### Summary
 
 Bassim Eledath's 8-level framework is a practitioner-oriented progression model for teams adopting agentic AI in software engineering. Key contributions: the plan-delegate-assess-codify compounding loop (Level 4); context engineering as a prerequisite discipline (Level 3); the "levels 3–5 must be solid before levels 6–8" architectural constraint; harness engineering and automated feedback loops as the Level 6 inflection point; background agents (hub-and-spoke orchestration, cloud sandboxed VMs) as the current sweet spot for most teams (Level 7); and autonomous agent teams (Level 8) as an experimental frontier with unresolved coordination economics.
+
+## [2026-05-17] stub-replacement | SecurityFrameworks/nist-ai-rmf.md and google-saif.md | sections touched: SecurityFrameworks
+
+Replaced generic stub pages (placeholder Feature/Component/UseCase boilerplate) with substantive wiki content for both security frameworks.
+
+**nist-ai-rmf.md**: Full coverage of NIST AI RMF 1.0 — four core functions (GOVERN, MAP, MEASURE, MANAGE), seven trustworthy AI properties, mapping of each function to agentic-specific risks, AI RMF Playbook reference, relationship to other frameworks (Google SAIF, AWS Scoping Matrix, ISO 42001, EU AI Act), best practices table, and references.
+
+**google-saif.md**: Full coverage of Google SAIF — six core principles, three-layer defense model (policy/SI, guardrails/filtering, continuous assurance), two primary agentic risk categories (rogue actions, sensitive data disclosure), three agent security principles, security incident response pattern (contain → triage → resolve), Agentic SOC reference, SAIF implementation map, best practices table, and references.
