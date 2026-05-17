@@ -29,7 +29,7 @@ quadrantChart
     quadrant-3 Proprietary - Emerging
     quadrant-4 Proprietary - Production Ready
     LangChain: [0.92, 0.88]
-    LangGraph: [0.67, 0.85]
+    LangGraph: [0.82, 0.85]
     CrewAI: [0.78, 0.80]
     AutoGen: [0.72, 0.82]
     LlamaIndex: [0.75, 0.78]
@@ -58,7 +58,7 @@ quadrantChart
 
 These frameworks have demonstrated production readiness, strong community adoption, and clear fit for building agentic AI systems.
 
-> **Radar signal (Thoughtworks Vol. 34, Apr 2026 — opinionated source):** LangGraph has moved from Adopt to Trial in Thoughtworks' assessment; PydanticAI has moved from Assess to Adopt. These reflect the perspective of Thoughtworks' Technology Advisory Board based on their project experience. Cross-reference with your own stack requirements — LangGraph remains a strong choice for explicitly stateful workflows and durable execution. See the full context in the [Thoughtworks Vol. 34 Agentic AI Digest](../AgenticTechStack/thoughtworks-radar-vol34.md).
+> **Radar signal (Thoughtworks Vol. 34, Apr 2026 — opinionated source):** Thoughtworks moved LangGraph from Adopt to Trial, citing that the graph+global-shared-state pattern is not always the best fit and that simpler agent architectures (e.g. Pydantic AI) often produce leaner, more debuggable systems. This wiki retains LangGraph at **Adopt** based on broad industry production adoption and its continued strength for stateful, durable workflows. PydanticAI has moved from Assess to Adopt in this wiki based on the same Vol. 34 signal. See the [Thoughtworks Vol. 34 Agentic AI Digest](../AgenticTechStack/thoughtworks-radar-vol34.md) for full context.
 
 #### LangChain
 **Type**: Open-source framework (MIT)
@@ -92,11 +92,11 @@ The de facto standard for building LLM-powered applications. LangChain provides 
 
 LangGraph extends LangChain with a graph-based state machine model for building stateful, multi-actor agent workflows. Nodes represent agent steps; edges encode conditional routing. The commercial LangGraph Platform adds persistence, streaming, human-in-the-loop controls, and deployment infrastructure.
 
-*(Updated: Moved from Adopt to Trial in Thoughtworks Technology Radar Vol. 34, April 2026. The graph + global-shared-state architecture is no longer considered the default for all agentic systems. An alternative approach — simple agents communicating through code execution, with graph structures added only when needed — often produces leaner, more testable systems where each agent only has access to the state it needs. LangGraph remains a powerful tool for explicitly stateful workflows and durable execution, but teams should evaluate whether the pattern fits their use case rather than defaulting to it.)*
+**Why Adopt**: The most principled open-source approach to stateful multi-agent orchestration. Native LangChain integration. LangSmith observability built in. Growing enterprise adoption for complex workflow orchestration. AWS Bedrock AgentCore recommends retaining LangGraph for orchestration logic while delegating runtime concerns to the platform.
 
-**Why Trial**: Powerful for explicitly stateful, branching workflows with durable execution requirements. Integrates deeply with LangSmith for observability. AWS Bedrock AgentCore recommends keeping orchestration logic in LangGraph while delegating runtime concerns to the platform.
+> **Note (Thoughtworks Radar Vol. 34, Apr 2026):** Thoughtworks moved LangGraph to Trial, noting that simpler agent architectures (agents communicating through code execution, graph structures added only when needed) often produce leaner, more debuggable systems. This wiki retains LangGraph at **Adopt** based on broad industry production adoption and its continued strength for stateful, durable workflows. Teams should evaluate whether the graph pattern is warranted for their specific use case.
 
-**Best for**: Multi-agent systems with complex state management, conditional branching, and cycle detection. Long-running workflows requiring durable execution (persistence, HITL, checkpointing). Teams already on the LangChain stack.
+**Best for**: Multi-agent systems requiring complex state management, conditional branching, and cycle detection. Long-running workflows requiring durable execution (persistence, HITL, checkpointing). Teams already on the LangChain stack.
 
 **Limitations**: Graph + global-shared-state model can be over-engineered for simpler agent tasks. Enterprise features (persistence, deployment, HITL) require the commercial platform. Steep learning curve. Dependency complexity inherited from LangChain.
 
@@ -470,7 +470,7 @@ AutoGPT was one of the earliest autonomous agent projects and remains the most-s
 | **AutoGen** | 🟢 Adopt | Python | Yes (MIT) | ~38K | Microsoft | Stable |
 | **LlamaIndex** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~38K | LlamaIndex | Stable |
 | **PydanticAI** | 🟢 Adopt | Python | Yes (MIT) | Growing | Pydantic | ↑ Assess→Adopt (Vol.34) |
-| **LangGraph** | 🔵 Trial | Python, TypeScript | Yes (MIT) | ~8K | LangChain | ↓ Adopt→Trial (Vol.34) |
+| **LangGraph** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~8K | LangChain | Vol.34 signalled Trial (wiki retains Adopt) |
 | **Semantic Kernel** | 🔵 Trial | Python, C#, Java | Yes (MIT) | Significant | Microsoft | Stable |
 | **AWS Strands** | 🔵 Trial | Python | Yes (Apache 2.0) | Growing | AWS | Stable |
 | **Google ADK** | 🔵 Trial | Python, Java | Yes | Growing | Google | Stable |
@@ -491,7 +491,7 @@ Use this to narrow down options based on your constraints.
 | If you need… | Consider |
 |---|---|
 | Broadest ecosystem and vendor compatibility | **LangChain** |
-| Stateful multi-agent graph workflows | **LangGraph** (Trial) or **PydanticAI** (Adopt, simpler pattern) |
+| Stateful multi-agent graph workflows | **LangGraph** or **PydanticAI** (simpler pattern for less complex use cases) |
 | Fast time-to-market with role-based agents | **CrewAI** |
 | Conversational multi-agent research/prototyping | **AutoGen** |
 | Data-intensive RAG and knowledge pipelines | **LlamaIndex** |

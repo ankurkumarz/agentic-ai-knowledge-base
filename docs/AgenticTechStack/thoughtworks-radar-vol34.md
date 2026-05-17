@@ -211,7 +211,7 @@ Teams invest in **coding agent harnesses**: feedforward controls (Agent Skills, 
 | Langfuse | **Trial** | Platforms | No | LLM observability + evaluation |
 | SigNoz | **Trial** | Platforms | Yes | OSS OpenTelemetry observability |
 | ADK | **Trial** | Languages & Frameworks | No (Assess→Trial) | Google agent framework maturing |
-| LangGraph | **Trial** | Languages & Frameworks | No (Adopt→Trial) | No longer default; use selectively |
+| LangGraph | **Trial** (Thoughtworks) | Languages & Frameworks | No | Thoughtworks signal; this wiki retains Adopt based on industry adoption — see [solutions.md](../AgenticFrameworks/solutions.md) |
 | LiteLLM | **Trial** | Languages & Frameworks | No | Full AI gateway |
 | DeepEval | **Trial** | Languages & Frameworks | No | LLM/agent evaluation framework |
 | Docling | **Trial** | Languages & Frameworks | No | Document-to-structured-output |
@@ -253,7 +253,7 @@ Teams invest in **coding agent harnesses**: feedforward controls (Agent Skills, 
 |---|---|---|
 | **Claude Code** | Assess → **Adopt** | Now the industry benchmark for agentic coding |
 | **Cursor** | Trial → **Adopt** | Most widely used coding agent IDE |
-| **LangGraph** | **Adopt → Trial** | Graph+shared-state architecture not always best; Pydantic AI's simpler approach now viable |
+| **LangGraph** | Adopt → **Trial** (Thoughtworks only) | Graph+shared-state architecture not always best per Thoughtworks; this wiki retains Adopt based on broad industry production adoption |
 | **Instructor** | Trial → **Adopt** | Stable abstraction for structured LLM output |
 | **Pydantic AI** | Trial → **Adopt** | Simpler agent architecture gaining production trust |
 | **Context engineering** | Trial → **Adopt** | Now foundational, not just optimization |
