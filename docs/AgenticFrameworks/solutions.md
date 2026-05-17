@@ -38,7 +38,7 @@ quadrantChart
     Google ADK: [0.68, 0.68]
     Haystack: [0.62, 0.75]
     Agno: [0.55, 0.70]
-    PydanticAI: [0.45, 0.65]
+    PydanticAI: [0.85, 0.78]
     Mastra: [0.42, 0.60]
     Spring AI: [0.48, 0.62]
     AutoGPT: [0.38, 0.55]
@@ -57,6 +57,8 @@ quadrantChart
 ### 🟢 Adopt
 
 These frameworks have demonstrated production readiness, strong community adoption, and clear fit for building agentic AI systems.
+
+> **Radar signal (Thoughtworks Vol. 34, Apr 2026 — opinionated source):** Thoughtworks moved LangGraph from Adopt to Trial, citing that the graph+global-shared-state pattern is not always the best fit and that simpler agent architectures (e.g. Pydantic AI) often produce leaner, more debuggable systems. This wiki retains LangGraph at **Adopt** based on broad industry production adoption and its continued strength for stateful, durable workflows. PydanticAI has moved from Assess to Adopt in this wiki based on the same Vol. 34 signal. See the [Thoughtworks Vol. 34 Agentic AI Digest](../AgenticTechStack/thoughtworks-radar-vol34.md) for full context.
 
 #### LangChain
 **Type**: Open-source framework (MIT)
@@ -90,11 +92,13 @@ The de facto standard for building LLM-powered applications. LangChain provides 
 
 LangGraph extends LangChain with a graph-based state machine model for building stateful, multi-actor agent workflows. Nodes represent agent steps; edges encode conditional routing. The commercial LangGraph Platform adds persistence, streaming, human-in-the-loop controls, and deployment infrastructure.
 
-**Why Adopt**: The most principled open-source approach to stateful multi-agent orchestration. Native LangChain integration. LangSmith observability built in. Growing enterprise adoption for complex workflow orchestration.
+**Why Adopt**: The most principled open-source approach to stateful multi-agent orchestration. Native LangChain integration. LangSmith observability built in. Growing enterprise adoption for complex workflow orchestration. AWS Bedrock AgentCore recommends retaining LangGraph for orchestration logic while delegating runtime concerns to the platform.
 
-**Best for**: Multi-agent systems requiring complex state management, conditional branching, and cycle detection. Teams already on the LangChain stack.
+> **Note (Thoughtworks Radar Vol. 34, Apr 2026):** Thoughtworks moved LangGraph to Trial, noting that simpler agent architectures (agents communicating through code execution, graph structures added only when needed) often produce leaner, more debuggable systems. This wiki retains LangGraph at **Adopt** based on broad industry production adoption and its continued strength for stateful, durable workflows. Teams should evaluate whether the graph pattern is warranted for their specific use case.
 
-**Limitations**: Enterprise features (persistence, deployment, HITL) require the commercial platform. Steep learning curve for graph-based concepts. Dependency complexity inherited from LangChain.
+**Best for**: Multi-agent systems requiring complex state management, conditional branching, and cycle detection. Long-running workflows requiring durable execution (persistence, HITL, checkpointing). Teams already on the LangChain stack.
+
+**Limitations**: Graph + global-shared-state model can be over-engineered for simpler agent tasks. Enterprise features (persistence, deployment, HITL) require the commercial platform. Steep learning curve. Dependency complexity inherited from LangChain.
 
 | Dimension | Signal |
 |---|---|
@@ -339,18 +343,20 @@ Interesting frameworks worth understanding and monitoring. Not yet proven at sca
 
 A FastAPI-style agent framework built on Pydantic's type system. PydanticAI brings dependency injection, structured output validation, and Pydantic Logfire observability to agent development. Supports multiple LLM providers and graph-based workflows.
 
-**Why Assess**: Strong type-safety story for teams already using Pydantic/FastAPI. Logfire integration is a differentiator for observability. But it is still in beta with frequent breaking changes and limited production case studies.
+*(Updated: Moved from Assess to Adopt in Thoughtworks Technology Radar Vol. 34, April 2026. The framework's architecture — favoring simple agents communicating through code execution over rigid graphs with massive shared state — has proven itself in production. This approach often produces leaner, more debuggable systems than LangGraph for many use cases.)*
 
-**Best for**: Type-safe agent development in FastAPI-aligned projects, teams that prioritize structured output validation.
+**Why Adopt**: Production-validated simpler agent architecture pattern. Built-in Logfire observability. Strong type-safety for teams using Pydantic/FastAPI. `Instructor` library pairs with it as the stable structured-output abstraction. Both SDKs now natively on OpenTelemetry.
 
-**Limitations**: Beta stage with frequent changes. Limited production testing. Early-stage ecosystem. Complex integration challenges for non-Pydantic stacks.
+**Best for**: Type-safe agent development in FastAPI-aligned projects. Teams that want simpler agent architecture without graph overhead. Structured output pipelines requiring validation and retries.
+
+**Limitations**: Python-only. Teams deeply invested in LangGraph patterns may find migration non-trivial. Non-Pydantic stacks require integration effort.
 
 | Dimension | Signal |
 |---|---|
 | Research | Pydantic engineering |
-| GitHub stars | Growing (early-stage) |
+| GitHub stars | Growing |
 | Open source | Yes (MIT) |
-| Production readiness | Beta |
+| Production readiness | GA (Adopt per Thoughtworks Radar Vol. 34, Apr 2026) |
 | Backing | Pydantic (VC-backed) |
 
 ---
@@ -457,24 +463,24 @@ AutoGPT was one of the earliest autonomous agent projects and remains the most-s
 
 ## Radar Summary Table
 
-| Framework | Ring | Language(s) | Open Source | GitHub Stars | Provider |
-|---|---|---|---|---|---|
-| **LangChain** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~100K | LangChain |
-| **LangGraph** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~8K | LangChain |
-| **CrewAI** | 🟢 Adopt | Python | Yes (MIT) | ~25K | CrewAI |
-| **AutoGen** | 🟢 Adopt | Python | Yes (MIT) | ~38K | Microsoft |
-| **LlamaIndex** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~38K | LlamaIndex |
-| **Semantic Kernel** | 🔵 Trial | Python, C#, Java | Yes (MIT) | Significant | Microsoft |
-| **AWS Strands** | 🔵 Trial | Python | Yes (Apache 2.0) | Growing | AWS |
-| **Google ADK** | 🔵 Trial | Python, Java | Yes | Growing | Google |
-| **Haystack** | 🔵 Trial | Python | Yes (MIT) | Significant | deepset |
-| **Agno** | 🔵 Trial | Python | Yes (MPL-2.0) | ~34K | Agno AGI |
-| **OpenAI Agents SDK** | 🔵 Trial | Python, JS | Mixed | N/A | OpenAI |
-| **PydanticAI** | 🟡 Assess | Python | Yes (MIT) | Growing | Pydantic |
-| **Spring AI** | 🟡 Assess | Java | Yes (MIT) | Growing | VMware/Broadcom |
-| **Mastra** | 🟡 Assess | TypeScript | Yes (Apache 2.0) | Early-stage | Mastra |
-| **Microsoft Agent Framework** | 🟡 Assess | .NET, Python | Yes (MIT) | Early-stage | Microsoft |
-| **AutoGPT** | 🔴 Caution | Python | Yes (MIT) | ~171K | Significant Gravitas |
+| Framework | Ring | Language(s) | Open Source | GitHub Stars | Provider | Radar Signal |
+|---|---|---|---|---|---|---|
+| **LangChain** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~100K | LangChain | Stable |
+| **CrewAI** | 🟢 Adopt | Python | Yes (MIT) | ~25K | CrewAI | Stable |
+| **AutoGen** | 🟢 Adopt | Python | Yes (MIT) | ~38K | Microsoft | Stable |
+| **LlamaIndex** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~38K | LlamaIndex | Stable |
+| **PydanticAI** | 🟢 Adopt | Python | Yes (MIT) | Growing | Pydantic | ↑ Assess→Adopt (Vol.34) |
+| **LangGraph** | 🟢 Adopt | Python, TypeScript | Yes (MIT) | ~8K | LangChain | Vol.34 signalled Trial (wiki retains Adopt) |
+| **Semantic Kernel** | 🔵 Trial | Python, C#, Java | Yes (MIT) | Significant | Microsoft | Stable |
+| **AWS Strands** | 🔵 Trial | Python | Yes (Apache 2.0) | Growing | AWS | Stable |
+| **Google ADK** | 🔵 Trial | Python, Java | Yes | Growing | Google | Stable |
+| **Haystack** | 🔵 Trial | Python | Yes (MIT) | Significant | deepset | Stable |
+| **Agno** | 🔵 Trial | Python | Yes (MPL-2.0) | ~34K | Agno AGI | Stable |
+| **OpenAI Agents SDK** | 🔵 Trial | Python, JS | Mixed | N/A | OpenAI | Stable |
+| **Spring AI** | 🟡 Assess | Java | Yes (MIT) | Growing | VMware/Broadcom | Stable |
+| **Mastra** | 🟡 Assess | TypeScript | Yes (Apache 2.0) | Early-stage | Mastra | Stable |
+| **Microsoft Agent Framework** | 🟡 Assess | .NET, Python | Yes (MIT) | Early-stage | Microsoft | Stable |
+| **AutoGPT** | 🔴 Caution | Python | Yes (MIT) | ~171K | Significant Gravitas | Stable |
 
 ---
 
@@ -485,7 +491,7 @@ Use this to narrow down options based on your constraints.
 | If you need… | Consider |
 |---|---|
 | Broadest ecosystem and vendor compatibility | **LangChain** |
-| Stateful multi-agent graph workflows | **LangGraph** |
+| Stateful multi-agent graph workflows | **LangGraph** or **PydanticAI** (simpler pattern for less complex use cases) |
 | Fast time-to-market with role-based agents | **CrewAI** |
 | Conversational multi-agent research/prototyping | **AutoGen** |
 | Data-intensive RAG and knowledge pipelines | **LlamaIndex** |
@@ -554,4 +560,5 @@ Each framework was assessed on the following dimensions. Ratings are as of May 2
 - [Mastra](https://mastra.ai) — TypeScript multi-agent framework
 - [Microsoft Agent Framework GitHub](https://github.com/microsoft/agent-framework) — .NET/Python SDK
 - [AutoGPT GitHub](https://github.com/Significant-Gravitas/AutoGPT) — autonomous agent platform
+- [Thoughtworks Technology Radar Vol. 34](https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2026/04/tr_technology_radar_vol_34_en.pdf) — April 2026 edition; source of LangGraph→Trial and PydanticAI→Adopt moves
 - [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) — radar methodology reference

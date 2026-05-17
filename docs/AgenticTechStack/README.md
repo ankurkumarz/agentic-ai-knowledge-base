@@ -20,6 +20,7 @@ The modern agent technology stack encompasses multiple layers:
 
 Across these layers, this wiki maintains **Technology Radars** that summarize ecosystem choices:
 
+- **Thoughtworks Tech Radar (Vol. 34, Apr 2026)**: [Agentic AI Digest](thoughtworks-radar-vol34.md) — 118-blip industry radar with full agentic AI coverage (Section 5.1.1)
 - **Frameworks Radar**: [Agentic Framework Solutions](../AgenticFrameworks/solutions.md) (Section 4.16)
 - **Agent Platforms & Stack**: Platform coverage in this section (5.2) plus vendor deep dives in Section 5 and 18
 - **Observability Radar**: [Agent Observability Tech Radar](../Observability/tech-radar.md) (Section 12.4)

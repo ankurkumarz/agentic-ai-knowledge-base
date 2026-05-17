@@ -55,6 +55,7 @@ nav:
     - 4.16 Frameworks Technology Radar: 'AgenticFrameworks/solutions.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
+    - 5.1.1 Thoughtworks Tech Radar — Agentic AI (Vol. 34, Apr 2026): 'AgenticTechStack/thoughtworks-radar-vol34.md'
     - 5.2 Agentic AI Platforms:
       - 5.2.1 Google Gemini Enterprise Agent Platform: 'AgentPlatforms/gemini-enterprise-agent-platform.md'
       - 5.2.2 AWS AgentCore: 'AgentPlatforms/aws-agentcore.md'
