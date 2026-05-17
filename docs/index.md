@@ -29,7 +29,6 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 ### **2. Concepts**
 - **Agent Definition**: Fundamental definitions and terminology for agentic AI systems
 - **Agent Types**: Classification and comparison of different agent architectures
-- **The 8 Levels of Agentic Engineering**: Practitioner progression framework from tab completion (Level 1) to autonomous agent teams (Level 8); compounding engineering loop; Level 7 (background agents) as current sweet spot
 - **References**: Key research papers and foundational materials
 
 ### **3. Architecture and Design Patterns**
