@@ -39,7 +39,8 @@ Each category provides detailed analysis of popular implementations, their capab
 
 ### Personal AI Agents
 
-- [OpenClaw](https://openclaw.ai/): Evolutionary agentic platform proving the AI agents capabilities
+- **[Hermes Agent](hermes-agent.md)** (Nous Research): Open-source, self-improving personal AI assistant with built-in learning loop, skill creation from experience, cross-session memory, MCP support, and multi-platform access (Telegram, Discord, Slack, WhatsApp). Successor to OpenClaw. Backed by the Hermes OSS model family (Hermes-2-Pro, Hermes-3) fine-tuned for function calling and GOAP reasoning.
+- **[OpenClaw](openclaw.md)**: Local-first, MIT-licensed personal AI agent with 20+ messaging platform integrations (WhatsApp, iMessage, Telegram, Slack, Discord, and more), ClawHub skills marketplace (3,000+ skills), and voice support on macOS/iOS/Android. Predecessor to Hermes Agent. Note: Thoughtworks Radar Vol. 34 places this at **Caution** due to the permission-hungry pattern and active supply chain security incidents (ClawHavoc).
 - Alternatives: TinyClaw, ZeroClaw, PicoClaw, NanoClaw, IronClaw, Nanobot
 
 ## Coding/Software Development Agents
@@ -245,9 +246,12 @@ Each category provides detailed analysis of popular implementations, their capab
 **Technology**: React frontend, FastAPI + LangGraph backend  
 **Key Features**: Full-stack research agent implementation, community-driven development
 
-## Related Sections
+## See Also
 
-- **Section 4**: Agent Development Frameworks
-- **Section 5.2**: Agentic AI Platforms  
-- **Section 15**: Agents Marketplace
-- **Section 16**: AI Agents Best Practices
+- [Hermes Agent (Nous Research)](hermes-agent.md)
+- [Agent Development Frameworks](../AgenticFrameworks/README.md)
+- [Agentic AI Platforms](../AgentPlatforms/gemini-enterprise-agent-platform.md)
+- [Agents Marketplace](../Marketplace/Readme.md)
+- [Production Best Practices](../ProductionBestPractices/README.md)
+- [Agent Tech Stack](../AgenticTechStack/README.md)
+- [Thoughtworks Tech Radar Vol. 34](../AgenticTechStack/thoughtworks-radar-vol34.md)
