@@ -146,6 +146,7 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 ## See Also
 
 - [Agent Harness](./agent-harness.md)
+- [The 8 Levels of Agentic Engineering](../MaturityModels/agentic-engineering-levels.md) — harness engineering corresponds to Level 6 in the practitioner progression framework
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Context Engineering Challenges](../ContextEngineering/challenges.md)
 - [Agent Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)

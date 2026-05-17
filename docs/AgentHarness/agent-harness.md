@@ -89,6 +89,7 @@ As models become more capable, some harness responsibilities will be absorbed na
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
+- [Agentic Engineering Levels](../MaturityModels/agentic-engineering-levels.md) — harness engineering is Level 6 in the 8-level practitioner progression
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Agent Memory Management](../AgentMemory/functional-tiers.md)
 - [Agentic Design Patterns](../DesignPatterns/openai-patterns.md)

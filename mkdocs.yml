@@ -134,6 +134,7 @@ nav:
     - 14.3 Google's Perspective: 'MaturityModels/google.md'
     - 14.4 IDC's Perspective: 'MaturityModels/idc.md'
     - 14.5 Maturity Models Overview: 'MaturityModels/README.md'
+    - 14.6 Agentic Engineering Levels: 'MaturityModels/agentic-engineering-levels.md'
   - 15. Agents Marketplace:
     - 15.1 AWS AI Agents Marketplace: 'Marketplace/aws-marketplace.md'
     - 15.2 AgentOps Marketplace: 'Marketplace/agentops.md'
