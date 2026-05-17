@@ -2,9 +2,11 @@
 
 ## Overview
 
-OpenClaw is a free, MIT-licensed, open-source personal AI agent that runs locally on your own devices and connects to messaging platforms you already use. It is local-first by design: all conversations, memory, and skills are stored as plain Markdown and YAML files on your machine — no data leaves to a vendor-hosted SaaS. OpenClaw launched in late January 2026 and became one of the fastest-growing open-source repositories in GitHub history, reaching 373k stars within months of release.
+OpenClaw is a free, MIT-licensed, open-source personal AI agent that runs locally on your own devices and connects to messaging platforms you already use. It is local-first by design: all conversations, memory, and skills are stored as plain Markdown and YAML files on your machine — no data leaves to a vendor-hosted SaaS. A single **Gateway** process runs on your machine (or a server) and acts as the bridge between your messaging apps and an always-available AI assistant.
 
-OpenClaw is the predecessor project to **[Hermes Agent](hermes-agent.md)** (Nous Research), which adds a closed-loop self-improvement layer and GOAP-based reasoning on top of a similar hyper-personal assistant pattern.
+OpenClaw launched in late January 2026 and became one of the fastest-growing open-source repositories in GitHub history (373k stars as of May 2026). It is the predecessor project to **[Hermes Agent](hermes-agent.md)** (Nous Research), which adds a closed-loop self-improvement layer and GOAP-based reasoning on top of a similar hyper-personal assistant pattern.
+
+**Official docs:** https://docs.openclaw.ai/
 
 ---
 
@@ -24,15 +26,36 @@ The rename from Clawdbot was requested by Anthropic (too close to "Claude"). The
 
 ## Key Capabilities
 
-### Local-First Memory
+### Local-First Memory System
 
-OpenClaw stores all state as human-readable files:
+OpenClaw memory is a three-tier structure stored as plain files under `~/.openclaw/workspace`:
 
-- Conversations and session transcripts in `~/.openclaw/`
-- Long-term memory in `MEMORY.md` and `memory/*.md` workspace files
-- Skills as `SKILL.md` + supporting files
+| File | Role | Loaded automatically |
+|---|---|---|
+| `MEMORY.md` | Long-term: durable facts, preferences, decisions | Every DM session |
+| `memory/YYYY-MM-DD.md` | Daily working notes, running context, observations | Today + yesterday |
+| `DREAMS.md` *(optional)* | Consolidation summaries from background dreaming passes | On demand |
 
-Files can be inspected in any text editor, versioned with Git, searched with `grep`, or deleted without ceremony. An indexing layer (SQLite or QMD) enables semantic search via embeddings, with optional BM25 hybrid search for improved recall.
+Material moves from daily notes into `MEMORY.md` as the agent discerns what is durable. An **Automatic Memory Flush** runs a silent pass before conversation compaction, prompting the agent to save important context before the window closes.
+
+**Memory search tools:**
+- `memory_search` — hybrid vector + BM25 keyword search when an embedding provider is configured
+- `memory_get` — direct file read or line-range access
+
+**Storage backends (configurable):**
+
+| Backend | Details |
+|---|---|
+| **Builtin** (default) | SQLite, no extra dependencies |
+| **QMD** | Local-first sidecar with reranking and query expansion |
+| **Honcho** | Cloud-backed cross-session user modeling |
+| **LanceDB** | Bundled plugin with Ollama-compatible embeddings |
+
+**Dreaming (optional):** A background consolidation pass scores and promotes high-signal items into long-term memory via grounded backfill and live promotion pathways.
+
+**Memory Wiki Plugin:** Adds a provenance-rich knowledge layer with structured claims, contradiction tracking, and wiki-native tools alongside core recall.
+
+Auto-detection picks an embedding provider from available API keys (OpenAI, Gemini, Voyage, Mistral) without manual configuration.
 
 ### Multi-Platform Messaging
 
@@ -42,28 +65,107 @@ A single Gateway process handles inbound messages from all connected channels, r
 |---|---|
 | Mainstream | WhatsApp, Telegram, Slack, Discord, Signal, iMessage |
 | Enterprise | Microsoft Teams, Google Chat, Mattermost, Matrix, Nextcloud Talk |
-| Regional / niche | Feishu, LINE, WeChat, QQ, Zalo, Nostr, Synapse Chat, Tlon, Twitch |
+| Regional / niche | Feishu, LINE, WeChat, QQ, Zalo, Nostr, Synapse Chat, Tlon, Twitch, IRC |
 | Built-in | WebChat (browser UI) |
 
-Voice notes on WhatsApp and text messages on Slack route to the same agent session. Voice wake and talk mode are supported on macOS, iOS, and Android.
+Voice notes on WhatsApp and text messages on Slack route to the same agent session.
+
+**Voice:** Wake-word voice mode on macOS/iOS; continuous voice mode on Android. Voice synthesis via ElevenLabs, with system TTS as fallback.
+
+### Built-in Tools
+
+Tools are organised into named groups. Access is controlled globally via `tools.allow` / `tools.deny` in `openclaw.json` (deny wins), and per-agent via allowlists.
+
+| Group | Tools |
+|---|---|
+| `group:sessions` | `sessions_list`, `sessions_history`, `sessions_send`, `sessions_spawn`, `session_status` |
+| `group:ui` | `browser`, `canvas` |
+| `group:automation` | `cron`, `gateway` |
+| `group:nodes` | `nodes` |
+| `group:memory` | `memory_search`, `memory_get` |
+| `group:web` | `web_search`, `web_fetch` |
+| `group:messaging` | `message` |
+| `group:openclaw` | All built-in tools (excludes plugins) |
+
+**Tool profiles** provide preset allowlists: `minimal` (session_status only) and `coding` (file system, runtime, sessions, memory, image).
 
 ### Skills and ClawHub
 
-Skills are discrete, portable capability packages (`SKILL.md` + supporting files). The agent does not inject full skill text into every prompt — it injects a compact index (name, description, file path) and loads the full `SKILL.md` on demand when it judges a skill relevant.
+Skills are discrete, portable capability packages. Each skill is a directory containing a `SKILL.md` with YAML frontmatter and instruction text.
 
-**ClawHub** ([clawhub](https://github.com/openclaw/clawhub)) is the official public skills registry with 3,000+ community-built skills across automation, productivity, developer tooling, and domain-specific workflows.
+**SKILL.md frontmatter fields:**
+
+| Field | Default | Purpose |
+|---|---|---|
+| `name`, `description` | required | Identity and discovery |
+| `homepage` | — | URL shown in macOS Skills UI |
+| `user-invocable` | `true` | Expose skill as a slash command |
+| `disable-model-invocation` | `false` | Keep skill installable but exclude from agent prompt |
+| `command-dispatch: tool` | — | Bypass the model; invoke a tool directly |
+| `requires.bins` / `requires.anyBins` | — | Required CLI binaries (load-time gating) |
+| `requires.env` | — | Required environment variables (load-time gating) |
+| `os` | — | OS restriction |
+
+**Skill load precedence** (highest wins): workspace → project agent → personal agent → managed/local → bundled → extra configured directories.
+
+The agent does not inject full skill text into every prompt. It injects a compact XML list of eligible skills (name, description, path) and loads the full `SKILL.md` on demand when the model judges a skill relevant.
+
+**Agent allowlists:** Per-agent skill lists in `openclaw.json` override defaults. A non-empty list represents the agent's complete available set rather than merging with defaults.
+
+> **Security note from the official docs:** *"Treat third-party skills as untrusted code. Read them before enabling."*
+
+**ClawHub** ([github.com/openclaw/clawhub](https://github.com/openclaw/clawhub)) is the official public skills registry with 3,000+ community-built skills. Install with `openclaw skills install <skill-slug>`; update all with `openclaw skills update --all`.
+
+### Automation and Cron
+
+The built-in cron scheduler runs inside the Gateway process and persists job definitions at `~/.openclaw/cron/jobs.json`.
+
+**Schedule types:**
+
+| Type | Flag | Format |
+|---|---|---|
+| One-shot | `--at` | ISO 8601 or relative (e.g. `20m`) |
+| Fixed interval | `--every` | Duration string |
+| Standard cron | `--cron` | 5 or 6-field expression + optional timezone |
+
+Recurring top-of-hour jobs receive automatic staggering (up to 5 minutes) to spread load; override with `--exact`.
+
+**Execution styles:**
+
+| Style | Session value | Behaviour |
+|---|---|---|
+| Main session | `main` | Enqueues system event at next heartbeat |
+| Isolated | `isolated` | Fresh agent turn in new session |
+| Current | `current` | Binds to creation-time session context |
+| Custom | `session:id` | Persists across runs for workflow continuity |
+
+**Delivery modes:** `announce` (fallback text to target), `webhook` (POST to external URL), `none`.
+
+**External triggers:** Webhooks authenticate via `Authorization: Bearer <token>`. Gmail Pub/Sub integration is available via `openclaw webhooks gmail setup`.
 
 ### Live Canvas (A2UI)
 
-An agent-driven visual workspace (A2UI) lets the agent render structured outputs, interact with UI elements, and maintain a persistent canvas alongside the conversation stream.
+An agent-driven visual workspace (A2UI) lets the agent render structured outputs, interact with UI elements, snapshot the canvas state, and maintain a persistent canvas alongside the conversation stream.
 
 ### Multi-Agent Routing
 
-Inbound channels, accounts, and peers can route to isolated agent workspaces. Sandboxing is available per session (Docker default; SSH and OpenShell backends also supported).
+Inbound channels, accounts, and peers can route to isolated agent workspaces. Sandboxing is available per session (Docker default; SSH and OpenShell backends also supported). Sub-agents connect to the same Gateway and can be spawned via `sessions_spawn`.
 
-### Automation
+---
 
-Built-in support for cron jobs, webhooks, and Gmail Pub/Sub enables unattended background workflows defined in natural language.
+## Gateway and Configuration
+
+The Gateway is the single control plane. Key configuration lives in `~/.openclaw/openclaw.json`.
+
+| Item | Detail |
+|---|---|
+| Default port | `18789` (WebSocket + Control UI) |
+| Default bind | `127.0.0.1` (loopback only — do not bind `0.0.0.0` without a firewall) |
+| Auth | Token-based; rotated via `openclaw gateway token rotate` |
+| Environment variables | `OPENCLAW_HOME`, `OPENCLAW_STATE_DIR`, `OPENCLAW_CONFIG_PATH` |
+| Start as daemon | `openclaw onboard --install-daemon` |
+| Status check | `openclaw gateway status` |
+| Dashboard | `openclaw dashboard` (opens Control UI in browser) |
 
 ---
 
@@ -71,10 +173,11 @@ Built-in support for cron jobs, webhooks, and Gmail Pub/Sub enables unattended b
 
 | Component | Details |
 |---|---|
-| **Primary language** | TypeScript / Node.js (requires Node 24+) |
-| **Installation** | `npm install -g openclaw@latest` then `openclaw onboard --install-daemon` |
+| **Primary language** | TypeScript / Node.js |
+| **Minimum Node version** | 22.16+ (24 recommended) |
+| **Installation** | `npm install -g openclaw@latest` |
 | **Gateway** | Local single control plane for sessions, channels, tools, events |
-| **Memory backend** | Markdown + YAML files; SQLite or QMD index for semantic search |
+| **Memory backend** | Markdown + YAML files; SQLite / QMD / Honcho / LanceDB for search |
 | **Skill storage** | `~/.openclaw/workspace/skills/` (local) + ClawHub (remote registry) |
 | **Sandboxing** | Docker (default), SSH, OpenShell |
 | **Companion apps** | macOS menu bar app; iOS and Android nodes via WebSocket |
@@ -90,23 +193,23 @@ Built-in support for cron jobs, webhooks, and Gmail Pub/Sub enables unattended b
 | OpenAI | GPT-4o and successors |
 | xAI | Grok |
 | DeepSeek | DeepSeek V4 Flash, DeepSeek V4 Pro |
+| Google | Gemini (via API key) |
 | Local | Any GGUF-compatible model via Ollama |
 
 ---
 
 ## Community and Ecosystem
 
-| Metric | Value (as of May 2026) |
+| Metric | Value (May 2026) |
 |---|---|
 | GitHub stars | 373k |
 | Forks | 77.3k |
 | Contributors | 600+ |
 | ClawHub skills | 3,000+ |
-| Open issues | ~3.5k |
 
 Sponsors include OpenAI, GitHub, NVIDIA, Vercel, Blacksmith, and Convex.
 
-An independent community curation project, [awesome-openclaw](https://github.com/vincentkoc/awesome-openclaw), tracks skills, plugins, memory systems, MCP tools, deployment stacks, and developer tooling.
+[awesome-openclaw](https://github.com/vincentkoc/awesome-openclaw) — community-curated list of skills, plugins, memory systems, MCP tools, deployment stacks, and developer tooling.
 
 ---
 
@@ -130,7 +233,7 @@ A coordinated campaign (ClawHavoc) planted malicious skills into ClawHub. Findin
 
 | Metric | Finding |
 |---|---|
-| Exposed instances identified (SecurityScorecard, Feb 2026) | 135,000+ |
+| Exposed instances (SecurityScorecard, Feb 2026) | 135,000+ |
 | Instances running without authentication | 63% |
 | Later estimates (Censys mapping) | 220,000+ |
 | CVE | CVE-2026-33579 |
@@ -141,13 +244,14 @@ Thoughtworks Technology Radar Vol. 34 (April 2026) places OpenClaw at **Caution*
 
 ### Mitigations
 
-- **Never expose OpenClaw to the public internet.** Use a VPN or SSH tunnel if remote access is needed.
+- **Never expose the Gateway to the public internet.** Bind to loopback (`127.0.0.1`); use Tailscale or an SSH tunnel for remote access.
+- Rotate the gateway token periodically; isolate the state directory (`chmod 700`).
 - Run inside a Docker sandbox; restrict file system and network mounts.
-- Use a dedicated low-privilege system account — not your personal user.
+- Use a dedicated low-privilege OS account — not your personal user.
 - Apply least-privilege model credentials: scoped API keys, not admin tokens.
-- Audit ClawHub skills before installing. Prefer skills from verified publishers; pin to a specific commit hash.
+- Audit ClawHub skills before installing. Pin to a specific commit hash; prefer verified publishers. Read third-party `SKILL.md` files before enabling.
 - Enable DM pairing (`openclaw pairing approve`) — unknown senders receive a pairing code by default.
-- Set up authentication on the WebChat interface.
+- For group/channel contexts, sandboxing is strongly recommended.
 
 ---
 
@@ -157,10 +261,10 @@ Thoughtworks Technology Radar Vol. 34 (April 2026) places OpenClaw at **Caution*
 |---|---|---|
 | **Primary use case** | Hyper-personal assistant | Hyper-personal assistant with learning loop |
 | **Self-improvement** | ❌ | ✅ Automatic skill creation + refinement |
-| **Cross-session memory** | ✅ Markdown/YAML files + semantic search | ✅ FTS5 + Honcho user modeling |
+| **Memory tiers** | 3-tier Markdown (MEMORY.md, daily notes, DREAMS.md) + 4 backends | FTS5 + Honcho user modeling |
 | **Model flexibility** | Any provider + Ollama local | Any provider via OpenRouter |
-| **Messaging platforms** | 20+ (broadest coverage) | 6 (Telegram, Discord, Slack, WhatsApp, Signal, Email) |
-| **Voice support** | ✅ (macOS, iOS, Android native) | ✅ (voice memo transcription) |
+| **Messaging platforms** | 23+ (broadest coverage) | 6 (Telegram, Discord, Slack, WhatsApp, Signal, Email) |
+| **Voice support** | ✅ ElevenLabs; wake word (macOS/iOS); continuous (Android) | ✅ Voice memo transcription |
 | **Skills ecosystem** | ClawHub (3,000+) | agentskills.io standard |
 | **MCP support** | ❌ (not native) | ✅ |
 | **Language** | TypeScript / Node.js | Python |
@@ -202,6 +306,14 @@ Thoughtworks Technology Radar Vol. 34 (April 2026) places OpenClaw at **Caution*
 ## References
 
 - [OpenClaw — Official site](https://openclaw.ai/) — product home page
+- [OpenClaw Documentation](https://docs.openclaw.ai/) — official documentation
+- [docs.openclaw.ai/start/getting-started](https://docs.openclaw.ai/start/getting-started) — installation and onboarding guide
+- [docs.openclaw.ai/tools](https://docs.openclaw.ai/tools) — built-in tools reference
+- [docs.openclaw.ai/automation](https://docs.openclaw.ai/automation) — cron and webhook automation
+- [docs.openclaw.ai/concepts/memory](https://docs.openclaw.ai/concepts/memory) — memory system architecture
+- [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — SKILL.md format and skills system
+- [docs.openclaw.ai/gateway/security](https://docs.openclaw.ai/gateway/security) — Gateway security configuration
+- [docs.openclaw.ai/platforms](https://docs.openclaw.ai/platforms) — supported messaging platforms
 - [openclaw/openclaw — GitHub](https://github.com/openclaw/openclaw) — source repository (373k stars)
 - [openclaw/clawhub — GitHub](https://github.com/openclaw/clawhub) — official skills registry
 - [awesome-openclaw](https://github.com/vincentkoc/awesome-openclaw) — community curation of skills, plugins, and tooling
@@ -209,5 +321,5 @@ Thoughtworks Technology Radar Vol. 34 (April 2026) places OpenClaw at **Caution*
 - [So, you want to run OpenClaw? — Thoughtworks](https://www.thoughtworks.com/insights/blog/security/want-run-openclaw) — security guidance from Thoughtworks
 - [Researchers Find 341 Malicious ClawHub Skills — The Hacker News](https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html) — ClawHavoc incident report
 - [OpenClaw in the Wild — Censys](https://censys.com/blog/openclaw-in-the-wild-mapping-the-public-exposure-of-a-viral-ai-assistant/) — exposure mapping analysis
-- [OpenClaw CVE-2026-33579](https://blink.new/blog/openclaw-cve-33579-am-i-compromised-2026) — vulnerability details
+- [CVE-2026-33579](https://blink.new/blog/openclaw-cve-33579-am-i-compromised-2026) — vulnerability details
 - [Clawdbot → Moltbot → OpenClaw name history](https://www.openclawexperts.io/clawdbot-moltbot-openclaw-name-history) — project lineage
