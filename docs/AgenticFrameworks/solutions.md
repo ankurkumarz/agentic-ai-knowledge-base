@@ -58,7 +58,7 @@ quadrantChart
 
 These frameworks have demonstrated production readiness, strong community adoption, and clear fit for building agentic AI systems.
 
-> **Radar update (Thoughtworks Vol. 34, Apr 2026):** LangGraph has moved from Adopt to Trial (see below). PydanticAI has moved from Assess to Adopt.
+> **Radar signal (Thoughtworks Vol. 34, Apr 2026 — opinionated source):** LangGraph has moved from Adopt to Trial in Thoughtworks' assessment; PydanticAI has moved from Assess to Adopt. These reflect the perspective of Thoughtworks' Technology Advisory Board based on their project experience. Cross-reference with your own stack requirements — LangGraph remains a strong choice for explicitly stateful workflows and durable execution. See the full context in the [Thoughtworks Vol. 34 Agentic AI Digest](../AgenticTechStack/thoughtworks-radar-vol34.md).
 
 #### LangChain
 **Type**: Open-source framework (MIT)

@@ -4,6 +4,8 @@
 
 The Thoughtworks Technology Radar Volume 34 (April 2026) was assembled at the TAB meeting in Bengaluru, March 2026. It contains 118 blips across four quadrants (Techniques, Platforms, Tools, Languages & Frameworks) and four rings (Adopt, Trial, Assess, Caution). This page extracts and synthesises every entry relevant to **agentic AI, LLM systems, coding agents, context engineering, evaluation, observability, and agent security**.
 
+> **Editorial note — opinionated source.** The Thoughtworks Technology Radar represents the perspective of Thoughtworks' Technology Advisory Board (TAB), a group of 22 senior technologists at a single consultancy. It is one credible signal in the industry, not an authoritative standard. Radar placements reflect Thoughtworks' project experience and technology strategy at a specific point in time and may not align with your organisation's context. Where this page touches existing wiki assessments (e.g., LangGraph, Langfuse), the changes are clearly attributed to this source. Cross-reference with the [Agentic Framework Solutions Radar](../AgenticFrameworks/solutions.md), [Observability Tech Radar](../Observability/tech-radar.md), and vendor-specific documentation for a fuller picture.
+
 ---
 
 ## Key Themes
