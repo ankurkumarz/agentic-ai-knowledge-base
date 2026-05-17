@@ -33,6 +33,8 @@ quadrantChart
     Jaeger: [0.72, 0.80]
     Zipkin: [0.62, 0.70]
     Langfuse: [0.78, 0.76]
+    SigNoz: [0.72, 0.82]
+    ClickStack: [0.62, 0.80]
     Openlit: [0.60, 0.62]
     agenttrace: [0.48, 0.78]
     LangSmith: [0.82, 0.22]
@@ -68,7 +70,8 @@ quadrantChart
 
 | Item | Why here (brief) | When it’s a fit |
 |---|---|---|
-| **Langfuse** | OSS LLM/agent observability (traces + evals + prompt mgmt) with self-host/cloud options. | When you want AI-native visibility plus OSS control. |
+| **Langfuse** | OSS LLM/agent observability (traces + evals + prompt mgmt) with self-host/cloud options. v3 architecture on ClickHouse+Redis+S3; SDKs natively on OpenTelemetry. | When you want AI-native visibility plus OSS control. |
+| **SigNoz** | OSS, OTel-native full-stack observability (logs+metrics+traces) on ClickHouse. Self-hosted alternative to Datadog at lower cost. Supports PromQL and ClickHouse SQL. | When you want OSS observability that covers infra + AI workloads without vendor lock-in. |
 | **LangSmith** | Strong trace UX and evaluation workflows; best fit when you’re already on LangChain/LangGraph. | When your agent stack is LangChain/LangGraph-heavy. |
 | **AgentOps** | Agent-focused monitoring + cost analytics; typically proprietary. | When you want agent-native dashboards quickly without building your own stack. |
 | **Galileo** | Agent reliability platform with multi-agent trace/graph views. | When you need multi-agent workflow debugging and reliability analysis. |
@@ -99,7 +102,8 @@ quadrantChart
 | **OpenTelemetry** | Adopt | Standard / instrumentation | ✅ | Vendor-neutral traces/metrics/logs |
 | **Prometheus + Grafana** | Adopt | Metrics & dashboards | ✅ | Common OSS baseline |
 | **Datadog** | Adopt | Enterprise APM | ❌ | Often org-standard APM |
-| **Langfuse** | Trial | LLM/agent observability | ✅ | OSS + managed options |
+| **Langfuse** | Trial | LLM/agent observability | ✅ | OSS + managed. v3 uses ClickHouse+Redis+S3; SDKs natively on OpenTelemetry. (Thoughtworks Vol.34: Trial) |
+| **SigNoz** | Trial | Full-stack observability | ✅ | OSS, OTel-native, ClickHouse backend. Self-hosted alternative to Datadog. (Thoughtworks Vol.34: Trial) |
 | **LangSmith** | Trial | LLM/agent observability | ❌ | Best with LangChain/LangGraph |
 | **AgentOps** | Trial | Agent observability | ❌ | Agent-focused analytics/costs |
 | **Galileo** | Trial | Agent reliability | ❌ | Multi-agent workflow tracing views |
@@ -146,3 +150,5 @@ quadrantChart
 - [Braintrust](https://www.braintrust.dev/) — AI observability platform
 - [Comet Opik](https://www.comet.com/docs/opik/) — ML/LLM observability (Comet)
 - [agenttrace](https://github.com/luoyuctl/agenttrace) — local-first coding-agent trace reporting
+- [SigNoz](https://signoz.io/) — OSS OpenTelemetry-native observability platform
+- [Thoughtworks Technology Radar Vol. 34](https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2026/04/tr_technology_radar_vol_34_en.pdf) — April 2026; source of SigNoz (Trial) and Langfuse (Trial) radar placements

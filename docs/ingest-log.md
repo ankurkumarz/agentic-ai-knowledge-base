@@ -5,6 +5,32 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-17] ingest | Thoughtworks Technology Radar Vol. 34 (Apr 2026) — Agentic AI focus | sections touched: AgenticTechStack/thoughtworks-radar-vol34 (new), AgenticTechStack/README, AgenticFrameworks/solutions, Observability/tech-radar, mkdocs.yml
+
+**Source**: PDF upload — https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2026/04/tr_technology_radar_vol_34_en.pdf
+**Type**: Industry technology radar (118 blips, April 2026, Thoughtworks Technology Advisory Board)
+**Scope**: Agentic AI, LLM tools, coding agents, context engineering, evaluation, observability, security, harness engineering
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgenticTechStack/thoughtworks-radar-vol34.md` | **New page** | Comprehensive digest of all agentic AI entries from the radar; organised by quadrant/ring with full descriptions, radar movement table, and key themes |
+| `docs/AgenticTechStack/README.md` | Extended | Added reference link to new radar page |
+| `docs/AgenticFrameworks/solutions.md` | Updated | LangGraph: Adopt→Trial (per Vol.34); PydanticAI: Assess→Adopt (per Vol.34); updated radar chart positions, summary table, selection guide, and references |
+| `docs/Observability/tech-radar.md` | Extended | Added SigNoz (Trial); updated Langfuse entry noting v3 architecture + OTel-native SDKs; added radar chart entries |
+| `mkdocs.yml` | Extended | Added Section 5.1.1 entry for new Thoughtworks Radar page |
+
+### Key Radar Signals (Agentic AI)
+
+- **New Adopt**: Context engineering, Structured output from LLMs (both Techniques); Instructor, Pydantic AI (L&F); Claude Code, Cursor (Tools)
+- **Notable move — Adopt→Trial**: LangGraph (graph architecture not always the right fit; simpler agent patterns now viable)
+- **Notable move — Trial→Adopt**: Context engineering (now foundational, not just optimization)
+- **New cautions**: Agent instruction bloat, Coding agent swarms, Ignoring durability in agent workflows, MCP by default
+- **Key new techniques**: Agent Skills, Feedback sensors for coding agents, Progressive context disclosure, Sandboxed execution
+
+---
+
 ## [2026-05-17] ingest | A Practical Guide to Building Agents (OpenAI) | sections touched: DesignPatterns/openai-patterns, Concepts/agent-definition, ProductionBestPractices/security, AllThingsOpenAI/README
 
 **Source**: PDF upload — https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf
