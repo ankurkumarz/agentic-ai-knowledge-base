@@ -5,6 +5,22 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-17] ingest | OpenClaw | sections touched: AgentPlatforms/openclaw (new), AgentPlatforms/README, AgentPlatforms/hermes-agent, mkdocs.yml
+
+**Source**: https://openclaw.ai/ + https://github.com/openclaw/openclaw + https://github.com/openclaw/clawhub
+**Type**: Open-source local-first personal AI agent (MIT license, launched Jan 2026)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/openclaw.md` | Created | Full coverage: history (Clawdbot→Moltbot→OpenClaw), architecture, 20+ messaging integrations, skills/ClawHub, memory system, model support, security (toxic flow trifecta, ClawHavoc incident, 135k+ exposed instances), comparison with Hermes |
+| `docs/AgentPlatforms/README.md` | Updated | Expanded OpenClaw entry to link to new page with richer description |
+| `docs/AgentPlatforms/hermes-agent.md` | Updated | Added openclaw.md to See Also for bidirectional graph edge |
+| `mkdocs.yml` | Updated | Added Section 5.6: OpenClaw |
+
+---
+
 ## [2026-05-17] ingest | Hermes Agent (Nous Research) | sections touched: AgentPlatforms/hermes-agent (new), AgentPlatforms/README, AgenticTechStack/README, mkdocs.yml
 
 **Source**: https://hermes-agent.nousresearch.com/ + https://github.com/NousResearch/hermes-agent + https://github.com/NousResearch/hermes-function-calling
