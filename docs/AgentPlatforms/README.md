@@ -39,7 +39,8 @@ Each category provides detailed analysis of popular implementations, their capab
 
 ### Personal AI Agents
 
-- [OpenClaw](https://openclaw.ai/): Evolutionary agentic platform proving the AI agents capabilities
+- **[Hermes Agent](hermes-agent.md)** (Nous Research): Open-source, self-improving personal AI assistant with built-in learning loop, skill creation from experience, cross-session memory, MCP support, and multi-platform access (Telegram, Discord, Slack, WhatsApp). Successor to OpenClaw. Backed by the Hermes OSS model family (Hermes-2-Pro, Hermes-3) fine-tuned for function calling and GOAP reasoning.
+- [OpenClaw](https://openclaw.ai/): Evolutionary agentic platform proving the AI agents capabilities. Note: Thoughtworks Radar Vol. 34 places this at Caution due to permission-hungry pattern (see [toxic flow analysis](../AgenticTechStack/thoughtworks-radar-vol34.md)).
 - Alternatives: TinyClaw, ZeroClaw, PicoClaw, NanoClaw, IronClaw, Nanobot
 
 ## Coding/Software Development Agents

@@ -5,6 +5,22 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-17] ingest | Hermes Agent (Nous Research) | sections touched: AgentPlatforms/hermes-agent (new), AgentPlatforms/README, AgenticTechStack/README, mkdocs.yml
+
+**Source**: https://hermes-agent.nousresearch.com/ + https://github.com/NousResearch/hermes-agent + https://github.com/NousResearch/hermes-function-calling
+**Type**: Open-source personal AI agent (Nous Research, launched Feb 2026)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/hermes-agent.md` | **New page** | Full coverage: capabilities, self-improvement loop, Hermes model family (Hermes-2-Pro, Hermes-3), GOAP reasoning, tool use architecture, comparison table, security considerations |
+| `docs/AgentPlatforms/README.md` | Extended | Added Hermes Agent as lead entry under Personal AI Agents; added OpenClaw Thoughtworks Caution note |
+| `docs/AgenticTechStack/README.md` | Extended | Added Hermes Agent reference in Agent Ecosystem section |
+| `mkdocs.yml` | Extended | Added Section 5.5 navigation entry |
+
+---
+
 ## [2026-05-17] ingest | Thoughtworks Technology Radar Vol. 34 (Apr 2026) — Agentic AI focus | sections touched: AgenticTechStack/thoughtworks-radar-vol34 (new), AgenticTechStack/README, AgenticFrameworks/solutions, Observability/tech-radar, mkdocs.yml
 
 **Source**: PDF upload — https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2026/04/tr_technology_radar_vol_34_en.pdf
