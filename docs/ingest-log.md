@@ -5,6 +5,26 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-17] ingest | A Practical Guide to Building Agents (OpenAI) | sections touched: DesignPatterns/openai-patterns, Concepts/agent-definition, ProductionBestPractices/security, AllThingsOpenAI/README
+
+**Source**: PDF upload — https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf
+**Type**: Vendor guide / whitepaper (33 pages)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/DesignPatterns/openai-patterns.md` | Major update | Rewrote with richer detail from PDF: use-case selection criteria, tool type table with examples, model selection steps, manager vs. decentralized pattern descriptions, guardrail type table, HITL trigger table; fixed reference URL |
+| `docs/Concepts/agent-definition.md` | Extended | Added OpenAI's production-oriented agent definition with two core characteristics; clarified what is NOT an agent |
+| `docs/ProductionBestPractices/security.md` | Extended | Added tool risk-rating row to best practices table (OpenAI tool safeguards pattern) |
+| `docs/AllThingsOpenAI/README.md` | Extended | Added hub row for the Practical Guide to Building Agents |
+
+### Summary
+
+OpenAI's guide provides a practitioner-level framework for building production agents. Key additions to the wiki: a concrete "when to build an agent" checklist (complex decisions, brittle rules, unstructured data), a three-tier tool taxonomy (data/action/orchestration), a step-by-step model selection approach (baseline → accuracy → cost/latency), detailed manager vs. decentralized multi-agent patterns, a seven-type guardrail taxonomy with optimistic execution semantics, and HITL trigger criteria (failure thresholds and high-risk actions).
+
+---
+
 ## [2026-05-10] ingest | agenttrace GitHub repository | sections touched: Observability/solutions, Observability/Readme, ProductionBestPractices/observability
 
 **Source**: URL fetch — https://github.com/luoyuctl/agenttrace
