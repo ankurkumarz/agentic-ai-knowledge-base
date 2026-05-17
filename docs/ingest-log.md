@@ -335,3 +335,25 @@ CoALA (Sumers et al., Princeton 2023) defines the canonical four-type memory tax
 | Azure AI Foundry Memory | 🔵 Trial | GA on Azure, enterprise compliance |
 | LangMem | 🟡 Assess | ~1.5K stars, only library with procedural memory support |
 | AgentFS | 🔴 Caution | ~2.5K stars, alpha, narrow scope (filesystem only) |
+
+---
+
+## [2026-05-17] ingest | The 8 Levels of Agentic Engineering — Bassim Eledath | sections touched: Concepts/agentic-engineering-levels, AgentHarness/harness-engineering, index, mkdocs.yml
+
+**Source**: URL fetch — https://www.bassimeledath.com/blog/levels-of-agentic-engineering
+**Type**: Blog post (March 2026)
+**Author**: Bassim Eledath
+**Processed by**: Claude Code (claude-sonnet-4-6)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Concepts/agentic-engineering-levels.md` | Created | New page: 8-level practitioner progression framework from tab complete to autonomous agent teams; compounding engineering loop; harness engineering as Level 6; Level 7 as current sweet spot |
+| `docs/AgentHarness/harness-engineering.md` | Extended | Added See Also link pointing to the new levels page with context that harness engineering = Level 6 |
+| `docs/index.md` | Extended | Added bullet for The 8 Levels of Agentic Engineering under Concepts section |
+| `mkdocs.yml` | Updated | Added entry 1.7 for the new page; renumbered References to 1.8 |
+
+### Summary
+
+Bassim Eledath's 8-level framework is a practitioner-oriented progression model for teams adopting agentic AI in software engineering. Key contributions: the plan-delegate-assess-codify compounding loop (Level 4); context engineering as a prerequisite discipline (Level 3); the "levels 3–5 must be solid before levels 6–8" architectural constraint; harness engineering and automated feedback loops as the Level 6 inflection point; background agents (hub-and-spoke orchestration, cloud sandboxed VMs) as the current sweet spot for most teams (Level 7); and autonomous agent teams (Level 8) as an experimental frontier with unresolved coordination economics.
