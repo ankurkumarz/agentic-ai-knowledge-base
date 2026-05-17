@@ -358,6 +358,33 @@ CoALA (Sumers et al., Princeton 2023) defines the canonical four-type memory tax
 
 ---
 
+## [2026-05-17] ingest | Agentic Architectural Patterns for Building Multi-Agent Systems (Arsanjani & Bustos, Packt 2026, ISBN 978-1-80602-957-0) | sections touched: DesignPatterns, MaturityModels, Architecture, ProductionBestPractices/security, ProductionBestPractices/deployment, ProductionBestPractices/testing-evaluations, index, mkdocs.yml
+
+**Source**: Local file — `raw/9781806029570-Multi-Agent-Systems.pdf`
+**Type**: Book (Packt Publishing, January 2026)
+**Authors**: Dr. Ali Arsanjani (Google Cloud, Director of Applied AI Engineering) and Juan Pablo Bustos (Google)
+**Copyright**: © 2026 Packt Publishing. All rights reserved. Summaries used under fair-use/review provisions; no verbatim reproduction of book text in wiki pages.
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/DesignPatterns/arsanjani-patterns.md` | Created | New page: full pattern catalog — Multi-Agent Coordination (Agent Router, Supervisor Architecture, Swarm Architecture, Blackboard Knowledge Hub, Contract-Net, Consensus, Negotiation, Conflict Resolution, Formation Control, Resource Allocation, Knowledge Sharing, Tool Routing); Explainability & Compliance (Instruction Fidelity Auditing, FCoT Embedding, Persistent Instruction Anchoring, Shared Epistemic Memory); Robustness (Parallel Execution Consensus, Delayed Escalation, Watchdog Timeout, Adaptive Retry, Auto-Healing, Incremental Checkpointing, Majority Voting, Causal Dependency Graph, Trust Decay, Canary Agent Testing, Rate-Limited Invocation, Fallback Model Invocation); Security (Agent Self-Defense, Agent Mesh Defense, Execution Envelope Isolation). Includes maturity-level mapping table. |
+| `docs/MaturityModels/arsanjani-genai-maturity.md` | Created | New page: Arsanjani 7-level GenAI Maturity Model (Levels 0–6); Agentic AI Maturity Spectrum (6 sub-levels); agent anatomy (Sense, Reason, Plan, Act, Memory, Coordinate); the new agentic stack (Function Calling, MCP, A2A); production challenges table; practical rollout roadmap |
+| `docs/Architecture/components-selection.md` | Extended | Added Agent Anatomy section with 7-component table, hierarchy of autonomy, technical considerations by component; updated See Also and References |
+| `docs/Architecture/multi-agent-system.md` | Extended | Added Supervisor vs. Swarm comparison table; Agent Router pattern section; added book to References |
+| `docs/ProductionBestPractices/security.md` | Extended | Added 3 new rows to Best Practices table: Agent Mesh Defense, Agent Self-Defense, Execution Envelope Isolation |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Added Fault Tolerance and Robustness Patterns section with 7 new rows: Watchdog Timeout, Adaptive Retry with Prompt Mutation, Auto-Healing, Incremental Checkpointing, Rate-Limited Invocation, Fallback Model Invocation, Delayed Escalation |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added 2 new rows to Best Practices table: Parallel Execution Consensus, Canary Agent Testing |
+| `docs/DesignPatterns/Readme.md` | Extended | Added reference entry for new Arsanjani patterns page |
+| `docs/MaturityModels/README.md` | Extended | Added resource entry for new Arsanjani maturity page |
+| `docs/index.md` | Extended | Updated Architecture and Design Patterns and Maturity Models section bullets |
+| `mkdocs.yml` | Updated | Added entry 3.2.2 for arsanjani-patterns.md; added entry 14.7 for arsanjani-genai-maturity.md |
+
+### Summary
+
+This book presents a comprehensive pattern language for enterprise agentic AI. Key contributions to the wiki: (1) 25+ named patterns organized into four functional groups with Context–Problem–Solution–Consequences structure; (2) a 7-level GenAI Maturity Model that maps directly to patterns — maturity is a function of patterns implemented, not intent; (3) the agent anatomy framework (Sense → Reason → Plan → Act with Memory and Coordinate); (4) the three-layer agentic stack (Function Calling → MCP → A2A); (5) Supervisor vs. Swarm as the primary architectural choice axis for multi-agent systems; (6) explainability patterns (FCoT, Persistent Instruction Anchoring, Shared Epistemic Memory) addressing instruction drift in deep agent hierarchies; (7) a five-level robustness maturity spectrum with concrete fault-tolerance patterns for production deployments.
+
 ## [2026-05-17] ingest | The 8 Levels of Agentic Engineering — Bassim Eledath | sections touched: Concepts/agentic-engineering-levels, AgentHarness/harness-engineering, index, mkdocs.yml
 
 **Source**: URL fetch — https://www.bassimeledath.com/blog/levels-of-agentic-engineering

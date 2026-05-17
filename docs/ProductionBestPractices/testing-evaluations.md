@@ -25,6 +25,8 @@ Evaluation operates at multiple levels:
 | Multi-agent evaluation | Difficult to attribute quality issues to a specific agent in a pipeline | Evaluated only the final output of the pipeline | Instrument each agent's output independently; evaluate at each handoff boundary |
 | Benchmark gaming | Agents optimized for benchmarks perform poorly on real tasks | Relied solely on public benchmarks (GAIA, SWE-Bench); missed domain-specific failures | Supplement public benchmarks with internal domain-specific eval sets built from real user interactions |
 | Evaluation cost | Running LLM-as-judge on every output is expensive | Evaluated 100% of outputs; costs were unsustainable | Sample strategically — evaluate 100% of failures, 10–20% of successes, and all edge case categories |
+| Single-model critical decisions | Relying on one non-deterministic LLM for a high-stakes decision (credit scoring, compliance) | Trusted a single model call; hallucinations or biased outputs went undetected | **Parallel Execution Consensus**: run two or more independent agents on the same task using different models or prompts; orchestrator validates result when outputs agree within a tolerance; escalates to a resolver or human when they disagree significantly |
+| Silent agent version regressions | Deploying a new agent version to all users risks widespread quality degradation | Rolled out new versions 100% immediately; regressions only detected after users complained | **Canary Agent Testing**: route a small traffic fraction (e.g., 5%) to the new agent version; compare performance metrics against the stable version; block full rollout if regression rate exceeds threshold |
 
 ## Evaluation Frameworks
 

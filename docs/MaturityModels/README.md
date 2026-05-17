@@ -81,6 +81,7 @@ Organizations beginning their agentic AI journey should:
 - [AWS Generative AI Maturity Model](https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-maturity-model/)
 - [IDC: The Agentic Evolution of Enterprise Applications](https://www.idc.com/resource-center/blog/the-agentic-evolution-of-enterprise-applications/)
 - [Google Cloud AI Maturity Resources](https://cloud.google.com/ai)
+- [Arsanjani GenAI Maturity Model](./arsanjani-genai-maturity.md) — 7-level framework (Levels 0–6) mapping data foundation → RAG → tuning → grounding → single-agent → multi-agent; maps each level to design patterns and includes the Agentic AI Maturity Spectrum (6 sub-levels for Levels 5–6)
 
 
 ## See Also

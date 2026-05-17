@@ -151,8 +151,50 @@ Document key architectural decisions including:
 - **Audit Logging**: Track system access and changes
 - **Compliance**: Meet regulatory requirements
 
+## Agent Anatomy — Internal Building Blocks
+
+Arsanjani & Bustos (2026) define seven internal components that form the continuous operational loop of any AI agent. These serve as the architectural building blocks behind every component selection decision:
+
+| Component | Function | Architectural Role | Implementation |
+|---|---|---|---|
+| Goals | Objectives the agent seeks to achieve | Defines the agent's objective function; drives high-level planning | Configuration parameters or dynamic state |
+| Sense (Perception) | Gathers data from environment (APIs, databases, sensors) | Input layer | API listeners, stream processors, MCP clients |
+| Reason (Cognition) | Analyzes sensed information | Cognitive core — where the agent-ready LLM is integrated | LLM call with goals + context |
+| Plan | Devises a sequence of actions | Tactical layer; breaks strategy into executable steps | LLM-generated task sequence |
+| Act (Action) | Executes plan via tools | Output layer | External API calls, code execution, response generation |
+| Memory | Stores knowledge, state, and past experience | State management | Short-term (in-context); long-term (vector databases, key-value stores) |
+| Coordinate | Interacts with other agents (multi-agent systems only) | Inter-agent communication | A2A protocol; task lifecycle states (submitted → working → completed) |
+
+**The agentic loop:** Sense → Reason → Plan → Act → (feedback) → Sense. Each iteration allows the agent to learn from outcomes.
+
+**Hierarchy of autonomy** — distinguishing LLMs, automated workflows, and true agents:
+
+| Level | Type | Characteristics |
+|---|---|---|
+| 1 | LLM / Model | Stateless, probabilistic, passive — responds to prompts only |
+| 2 | Automated Workflow | Deterministic, rigid, scripted — if-this-then-that logic |
+| 3 | AI Agent | Goal-oriented, stateful, adaptive — sense-reason-act-reflect loop |
+
+**Technical considerations by component:**
+
+| Technical Concern | Component(s) Affected |
+|---|---|
+| Data processing and integration | Sense, Memory |
+| Knowledge representation | Reason, Memory |
+| LLM integration and orchestration | Reason, Plan, Coordinate |
+| Reliable tool use mechanisms | Act |
+| State management and memory | Memory |
+| Scalability of agent populations | Coordinate, overall architecture |
+| Inter-agent communication efficiency | Coordinate |
+| Security and governance | Reason (prompt injection), Act (sandboxing), Memory (privacy), Coordinate (AuthN/AuthZ) |
+
 ## See Also
 - [Multi-Agent Systems](multi-agent-system.md)
 - [12-Factor Agents](12-factor-agents.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [Agent Technology Stack](../AgenticTechStack/README.md)
+- [Agentic Architectural Patterns — Arsanjani & Bustos](../DesignPatterns/arsanjani-patterns.md)
+- [Arsanjani GenAI Maturity Model](../MaturityModels/arsanjani-genai-maturity.md)
+
+## References
+- Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for agent anatomy table and hierarchy of autonomy.
