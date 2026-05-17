@@ -89,8 +89,26 @@ Treat the git repository as the single source of truth for deployment state:
 - Every rollback = a git revert
 - Platforms: Agent Engine or Cloud Run + Cloud Load Balancing for traffic management across versions
 
+## Fault Tolerance and Robustness Patterns
+
+Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The following patterns extend existing deployment practices for production-grade agentic systems:
+
+| Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
+|---|---|---|---|
+| Stalled/hanging agents | An agent interacting with a slow external API enters an infinite wait, freezing the entire workflow | Set only a global timeout; stalled agent consumed the full budget before terminating | **Watchdog Timeout Supervisor**: wrap every agent call in a timed execution block (Python `asyncio.wait_for`); if agent does not respond within deadline, forcefully cancel and trigger fallback (backup agent, simplified analysis, or escalation) |
+| Deterministic LLM failure loops | An agent repeatedly returns malformed output on the same input; simple retry reproduces the same failure | Resent the same prompt on retry — same error every time, wasted tokens | **Adaptive Retry with Prompt Mutation**: on failure, mutate the prompt before retrying — rephrase, add few-shot examples, inject chain-of-thought instructions ("Think step by step"), or tighten format constraints; mutated prompts often recover accuracy while resolving the failure |
+| Agent crash mid-task | An agent process crashes and all in-progress state is lost; full restart required | Relied on client retry to restart from scratch — users lost minutes of work | **Auto-Healing Agent Resuscitation**: health monitor detects crash, retrieves last checkpointed state from durable store, restarts agent process with that state restored |
+| Long-running pipeline interruptions | Multi-step pipelines lose all progress when interrupted mid-execution | Stored state in memory only; any infrastructure event meant starting over | **Incremental Checkpointing**: persist workflow state to durable storage (e.g., LangGraph checkpointers, DynamoDB) after each completed step; on restart, resume from last checkpoint rather than the beginning |
+| API rate limit exhaustion | Agents calling shared external APIs exhaust rate limits, causing cascading failures | No throttling; bursts from parallel agents triggered 429 errors across the system | **Rate-Limited Invocation**: wrap all external API calls in a rate limiter enforcing per-agent and per-API quotas; excess requests are queued or rejected with graceful degradation |
+| Primary model unavailability | The primary LLM becomes unavailable or cost threshold is breached mid-workflow | No fallback; agent halted and returned an error | **Fallback Model Invocation**: maintain a fallback hierarchy; on primary model failure or cost trigger, route to a smaller, faster, or cheaper model for continuity |
+| Human escalation fatigue | Immediate escalation for every agent failure overwhelms operators and creates alert noise | Escalated every low-confidence result to a human reviewer; reviewers became a bottleneck | **Delayed Escalation Strategy**: attempt automated recovery first (retry → backup agent → simplified scope); only escalate to a human operator after automated paths are exhausted, with a full context packet for efficient review |
+
 ## See Also
 - [Observability](./observability.md)
 - [Cost Management](./cost-management.md)
 - [Agent Testing & Evaluations](./testing-evaluations.md)
 - [A2A Protocol](../Standards/agent2agent.md) — registry architectures for multi-agent deployments
+- [Agentic Architectural Patterns — Arsanjani & Bustos](../DesignPatterns/arsanjani-patterns.md) — full fault tolerance and robustness pattern catalog
+
+## References
+- Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for robustness patterns: Watchdog Timeout, Adaptive Retry with Prompt Mutation, Auto-Healing, Incremental Checkpointing, Rate-Limited Invocation, Fallback Model Invocation, Delayed Escalation.

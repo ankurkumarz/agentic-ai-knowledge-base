@@ -20,3 +20,4 @@
 
 - [Gartner: Emerging Patterns for Building LLM-Based AI Agents](https://www.gartner.com/en/documents/6142159)
 - [17 Agentic Architecture Patterns](https://github.com/FareedKhan-dev/all-agentic-architectures)
+- [Agentic Architectural Patterns — Arsanjani & Bustos (Packt, 2026)](arsanjani-patterns.md): Comprehensive pattern catalog covering Multi-Agent Coordination (Agent Router, Supervisor, Swarm, Blackboard, Consensus, Negotiation), Explainability & Compliance (Instruction Fidelity Auditing, FCoT Embedding, Persistent Instruction Anchoring, Shared Epistemic Memory), Robustness & Fault Tolerance (Watchdog Timeout, Adaptive Retry, Parallel Execution Consensus, Trust Decay, Canary Agent Testing), and Security (Agent Self-Defense, Agent Mesh Defense, Execution Envelope Isolation). Mapped to the [Arsanjani GenAI Maturity Model](../MaturityModels/arsanjani-genai-maturity.md).

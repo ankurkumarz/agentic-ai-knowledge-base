@@ -454,6 +454,30 @@ Combines centralized control with decentralized flexibility. Global decisions fl
 
 **Framework choice implies architectural decisions**: LangGraph suits hierarchical and hybrid patterns; CrewAI suits centralized; Agno suits decentralized high-throughput; Mastra suits hybrid web-integrated systems.
 
+## Supervisor vs. Swarm: A Direct Comparison
+
+Arsanjani & Bustos (2026) formalize the two primary task-delegation frameworks as a design choice axis:
+
+| Feature | Supervisor Architecture (Centralized) | Swarm Architecture (Decentralized) |
+|---|---|---|
+| Control flow | Hierarchical; single orchestrator delegates to workers | Peer-to-peer; agents self-select tasks from a shared board |
+| Coordination | Explicit and top-down; supervisor manages workflow | Emergent and bottom-up; arises from local agent interactions |
+| Modularity | High; specialist agents added or replaced under supervisor | High; agents added or removed from the swarm |
+| Key benefit | Predictability, clear oversight, easy to govern and debug | Resilience, no single point of failure, horizontal scalability |
+| Key drawback | Supervisor is a single point of failure and potential bottleneck | Hard to debug; governance and compliance enforcement is difficult |
+| Best for | Regulated workflows (finance, healthcare) with clear sequential logic | Creative tasks, content pipelines, dynamic environments |
+
+**Implementation guidance:** Start with Supervisor Architecture in enterprise contexts. Introduce Swarm for sub-teams where resilience matters more than predictability. Many production systems use a hybrid: a Supervisor manages the business process but delegates blocks to self-organizing crews.
+
+## Agent Router Pattern
+
+The Agent Router is the foundational building block for Supervisor Architecture. Rather than hard-coded conditional routing, it uses:
+
+1. **Semantic intent extraction** — an LLM with a strict schema translates a user query into a structured `RoutingIntent` object with an action (verb) and resource (noun)
+2. **Capability graph lookup** — a graph maps `(action, resource)` tuples to agent names; if no match exists the request is rejected
+
+This decouples the extraction layer from agent names, allows new agents to register without touching routing logic, and uses the graph as a safety whitelist preventing routing to incapable agents.
+
 ## See Also
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [Architecture Components Selection](components-selection.md)
@@ -470,3 +494,4 @@ Combines centralized control with decentralized flexibility. Global decisions fl
 
 - [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop slide deck covering the four planes, orchestration patterns, non-determinism math, shared state design, MCP/A2A distinction, security at agent boundaries, and distributed observability
 - [Mastering Multi-Agent Systems eBook](https://galileo.ai) — Galileo, 2026. Author: Pratik Bhavsar. Seven benefits, failure modes, decision framework, four architectures, context engineering, LangGraph production example with Galileo observability.
+- Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for Supervisor vs. Swarm comparison and Agent Router pattern.

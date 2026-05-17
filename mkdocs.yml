@@ -31,6 +31,7 @@ nav:
     - 3.1 Agentic Architecture Components Selection: 'Architecture/components-selection.md'
     - 3.2 Agentic Design Pattern Selection:
       - 3.2.1 Agentic Design Patterns by OpenAI: 'DesignPatterns/openai-patterns.md'
+      - 3.2.2 Agentic Architectural Patterns (Arsanjani & Bustos): 'DesignPatterns/arsanjani-patterns.md'
     - 3.3 Multi-agent System: 'Architecture/multi-agent-system.md'
     - 3.4 12-Factor Agents: 'Architecture/12-factor-agents.md'
     - 3.5 Gartner LLM-based AI Design Patterns: 'DesignPatterns/gartner-patterns.md'
@@ -135,6 +136,7 @@ nav:
     - 14.4 IDC's Perspective: 'MaturityModels/idc.md'
     - 14.5 Maturity Models Overview: 'MaturityModels/README.md'
     - 14.6 Agentic Engineering Levels: 'MaturityModels/agentic-engineering-levels.md'
+    - 14.7 Arsanjani GenAI Maturity Model: 'MaturityModels/arsanjani-genai-maturity.md'
   - 15. Agents Marketplace:
     - 15.1 AWS AI Agents Marketplace: 'Marketplace/aws-marketplace.md'
     - 15.2 AgentOps Marketplace: 'Marketplace/agentops.md'

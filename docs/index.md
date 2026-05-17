@@ -33,8 +33,8 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 
 ### **3. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
-- **Design Pattern Selection**: Proven patterns including OpenAI's agentic patterns
-- **Multi-agent Systems**: Four architectures (centralized, decentralized, hierarchical, hybrid); seven benefits; failure modes and decision framework; framework comparison for architecture selection
+- **Design Pattern Selection**: Proven patterns including OpenAI's agentic patterns and the Arsanjani & Bustos pattern catalog (Agent Router, Supervisor, Swarm, Blackboard, FCoT, Instruction Fidelity Auditing, Adaptive Retry, Canary Agent Testing, and 20+ others)
+- **Multi-agent Systems**: Four architectures (centralized, decentralized, hierarchical, hybrid); Supervisor vs. Swarm comparison; Agent Router pattern; seven benefits; failure modes and decision framework; framework comparison for architecture selection
 - **12-Factor Agents**: Principles for building reliable LLM applications
 - **Gartner LLM Patterns**: Industry-recognized design patterns
 
@@ -80,6 +80,7 @@ Comprehensive coverage of major development frameworks:
 - **AWS Perspective**: Generative AI maturity models and progression paths
 - **Google's Perspective**: Cloud-native maturity considerations
 - **IDC's Perspective**: Market evolution and adoption patterns
+- **Arsanjani GenAI Maturity Model**: 7-level framework (data foundation → RAG → tuning → grounding → single-agent → multi-agent) with agent anatomy, the new agentic stack (Function Calling, MCP, A2A), and maturity-to-pattern mapping
 
 ### **9. Agents Marketplace**
 - **AWS AI Agents Marketplace**: Enterprise agent solutions and platforms
