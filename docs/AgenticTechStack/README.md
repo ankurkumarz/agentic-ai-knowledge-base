@@ -61,8 +61,9 @@ Agents' ability to spin up fully-isolated environments to safely execute AI-gene
 - **No-code Solutions**: Visual workflow builders for non-technical users
 
 ### Agent Ecosystem
-- **Coding Agents**: Specialized agents for software development tasks
+- **Coding Agents**: Specialized agents for software development tasks (Claude Code, Cursor, OpenCode, OpenAI Codex)
 - **Research Agents**: Agents focused on information gathering and analysis
+- **Personal AI Agents**: Self-improving, persistent agents with cross-session memory — see **[Hermes Agent](../AgentPlatforms/hermes-agent.md)** (Nous Research) as a leading OSS example
 - **Super Agents**: General-purpose agents capable of complex multi-domain tasks
 - **Domain-specific Agents**: Agents tailored for specific industries or use cases
 
