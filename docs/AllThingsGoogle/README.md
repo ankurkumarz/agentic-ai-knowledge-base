@@ -8,6 +8,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
+| Gemini CLI | Open-source terminal coding agent (Apache 2.0) — Google Search grounding, MCP, free tier, GEMINI.md support | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
 | Google ADK | Agent Development Kit — open-source framework for building single and multi-agent systems | [AgenticFrameworks/google-adk.md](../AgenticFrameworks/google-adk.md) |
 | Gemini Enterprise Agent Platform | Google Cloud's comprehensive platform for building, scaling, governing, and optimizing agents — successor to Vertex AI | [AgentPlatforms/gemini-enterprise-agent-platform.md](../AgentPlatforms/gemini-enterprise-agent-platform.md) |
 | SAIF Framework | Secure AI Framework — Google's security reference model for AI workloads | [SecurityFrameworks/google-saif.md](../SecurityFrameworks/google-saif.md) |

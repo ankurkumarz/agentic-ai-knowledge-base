@@ -8,6 +8,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
+| Claude Code | Anthropic's agentic coding CLI/IDE — swarm orchestration, KAIROS daemon, 44 feature flags; architecture partially revealed via 2026 source leak | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
 | Context Engineering Guidance | Anthropic's practical guidance on managing context windows for long-running agents | [ContextEngineering/anthropic.md](../ContextEngineering/anthropic.md) |
 | Context Management API Primitives | First-party API primitives for compaction, tool-result clearing, and cross-session memory — empirically benchmarked on a 328K-token research corpus | [ContextEngineering/anthropic.md#context-management-api-primitives-cookbook](../ContextEngineering/anthropic.md) |
 | Model Context Protocol (MCP) | Open standard for tool and resource exposure to LLMs; co-developed by Anthropic | [Standards/mcp.md](../Standards/mcp.md) |

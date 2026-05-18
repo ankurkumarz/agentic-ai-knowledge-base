@@ -530,6 +530,7 @@ Each framework was assessed on the following dimensions. Ratings are as of May 2
 ## See Also
 
 - [Agent Development Frameworks Overview](README.md)
+- [AI Coding Agents](ai-coding-agents.md)
 - [LangChain](langchain.md)
 - [LangGraph](langgraph.md)
 - [CrewAI](crewai.md)
