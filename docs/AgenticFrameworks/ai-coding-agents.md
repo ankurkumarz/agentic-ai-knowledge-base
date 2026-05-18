@@ -21,6 +21,10 @@ The category spans terminal-first CLIs, IDE extensions, cloud sandboxes, and sta
 | **Goose** | Block (Square) | Desktop + CLI | Apache 2.0 | 15+ providers | Donated to Linux Foundation; Rust-based; 70+ MCP extensions |
 | **OpenCode** | OpenCode (open source) | Terminal TUI / Desktop / IDE | MIT | 75+ providers | Plan/Build mode; LSP diagnostics; 147K GitHub stars |
 | **Pi** | earendil.works | Terminal CLI | MIT | 15+ providers | Radical minimalism: 4 tools, sub-1K-token system prompt |
+| **Cursor** | Anysphere | Standalone IDE (VS Code fork) | Proprietary | Claude, GPT-4o, Gemini (Auto) | $2B ARR; Composer multi-file editing; half of Fortune 500 |
+| **Aider** | Paul Gauthier (open source) | Terminal CLI | Apache 2.0 | Claude, DeepSeek, GPT-4o, local | Git-native: every edit is a commit; 15B tokens/week |
+| **GitHub Copilot** | Microsoft / GitHub | VS Code + JetBrains + web | Proprietary | Multi-model (Claude, GPT, Gemini) | 150M users; Coding Agent assigns issues autonomously via PR |
+| **Augment Code** | Augment (enterprise) | IDE + CLI + code review | Proprietary | Multi-provider (MCP) | 200K-token Context Engine; 70% win rate vs Copilot |
 
 ---
 
@@ -320,32 +324,170 @@ Pi's thesis is radical minimalism: a coding agent needs exactly four tools (read
 
 ---
 
+## Cursor
+
+**Type**: AI-first standalone IDE (VS Code fork)
+**Vendor**: Anysphere
+**Docs**: [cursor.com](https://cursor.com)
+**Revenue**: $2B ARR (February 2026), $29B valuation
+
+Cursor is the market-leading AI code editor, built as a fork of VS Code that ships AI capabilities as first-class primitives rather than an extension. It crossed $1B ARR by November 2025 and reached $2B ARR by February 2026, with over 1 million paying developers and half of the Fortune 500 as customers.
+
+### Key Features
+
+- **Composer mode**: Multi-file editing driven by high-level architectural instructions — the agent edits 10–100+ files simultaneously while following your intent.
+- **Supermaven autocomplete**: Claimed fastest tab completion in the market; predicts multi-line blocks before you finish typing.
+- **Background agents (2026)**: Long-running agents work on tasks independently in the background while you continue coding.
+- **Codebase-aware AI**: Full project context understanding across the repository — not just the current file.
+- **Multi-model Auto mode**: In Auto mode, Cursor selects the best available model (Claude, GPT-4o, Gemini) per request. Auto mode is effectively unlimited for paid plans.
+- **Credit-based billing**: Since June 2025, paid plans include a monthly credit pool for manually-specified frontier model calls. Pro plan ($20/month) yields ~225 Claude 3.5 Sonnet or ~500 GPT-4o requests from its $20 credit pool.
+- **VS Code compatibility**: Full extension ecosystem, keybindings, and workflow compatibility inherited from VS Code.
+
+### Pricing (2026)
+
+| Plan | Price | Notable inclusions |
+|---|---|---|
+| Hobby | Free | Limited Agent requests, limited Tab completions |
+| Pro | $20/month (~$16 with annual) | Unlimited Tab, extended Agent limits, $20 credit pool |
+| Pro+ | $60/month | 3× credit pool of Pro |
+| Business | $40/seat/month | Team management, centralized billing |
+| Enterprise | Custom | SSO, advanced security, custom contracts |
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary |
+| LLM | Claude, GPT-4o, Gemini (Auto mode) |
+| Open source | No (VS Code fork) |
+| Revenue | $2B ARR (Feb 2026) |
+| Production readiness | GA |
+
+---
+
+## Aider
+
+**Type**: Terminal coding agent (open source)
+**Vendor**: Paul Gauthier (community open source)
+**GitHub**: [Aider-AI/aider](https://github.com/Aider-AI/aider) — Apache 2.0
+**Stars**: 39K GitHub stars, 4.1M installs, 15B tokens processed per week
+
+Aider is the most git-native coding agent in the terminal. Its defining design decision is that every AI edit is automatically committed with a descriptive message — git is not a feature but the foundation. Every session is a branch you can review, revert, or cherry-pick.
+
+### Key Features
+
+- **Git-native**: Every AI edit is an atomic git commit with a clear message. Sessions accumulate a reviewable, revertable history.
+- **Repo map**: Generates an internal map of the entire codebase so the agent understands and operates within large projects without reading every file.
+- **100+ programming languages**: Broad language support across diverse tech stacks.
+- **Multi-model support**: Works best with Claude 3.7 Sonnet, DeepSeek R1 & Chat V3, OpenAI o1/o3-mini/GPT-4o; connects to local models via Ollama.
+- **Auto lint and test**: Automatically runs linters and tests on AI-generated code, then fixes detected problems — closing the feedback loop without manual intervention.
+- **Voice commands**: Speak feature requests, test cases, or bug fixes directly.
+- **IDE integration**: Can be driven by adding special comments in source files within your IDE, without switching contexts.
+- **Scripting-friendly**: Non-interactive mode for use in CI pipelines and automation.
+
+| Dimension | Signal |
+|---|---|
+| License | Apache 2.0 |
+| LLM | Claude, DeepSeek, GPT-4o, local (Ollama) |
+| Open source | Yes |
+| Git integration | Native (every edit = commit) |
+| Weekly token volume | ~15B |
+| Production readiness | GA |
+
+---
+
+## GitHub Copilot
+
+**Type**: AI coding assistant + autonomous coding agent
+**Vendor**: Microsoft / GitHub
+**Docs**: [docs.github.com/copilot](https://docs.github.com/en/copilot)
+
+GitHub Copilot has evolved from an autocomplete extension into a multi-layer agentic system. As of September 2025, the Copilot Coding Agent — built from lessons learned in Copilot Workspace — is generally available to all paid subscribers. It can accept a GitHub issue assignment and work autonomously to produce a pull request.
+
+### Key Features
+
+- **Copilot Coding Agent (GA, Sept 2025)**: Assign a GitHub issue to Copilot; it works autonomously in the background — writing code, running tests, and opening a PR for review. Accepts assignments directly from the GitHub issue tracker.
+- **Agent Mode in IDE (GA, March 2026)**: In VS Code and JetBrains, Agent mode determines which files to edit, makes multi-file edits, runs terminal commands (npm install, pytest, etc.), reviews output, and iterates until the task is complete — without manual intervention.
+- **Next Edit Suggestions**: Predicts the next logical code change based on recent edits, reducing navigation overhead.
+- **Code Review integration**: Copilot code review gathers full project context before suggesting changes; suggestions can be passed directly to the Coding Agent to generate fix PRs automatically.
+- **Repository understanding**: Copilot deduces and stores repository-specific knowledge to improve coding agent and code review quality over time.
+- **MCP support**: Model Context Protocol servers can be configured across Copilot features, granting access to external tools and data sources.
+- **Multi-model**: Supports Claude, GPT family, and Gemini — users can select the model for each task.
+- **GitHub Spark**: Natural language app builder for Pro+ and Enterprise users — describe an app, get generated code with a live preview.
+- **OpenCode partnership**: All paid Copilot subscribers can authenticate directly into OpenCode (January 2026).
+
+### Scale
+
+GitHub Copilot serves approximately 150 million developers across the GitHub platform, making it the highest-reach AI coding tool by user count.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (Microsoft/GitHub) |
+| LLM | Claude, GPT, Gemini (multi-model) |
+| Open source | No |
+| Primary interface | VS Code, JetBrains, web (github.com) |
+| Autonomous agent | Yes (Coding Agent, GA Sept 2025) |
+| Production readiness | GA |
+
+---
+
+## Augment Code
+
+**Type**: Enterprise AI coding agent (IDE + CLI + code review)
+**Vendor**: Augment
+**Docs**: [augmentcode.com](https://www.augmentcode.com)
+
+Augment is built specifically for large, complex codebases — the use cases where general-purpose coding tools degrade in quality because they lack sufficient context. Its Context Engine maintains a live 200K-token understanding of the entire codebase. Augment reported a 70% win rate against GitHub Copilot in competitive enterprise evaluations.
+
+### Key Features
+
+- **Context Engine**: Maintains a live 200K-token understanding of the full stack — code, dependencies, architecture, and history — not just the open files. Designed for large enterprise codebases.
+- **Intent (multi-agent coordination)**: Coordinates multiple agents around a shared specification, giving teams oversight and automation. Produces first-party code review, has a terminal-native experience, and integrates with Slack.
+- **Code Review Agent**: AI-driven code review with the highest reported accuracy on the only public benchmark for AI-assisted code review. Catches logic errors, missing edge cases, and style violations.
+- **Quality improvements**: Reports 30–80% quality improvements over unaugmented baseline on internal benchmarks. Claude Code + Opus 4.5 achieved 80% improvement; Cursor + Claude Opus 4.5 achieved 71%.
+- **MCP support**: Agents connect to independent developer environments, CLIs, LLMs, and other agents via Model Context Protocol.
+- **Multi-provider LLM**: Model-agnostic; routes to the provider appropriate for each task.
+- **Enterprise security**: SSO/OIDC/SCIM, SOC 2, dedicated support, no AI training on customer data, annual volume discounts.
+- **Slack integration**: Agents surface code review findings and task status directly in Slack channels.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (SaaS) |
+| LLM | Multi-provider (model-agnostic) |
+| Open source | No |
+| Context window | 200K tokens (live codebase index) |
+| Enterprise security | SOC 2, SSO/OIDC/SCIM |
+| Production readiness | GA |
+
+---
+
 ## Positioning Map
 
 These tools occupy distinct positions across two axes: **interface** (terminal ↔ full IDE) and **autonomy** (HITL-first ↔ fully autonomous).
 
 ```
-                   HIGH AUTONOMY
-                        │
-          Devin ────────┤
-                        │
-   OpenAI Codex ────────┤
-                        │
-     Claude Code ───────┤
-                        │
-          Kiro ─────────┤──────────────── IDE
-TERMINAL ───────────────┼──────────────────────
-     Gemini CLI ─────────┤
-                        │
-        OpenCode ────────┤
-                        │
-           Goose ────────┤
-                        │
-            Cline ───────┤ (HITL-first)
-                        │
-              Pi ────────┤
-                        │
-                  LOW AUTONOMY (HITL)
+                        HIGH AUTONOMY
+                              │
+               Devin ─────────┤
+                              │
+        OpenAI Codex ─────────┤
+                              │
+          Claude Code ────────┤
+                              │
+               Kiro ──────────┼──────── IDE
+    GitHub Copilot ───────────┤ (Coding Agent)
+TERMINAL ─────────────────────┼────────────────────
+         Gemini CLI ──────────┤
+                              │
+            Augment ──────────┤──────── IDE
+             Cursor ──────────┤──────── IDE
+            OpenCode ─────────┤
+                              │
+               Goose ─────────┤
+               Aider ─────────┤
+               Cline ─────────┤ (HITL-first)
+                              │
+                 Pi ──────────┤
+                              │
+                     LOW AUTONOMY (HITL)
 ```
 
 ---
@@ -356,12 +498,16 @@ TERMINAL ───────────────┼───────�
 |---|---|
 | Maximum autonomy, minimal supervision | Devin, Claude Code (KAIROS mode) |
 | Cloud-isolated task parallelism | OpenAI Codex |
-| Open source, self-hosted, compliance-sensitive | Pi, OpenCode, Cline, Goose |
+| Open source, self-hosted, compliance-sensitive | Pi, OpenCode, Cline, Goose, Aider |
 | AWS ecosystem, spec-driven workflows | Kiro |
 | VS Code integration with strong HITL | Cline |
 | Free tier with Google Search grounding | Gemini CLI |
 | General-purpose agent (not just coding) | Goose |
 | Multi-provider flexibility, LSP diagnostics | OpenCode |
+| Familiar VS Code UX, Fortune 500 scale | Cursor |
+| Git-first, audit-friendly terminal coding | Aider |
+| GitHub-integrated issue-to-PR automation | GitHub Copilot (Coding Agent) |
+| Large enterprise codebases, deep codebase context | Augment Code |
 
 ---
 
@@ -391,3 +537,7 @@ TERMINAL ───────────────┼───────�
 - [OpenCode](https://opencode.ai/) — Open-source terminal coding agent; 147K GitHub stars
 - [Pi GitHub](https://github.com/earendil-works/pi) — Minimal 4-tool terminal coding harness
 - [InfoQ: Claude Code source leak](https://www.infoq.com/news/2026/04/claude-code-source-leak/) — Packaging error exposed source map in npm v2.1.88
+- [Cursor](https://cursor.com) — AI-first IDE (VS Code fork); $2B ARR, Composer mode, background agents
+- [Aider GitHub](https://github.com/Aider-AI/aider) — Open-source git-native terminal coding agent; Apache 2.0
+- [GitHub Copilot Coding Agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) — GA announcement, September 2025
+- [Augment Code](https://www.augmentcode.com) — Enterprise AI coding agent; 200K-token Context Engine, 70% win rate vs Copilot
