@@ -462,3 +462,7 @@ This book presents a comprehensive pattern language for enterprise agentic AI. K
 ### Summary
 
 Bassim Eledath's 8-level framework is a practitioner-oriented progression model for teams adopting agentic AI in software engineering. Key contributions: the plan-delegate-assess-codify compounding loop (Level 4); context engineering as a prerequisite discipline (Level 3); the "levels 3–5 must be solid before levels 6–8" architectural constraint; harness engineering and automated feedback loops as the Level 6 inflection point; background agents (hub-and-spoke orchestration, cloud sandboxed VMs) as the current sweet spot for most teams (Level 7); and autonomous agent teams (Level 8) as an experimental frontier with unresolved coordination economics.
+
+## [2026-05-18] ingest | AI Coding Agents (pi.dev, opencode.ai, thenewstack.io/claude-code-source-leak, goose-docs.ai, cline.bot, code.claude.com, chatgpt.com/codex, github.com/google-gemini/gemini-cli, devin.ai, kiro.dev) | sections touched: AgenticFrameworks, AllThingsAnthropic, AllThingsOpenAI, AllThingsGoogle, AllThingsAWS
+
+## [2026-05-18] ingest | AI Coding Agents additions (factory.ai, warp.dev, IBM Bob) | sections touched: AgenticFrameworks

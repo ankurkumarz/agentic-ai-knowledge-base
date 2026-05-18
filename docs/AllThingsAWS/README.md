@@ -8,6 +8,7 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
+| Kiro | Amazon's spec-driven agentic IDE — specs as source of truth, agent hooks, Bedrock multi-model routing | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
 | AWS Strands Agents | Open-source SDK for building agents with tool use and multi-agent orchestration | [AgenticFrameworks/aws-strands.md](../AgenticFrameworks/aws-strands.md) |
 | AWS AgentCore | Managed runtime for deploying, scaling, and monitoring agents | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
 | AWS AI Agents Marketplace | Catalogue of pre-built agents and integrations available via AWS Marketplace | [Marketplace/aws-marketplace.md](../Marketplace/aws-marketplace.md) |

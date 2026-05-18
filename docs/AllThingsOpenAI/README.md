@@ -8,6 +8,7 @@ OpenAI's contributions to agentic AI include foundational design pattern documen
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
+| OpenAI Codex | Cloud coding agent — isolated sandbox, parallel tasks, Skills, Automations, computer-use via GPT-5.4, Codex Security | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
 | Agentic Design Patterns | OpenAI's canonical taxonomy of agent workflow patterns (reflection, tool use, planning, multi-agent) | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
 | Practical Guide to Building Agents | End-to-end production guide covering agent definition, model/tool/instruction design, orchestration (single-agent, manager, decentralized), guardrails, and HITL — distilled from OpenAI customer deployments | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
 | AutoGPT | Early open-source autonomous agent demonstrating long-horizon goal decomposition | [AgenticFrameworks/autogpt.md](../AgenticFrameworks/autogpt.md) |
