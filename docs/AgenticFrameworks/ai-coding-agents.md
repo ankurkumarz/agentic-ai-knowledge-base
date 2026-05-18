@@ -25,6 +25,9 @@ The category spans terminal-first CLIs, IDE extensions, cloud sandboxes, and sta
 | **Aider** | Paul Gauthier (open source) | Terminal CLI | Apache 2.0 | Claude, DeepSeek, GPT-4o, local | Git-native: every edit is a commit; 15B tokens/week |
 | **GitHub Copilot** | Microsoft / GitHub | VS Code + JetBrains + web | Proprietary | Multi-model (Claude, GPT, Gemini) | 150M users; Coding Agent assigns issues autonomously via PR |
 | **Augment Code** | Augment (enterprise) | IDE + CLI + code review | Proprietary | Multi-provider (MCP) | 200K-token Context Engine; 70% win rate vs Copilot |
+| **Factory AI** | Factory | Web + API + integrations | Proprietary | Claude (multi-model) | Specialized Droid agents for full SDLC; #1 on Terminal-Bench |
+| **Warp** | Warp | AI-native terminal | Freemium | Claude 3.5 Sonnet, GPT-4o | Terminal-as-IDE; Cloud Agents; agent marketplace; MCP |
+| **IBM Bob** | IBM | IDE + web + enterprise integrations | Proprietary (SaaS) | Claude, Mistral, IBM Granite | Role-based SDLC agents; 80K IBM employees; enterprise governance |
 
 ---
 
@@ -459,6 +462,114 @@ Augment is built specifically for large, complex codebases — the use cases whe
 
 ---
 
+## Factory AI
+
+**Type**: Agent-native software development platform (Droids)
+**Vendor**: Factory
+**Docs**: [factory.ai](https://factory.ai)
+**Launched**: May 28, 2025 (GA)
+
+Factory positions itself as the first agent-native software development platform. Rather than a single coding agent, Factory provides a fleet of specialized **Droids** — autonomous agents each optimized for a distinct role in the full software development lifecycle (SDLC). The platform integrates natively with GitHub/GitLab, Jira, Slack, and PagerDuty so every Droid sees the same context as the human team.
+
+### Droid Types
+
+| Droid | Role |
+|---|---|
+| **Code Droid** | Feature development, bug fixes, refactoring, implementation from ticket/spec/prompt |
+| **Knowledge Droid** | Codebase search, internet research, spec writing, documentation generation |
+| **Reliability Droid** | Production alert triage, root cause analysis, incident resolution, runbook authoring |
+| **Product Droid** | Backlog management, ticket prioritization, converting Slack threads into product specs |
+
+### Key Features
+
+- **Full SDLC coverage**: Droids handle coding, testing, PR review, deployment, incident response, and documentation — not just code generation.
+- **Terminal-Bench #1**: Droid with Opus scores 58.8% and Droid with Sonnet scores 50.5% on Terminal-Bench, surpassing Claude Code with Opus (43.2%).
+- **Org and user-level memory**: Retains decisions, documentation, and runbooks across sessions. Droids don't need to re-clone the codebase per session — memory persists across team turnover.
+- **Context-first architecture**: Native integrations (GitHub/GitLab, Jira, Slack, PagerDuty) plus real-time codebase indexing ensure every Droid has the same architecture diagrams, tickets, and code as the human team.
+- **Multi-model**: Routes between Opus (higher accuracy) and Sonnet (higher throughput) depending on task complexity.
+- **Fine-grained guardrails**: Controls over what Droids can autonomously execute, ensuring production-ready output without unintended changes.
+- **PR review**: Droids conduct thorough pull request reviews, catching issues and ensuring alignment with project goals.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (SaaS) |
+| LLM | Claude (Opus + Sonnet, multi-model) |
+| Open source | No |
+| Terminal-Bench score | 58.75% (#1 as of 2025) |
+| SDLC coverage | Full (code, docs, reliability, product) |
+| Production readiness | GA (May 2025) |
+
+---
+
+## Warp
+
+**Type**: AI-native terminal / agentic development environment
+**Vendor**: Warp
+**Docs**: [warp.dev](https://www.warp.dev)
+**Pricing**: Terminal free forever; AI usage metered (credit-based)
+
+Warp is not a coding extension — it is a terminal reimagined around AI-native workflows. The terminal itself is the IDE: Warp wraps every shell session with AI agents that can interpret natural language, generate commands, debug failures, and run multi-step autonomous tasks without leaving the command line.
+
+### Key Features
+
+- **Agent Mode**: Agents build, debug, and refactor code from a single natural-language prompt within the terminal. Agents manage threads, review changes, and support human-agent collaboration.
+- **Human-in-the-loop review**: Review agent-proposed changes, leave inline comments, and send them back for revision with one click. Agents notify you when they need attention (approve a command, confirm a plan, review a result).
+- **Agent Marketplace**: Community-built pre-packaged agent workflows (Django deployment, React refactoring, database migrations, etc.) that can be installed and reused.
+- **Cloud Agents (2026)**: Agents that run headlessly — reacting to webhooks, CI/CD events, or Slack messages without a developer sitting at a keyboard.
+- **MCP support (2026)**: First-class Model Context Protocol server integration, connecting terminal agents to external tools and data sources.
+- **Active AI suggestions**: Wired into shell history and exit codes — Warp proactively suggests fixes when commands fail, based on the actual error output.
+- **Multi-model**: Claude 3.5 Sonnet (default), Claude 3.5 Haiku, GPT-4o.
+- **Cross-platform**: macOS, Linux, and Windows.
+
+### Pricing
+
+Terminal is free forever. AI features use a credit-based model introduced in 2025 — light users stay within free limits; heavier AI use draws from a credit pool.
+
+| Dimension | Signal |
+|---|---|
+| License | Freemium (terminal free, AI metered) |
+| LLM | Claude 3.5 Sonnet/Haiku, GPT-4o |
+| Open source | No |
+| Primary interface | AI-native terminal |
+| Cloud Agents | Yes (headless, event-driven) |
+| MCP support | Yes (2026) |
+| Production readiness | GA |
+
+---
+
+## IBM Bob
+
+**Type**: Enterprise AI development partner (full SDLC)
+**Vendor**: IBM
+**Docs**: [ibm.com/products/ai-coding-agent](https://www.ibm.com/products/ai-coding-agent)
+**Launched**: GA April 28, 2026 (internal since June 2025)
+
+IBM Bob is IBM's enterprise-grade AI development partner, built to take teams from AI-assisted coding to production-ready software with the governance and security controls large enterprises require. It launched internally at IBM in June 2025 with 100 developers and is now in use by over 80,000 IBM employees worldwide. Bob's design principle is to embed an AI partner into every role across the SDLC — from architect to security engineer — coordinating specialized role-based agents through governed workflows.
+
+### Key Features
+
+- **Full SDLC coverage**: Agentic AI embedded across discovery, planning, design, coding, testing, deployment, and operations — not limited to code generation.
+- **Role-based agents**: Specialized agents aligned to SDLC roles (architect, developer, QA, security engineer, operations). Each agent is scoped to its domain with appropriate permissions.
+- **Multi-model routing**: Dynamically routes tasks to the best-fit model based on accuracy, performance, and cost — drawing on Anthropic Claude, Mistral open-source models, and IBM Granite.
+- **Human checkpoints**: Governed workflows include structured human approval gates, ensuring AI autonomy does not bypass enterprise oversight requirements.
+- **Reusable skills**: Agents share a library of reusable skills that encode organizational standards and procedures, reducing drift across teams.
+- **Legacy modernization**: Demonstrated strength in code modernization. Blue Pearl completed a typical 30-day Java upgrade in 3 days using Bob, saving over 160 engineering hours.
+- **Enterprise governance**: Built-in security controls, compliance guardrails, and audit trails designed for regulated industries.
+- **Productivity results**: IBM employees self-reported an average 45% productivity gain across modernization, security review, and new development work.
+- **Bobcoins**: IBM's internal credit metric used for pricing transparency and predictability across subscription tiers.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (IBM SaaS) |
+| LLM | Claude (Anthropic), Mistral, IBM Granite |
+| Open source | No |
+| Internal adoption | 80,000+ IBM employees |
+| Productivity gain (self-reported) | 45% average |
+| Enterprise governance | Yes (human checkpoints, audit trails) |
+| Production readiness | GA (April 2026) |
+
+---
+
 ## Positioning Map
 
 These tools occupy distinct positions across two axes: **interface** (terminal ↔ full IDE) and **autonomy** (HITL-first ↔ fully autonomous).
@@ -469,6 +580,8 @@ These tools occupy distinct positions across two axes: **interface** (terminal �
                Devin ─────────┤
                               │
         OpenAI Codex ─────────┤
+          Factory AI ─────────┤
+             IBM Bob ─────────┤──────── Enterprise
                               │
           Claude Code ────────┤
                               │
@@ -476,6 +589,7 @@ These tools occupy distinct positions across two axes: **interface** (terminal �
     GitHub Copilot ───────────┤ (Coding Agent)
 TERMINAL ─────────────────────┼────────────────────
          Gemini CLI ──────────┤
+               Warp ──────────┤
                               │
             Augment ──────────┤──────── IDE
              Cursor ──────────┤──────── IDE
@@ -508,6 +622,9 @@ TERMINAL ─────────────────────┼─�
 | Git-first, audit-friendly terminal coding | Aider |
 | GitHub-integrated issue-to-PR automation | GitHub Copilot (Coding Agent) |
 | Large enterprise codebases, deep codebase context | Augment Code |
+| Full SDLC automation with specialized role agents | Factory AI |
+| AI-augmented terminal with Cloud Agents and MCP | Warp |
+| IBM ecosystem, enterprise governance, legacy modernization | IBM Bob |
 
 ---
 
@@ -541,3 +658,6 @@ TERMINAL ─────────────────────┼─�
 - [Aider GitHub](https://github.com/Aider-AI/aider) — Open-source git-native terminal coding agent; Apache 2.0
 - [GitHub Copilot Coding Agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) — GA announcement, September 2025
 - [Augment Code](https://www.augmentcode.com) — Enterprise AI coding agent; 200K-token Context Engine, 70% win rate vs Copilot
+- [Factory AI](https://factory.ai) — Agent-native SDLC platform; Droid fleet; Terminal-Bench #1 (58.75%)
+- [Warp](https://www.warp.dev) — AI-native terminal; Cloud Agents; agent marketplace; MCP support
+- [IBM Bob announcement](https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software) — GA April 2026; 80,000+ IBM employees; role-based SDLC agents; multi-model routing
