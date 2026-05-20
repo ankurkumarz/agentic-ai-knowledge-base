@@ -12,6 +12,8 @@ Microsoft's agentic AI strategy centres on Azure AI services, the open-source Se
 | Semantic Kernel | Open-source SDK for integrating LLMs into .NET, Python, and Java applications | [AgenticFrameworks/semantic-kernel.md](../AgenticFrameworks/semantic-kernel.md) |
 | AutoGen | Microsoft Research framework for multi-agent conversation and orchestration | [AgenticFrameworks/autogen.md](../AgenticFrameworks/autogen.md) |
 | Azure AI Agent Service | Managed Azure platform for deploying, running, and monitoring agents | [AgentPlatforms/microsoft-azure.md](../AgentPlatforms/microsoft-azure.md) |
+| Azure AI Foundry Agent Service | Developer-grade managed runtime with Entra identity, private networking, multi-framework SDK (LangGraph, Claude, OpenAI), scale-to-zero | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
+| Microsoft Copilot Studio | Low-code agent builder for M365/Teams; 160,000 organizations, 400,000+ custom agents (May 2026) | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
 
 ## See Also
 

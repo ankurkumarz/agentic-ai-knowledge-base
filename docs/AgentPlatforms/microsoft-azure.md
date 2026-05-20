@@ -140,9 +140,11 @@ Microsoft Azure AI Agent Service provides a comprehensive platform for building,
 - **Best Practices**: [Azure AI Best Practices](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/)
 - **Announcement Blog**: [Introducing Azure AI Agent Service](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-azure-ai-agent-service/4298357)
 
-## Related Sections
+## See Also
 
-- **Section 4.5**: Microsoft Agent Framework
-- **Section 4.7**: Semantic Kernel
-- **Section 11.2**: Microsoft Security Perspective
-- **Section 16.3**: Microsoft Best Practices
+- [Enterprise Agentic AI Platforms (2026)](enterprise-platforms-2026.md)
+- [Microsoft Agent Framework](../AgenticFrameworks/microsoft-framework.md)
+- [Semantic Kernel](../AgenticFrameworks/semantic-kernel.md)
+- [AllThingsMicrosoft](../AllThingsMicrosoft/README.md)
+- [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
+- [Production Best Practices — Security](../ProductionBestPractices/security.md)

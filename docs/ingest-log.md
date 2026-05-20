@@ -466,3 +466,19 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 ## [2026-05-18] ingest | AI Coding Agents (pi.dev, opencode.ai, thenewstack.io/claude-code-source-leak, goose-docs.ai, cline.bot, code.claude.com, chatgpt.com/codex, github.com/google-gemini/gemini-cli, devin.ai, kiro.dev) | sections touched: AgenticFrameworks, AllThingsAnthropic, AllThingsOpenAI, AllThingsGoogle, AllThingsAWS
 
 ## [2026-05-18] ingest | AI Coding Agents additions (factory.ai, warp.dev, IBM Bob) | sections touched: AgenticFrameworks
+
+## [2026-05-20] ingest | Best Enterprise Level Agentic AI Platforms for 2026 (MarkTechPost) | sections touched: AgentPlatforms/enterprise-platforms-2026 (new), AllThingsMicrosoft/README, AllThingsGoogle/README, index.md, mkdocs.yml
+
+**Source**: https://www.marktechpost.com/2026/05/19/best-enterprise-level-agentic-ai-platforms-for-2026/
+**Type**: Vendor/platform comparison guide (May 2026, MarkTechPost)
+**Note**: Direct URL returned HTTP 403; content extracted via WebSearch and supplementary searches across platform documentation and analyst sources.
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/enterprise-platforms-2026.md` | Created | New page covering all 10 platforms ranked by production readiness: Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, Google Gemini Enterprise, LangGraph, Kore.ai, UiPath Maestro, Azure AI Foundry Agent Service, IBM watsonx Orchestrate, CrewAI Enterprise — with pricing, adoption data, strengths, limitations, and a use-case selection guide |
+| `docs/AllThingsMicrosoft/README.md` | Extended | Added hub rows for Azure AI Foundry Agent Service and Microsoft Copilot Studio with backlinks |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Gemini Enterprise platform comparison with backlink |
+| `docs/index.md` | Extended | Updated section 5 bullet to mention the new enterprise platform comparison |
+| `mkdocs.yml` | Extended | Added 5.2.5 Enterprise Agentic AI Platforms (2026) nav entry |
