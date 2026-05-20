@@ -14,6 +14,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | SAIF Framework | Secure AI Framework — Google's security reference model for AI workloads | [SecurityFrameworks/google-saif.md](../SecurityFrameworks/google-saif.md) |
 | GenOps | Google Cloud's evolution of MLOps adapted for generative AI and agent lifecycle management | [AgentOps/genops.md](../AgentOps/genops.md) |
 | Google Maturity Model | Google's perspective on agentic AI adoption maturity stages | [MaturityModels/google.md](../MaturityModels/google.md) |
+| Gemini Enterprise — Enterprise Comparison | Gemini platform in the context of the top 10 enterprise agentic AI platforms for 2026 | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
 
 ## See Also
 
