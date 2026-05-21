@@ -129,6 +129,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Security Standards**: NIST AI Risk Management Framework
 - **Google Perspective**: SAIF Framework and secure AI agents approach
 - **AWS Perspective**: Generative AI Security Scoping Matrix
+- **Microsoft Perspective**: Agent Governance Toolkit — runtime governance with deterministic policy enforcement (YAML/OPA/Cedar), zero-trust identity, execution sandboxing, MCP Security Gateway; covers all 10 OWASP Agentic Top 10 risks
 - **Risk Management**: Rogue actions, data disclosure, prompt injection, and mitigation strategies
 
 ### **Cost Management**

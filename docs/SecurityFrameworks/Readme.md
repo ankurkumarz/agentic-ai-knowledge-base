@@ -201,9 +201,29 @@ The **AI Security Scoping Matrix** is a comprehensive framework designed to help
 
 This security framework provides the foundation for building trustworthy, secure, and compliant agentic AI systems that can operate safely in production environments while maintaining the flexibility and capabilities that make AI agents valuable.
 
+## Microsoft Perspective
+
+### Agent Governance Toolkit
+
+Microsoft's **[Agent Governance Toolkit (AGT)](./agent-governance-toolkit.md)** takes a middleware-layer approach to runtime governance — deterministic policy enforcement, zero-trust identity, and execution sandboxing applied to every agent action before it executes. Key characteristics:
+
+- **Policy engine**: YAML / OPA Rego / Cedar rules with 0.012 ms p50 latency; fail-closed design achieves 0.00% policy violation pass-through
+- **Zero-trust identity**: Ed25519 + quantum-safe ML-DSA-65 credentials; behavioral trust scores (0–1000) with decay on anomalous behavior; SPIFFE/SVID compatible
+- **Execution rings**: Four hardware-inspired privilege levels; Saga orchestration with automatic compensation; fleet-wide kill switch
+- **MCP Security Gateway**: Tool poisoning detection, description drift monitoring, typosquatting checks for Model Context Protocol tools
+- **Agent SRE**: SLOs, error budgets, circuit breakers, replay debugging, OpenTelemetry-native governance events
+- **Compliance**: Merkle-chained audit logs, Decision BOM, automated EU AI Act / SOC 2 / HIPAA / GDPR evidence
+- **OWASP coverage**: All 10 OWASP Agentic Top 10 risks addressed; 13,000+ tests across 10 formal specifications
+- **Adapters**: 20+ frameworks (LangChain, AutoGen, CrewAI, Semantic Kernel, Google ADK, OpenAI Agents SDK, etc.); Python, TypeScript, .NET, Rust, Go SDKs
+
+See [Agent Governance Toolkit](./agent-governance-toolkit.md) for full detail.
+
 ## See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Security considerations for frameworks
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform security features
 - **[Standards](../Standards/README.md)**: Security standards and protocols
 - **[Best Practices](../ProductionBestPractices/README.md)**: Security best practices
+- **[Agent Governance Toolkit](./agent-governance-toolkit.md)**: Microsoft runtime governance for agents
+- **[MCP Standard](../Standards/mcp.md)**: Model Context Protocol (MCP Security Gateway target)
+- **[AI Governance Solutions](../AIGovernance/governance-solutions.md)**: Governance platforms and tooling

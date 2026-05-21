@@ -482,3 +482,20 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Gemini Enterprise platform comparison with backlink |
 | `docs/index.md` | Extended | Updated section 5 bullet to mention the new enterprise platform comparison |
 | `mkdocs.yml` | Extended | Added 5.2.5 Enterprise Agentic AI Platforms (2026) nav entry |
+
+## [2026-05-21] ingest | Microsoft Agent Governance Toolkit (GitHub) | sections touched: SecurityFrameworks/agent-governance-toolkit (new), SecurityFrameworks/Readme, ProductionBestPractices/security, AIGovernance/governance-solutions, AllThingsMicrosoft/README, index.md, mkdocs.yml
+
+**Source**: https://github.com/microsoft/agent-governance-toolkit
+**Type**: Open-source governance toolkit (Microsoft, MIT license, public preview, v3.7.0)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/SecurityFrameworks/agent-governance-toolkit.md` | Created | New page covering policy engine (YAML/OPA/Cedar, 0.012ms p50), zero-trust identity (Ed25519 + ML-DSA-65, SPIFFE/SVID), four execution rings, MCP Security Gateway, Agent SRE (circuit breakers, replay debugging, OpenTelemetry), audit/compliance (Merkle chains, EU AI Act/SOC2/HIPAA/GDPR), OWASP Agentic Top 10 full coverage, 992 conformance tests across 10 specs, 20+ framework adapters |
+| `docs/SecurityFrameworks/Readme.md` | Extended | Added Microsoft Perspective section with AGT capability summary and updated See Also links |
+| `docs/ProductionBestPractices/security.md` | Extended | Added AGT row to Security Frameworks Reference table; added 3 new Best Practices rows: deterministic policy enforcement, trust ceiling propagation, MCP tool tampering mitigation |
+| `docs/AIGovernance/governance-solutions.md` | Extended | Added AGT row to Microsoft Azure vendor-native governance table |
+| `docs/AllThingsMicrosoft/README.md` | Extended | Added hub row for Agent Governance Toolkit with backlink |
+| `docs/index.md` | Extended | Updated Agent Security bullet to include Microsoft Perspective / AGT |
+| `mkdocs.yml` | Extended | Added 11.4 Microsoft Perspective → 11.4.1 Agent Governance Toolkit nav entry |
