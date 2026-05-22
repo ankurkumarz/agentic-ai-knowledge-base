@@ -499,3 +499,19 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsMicrosoft/README.md` | Extended | Added hub row for Agent Governance Toolkit with backlink |
 | `docs/index.md` | Extended | Updated Agent Security bullet to include Microsoft Perspective / AGT |
 | `mkdocs.yml` | Extended | Added 11.4 Microsoft Perspective → 11.4.1 Agent Governance Toolkit nav entry |
+
+## [2026-05-22] ingest | Memory and dreaming for self-learning agents (YouTube — Anthropic) | sections touched: AgentPlatforms/claude-managed-agents (new), AllThingsAnthropic/README, AgentMemory/ltm-strategies, ReferenceArchitecture/self-learning-agents, ProductionBestPractices/state-memory, mkdocs.yml
+
+**Source**: https://youtu.be/RtywqDFBYnQ
+**Type**: YouTube video — Anthropic product announcement, May 2026
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/claude-managed-agents.md` | Created | New page covering Claude Managed Agents platform: Memory (filesystem-based, public beta), Dreaming (scheduled memory consolidation inspired by hippocampal sleep, research preview), Outcomes (self-grading rubric loop with isolated grader, +10pp task success, 6× Harvey result), Multiagent Orchestration (parallel specialists on shared FS, public beta) |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added 4 new hub rows: Claude Managed Agents platform, Dreaming, Outcomes, Multiagent Orchestration; updated See Also |
+| `docs/AgentMemory/ltm-strategies.md` | Extended | Added Strategy 6: Dreaming as a productized Reflection/Consolidation pattern; added Claude Managed Agents to LTM solutions table; updated See Also |
+| `docs/ReferenceArchitecture/self-learning-agents.md` | Extended | Added Anthropic Dreaming vs Agent0 comparison table; added Dreaming Loop description; added See Also section |
+| `docs/ProductionBestPractices/state-memory.md` | Extended | Added 2 new best practice rows (self-improvement without retraining, self-evaluation via Outcomes); added Claude Managed Agents to solutions table; updated See Also |
+| `mkdocs.yml` | Extended | Added 5.2.6 Claude Managed Agents (Anthropic) nav entry |

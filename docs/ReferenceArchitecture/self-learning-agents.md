@@ -253,8 +253,38 @@ results = framework.evolve(
 - **Interpretability**: Understanding the learning and evolution process
 - **Safety**: Ensuring beneficial and aligned self-improvement
 
+## Anthropic: Dreaming and Outcomes as Production Self-Learning
+
+Anthropic's May 2026 Claude Managed Agents release provides a production-ready, non-RL implementation of self-learning that contrasts with Agent0's co-evolutionary approach:
+
+| Dimension | Agent0 (Stanford, 2025) | Claude Managed Agents (Anthropic, 2026) |
+|---|---|---|
+| Learning mechanism | RL-based co-evolution between curriculum and executor agents | Scheduled memory consolidation (dreaming) + self-grading loop (outcomes) |
+| Training requirement | Requires co-evolution training cycles | No retraining — improvement through memory consolidation only |
+| Feedback signal | Task success rate across curriculum | Developer-authored rubric evaluated by isolated grader agent |
+| Memory model | Model weights updated via RL | Filesystem-based text memory, updated between sessions |
+| Improvement granularity | Model-level generalization | Session-to-session memory updates |
+| Production availability | Research framework | Managed cloud API (public beta + research preview) |
+
+### Dreaming Loop (Anthropic)
+
+1. Agent executes task, writes episodic memory during the session
+2. **Outcomes** evaluator (separate context) scores result against rubric; agent iterates
+3. **Dreaming** runs between sessions: reviews episodic logs, extracts patterns, removes stale facts, consolidates procedural improvements
+4. Next session inherits enriched memory — no model retraining required
+
+This is the first major first-party productization of the Reflection/Consolidation LTM strategy from the CoALA taxonomy at scale, with documented ~6× task completion gains (Harvey, legal AI, May 2026).
+
 ## Related Architectures
 
 - [AI Automation](ai-automation.md): For structured workflow automation
 - [AI Assistant Architecture](ai-assistant-architecture.md): For interactive assistant systems
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md): Advanced coordination patterns
+- [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md): Production dreaming and outcomes implementation
+- [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md): Memory consolidation strategies
+
+## See Also
+
+- [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md)
+- [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md)
+- [Agent Memory Management](../AgentMemory/README.md)

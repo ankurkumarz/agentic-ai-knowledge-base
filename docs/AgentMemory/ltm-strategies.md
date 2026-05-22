@@ -130,7 +130,31 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 
 ---
 
-### 6. Episodic Logging
+### 6. Dreaming (Scheduled Memory Consolidation)
+
+**Memory type**: Procedural and Semantic
+
+**Mechanism**: A scheduled process that runs **between** agent sessions — not during active task execution. The agent reviews its own episodic logs, extracts patterns, merges new signal into existing topic files, removes outdated or contradicted facts, and consolidates reusable learnings into structured memory. Named by Anthropic as a deliberate reference to hippocampal memory consolidation during biological sleep.
+
+**Best For**: Long-running agents that accumulate experience over many sessions and need to self-improve without retraining. Especially valuable when the same agent handles recurring workflows or team-level preferences need to propagate across sessions.
+
+**Storage**: Filesystem-based memory (text/markdown files); works alongside any episodic log store
+
+**How It Works (Anthropic Claude Managed Agents implementation)**:
+1. Between sessions, a dreaming process reviews all episodic memory collected since the last dream
+2. New signal is merged into existing topic files rather than creating near-duplicates
+3. Relative dates are converted to absolute dates for temporal durability
+4. Contradicted facts are deleted; recurring patterns (repeated mistakes, team preferences) are promoted to procedural memory
+5. A master index file (kept under 200 lines) is updated to link to memory topic files
+6. Developer can configure automatic application or human review before changes land
+
+**Production evidence**: Harvey (legal AI) reported ~6× jump in task completion rates using Dreaming + Outcomes on Claude Managed Agents (May 2026).
+
+**Relationship to Reflection/Consolidation**: Dreaming is a productized, scheduled implementation of the Reflection/Consolidation strategy described in the CoALA taxonomy — same conceptual foundation, with concrete operational controls.
+
+---
+
+### 7. Episodic Logging
 
 **Memory type**: Episodic
 
@@ -148,7 +172,7 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 
 ---
 
-### 7. Procedural Memory Encoding
+### 8. Procedural Memory Encoding
 
 **Memory type**: Procedural
 
@@ -189,6 +213,7 @@ Quick reference:
 | **Graphiti (Zep)** | Semantic, Episodic | Yes (Apache 2.0) | Temporal/relational reasoning |
 | **Letta** | Working, Semantic, Episodic | Yes (Apache 2.0) | OS-inspired autonomous agents |
 | **LangMem** | Semantic, Episodic, Procedural | Yes (MIT) | LangGraph-native memory |
+| **Claude Managed Agents Memory + Dreaming** | Episodic, Semantic, Procedural | No | Filesystem-based memory with scheduled consolidation (dreaming) and self-grading (outcomes) |
 | **AWS AgentCore Memory** | Working, Semantic, Episodic | No | AWS-native managed memory |
 | **Vertex Memory Bank** | Semantic | No | GCP-native managed memory |
 | **Azure Foundry Memory** | Working, Semantic | No | Azure-native managed memory |
@@ -229,3 +254,5 @@ Most production systems combine multiple strategies:
 - [Short-term / Working Memory Management](short-term.md)
 - [Agent Memory README](README.md)
 - [Research Papers](research-papers.md)
+- [Claude Managed Agents — Dreaming & Outcomes](../AgentPlatforms/claude-managed-agents.md)
+- [Self-Learning Agents Reference Architecture](../ReferenceArchitecture/self-learning-agents.md)
