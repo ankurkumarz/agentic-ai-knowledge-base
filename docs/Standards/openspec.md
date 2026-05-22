@@ -105,6 +105,7 @@ OpenSpec's primary differentiator is that it solves unpredictability when requir
 - [Model Context Protocol](./mcp.md)
 - [Agent2Agent (A2A) Protocol](./agent2agent.md)
 - [AG-UI Protocol](./README.md)
+- [AIDLC Workflows (AWS)](./aidlc.md)
 - [AgentHarness Engineering](../AgentHarness/harness-engineering.md)
 - [Context Engineering](../ContextEngineering/)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)

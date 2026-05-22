@@ -15,6 +15,7 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 | AWS GenAI Maturity Model | Framework for assessing and advancing generative AI adoption | [MaturityModels/aws-genai.md](../MaturityModels/aws-genai.md) |
 | AWS Agentic Maturity Model | Staged model for measuring agent deployment readiness | [MaturityModels/aws.md](../MaturityModels/aws.md) |
 | AWS Security Perspective | AWS guidance on securing agentic AI workloads | [SecurityFrameworks/Readme.md](../SecurityFrameworks/Readme.md) |
+| AIDLC Workflows | AI-Driven Development Life Cycle — methodology-first framework guiding AI coding agents through structured Inception → Construction → Operations phases with approval gates | [Standards/aidlc.md](../Standards/aidlc.md) |
 
 ## See Also
 

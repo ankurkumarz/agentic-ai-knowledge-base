@@ -5,6 +5,24 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-22] ingest | AIDLC Workflows (AWS Labs) v0.1.8 | sections touched: Standards/aidlc.md (new), AllThingsAWS/README.md, ProductionBestPractices/testing-evaluations.md, Standards/openspec.md, index.md, mkdocs.yml
+
+**Source**: https://github.com/awslabs/aidlc-workflows + https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/
+**Type**: Open-source framework (MIT-0), AWS Labs, v0.1.8, April 2026
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/aidlc.md` | Created | Full coverage: tenets, three-phase workflow (Inception/Construction/Operations), artifact structure, platform integration table (6 tools), extensions system, AIDLC Evaluator, Design Reviewer, comparison table vs OpenSpec and Kiro, best practices, See Also |
+| `docs/AllThingsAWS/README.md` | Updated | Added AIDLC hub row |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Updated | Added AIDLC Evaluator to Evaluation Frameworks table |
+| `docs/Standards/openspec.md` | Updated | Added AIDLC to See Also for bidirectional graph edge |
+| `docs/index.md` | Updated | Added AIDLC bullet to section 6 |
+| `mkdocs.yml` | Updated | Added Section 6.7: AIDLC Workflows (AWS) |
+
+---
+
 ## [2026-05-22] update | OpenSpec (Fission AI) v1.3.1 | sections touched: Standards/openspec.md, AllThingsOpenAI/README.md
 
 **Source**: https://github.com/Fission-AI/OpenSpec

@@ -36,6 +36,7 @@ Evaluation operates at multiple levels:
 | [RAGAS](https://www.ragas.io/) | Open source | RAG-specific metrics (faithfulness, relevance, context recall) |
 | [MLFlow LLM Evaluate](https://mlflow.org/docs/latest/llms/llm-evaluate/) | Open source | Integration into existing ML pipelines |
 | [LangChain OpenEvals](https://github.com/langchain-ai/openevals) | Open source | LLM-as-judge with pre-built rubrics |
+| [AIDLC Evaluator](../Standards/aidlc.md) | Open source (AWS Labs) | Golden test cases, semantic evaluation, code analysis (linting, security), NFR testing (tokens, execution time), CI/CD integration — bundled with AIDLC Workflows framework |
 
 ## Evaluation Platforms
 
