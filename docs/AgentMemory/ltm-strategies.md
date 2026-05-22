@@ -134,23 +134,32 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 
 **Memory type**: Procedural and Semantic
 
-**Mechanism**: A scheduled process that runs **between** agent sessions — not during active task execution. The agent reviews its own episodic logs, extracts patterns, merges new signal into existing topic files, removes outdated or contradicted facts, and consolidates reusable learnings into structured memory. Named by Anthropic as a deliberate reference to hippocampal memory consolidation during biological sleep.
+**Mechanism**: A scheduled asynchronous job that runs **between** agent sessions — not during active task execution. The agent reviews its own episodic session transcripts alongside an existing memory store, deduplicates content, removes outdated or contradicted facts, and consolidates reusable learnings into a **new, reorganized memory store**. The input store is never modified (non-destructive). Named by Anthropic as a deliberate reference to hippocampal memory consolidation during biological sleep.
 
-**Best For**: Long-running agents that accumulate experience over many sessions and need to self-improve without retraining. Especially valuable when the same agent handles recurring workflows or team-level preferences need to propagate across sessions.
+**Best For**: Long-running agents that accumulate experience over many sessions and need to self-improve without retraining. Particularly valuable when the same agent handles recurring workflows or team-level preferences need to propagate across sessions.
 
-**Storage**: Filesystem-based memory (text/markdown files); works alongside any episodic log store
+**Storage**: Filesystem-based memory stores (text/markdown files, addressed by path); managed as workspace-scoped collections
 
 **How It Works (Anthropic Claude Managed Agents implementation)**:
-1. Between sessions, a dreaming process reviews all episodic memory collected since the last dream
-2. New signal is merged into existing topic files rather than creating near-duplicates
-3. Relative dates are converted to absolute dates for temporal durability
-4. Contradicted facts are deleted; recurring patterns (repeated mistakes, team preferences) are promoted to procedural memory
-5. A master index file (kept under 200 lines) is updated to link to memory topic files
-6. Developer can configure automatic application or human review before changes land
+1. Developer submits a dream job via `POST /v1/dreams` with an input memory store + 1–100 past session IDs
+2. Dream runs asynchronously (minutes to tens of minutes); lifecycle: `pending → running → completed/failed/canceled`
+3. While running, the pipeline can be watched in real time via the session event stream (`dream.session_id`)
+4. On completion, a new output memory store is created — review it via API or Console, then either attach to future sessions or discard
+5. The input memory store and input sessions are never modified
+
+**Key operations performed during dreaming**:
+- Merges new signal into existing topic files rather than creating near-duplicates
+- Removes outdated or contradicted facts
+- Converts relative dates to absolute dates for temporal durability
+- Surfaces recurring patterns: repeated mistakes, team preferences, converged workflows
+
+**Supported models**: `claude-opus-4-7`, `claude-sonnet-4-6`  
+**Session input limit**: 100 sessions per dream  
+**Billing**: Standard token rates; scales linearly with session count and length
 
 **Production evidence**: Harvey (legal AI) reported ~6× jump in task completion rates using Dreaming + Outcomes on Claude Managed Agents (May 2026).
 
-**Relationship to Reflection/Consolidation**: Dreaming is a productized, scheduled implementation of the Reflection/Consolidation strategy described in the CoALA taxonomy — same conceptual foundation, with concrete operational controls.
+**Relationship to Reflection/Consolidation**: Dreaming is a productized, scheduled, and non-destructive implementation of the Reflection/Consolidation strategy from the CoALA taxonomy — same conceptual foundation, with concrete API controls, lifecycle management, and audit trail.
 
 ---
 
