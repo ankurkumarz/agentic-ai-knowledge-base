@@ -5,6 +5,20 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-22] update | OpenSpec (Fission AI) v1.3.1 | sections touched: Standards/openspec.md, AllThingsOpenAI/README.md
+
+**Source**: https://github.com/Fission-AI/OpenSpec
+**Type**: OSS framework update — rewrote page from stub/pre-release to production-grade v1.3.1 (50.1k stars, MIT)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/openspec.md` | Full rewrite | Updated from "upcoming standard / early development" to v1.3.1; added `/opsx` workflow, artifact structure table, comparison table (vs. Kiro, GitHub Spec Kit), best practices, correct attribution (Fission AI, not OpenAI) |
+| `docs/AllThingsOpenAI/README.md` | Corrected | Removed incorrect OpenSpec row — OpenSpec is a Fission AI project with no OpenAI affiliation |
+
+---
+
 ## [2026-05-17] ingest | OpenClaw | sections touched: AgentPlatforms/openclaw (new), AgentPlatforms/README, AgentPlatforms/hermes-agent, mkdocs.yml
 
 **Source**: https://openclaw.ai/ + https://github.com/openclaw/openclaw + https://github.com/openclaw/clawhub
