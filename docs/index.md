@@ -67,6 +67,7 @@ Comprehensive coverage of major development frameworks:
 - **Agent2Agent (A2A) Protocol**: Google's agent interoperability standard
 - **AGENTS.md**: Industry standard for AI agent instructions
 - **OpenSpec & AG-UI**: Emerging standards for development and interfaces
+- **AIDLC Workflows (AWS)**: Methodology-first AI-driven development lifecycle with structured Inception → Construction phases, approval gates, and a built-in evaluator for CI/CD quality gates
 
 ### **7. Agentic AI Reference Architecture**
 - **AI Automation**: LangManus framework and automation patterns
