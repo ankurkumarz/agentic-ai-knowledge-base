@@ -36,6 +36,9 @@ Google's three-layer defense model addresses both:
 | Compromised agent in a multi-agent mesh | A compromised agent sends malicious payloads to peers, spreading the attack laterally | Trusted all inter-agent messages as internal; one compromised node propagated injected content to others | **Agent Mesh Defense** pattern: route all inter-agent communication through a firewall agent that validates message schemas and enforces policy before forwarding; treat every agent boundary as a trust boundary |
 | Adversarial instruction injection | Malicious inputs in retrieved content redirect an agent to ignore its own constraints — a silent override | No self-monitoring; agent executed injected instructions silently alongside legitimate ones | **Agent Self-Defense** pattern: maintain an internal anomaly-detection layer that flags instruction patterns attempting to override system constraints; agent refuses and alerts rather than executing |
 | Uncontrolled code execution side effects | An agent executing code or calling external APIs causes unintended side effects on shared infrastructure | Ran agent tasks in shared process with full I/O access; one runaway agent corrupted shared state | **Execution Envelope Isolation (Sandboxing)**: isolate agent code execution in a container or VM with enforced resource limits and restricted I/O; use ephemeral execution contexts destroyed after task completion |
+| No deterministic policy enforcement | Prompt-based safety instructions can be bypassed; cannot guarantee 0% violation rate | Relied on system prompt rules; adversarial inputs circumvented them | Use a middleware policy engine (e.g., Microsoft AGT) that evaluates YAML/OPA/Cedar rules before execution; fail-closed design ensures errors result in denial rather than pass-through |
+| Privilege escalation through agent delegation | A lower-trust delegated agent inherits excessive permissions from its orchestrator | Forwarded full credentials to sub-agents for convenience; compromised sub-agent gained orchestrator-level access | Apply trust ceiling propagation: delegated agents cannot exceed parent trust level; use scoped, time-limited credentials per task |
+| MCP tool tampering | Tool descriptions in Model Context Protocol integrations are modified to inject hidden instructions | Trusted MCP tool metadata without verification; agent executed poisoned tool logic | Deploy an MCP Security Gateway layer that monitors for description drift, typosquatting, and hidden instruction patterns on every tool invocation |
 
 ## Security Frameworks Reference
 
@@ -44,6 +47,7 @@ Google's three-layer defense model addresses both:
 | [NIST AI RMF](https://doi.org/10.6028/NIST.AI.100-1) | NIST | Risk-based governance across the full AI lifecycle (Govern, Map, Measure, Manage) |
 | [SAIF](https://safety.google/safety/saif/) | Google | Secure foundation, development, deployment, and operations for AI systems |
 | [Generative AI Security Scoping Matrix](https://aws.amazon.com/ai/security/generative-ai-scoping-matrix/) | AWS | Security controls mapped to FM application types across the AI lifecycle |
+| [Agent Governance Toolkit](../SecurityFrameworks/agent-governance-toolkit.md) | Microsoft | Runtime governance: deterministic policy engine (YAML/OPA/Cedar), zero-trust identity, execution rings, MCP security gateway; covers all 10 OWASP Agentic risks |
 
 ## Security Controls by Risk Level
 

@@ -98,6 +98,7 @@ Credo AI is a governance platform that connects policy to technical controls:
 | **Azure Policy** | Automated policy enforcement for Azure AI resource configurations |
 | **Microsoft Responsible AI Standard** | Internal framework published as guidance for external practitioners |
 | **Prompt Shields (Azure AI Studio)** | Prompt injection and jailbreak detection for Azure OpenAI deployments |
+| **[Agent Governance Toolkit (AGT)](../SecurityFrameworks/agent-governance-toolkit.md)** | Runtime governance for autonomous agents: deterministic policy engine (YAML/OPA/Cedar), zero-trust Ed25519 + post-quantum ML-DSA-65 credentials, four-ring execution sandboxing, MCP Security Gateway, Merkle-chained audit logs, automated EU AI Act / SOC 2 / HIPAA / GDPR compliance evidence; covers all 10 OWASP Agentic Top 10 risks; open-source MIT license |
 
 ### Anthropic
 
