@@ -24,8 +24,10 @@ Agent memory operates across three functional tiers:
 | Memory retrieval relevance | Fetching too much irrelevant context degrades response quality | Retrieved top-K by embedding similarity alone; pulled in unrelated facts | Combine semantic search with metadata filters (recency, entity type, session ID) |
 | Memory privacy and isolation | User A's memory leaking into User B's context | Shared embedding space across users; namespace collisions occurred | Enforce strict tenant/user namespacing in all memory stores; audit access patterns |
 | Implicit vs explicit memory | Agents miss important facts not explicitly stated by users | Relied on users to say "remember this"; most didn't | Run a background extraction LLM to monitor conversations and auto-save key facts |
-| Memory staleness | Stored facts become outdated as user context changes | Kept all facts indefinitely; agents acted on stale preferences | Attach TTLs to volatile facts; use temporal graphs to track how facts evolve over time |
+| Memory staleness | Stored facts become outdated as user context changes | Kept all facts indefinitely; agents acted on stale preferences | Attach TTLs to volatile facts; use temporal graphs to track how facts evolve over time. For managed platforms, use scheduled dreaming (Anthropic) to auto-purge contradicted facts between sessions |
 | Working memory for tool-heavy tasks | Complex multi-step tool chains lose intermediate state | Passed all state through the context window; hit token limits | Use a scratchpad / AgentFS for intermediate tool outputs; reference by pointer in context |
+| Self-improvement without retraining | Agent makes same mistakes across sessions without model fine-tuning | Manual rule updates in system prompt; engineers couldn't keep up | Use scheduled memory consolidation (dreaming) to extract recurring patterns from episodic logs and promote them to procedural memory automatically |
+| Self-evaluation of agent output quality | Hard to know if agent succeeded without human review | Spot-checking a sample; missed regressions | Add an isolated grader agent (Outcomes pattern) that scores output against a plain-language rubric in a separate context window; loop until grader approves or max iterations reached |
 
 ## Memory Solutions Reference
 
@@ -36,6 +38,7 @@ Agent memory operates across three functional tiers:
 | [AgentFS](https://github.com/tursodatabase/agentfs) | Turso | SQLite-backed virtual FS | Filesystem-like persistence in a single portable .db file |
 | [Letta (MemGPT)](https://letta.com/) | Independent | Virtual Context | Self-managed RAM/disk for autonomous context swapping |
 | [LangMem](https://blog.langchain.dev/langmem/) | LangChain | Managed SaaS | Deep integration with LangGraph nodes |
+| Claude Managed Agents Memory + Dreaming | Anthropic | Filesystem + scheduled consolidation | First-party self-improving memory with dreaming (between-session consolidation) and outcomes (self-grading); Harvey reported 6× task completion gains |
 | Bedrock Memory | AWS | Managed AWS | Enterprise scaling and compliance for Bedrock agents |
 
 ## LTM Strategy Selection
@@ -78,6 +81,9 @@ In multi-agent systems, agents coordinate through shared state rather than direc
 **Handoff payload principle**: include only what the next agent needs. Verbose payloads bloat context windows and degrade reasoning quality. Store large intermediate artifacts in S3 and pass a reference, not the content.
 
 ## See Also
+
 - [Context Engineering](./context-engineering.md)
 - [Observability](./observability.md)
 - [Deployment](./deployment.md)
+- [Claude Managed Agents — Memory, Dreaming & Outcomes](../AgentPlatforms/claude-managed-agents.md)
+- [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md)
