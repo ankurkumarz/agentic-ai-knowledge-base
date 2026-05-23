@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-23] ingest | Google Cloud Agent Gallery — Partner-Built Agents in Gemini Enterprise | sections touched: Marketplace/google-cloud-marketplace.md (new), Marketplace/anthropic-marketplace.md (new), Marketplace/Readme.md, AllThingsGoogle/README.md, AllThingsAnthropic/README.md, mkdocs.yml
+
+**Sources**: https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise; Anthropic marketplace presence (second URL provided was malformed — pic.com/news/finance-agents — could not be fetched; page created from known distribution channels)
+
 ## [2026-05-23] ingest | Agent Skills / SKILLS.md (Anthropic, 2025) | sections touched: Standards/skills-md.md (new), AllThingsAnthropic/README.md, mkdocs.yml
 
 **Sources**: https://claude.com/blog/skills, https://claude.com/blog/skills-explained, https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf
