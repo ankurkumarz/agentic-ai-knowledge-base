@@ -5,6 +5,23 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-23] ingest | Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems (arXiv:2605.18747) | sections touched: AgentHarness/code-as-agent-harness.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, index.md, mkdocs.yml
+
+**Source**: https://arxiv.org/abs/2605.18747
+**Type**: Research survey paper — Ning et al. (UIUC, Meta, Stanford), May 2026; 197 papers across 40+ subcategories
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/code-as-agent-harness.md` | Created | Full survey coverage: three-layer taxonomy (harness interface, harness mechanisms, harness scaling), code properties (executability/inspectability/statefulness), application domains, relationship to existing harness frameworks, best practices |
+| `docs/AgentHarness/agent-harness.md` | Updated | Added "Code as the Harness Substrate" section; added survey to References and See Also |
+| `docs/AgentHarness/harness-engineering.md` | Updated | Added new page to See Also and References |
+| `docs/index.md` | Updated | Added Agent Harness section with Code as Agent Harness bullet |
+| `mkdocs.yml` | Updated | Added Section 2.3: Code as Agent Harness |
+
+---
+
 ## [2026-05-22] ingest | AIDLC Workflows (AWS Labs) v0.1.8 | sections touched: Standards/aidlc.md (new), AllThingsAWS/README.md, ProductionBestPractices/testing-evaluations.md, Standards/openspec.md, index.md, mkdocs.yml
 
 **Source**: https://github.com/awslabs/aidlc-workflows + https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/

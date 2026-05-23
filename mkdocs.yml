@@ -27,6 +27,7 @@ nav:
   - 2. Agent Harness:
     - 2.1 Agent Harness: 'AgentHarness/agent-harness.md'
     - 2.2 Harness Engineering: 'AgentHarness/harness-engineering.md'
+    - 2.3 Code as Agent Harness: 'AgentHarness/code-as-agent-harness.md'
   - 3. Architecture and Design Patterns:
     - 3.1 Agentic Architecture Components Selection: 'Architecture/components-selection.md'
     - 3.2 Agentic Design Pattern Selection:

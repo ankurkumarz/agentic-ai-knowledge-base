@@ -26,7 +26,12 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 - **Disclaimer and Usage Guidelines**: Important usage information and disclaimers
 - **Target Audience**: Architects, engineers, researchers, and platform teams working with agentic AI
 
-### **2. Concepts**
+### **2. Agent Harness**
+- **Agent Harness**: What a harness is and its core components (system prompts, tools, sandbox, orchestration, hooks); the Model–Harness Co-Evolution Loop
+- **Harness Engineering**: Feedforward/feedback control, computational vs. inferential sensors, regulation categories (maintainability, architecture fitness, behaviour), harnessability factors
+- **Code as Agent Harness**: 197-paper survey (Ning et al., 2026) establishing code as the executable, inspectable, and stateful substrate for agent systems; three-layer taxonomy: harness interface (reasoning/acting/environment modeling), harness mechanisms (planning/memory/tool use/iterative debugging), and harness scaling (multi-agent coordination over shared code artifacts); application domains spanning code assistants, GUI/OS agents, scientific discovery, embodied robotics, DevOps, and enterprise workflows
+
+### **3. Concepts**
 - **Agent Definition**: Fundamental definitions and terminology for agentic AI systems
 - **Agent Types**: Classification and comparison of different agent architectures
 - **References**: Key research papers and foundational materials

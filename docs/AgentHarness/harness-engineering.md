@@ -146,6 +146,7 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 ## See Also
 
 - [Agent Harness](./agent-harness.md)
+- [Code as Agent Harness](./code-as-agent-harness.md) — research survey formalizing code as the executable, inspectable, stateful substrate of agent harnesses
 - [The 8 Levels of Agentic Engineering](../MaturityModels/agentic-engineering-levels.md) — harness engineering corresponds to Level 6 in the practitioner progression framework
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Context Engineering Challenges](../ContextEngineering/challenges.md)
@@ -159,3 +160,4 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, harnessability, and cybernetics framing
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — foundational definition of Agent = Model + Harness
 - [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering at scale
+- [Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems — Ning et al., arXiv:2605.18747 (May 2026)](https://arxiv.org/abs/2605.18747) — research survey formalizing harness mechanisms (planning, memory, tool use, iterative debugging, feedback-driven control) and multi-agent scaling via shared code artifacts
