@@ -277,7 +277,7 @@ agent:
 
 ## See Also
 
-- [Agent Skills / SKILLS.md](./skills-md.md)
+- [Agent Skills / SKILLS.md](./skills.md)
 - [Model Context Protocol](./mcp.md)
 - [Agent2Agent Protocol](./agent2agent.md)
 - [Agentic AI Foundation](./agentic-ai-foundation.md)
