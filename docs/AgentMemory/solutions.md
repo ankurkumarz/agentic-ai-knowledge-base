@@ -35,6 +35,7 @@ quadrantChart
     Redis Agent Memory: [0.58, 0.68]
     LangMem: [0.38, 0.62]
     AgentFS: [0.22, 0.55]
+    OpenViking: [0.32, 0.80]
     AWS AgentCore Memory: [0.85, 0.18]
     Vertex AI Memory Bank: [0.65, 0.14]
     Azure AI Foundry Memory: [0.60, 0.10]
@@ -271,6 +272,30 @@ The official Redis project for agent memory. Provides two distinct memory tiers:
 
 Interesting solutions worth understanding and monitoring. Not yet proven at scale or too narrowly scoped for general recommendation.
 
+#### OpenViking (Volcano Engine / ByteDance)
+**Type**: Open-source context database / hierarchical filesystem memory (Apache 2.0)
+**Memory types served**: Working (session), Semantic, Episodic, Procedural (skills)
+**GitHub**: [volcengine/OpenViking](https://github.com/volcengine/OpenViking) — ~15K+ stars (Jan 2026 release)
+**Docs**: [openviking.ai](https://openviking.ai/)
+
+OpenViking is a context database from ByteDance's Volcano Engine that replaces fragmented vector stores with a unified **filesystem paradigm**. Every piece of context — memories, resources, and skills — is stored and addressed like a file in a directory tree. On write, each item is automatically processed into three levels of detail: L0 (one-sentence abstract, <100 tokens), L1 (overview with structure and usage, <2K tokens), and L2 (full content, loaded on demand via URI). Retrieval uses vector similarity to identify the right directory, then recurses into subdirectories — hierarchical drill-down rather than flat nearest-neighbor search. This architecture is what drives the reported 80%+ reduction in input token consumption when paired with the OpenClaw agent (task completion also rose from 35.65% to 52.08%).
+
+**Why Assess**: Impressive early benchmark results and rapid community growth (15K+ stars in under five months) signal real interest. ByteDance/Volcano Engine is a credible engineering backer. The filesystem framing unifies memory *and* skills under one substrate — a broader scope than any other tool in this radar. However, it is less than six months old, has limited independent production case studies, and the primary reference implementation targets the OpenClaw agent stack.
+
+**Best for**: Teams experimenting with hierarchical context management who want to reduce token costs while preserving rich context across sessions. Especially useful as a complement to multi-agent systems where skills (procedural memory) and resources need structured retrieval alongside conversation history.
+
+**Limitations**: Very new (January 2026). Primary integration is OpenClaw; broader framework support is in early development. No managed cloud offering — self-hosted only. Limited production evidence outside ByteDance's own systems.
+
+| Dimension | Signal |
+|---|---|
+| Research | [MarkTechPost writeup](https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/) |
+| GitHub stars | ~15K+ (as of May 2026) |
+| Open source | Yes (Apache 2.0) |
+| Production readiness | Beta — self-hosted |
+| Backing | Volcano Engine / ByteDance |
+
+---
+
 #### LangMem
 **Type**: Open-source memory library for LangGraph (MIT)
 **Memory types served**: Semantic, Episodic, Procedural
@@ -334,6 +359,7 @@ AgentFS provides a portable, SQLite-backed virtual filesystem for agents — a "
 | **Oracle AI Agent Memory** | 🔵 Trial | Working, Semantic, Episodic | No | N/A | Oracle |
 | **Vertex AI Memory Bank** | 🔵 Trial | Semantic | No | N/A | Google Cloud |
 | **Azure AI Foundry Memory** | 🔵 Trial | Working, Semantic | No | N/A | Microsoft |
+| **OpenViking** | 🟡 Assess | Working, Semantic, Episodic, Procedural | Yes (Apache 2.0) | ~15K+ | Volcano Engine / ByteDance |
 | **LangMem** | 🟡 Assess | Semantic, Episodic, Procedural | Yes (MIT) | ~1.5K | LangChain |
 | **AgentFS** | 🔴 Caution | Working, Episodic | Yes (MIT) | ~2.5K | Turso |
 
@@ -354,6 +380,7 @@ Use this to narrow down options based on your constraints.
 | Enterprise Oracle DB with governed memory | **Oracle AI Agent Memory** |
 | Managed memory on GCP | **Vertex AI Memory Bank** |
 | Managed memory on Azure | **Azure AI Foundry Memory** |
+| Hierarchical filesystem context with 80%+ token savings | **OpenViking** |
 | Procedural memory + LangGraph integration | **LangMem** |
 | Filesystem/scratchpad for tool logs | **AgentFS** (as complement) |
 | Open source only, no vendor dependency | **Mem0**, **Graphiti**, **Letta**, **Supermemory**, **Redis** |
@@ -401,5 +428,9 @@ Each solution was assessed on the following dimensions. Ratings are as of May 20
 - [Redis Agent Memory Server docs](https://redis.github.io/agent-memory-server/) — architecture and API reference
 - [LangMem GitHub](https://github.com/langchain-ai/langmem) — LangChain memory library
 - [AgentFS GitHub](https://github.com/tursodatabase/agentfs) — Turso filesystem for agents
+- [OpenViking GitHub](https://github.com/volcengine/OpenViking) — open-source context database by Volcano Engine / ByteDance
+- [OpenViking site](https://openviking.ai/) — project homepage and docs
+- [MarkTechPost: Meet OpenViking](https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/) — overview and benchmark results
+- [Red Hat Developer: Deploy OpenViking on OpenShift AI](https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory) — deployment guide
 - [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) — radar methodology reference
 - [Cognitive Architectures for Language Agents (CoALA)](https://arxiv.org/abs/2309.02427) — memory type taxonomy
