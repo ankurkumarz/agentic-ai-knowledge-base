@@ -10,6 +10,8 @@ The agents marketplace landscape includes several key platforms, each with disti
 
 ### Platform-Specific Marketplaces
 - **AWS AI Agents Marketplace**: Comprehensive platform for enterprise AI agent solutions
+- **Google Cloud Agent Gallery**: Partner-built agents embedded in the Gemini Enterprise app; 50+ certified partners, A2A protocol, two-step IT governance
+- **Anthropic / Claude Ecosystem**: Claude models distributed via AWS Bedrock, Google Vertex AI, and Azure AI Foundry; MCP open ecosystem as de-facto tool marketplace
 - **AgentOps Marketplace**: Specialized focus on operational tools and monitoring solutions
 - **Platform-Native Stores**: Integrated marketplaces within major cloud and AI platforms
 
@@ -131,6 +133,7 @@ The agents marketplace landscape includes several key platforms, each with disti
 
 ### Major Marketplaces
 - [AWS AI Agents Marketplace](https://aws.amazon.com/marketplace/solutions/ai-agents-and-tools)
+- [Google Cloud Agent Gallery (Gemini Enterprise)](https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise)
 - [AgentOps Marketplace](https://marketplace.agen.cy/)
 - [Agentic Era Curated Agents](https://www.agenticera.ai/)
 
@@ -155,3 +158,6 @@ The agents marketplace landscape includes several key platforms, each with disti
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Framework ecosystems and extensions
 - **[Standards](../Standards/README.md)**: Standard-compliant marketplace offerings
 - **[Evaluation Frameworks](../EvaluationFrameworks/Readme.md)**: Evaluating marketplace solutions
+- **[Google Cloud Agents Marketplace](../Marketplace/google-cloud-marketplace.md)**: Google Agent Gallery detail
+- **[Anthropic Marketplace Presence](../Marketplace/anthropic-marketplace.md)**: Claude distribution and MCP ecosystem
+- **[AWS AI Agents Marketplace](../Marketplace/aws-marketplace.md)**: AWS Marketplace detail
