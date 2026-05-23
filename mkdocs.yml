@@ -14,7 +14,7 @@ theme:
   extra_css:
     - stylesheets/extra.css
 
-copyright: 'A <a href="https://vedcraft.com/" target="_blank" rel="noopener">Vedcraft</a> initiative'
+copyright: '<a href="https://vedxai.com/" target="_blank" rel="noopener">VedXAI</a> &mdash; An initiative by <a href="https://vedcraft.com/" target="_blank" rel="noopener">Vedcraft LLC</a>'
 
 nav:
   - Home: 'index.md'
