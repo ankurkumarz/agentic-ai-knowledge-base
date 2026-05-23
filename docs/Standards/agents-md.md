@@ -275,10 +275,19 @@ agent:
 - **Conference Presentations**: Presentations at major AI and software conferences
 - **Student Projects**: Support for student projects and research initiatives
 
+## See Also
+
+- [Agent Skills / SKILLS.md](./skills-md.md)
+- [Model Context Protocol](./mcp.md)
+- [Agent2Agent Protocol](./agent2agent.md)
+- [Agentic AI Foundation](./agentic-ai-foundation.md)
+- [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
+
 ## Related Sections
 
 - **Section 6.1**: Agentic AI Foundation (governance and standardization)
 - **Section 6.2**: Model Context Protocol (complementary standard)
 - **Section 6.3**: Agent2Agent Protocol (interoperability standard)
 - **Section 4**: Agent Development Frameworks (AGENTS.md integration)
+- **Section 6.8**: Agent Skills / SKILLS.md (complementary on-demand workflow convention)
 - **Section 16**: AI Agents Best Practices (alignment with AGENTS.md standards)
