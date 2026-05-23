@@ -14,6 +14,8 @@ theme:
   extra_css:
     - stylesheets/extra.css
 
+copyright: 'Supported by <a href="https://vedxai.com/" target="_blank" rel="noopener">VedXAI</a>, an initiative by <a href="https://vedcraft.com/" target="_blank" rel="noopener">Vedcraft</a>'
+
 nav:
   - Home: 'index.md'
   - 1. Concepts:
