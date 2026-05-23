@@ -89,8 +89,24 @@ The Agent Technology Stack closely integrates with:
 
 - [PageIndex AI](https://pageindex.ai/): vectorless, reasoning-based retrieval framework
 
+## Memory and Context Management
+
+Dedicated infrastructure for agent memory — persisting context across sessions, managing retrieval, and unifying memory with skills and resources.
+
+| Tool | Type | Open Source | Radar Rating | Notes |
+|---|---|---|---|---|
+| **[OpenViking](https://openviking.ai/)** | Hierarchical context database (filesystem paradigm) | Yes (Apache 2.0) | 🟡 Assess | ByteDance/Volcano Engine; unifies memory, resources, skills via L0/L1/L2 tiering; ~80% token reduction vs. flat RAG |
+| **[Mem0](https://github.com/mem0ai/mem0)** | Memory layer + managed API | Yes (Apache 2.0) | 🟢 Adopt | ~54K stars; semantic + episodic; most widely adopted |
+| **[Graphiti (Zep)](https://github.com/getzep/graphiti)** | Temporal knowledge graph | Yes (Apache 2.0) | 🟢 Adopt | ~25K stars; bi-temporal data model |
+| **[Letta (MemGPT)](https://github.com/letta-ai/letta)** | Stateful agent runtime | Yes (Apache 2.0) | 🔵 Trial | OS-inspired working memory; ~21K stars |
+| **[Supermemory](https://github.com/supermemoryai/supermemory)** | Memory API + Memory Router | Yes (MIT) | 🔵 Trial | Sub-300ms recall; transparent context injection |
+| **[Redis Agent Memory Server](https://github.com/redis/agent-memory-server)** | Session + semantic memory | Yes (MIT) | 🔵 Trial | Official Redis project; working + LTM in one store |
+
+For full radar assessments, decision criteria, and selection guidance see **[Agent Memory Solutions](../AgentMemory/solutions.md)**.
+
 #### See Also
 
+- **[Agent Memory Solutions Radar](../AgentMemory/solutions.md)**: Full radar for memory and context management tooling
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Development tools and frameworks
 - **[Frameworks Technology Radar](../AgenticFrameworks/solutions.md)**: Technology radar for development frameworks
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Cloud and SaaS platform options

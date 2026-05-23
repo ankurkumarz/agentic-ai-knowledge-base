@@ -5,6 +5,12 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-23] ingest | OpenViking (volcengine/OpenViking) | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://github.com/volcengine/OpenViking; https://openviking.ai/; https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/; https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory
+
+---
+
 ## [2026-05-23] ingest | Google Cloud Agent Gallery — Partner-Built Agents in Gemini Enterprise | sections touched: Marketplace/google-cloud-marketplace.md (new), Marketplace/anthropic-marketplace.md (new), Marketplace/Readme.md, AllThingsGoogle/README.md, AllThingsAnthropic/README.md, mkdocs.yml
 
 **Sources**: https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise; Anthropic marketplace presence (second URL provided was malformed — pic.com/news/finance-agents — could not be fetched; page created from known distribution channels)
