@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-23] ingest | Agent Skills / SKILLS.md (Anthropic, 2025) | sections touched: Standards/skills-md.md (new), AllThingsAnthropic/README.md, mkdocs.yml
+
+**Sources**: https://claude.com/blog/skills, https://claude.com/blog/skills-explained, https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf
+
 ## [2026-05-22] ingest | AIDLC Workflows (AWS Labs) v0.1.8 | sections touched: Standards/aidlc.md (new), AllThingsAWS/README.md, ProductionBestPractices/testing-evaluations.md, Standards/openspec.md, index.md, mkdocs.yml
 
 **Source**: https://github.com/awslabs/aidlc-workflows + https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/

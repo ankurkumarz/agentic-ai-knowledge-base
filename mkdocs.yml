@@ -81,6 +81,7 @@ nav:
     - 6.5 OpenSpec: 'Standards/openspec.md'
     - 6.6 AG-UI: 'Standards/README.md'
     - 6.7 AIDLC Workflows (AWS): 'Standards/aidlc.md'
+    - 6.8 Agent Skills / SKILLS.md: 'Standards/skills.md'
   - 7. Agentic AI Reference Architecture:
     - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
     - 7.2 AI Assistant Reference Architecture: 'ReferenceArchitecture/ai-assistant-architecture.md'
