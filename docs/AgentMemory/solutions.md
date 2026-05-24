@@ -30,8 +30,10 @@ quadrantChart
     quadrant-4 Proprietary - Production Ready
     Mem0: [0.88, 0.85]
     Graphiti by Zep: [0.80, 0.78]
+    Cognee: [0.76, 0.80]
     Letta MemGPT: [0.68, 0.82]
     Hindsight: [0.73, 0.76]
+    LanceDB: [0.70, 0.88]
     Supermemory: [0.62, 0.72]
     Redis Agent Memory: [0.58, 0.68]
     ByteRover: [0.64, 0.58]
@@ -131,6 +133,33 @@ Announced at AWS Summit NYC 2025, AgentCore Memory is a fully managed service th
 ### 🔵 Trial
 
 These solutions are worth using on projects that can tolerate some risk. Actively growing, with real production usage, but not yet the default choice.
+
+#### Cognee (topoteretes)
+**Type**: Open-source knowledge graph memory engine (Apache 2.0) + managed cloud
+**Memory types served**: Working (session memory), Semantic (knowledge graph + vector embeddings), Episodic (interaction traces), Procedural (derived relationships and ontologies)
+**GitHub**: [topoteretes/cognee](https://github.com/topoteretes/cognee) — ~12K stars
+**Docs**: [cognee.ai](https://cognee.ai) · [docs.cognee.ai](https://docs.cognee.ai)
+**Funding**: $7.5M Seed (2025)
+
+Cognee builds agent memory as a *knowledge graph*, not a flat vector store. Its ECL pipeline (Extract → Cognify → Load) ingests data from 38+ sources, automatically extracts entities and relationships, generates ontologies, and stores the result as a graph with co-embedded vector representations. This enables multi-hop reasoning — agents can answer "how do these facts relate?" not just "what is similar?" — which flat RAG cannot do. Memory is split into two layers: *session memory* (short-term working context for the current interaction) and *permanent memory* (durable knowledge graph that persists and improves across sessions).
+
+Graduated from the GitHub Secure Open Source Program. Pipeline volume grew from ~2,000 runs to over 1 million (500× in 2025) across 70+ production companies including Bayer (scientific research workflows). Featured in the Microsoft AI Agents for Beginners course.
+
+**Why Trial**: 12K stars, $7.5M seed, 70+ companies in production, and 500× pipeline growth in a single year put Cognee at the top of the Trial ring approaching Adopt. The knowledge-graph + vector hybrid approach offers richer relational reasoning than pure vector solutions. Multi-source ingestion (38+ connectors) and auto-ontology generation reduce integration effort significantly. Apache 2.0 with a managed cloud option gives full deployment flexibility.
+
+**Best for**: Agents that need relational/multi-hop memory — research agents, document understanding workflows, knowledge-intensive enterprise agents. Ideal when the memory must represent *how facts connect*, not just surface similar text.
+
+**Limitations**: Knowledge graph construction is more computationally expensive than flat vector embedding. The ECL pipeline adds latency at ingest time. For simple single-session conversational memory, Mem0 or Honcho are lighter-weight alternatives.
+
+| Dimension | Signal |
+|---|---|
+| Research | ECL pipeline; knowledge graph + vector hybrid; auto-ontology |
+| GitHub stars | ~12K |
+| Open source | Yes (Apache 2.0) |
+| Production readiness | GA — self-hosted + Cognee Cloud |
+| Backing | topoteretes ($7.5M seed, 2025) |
+
+---
 
 #### Letta (formerly MemGPT)
 **Type**: Open-source stateful agent runtime (Apache 2.0)
@@ -294,6 +323,32 @@ Hindsight takes a biomimetic approach to agent memory, organizing knowledge into
 | Open source | Yes (MIT) |
 | Production readiness | GA — managed cloud + self-hosted |
 | Backing | Vectorize.io |
+
+---
+
+#### LanceDB
+**Type**: Open-source embedded vector database used as agent memory storage substrate (Apache 2.0) + managed cloud (LanceDB Cloud)
+**Memory types served**: Semantic (vector similarity), Episodic (metadata-filtered event retrieval), Working (via session-scoped tables)
+**GitHub**: [lancedb/lancedb](https://github.com/lancedb/lancedb) — ~8.8K stars
+**Docs**: [lancedb.com](https://lancedb.com) · [docs.lancedb.com](https://docs.lancedb.com)
+
+LanceDB is an embedded, serverless vector database built on the Lance columnar format (Rust). Unlike most vector stores that run as a separate server, LanceDB runs in-process — no infrastructure to deploy. It stores vectors, metadata, and multimodal data (text, images, point clouds) together, supports hybrid retrieval (vector similarity + full-text BM25 + SQL filters via DuckDB), automatic versioning (Git-style branching), and zero-copy reads. It integrates natively with LangChain, LlamaIndex, and other agent frameworks as the persistence layer for semantic and episodic memory.
+
+For dedicated agent memory use, the community-built **[memory-lancedb-pro](https://github.com/CortexReach/memory-lancedb-pro)** plugin (~4.4K stars) wraps LanceDB with cross-encoder reranking, multi-scope isolation (user / session / global), and a management CLI — providing a full memory abstraction layer on top of the LanceDB storage engine, targeted at OpenClaw agents.
+
+**Why Trial**: Production-ready vector store with strong ecosystem adoption (LangChain, LlamaIndex), zero-server embedded deployment, and multimodal support that most dedicated memory solutions cannot match. The memory-lancedb-pro plugin extends it into a first-class agent memory layer. Combined GitHub signal (~8.8K core + ~4.4K plugin) reflects genuine traction.
+
+**Best for**: Teams that want a lightweight, embedded memory substrate with no separate server — local-first agent deployments, edge/on-device agents, or any project where spinning up a dedicated vector DB is overhead. Also the natural choice for OpenClaw agent stacks via memory-lancedb-pro.
+
+**Limitations**: LanceDB itself is a storage layer, not a full memory abstraction — it does not provide automatic memory extraction, contradiction resolution, or cross-session personalization out of the box. Those require wrapping it with a higher-level framework (memory-lancedb-pro, LangMem, or custom code). The memory-lancedb-pro plugin is currently OpenClaw-specific.
+
+| Dimension | Signal |
+|---|---|
+| Research | Lance columnar format; DuckDB/Arrow ecosystem |
+| GitHub stars | ~8.8K (core) + ~4.4K (memory-lancedb-pro plugin) |
+| Open source | Yes (Apache 2.0) |
+| Production readiness | GA — embedded + LanceDB Cloud |
+| Backing | LanceDB Inc. (VC-backed) |
 
 ---
 
@@ -478,7 +533,9 @@ An experimental personal AI assistant module that uses Holographic Reduced Repre
 | **Graphiti (Zep)** | 🟢 Adopt | Semantic, Episodic | Yes (Apache 2.0) | ~25K | Zep |
 | **AWS AgentCore Memory** | 🟢 Adopt | Working, Semantic, Episodic | No | N/A | AWS |
 | **Letta (MemGPT)** | 🔵 Trial | Working, Semantic, Episodic | Yes (Apache 2.0) | ~21K | Letta AI |
+| **Cognee** | 🔵 Trial | Working, Semantic, Episodic, Procedural | Yes (Apache 2.0) | ~12K | topoteretes |
 | **Hindsight** | 🔵 Trial | Semantic, Episodic, Conceptual | Yes (MIT) | ~14.4K | Vectorize.io |
+| **LanceDB** | 🔵 Trial | Semantic, Episodic, Working (storage substrate) | Yes (Apache 2.0) | ~8.8K (+4.4K plugin) | LanceDB Inc. |
 | **Supermemory** | 🔵 Trial | Semantic, Episodic | Yes (MIT) | ~9K+ | Supermemory AI |
 | **ByteRover** | 🔵 Trial | Working, Semantic, Episodic | Source-available (Elastic 2.0) | ~4.6K | Campfire |
 | **Honcho** | 🔵 Trial | Working, Semantic, Episodic | Yes (AGPL-3.0) | ~3.6K | Plastic Labs |
@@ -506,6 +563,8 @@ Use this to narrow down options based on your constraints.
 | OS-inspired working memory management | **Letta** |
 | Biomimetic memory with World/Experiences/Mental Models | **Hindsight** |
 | Fast memory API with transparent context injection | **Supermemory** |
+| Knowledge graph memory with multi-hop relational reasoning | **Cognee** |
+| Embedded vector memory substrate, no separate server | **LanceDB** |
 | Coding-agent memory with hierarchical context trees | **ByteRover** |
 | Peer-centric memory for relationship-aware agents | **Honcho** |
 | Memory on existing Redis infrastructure | **Redis Agent Memory Server** |
@@ -566,6 +625,14 @@ Each solution was assessed on the following dimensions. Ratings are as of May 20
 - [OpenViking site](https://openviking.ai/) — project homepage and docs
 - [MarkTechPost: Meet OpenViking](https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/) — overview and benchmark results
 - [Red Hat Developer: Deploy OpenViking on OpenShift AI](https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory) — deployment guide
+- [Cognee GitHub](https://github.com/topoteretes/cognee) — knowledge graph memory engine with ECL pipeline
+- [Cognee site](https://cognee.ai) — product overview, 70+ company case studies, $7.5M seed announcement
+- [Cognee memory architecture blog](https://www.cognee.ai/blog/fundamentals/how-cognee-builds-ai-memory) — ECL pipeline and session/permanent memory model
+- [Microsoft AI Agents for Beginners — Agent Memory with Cognee](https://github.com/microsoft/ai-agents-for-beginners/blob/main/13-agent-memory/13-agent-memory-cognee.ipynb) — tutorial notebook
+- [LanceDB GitHub](https://github.com/lancedb/lancedb) — embedded vector database used as agent memory storage substrate
+- [LanceDB docs](https://docs.lancedb.com) — architecture, hybrid retrieval, and agent integration guides
+- [memory-lancedb-pro GitHub](https://github.com/CortexReach/memory-lancedb-pro) — enhanced LanceDB memory plugin for OpenClaw with hybrid retrieval and reranking
+- [LanceDB blog: OpenClaw memory layer](https://www.lancedb.com/blog/openclaw-lancedb-memory-layer) — LanceDB as agent memory substrate
 - [Hindsight GitHub](https://github.com/vectorize-io/hindsight) — biomimetic agent memory library by Vectorize.io
 - [Hindsight blog](https://vectorize.io/blog/introducing-hindsight-agent-memory-that-works-like-human-memory) — World / Experiences / Mental Models architecture overview
 - [Honcho GitHub](https://github.com/plastic-labs/honcho) — peer-centric memory server by Plastic Labs

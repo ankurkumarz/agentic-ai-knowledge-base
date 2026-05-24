@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-24] ingest | Agent Memory Providers — LanceDB, Cognee | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://github.com/lancedb/lancedb; https://github.com/CortexReach/memory-lancedb-pro; https://www.lancedb.com/blog/openclaw-lancedb-memory-layer; https://github.com/topoteretes/cognee; https://www.cognee.ai/blog/fundamentals/how-cognee-builds-ai-memory; https://www.cognee.ai/blog/cognee-news/cognee-raises-seven-million-five-hundred-thousand-dollars-seed
+
 ## [2026-05-24] ingest | Agent Memory Providers — Honcho, Hindsight, Holographic, RetainDB, ByteRover + Redis context engine reference | sections touched: AgentMemory/solutions.md
 
 **Sources**: https://github.com/plastic-labs/honcho; https://github.com/vectorize-io/hindsight; https://github.com/NeoVertex1/nuggets; https://www.retaindb.com/; https://github.com/campfirein/byterover-cli; https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/
