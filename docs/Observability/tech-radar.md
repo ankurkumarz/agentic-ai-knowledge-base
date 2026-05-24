@@ -17,42 +17,59 @@ The four radar rings:
 
 ## Technology Radar
 
-The chart below maps solutions across two axes: **Adoption Readiness** (x-axis, left=Hold/Assess → right=Trial/Adopt) and **Openness** (y-axis, bottom=Proprietary/Managed → top=Open Source/Self-hosted). Quadrants separate OSS/self-hostable stacks from managed/proprietary platforms.
+Solutions are split across two charts to avoid label clutter. Both share the same x-axis (ring position: Hold/Assess → Trial/Adopt). The y-axis differs per chart.
+
+**How to read:**
+- **Right side** (x > 0.5) = Trial/Adopt — production-ready, stronger default candidates
+- **Left side** (x < 0.5) = Assess/Hold — situational, niche, or less validated for agent workloads
+
+### Chart 1 — Open Source & Self-Hostable Tools
+
+Y-axis: agent-specialized (bottom) → general-purpose observability (top)
 
 ```mermaid
 quadrantChart
-    title Agent Observability Technology Radar May 2026
+    title OSS / Self-Hosted Observability — May 2026
     x-axis Hold/Assess --> Trial/Adopt
-    y-axis Proprietary/Managed --> Open Source/Self-hosted
-    quadrant-1 Open Source - Production Ready
-    quadrant-2 Open Source - Emerging
-    quadrant-3 Proprietary - Emerging
-    quadrant-4 Proprietary - Production Ready
-    OpenTelemetry: [0.86, 0.88]
-    Prometheus + Grafana: [0.82, 0.84]
-    Jaeger: [0.72, 0.80]
-    Zipkin: [0.62, 0.70]
-    Langfuse: [0.78, 0.76]
-    SigNoz: [0.72, 0.82]
-    ClickStack: [0.62, 0.80]
-    Openlit: [0.60, 0.62]
-    agenttrace: [0.48, 0.78]
-    LangSmith: [0.82, 0.22]
-    AgentOps: [0.70, 0.20]
-    Galileo: [0.62, 0.18]
-    W&B Weave: [0.66, 0.16]
-    Braintrust: [0.64, 0.16]
-    Comet Opik: [0.58, 0.14]
-    Datadog: [0.80, 0.10]
-    New Relic: [0.72, 0.10]
-    Dynatrace: [0.68, 0.10]
+    y-axis Agent-Specialized --> General Observability
+    quadrant-1 General - Production Ready
+    quadrant-2 General - Emerging
+    quadrant-3 Agent-Native - Emerging
+    quadrant-4 Agent-Native - Production Ready
+    agenttrace: [0.42, 0.18]
+    Openlit: [0.62, 0.28]
+    Langfuse: [0.80, 0.35]
+    Zipkin: [0.65, 0.55]
+    ClickStack: [0.58, 0.65]
+    SigNoz: [0.74, 0.72]
+    Jaeger: [0.76, 0.82]
+    Prometheus + Grafana: [0.88, 0.88]
+    OpenTelemetry: [0.92, 0.72]
 ```
 
-**How to read this chart:**
-- **Right side** (x > 0.5) = Trial/Adopt (more production-ready; stronger default candidates)
-- **Left side** (x < 0.5) = Assess/Hold (more situational, less validated for agent workloads, or niche)
-- **Top half** (y > 0.5) = Open source / self-hostable
-- **Bottom half** (y < 0.5) = Proprietary / managed services
+### Chart 2 — Managed & Proprietary Platforms
+
+Y-axis: AI/agent-native (bottom) → general-purpose APM (top)
+
+```mermaid
+quadrantChart
+    title Managed / Proprietary Observability — May 2026
+    x-axis Hold/Assess --> Trial/Adopt
+    y-axis AI-Agent Native --> General APM
+    quadrant-1 General APM - Production
+    quadrant-2 General APM - Emerging
+    quadrant-3 AI-Native - Emerging
+    quadrant-4 AI-Native - Production
+    AgentOps: [0.72, 0.18]
+    Galileo: [0.64, 0.28]
+    W&B Weave: [0.68, 0.40]
+    Braintrust: [0.62, 0.52]
+    Comet Opik: [0.56, 0.60]
+    LangSmith: [0.84, 0.30]
+    Dynatrace: [0.70, 0.70]
+    New Relic: [0.76, 0.80]
+    Datadog: [0.86, 0.88]
+```
 
 ---
 
