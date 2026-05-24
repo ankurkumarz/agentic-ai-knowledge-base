@@ -297,6 +297,7 @@ Thoughtworks Technology Radar Vol. 34 (April 2026) places OpenClaw at **Caution*
 
 - [Popular AI Agents](README.md)
 - [Hermes Agent (Nous Research)](hermes-agent.md)
+- [OpenHuman (TinyHumans AI)](openhuman.md)
 - [Agentic Tech Stack](../AgenticTechStack/README.md)
 - [Thoughtworks Radar Vol. 34 — OpenClaw at Caution](../AgenticTechStack/thoughtworks-radar-vol34.md)
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)

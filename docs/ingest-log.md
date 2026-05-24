@@ -608,3 +608,13 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AgentOps/genops.md` | Extended | Added Reward Engineering section covering role definition, key challenges table (specification completeness, reward hacking, multi-objective balancing, reward drift, evaluation coverage); updated Future Directions and See Also |
 | `docs/index.md` | Extended | Updated Section 3 (Concepts) bullets to include Chat-Engine/Do-Engine note and new predictions page summary |
 | `mkdocs.yml` | Extended | Added 1.8 2026 AI Predictions (You.com) nav entry |
+
+## [2026-05-24] ingest | OpenHuman (TinyHumans AI) — https://tinyhumans.ai/openhuman | sections touched: AgentPlatforms
+
+| File | Action | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/openhuman.md` | Created | New page: overview, NeoCortex memory (1B tokens, 4k tokens/sec, SQLite + Obsidian vault), 118+ OAuth integrations via Composio, TokenJuice compression (up to 80% reduction), automatic model routing (200+ models), agent toolbelt (web search, coding, voice, Google Meet mascot), architecture (Rust + Tauri + TypeScript), installation, privacy/data model, security considerations (toxic flow trifecta, curl-pipe risk, managed backend trust), full comparison table vs OpenClaw and Hermes, suitable for / limitations, see also, references |
+| `docs/AgentPlatforms/README.md` | Extended | Added OpenHuman one-liner to Personal AI Agents list; added to See Also |
+| `docs/AgentPlatforms/hermes-agent.md` | Extended | Added See Also backlink to openhuman.md |
+| `docs/AgentPlatforms/openclaw.md` | Extended | Added See Also backlink to openhuman.md |
+| `mkdocs.yml` | Extended | Added 5.7 OpenHuman (TinyHumans AI) nav entry |

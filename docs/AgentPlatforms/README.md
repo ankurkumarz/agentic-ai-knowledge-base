@@ -41,6 +41,7 @@ Each category provides detailed analysis of popular implementations, their capab
 
 - **[Hermes Agent](hermes-agent.md)** (Nous Research): Open-source, self-improving personal AI assistant with built-in learning loop, skill creation from experience, cross-session memory, MCP support, and multi-platform access (Telegram, Discord, Slack, WhatsApp). Successor to OpenClaw. Backed by the Hermes OSS model family (Hermes-2-Pro, Hermes-3) fine-tuned for function calling and GOAP reasoning.
 - **[OpenClaw](openclaw.md)**: Local-first, MIT-licensed personal AI agent with 20+ messaging platform integrations (WhatsApp, iMessage, Telegram, Slack, Discord, and more), ClawHub skills marketplace (3,000+ skills), and voice support on macOS/iOS/Android. Predecessor to Hermes Agent. Note: Thoughtworks Radar Vol. 34 places this at **Caution** due to the permission-hungry pattern and active supply chain security incidents (ClawHavoc).
+- **[OpenHuman](openhuman.md)** (TinyHumans AI): Open-source (GPL-3.0) desktop personal AI agent with 1-billion-token persistent memory (NeoCortex), 118+ OAuth integrations, automatic model routing across 200+ LLMs, TokenJuice token compression, native voice, animated mascot, and live Google Meet participation. Launched May 2026.
 - Alternatives: TinyClaw, ZeroClaw, PicoClaw, NanoClaw, IronClaw, Nanobot
 
 ## Coding/Software Development Agents
@@ -249,6 +250,7 @@ Each category provides detailed analysis of popular implementations, their capab
 ## See Also
 
 - [Hermes Agent (Nous Research)](hermes-agent.md)
+- [OpenHuman (TinyHumans AI)](openhuman.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [Agentic AI Platforms](../AgentPlatforms/gemini-enterprise-agent-platform.md)
 - [Agents Marketplace](../Marketplace/Readme.md)
