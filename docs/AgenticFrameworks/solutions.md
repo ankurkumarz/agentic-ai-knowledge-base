@@ -17,40 +17,57 @@ The four radar rings:
 
 ## Technology Radar
 
-The chart below maps all frameworks across two axes: **Adoption Readiness** (x-axis, left=Caution → right=Adopt) and **Open Source** (y-axis, bottom=Proprietary/Managed → top=Open Source/Self-hosted). Ring position reflects the radar rating.
+Solutions are split across two charts to avoid label clutter. Both share the same x-axis (ring position: Caution → Adopt). The y-axis differs per chart.
+
+**How to read:**
+- **Right side** (x > 0.5) = Trial or Adopt — production-ready, recommended for evaluation
+- **Left side** (x < 0.5) = Assess or Caution — early-stage or narrowly scoped
+
+### Chart 1 — Open Source & Community Frameworks
+
+Y-axis: specialized/focused use case (bottom) → general-purpose multi-paradigm (top)
 
 ```mermaid
 quadrantChart
-    title Agentic Framework Solutions Technology Radar May 2026
+    title Open Source Agentic Frameworks — May 2026
     x-axis Caution/Assess --> Trial/Adopt
-    y-axis Proprietary/Managed --> Open Source/Self-hosted
-    quadrant-1 Open Source - Production Ready
-    quadrant-2 Open Source - Emerging
-    quadrant-3 Proprietary - Emerging
-    quadrant-4 Proprietary - Production Ready
-    LangChain: [0.92, 0.88]
-    LangGraph: [0.82, 0.85]
-    CrewAI: [0.78, 0.80]
-    AutoGen: [0.72, 0.82]
-    LlamaIndex: [0.75, 0.78]
-    Semantic Kernel: [0.80, 0.30]
-    AWS Strands: [0.65, 0.72]
-    Google ADK: [0.68, 0.68]
-    Haystack: [0.62, 0.75]
-    Agno: [0.55, 0.70]
-    PydanticAI: [0.85, 0.78]
-    Mastra: [0.42, 0.60]
-    Spring AI: [0.48, 0.62]
-    AutoGPT: [0.38, 0.55]
-    Microsoft Agent Framework: [0.52, 0.28]
-    OpenAI Agents SDK: [0.70, 0.18]
+    y-axis Specialized/Focused --> General Purpose
+    quadrant-1 General - Production Ready
+    quadrant-2 General - Emerging
+    quadrant-3 Specialized - Emerging
+    quadrant-4 Specialized - Production Ready
+    AutoGPT: [0.35, 0.72]
+    Mastra: [0.42, 0.42]
+    Spring AI: [0.48, 0.30]
+    Agno: [0.56, 0.65]
+    Haystack: [0.62, 0.48]
+    LlamaIndex: [0.76, 0.42]
+    CrewAI: [0.80, 0.58]
+    AutoGen: [0.72, 0.78]
+    PydanticAI: [0.88, 0.48]
+    LangGraph: [0.84, 0.70]
+    LangChain: [0.92, 0.85]
 ```
 
-**How to read this chart:**
-- **Right side** (x > 0.5) = Trial or Adopt — production-ready, recommended for evaluation
-- **Left side** (x < 0.5) = Assess or Caution — early-stage or narrowly scoped
-- **Top half** (y > 0.5) = Open source / self-hostable
-- **Bottom half** (y < 0.5) = Proprietary / managed cloud SDK
+### Chart 2 — Vendor-Backed & Managed SDKs
+
+Y-axis: cloud/platform-specific (bottom) → cross-platform / ecosystem-agnostic (top)
+
+```mermaid
+quadrantChart
+    title Vendor-Backed Agentic SDKs — May 2026
+    x-axis Caution/Assess --> Trial/Adopt
+    y-axis Cloud-Specific --> Cross-Platform
+    quadrant-1 Cross-Platform - Production
+    quadrant-2 Cross-Platform - Emerging
+    quadrant-3 Cloud-Specific - Emerging
+    quadrant-4 Cloud-Specific - Production
+    AWS Strands: [0.65, 0.22]
+    Google ADK: [0.68, 0.35]
+    OpenAI Agents SDK: [0.72, 0.48]
+    Microsoft Agent Framework: [0.54, 0.65]
+    Semantic Kernel: [0.82, 0.72]
+```
 
 ---
 
