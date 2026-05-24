@@ -26,19 +26,24 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 - **Disclaimer and Usage Guidelines**: Important usage information and disclaimers
 - **Target Audience**: Architects, engineers, researchers, and platform teams working with agentic AI
 
-### **2. Concepts**
+### **2. Agent Harness**
+- **Agent Harness**: What a harness is and its core components (system prompts, tools, sandbox, orchestration, hooks); the Model–Harness Co-Evolution Loop
+- **Harness Engineering**: Feedforward/feedback control, computational vs. inferential sensors, regulation categories (maintainability, architecture fitness, behaviour), harnessability factors
+- **Code as Agent Harness**: 197-paper survey (Ning et al., 2026) establishing code as the executable, inspectable, and stateful substrate for agent systems; three-layer taxonomy: harness interface (reasoning/acting/environment modeling), harness mechanisms (planning/memory/tool use/iterative debugging), and harness scaling (multi-agent coordination over shared code artifacts); application domains spanning code assistants, GUI/OS agents, scientific discovery, embodied robotics, DevOps, and enterprise workflows
+
+### **3. Concepts**
 - **Agent Definition**: Fundamental definitions and terminology for agentic AI systems
 - **Agent Types**: Classification and comparison of different agent architectures
 - **References**: Key research papers and foundational materials
 
-### **3. Architecture and Design Patterns**
+### **4. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
 - **Design Pattern Selection**: Proven patterns including OpenAI's agentic patterns and the Arsanjani & Bustos pattern catalog (Agent Router, Supervisor, Swarm, Blackboard, FCoT, Instruction Fidelity Auditing, Adaptive Retry, Canary Agent Testing, and 20+ others)
 - **Multi-agent Systems**: Four architectures (centralized, decentralized, hierarchical, hybrid); Supervisor vs. Swarm comparison; Agent Router pattern; seven benefits; failure modes and decision framework; framework comparison for architecture selection
 - **12-Factor Agents**: Principles for building reliable LLM applications
 - **Gartner LLM Patterns**: Industry-recognized design patterns
 
-### **4. Agent Development Frameworks**
+### **5. Agent Development Frameworks**
 Comprehensive coverage of major development frameworks:
 - **LangChain & LangGraph**: Industry-standard frameworks with 1M+ builders; LangGraph excels at complex stateful multi-agent workflows
 - **Google ADK**: Model-agnostic framework optimized for Google Cloud; hierarchical agent composition with built-in evaluation
@@ -55,13 +60,13 @@ Comprehensive coverage of major development frameworks:
 - **Spring AI**: Java ecosystem integration
 - **Haystack**: Production-ready LLM applications and RAG pipelines
 
-### **5. Agent Technology Stack**
+### **6. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
 - **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform, AWS AgentCore, Microsoft Azure AI; **Enterprise Platform Comparison (2026)** covering Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, Kore.ai, UiPath Maestro, Azure AI Foundry Agent Service, IBM watsonx Orchestrate, LangGraph, and CrewAI Enterprise with pricing, adoption data, and honest constraints
 - **Workflow Engines**: Open source, self-hosted, and SaaS solutions
 - **Popular AI Agents**: Coding agents, research agents, and super agents
 
-### **6. Agentic AI Industry Standards**
+### **7. Agentic AI Industry Standards**
 - **Agentic AI Foundation**: Linux Foundation initiative for open standards
 - **Model Context Protocol (MCP)**: Anthropic's standardization for LLM context
 - **Agent2Agent (A2A) Protocol**: Google's agent interoperability standard
@@ -69,26 +74,26 @@ Comprehensive coverage of major development frameworks:
 - **OpenSpec & AG-UI**: Emerging standards for development and interfaces
 - **AIDLC Workflows (AWS)**: Methodology-first AI-driven development lifecycle with structured Inception → Construction phases, approval gates, and a built-in evaluator for CI/CD quality gates
 
-### **7. Agentic AI Reference Architecture**
+### **8. Agentic AI Reference Architecture**
 - **AI Automation**: LangManus framework and automation patterns
 - **Self-learning Agents**: Agent0 series and self-evolving systems
 - **AI Assistant Architecture**: Reference implementations and blueprints
 - **RAG Architecture**: Retrieval-augmented generation patterns
 - **NVIDIA AI Blueprints**: Video search and summarization agents
 
-### **8. Agentic AI Maturity Models**
+### **9. Agentic AI Maturity Models**
 - **Gartner's Perspective**: Industry maturity assessment frameworks
 - **AWS Perspective**: Generative AI maturity models and progression paths
 - **Google's Perspective**: Cloud-native maturity considerations
 - **IDC's Perspective**: Market evolution and adoption patterns
 - **Arsanjani GenAI Maturity Model**: 7-level framework (data foundation → RAG → tuning → grounding → single-agent → multi-agent) with agent anatomy, the new agentic stack (Function Calling, MCP, A2A), and maturity-to-pattern mapping
 
-### **9. Agents Marketplace**
+### **10. Agents Marketplace**
 - **AWS AI Agents Marketplace**: Enterprise agent solutions and platforms
 - **AgentOps Marketplace**: Operational tools and services
 - **Miscellaneous Platforms**: Community and specialized marketplaces
 
-### **10. AI Agents Best Practices**
+### **11. AI Agents Best Practices**
 - **Anthropic**: Building effective agents and safety considerations
 - **Google**: Enterprise deployment and scaling best practices
 - **Microsoft**: .NET and Azure integration patterns

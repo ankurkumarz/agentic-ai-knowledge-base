@@ -17,6 +17,23 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 **Sources**: https://github.com/plastic-labs/honcho; https://github.com/vectorize-io/hindsight; https://github.com/NeoVertex1/nuggets; https://www.retaindb.com/; https://github.com/campfirein/byterover-cli; https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/
 
+## [2026-05-23] ingest | Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems (arXiv:2605.18747) | sections touched: AgentHarness/code-as-agent-harness.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, index.md, mkdocs.yml
+
+**Source**: https://arxiv.org/abs/2605.18747
+**Type**: Research survey paper — Ning et al. (UIUC, Meta, Stanford), May 2026; 197 papers across 40+ subcategories
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/code-as-agent-harness.md` | Created | Full survey coverage: three-layer taxonomy (harness interface, harness mechanisms, harness scaling), code properties (executability/inspectability/statefulness), application domains, relationship to existing harness frameworks, best practices |
+| `docs/AgentHarness/agent-harness.md` | Updated | Added "Code as the Harness Substrate" section; added survey to References and See Also |
+| `docs/AgentHarness/harness-engineering.md` | Updated | Added new page to See Also and References |
+| `docs/index.md` | Updated | Added Agent Harness section with Code as Agent Harness bullet |
+| `mkdocs.yml` | Updated | Added Section 2.3: Code as Agent Harness |
+
+---
+
 ## [2026-05-23] ingest | OpenViking (volcengine/OpenViking) | sections touched: AgentMemory/solutions.md
 
 **Sources**: https://github.com/volcengine/OpenViking; https://openviking.ai/; https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/; https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory
@@ -30,7 +47,6 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 ## [2026-05-23] ingest | Agent Skills / SKILLS.md (Anthropic, 2025) | sections touched: Standards/skills-md.md (new), AllThingsAnthropic/README.md, mkdocs.yml
 
 **Sources**: https://claude.com/blog/skills, https://claude.com/blog/skills-explained, https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf
-
 ## [2026-05-22] ingest | AIDLC Workflows (AWS Labs) v0.1.8 | sections touched: Standards/aidlc.md (new), AllThingsAWS/README.md, ProductionBestPractices/testing-evaluations.md, Standards/openspec.md, index.md, mkdocs.yml
 
 **Source**: https://github.com/awslabs/aidlc-workflows + https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/

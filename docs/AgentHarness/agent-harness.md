@@ -86,9 +86,21 @@ As models become more capable, some harness responsibilities will be absorbed na
 - A well-configured environment, the right tools, durable state, and verification loops make any model more efficient regardless of base intelligence
 - Harnesses engineer systems *around* model intelligence, not just patch over deficiencies
 
+## Code as the Harness Substrate
+
+A 2026 survey (Ning et al., arXiv:2605.18747) formalizes a complementary view: rather than code being one harness component among many, code increasingly serves as the **unifying substrate** of the entire harness — the medium through which agents reason, act, model environments, receive feedback, and coordinate.
+
+Code has three structural properties unavailable to text-based harnesses:
+- **Executability**: model outputs become verifiable operations, not just text
+- **Inspectability**: intermediate computation is exposed as structured traces
+- **Statefulness**: task progress is represented persistently across context windows
+
+The survey organizes this into three layers: (1) harness interface — code connecting agents to reasoning, action, and environment modeling; (2) harness mechanisms — planning, memory, tool use, and iterative debugging; (3) harness scaling — multi-agent coordination over shared code artifacts. See [Code as Agent Harness](./code-as-agent-harness.md) for the full taxonomy.
+
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
+- [Code as Agent Harness](./code-as-agent-harness.md) — survey taxonomy of code as the agent substrate (Ning et al., 2026)
 - [Agentic Engineering Levels](../MaturityModels/agentic-engineering-levels.md) — harness engineering is Level 6 in the 8-level practitioner progression
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Agent Memory Management](../AgentMemory/functional-tiers.md)
@@ -101,3 +113,4 @@ As models become more capable, some harness responsibilities will be absorbed na
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — defines the harness concept and derives core components from model limitations
 - [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering lessons from building a million-line codebase with zero manually-written code
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, and harnessability concepts
+- [Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems — Ning et al., arXiv:2605.18747 (May 2026)](https://arxiv.org/abs/2605.18747) — 197-paper survey establishing executability, inspectability, and statefulness as structural harness properties; three-layer taxonomy (interface, mechanisms, scaling)
