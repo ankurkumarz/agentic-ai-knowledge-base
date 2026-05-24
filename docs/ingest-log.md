@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-24] ingest | Agent Memory Providers — Honcho, Hindsight, Holographic, RetainDB, ByteRover + Redis context engine reference | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://github.com/plastic-labs/honcho; https://github.com/vectorize-io/hindsight; https://github.com/NeoVertex1/nuggets; https://www.retaindb.com/; https://github.com/campfirein/byterover-cli; https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/
+
 ## [2026-05-23] ingest | OpenViking (volcengine/OpenViking) | sections touched: AgentMemory/solutions.md
 
 **Sources**: https://github.com/volcengine/OpenViking; https://openviking.ai/; https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/; https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory

@@ -31,11 +31,16 @@ quadrantChart
     Mem0: [0.88, 0.85]
     Graphiti by Zep: [0.80, 0.78]
     Letta MemGPT: [0.68, 0.82]
+    Hindsight: [0.73, 0.76]
     Supermemory: [0.62, 0.72]
     Redis Agent Memory: [0.58, 0.68]
+    ByteRover: [0.64, 0.58]
+    Honcho: [0.55, 0.60]
     LangMem: [0.38, 0.62]
-    AgentFS: [0.22, 0.55]
     OpenViking: [0.32, 0.80]
+    AgentFS: [0.22, 0.55]
+    Holographic: [0.12, 0.88]
+    RetainDB: [0.38, 0.18]
     AWS AgentCore Memory: [0.85, 0.18]
     Vertex AI Memory Bank: [0.65, 0.14]
     Azure AI Foundry Memory: [0.60, 0.10]
@@ -268,6 +273,78 @@ The official Redis project for agent memory. Provides two distinct memory tiers:
 
 ---
 
+#### Hindsight (Vectorize)
+**Type**: Open-source memory library (MIT) + managed cloud platform
+**Memory types served**: Semantic (world facts), Episodic (experiences), Conceptual (mental models)
+**GitHub**: [vectorize-io/hindsight](https://github.com/vectorize-io/hindsight) — ~14.4K stars
+**Docs**: [vectorize.io](https://vectorize.io)
+
+Hindsight takes a biomimetic approach to agent memory, organizing knowledge into three structures modeled on human cognition: a *World* layer (persistent factual beliefs about users and entities), an *Experiences* store (episodic event records), and *Mental Models* (conceptual frameworks that shape inference). An LLM wrapper enables two-line integration — drop it in front of any existing agent without restructuring the codebase. Reports SOTA performance on LongMemEval. Adopted by Fortune 500 enterprises and AI startups via Hindsight Cloud (managed) or self-hosted deployment.
+
+**Why Trial**: 14.4K stars and credible enterprise adoption make it one of the better-validated open-source memory libraries outside of Mem0 and Graphiti. The three-layer biomimetic model covers semantic, episodic, and a distinct conceptual tier not found in most competitors. MIT license with a managed cloud option gives flexibility.
+
+**Best for**: Agents that need human-like recall across all three knowledge types. Particularly effective when conceptual reasoning (mental model updates) is as important as raw fact retrieval.
+
+**Limitations**: Vectorize.io is the primary backer — community breadth is smaller than Mem0 or Graphiti. The managed cloud creates vendor dependency for teams not self-hosting.
+
+| Dimension | Signal |
+|---|---|
+| Research | Biomimetic memory (World / Experiences / Mental Models) |
+| GitHub stars | ~14.4K |
+| Open source | Yes (MIT) |
+| Production readiness | GA — managed cloud + self-hosted |
+| Backing | Vectorize.io |
+
+---
+
+#### Honcho (Plastic Labs)
+**Type**: Open-source memory server (AGPL-3.0) + managed cloud API
+**Memory types served**: Working (session/message history), Semantic (peer representations), Episodic (event logs)
+**GitHub**: [plastic-labs/honcho](https://github.com/plastic-labs/honcho) — ~3.6K stars
+**Docs**: [api.honcho.dev](https://api.honcho.dev)
+
+Honcho is built around a *peer-centric* memory model — rather than treating memory as a flat key-value or vector store, it organizes context around the relationships between the agent and the people it interacts with. Every user is a "peer" with stored message history, session context, and natural-language insight queries (e.g., "What does this user prefer about Python?"). The FastAPI backend can be self-hosted or accessed via managed cloud. Acts as a memory middleware layer that other agent frameworks can call, rather than replacing them.
+
+**Why Trial**: Peer-centric architecture is a differentiated model that fits personalization and relationship-aware agents well. Production-ready with managed cloud, reasonable community growth, and an MIT-compatible approach (AGPL for self-hosted, managed API terms for cloud). Framework-agnostic.
+
+**Best for**: Conversational agents where the quality of understanding individual users or stakeholders is the primary value driver — coaching agents, customer relationship agents, personal assistants.
+
+**Limitations**: AGPL-3.0 license requires open-sourcing derivative works if deployed as a service, which may not suit commercial closed-source products. Community is smaller than Mem0 or Graphiti. Primarily semantic/episodic — procedural memory handled externally.
+
+| Dimension | Signal |
+|---|---|
+| Research | Peer-centric memory model (Plastic Labs) |
+| GitHub stars | ~3.6K |
+| Open source | Yes (AGPL-3.0) |
+| Production readiness | GA — managed cloud + self-hosted FastAPI |
+| Backing | Plastic Labs |
+
+---
+
+#### ByteRover (Campfire)
+**Type**: Source-available memory layer (Elastic License 2.0) + managed cloud platform
+**Memory types served**: Working (hierarchical context trees), Semantic (curated project knowledge), Episodic (tool call and interaction logs)
+**GitHub**: [campfirein/byterover-cli](https://github.com/campfirein/byterover-cli) — ~4.6K stars
+**Docs**: [byterover.dev](https://byterover.dev)
+
+ByteRover (formerly Cipher) is a portable memory layer optimized for coding agents. Its key design choice is replacing vector databases with a *hierarchical context tree* — structured knowledge organized into project-scoped tiers, retrieved via fuzzy text search followed by LLM-driven relevance ranking. Runs locally by default with no external dependencies; ByteRover Cloud enables team-level memory sharing. Claims 92.2% on the LoCoMo leaderboard, outperforming most general-purpose memory solutions in code-aware retrieval tasks.
+
+**Why Trial**: Strongest benchmark signal for coding-agent memory use cases. The hierarchical tree approach avoids the embedding/vector infrastructure cost while delivering high retrieval accuracy on code and project knowledge. Production-ready with both local and cloud deployment. 4.6K stars indicate meaningful community traction.
+
+**Best for**: Coding agents, developer tooling, and IDE-integrated agents where the memory domain is structured project knowledge rather than open-ended conversation history. Particularly useful for team-shared context (via ByteRover Cloud).
+
+**Limitations**: Elastic License 2.0 is source-available, not true open source — commercial use without a separate license from Campfire may be restricted. Design is optimized for code/project knowledge; less suited to general-purpose conversational memory. Newer project with limited non-coding-agent case studies.
+
+| Dimension | Signal |
+|---|---|
+| Research | Internal benchmarks (LoCoMo 92.2%) |
+| GitHub stars | ~4.6K |
+| Open source | Source-available (Elastic License 2.0) |
+| Production readiness | GA — local + ByteRover Cloud |
+| Backing | Campfire (campfirein) |
+
+---
+
 ### 🟡 Assess
 
 Interesting solutions worth understanding and monitoring. Not yet proven at scale or too narrowly scoped for general recommendation.
@@ -293,6 +370,30 @@ OpenViking is a context database from ByteDance's Volcano Engine that replaces f
 | Open source | Yes (Apache 2.0) |
 | Production readiness | Beta — self-hosted |
 | Backing | Volcano Engine / ByteDance |
+
+---
+
+#### RetainDB
+**Type**: Managed cloud memory service (proprietary)
+**Memory types served**: Episodic (conversation history), Semantic (vector + BM25 hybrid search)
+**GitHub**: N/A (cloud service)
+**Docs**: [retaindb.com](https://retaindb.com)
+
+RetainDB is a cloud-only persistent memory service that uses delta compression for efficient conversation history storage and a hybrid retrieval pipeline (vector similarity + BM25 keyword + reranking) for high-accuracy recall. Memory extraction is handled server-side via Claude Sonnet. Integrates with the Hermes Agent framework and other agent runtimes through a REST API. Pricing starts at $20/month.
+
+**Why Assess**: The delta-compression + hybrid retrieval combination is technically interesting for cost-efficient long-term storage. Claims competitive LongMemEval performance. However, there is no open-source component, no disclosed backing company, no GitHub community, and no independent validation available as of May 2026. Vendor viability risk is non-trivial.
+
+**Best for**: Teams that want a fully managed, zero-infrastructure memory API and are comfortable with an early-stage proprietary service. Evaluate after the vendor establishes more transparency and track record.
+
+**Limitations**: Cloud-only — no self-hosting option. No open-source code. No disclosed company identity. No independent community signal. Vendor lock-in with no migration path documented.
+
+| Dimension | Signal |
+|---|---|
+| Research | Internal claims (LongMemEval, not independently verified) |
+| GitHub stars | N/A |
+| Open source | No |
+| Production readiness | GA (cloud API) |
+| Backing | Undisclosed |
 
 ---
 
@@ -346,6 +447,29 @@ AgentFS provides a portable, SQLite-backed virtual filesystem for agents — a "
 
 ---
 
+#### Holographic Memory (via Nuggets)
+**Type**: Open-source local memory module (individual project)
+**Memory types served**: Working (active context), Semantic (holographic vector memory)
+**GitHub**: [NeoVertex1/nuggets](https://github.com/NeoVertex1/nuggets) — ~200 stars
+
+An experimental personal AI assistant module that uses Holographic Reduced Representations (HRR) — complex-valued vectors that encode facts as superpositions, enabling sub-millisecond recall with no external database. Facts are promoted from temporary to permanent context after three or more recalls, mimicking human memory consolidation. Runs fully locally with zero external dependencies.
+
+**Why Caution**: The HRR approach is academically interesting and the zero-dependency local design has appeal for privacy-sensitive deployments. However, this is an early-stage individual project with ~200 stars, no production track record, and no disclosed license. The implementation scope is narrow (no episodic or procedural memory). Not suitable for production use in its current state.
+
+**Best for**: Research exploration of holographic/neurosymbolic memory representations. Local prototyping where zero external dependencies is a hard requirement.
+
+**Limitations**: ~200 stars, individual maintainer, no production deployments documented. Narrow scope — no episodic, procedural, or multi-tenant support. License not clearly specified.
+
+| Dimension | Signal |
+|---|---|
+| Research | Holographic Reduced Representations (HRR) — academic concept |
+| GitHub stars | ~200 |
+| Open source | Likely (unspecified license) |
+| Production readiness | Experimental |
+| Backing | Individual (NeoVertex1) |
+
+---
+
 ## Radar Summary Table
 
 | Solution | Ring | Memory Types | Open Source | GitHub Stars | Provider |
@@ -354,14 +478,19 @@ AgentFS provides a portable, SQLite-backed virtual filesystem for agents — a "
 | **Graphiti (Zep)** | 🟢 Adopt | Semantic, Episodic | Yes (Apache 2.0) | ~25K | Zep |
 | **AWS AgentCore Memory** | 🟢 Adopt | Working, Semantic, Episodic | No | N/A | AWS |
 | **Letta (MemGPT)** | 🔵 Trial | Working, Semantic, Episodic | Yes (Apache 2.0) | ~21K | Letta AI |
+| **Hindsight** | 🔵 Trial | Semantic, Episodic, Conceptual | Yes (MIT) | ~14.4K | Vectorize.io |
 | **Supermemory** | 🔵 Trial | Semantic, Episodic | Yes (MIT) | ~9K+ | Supermemory AI |
+| **ByteRover** | 🔵 Trial | Working, Semantic, Episodic | Source-available (Elastic 2.0) | ~4.6K | Campfire |
+| **Honcho** | 🔵 Trial | Working, Semantic, Episodic | Yes (AGPL-3.0) | ~3.6K | Plastic Labs |
 | **Redis Agent Memory Server** | 🔵 Trial | Working, Semantic, Episodic | Yes (MIT) | Early-stage | Redis Ltd. |
 | **Oracle AI Agent Memory** | 🔵 Trial | Working, Semantic, Episodic | No | N/A | Oracle |
 | **Vertex AI Memory Bank** | 🔵 Trial | Semantic | No | N/A | Google Cloud |
 | **Azure AI Foundry Memory** | 🔵 Trial | Working, Semantic | No | N/A | Microsoft |
 | **OpenViking** | 🟡 Assess | Working, Semantic, Episodic, Procedural | Yes (Apache 2.0) | ~15K+ | Volcano Engine / ByteDance |
+| **RetainDB** | 🟡 Assess | Episodic, Semantic | No | N/A | Undisclosed |
 | **LangMem** | 🟡 Assess | Semantic, Episodic, Procedural | Yes (MIT) | ~1.5K | LangChain |
 | **AgentFS** | 🔴 Caution | Working, Episodic | Yes (MIT) | ~2.5K | Turso |
+| **Holographic (Nuggets)** | 🔴 Caution | Working, Semantic | Unspecified | ~200 | Individual |
 
 ---
 
@@ -375,15 +504,20 @@ Use this to narrow down options based on your constraints.
 | Temporal reasoning over evolving facts | **Graphiti (Zep)** |
 | Managed memory on AWS, zero ops | **AWS AgentCore Memory** |
 | OS-inspired working memory management | **Letta** |
+| Biomimetic memory with World/Experiences/Mental Models | **Hindsight** |
 | Fast memory API with transparent context injection | **Supermemory** |
+| Coding-agent memory with hierarchical context trees | **ByteRover** |
+| Peer-centric memory for relationship-aware agents | **Honcho** |
 | Memory on existing Redis infrastructure | **Redis Agent Memory Server** |
 | Enterprise Oracle DB with governed memory | **Oracle AI Agent Memory** |
 | Managed memory on GCP | **Vertex AI Memory Bank** |
 | Managed memory on Azure | **Azure AI Foundry Memory** |
 | Hierarchical filesystem context with 80%+ token savings | **OpenViking** |
+| Managed memory API, zero infrastructure, hybrid retrieval | **RetainDB** (evaluate vendor risk) |
 | Procedural memory + LangGraph integration | **LangMem** |
 | Filesystem/scratchpad for tool logs | **AgentFS** (as complement) |
-| Open source only, no vendor dependency | **Mem0**, **Graphiti**, **Letta**, **Supermemory**, **Redis** |
+| Holographic vector memory, zero external dependencies | **Holographic / Nuggets** (experimental) |
+| Open source only, no vendor dependency | **Mem0**, **Graphiti**, **Letta**, **Hindsight**, **Supermemory**, **Honcho**, **Redis** |
 | Enterprise SLAs + compliance | **AWS AgentCore**, **Vertex**, **Azure**, **Oracle** |
 
 ---
@@ -432,5 +566,14 @@ Each solution was assessed on the following dimensions. Ratings are as of May 20
 - [OpenViking site](https://openviking.ai/) — project homepage and docs
 - [MarkTechPost: Meet OpenViking](https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/) — overview and benchmark results
 - [Red Hat Developer: Deploy OpenViking on OpenShift AI](https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory) — deployment guide
+- [Hindsight GitHub](https://github.com/vectorize-io/hindsight) — biomimetic agent memory library by Vectorize.io
+- [Hindsight blog](https://vectorize.io/blog/introducing-hindsight-agent-memory-that-works-like-human-memory) — World / Experiences / Mental Models architecture overview
+- [Honcho GitHub](https://github.com/plastic-labs/honcho) — peer-centric memory server by Plastic Labs
+- [Honcho cloud API](https://api.honcho.dev) — managed memory service docs
+- [ByteRover GitHub](https://github.com/campfirein/byterover-cli) — hierarchical context tree memory by Campfire
+- [ByteRover benchmarks](https://www.byterover.dev/blog/benchmark-ai-agent-memory) — LoCoMo 92.2% leaderboard results
+- [RetainDB](https://www.retaindb.com/) — cloud-only delta-compressed memory API
+- [Holographic memory (Nuggets)](https://github.com/NeoVertex1/nuggets) — HRR-based local memory module
+- [Redis Agent Memory context engine docs](https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/) — Redis agent memory architecture reference
 - [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) — radar methodology reference
 - [Cognitive Architectures for Language Agents (CoALA)](https://arxiv.org/abs/2309.02427) — memory type taxonomy
