@@ -178,6 +178,74 @@ messaging:
 4. **Backup and Recovery**: Implement robust backup and disaster recovery
 5. **Capacity Planning**: Plan for growth and scaling requirements
 
+---
+
+### Temporal
+
+**Website**: [temporal.io](https://temporal.io)
+**License**: MIT (open source server + SDKs)
+**Architecture**: Durable Execution Platform — Workflows-as-Code with Event History replay
+
+#### What Is Temporal
+
+Temporal is a durable execution platform that makes long-running, fault-tolerant workflows as easy to write as ordinary application code. From the official documentation: *"Durable Execution ensures that your application behaves correctly despite adverse conditions by guaranteeing that it will run to completion."*
+
+Rather than managing retries, state checkpointing, and failure recovery in application logic, developers write workflow code as if it runs uninterrupted. If a crash or outage occurs, Temporal replays the recorded Event History to restore the workflow's state — it picks up exactly where it left off. This makes Temporal particularly powerful for AI agent pipelines that invoke unreliable LLM APIs, run for minutes to hours, and must maintain coherent state across many steps.
+
+A key architectural note: the Temporal Service orchestrates and persists state, but **Workers run your code**. Workers poll the Temporal Service for tasks, execute matching workflow or activity code within your infrastructure, and return results — your data never leaves your control.
+
+#### Core Primitives
+
+**Workflow**: Durable, stateful function defining overall agent logic — the sequence of activities, branching, signals, and child workflows. Must be deterministic (Temporal replays it from Event History for crash recovery).
+
+**Activity**: Individual unit of work — an LLM API call, tool invocation, web search, database read. Activities are the non-deterministic, side-effecting operations that workflows orchestrate. Each activity has configurable retry policies and timeouts. If an activity fails, Temporal automatically retries based on configuration.
+
+**Worker**: Long-running process that polls the Temporal Service for tasks and executes workflow/activity code. Workers are stateless and horizontally scalable — add more Workers to increase throughput with no coordination overhead.
+
+**Event History**: Complete, durable log of every event in a Workflow Execution's lifecycle, persisted to the Temporal Service database. The foundation of durable execution — if a Worker crashes, it replays the Event History to recreate exact in-memory state, then resumes from the failure point as if the failure never occurred.
+
+**Signal / Update**: Asynchronous messages (Signals) or synchronous signal-with-response (Updates) sent to a running workflow. Enables **human-in-the-loop** gates natively — pause execution waiting for human approval, new data, or cancellation.
+
+**Query**: Read-only synchronous operation returning current workflow state without affecting execution. Useful for exposing agent progress or intermediate results.
+
+**Child Workflow**: Workflow spawned by a parent workflow, enabling hierarchical multi-agent architectures. A supervisor workflow spawns specialized child agent workflows, collects results, and continues orchestration.
+
+#### Agentic AI Patterns
+
+| Pattern | How Temporal Enables It |
+|---|---|
+| **Fault-tolerant LLM chains** | Each LLM call is an Activity; transient API errors (rate limits, timeouts, 5xx) are retried with exponential backoff automatically |
+| **Long-running research agents** | Workflows run for hours or days; state persists across infrastructure failures with no code changes |
+| **Human-in-the-loop approval** | Workflow pauses indefinitely waiting for a Signal; no polling loops or external state stores required |
+| **Multi-agent fan-out/fan-in** | Parent workflow spawns N parallel Child Workflows (each a sub-agent), waits for all, aggregates results |
+| **Versioned agent deployments** | `workflow.get_version()` API routes existing long-running executions to old code, new executions to new code — no big-bang migration |
+| **Saga / compensating transactions** | Each step has a compensation Activity that runs on failure, ensuring eventual consistency without distributed transaction protocols |
+
+#### SDK Support
+
+Seven language SDKs (polyglot teams can mix languages across workflows and activities): **Go**, **Python**, **TypeScript/JavaScript**, **Java**, **.NET (C#)**, **PHP**, **Ruby**.
+
+#### Deployment Options
+
+| Mode | Description |
+|---|---|
+| **Temporal Cloud** | Fully managed SaaS; consumption-based billing; zero ops overhead |
+| **Self-hosted (Docker Compose)** | Single-node for local dev/test (`docker-compose up`) |
+| **Self-hosted (Kubernetes)** | Production-grade via Helm chart |
+| **Embedded** | In-process Temporal Service for unit and integration testing |
+
+#### Best Practices
+
+| Challenge | Solution |
+|---|---|
+| **Determinism** | Never use random numbers, current time, or I/O in workflow code — use `workflow.now()` and move all side effects to Activities |
+| **Activity granularity** | Make each LLM call or external API call its own Activity; batch only when the entire batch is atomic |
+| **Payload size** | Pass references (S3 keys, DB IDs) between Activities rather than full LLM responses; use Data Converter for compression |
+| **Timeout tuning** | Set `start_to_close_timeout` based on P99 latency; use heartbeating for long-running activities |
+| **Worker pools** | Separate pools for CPU-intensive (embedding), I/O-bound (LLM calls), and GPU (local inference) activities |
+
+---
+
 ## Comparison with Other Orchestration Solutions
 
 ### Enterprise Orchestration Platforms
@@ -193,9 +261,9 @@ messaging:
 - **Considerations**: Infrastructure-focused, requires additional tools for business workflow orchestration
 
 **Temporal**:
-- **Strengths**: Durable execution, fault tolerance, developer-friendly APIs
-- **Use Cases**: Long-running workflows, distributed systems, microservices coordination
-- **Considerations**: Code-first approach, requires programming knowledge
+- **Strengths**: Durable execution via Event History replay, fault tolerance, developer-friendly SDK APIs in 7 languages, native human-in-the-loop via Signals, hierarchical multi-agent composition via Child Workflows
+- **Use Cases**: Long-running AI agent workflows, fault-tolerant LLM chains, multi-agent fan-out/fan-in, human approval gates, versioned agent deployments
+- **Considerations**: Workflows-as-Code approach requires programming knowledge; not a no-code tool; workflow code must be deterministic for replay
 
 ### Selection Criteria
 
@@ -217,9 +285,10 @@ messaging:
 - **Vendor Lock-in**: Portability and vendor independence
 - **Future Roadmap**: Platform evolution and feature development
 
-## Related Sections
+## See Also
 
-- **Section 4**: Agent Development Frameworks (for agent integration)
-- **Section 5.3.1**: Open Source Workflow Engines
-- **Section 6**: Industry Standards (for protocol compatibility)
-- **Section 12**: Observability (for monitoring orchestrated workflows)
+- [Temporal — Durable Workflow Orchestration for Agentic AI](./temporal.md)
+- [Open Source Workflow Engines](./open-source.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [Production Deployment](../ProductionBestPractices/deployment.md)
+- [Observability](../Observability/README.md)
