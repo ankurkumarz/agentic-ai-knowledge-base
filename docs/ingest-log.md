@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-24] ingest | Temporal — Durable Workflow Orchestration for Agentic AI | sections touched: WorkflowBuilders/orchestration.md (Temporal section added), index.md
+
+**Sources**: https://temporal.io/ai/agentic-ai; https://youtu.be/GEXllEH2XiQ?si=2uQ0Ov0VPxjGPf_o; https://docs.temporal.io/evaluate/understanding-temporal#durable-execution
+
 ## [2026-05-24] ingest | Agent Memory Providers — Maximem (Synap + Vity) | sections touched: AgentMemory/solutions.md
 
 **Sources**: https://www.maximem.ai/; https://www.maximem.ai/product; https://www.maximem.ai/vity; https://www.maximem.ai/compare/maximem-synap-vs-mem0-vs-zep-vs-letta-vs-supermemory-vs-cognee-vs-evermind; https://github.com/maximem-ai

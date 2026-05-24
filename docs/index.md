@@ -64,7 +64,7 @@ Comprehensive coverage of major development frameworks:
 ### **6. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
 - **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform, AWS AgentCore, Microsoft Azure AI; **Enterprise Platform Comparison (2026)** covering Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, Kore.ai, UiPath Maestro, Azure AI Foundry Agent Service, IBM watsonx Orchestrate, LangGraph, and CrewAI Enterprise with pricing, adoption data, and honest constraints
-- **Workflow Engines**: Open source, self-hosted, and SaaS solutions
+- **Workflow Engines**: Open source, self-hosted, and SaaS solutions; **Temporal** for durable execution — fault-tolerant, long-running AI agent workflows with Event History replay, Signals for human-in-the-loop, and Child Workflows for multi-agent fan-out
 - **Popular AI Agents**: Coding agents, research agents, and super agents
 
 ### **7. Agentic AI Industry Standards**
