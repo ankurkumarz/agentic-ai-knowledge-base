@@ -153,6 +153,7 @@ The **Hermes Atlas** ([hermesatlas.com](https://hermesatlas.com)) community dire
 
 - [Popular AI Agents](README.md)
 - [OpenClaw](openclaw.md)
+- [OpenHuman (TinyHumans AI)](openhuman.md)
 - [Agentic Tech Stack](../AgenticTechStack/README.md)
 - [Thoughtworks Radar Vol. 34 — OpenClaw (Caution)](../AgenticTechStack/thoughtworks-radar-vol34.md)
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)
