@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-24] ingest | Agent Memory Providers — Maximem (Synap + Vity) | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://www.maximem.ai/; https://www.maximem.ai/product; https://www.maximem.ai/vity; https://www.maximem.ai/compare/maximem-synap-vs-mem0-vs-zep-vs-letta-vs-supermemory-vs-cognee-vs-evermind; https://github.com/maximem-ai
+
 ## [2026-05-24] ingest | Agent Memory Providers — LanceDB, Cognee | sections touched: AgentMemory/solutions.md
 
 **Sources**: https://github.com/lancedb/lancedb; https://github.com/CortexReach/memory-lancedb-pro; https://www.lancedb.com/blog/openclaw-lancedb-memory-layer; https://github.com/topoteretes/cognee; https://www.cognee.ai/blog/fundamentals/how-cognee-builds-ai-memory; https://www.cognee.ai/blog/cognee-news/cognee-raises-seven-million-five-hundred-thousand-dollars-seed

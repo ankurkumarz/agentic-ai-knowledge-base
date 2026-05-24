@@ -42,6 +42,7 @@ quadrantChart
     OpenViking: [0.32, 0.80]
     AgentFS: [0.22, 0.55]
     Holographic: [0.12, 0.88]
+    Maximem Synap: [0.45, 0.22]
     RetainDB: [0.38, 0.18]
     AWS AgentCore Memory: [0.85, 0.18]
     Vertex AI Memory Bank: [0.65, 0.14]
@@ -428,6 +429,34 @@ OpenViking is a context database from ByteDance's Volcano Engine that replaces f
 
 ---
 
+#### Maximem (Synap + Vity)
+**Type**: Managed cloud memory platform (proprietary)
+**Memory types served**: Working (short-term session context), Semantic (knowledge graph + vector), Episodic (interaction traces), Organizational (shared knowledge pipelines)
+**GitHub**: [maximem-ai](https://github.com/maximem-ai)
+**Docs**: [maximem.ai](https://www.maximem.ai) · [maximem.ai/product](https://www.maximem.ai/product)
+
+Maximem ships two distinct products under the same platform:
+
+**Synap** (launched April 2026) is the agent-facing memory layer. It provides persistent short- and long-term memory, retrieval, evaluation, and organizational knowledge pipelines. Scored 90.2% on LongMemEval at 15ms P50 retrieval latency — among the strongest published benchmark combinations in the space. Integrates natively with LangChain, LlamaIndex, CrewAI, Google ADK, AutoGen, OpenAI Agents SDK, Semantic Kernel, Haystack, and Pydantic AI (nine frameworks at launch). Private by design with end-to-end encryption.
+
+**Vity** is the personal memory vault aimed at power users rather than developers. It listens to AI sessions (including OpenClaw), extracts context into a semantic graph (code decisions, architectural choices, user preferences, project state), and injects relevant memory before each response via a plugin. Cross-platform: works with ChatGPT, Claude, Gemini, Slack, Telegram, WhatsApp, and Discord. Supports `/remember` and `/recall` slash commands and bookmark intelligence for saving repos and docs.
+
+**Why Assess**: The combination of the broadest framework support (9 integrations at launch) and a compelling LongMemEval score makes Synap worth monitoring. However, Maximem is very new (April 2026) with no independent community signal or disclosed GitHub stars. Both products are fully proprietary with no self-hosting option. Vity targets end users, not agent infrastructure engineers. Evaluate once independent adoption evidence emerges.
+
+**Best for**: Teams wanting a managed, privacy-first memory layer across multiple frameworks without building retrieval infrastructure. Vity suits individual practitioners who want persistent memory bridged across multiple AI tools and communication channels.
+
+**Limitations**: Fully proprietary — no open-source code, no self-hosting. Very new with no independent production case studies as of May 2026. No disclosed funding or community size. Vendor viability risk similar to RetainDB.
+
+| Dimension | Signal |
+|---|---|
+| Research | LongMemEval 90.2% at 15ms P50 (internal benchmark) |
+| GitHub stars | Not disclosed |
+| Open source | No |
+| Production readiness | GA — Synap (April 2026) + Vity |
+| Backing | Maximem AI (undisclosed funding) |
+
+---
+
 #### RetainDB
 **Type**: Managed cloud memory service (proprietary)
 **Memory types served**: Episodic (conversation history), Semantic (vector + BM25 hybrid search)
@@ -544,6 +573,7 @@ An experimental personal AI assistant module that uses Holographic Reduced Repre
 | **Vertex AI Memory Bank** | 🔵 Trial | Semantic | No | N/A | Google Cloud |
 | **Azure AI Foundry Memory** | 🔵 Trial | Working, Semantic | No | N/A | Microsoft |
 | **OpenViking** | 🟡 Assess | Working, Semantic, Episodic, Procedural | Yes (Apache 2.0) | ~15K+ | Volcano Engine / ByteDance |
+| **Maximem (Synap + Vity)** | 🟡 Assess | Working, Semantic, Episodic, Organizational | No | N/A | Maximem AI |
 | **RetainDB** | 🟡 Assess | Episodic, Semantic | No | N/A | Undisclosed |
 | **LangMem** | 🟡 Assess | Semantic, Episodic, Procedural | Yes (MIT) | ~1.5K | LangChain |
 | **AgentFS** | 🔴 Caution | Working, Episodic | Yes (MIT) | ~2.5K | Turso |
@@ -572,6 +602,8 @@ Use this to narrow down options based on your constraints.
 | Managed memory on GCP | **Vertex AI Memory Bank** |
 | Managed memory on Azure | **Azure AI Foundry Memory** |
 | Hierarchical filesystem context with 80%+ token savings | **OpenViking** |
+| Managed memory across 9 agent frameworks, privacy-first | **Maximem Synap** (evaluate vendor risk) |
+| Personal memory vault across ChatGPT, Claude, Gemini, Slack | **Maximem Vity** |
 | Managed memory API, zero infrastructure, hybrid retrieval | **RetainDB** (evaluate vendor risk) |
 | Procedural memory + LangGraph integration | **LangMem** |
 | Filesystem/scratchpad for tool logs | **AgentFS** (as complement) |
@@ -639,6 +671,10 @@ Each solution was assessed on the following dimensions. Ratings are as of May 20
 - [Honcho cloud API](https://api.honcho.dev) — managed memory service docs
 - [ByteRover GitHub](https://github.com/campfirein/byterover-cli) — hierarchical context tree memory by Campfire
 - [ByteRover benchmarks](https://www.byterover.dev/blog/benchmark-ai-agent-memory) — LoCoMo 92.2% leaderboard results
+- [Maximem site](https://www.maximem.ai/) — Synap agent memory layer and Vity personal memory vault
+- [Maximem product page](https://www.maximem.ai/product) — Synap and Vity product overview
+- [Maximem GitHub org](https://github.com/maximem-ai) — npm plugins and SDKs
+- [Maximem Synap comparison](https://www.maximem.ai/compare/maximem-synap-vs-mem0-vs-zep-vs-letta-vs-supermemory-vs-cognee-vs-evermind) — Synap vs. Mem0, Zep, Letta, Supermemory, Cognee, Evermind
 - [RetainDB](https://www.retaindb.com/) — cloud-only delta-compressed memory API
 - [Holographic memory (Nuggets)](https://github.com/NeoVertex1/nuggets) — HRR-based local memory module
 - [Redis Agent Memory context engine docs](https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/) — Redis agent memory architecture reference
