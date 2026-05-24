@@ -17,44 +17,62 @@ The four radar rings:
 
 ## Technology Radar
 
-The chart below maps all solutions across two axes: **Adoption Readiness** (x-axis, left=Caution → right=Adopt) and **Open Source** (y-axis, bottom=Proprietary → top=Open Source). The four quadrants separate open-source solutions from managed/proprietary ones, and early-stage from production-ready. Ring position (distance from center) reflects the radar rating.
+Solutions are split across two charts to avoid label clutter. Both share the same x-axis (ring position: Caution → Adopt). The y-axis differs per chart and is labelled on each.
+
+**How to read:**
+- **Right side** (x > 0.5) = Trial or Adopt — production-ready, recommended for evaluation
+- **Left side** (x < 0.5) = Assess or Caution — early-stage or narrowly scoped
+- Quadrant labels indicate the combination of ring position and the chart-specific y-axis dimension
+
+### Chart 1 — Open Source & Source-Available Solutions
+
+Y-axis: narrow/storage-only (bottom) → broad full-stack memory abstraction (top)
 
 ```mermaid
 quadrantChart
-    title Agent Memory Solutions Technology Radar May 2026
+    title Open Source Agent Memory — May 2026
     x-axis Caution/Assess --> Trial/Adopt
-    y-axis Proprietary/Managed --> Open Source/Self-hosted
-    quadrant-1 Open Source - Production Ready
-    quadrant-2 Open Source - Emerging
-    quadrant-3 Proprietary - Emerging
-    quadrant-4 Proprietary - Production Ready
-    Mem0: [0.88, 0.85]
-    Graphiti by Zep: [0.80, 0.78]
-    Cognee: [0.76, 0.80]
-    Letta MemGPT: [0.68, 0.82]
-    Hindsight: [0.73, 0.76]
-    LanceDB: [0.70, 0.88]
-    Supermemory: [0.62, 0.72]
-    Redis Agent Memory: [0.58, 0.68]
-    ByteRover: [0.64, 0.58]
-    Honcho: [0.55, 0.60]
-    LangMem: [0.38, 0.62]
-    OpenViking: [0.32, 0.80]
-    AgentFS: [0.22, 0.55]
-    Holographic: [0.12, 0.88]
-    Maximem Synap: [0.45, 0.22]
-    RetainDB: [0.38, 0.18]
-    AWS AgentCore Memory: [0.85, 0.18]
-    Vertex AI Memory Bank: [0.65, 0.14]
-    Azure AI Foundry Memory: [0.60, 0.10]
-    Oracle AI Agent Memory: [0.55, 0.22]
+    y-axis Storage Substrate --> Full Memory Abstraction
+    quadrant-1 Full Abstraction - Production
+    quadrant-2 Full Abstraction - Emerging
+    quadrant-3 Storage Layer - Emerging
+    quadrant-4 Storage Layer - Production
+    Mem0: [0.92, 0.85]
+    Graphiti: [0.84, 0.72]
+    Letta: [0.72, 0.90]
+    Supermemory: [0.63, 0.82]
+    Cognee: [0.80, 0.58]
+    Hindsight: [0.76, 0.68]
+    Redis AgentMem: [0.60, 0.68]
+    Honcho: [0.54, 0.58]
+    ByteRover: [0.65, 0.45]
+    LanceDB: [0.73, 0.32]
+    LangMem: [0.40, 0.70]
+    OpenViking: [0.30, 0.85]
+    AgentFS: [0.20, 0.30]
+    Holographic: [0.10, 0.18]
 ```
 
-**How to read this chart:**
-- **Right side** (x > 0.5) = Trial or Adopt — production-ready, recommended for evaluation
-- **Left side** (x < 0.5) = Assess or Caution — early-stage or narrowly scoped
-- **Top half** (y > 0.5) = Open source / self-hostable
-- **Bottom half** (y < 0.5) = Proprietary / managed cloud service
+### Chart 2 — Managed / Proprietary Solutions
+
+Y-axis: startup / niche (bottom) → enterprise hyperscaler (top)
+
+```mermaid
+quadrantChart
+    title Managed & Proprietary Agent Memory — May 2026
+    x-axis Assess --> Trial/Adopt
+    y-axis Startup/Niche --> Enterprise/Hyperscaler
+    quadrant-1 Hyperscaler - Production
+    quadrant-2 Hyperscaler - Emerging
+    quadrant-3 Startup - Emerging
+    quadrant-4 Startup - Production
+    AWS AgentCore: [0.88, 0.85]
+    Vertex AI Memory: [0.72, 0.82]
+    Azure Foundry: [0.65, 0.75]
+    Oracle AgentMem: [0.58, 0.68]
+    Maximem Synap: [0.44, 0.38]
+    RetainDB: [0.30, 0.22]
+```
 
 ### 🟢 Adopt
 
