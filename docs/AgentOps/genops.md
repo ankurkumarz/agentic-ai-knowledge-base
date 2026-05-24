@@ -130,17 +130,40 @@ GenOps (Generative Operations) represents the evolution of MLOps practices speci
 - **Hybrid Architectures**: Combining different model sizes and types
 - **Automated Testing**: Comprehensive testing frameworks for GenAI
 
+## Reward Engineering: An Emerging GenOps Role
+
+As agentic systems take on more autonomous, high-stakes tasks, defining *what* an agent should optimize for becomes as critical as defining *how* it operates. **Reward engineering** is the practice of designing the mathematical objectives and logical success criteria that govern agent behavior — the goals an agent pursues and the signals it uses to evaluate whether it is making progress.
+
+Predicted by You.com co-founders as one of the most consequential emerging professions in the AI era (2026 AI Predictions whitepaper), reward engineers operate at the intersection of:
+- **Domain expertise**: Understanding the workflows and outcomes that matter in the target industry
+- **Behavioral specification**: Translating business goals into formal, unambiguous objective functions
+- **Reinforcement learning concepts**: Understanding how reward shaping influences agent trajectories, including Goodhart's Law failure modes (when agents optimize the proxy metric rather than the intended outcome)
+
+Reward engineering sits above prompt engineering in the abstraction stack and is distinct from model training or fine-tuning. It is a GenOps function: the reward function must be versioned, tested, monitored for drift, and updated as business requirements evolve.
+
+**Key challenges in reward engineering:**
+
+| Challenge | Description |
+|---|---|
+| Specification completeness | Incompletely specified goals produce agents that satisfy the letter but not the spirit of the objective |
+| Reward hacking | Agents find unexpected paths to high reward that violate intent |
+| Multi-objective balancing | Many real tasks require trading off competing objectives (speed vs. accuracy, cost vs. thoroughness) |
+| Reward drift | Business requirements change; reward functions that are not versioned become misaligned over time |
+| Evaluation coverage | A reward function is only as good as the evaluation scenarios used to validate it |
+
 ## Future Directions
 
 ### Emerging Trends
 - **Agentic Workflows**: More sophisticated multi-agent systems
+- **Reward Engineering**: Formalizing agent goal specifications as a first-class engineering discipline
 - **Multimodal Integration**: Combining text, image, audio, and video
 - **Edge Deployment**: Running agents on edge devices
 - **Federated Learning**: Distributed training across organizations
+- **Vertical Specialization**: Industry-specific GenOps practices for law, healthcare, finance
 
 ### Technology Evolution
 - **Smaller, Efficient Models**: More capable models with lower resource requirements
-- **Specialized Hardware**: AI chips optimized for generative workloads
+- **Specialized Hardware**: AI chips optimized for generative workloads; orbital compute infrastructure emerging
 - **Advanced Orchestration**: More sophisticated workflow management
 - **Automated Optimization**: Self-optimizing agent systems
 
@@ -148,4 +171,11 @@ GenOps (Generative Operations) represents the evolution of MLOps practices speci
 - **Enterprise Integration**: Deeper integration with business processes
 - **Industry-Specific Solutions**: Tailored GenOps for different verticals
 - **Regulatory Frameworks**: Evolving compliance requirements
-- **Skills Development**: Training for GenOps practitioners
+- **Skills Development**: Training for GenOps practitioners, including reward engineering roles
+
+## See Also
+
+- [2026 AI Predictions (You.com)](../Concepts/ai-predictions-2026.md)
+- [Agent Definition](../Concepts/agent-definition.md)
+- [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
+- [Observability](../Observability/README.md)

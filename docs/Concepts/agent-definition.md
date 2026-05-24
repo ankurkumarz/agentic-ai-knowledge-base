@@ -45,7 +45,17 @@ OpenAI's production-oriented definition adds two concrete characteristics that d
 
 Applications that integrate LLMs without using them to control workflow execution — simple chatbots, single-turn LLMs, sentiment classifiers — are **not** agents under this definition.
 
+## Chat-Engine vs. Do-Engine (You.com, 2026)
+
+You.com's 2026 AI Predictions whitepaper introduces a practical framing that sharpens the distinction between conversational AI and agentic AI:
+
+- **Chat-Engine**: A system you converse with — it provides answers, summaries, or suggestions, but the human remains the executor of all actions.
+- **Do-Engine**: A system that autonomously completes tasks end-to-end — it plans, selects tools, executes steps, and delivers outcomes without requiring the human to orchestrate each step.
+
+This framing predicts a wholesale shift in how AI systems are built and valued: the utility of a Chat-Engine is bounded by human bandwidth; the utility of a Do-Engine scales with task complexity. Applications that integrate LLMs without delegating execution control remain Chat-Engines under this definition — and are expected to be superseded in enterprise value by Do-Engine architectures over 2026.
+
 ## See Also
 - [Agent Types](agent-types.md)
 - [Architecture and Design Patterns](../Architecture/components-selection.md)
 - [OpenAI Design Patterns](../DesignPatterns/openai-patterns.md)
+- [2026 AI Predictions (You.com)](ai-predictions-2026.md)

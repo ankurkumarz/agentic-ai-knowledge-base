@@ -32,9 +32,10 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 - **Code as Agent Harness**: 197-paper survey (Ning et al., 2026) establishing code as the executable, inspectable, and stateful substrate for agent systems; three-layer taxonomy: harness interface (reasoning/acting/environment modeling), harness mechanisms (planning/memory/tool use/iterative debugging), and harness scaling (multi-agent coordination over shared code artifacts); application domains spanning code assistants, GUI/OS agents, scientific discovery, embodied robotics, DevOps, and enterprise workflows
 
 ### **3. Concepts**
-- **Agent Definition**: Fundamental definitions and terminology for agentic AI systems
+- **Agent Definition**: Fundamental definitions and terminology for agentic AI systems; Chat-Engine vs. Do-Engine framing (You.com, 2026)
 - **Agent Types**: Classification and comparison of different agent architectures
 - **References**: Key research papers and foundational materials
+- **2026 AI Predictions (You.com)**: 35 predictions by Richard Socher and Bryan McCann covering workforce transformation, reward engineering, 10-person unicorns, software development, vertical AI agents, space computing, biotech, and consumer media
 
 ### **4. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
