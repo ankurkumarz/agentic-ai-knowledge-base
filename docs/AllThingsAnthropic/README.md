@@ -18,10 +18,13 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 | Model Context Protocol (MCP) | Open standard for tool and resource exposure to LLMs; co-developed by Anthropic | [Standards/mcp.md](../Standards/mcp.md) |
 | Building Effective Agents | Anthropic's canonical reference on agent design principles and patterns | [ProductionBestPractices/README.md](../ProductionBestPractices/README.md) |
 | Claude Models (Production) | Best practices for using Claude in production agentic workloads | [ProductionBestPractices/security.md](../ProductionBestPractices/security.md) |
+| Agent Skills / SKILLS.md | Reusable, slash-command-triggered workflow definitions for Claude Code agents; SKILLS.md convention packages repeatable engineering procedures as version-controlled, shareable task modules | [Standards/skills.md](../Standards/skills.md) |
+| Anthropic Marketplace Presence | Claude models distributed via AWS Bedrock, Google Vertex AI, and Azure AI Foundry; MCP open ecosystem acts as de-facto tool/agent marketplace | [Marketplace/anthropic-marketplace.md](../Marketplace/anthropic-marketplace.md) |
 
 ## See Also
 
 - [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md)
+- [Anthropic Marketplace Presence](../Marketplace/anthropic-marketplace.md)
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Production Best Practices — Context Engineering](../ProductionBestPractices/context-engineering.md)
 - [Agentic AI Industry Standards](../Standards/mcp.md)

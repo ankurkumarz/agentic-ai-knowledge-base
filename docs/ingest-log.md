@@ -5,6 +5,18 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-24] ingest | Agent Memory Providers — Maximem (Synap + Vity) | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://www.maximem.ai/; https://www.maximem.ai/product; https://www.maximem.ai/vity; https://www.maximem.ai/compare/maximem-synap-vs-mem0-vs-zep-vs-letta-vs-supermemory-vs-cognee-vs-evermind; https://github.com/maximem-ai
+
+## [2026-05-24] ingest | Agent Memory Providers — LanceDB, Cognee | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://github.com/lancedb/lancedb; https://github.com/CortexReach/memory-lancedb-pro; https://www.lancedb.com/blog/openclaw-lancedb-memory-layer; https://github.com/topoteretes/cognee; https://www.cognee.ai/blog/fundamentals/how-cognee-builds-ai-memory; https://www.cognee.ai/blog/cognee-news/cognee-raises-seven-million-five-hundred-thousand-dollars-seed
+
+## [2026-05-24] ingest | Agent Memory Providers — Honcho, Hindsight, Holographic, RetainDB, ByteRover + Redis context engine reference | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://github.com/plastic-labs/honcho; https://github.com/vectorize-io/hindsight; https://github.com/NeoVertex1/nuggets; https://www.retaindb.com/; https://github.com/campfirein/byterover-cli; https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/
+
 ## [2026-05-23] ingest | Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems (arXiv:2605.18747) | sections touched: AgentHarness/code-as-agent-harness.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, index.md, mkdocs.yml
 
 **Source**: https://arxiv.org/abs/2605.18747
@@ -22,6 +34,19 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-23] ingest | OpenViking (volcengine/OpenViking) | sections touched: AgentMemory/solutions.md
+
+**Sources**: https://github.com/volcengine/OpenViking; https://openviking.ai/; https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw/; https://developers.redhat.com/articles/2026/04/23/deploy-openviking-openshift-ai-improve-ai-agent-memory
+
+---
+
+## [2026-05-23] ingest | Google Cloud Agent Gallery — Partner-Built Agents in Gemini Enterprise | sections touched: Marketplace/google-cloud-marketplace.md (new), Marketplace/anthropic-marketplace.md (new), Marketplace/Readme.md, AllThingsGoogle/README.md, AllThingsAnthropic/README.md, mkdocs.yml
+
+**Sources**: https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise; Anthropic marketplace presence (second URL provided was malformed — pic.com/news/finance-agents — could not be fetched; page created from known distribution channels)
+
+## [2026-05-23] ingest | Agent Skills / SKILLS.md (Anthropic, 2025) | sections touched: Standards/skills-md.md (new), AllThingsAnthropic/README.md, mkdocs.yml
+
+**Sources**: https://claude.com/blog/skills, https://claude.com/blog/skills-explained, https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf
 ## [2026-05-22] ingest | AIDLC Workflows (AWS Labs) v0.1.8 | sections touched: Standards/aidlc.md (new), AllThingsAWS/README.md, ProductionBestPractices/testing-evaluations.md, Standards/openspec.md, index.md, mkdocs.yml
 
 **Source**: https://github.com/awslabs/aidlc-workflows + https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/

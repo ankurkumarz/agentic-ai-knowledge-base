@@ -14,6 +14,8 @@ theme:
   extra_css:
     - stylesheets/extra.css
 
+copyright: 'Supported by <a href="https://vedxai.com/" target="_blank" rel="noopener">VedXAI</a>, an initiative by <a href="https://vedcraft.com/" target="_blank" rel="noopener">Vedcraft</a>'
+
 nav:
   - Home: 'index.md'
   - 1. Concepts:
@@ -82,6 +84,7 @@ nav:
     - 6.5 OpenSpec: 'Standards/openspec.md'
     - 6.6 AG-UI: 'Standards/README.md'
     - 6.7 AIDLC Workflows (AWS): 'Standards/aidlc.md'
+    - 6.8 Agent Skills / SKILLS.md: 'Standards/skills.md'
   - 7. Agentic AI Reference Architecture:
     - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
     - 7.2 AI Assistant Reference Architecture: 'ReferenceArchitecture/ai-assistant-architecture.md'
@@ -150,7 +153,9 @@ nav:
   - 15. Agents Marketplace:
     - 15.1 AWS AI Agents Marketplace: 'Marketplace/aws-marketplace.md'
     - 15.2 AgentOps Marketplace: 'Marketplace/agentops.md'
-    - 15.3 Miscellaneous: 'Marketplace/Readme.md'
+    - 15.3 Google Cloud Agent Gallery: 'Marketplace/google-cloud-marketplace.md'
+    - 15.4 Anthropic Marketplace Presence: 'Marketplace/anthropic-marketplace.md'
+    - 15.5 Miscellaneous: 'Marketplace/Readme.md'
   - 16. Production Best Practices & Guidelines:
     - 16.1 Overview: 'ProductionBestPractices/README.md'
     - 16.2 Observability: 'ProductionBestPractices/observability.md'

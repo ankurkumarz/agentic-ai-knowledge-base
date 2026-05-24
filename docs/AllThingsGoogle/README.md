@@ -15,9 +15,11 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | GenOps | Google Cloud's evolution of MLOps adapted for generative AI and agent lifecycle management | [AgentOps/genops.md](../AgentOps/genops.md) |
 | Google Maturity Model | Google's perspective on agentic AI adoption maturity stages | [MaturityModels/google.md](../MaturityModels/google.md) |
 | Gemini Enterprise — Enterprise Comparison | Gemini platform in the context of the top 10 enterprise agentic AI platforms for 2026 | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
+| Google Agent Gallery (Agents Marketplace) | Partner-built agents embedded in the Gemini Enterprise app — 50+ certified partners, A2A protocol, two-step IT governance, $750M partner fund | [Marketplace/google-cloud-marketplace.md](../Marketplace/google-cloud-marketplace.md) |
 
 ## See Also
 
 - [Agent Platforms Overview](../AgentPlatforms/README.md)
+- [Google Cloud Agents Marketplace](../Marketplace/google-cloud-marketplace.md)
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
