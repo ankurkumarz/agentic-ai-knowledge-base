@@ -218,6 +218,21 @@ Microsoft's **[Agent Governance Toolkit (AGT)](./agent-governance-toolkit.md)** 
 
 See [Agent Governance Toolkit](./agent-governance-toolkit.md) for full detail.
 
+## Anthropic Perspective
+
+### Anthropic Sandbox Runtime
+
+Anthropic's **[Sandbox Runtime (`srt`)](./anthropic-sandbox-runtime.md)** is a lightweight OS-level sandboxing tool that enforces filesystem and network restrictions on arbitrary processes without containers. Its primary use case is wrapping **MCP servers** in a least-privilege execution envelope:
+
+- **Filesystem isolation**: deny-then-allow policy scoped to explicit path allowlists
+- **Network isolation**: allow-only model via HTTP/SOCKS5 proxies; blocks all unlisted domains
+- **OS-native primitives**: macOS Seatbelt (`sandbox-exec`) and Linux `bubblewrap` — lower overhead than Docker
+- **Violation monitoring**: real-time breach alerts for forensics and observability integration
+
+Install: `npm install -g @anthropic-ai/sandbox-runtime` (Apache-2.0, ~4.1k stars)
+
+See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
+
 ## See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Security considerations for frameworks
@@ -225,5 +240,6 @@ See [Agent Governance Toolkit](./agent-governance-toolkit.md) for full detail.
 - **[Standards](../Standards/README.md)**: Security standards and protocols
 - **[Best Practices](../ProductionBestPractices/README.md)**: Security best practices
 - **[Agent Governance Toolkit](./agent-governance-toolkit.md)**: Microsoft runtime governance for agents
+- **[Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)**: OS-level process sandboxing for MCP servers
 - **[MCP Standard](../Standards/mcp.md)**: Model Context Protocol (MCP Security Gateway target)
 - **[AI Governance Solutions](../AIGovernance/governance-solutions.md)**: Governance platforms and tooling

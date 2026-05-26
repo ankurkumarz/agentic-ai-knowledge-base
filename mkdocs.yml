@@ -133,6 +133,8 @@ nav:
     - 11.3 AWS Perspective: 'SecurityFrameworks/Readme.md'
     - 11.4 Microsoft Perspective:
       - 11.4.1 Agent Governance Toolkit: 'SecurityFrameworks/agent-governance-toolkit.md'
+    - 11.5 Anthropic Perspective:
+      - 11.5.1 Sandbox Runtime (srt): 'SecurityFrameworks/anthropic-sandbox-runtime.md'
   - 12. Agent Observability:
     - 12.1 Goals & Objectives: 'Observability/goals.md'
     - 12.2 Observability Solutions: 'Observability/solutions.md'

@@ -148,6 +148,7 @@ MCP helps build agents and complex workflows on top of LLMs through three primar
 - **Input Validation**: Validate all inputs from MCP clients
 - **Audit Logging**: Log all MCP operations for security auditing
 - **Network Security**: Use encrypted connections for sensitive data
+- **Process-level sandboxing**: Wrap MCP server processes with [Anthropic Sandbox Runtime (`srt`)](../SecurityFrameworks/anthropic-sandbox-runtime.md) to enforce filesystem and network restrictions at the OS level without containers (macOS Seatbelt / Linux bubblewrap)
 
 **Performance Optimization**:
 - **Caching**: Implement appropriate caching strategies

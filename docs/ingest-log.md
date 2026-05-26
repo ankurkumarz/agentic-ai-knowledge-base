@@ -618,3 +618,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AgentPlatforms/hermes-agent.md` | Extended | Added See Also backlink to openhuman.md |
 | `docs/AgentPlatforms/openclaw.md` | Extended | Added See Also backlink to openhuman.md |
 | `mkdocs.yml` | Extended | Added 5.7 OpenHuman (TinyHumans AI) nav entry |
+
+## [2026-05-26] ingest | https://github.com/anthropic-experimental/sandbox-runtime | sections touched: SecurityFrameworks, ProductionBestPractices/security, AllThingsAnthropic, Standards/mcp, mkdocs.yml
