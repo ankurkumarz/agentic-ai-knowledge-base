@@ -66,6 +66,7 @@ Linux requires `bubblewrap`, `socat`, and `ripgrep` as system dependencies.
 
 ## See Also
 
+- [Agent Sandboxing — Cross-Vendor Overview](./agent-sandboxing.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Agent Security — Production Best Practices](../ProductionBestPractices/security.md)
 - [Agentic AI Security Overview](./Readme.md)

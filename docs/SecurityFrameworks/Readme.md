@@ -233,6 +233,10 @@ Install: `npm install -g @anthropic-ai/sandbox-runtime` (Apache-2.0, ~4.1k stars
 
 See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 
+## Agent Sandboxing — Cross-Vendor Overview
+
+For a full comparison of cloud-hosted and local sandbox solutions (E2B, Daytona, Modal, Firecracker, gVisor, Kata Containers, nsjail, and more), see the [Agent Sandboxing](./agent-sandboxing.md) reference page.
+
 ## See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Security considerations for frameworks
@@ -241,5 +245,6 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 - **[Best Practices](../ProductionBestPractices/README.md)**: Security best practices
 - **[Agent Governance Toolkit](./agent-governance-toolkit.md)**: Microsoft runtime governance for agents
 - **[Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)**: OS-level process sandboxing for MCP servers
+- **[Agent Sandboxing](./agent-sandboxing.md)**: Cross-vendor comparison of sandbox solutions
 - **[MCP Standard](../Standards/mcp.md)**: Model Context Protocol (MCP Security Gateway target)
 - **[AI Governance Solutions](../AIGovernance/governance-solutions.md)**: Governance platforms and tooling
