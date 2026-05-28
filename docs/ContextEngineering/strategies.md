@@ -156,6 +156,7 @@ Only after mastering fundamentals:
 - [Agent Memory Management](../AgentMemory/README.md)
 - [RAG Architecture](../ReferenceArchitecture/rag-architecture.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [Harness Optimization](../AgentHarness/harness-optimization.md) — automated search over context management strategies; Meta-Harness discovers retrieval routing and context budgets that outperform hand-designed equivalents
 
 ## References
 

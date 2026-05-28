@@ -80,6 +80,20 @@ Modern agent products (Claude Code, Codex) are post-trained with models and harn
 
 A side effect is overfitting: changing tool logic can degrade model performance because the model was trained expecting specific harness behavior. This also means the best harness for a given task is not necessarily the one a model was post-trained with — harness optimization for a specific task can yield significant performance gains independent of model capability.
 
+## Automated Harness Optimization
+
+Because harnesses are code, the space of possible harness implementations is too large to explore by hand. Recent work demonstrates that harnesses can be **automatically searched** using an agentic outer loop, yielding harnesses that outperform hand-designed alternatives.
+
+Meta-Harness (Lee et al., 2026) treats harness optimization as a code search problem: an agentic proposer (a coding agent with full filesystem access to prior candidates' source code, scores, and execution traces) iteratively proposes improved harness implementations. Key results:
+
+- **+7.7 accuracy points** on text classification over a state-of-the-art context management baseline, using **4x fewer tokens**
+- **+4.7 accuracy points** on 200 IMO-level math problems, averaging across five held-out models not seen during search
+- Surpasses all hand-engineered baselines on TerminalBench-2 agentic coding tasks
+
+A discovered harness generalizes across model families — the search can be run on one model and the resulting harness deployed on others. This makes harness optimization a **model-independent performance lever**, complementary to model selection and prompt engineering.
+
+The critical design choice is giving the proposer access to raw execution traces (not compressed summaries), so it can diagnose specific failure modes before proposing targeted edits. See [Harness Optimization](./harness-optimization.md) for the full system architecture and best practices.
+
 ## Harness vs. Model Responsibility Over Time
 
 As models become more capable, some harness responsibilities will be absorbed natively (planning, self-verification, long-horizon coherence). However, harnesses will remain valuable because:
@@ -100,6 +114,7 @@ The survey organizes this into three layers: (1) harness interface — code conn
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
+- [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness (Lee et al., 2026)
 - [Code as Agent Harness](./code-as-agent-harness.md) — survey taxonomy of code as the agent substrate (Ning et al., 2026)
 - [Agentic Engineering Levels](../MaturityModels/agentic-engineering-levels.md) — harness engineering is Level 6 in the 8-level practitioner progression
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
@@ -110,6 +125,7 @@ The survey organizes this into three layers: (1) harness interface — code conn
 
 ## References
 
+- [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search; agentic proposer with filesystem-based history; +7.7 points on text classification, +4.7 points on IMO math reasoning, surpasses hand-engineered baselines on TerminalBench-2
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — defines the harness concept and derives core components from model limitations
 - [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering lessons from building a million-line codebase with zero manually-written code
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, and harnessability concepts

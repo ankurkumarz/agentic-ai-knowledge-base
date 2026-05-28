@@ -135,6 +135,18 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 | Harness coherence drift | Guides and sensors contradict each other as the harness grows | Treat harness as a system; periodically audit for conflicts; use agents to help maintain it |
 | Legacy codebase harnessability | Harness most needed where hardest to build | Prioritize highest-risk areas; introduce harnessability improvements incrementally |
 
+## Automated Harness Optimization
+
+Manual harness engineering covers the user harness for a specific codebase, but the **design space is too large to explore by hand** — the combination of retrieval logic, context budgets, routing predicates, tool definitions, and completion conditions is combinatorially large.
+
+Meta-Harness (Lee et al., 2026) demonstrates a complementary approach: an agentic outer loop that searches over harness code, using a coding agent with filesystem access to prior candidates' source code, scores, and raw execution traces. This addresses the exploration problem while still benefiting from a human-built starting harness. Key findings relevant to harness engineers:
+
+- **Execution traces matter more than scores**: giving the proposer raw traces (not compressed summaries) enables it to diagnose specific failure modes and make targeted edits
+- **Discovered harnesses generalize**: a harness found by searching on one model transfers to held-out models — harness quality is partially model-independent
+- **All harness dimensions are searchable**: the outer loop can jointly optimize system prompts, retrieval logic, context management, and tool definitions in a single search
+
+This shifts the harness engineer's role toward: (1) building a working scaffold that defines the search space, (2) ensuring clean logging of execution traces, and (3) setting up evaluation tasks that represent the target distribution. See [Harness Optimization](./harness-optimization.md) for the full architecture and results.
+
 ## Open Questions
 
 - How do we evaluate harness coverage and quality? (Analogous to code coverage and mutation testing for tests)
@@ -142,10 +154,12 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 - If sensors never fire, is that high quality or inadequate detection?
 - How far can agents make sensible trade-offs when instructions and feedback signals conflict?
 - What tooling can help configure, sync, and reason about feedforward and feedback controls as a unified system?
+- Can automated harness search (e.g., Meta-Harness) be extended to optimize the feedforward/feedback control structure itself, not just retrieval and context management?
 
 ## See Also
 
 - [Agent Harness](./agent-harness.md)
+- [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness; complements manual harness engineering
 - [Code as Agent Harness](./code-as-agent-harness.md) — research survey formalizing code as the executable, inspectable, stateful substrate of agent harnesses
 - [The 8 Levels of Agentic Engineering](../MaturityModels/agentic-engineering-levels.md) — harness engineering corresponds to Level 6 in the practitioner progression framework
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
@@ -157,6 +171,7 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 
 ## References
 
+- [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search via agentic proposer with filesystem access to execution traces; empirical evidence that harness optimization is model-independent
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, harnessability, and cybernetics framing
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — foundational definition of Agent = Model + Harness
 - [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering at scale
