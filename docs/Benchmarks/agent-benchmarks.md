@@ -28,6 +28,17 @@ A comprehensive benchmark specifically designed for AI agents operating in termi
 - Evaluates both correctness and efficiency of solutions
 - Relevant for coding agents and DevOps automation
 
+### TerminalBench-2
+
+An expanded version of Terminal Bench used to evaluate harness-level improvements in agentic coding. Includes 89 Dockerized tasks spanning diverse technical domains.
+
+**Key Characteristics**:
+- 89 Dockerized tasks covering code translation, distributed ML setup, systems programming, bioinformatics, and cryptanalysis
+- Tests entire agent harness (system prompts, tools, completion-checking logic, context management) — not just model capability
+- Used in the Meta-Harness paper to show that automatically discovered harnesses surpass hand-engineered baselines (Terminus 2, Terminus-KIRA)
+- Relevant for evaluating harness optimization approaches, not just model selection
+- Strong baselines: Terminus 2 and Terminus-KIRA provide hand-engineered orchestration paradigms
+
 ### METR (Model Evaluation & Threat Research)
 **Resource**: [METR](https://metr.org/)
 
@@ -116,3 +127,4 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 - [LLM Benchmarks](llm-benchmarks.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Observability](../Observability/Readme.md)
+- [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment

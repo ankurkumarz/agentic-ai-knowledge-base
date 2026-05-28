@@ -41,6 +41,7 @@ The context window is the agent's working memory — expensive, limited, and cri
 | [Devin / Cognition](https://cognition.ai/blog/dont-build-multi-agents) | Caution on multi-agent context distribution — sub-agents should avoid decisions to reduce conflict risk |
 | [ACE Framework](https://github.com/ace-agent/ace) | 3-role framework: Generator (creates context), Reflector (evaluates quality), Curator (organizes for retrieval) |
 | [Anthropic Cookbook: Tool Use Context Engineering](https://platform.claude.com/cookbook/tool-use-context-engineering-context-engineering-tools) | Empirical comparison of compaction, tool-result clearing, and memory tool on a 328K-token research corpus; workload-to-primitive mapping table |
+| [Meta-Harness (Lee et al., arXiv:2603.28052)](https://arxiv.org/abs/2603.28052) | Automated search over harness context management code using a coding agent with filesystem access to prior execution traces; discovered harnesses outperform hand-designed context management by 7.7 points while using 4x fewer tokens |
 
 ## Context Caching
 
@@ -55,3 +56,4 @@ Prompt caching reduces costs significantly for agents with large, stable system 
 - [State & Memory Management](./state-memory.md)
 - [Cost Management](./cost-management.md)
 - [Agent Security](./security.md)
+- [Harness Optimization](../AgentHarness/harness-optimization.md) — automated search over context management strategies; complements manual context engineering
