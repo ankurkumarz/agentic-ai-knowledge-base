@@ -624,3 +624,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 ## [2026-05-27] ingest | E2B, Daytona, Modal, Firecracker, gVisor, Kata Containers, nsjail (web research) | sections touched: SecurityFrameworks/agent-sandboxing.md (new), SecurityFrameworks/Readme.md, SecurityFrameworks/anthropic-sandbox-runtime.md, mkdocs.yml
 
 ## [2026-05-28] ingest | Meta-Harness: End-to-End Optimization of Model Harnesses (arXiv:2603.28052, Lee et al., March 2026) | sections touched: AgentHarness/harness-optimization.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, Benchmarks/agent-benchmarks.md, ContextEngineering/strategies.md, ProductionBestPractices/context-engineering.md, docs/index.md, mkdocs.yml
+
+## [2026-05-29] update | Benchmark additions: OSWorld-Verified, SWE-bench Pro, Terminal-Bench 2.1, Finance Agent v2, Humanity's Last Exam | sections touched: Benchmarks/agent-benchmarks.md, Benchmarks/llm-benchmarks.md

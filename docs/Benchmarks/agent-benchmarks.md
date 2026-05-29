@@ -39,6 +39,18 @@ An expanded version of Terminal Bench used to evaluate harness-level improvement
 - Relevant for evaluating harness optimization approaches, not just model selection
 - Strong baselines: Terminus 2 and Terminus-KIRA provide hand-engineered orchestration paradigms
 
+### Terminal-Bench 2.1
+**Resource**: [Terminal Bench](https://www.tbench.ai/)
+
+An incremental update to TerminalBench-2 with an expanded task set, improved Dockerized environments, and refined evaluation methodology. Maintains backward compatibility with TerminalBench-2 baselines while adding coverage for newer technical domains.
+
+**Key Characteristics**:
+- Expanded task count beyond the 89 tasks in TerminalBench-2, with new domains added
+- Improved Docker environment stability and reproducibility for more reliable automated scoring
+- Refined completion-checking logic to reduce ambiguous pass/fail edge cases
+- Continues to evaluate the full agent harness rather than isolated model capability
+- Backward-comparable with TerminalBench-2 results for longitudinal tracking of agent progress
+
 ### METR (Model Evaluation & Threat Research)
 **Resource**: [METR](https://metr.org/)
 
@@ -74,6 +86,17 @@ Benchmarks multimodal agents for open-ended tasks in real computer environments.
 - Evaluates agents that control computers like humans
 - Relevant for computer-use agents (e.g., Claude Computer Use, Operator)
 
+### OSWorld-Verified
+
+A curated subset of OSWorld tasks where human annotators have verified that each task is unambiguously solvable and the automated evaluation function produces accurate results. Designed to provide a higher-quality, lower-noise evaluation signal than the full OSWorld set.
+
+**Key Characteristics**:
+- Human-verified task solvability — reduces false negatives from unanswerable or ambiguously specified tasks
+- Accurate evaluation functions validated by annotators — reduces false positives from flawed graders
+- Preferred over the full OSWorld set when benchmark reliability matters more than breadth
+- Analogous in philosophy to SWE-bench Verified: curated correctness over raw volume
+- Useful as a calibration reference when comparing agent systems across papers
+
 ## Software Development Benchmarks
 
 ### SWE-Bench
@@ -86,7 +109,17 @@ A dataset that tests AI systems' ability to solve real GitHub issues automatical
 - Requires understanding large codebases
 - Evaluation via automated test suite execution
 - Industry standard for coding agent evaluation
-- Top systems (Devin, SWE-agent) achieve 40-50%+ on verified subset
+
+### SWE-bench Pro
+
+A significantly harder extension of SWE-bench targeting production-grade software engineering challenges. Issues are drawn from more complex, real-world scenarios that require multi-file edits, deeper codebase understanding, and reasoning across larger contexts than the original benchmark.
+
+**Key Characteristics**:
+- Harder task selection: issues require more reasoning steps, broader codebase context, and multi-file changes compared to standard SWE-bench
+- Longer effective context requirements — agents must navigate large, unfamiliar codebases
+- Designed to differentiate top-tier coding agents where standard SWE-bench scores are converging
+- Maintains the same automated test-suite evaluation methodology as the original
+- Relevant for teams building or selecting agents for production software engineering workflows
 
 ## Multi-Agent and Collaboration Benchmarks
 
@@ -96,17 +129,34 @@ A comprehensive benchmark evaluating LLMs as agents across 8 distinct environmen
 ### τ-bench (Tau-bench)
 Evaluates agents on realistic customer service scenarios requiring multi-turn conversations, policy adherence, and tool use. Tests agents' ability to follow complex business rules while serving customers effectively.
 
+## Domain-Specific Agent Benchmarks
+
+### Finance Agent v2
+
+A domain-specific benchmark evaluating AI agents on complex financial tasks requiring multi-step reasoning, tool use, and domain expertise. Version 2 extends the original with harder tasks and broader financial domain coverage.
+
+**Key Characteristics**:
+- Tasks span market analysis, portfolio construction, financial document interpretation, earnings call analysis, and regulatory compliance reasoning
+- Requires integration of external data sources (market feeds, SEC filings, financial statements) via tool use
+- Multi-step reasoning chains: agents must chain retrieval, calculation, and interpretation steps to produce final answers
+- Graded against expert-annotated ground truth rather than automated test suites
+- Relevant for teams building financial AI assistants, trading agents, or compliance automation systems
+- Version 2 adds more complex portfolio optimization scenarios and cross-document reasoning tasks compared to v1
+
 ## Benchmark Selection Guide
 
 | Use Case | Recommended Benchmark |
 |----------|----------------------|
 | General agent capability | GAIA |
 | Web automation | VisualWebArena |
-| Computer use | OSWorld |
-| Software development | SWE-Bench |
-| Terminal/CLI tasks | Terminal Bench |
+| Computer use (broad) | OSWorld |
+| Computer use (reliable signal) | OSWorld-Verified |
+| Software development (standard) | SWE-Bench |
+| Software development (hard/production) | SWE-bench Pro |
+| Terminal/CLI tasks | Terminal-Bench 2.1 |
 | Safety evaluation | METR |
 | Customer service agents | τ-bench |
+| Financial domain agents | Finance Agent v2 |
 
 ## Evaluation Considerations
 
