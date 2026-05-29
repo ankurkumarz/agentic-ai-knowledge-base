@@ -123,6 +123,7 @@ A companion catalog formalizes this as an architectural tuple **H=(E,T,C,S,L,V)*
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
+- [Flue](../AgenticFrameworks/flue.md) — open-source TypeScript agent harness framework; implements the Agent = Model + Harness pattern with built-in sandbox, sessions, and skills
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness (Lee et al., 2026)
 - [Code as Agent Harness](./code-as-agent-harness.md) — survey taxonomy of code as the agent substrate (Ning et al., 2026)
 - [LLM Harness Survey](./llm-harness-survey.md) — ETCLOVG taxonomy, harness completeness matrix, nine technical challenges, empirical benchmarks

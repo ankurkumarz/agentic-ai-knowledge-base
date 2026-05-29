@@ -22,6 +22,7 @@
 | [**Strands Agents**](https://strandsagents.com/latest/) | Python | Apache-2.0 | Lightweight agent SDK, model-driven, supports workflows & tools | Simple to use; good for orchestration & agent collaboration | Smaller community; limited advanced tooling | – / Self-hosted |
 | [**Google ADK (Agent Development Kit)**](https://google.github.io/adk-docs/) | Python, Java | Open Source | Modular, model-agnostic agent framework optimized for multi-agent systems | Platform-agnostic; ideal for enterprise or academic adaptation | GCP-heavy; evolving documentation | – / Self-hosted & Cloud |
 | [**OpenAI AgentKit**](https://openai.com/index/introducing-agentkit/) | Various (JS/Python via API) | Proprietary / Mixed | Visual builder, agent orchestration, evaluation, UI embedding | Rapid prototyping; integrated with OpenAI ecosystem | Vendor lock-in; limited low-level control | – / SaaS & Self-hosted |
+| [**Flue**](https://flueframework.com/) | TypeScript | Apache-2.0 | Harness-first agent framework; built-in virtual sandbox (just-bash) + container sandbox (Daytona); sessions, skills, MCP, OpenTelemetry | Headless programmable agents; runtime-agnostic deploy (Node, Cloudflare, CI); harness-centric design | TypeScript-only; experimental; smaller ecosystem | ~3.8K / Self-hosted |
 
 
 
