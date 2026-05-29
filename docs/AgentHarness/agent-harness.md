@@ -111,11 +111,21 @@ Code has three structural properties unavailable to text-based harnesses:
 
 The survey organizes this into three layers: (1) harness interface — code connecting agents to reasoning, action, and environment modeling; (2) harness mechanisms — planning, memory, tool use, and iterative debugging; (3) harness scaling — multi-agent coordination over shared code artifacts. See [Code as Agent Harness](./code-as-agent-harness.md) for the full taxonomy.
 
+## Formal Taxonomy: ETCLOVG
+
+A 2026 survey (submitted to TMLR) proposes the **ETCLOVG seven-layer taxonomy** as a formal classification for harness systems, separating structural pillars from control-plane layers:
+
+- **Structural pillars**: Execution (E), Tooling (T), Context (C), Lifecycle (L) — what an agent can do
+- **Control plane**: Observability (O), Verification (V), Governance (G) — how safely and reliably it operates
+
+A companion catalog formalizes this as an architectural tuple **H=(E,T,C,S,L,V)** — Execution Loop, Tool Registry, Context Manager, State Store, Lifecycle Hooks, Evaluation Interface. Evaluating 23+ systems against this model, the survey finds that only Claude Code, PRISM/OpenClaw, AIOS, OpenHands, and SWE-agent implement all six components. See [LLM Harness Survey](./llm-harness-survey.md) for the full taxonomy, completeness matrix, and empirical benchmarks.
+
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness (Lee et al., 2026)
 - [Code as Agent Harness](./code-as-agent-harness.md) — survey taxonomy of code as the agent substrate (Ning et al., 2026)
+- [LLM Harness Survey](./llm-harness-survey.md) — ETCLOVG taxonomy, harness completeness matrix, nine technical challenges, empirical benchmarks
 - [Agentic Engineering Levels](../MaturityModels/agentic-engineering-levels.md) — harness engineering is Level 6 in the 8-level practitioner progression
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Agent Memory Management](../AgentMemory/functional-tiers.md)
@@ -125,6 +135,7 @@ The survey organizes this into three layers: (1) harness interface — code conn
 
 ## References
 
+- [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — proposes ETCLOVG seven-layer taxonomy; evaluates 23+ systems; establishes harness design as the binding performance constraint (tool format optimization: 6.7% → 68.3% on SWE-bench)
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search; agentic proposer with filesystem-based history; +7.7 points on text classification, +4.7 points on IMO math reasoning, surpasses hand-engineered baselines on TerminalBench-2
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — defines the harness concept and derives core components from model limitations
 - [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering lessons from building a million-line codebase with zero manually-written code

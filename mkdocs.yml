@@ -32,6 +32,7 @@ nav:
     - 2.2 Harness Engineering: 'AgentHarness/harness-engineering.md'
     - 2.3 Code as Agent Harness: 'AgentHarness/code-as-agent-harness.md'
     - 2.4 Harness Optimization: 'AgentHarness/harness-optimization.md'
+    - 2.5 LLM Harness Survey & Taxonomy: 'AgentHarness/llm-harness-survey.md'
   - 3. Architecture and Design Patterns:
     - 3.1 Agentic Architecture Components Selection: 'Architecture/components-selection.md'
     - 3.2 Agentic Design Pattern Selection:

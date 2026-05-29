@@ -147,6 +147,24 @@ Meta-Harness (Lee et al., 2026) demonstrates a complementary approach: an agenti
 
 This shifts the harness engineer's role toward: (1) building a working scaffold that defines the search space, (2) ensuring clean logging of execution traces, and (3) setting up evaluation tasks that represent the target distribution. See [Harness Optimization](./harness-optimization.md) for the full architecture and results.
 
+## Nine Technical Challenges (Survey Evidence)
+
+A 2026 TMLR survey identifies nine empirically-grounded challenges across harness layers, with concrete severity data:
+
+| # | Challenge | Harness Layer | Key Metric |
+|---|---|---|---|
+| 1 | Security & Sandboxing | E, G | 15–35% frontier model container escape rates (SandboxEscapeBench) |
+| 2 | Evaluation & Benchmarking | V | 28% false negative rate in automated evaluation (OSWorld) |
+| 3 | Protocol Standardization | T | MCP latency: 2–15 ms; A2A latency: 50–200 ms |
+| 4 | Runtime Context Management | C | Schema-based skill injection: +16.2 pp improvement |
+| 5 | Tool Use & Registry | T | Removing 80% of tools outperforms model upgrades alone |
+| 6 | Memory Architecture | S/C | Mem0: 90% token reduction vs. full-context |
+| 7 | Planning & Reasoning | E, C | Interface design outweighs model capability as primary performance factor |
+| 8 | Multi-Agent Coordination | T, L | Byzantine fault tolerance unsolved for adversarial settings |
+| 9 | Compute Economics | E | 1M tokens/task average (AgencyBench); 13T tokens/week sector growth |
+
+See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context and harness completeness matrix.
+
 ## Open Questions
 
 - How do we evaluate harness coverage and quality? (Analogous to code coverage and mutation testing for tests)
@@ -161,6 +179,7 @@ This shifts the harness engineer's role toward: (1) building a working scaffold 
 - [Agent Harness](./agent-harness.md)
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness; complements manual harness engineering
 - [Code as Agent Harness](./code-as-agent-harness.md) — research survey formalizing code as the executable, inspectable, stateful substrate of agent harnesses
+- [LLM Harness Survey](./llm-harness-survey.md) — ETCLOVG taxonomy, nine technical challenges, harness completeness matrix
 - [The 8 Levels of Agentic Engineering](../MaturityModels/agentic-engineering-levels.md) — harness engineering corresponds to Level 6 in the practitioner progression framework
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Context Engineering Challenges](../ContextEngineering/challenges.md)
@@ -171,6 +190,7 @@ This shifts the harness engineer's role toward: (1) building a working scaffold 
 
 ## References
 
+- [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — ETCLOVG seven-layer taxonomy; nine empirically-grounded technical challenges; completeness matrix for 23+ systems
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search via agentic proposer with filesystem access to execution traces; empirical evidence that harness optimization is model-independent
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, harnessability, and cybernetics framing
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — foundational definition of Agent = Model + Harness
