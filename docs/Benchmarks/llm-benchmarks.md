@@ -44,6 +44,16 @@ Specialized leaderboard for LLM performance in agentic scenarios. Evaluates mode
 
 ### Reasoning and Knowledge
 
+**Humanity's Last Exam (HLE)**
+A large-scale, expert-level benchmark created by Scale AI and the Center for AI Safety, comprising thousands of questions contributed by domain experts across 100+ academic subjects. Questions are drawn from the frontier of human knowledge — graduate-level and beyond — in fields including mathematics, physics, chemistry, biology, law, history, and philosophy. Designed specifically to resist saturation by frontier models and to remain a meaningful differentiator as general benchmarks (MMLU, GPQA) approach ceiling scores.
+
+Key characteristics:
+- ~3,000 questions spanning 100+ disciplines, each submitted and vetted by subject-matter experts
+- Includes both multiple-choice and free-response formats
+- Tasks intentionally exceed typical academic curricula; many require reasoning across sub-fields
+- Maintained as a held-out test set to minimize contamination risk
+- Useful as a long-lived upper-bound reference for reasoning capability
+
 **MMLU (Massive Multitask Language Understanding)**
 Tests knowledge across 57 subjects including STEM, humanities, and social sciences. A standard benchmark for measuring broad knowledge and reasoning.
 
@@ -108,6 +118,7 @@ Benchmarks for hosting inference LLM models using vLLM, measuring throughput and
 | Coding ability | HumanEval, LiveCodeBench |
 | Mathematical reasoning | MATH, GSM8K |
 | Broad knowledge | MMLU |
+| Expert-level / frontier reasoning | Humanity's Last Exam (HLE) |
 | Truthfulness | TruthfulQA |
 | Long context | RULER, HELMET |
 | Inference performance | LLM-Inference-Bench |
