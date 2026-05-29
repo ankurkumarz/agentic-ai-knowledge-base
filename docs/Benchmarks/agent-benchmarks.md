@@ -174,7 +174,7 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 
 ## See Also
 
-- [LLM Benchmarks](llm-benchmarks.md)
+- [LLM Benchmarks](llm-benchmarks.md) — includes Epoch Capabilities Index (ECI), which covers agent and software engineering domains
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Observability](../Observability/Readme.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment

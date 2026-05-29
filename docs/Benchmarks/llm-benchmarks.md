@@ -2,7 +2,28 @@
 
 ## Overview
 
-LLM benchmarks measure the capabilities of large language models across dimensions including reasoning, knowledge, coding, mathematics, instruction following, and safety. This page covers both community-driven leaderboards and standardized academic benchmarks.
+LLM benchmarks measure the capabilities of large language models across dimensions including reasoning, knowledge, coding, mathematics, instruction following, and safety. This page covers composite capability indexes, community-driven leaderboards, and standardized academic benchmarks.
+
+## Composite Capability Indexes
+
+### Epoch Capabilities Index (ECI)
+**Resource**: [Epoch Capabilities Index](https://epoch.ai/eci) | [Benchmarking Hub](https://epoch.ai/benchmarks) | [Methodology](https://epoch.ai/data-insights/interpreting-eci)
+
+A composite metric maintained by Epoch AI (an independent research organization) that combines scores from 40+ benchmarks into a single, longitudinally comparable general capability scale. Designed specifically to resist saturation: as individual benchmarks reach ceiling scores, the ECI incorporates harder tasks to maintain a meaningful signal.
+
+**Key Characteristics**:
+- Built on **Item Response Theory (IRT)** — the same statistical framework used in standardized educational testing. The model jointly estimates model capability and benchmark difficulty from the pattern of scores across all model–benchmark pairs, rather than treating each benchmark score independently
+- Functions as a relative scale (similar to Elo): scores are not absolute percentages but positions on a continuous capability axis
+- Coverage as of 2025: 1,123 distinct evaluations spanning 147 models and 39 underlying benchmarks, including both Epoch-run evaluations and scores reported by benchmark creators and model developers
+- **Domains covered**: Mathematics, Software engineering, Agent tasks, Games, World knowledge, Science, Long context, Writing & creativity
+- Incorporates Epoch's own **FrontierMath** benchmark (Tiers 1–4, including research-level problems) to extend the difficulty ceiling beyond what existing public benchmarks provide
+- Benchmark difficulty is inferred statistically from overlapping model results — harder benchmarks carry more weight in the composite
+
+**Why it matters**:
+- Addresses benchmark saturation that makes it hard to differentiate frontier models on any single test
+- Enables longitudinal tracking: models from different years can be compared on the same scale even after benchmarks saturate
+- Independent of any AI lab — provides a neutral reference point for capability progress
+- Data and methodology are publicly available; visualizations hosted on Epoch AI's Benchmarking Hub
 
 ## Community-Driven Leaderboards
 
@@ -112,13 +133,14 @@ Benchmarks for hosting inference LLM models using vLLM, measuring throughput and
 
 | Evaluation Goal | Recommended Benchmark |
 |----------------|----------------------|
-| General capability comparison | LMSYS Chatbot Arena |
+| Longitudinal / cross-model capability tracking | Epoch Capabilities Index (ECI) |
+| General capability comparison (human preference) | LMSYS Chatbot Arena |
 | Tool/function calling | Berkeley Function Calling Leaderboard |
 | Agentic performance | Galileo Agent Leaderboard |
 | Coding ability | HumanEval, LiveCodeBench |
 | Mathematical reasoning | MATH, GSM8K |
-| Broad knowledge | MMLU |
 | Expert-level / frontier reasoning | Humanity's Last Exam (HLE) |
+| Broad knowledge | MMLU |
 | Truthfulness | TruthfulQA |
 | Long context | RULER, HELMET |
 | Inference performance | LLM-Inference-Bench |
@@ -126,7 +148,7 @@ Benchmarks for hosting inference LLM models using vLLM, measuring throughput and
 ## Limitations and Considerations
 
 ### Benchmark Saturation
-Many popular benchmarks (MMLU, HumanEval) are approaching saturation as frontier models score near 90%+. New, harder benchmarks are needed to differentiate top models.
+Many popular benchmarks (MMLU, HumanEval) are approaching saturation as frontier models score near 90%+. Composite indexes like the Epoch Capabilities Index address this by weighting harder benchmarks more heavily and extending the scale with tasks like FrontierMath.
 
 ### Training Data Contamination
 Models may have seen benchmark questions during training, inflating scores. Prefer benchmarks with held-out test sets or dynamic question generation.
@@ -139,3 +161,10 @@ No single benchmark covers all real-world use cases. Use multiple benchmarks and
 - [Agent Benchmarks](agent-benchmarks.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [LLM Evaluation Dashboards](Readme.md)
+
+## References
+
+- [Epoch Capabilities Index](https://epoch.ai/eci) — composite capability scale across 40+ benchmarks using Item Response Theory
+- [Interpreting the ECI](https://epoch.ai/data-insights/interpreting-eci) — methodology and design rationale
+- [Epoch Benchmarking Hub](https://epoch.ai/benchmarks) — full dataset, visualizations, and model comparisons
+- [AI capabilities progress has sped up](https://epoch.ai/data-insights/ai-capabilities-progress-has-sped-up) — ECI-based analysis of capability growth rates
