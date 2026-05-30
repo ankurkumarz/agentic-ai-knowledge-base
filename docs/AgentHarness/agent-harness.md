@@ -118,7 +118,7 @@ A 2026 survey (submitted to TMLR) proposes the **ETCLOVG seven-layer taxonomy** 
 - **Structural pillars**: Execution (E), Tooling (T), Context (C), Lifecycle (L) — what an agent can do
 - **Control plane**: Observability (O), Verification (V), Governance (G) — how safely and reliably it operates
 
-A companion catalog formalizes this as an architectural tuple **H=(E,T,C,S,L,V)** — Execution Loop, Tool Registry, Context Manager, State Store, Lifecycle Hooks, Evaluation Interface. Evaluating 23+ systems against this model, the survey finds that only Claude Code, PRISM/OpenClaw, AIOS, OpenHands, and SWE-agent implement all six components. See [LLM Harness Survey](./llm-harness-survey.md) for the full taxonomy, completeness matrix, and empirical benchmarks.
+A companion survey (Meng et al., arXiv:2605.29682) formalizes a six-component architectural tuple **H=(E,T,C,S,L,V)** — Execution Loop, Tool Registry, Context Manager, State Store, Lifecycle Hooks, Evaluation Interface — using labeled-transition-system semantics that distinguish safety invariants from liveness guarantees. Evaluating 23 systems against this model, the survey finds that only Claude Code, PRISM/OpenClaw, AIOS, OpenHands, and SWE-agent implement all six components. See [LLM Harness Survey](./llm-harness-survey.md) for the full taxonomy, completeness matrix, and empirical benchmarks.
 
 ## See Also
 
@@ -136,6 +136,7 @@ A companion catalog formalizes this as an architectural tuple **H=(E,T,C,S,L,V)*
 
 ## References
 
+- [Agent Harness for Large Language Model Agents: A Survey — Meng et al., arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — H=(E,T,C,S,L,V) formal model with LTS semantics; Harness Completeness Matrix for 23 systems; eight future directions; 110+ papers annotated
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — proposes ETCLOVG seven-layer taxonomy; evaluates 23+ systems; establishes harness design as the binding performance constraint (tool format optimization: 6.7% → 68.3% on SWE-bench)
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search; agentic proposer with filesystem-based history; +7.7 points on text classification, +4.7 points on IMO math reasoning, surpasses hand-engineered baselines on TerminalBench-2
 - [The Anatomy of an Agent Harness — Vivek Trivedy, LangChain (March 10, 2026)](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness) — defines the harness concept and derives core components from model limitations

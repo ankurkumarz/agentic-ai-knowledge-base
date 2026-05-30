@@ -5,6 +5,21 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-05-30] ingest | Agent Harness for Large Language Model Agents: A Survey (arXiv:2605.29682) | sections touched: AgentHarness/llm-harness-survey.md, AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md
+
+**Source**: https://arxiv.org/pdf/2605.29682
+**Type**: Research survey paper — Meng, Wang, Chen, Wu, Li, Jiang, Wang, Lu, Gao, Wu, Hu (2026); 110+ papers, 23 systems; DOI: 10.20944/preprints202604.0428.v3
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/llm-harness-survey.md` | Updated | Added Survey A/B disambiguation; attributed H=(E,T,C,S,L,V) LTS semantics to arXiv:2605.29682; added DeerFlow and DeepAgents to completeness matrix; added AgencyBench/HAL cost details; added Eight Future Directions section; updated References |
+| `docs/AgentHarness/agent-harness.md` | Updated | Updated Formal Taxonomy section to cite arXiv:2605.29682 and note LTS semantics; added arXiv citation to References |
+| `docs/AgentHarness/harness-engineering.md` | Updated | Updated Nine Technical Challenges attribution; added arXiv:2605.29682 to References |
+
+---
+
 ## [2026-05-24] ingest | Temporal — Durable Workflow Orchestration for Agentic AI | sections touched: WorkflowBuilders/orchestration.md (Temporal section added), index.md
 
 **Sources**: https://temporal.io/ai/agentic-ai; https://youtu.be/GEXllEH2XiQ?si=2uQ0Ov0VPxjGPf_o; https://docs.temporal.io/evaluate/understanding-temporal#durable-execution
