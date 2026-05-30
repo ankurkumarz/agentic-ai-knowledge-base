@@ -135,6 +135,62 @@ Harnesses are an attempt to externalize and make explicit what human developer e
 | Harness coherence drift | Guides and sensors contradict each other as the harness grows | Treat harness as a system; periodically audit for conflicts; use agents to help maintain it |
 | Legacy codebase harnessability | Harness most needed where hardest to build | Prioritize highest-risk areas; introduce harnessability improvements incrementally |
 
+## Loop Invariants
+
+These should be enforced in harness code, not in prompts:
+
+1. Every tool call receives exactly one corresponding result.
+2. Tool arguments are parsed and validated before execution.
+3. A permission decision happens before every side effect.
+4. Tool results are bounded, structured, and traceable.
+5. The loop has hard step, time, token, cost, and tool-call budgets.
+6. The final answer is based on observations, not assumed tool success.
+7. Errors, denials, cancellations, and timeouts become structured observations — they are not silently swallowed.
+
+## Retry Policy
+
+Retry only safe failures. The distinction is operationally critical:
+
+**Usually safe to retry:**
+- Transient model API errors
+- Network timeouts for read-only calls
+- Idempotent retrieval
+- Validation failures after the model fixes malformed arguments
+
+**Do not automatically retry:**
+- Payments or financial operations
+- External sends (email, Slack, webhooks)
+- Destructive actions (delete, overwrite)
+- Permission changes
+- Operations with unclear idempotency
+
+For high-risk operations, use idempotency keys and approval records — not retries.
+
+## Parallelization Rules
+
+Parallelize only independent, read-only, concurrency-safe tool calls.
+
+**Safe to parallelize:** search, read, retrieve metadata, classify independent records, summarize independent documents.
+
+**Must serialize:** writes, sends, deletes, financial actions, permission changes, shell/process execution, multi-step external workflow commits.
+
+When in doubt, serialize. The cost of a duplicate write or send is higher than the latency of sequential execution.
+
+## Entropy Management
+
+Agentic systems accumulate entropy over time: stale docs, duplicated rules, weak examples, obsolete tools, and low-quality patterns that future runs imitate. Add recurring cleanup workflows:
+
+| Cleanup Type | What It Addresses |
+|---|---|
+| Doc freshness scans | Outdated policies, version numbers, API signatures |
+| Tool inventory cleanup | Unused, overlapping, or overprivileged tools |
+| Quality score updates | Tasks where agent performance has drifted |
+| Stale plan archival | Completed or abandoned plans polluting active context |
+| Repeated-failure analysis | Tool failures or prompt patterns that keep recurring |
+| Regression eval additions | Production incidents not yet covered by evals |
+
+Continuous cleanup is cheaper than waiting until drift becomes systemic.
+
 ## Automated Harness Optimization
 
 Manual harness engineering covers the user harness for a specific codebase, but the **design space is too large to explore by hand** — the combination of retrieval logic, context budgets, routing predicates, tool definitions, and completion conditions is combinatorially large.
@@ -190,6 +246,7 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 
 ## References
 
+- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — provider-neutral skill; source for loop invariants, retry policy, parallelization rules, entropy management, and harness maturity levels
 - [Agent Harness for Large Language Model Agents: A Survey — Meng et al., arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — H=(E,T,C,S,L,V) formal model; Harness Completeness Matrix; eight future research directions; 110+ papers annotated; DOI: 10.20944/preprints202604.0428.v3
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — ETCLOVG seven-layer taxonomy; nine empirically-grounded technical challenges; completeness matrix for 23+ systems
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search via agentic proposer with filesystem access to execution traces; empirical evidence that harness optimization is model-independent

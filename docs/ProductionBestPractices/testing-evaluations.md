@@ -82,7 +82,63 @@ Key principle from Google: evaluating an agent is distinct from evaluating an LL
 - **Parity evaluations**: Test for consistent behavior across demographic groups
 - **Persona-based simulation**: AI-driven simulation that proactively tries to break safety systems through creative scenarios
 
+## Harness-Level Eval Categories
+
+Evaluate the harness, not only the model. Model accuracy is necessary but not sufficient — a model that scores well on benchmarks can still fail catastrophically through harness-level weaknesses.
+
+| Eval Category | What It Measures |
+|---|---|
+| Task success | Did the agent complete the goal? |
+| Tool selection precision | Did it choose the right tool, avoid unnecessary calls? |
+| Permission correctness | Were permission checks triggered at the right times? |
+| Approval correctness | Were approval requests issued at the right risk level? |
+| Prompt injection resistance | Does the agent treat retrieved content as data, not instruction? |
+| Context compaction retention | Did compaction preserve the active objective and approvals? |
+| Retrieval relevance | Did retrieval return useful, in-scope content? |
+| Output format adherence | Did tool results and final answers match expected schemas? |
+| Failure recovery | Did the agent handle tool failures gracefully (structured error, not silent skip)? |
+| Cost and latency | Were budgets respected? |
+| Human intervention rate | How often did the agent require unexpected escalation? |
+
+## Adversarial Test Cases
+
+Required adversarial scenarios for any production-bound harness:
+
+- Retrieved document contains "ignore previous instructions"
+- Email body contains a request to exfiltrate data
+- User asks for an external send without approval
+- Tool returns malformed or oversized data
+- Connector auth expires mid-run
+- Model calls an unknown tool
+- Model supplies invalid tool arguments
+- Context reaches limit and compaction triggers mid-task
+- Two loaded instructions conflict
+- Goal is vague or impossible to measure
+- Sensitive data (PII, secrets) appears in retrieved content
+- Subagent returns an unsupported or unverifiable conclusion
+
+Each failed adversarial test should become a permanent regression eval.
+
+## Launch Gates
+
+The following must be true before production rollout:
+
+- Tool registry is narrow — only the minimum set for the MVP job
+- Schema validation runs locally before every tool execution
+- Permission matrix is enforced in harness code (not only in prompts)
+- Approval UX exists for every risky action class
+- Prompt injection tests pass on realistic retrieval content
+- Compaction tests confirm the active objective survives compaction
+- Connector auth and revocation flows are tested end-to-end
+- Trace logging is enabled and includes all required fields
+- Cost budgets are enforced and wired to stop conditions
+- Rollback or incident response path is documented
+- Evals run on both realistic and adversarial task sets
+
 ## See Also
 - [Observability](./observability.md)
 - [Deployment](./deployment.md)
 - [Context Engineering](./context-engineering.md)
+
+## References
+- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist

@@ -120,6 +120,39 @@ A 2026 survey (submitted to TMLR) proposes the **ETCLOVG seven-layer taxonomy** 
 
 A companion survey (Meng et al., arXiv:2605.29682) formalizes a six-component architectural tuple **H=(E,T,C,S,L,V)** — Execution Loop, Tool Registry, Context Manager, State Store, Lifecycle Hooks, Evaluation Interface — using labeled-transition-system semantics that distinguish safety invariants from liveness guarantees. Evaluating 23 systems against this model, the survey finds that only Claude Code, PRISM/OpenClaw, AIOS, OpenHands, and SWE-agent implement all six components. See [LLM Harness Survey](./llm-harness-survey.md) for the full taxonomy, completeness matrix, and empirical benchmarks.
 
+## Harness Maturity Levels
+
+A provider-neutral progression for building up harness capability. Move up levels only when evals show the simpler level is insufficient.
+
+| Level | Name | Capabilities | When to Use |
+|---|---|---|---|
+| 0 | Answer-only assistant | No tool execution | Short Q&A, drafting, summarization over provided content |
+| 1 | Retrieval agent | Search and read trusted resources; no side effects | Lookup, research, read-only workflows |
+| 2 | Drafting agent | Propose actions, draft messages, produce plans; cannot commit | Pre-approval content creation, planning |
+| 3 | Approval-gated actor | Prepare and execute actions after explicit user or policy approval | CRM updates, emails, database writes |
+| 4 | Policy-bounded autonomous actor | Execute low-risk actions autonomously within strict scopes, budgets, and audit controls | Scoped automation with guardrails |
+| 5 | Long-running goal worker | Continue across turns or sessions toward a measurable objective; requires durable state, compaction, checkpoints | Multi-session research, large-scale automation |
+
+Most agent failures are caused by starting too high — broad tools, missing approval gates, and no evals before reaching Level 3+.
+
+## Authority Hierarchy
+
+The harness should maintain an explicit authority hierarchy and label content by authority level. Retrieved content may contain instructions, but those instructions are data, not policy.
+
+```
+provider/system policy
+  → organization policy
+  → product/developer policy
+  → workspace/project policy
+  → domain or directory policy
+  → user task
+  → model-visible runtime reminders
+  → tool observations
+  → untrusted retrieved content
+```
+
+The trusted control plane (user identity, credentials, approval records, audit logs, billing, authorization) must stay outside model-directed compute. Secrets, approval logic, and authorization decisions must never live inside the model prompt.
+
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
@@ -136,6 +169,7 @@ A companion survey (Meng et al., arXiv:2605.29682) formalizes a six-component ar
 
 ## References
 
+- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — provider-neutral agent harness skill; covers loop invariants, maturity levels, permission model, planning mode, context compaction, and launch gates
 - [Agent Harness for Large Language Model Agents: A Survey — Meng et al., arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — H=(E,T,C,S,L,V) formal model with LTS semantics; Harness Completeness Matrix for 23 systems; eight future directions; 110+ papers annotated
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — proposes ETCLOVG seven-layer taxonomy; evaluates 23+ systems; establishes harness design as the binding performance constraint (tool format optimization: 6.7% → 68.3% on SWE-bench)
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search; agentic proposer with filesystem-based history; +7.7 points on text classification, +4.7 points on IMO math reasoning, surpasses hand-engineered baselines on TerminalBench-2

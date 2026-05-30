@@ -25,6 +25,41 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | Tool call failure visibility | Tool failures silently degrade agent quality | Checked only final output quality; missed upstream tool errors | Log every tool invocation with input, output, latency, and success/failure status |
 | Business metric correlation | Technical metrics don't reflect actual agent value | Tracked only P99 latency; missed that task completion rate was declining | Define business KPIs (task completion rate, escalation rate, resolution rate) and correlate with technical traces |
 
+## Trace Fields Reference
+
+Trace operational events, not private hidden reasoning. Each agent run should record:
+
+| Category | Fields |
+|---|---|
+| Identity | `run_id`, `session_id`, user/tenant, model and provider |
+| Context | Context size at call, instructions loaded, tools visible |
+| Tool activity | Tool calls, tool args (hashed or redacted), permission decisions, approval requests/results, tool result summaries |
+| Errors | Errors and retries, compaction boundaries |
+| Cost | Token usage (input/output/cached), cost, latency |
+| Outcome | Final status, reason for stop |
+
+A trace should answer:
+- What did the agent try to do?
+- What data did it use?
+- What tool changed state?
+- Who approved it?
+- What failed?
+- Why did it stop?
+- Could the run be replayed?
+
+## Trace Grading
+
+After each run, grade specific events:
+- Did the agent use the right tool?
+- Was the tool call necessary?
+- Were arguments valid?
+- Was permission checked before side effects?
+- Was approval requested at the right time?
+- Was the final answer grounded in tool results?
+- Did compaction preserve the active objective?
+
+Trace grading is the feedback mechanism that turns production observations into harness improvements.
+
 ## Tooling
 
 | Platform | Open Source | Cost Tracking | Evaluations | Best For |
@@ -162,6 +197,9 @@ Layered evaluation strategy for multi-agent systems: per-agent evaluations (isol
 - [Agent Testing & Evaluations](./testing-evaluations.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Observability Solutions](../Observability/solutions.md)
+
+## References
+- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for trace field taxonomy, trace grading questions, and diagnostic framework
 
 Managing an autonomous agent in production requires a continuous operational cycle rather than static monitoring:
 
