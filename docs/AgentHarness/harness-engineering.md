@@ -149,7 +149,7 @@ This shifts the harness engineer's role toward: (1) building a working scaffold 
 
 ## Nine Technical Challenges (Survey Evidence)
 
-A 2026 TMLR survey identifies nine empirically-grounded challenges across harness layers, with concrete severity data:
+Two 2026 surveys (Meng et al., arXiv:2605.29682; Picrew et al., OpenReview TMLR) identify nine empirically-grounded challenges across harness layers, with concrete severity data:
 
 | # | Challenge | Harness Layer | Key Metric |
 |---|---|---|---|
@@ -190,6 +190,7 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 
 ## References
 
+- [Agent Harness for Large Language Model Agents: A Survey — Meng et al., arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — H=(E,T,C,S,L,V) formal model; Harness Completeness Matrix; eight future research directions; 110+ papers annotated; DOI: 10.20944/preprints202604.0428.v3
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — ETCLOVG seven-layer taxonomy; nine empirically-grounded technical challenges; completeness matrix for 23+ systems
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — automated harness search via agentic proposer with filesystem access to execution traces; empirical evidence that harness optimization is model-independent
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, harnessability, and cybernetics framing

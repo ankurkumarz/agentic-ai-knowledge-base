@@ -2,16 +2,19 @@
 
 ## Overview
 
-"Agent Harness Engineering: A Survey" (submitted to TMLR, 2026) establishes harness engineering as an independent system discipline and proposes the **ETCLOVG seven-layer taxonomy** for classifying how language models are integrated into production application frameworks. The survey covers 110+ papers and analyzes 23+ deployed systems across the implementation spectrum.
+This page synthesizes two related 2026 surveys that together define the harness engineering discipline:
 
-The central claim: harness design, not model capability, is the binding constraint on agent reliability in production. Tool format optimization alone moved SWE-bench performance from 6.7% to 68.3% — more than any model upgrade in the same period.
+**Survey A — "Agent Harness Engineering: A Survey"** (Picrew et al., submitted to TMLR, 2026) establishes harness engineering as an independent system discipline and proposes the **ETCLOVG seven-layer taxonomy** for classifying how language models are integrated into production application frameworks. The survey covers 110+ papers and analyzes 23+ deployed systems.
 
-A companion catalog ("Agent Harness for Large Language Model Agents: A Survey") formalizes a related six-component architectural model H=(E,T,C,S,L,V) and provides a dataset of analyzed papers on HuggingFace.
+**Survey B — "Agent Harness for Large Language Model Agents: A Survey"** (Meng, Wang, Chen, Wu, Li, Jiang, Wang, Lu, Gao, Wu, Hu; arXiv:2605.29682, 2026) provides a formal six-component harness model **H=(E,T,C,S,L,V)** with labeled-transition-system semantics distinguishing safety and liveness properties, a structured Harness Completeness Matrix, and a HuggingFace dataset of 110+ annotated papers spanning 23 systems.
 
-- Survey page: https://picrew.github.io/LLM-Harness/
-- OpenReview submission: https://openreview.net/forum?id=3hXEPbG0dh
-- Companion catalog: https://github.com/Gloriaameng/Awesome-Agent-Harness
-- Dataset: https://huggingface.co/datasets/GloriaaaM/LLM-Agent-Harness-Survey
+The shared central claim: **the agent execution harness — not the model — is the primary determinant of agent reliability at scale.** Tool format optimization alone moved SWE-bench performance from 6.7% to 68.3% — more than any model upgrade in the same period.
+
+- Survey A page: https://picrew.github.io/LLM-Harness/
+- Survey A OpenReview: https://openreview.net/forum?id=3hXEPbG0dh
+- Survey B arXiv: https://arxiv.org/pdf/2605.29682
+- Survey B GitHub catalog: https://github.com/Gloriaameng/Awesome-Agent-Harness
+- Survey B HuggingFace dataset: https://huggingface.co/datasets/GloriaaaM/LLM-Agent-Harness-Survey
 
 ---
 
@@ -42,7 +45,7 @@ The structural layers (E,T,C,L) determine what an agent *can do*; the control-pl
 
 ## Formal Model: H=(E,T,C,S,L,V)
 
-The companion catalog formalizes agent execution harnesses as an architectural tuple — a complementary formalization that makes each boundary explicit:
+Survey B (Meng et al., arXiv:2605.29682) formalizes agent execution harnesses as an architectural tuple with **labeled-transition-system semantics**, distinguishing safety properties (invariants that must always hold) from liveness properties (eventual-progress guarantees). Each component boundary is made explicit:
 
 | Symbol | Component | Responsibility |
 |---|---|---|
@@ -92,16 +95,18 @@ The survey identifies nine open challenges with empirical severity data:
 
 ## Harness Completeness Matrix
 
-The survey evaluates 23+ systems against the six-component model:
+Survey B evaluates 23 systems against the six-component model (from arXiv:2605.29682):
 
 | Category | Systems | Notes |
 |---|---|---|
 | **Full-Stack** (all 6 components) | Claude Code, PRISM/OpenClaw, AIOS, OpenHands, SWE-agent | Production-grade or research-grade full harness implementations |
-| **Multi-Agent Harnesses** | MetaGPT, AutoGen, ChatDev, CAMEL | Strong on coordination; variable on individual E/C/V layers |
+| **Multi-Agent Harnesses** | MetaGPT, AutoGen, ChatDev, CAMEL, DeerFlow, DeepAgents | Strong on coordination; variable on individual E/C/V layers |
 | **General Frameworks** | LangChain, LangGraph, LlamaIndex | Provide primitives; completeness depends on user configuration |
 | **Evaluation Infrastructure** | HAL, AgentBench, OSWorld, BrowserGym | Specialized V-layer; not production execution harnesses |
 
-**HAL evaluation infrastructure** reached 21,730 rollouts as a unified evaluation layer spanning multiple systems, representing the most comprehensive V-layer deployment in the survey period.
+**HAL evaluation infrastructure** (Kapoor et al., 2026) reached 21,730 agent rollouts across nine models and nine benchmarks at a total cost of approximately $40,000, representing the most comprehensive V-layer deployment in the survey period.
+
+**AgencyBench** (Li et al., 2026) evaluates six agentic capabilities across 138 real-world tasks requiring an average of one million tokens per task — illustrating the compute scale required for long-horizon evaluation.
 
 ---
 
@@ -129,6 +134,21 @@ The survey catalogs 110+ papers organized into lineages:
 | LLM-native frameworks | 2022–2023 | LangChain, LlamaIndex — tool registries and context managers for LLMs |
 | Agentic production systems | 2024–2025 | SWE-agent, OpenHands, AutoGen — full harnesses for autonomous coding and multi-agent tasks |
 | Harness-as-discipline | 2025–2026 | Explicit naming of harness engineering; automated harness optimization; formal taxonomy proposals |
+
+---
+
+## Eight Future Directions (Meng et al., arXiv:2605.29682)
+
+Survey B identifies eight open research directions for harness engineering:
+
+1. **Formal harness specification language (DSL)** — a domain-specific language for expressing harness contracts, enabling automated compliance checking
+2. **Cross-harness benchmark portability** — test suites that run against any H=(E,T,C,S,L,V)-compliant harness without modification
+3. **Security taxonomy extending OWASP Top 10** — harness-specific threat model covering tool hijacking, context poisoning, and agent impersonation
+4. **MCP/A2A protocol interoperability bridging** — gateway layer to route between tool-call (MCP) and agent-coordination (A2A) protocols
+5. **Long-horizon evaluation methodology** — evaluation approaches for tasks requiring 1M+ token contexts (cf. AgencyBench)
+6. **Harness-aware fine-tuning** — training procedures that optimize model behavior conditioned on specific harness configurations
+7. **Memory interface standardization** — common API for pluggable memory backends (S-layer), enabling portability across Mem0, LanceDB, and similar systems
+8. **Harness transparency and auditability** — observability primitives that expose harness decisions (routing, compaction triggers, tool selection) to external audit
 
 ---
 
@@ -163,7 +183,8 @@ The survey catalogs 110+ papers organized into lineages:
 
 ## References
 
+- [Agent Harness for Large Language Model Agents: A Survey — Meng, Wang, Chen, Wu, Li, Jiang, Wang, Lu, Gao, Wu, Hu; arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — primary source for H=(E,T,C,S,L,V) formal model with LTS semantics; Harness Completeness Matrix across 23 systems; 110+ papers surveyed; eight future directions; DOI: 10.20944/preprints202604.0428.v3
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — proposes the ETCLOVG seven-layer taxonomy; covers 110+ papers and 23+ systems; establishes harness design as the binding constraint on agent reliability
 - [Agent Harness Engineering project page](https://picrew.github.io/LLM-Harness/) — companion site with paper, catalog, and BibTeX
-- [Awesome-Agent-Harness catalog — Gloriaameng (GitHub)](https://github.com/Gloriaameng/Awesome-Agent-Harness) — companion catalog with the H=(E,T,C,S,L,V) formalization; 110+ papers annotated
-- [LLM-Agent-Harness-Survey dataset — GloriaaaM (HuggingFace)](https://huggingface.co/datasets/GloriaaaM/LLM-Agent-Harness-Survey) — structured dataset of surveyed papers
+- [Awesome-Agent-Harness catalog — Gloriaameng (GitHub)](https://github.com/Gloriaameng/Awesome-Agent-Harness) — companion GitHub repository; 251 stars; links to v4 PDF
+- [LLM-Agent-Harness-Survey dataset — GloriaaaM (HuggingFace)](https://huggingface.co/datasets/GloriaaaM/LLM-Agent-Harness-Survey) — structured dataset of 110+ surveyed papers with annotations
