@@ -32,6 +32,87 @@ GenOps (Generative Operations) is the evolution of MLOps for agentic systems. Ke
 | Scaling tool dependencies | Agent scale-out is bottlenecked by downstream tool API rate limits | Scaled agent replicas without scaling tool capacity; hit rate limits immediately | Model tool capacity as a first-class constraint; implement queuing and backpressure for tool calls |
 | Deployment rollback | Rolling back an agent deployment is complex when memory stores have been mutated | Rolled back code but not memory; agents behaved inconsistently | Implement memory versioning or append-only memory with rollback markers; test rollback procedures regularly |
 
+## Planning Mode
+
+Planning mode is a runtime mode enforced by the harness, not a paragraph in a prompt. Use it for non-trivial, ambiguous, multi-step, high-impact, or high-risk tasks.
+
+**Planning mode allows:** reading, searching, asking clarifying questions, comparing approaches, drafting a plan artifact, estimating risks.
+
+**Planning mode blocks:** writes, sends, deletes, payments, permission changes, deployments, external commitments, and other irreversible side effects.
+
+Enter planning mode when: more than one valid strategy exists; the work touches multiple systems; side effects are hard to undo; tool execution is expensive; the task will exceed one context window.
+
+Store the plan as a durable artifact outside the prompt. Before executing risky steps, request approval that includes the summary, exact actions, risk class, expected outcome, rollback path, and scope. If the plan changes materially, request approval again.
+
+## Step Budgets
+
+Every loop-based agent needs explicit budgets enforced in harness code:
+
+| Budget | Description |
+|---|---|
+| `max_model_turns` | Maximum model calls per run |
+| `max_tool_calls` | Maximum total tool invocations |
+| `max_parallel_tool_calls` | Cap on concurrent tool calls |
+| `max_wall_time_seconds` | Hard wall-clock timeout |
+| `max_input_tokens` | Context budget per call |
+| `max_output_tokens` | Output length cap |
+| `max_total_cost` | Cost ceiling in dollars/credits |
+| `max_tool_result_chars` | Bound on result size per tool call |
+| `max_retries_per_tool_call` | Retry ceiling before structured failure |
+
+When any budget is reached, stop with a structured status: `{ "status": "stopped", "reason": "step_limit_reached", "completed": false, "next_safe_action": "..." }`. Never silently exhaust the budget.
+
+## Goal-Like Loop
+
+A goal is a durable objective with a measurable done condition. Use a goal-like loop when the agent should continue making progress across many steps, tool calls, or sessions.
+
+Goal state should be persisted outside the prompt:
+
+```yaml
+objective: "..."
+status: active | paused | completed | blocked | cancelled
+scope: "..."
+done_condition: "..."
+budget:
+  max_steps: 30
+  max_cost: "..."
+  max_wall_time: "..."
+checkpoints:
+  - "..."
+validation:
+  - "..."
+forbidden_actions:
+  - "..."
+approval_required_for:
+  - "..."
+progress_log_ref: "..."
+```
+
+**Good goal:** "Analyze the last 200 support escalations, classify the top five repeatable causes with evidence, propose one operational fix per cause, and stop when the report passes the source-check and PII-redaction checklist."
+
+**Bad goal:** "Improve support operations."
+
+A good goal has one objective, bounded scope, source materials, allowed tools, forbidden actions, budget, checkpoints, validation method, and a stopping condition.
+
+## MVP Build Sequence
+
+For a new domain agent, follow this order. Each step should pass evals before moving to the next:
+
+1. Build the manual model-tool-observation loop
+2. Add strict tool schemas and local validation
+3. Add runtime permission checks
+4. Add structured tool results and error observations
+5. Add step and cost budgets
+6. Add trace logging
+7. Add prompt-cache-aware context ordering
+8. Add planning mode for high-risk tasks
+9. Add context compaction
+10. Add skills for reusable workflows
+11. Add MCP/external connectors with scoped permissions
+12. Add goal-like loops only after the base agent passes evals
+13. Add subagents only when decomposition improves measured results
+14. Add recurring entropy cleanup workflows
+
 ## Operational Maturity Levels
 
 | Level | Characteristics |
@@ -111,4 +192,5 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 - [Agentic Architectural Patterns — Arsanjani & Bustos](../DesignPatterns/arsanjani-patterns.md) — full fault tolerance and robustness pattern catalog
 
 ## References
+- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for planning mode runtime model, step budgets, goal-like loop structure, and MVP build sequence
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for robustness patterns: Watchdog Timeout, Adaptive Retry with Prompt Mutation, Auto-Healing, Incremental Checkpointing, Rate-Limited Invocation, Fallback Model Invocation, Delayed Escalation.

@@ -41,6 +41,53 @@ Google's three-layer defense model addresses both:
 | MCP tool tampering | Tool descriptions in Model Context Protocol integrations are modified to inject hidden instructions | Trusted MCP tool metadata without verification; agent executed poisoned tool logic | Deploy an MCP Security Gateway layer that monitors for description drift, typosquatting, and hidden instruction patterns on every tool invocation |
 | MCP server over-privilege | MCP servers run as host OS processes with invoking user's permissions; a compromised server can read arbitrary files or phone home | Relied on trust in third-party MCP server code; no OS-level restriction | Wrap each MCP server process with [Anthropic Sandbox Runtime (`srt`)](../SecurityFrameworks/anthropic-sandbox-runtime.md) to enforce an explicit filesystem + network allowlist at OS level (macOS Seatbelt / Linux bubblewrap) |
 
+## Layered Guardrail Taxonomy
+
+Defense-in-depth for agentic systems requires guardrails at every stage of the loop, not only at input:
+
+| Layer | Where Applied | What It Checks |
+|---|---|---|
+| Input guardrails | Before the agent receives a request | Reject or route unsafe user requests |
+| Context guardrails | During context assembly | Label untrusted content; redact secrets before they enter the model |
+| Schema guardrails | On tool arguments | Force structured inputs and outputs; reject malformed calls |
+| Tool guardrails | Around execution | Validate args and results; bound result size; redact sensitive data |
+| Permission guardrails | Before side effects | Approve, deny, or pause based on risk class |
+| Output guardrails | Before user-visible response | Check final answer for PII, unsafe content, false claims |
+| Trace guardrails | After the run | Grade tool calls and decisions; detect anomalies retrospectively |
+
+Each guardrail should be fast, specific, and independently testable.
+
+## Approval Record Format
+
+High-risk actions must pause the loop and emit a structured approval record stored outside the model context. The model must never approve its own actions.
+
+**Approval request:**
+```json
+{
+  "approval_type": "external_send",
+  "action": "send_email",
+  "target": "customer@example.com",
+  "risk": "external_communication",
+  "preview_ref": "artifact://drafts/email_123",
+  "expected_result": "Customer receives renewal reminder.",
+  "rollback": "Cannot unsend; follow-up correction possible.",
+  "scope": "single_send_only"
+}
+```
+
+**Approval result:**
+```json
+{
+  "status": "approved",
+  "approved_by": "user_id",
+  "timestamp": "...",
+  "scope": "single_send_only",
+  "expires_at": "..."
+}
+```
+
+Approval must be scoped to the exact action and plan version. Vague consent is not blanket authorization. Approval records must survive context compaction — store them in durable state, not only in the prompt.
+
 ## Security Frameworks Reference
 
 | Framework | Provider | Key Focus |
@@ -106,3 +153,6 @@ When a threat is detected in production, the response follows: **contain → tri
 - [Deployment](./deployment.md) — Secure deployment practices
 - [Context Engineering](./context-engineering.md) — Context isolation and sanitization
 - [SecurityFrameworks](../SecurityFrameworks/Readme.md) — NIST AI RMF, Google SAIF, AWS coverage
+
+## References
+- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model
