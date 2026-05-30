@@ -121,6 +121,20 @@ A significantly harder extension of SWE-bench targeting production-grade softwar
 - Maintains the same automated test-suite evaluation methodology as the original
 - Relevant for teams building or selecting agents for production software engineering workflows
 
+### ALE-Bench
+**Resource**: [ALE-Bench Leaderboard](https://sakanaai.github.io/ALE-Bench-Leaderboard/) | [Paper (NeurIPS 2025)](https://arxiv.org/abs/2506.09050) | [GitHub](https://github.com/SakanaAI/ALE-Bench)
+
+A benchmark for long-horizon, objective-driven algorithm engineering, developed by Sakana AI and accepted to NeurIPS 2025 (Datasets & Benchmarks track). Draws problems from the AtCoder Heuristic Contest (AHC) — real competitive programming contests focused on NP-hard optimization problems that have no known exact solution. Unlike pass/fail coding benchmarks, ALE-Bench rewards iterative improvement toward a numeric score, mirroring how human contestants spend days or weeks refining algorithms.
+
+**Key Characteristics**:
+- **40 problems** sourced from AHC contests held through April 2025; a lite subset of 10 representative problems is also provided
+- **Score-based evaluation** (not pass/fail): agents are scored on solution quality against a continuous numeric objective, enabling fine-grained comparison
+- **Long time horizon**: encourages iterative refinement across many iterations — agents submit code, observe test-run feedback and visualizations, and improve their solutions in a loop
+- **Domains**: routing, planning, multi-agent control, puzzle-solving, Bayesian inference, and other NP-hard combinatorial optimization problems
+- **Scoring metrics**: per-problem raw score, contest rank among ~1,000 human competitors, and an Elo-like performance rating; aggregated as mean/median across the suite
+- **ALE-Agent** (Sakana AI's reference agent): achieved a top-21 finish out of ~1,000 participants in a live AtCoder Heuristic Competition, validating benchmark-to-real-competition transferability
+- Complements SWE-bench (bug-fixing, pass/fail) with a fundamentally different evaluation axis: continuous optimization under a time budget rather than binary correctness
+
 ## Multi-Agent and Collaboration Benchmarks
 
 ### AgentBench
@@ -153,6 +167,7 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Computer use (reliable signal) | OSWorld-Verified |
 | Software development (standard) | SWE-Bench |
 | Software development (hard/production) | SWE-bench Pro |
+| Algorithm engineering / optimization | ALE-Bench |
 | Terminal/CLI tasks | Terminal-Bench 2.1 |
 | Safety evaluation | METR |
 | Customer service agents | τ-bench |

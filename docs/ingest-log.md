@@ -630,3 +630,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 ## [2026-05-29] ingest | Agent Harness Engineering: A Survey — https://picrew.github.io/LLM-Harness/ (OpenReview/TMLR, 2026) | sections touched: AgentHarness/llm-harness-survey.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, docs/index.md, mkdocs.yml
 
 ## [2026-05-29] ingest | https://flueframework.com/ | sections touched: AgenticFrameworks/flue.md (new), AgenticFrameworks/README.md, AgentHarness/agent-harness.md, mkdocs.yml
+
+## [2026-05-30] ingest | ALE-Bench (Sakana AI) — https://sakanaai.github.io/ALE-Bench-Leaderboard/ | sections touched: Benchmarks/agent-benchmarks.md
