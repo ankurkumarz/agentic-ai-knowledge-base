@@ -16,6 +16,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | Google Maturity Model | Google's perspective on agentic AI adoption maturity stages | [MaturityModels/google.md](../MaturityModels/google.md) |
 | Gemini Enterprise — Enterprise Comparison | Gemini platform in the context of the top 10 enterprise agentic AI platforms for 2026 | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
 | Google Agent Gallery (Agents Marketplace) | Partner-built agents embedded in the Gemini Enterprise app — 50+ certified partners, A2A protocol, two-step IT governance, $750M partner fund | [Marketplace/google-cloud-marketplace.md](../Marketplace/google-cloud-marketplace.md) |
+| Google Skills Repository | Official GitHub repository of ready-made skills for Gemini CLI and Google ADK-based agent harnesses | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 
 ## See Also
 

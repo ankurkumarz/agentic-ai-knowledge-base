@@ -19,6 +19,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 | Building Effective Agents | Anthropic's canonical reference on agent design principles and patterns | [ProductionBestPractices/README.md](../ProductionBestPractices/README.md) |
 | Claude Models (Production) | Best practices for using Claude in production agentic workloads | [ProductionBestPractices/security.md](../ProductionBestPractices/security.md) |
 | Agent Skills / SKILLS.md | Reusable, slash-command-triggered workflow definitions for Claude Code agents; SKILLS.md convention packages repeatable engineering procedures as version-controlled, shareable task modules | [Standards/skills.md](../Standards/skills.md) |
+| Anthropic Skills Repository | Official GitHub repository of ready-made Claude Code skills — review, deploy, security, docs workflows and more | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 | Anthropic Marketplace Presence | Claude models distributed via AWS Bedrock, Google Vertex AI, and Azure AI Foundry; MCP open ecosystem acts as de-facto tool/agent marketplace | [Marketplace/anthropic-marketplace.md](../Marketplace/anthropic-marketplace.md) |
 | Sandbox Runtime (`srt`) | OS-level process sandboxing for MCP servers — enforces filesystem + network restrictions via macOS Seatbelt / Linux bubblewrap without containers; research preview, Apache-2.0 | [SecurityFrameworks/anthropic-sandbox-runtime.md](../SecurityFrameworks/anthropic-sandbox-runtime.md) |
 

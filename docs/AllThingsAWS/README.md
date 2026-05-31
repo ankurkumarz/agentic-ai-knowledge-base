@@ -16,6 +16,7 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 | AWS Agentic Maturity Model | Staged model for measuring agent deployment readiness | [MaturityModels/aws.md](../MaturityModels/aws.md) |
 | AWS Security Perspective | AWS guidance on securing agentic AI workloads | [SecurityFrameworks/Readme.md](../SecurityFrameworks/Readme.md) |
 | AIDLC Workflows | AI-Driven Development Life Cycle — methodology-first framework guiding AI coding agents through structured Inception → Construction → Operations phases with approval gates | [Standards/aidlc.md](../Standards/aidlc.md) |
+| AWS Skills Registry | Provider skills installable via `npx skills add aws/agent-toolkit-for-aws/skills`; targets Strands Agents and Kiro harnesses | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 
 ## See Also
 
