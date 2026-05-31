@@ -158,6 +158,37 @@ Skills and persistent instructions do not conflict: CLAUDE.md establishes the ag
 - `/estimate` — produce a time/complexity estimate for a described task
 - `/onboard` — walk a new team member through the project setup checklist
 
+## Provider Skills Repositories
+
+Leading AI and cloud providers maintain public repositories of ready-made skills that teams can import directly into compatible harnesses. The table below lists the canonical source repositories as of 2025–2026.
+
+| Provider | Repository / Install Command | Notes |
+|---|---|---|
+| Anthropic | [github.com/anthropics/skills](https://github.com/anthropics/skills) | Reference collection for Claude Code; covers code review, deploy, security, and docs workflows |
+| Google | [github.com/google/skills](https://github.com/google/skills) | Skills for Gemini CLI and Google ADK-based harnesses |
+| Microsoft | [github.com/microsoft/azure-skills](https://github.com/microsoft/azure-skills) | Skills targeting Azure AI Agent Service and Semantic Kernel toolchains |
+| OpenAI | [github.com/openai/skills](https://github.com/openai/skills) | Skills for OpenAI Codex and Responses API-based agents |
+| AWS | `npx skills add aws/agent-toolkit-for-aws/skills` | Installed via the Skills CLI from the AWS Agent Toolkit registry; targets Strands Agents and Kiro |
+| Cloudflare | [github.com/cloudflare/skills](https://github.com/cloudflare/skills) | Skills for Cloudflare Workers AI and edge-deployed agents |
+| Vercel | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) | Skills targeting AI SDK and Vercel-hosted agent deployments |
+
+### Installing skills from a provider repository
+
+Most repositories follow the same pattern — clone or install via the Skills CLI, then reference the skill by name:
+
+```bash
+# GitHub-hosted (any provider)
+git clone https://github.com/<org>/skills .claude/skills/<provider>
+
+# AWS registry via npm-style CLI
+npx skills add aws/agent-toolkit-for-aws/skills
+
+# Selective install — copy a single skill file
+cp .claude/skills/anthropics/review.md .claude/skills/review.md
+```
+
+Provider skills are community-maintained and evolve independently of the harness. Pin to a specific commit or tag in production to prevent unreviewed changes from loading into the agent context at session start.
+
 ## Integration with Agent Harnesses
 
 Skills are a first-class concept in the Claude Code harness but are designed to be portable. Any harness that:

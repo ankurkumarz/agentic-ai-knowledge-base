@@ -15,6 +15,7 @@ Microsoft's agentic AI strategy centres on Azure AI services, the open-source Se
 | Azure AI Foundry Agent Service | Developer-grade managed runtime with Entra identity, private networking, multi-framework SDK (LangGraph, Claude, OpenAI), scale-to-zero | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
 | Microsoft Copilot Studio | Low-code agent builder for M365/Teams; 160,000 organizations, 400,000+ custom agents (May 2026) | [AgentPlatforms/enterprise-platforms-2026.md](../AgentPlatforms/enterprise-platforms-2026.md) |
 | Agent Governance Toolkit | MIT-licensed runtime governance: deterministic policy enforcement (YAML/Rego/Cedar), zero-trust identity (Ed25519 + ML-DSA-65), execution rings, MCP security gateway; covers all 10 OWASP Agentic risks | [SecurityFrameworks/agent-governance-toolkit.md](../SecurityFrameworks/agent-governance-toolkit.md) |
+| Azure Skills Repository | Official GitHub repository of ready-made skills targeting Azure AI Agent Service and Semantic Kernel toolchains | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 
 ## See Also
 

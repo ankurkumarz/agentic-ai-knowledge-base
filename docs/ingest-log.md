@@ -651,3 +651,18 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 ## [2026-05-30] ingest | agents-best-practices — https://github.com/DenisSergeevitch/agents-best-practices | sections touched: AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, ProductionBestPractices/security.md, ProductionBestPractices/observability.md, ProductionBestPractices/testing-evaluations.md, ProductionBestPractices/context-engineering.md, ProductionBestPractices/deployment.md
 
 ## [2026-05-31] ingest | cisco-ai-defense/skill-scanner + nvidia/skillspector | sections touched: SecurityFrameworks/skill-scanners.md (new), SecurityFrameworks/Readme.md, ProductionBestPractices/security.md, Standards/skills.md, mkdocs.yml
+
+## [2026-05-31] reference | Provider Skills Repositories (Anthropic, Google, Microsoft, OpenAI, AWS, Cloudflare, Vercel) | sections touched: Standards/skills.md, AllThingsAnthropic/README.md, AllThingsGoogle/README.md, AllThingsMicrosoft/README.md, AllThingsOpenAI/README.md, AllThingsAWS/README.md
+
+**Sources**: https://github.com/anthropics/skills, https://github.com/google/skills, https://github.com/microsoft/azure-skills, https://github.com/openai/skills, npx skills add aws/agent-toolkit-for-aws/skills, https://github.com/cloudflare/skills, https://github.com/vercel-labs/skills
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/skills.md` | Extended | Added "Provider Skills Repositories" section with 7-provider comparison table and install guidance |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for Anthropic Skills Repository |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Google Skills Repository |
+| `docs/AllThingsMicrosoft/README.md` | Extended | Added hub row for Azure Skills Repository |
+| `docs/AllThingsOpenAI/README.md` | Extended | Added hub row for OpenAI Skills Repository |
+| `docs/AllThingsAWS/README.md` | Extended | Added hub row for AWS Skills Registry |
