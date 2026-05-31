@@ -180,6 +180,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [Anthropic Overview](../AllThingsAnthropic/README.md)
 - [Context Engineering — Anthropic](../ContextEngineering/anthropic.md)
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
+- [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — Scan skills for prompt injection, data exfiltration, and malicious patterns before installation
 
 ## References
 

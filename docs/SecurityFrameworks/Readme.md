@@ -237,6 +237,19 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 
 For a full comparison of cloud-hosted and local sandbox solutions (E2B, Daytona, Modal, Firecracker, gVisor, Kata Containers, nsjail, and more), see the [Agent Sandboxing](./agent-sandboxing.md) reference page.
 
+## AI Agent Skill Security Scanners
+
+As agent skills (SKILLS.md / `.claude/commands/*.md`) become a primary distribution unit for agentic workflows, scanning them for embedded threats has become a distinct security discipline. Research shows 26.1% of skills contain vulnerabilities and 5.2% show likely malicious intent.
+
+Two open-source tools address skill supply-chain security:
+
+| Tool | Vendor | Key Strengths |
+|---|---|---|
+| [Skill Scanner](./skill-scanners.md) | Cisco AI Defense | Multi-engine consensus (YARA + AST + LLM + VirusTotal); interactive HTML reports; SARIF/GitHub Actions integration |
+| [SkillSpector](./skill-scanners.md) | NVIDIA | 64 patterns across 16 categories; live OSV.dev CVE lookup; MCP-specific risk detection; LangGraph pipeline |
+
+See [AI Agent Skill Security Scanners](./skill-scanners.md) for full detail, CLI usage, and a threat-model comparison.
+
 ## See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Security considerations for frameworks
@@ -246,5 +259,6 @@ For a full comparison of cloud-hosted and local sandbox solutions (E2B, Daytona,
 - **[Agent Governance Toolkit](./agent-governance-toolkit.md)**: Microsoft runtime governance for agents
 - **[Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)**: OS-level process sandboxing for MCP servers
 - **[Agent Sandboxing](./agent-sandboxing.md)**: Cross-vendor comparison of sandbox solutions
+- **[AI Agent Skill Security Scanners](./skill-scanners.md)**: Cisco Skill Scanner and NVIDIA SkillSpector — scanning agent skills for prompt injection, data exfiltration, and malicious patterns
 - **[MCP Standard](../Standards/mcp.md)**: Model Context Protocol (MCP Security Gateway target)
 - **[AI Governance Solutions](../AIGovernance/governance-solutions.md)**: Governance platforms and tooling
