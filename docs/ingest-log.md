@@ -649,3 +649,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 ## [2026-05-30] ingest | ALE-Bench (Sakana AI) — https://sakanaai.github.io/ALE-Bench-Leaderboard/ | sections touched: Benchmarks/agent-benchmarks.md
 
 ## [2026-05-30] ingest | agents-best-practices — https://github.com/DenisSergeevitch/agents-best-practices | sections touched: AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, ProductionBestPractices/security.md, ProductionBestPractices/observability.md, ProductionBestPractices/testing-evaluations.md, ProductionBestPractices/context-engineering.md, ProductionBestPractices/deployment.md
+
+## [2026-05-31] ingest | cisco-ai-defense/skill-scanner + nvidia/skillspector | sections touched: SecurityFrameworks/skill-scanners.md (new), SecurityFrameworks/Readme.md, ProductionBestPractices/security.md, Standards/skills.md, mkdocs.yml

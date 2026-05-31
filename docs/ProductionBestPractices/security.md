@@ -40,6 +40,7 @@ Google's three-layer defense model addresses both:
 | Privilege escalation through agent delegation | A lower-trust delegated agent inherits excessive permissions from its orchestrator | Forwarded full credentials to sub-agents for convenience; compromised sub-agent gained orchestrator-level access | Apply trust ceiling propagation: delegated agents cannot exceed parent trust level; use scoped, time-limited credentials per task |
 | MCP tool tampering | Tool descriptions in Model Context Protocol integrations are modified to inject hidden instructions | Trusted MCP tool metadata without verification; agent executed poisoned tool logic | Deploy an MCP Security Gateway layer that monitors for description drift, typosquatting, and hidden instruction patterns on every tool invocation |
 | MCP server over-privilege | MCP servers run as host OS processes with invoking user's permissions; a compromised server can read arbitrary files or phone home | Relied on trust in third-party MCP server code; no OS-level restriction | Wrap each MCP server process with [Anthropic Sandbox Runtime (`srt`)](../SecurityFrameworks/anthropic-sandbox-runtime.md) to enforce an explicit filesystem + network allowlist at OS level (macOS Seatbelt / Linux bubblewrap) |
+| Malicious skills in the supply chain | Agent skills fetched from external sources may embed prompt injection, data exfiltration, or malicious code patterns; research shows 26.1% of skills contain vulnerabilities | Installed third-party skills without vetting; trusted source repo as sufficient guarantee | Scan all externally-sourced skills before installation using [Cisco Skill Scanner](../SecurityFrameworks/skill-scanners.md) or [NVIDIA SkillSpector](../SecurityFrameworks/skill-scanners.md); integrate SARIF output into GitHub Code Scanning to block unsafe skills at PR time |
 
 ## Layered Guardrail Taxonomy
 
@@ -96,6 +97,8 @@ Approval must be scoped to the exact action and plan version. Vague consent is n
 | [SAIF](https://safety.google/safety/saif/) | Google | Secure foundation, development, deployment, and operations for AI systems |
 | [Generative AI Security Scoping Matrix](https://aws.amazon.com/ai/security/generative-ai-scoping-matrix/) | AWS | Security controls mapped to FM application types across the AI lifecycle |
 | [Agent Governance Toolkit](../SecurityFrameworks/agent-governance-toolkit.md) | Microsoft | Runtime governance: deterministic policy engine (YAML/OPA/Cedar), zero-trust identity, execution rings, MCP security gateway; covers all 10 OWASP Agentic risks |
+| [Skill Scanner](../SecurityFrameworks/skill-scanners.md) | Cisco AI Defense | Multi-engine skill security scanner: YAML + YARA + AST taint analysis + LLM consensus; SARIF/GitHub Actions integration |
+| [SkillSpector](../SecurityFrameworks/skill-scanners.md) | NVIDIA | Two-stage skill scanner: 64 vulnerability patterns across 16 categories including MCP risks; live OSV.dev CVE lookup; LangGraph pipeline |
 
 ## Security Controls by Risk Level
 
@@ -153,6 +156,8 @@ When a threat is detected in production, the response follows: **contain → tri
 - [Deployment](./deployment.md) — Secure deployment practices
 - [Context Engineering](./context-engineering.md) — Context isolation and sanitization
 - [SecurityFrameworks](../SecurityFrameworks/Readme.md) — NIST AI RMF, Google SAIF, AWS coverage
+- [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — Cisco Skill Scanner and NVIDIA SkillSpector for skill supply-chain security
+- [Agent Skills / SKILLS.md Standard](../Standards/skills.md) — Skill authoring, scoping, and security best practices
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model
