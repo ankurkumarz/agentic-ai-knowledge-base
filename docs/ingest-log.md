@@ -687,3 +687,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsMicrosoft/README.md` | Extended | Added hub row for SkillOpt with backlink |
 | `docs/Standards/skills.md` | Extended | Added bidirectional See Also link to skillopt.md |
 | `mkdocs.yml` | Extended | Added 8.4.1 SkillOpt (Microsoft) nav entry under Prompt Engineering |
+
+## [2026-06-01] ingest | pi.dev — Pi Coding Agent Harness | sections touched: AgentHarness, AgenticFrameworks

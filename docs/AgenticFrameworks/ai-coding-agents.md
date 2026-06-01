@@ -304,7 +304,7 @@ OpenCode is one of the fastest-growing open-source projects in recent history. A
 **Vendor**: earendil.works (created by Mario Zechner, of libGDX)
 **GitHub**: [earendil-works/pi](https://github.com/earendil-works/pi) — MIT
 
-Pi's thesis is radical minimalism: a coding agent needs exactly four tools (read, write, edit, bash) and a system prompt under 1,000 tokens. Everything else is opt-in via a typed extension system. This makes it the most composable and privacy-friendly option in the category.
+Pi's thesis is radical minimalism: a coding agent needs exactly four tools (read, write, edit, bash) and a system prompt under 1,000 tokens. Everything else is opt-in via a typed extension system. This makes it the most composable and privacy-friendly option in the category. See [Pi (pi.dev)](../AgentHarness/pi-dev.md) for the full architecture and extensibility model.
 
 ### Key Features
 

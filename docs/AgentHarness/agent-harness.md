@@ -156,6 +156,7 @@ The trusted control plane (user identity, credentials, approval records, audit l
 ## See Also
 
 - [Harness Engineering](./harness-engineering.md)
+- [Pi (pi.dev)](./pi-dev.md) — minimal open-source terminal coding agent harness; four-tool core (read, write, edit, bash), sub-1K-token system prompt, 15+ providers, fully extensible via TypeScript packages
 - [Flue](../AgenticFrameworks/flue.md) — open-source TypeScript agent harness framework; implements the Agent = Model + Harness pattern with built-in sandbox, sessions, and skills
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness (Lee et al., 2026)
 - [Code as Agent Harness](./code-as-agent-harness.md) — survey taxonomy of code as the agent substrate (Ning et al., 2026)
