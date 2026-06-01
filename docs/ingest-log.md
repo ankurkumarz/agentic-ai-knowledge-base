@@ -670,3 +670,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsMicrosoft/README.md` | Extended | Added hub row for Azure Skills Repository |
 | `docs/AllThingsOpenAI/README.md` | Extended | Added hub row for OpenAI Skills Repository |
 | `docs/AllThingsAWS/README.md` | Extended | Added hub row for AWS Skills Registry |
+
+## [2026-06-01] ingest | Hyperagent (https://www.hyperagent.com/) | sections touched: AgentPlatforms/saas-platforms.md

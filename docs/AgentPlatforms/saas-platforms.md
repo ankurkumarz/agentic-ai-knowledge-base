@@ -90,6 +90,24 @@ Beyond the major cloud providers, numerous specialized SaaS platforms offer uniq
 - Rapid deployment scenarios
 - Multi-service orchestration
 
+### Hyperagent
+
+**Platform**: [Hyperagent](https://www.hyperagent.com/)
+
+**Key Features**:
+- Multi-agent teams with per-agent tool access, memory, and budget limits
+- Learning loop: each session generates new skills and memories that compound over time; can be reviewed manually or set to auto-accept
+- Autonomous reasoning — adapts dynamically rather than following rigid flowcharts
+- Built-in image and video content generation
+- Third-party integrations via Composio (Gmail, Slack, Hunter.io, and others)
+- Launched April 2026 (early-adopter stage)
+
+**Use Cases**:
+- SMB and mid-market workflow automation (e.g., insurance brokerage teams building 11 agents in a week)
+- Content production pipelines (image, video, copy)
+- Sales and marketing automation
+- Document processing and knowledge workflows
+
 ### Arcade
 
 **Platform**: [Arcade](https://www.arcade.dev/)
