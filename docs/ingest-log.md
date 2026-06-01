@@ -5,6 +5,10 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-01] ingest | The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management (arXiv:2605.23071) | sections touched: ContextEngineering/efficiency-frontier.md (new), ContextEngineering/strategies.md, ProductionBestPractices/cost-management.md, ProductionBestPractices/context-engineering.md, index.md
+
+**Source**: https://arxiv.org/abs/2605.23071
+
 ## [2026-05-30] ingest | Agent Harness for Large Language Model Agents: A Survey (arXiv:2605.29682) | sections touched: AgentHarness/llm-harness-survey.md, AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md
 
 **Source**: https://arxiv.org/pdf/2605.29682

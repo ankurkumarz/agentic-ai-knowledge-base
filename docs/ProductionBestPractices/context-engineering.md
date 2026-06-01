@@ -30,6 +30,7 @@ The context window is the agent's working memory — expensive, limited, and cri
 | Compaction fidelity loss | Compaction summarizes away obscure specifics (exact figures, appendix data) that may matter later | Used default compaction prompt; key quantitative details were lost | Provide a custom `instructions` string that names the specific details to preserve (e.g., "preserve every quantitative figure with its source"). Custom instructions completely replace the default prompt — include full framing. |
 | Memory tool hygiene | Agent writes disorganized or redundant memory files across sessions, degrading retrieval quality | Let agent write freely; /memories accumulated half-overlapping notes | Add system-prompt guidance: "keep memory content up-to-date, coherent and organized; do not create new files unless necessary." Run an initializer session to pre-seed structured memory artifacts before substantive work begins. |
 | Clearing + memory interaction | Tool-result clearing removes the agent's own memory reads/writes, causing it to lose track of what it saved | Enabled clearing without excluding the memory tool; agent re-read memory it had just written | Set `exclude_tools: ["memory"]` in clearing config to exempt memory operations from being cleared. |
+| Context strategy not matched to deployment reuse | Using full-context or retrieval uniformly regardless of how many queries share the same corpus; overpays by up to 2–3× | Assumed retrieval is always cheapest; missed amortization opportunity for high-volume batch workloads | Select strategy based on reuse parameter N: retrieval for low-N; memory compression for high-N (>50% token savings vs. full-context). See [Efficiency Frontier](../ContextEngineering/efficiency-frontier.md). |
 
 ## Implementation References
 
@@ -104,10 +105,12 @@ Prompt caching reduces costs significantly for agents with large, stable system 
 | Google Gemini | Significant reduction | [Context Caching on Vertex AI](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview) |
 
 ## See Also
+- [Efficiency Frontier: Cost-Performance Optimization](../ContextEngineering/efficiency-frontier.md)
 - [State & Memory Management](./state-memory.md)
 - [Cost Management](./cost-management.md)
 - [Agent Security](./security.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — automated search over context management strategies; complements manual context engineering
 
 ## References
+- [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026. Introduces deployment-aware strategy selection via amortized cost modeling.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for context assembly tiers, trust label framework, and compaction handoff format

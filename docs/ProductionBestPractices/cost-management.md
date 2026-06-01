@@ -111,6 +111,20 @@ For multi-tenant or multi-team deployments:
 - Implement chargeback reporting for internal cost allocation
 - Track cost-per-task-completion as a business metric alongside raw token spend
 
+## Deployment-Aware Context Strategy Selection
+
+Choosing the right context management strategy is one of the highest-leverage cost optimizations available. Shen et al. (2026) showed that a **deployment-aware** choice — accounting for reuse patterns, not just per-query cost — yields ~25% token savings at equivalent quality versus defaulting to a single strategy.
+
+The key variable is **N** (the reuse parameter): how many queries will share a preprocessing step.
+
+| Reuse Pattern | Optimal Strategy | Rationale |
+|---|---|---|
+| Single-query / low-volume (N ≈ 1) | Retrieval-based (RAG) | Avoids preprocessing overhead; cost-competitive F1 |
+| High-volume, same corpus (N >> 10) | Memory compression | Preprocessing amortizes over many queries; >50% lower token cost vs. full-context |
+| Strict recall required | Full-context prompting | Only when information completeness outweighs cost |
+
+**Transition points** between strategies are empirical — measure F1 and token cost at your target N before committing to an approach. See [Efficiency Frontier Framework](../ContextEngineering/efficiency-frontier.md) for the full decision guide.
+
 ## Cost vs. Quality Trade-offs
 
 Cost optimization should never silently degrade agent quality. Establish baselines:
@@ -160,6 +174,7 @@ Scaling an agent always involves three competing goals. Optimizing for one affec
 
 ## See Also
 
+- **[Efficiency Frontier Framework](../ContextEngineering/efficiency-frontier.md)**: Deployment-aware cost-performance optimization for context strategies
 - **[Observability](../Observability/Readme.md)**: Cost monitoring as part of observability
 - **[Context Engineering](../ContextEngineering/README.md)**: Context compaction to reduce token usage
 - **[Deployment](../AgentOps/README.md)**: Infrastructure cost management in AgentOps

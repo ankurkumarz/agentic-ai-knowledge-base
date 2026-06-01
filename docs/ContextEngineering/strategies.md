@@ -101,6 +101,17 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 | Isolate (Multi-agent) | Breadth-first research, parallelizable tasks | Context clash, 15x token cost | Anthropic researcher, HuggingFace CodeAgent |
 | Cache | Stable system prompts, repeated tool descriptions | Cache invalidation, prefix instability | Manus KV-cache, Gemini Context Caching |
 
+## Cost-Performance Trade-offs Across Strategies
+
+Shen et al. (2026) introduced the **Efficiency Frontier** framework — a unified, deployment-aware approach to choosing between strategies based on jointly optimized cost and performance. Key findings from evaluation on 5,000 HotpotQA instances:
+
+- **Retrieval is preferred for low-reuse deployments** (few queries per corpus): avoids preprocessing overhead; cost-competitive with comparable F1
+- **Memory compression is preferred for high-reuse deployments**: preprocessing cost amortizes over many queries, yielding >50% lower token cost vs. full-context at comparable quality
+- **Full-context prompting** is rarely cost-optimal — ~25% token reduction is achievable at equivalent performance through deployment-aware selection
+- **Transition points** exist between strategies and depend on the reuse parameter N (number of queries that share a preprocessing step)
+
+See [Efficiency Frontier Framework](./efficiency-frontier.md) for the full decision guide.
+
 ## Strategy Selection by Priority
 
 | Priority | Recommended Approach |
@@ -148,6 +159,7 @@ Only after mastering fundamentals:
 
 ## See Also
 
+- [Efficiency Frontier: Cost-Performance Optimization](./efficiency-frontier.md)
 - [Key Challenges in Context Management](./challenges.md)
 - [Manus Context Engineering](./manus.md)
 - [Anthropic Multi-Agent Research System](./anthropic.md)
@@ -160,6 +172,7 @@ Only after mastering fundamentals:
 
 ## References
 
+- [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026
 - [Context Engineering for Agents — Lance Martin, LangChain](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 - [How to Fix Your Context — Drew Breunig](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html)
 - [Effective Context Engineering for AI Agents — Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
