@@ -6,6 +6,10 @@ SkillOpt (Yang et al., Microsoft, 2026) is a **text-space optimizer** that train
 
 The approach was introduced in arXiv:2605.23904 and demonstrated best-or-tied-best results across all 52 evaluated (model, benchmark, harness) cells.
 
+![SkillOpt conceptual overview: bounded skill edits navigate a validation-error landscape toward a better task-specific skill, avoiding the instability of ad hoc updates](assets/skillopt-teaser.png)
+
+*Figure 1: The optimization landscape for skill documents. Bounded edits with a held-out selection gate produce stable convergence (blue path), whereas ad hoc updates make large, unstable jumps (red path). The right panel maps neural-network training concepts to their text-space equivalents. Source: [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) (MIT license)*
+
 ## Key Concepts
 
 ### Skill Document as Trainable State
@@ -21,13 +25,14 @@ This separates agent behavior improvement from model weight updates, enabling sk
 
 The training loop mirrors gradient-based optimization but operates entirely in natural language:
 
-| Weight-Space Analogy | SkillOpt Text-Space Equivalent |
+| Weight-Space Concept | SkillOpt Text-Space Equivalent |
 |---|---|
-| Forward pass | Agent rollout on scored task batch |
-| Backward pass | Optimizer model proposes add/delete/replace edits |
-| Learning rate | Textual learning-rate budget (bounds edit scope) |
+| Parameter | Skill document |
+| Gradient direction | Trajectory-derived edit direction |
+| Learning rate | Edit budget (bounds edit scope per round) |
+| Validation check | Held-out selection gate |
+| Stable training setting | Batch / minibatch / schedule / gate |
 | Momentum / slow update | Rejected-edit buffer; epoch-wise meta update |
-| Validation gate | Held-out selection split; candidate accepted only if score strictly improves |
 
 ### Training Hyperparameters (Text-Space)
 
@@ -46,21 +51,20 @@ At the end of training, only `best_skill.md` persists. It:
 
 ## Architecture
 
-```
-Training Phase:
-  Frozen Agent + Task Batch
-       ↓ rollouts + scores
-  Optimizer Model (frontier LLM)
-       ↓ proposes structured edits (add/delete/replace)
-  Edit Aggregator + Textual LR Budget
-       ↓ ranked candidate set
-  Validation on held-out split
-       ↓ accept if score improves
-  Updated skill.md → track best_skill.md
+![SkillOpt full training pipeline: mini-batch rollouts flow through optimizer models, are merged and validated, then either accepted into best_skill.md or rejected into a buffer; an epoch-wise meta update refines the optimizer itself](assets/skillopt-pipeline.png)
 
-Deployment Phase:
-  best_skill.md (prepended) + Frozen Target Model → Agent
-```
+*Figure 2: The full SkillOpt training pipeline. Top: mini-batches of rollout evidence are sent to parallel optimizer model instances, which propose atomic edits; these are merged, ranked under the textual learning-rate budget, and passed through the validation gate. Bottom: after each epoch, improvements, regressions, persistent failures, and stable successes are reflected on by an optimizer meta-skill that updates future optimizer calls. Source: [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) (MIT license)*
+
+**Training phase step-by-step:**
+
+1. The frozen target agent runs on a scored task batch (train split rollouts).
+2. A separate frontier optimizer model receives each mini-batch and proposes structured `add / delete / replace` edits.
+3. Edits are aggregated, ranked under the textual learning-rate budget, and applied as a bounded candidate skill.
+4. The candidate is evaluated on the held-out selection split — accepted only if the score strictly improves; otherwise added to the rejected-edit buffer.
+5. After each epoch, an epoch-wise reflection step analyzes patterns in improvements, regressions, and persistent failures, producing a meta-skill update that shapes future optimizer model calls.
+6. The best validated skill across all epochs is emitted as `best_skill.md`.
+
+**Deployment phase:** `best_skill.md` is prepended to the unchanged target model. No additional model calls are added.
 
 ## Performance Results
 
@@ -72,9 +76,13 @@ Evaluated across 6 benchmarks, 7 target models, and 3 execution harnesses:
 | Codex agentic loop | +24.8 points |
 | Claude Code CLI | +19.1 points |
 
-**Benchmarks**: SearchQA, ALFWorld, DocVQA, SpreadsheetBench, and two additional agentic tasks.
+**Benchmarks**: SearchQA, ALFWorld, DocVQA, SpreadsheetBench, LiveMath, and one additional agentic task.
 
 **Comparison**: 52/52 wins against Trace2Skill, TextGrad, GEPA, EvoSkill, hand-crafted human skills, and one-shot skills.
+
+![SkillOpt epoch learning curves for SpreadsheetBench, SearchQA, and LiveMath: selection-best score (orange) stays stable above unseen-test generalization (green) while train-rollout score (blue) fluctuates](assets/skillopt-epoch-trends.png)
+
+*Figure 3: Learning curves across epoch checkpoints for three benchmarks. The held-out selection gate (orange, "Selection best") reliably tracks generalization performance (green, "Unseen test") while suppressing the noisier train-rollout signal (blue). Source: [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) (MIT license)*
 
 ## Suitable For
 
@@ -119,4 +127,4 @@ SkillOpt's `skill.md` artifact is conceptually adjacent to the **SKILLS.md** con
 
 - [SkillOpt: Executive Strategy for Self-Evolving Agent Skills (arXiv:2605.23904)](https://arxiv.org/abs/2605.23904) — primary paper by Yifan Yang et al., Microsoft and collaborating universities, May 2026
 - [SkillOpt Project Page](https://microsoft.github.io/SkillOpt/) — official site with benchmark results
-- [microsoft/SkillOpt GitHub Repository](https://github.com/microsoft/SkillOpt) — open-source implementation (MIT license)
+- [microsoft/SkillOpt GitHub Repository](https://github.com/microsoft/SkillOpt) — open-source implementation (MIT license); images reproduced under MIT license
