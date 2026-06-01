@@ -114,6 +114,7 @@ nav:
       - 8.5.3 LangGraph: 'ContextEngineering/langgraph.md'
       - 8.5.4 Devin (Cognition): 'ContextEngineering/devin.md'
       - 8.5.5 Miscellaneous: 'ContextEngineering/README.md'
+    - 8.6 Efficiency Frontier (Cost-Performance): 'ContextEngineering/efficiency-frontier.md'
   - 9. Agent Memory Management:
     - 9.1 The Four Memory Types: 'AgentMemory/functional-tiers.md'
     - 9.2 Long-Term Memory (LTM) Strategies: 'AgentMemory/ltm-strategies.md'

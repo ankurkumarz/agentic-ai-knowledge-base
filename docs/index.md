@@ -132,6 +132,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Key Challenges**: Context rot, poisoning, distraction, confusion, and clash — with empirical evidence from DeepMind, Gemini 2.5, Berkeley, Microsoft/Salesforce research
 - **Memory vs. Context**: The 100:1 rule; what to keep in context vs. store in memory; four types of context
 - **Management Strategies**: Offloading, reduction, retrieval, isolation, and caching; context size thresholds; phased implementation roadmap
+- **Efficiency Frontier**: Deployment-aware cost-performance optimization; reuse-parameter (N) driven strategy selection; ~25% token savings; transition boundaries between retrieval and compression (Shen et al., 2026)
 - **Implementation References**: Manus, Anthropic, LangGraph, and Devin approaches
 
 ### **Agent Security**
