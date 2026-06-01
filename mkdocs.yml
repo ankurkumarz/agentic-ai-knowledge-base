@@ -108,6 +108,7 @@ nav:
     - 8.2 Common Strategies for Context Management: 'ContextEngineering/strategies.md'
     - 8.3 Context Graph: 'ContextEngineering/context-graph.md'
     - 8.4 Prompt Engineering: 'PromptEngineering/README.md'
+      - 8.4.1 SkillOpt (Microsoft): 'PromptEngineering/skillopt.md'
     - 8.5 Context Implementation References:
       - 8.5.1 Manus: 'ContextEngineering/manus.md'
       - 8.5.2 Anthropic: 'ContextEngineering/anthropic.md'
