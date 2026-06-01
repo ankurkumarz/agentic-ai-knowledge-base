@@ -672,3 +672,18 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsAWS/README.md` | Extended | Added hub row for AWS Skills Registry |
 
 ## [2026-06-01] ingest | Hyperagent (https://www.hyperagent.com/) | sections touched: AgentPlatforms/saas-platforms.md
+
+## [2026-06-01] ingest | SkillOpt: Executive Strategy for Self-Evolving Agent Skills (microsoft.github.io/SkillOpt, arXiv:2605.23904) | sections touched: PromptEngineering/skillopt.md (new), AllThingsMicrosoft/README.md, Standards/skills.md, mkdocs.yml
+
+**Source**: https://microsoft.github.io/SkillOpt/ (+ https://arxiv.org/abs/2605.23904, https://github.com/microsoft/SkillOpt)
+**Type**: Research paper + open-source tool (Microsoft + Chinese universities, May 2026, MIT license)
+**Authors**: Yifan Yang et al.
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/PromptEngineering/skillopt.md` | Created | Full coverage: text-space optimizer concept, training loop with weight-space analogies table, training hyperparameters, architecture diagram, benchmark results (52/52 wins, +23.5 pts GPT-5.5 direct chat), suitable for / limitations, relation to SKILLS.md convention, best practices table, See Also, References |
+| `docs/AllThingsMicrosoft/README.md` | Extended | Added hub row for SkillOpt with backlink |
+| `docs/Standards/skills.md` | Extended | Added bidirectional See Also link to skillopt.md |
+| `mkdocs.yml` | Extended | Added 8.4.1 SkillOpt (Microsoft) nav entry under Prompt Engineering |

@@ -212,6 +212,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [Context Engineering — Anthropic](../ContextEngineering/anthropic.md)
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
 - [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — Scan skills for prompt injection, data exfiltration, and malicious patterns before installation
+- [SkillOpt — Automated Skill Document Optimization](../PromptEngineering/skillopt.md) — Microsoft text-space optimizer that learns skill.md contents from trajectory rollouts
 
 ## References
 
