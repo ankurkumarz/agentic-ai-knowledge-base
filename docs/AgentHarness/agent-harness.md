@@ -159,6 +159,7 @@ The trusted control plane (user identity, credentials, approval records, audit l
 - [Pi (pi.dev)](./pi-dev.md) — minimal open-source terminal coding agent harness; four-tool core (read, write, edit, bash), sub-1K-token system prompt, 15+ providers, fully extensible via TypeScript packages
 - [Flue](../AgenticFrameworks/flue.md) — open-source TypeScript agent harness framework; implements the Agent = Model + Harness pattern with built-in sandbox, sessions, and skills
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness (Lee et al., 2026)
+- [Harness Self-Evolution](./harness-self-evolution.md) — disentangling harness update capability (HUC) from harness benefit capability (HBC) in self-evolving agents (Lin et al., KDD 2026)
 - [Code as Agent Harness](./code-as-agent-harness.md) — survey taxonomy of code as the agent substrate (Ning et al., 2026)
 - [LLM Harness Survey](./llm-harness-survey.md) — ETCLOVG taxonomy, harness completeness matrix, nine technical challenges, empirical benchmarks
 - [Agentic Engineering Levels](../MaturityModels/agentic-engineering-levels.md) — harness engineering is Level 6 in the 8-level practitioner progression
@@ -178,3 +179,4 @@ The trusted control plane (user identity, credentials, approval records, audit l
 - [Harness Engineering: Leveraging Codex in an Agent-First World — Ryan Lopopolo, OpenAI (February 11, 2026)](https://openai.com/index/harness-engineering) — real-world harness engineering lessons from building a million-line codebase with zero manually-written code
 - [Harness Engineering for Coding Agent Users — Birgitta Böckeler, martinfowler.com (April 2, 2026)](https://martinfowler.com/articles/harness-engineering.html) — feedforward/feedback framework, regulation categories, and harnessability concepts
 - [Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems — Ning et al., arXiv:2605.18747 (May 2026)](https://arxiv.org/abs/2605.18747) — 197-paper survey establishing executability, inspectability, and statefulness as structural harness properties; three-layer taxonomy (interface, mechanisms, scaling)
+- [Harness Updating Is Not Harness Benefit — Lin et al., arXiv:2605.30621 (KDD 2026, Oral)](https://arxiv.org/abs/2605.30621) — shows that harness update capability (HUC) and harness benefit capability (HBC) are empirically distinct; base task performance does not predict either
