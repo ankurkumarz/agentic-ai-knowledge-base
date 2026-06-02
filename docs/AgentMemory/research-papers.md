@@ -66,6 +66,36 @@ Proposes MemoryBank, a novel memory mechanism that equips LLMs with long-term me
 
 ---
 
+---
+
+### LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory
+**Authors**: Wu et al. (UCLA NLP)
+**Resource**: [Paper (ICLR 2025)](https://arxiv.org/abs/2410.10813) | [GitHub](https://github.com/xiaowu0162/LongMemEval) | [Website](https://xiaowu0162.github.io/long-mem-eval/)
+
+Introduces a rigorous benchmark for evaluating long-term memory in LLM-powered chat assistants. Formalizes a three-stage memory architecture (Indexing → Retrieval → Reading) and establishes five core memory abilities as evaluation axes: information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention. The 500-question dataset uses timestamped multi-session chat histories generated via an attribute-controlled pipeline.
+
+**Key Contributions**:
+- Three-stage memory architecture formalization (Indexing, Retrieval, Reading) as an evaluation framework
+- Five-ability taxonomy covering the full spectrum of long-term memory demands on chat assistants
+- Revealed that retrieval systems struggle most with temporal reasoning and knowledge updates
+- Key expansion strategies (summarization, keyphrase extraction, user facts) shown to improve retrieval precision in RAG pipelines
+
+---
+
+### LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues
+**Authors**: Di Wu, Zixiang Ji, Asmi Kawatkar, Bryan Kwan, Jia-Chen Gu, Nanyun Peng, Kai-Wei Chang (UCLA NLP)
+**Resource**: [Paper (arXiv 2605.12493, May 2026)](https://arxiv.org/abs/2605.12493) | [Website](https://xiaowu0162.github.io/long-mem-eval/)
+
+Extends LongMemEval to the agentic domain, evaluating whether memory systems enable web agents to accumulate environment-specific procedural knowledge across long task trajectories. The benchmark uses 451 manually curated questions paired with up to 500 agent trajectories (up to 115M tokens) drawn from real web environments (WebArena, WorkArena). Introduces five agentic memory abilities: static state recall, dynamic state tracking, workflow knowledge, environment gotchas, and premise awareness.
+
+**Key Contributions**:
+- Shift in evaluation focus from episodic/conversational memory to procedural/environmental memory for agents
+- Environments: Magento shopping, shopping admin, Postmill forum, ServiceNow — representing realistic enterprise and e-commerce agent deployments
+- Reveals that current memory systems fail to effectively internalize environment-specific operational experience at scale
+- Establishes the "knowledgeable colleague" framing: the goal is not recall accuracy but actionable operational expertise
+
+---
+
 ## Technical White Papers and Blogs
 
 ### AgentFS: The Missing Abstraction for the Agentic World
@@ -160,3 +190,4 @@ How agents transform raw experiences into reusable knowledge:
 - [Long-term Memory Strategies](ltm-strategies.md)
 - [Short-term Memory Management](short-term.md)
 - [Agent Memory README](README.md)
+- [Agent Evaluation Benchmarks](../Benchmarks/agent-benchmarks.md) — LongMemEval benchmark details and selection guide

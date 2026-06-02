@@ -739,3 +739,5 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `mkdocs.yml` | Extended | Added 8.4.1 SkillOpt (Microsoft) nav entry under Prompt Engineering |
 
 ## [2026-06-01] ingest | pi.dev — Pi Coding Agent Harness | sections touched: AgentHarness, AgenticFrameworks
+
+## [2026-06-02] ingest | https://xiaowu0162.github.io/long-mem-eval/ — LongMemEval benchmark (ICLR 2025) and LongMemEval-V2 (May 2026) | sections touched: Benchmarks, AgentMemory
