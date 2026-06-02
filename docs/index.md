@@ -82,6 +82,7 @@ Comprehensive coverage of major development frameworks:
 - **Self-learning Agents**: Agent0 series and self-evolving systems
 - **AI Assistant Architecture**: Reference implementations and blueprints
 - **RAG Architecture**: Retrieval-augmented generation patterns
+- **Search as Code (SaC)**: Perplexity's paradigm where models generate code to assemble task-specific retrieval pipelines; three layers — Models as Control Plane, Compute Sandboxes, Agentic Search SDK; 2.5× advantage on WANDR benchmark; 85.1% token reduction in CVE audit case study
 - **NVIDIA AI Blueprints**: Video search and summarization agents
 
 ### **9. Agentic AI Maturity Models**

@@ -5,6 +5,24 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-02] ingest | Rethinking Search as Code Generation (Perplexity AI Research) | sections touched: RAG/search-as-code.md (new), Benchmarks/agent-benchmarks.md, ProductionBestPractices/context-engineering.md, RAG/Readme.md, mkdocs.yml, index.md
+
+**Source**: https://research.perplexity.ai/articles/rethinking-search-as-code-generation
+**Type**: Research article — Perplexity AI, September 2025. Introduces Search as Code (SaC) reference architecture, three-layer model, WANDR benchmark, and performance evaluation.
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/RAG/search-as-code.md` | Created | Full SaC coverage: overview, three-layer architecture (Models as Control Plane / Compute Sandboxes / Agentic Search SDK), WANDR benchmark, CVE case study (100% accuracy, 85.1% token reduction), RAG comparison table, Python SDK, best practices |
+| `docs/Benchmarks/agent-benchmarks.md` | Updated | Added WANDR benchmark under new "Research and Retrieval Benchmarks" section; added WANDR to benchmark selection guide; added See Also link |
+| `docs/ProductionBestPractices/context-engineering.md` | Updated | Added "Fixed pipeline rigidity" row to best practices table; added Perplexity SaC row to Implementation References table |
+| `docs/RAG/Readme.md` | Updated | Added Search as Code intro section with backlink to new page |
+| `mkdocs.yml` | Updated | Added 7.9 Search as Code (Perplexity) nav entry |
+| `docs/index.md` | Updated | Added SaC bullet under RAG Architecture in section 8 |
+
+---
+
 ## [2026-06-02] ingest | microsoft/agentpex (GitHub) | sections touched: EvaluationFrameworks/llm-frameworks.md, ProductionBestPractices/testing-evaluations.md, AllThingsMicrosoft/README.md
 
 **Source**: https://github.com/microsoft/agentpex

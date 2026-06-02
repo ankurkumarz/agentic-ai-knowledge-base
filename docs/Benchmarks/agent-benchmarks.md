@@ -143,6 +143,22 @@ A comprehensive benchmark evaluating LLMs as agents across 8 distinct environmen
 ### τ-bench (Tau-bench)
 Evaluates agents on realistic customer service scenarios requiring multi-turn conversations, policy adherence, and tool use. Tests agents' ability to follow complex business rules while serving customers effectively.
 
+## Research and Retrieval Benchmarks
+
+### WANDR
+
+WANDR (Wide And Nuanced Deep Research) evaluates agents on "wide research" tasks that require careful orchestration of search, compute, and model reasoning. It is inspired by the knowledge-intensive professional tasks that Perplexity Computer handles for users and iterates on WideSearch and similar benchmarks with emphasis on more complex task structures and multi-source synthesis requirements.
+
+**Key Characteristics**:
+- Tasks require multi-step, multi-source research workflows rather than single-query retrieval
+- Evaluates orchestration quality — the agent must decide which retrieval strategies to use, in what order, and how to aggregate results
+- Graded on accuracy, citation correctness, and structured output completeness
+- Designed to expose the limits of fixed RAG pipelines versus adaptive retrieval strategies
+- Perplexity's Search as Code (SaC) architecture achieves a 2.5× advantage over the next-best system on WANDR
+- Relevant for teams building research agents, knowledge synthesis pipelines, or competitive intelligence systems
+
+**Reference**: [Rethinking Search as Code Generation](https://research.perplexity.ai/articles/rethinking-search-as-code-generation), Perplexity AI Research, September 2025.
+
 ## Domain-Specific Agent Benchmarks
 
 ### Finance Agent v2
@@ -172,6 +188,7 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Safety evaluation | METR |
 | Customer service agents | τ-bench |
 | Financial domain agents | Finance Agent v2 |
+| Wide/deep research orchestration | WANDR |
 
 ## Evaluation Considerations
 
@@ -193,3 +210,4 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Observability](../Observability/Readme.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment
+- [Search as Code](../RAG/search-as-code.md) — Perplexity's SaC architecture; introduces the WANDR benchmark
