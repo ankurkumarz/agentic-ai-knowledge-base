@@ -5,6 +5,21 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-02] ingest | microsoft/agentpex (GitHub) | sections touched: EvaluationFrameworks/llm-frameworks.md, ProductionBestPractices/testing-evaluations.md, AllThingsMicrosoft/README.md
+
+**Source**: https://github.com/microsoft/agentpex
+**Type**: Open-source tool (Microsoft, MIT license) — agent trace evaluation framework
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/llm-frameworks.md` | Updated | Added AgentPex section under Open Source Frameworks; added row to Selection Guide |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Updated | Added AgentPex row to Evaluation Frameworks table |
+| `docs/AllThingsMicrosoft/README.md` | Updated | Added AgentPex row to Key Offerings table with backlink |
+
+---
+
 ## [2026-06-02] ingest | Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents (arXiv:2605.30621) | sections touched: AgentHarness/harness-self-evolution.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, AgentHarness/harness-optimization.md, mkdocs.yml
 
 **Source**: https://arxiv.org/abs/2605.30621

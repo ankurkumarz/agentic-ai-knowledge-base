@@ -62,6 +62,21 @@ Based on the LLM-as-judge methodology with pre-built prompts for common evaluati
 - Extensible with custom evaluation criteria
 - Supports both reference-based and reference-free evaluation
 
+### AgentPex (Microsoft)
+**Resource**: [microsoft/agentpex](https://github.com/microsoft/agentpex)
+
+Open-source tool by Microsoft for evaluating AI agent systems from execution traces. Imports agent traces in multiple formats, automatically extracts specifications from system prompts and tool schemas, and scores agent behavior against those specifications using LLM-based evaluation. MIT licensed.
+
+**Key Features**:
+- **8 evaluation techniques**: plan generation, output specification validation, argument checking, groundedness assessment, and more
+- **Specification extraction**: automatically derives evaluation criteria from system prompts and tool schemas — no manual rubric authoring required
+- **Multi-format trace ingestion**: standard JSON, Tau-sq, Langfuse, and Langtrace (OTEL spans)
+- **Multi-turn conversation support**: evaluates complex agent dialogues end-to-end
+- **Platform integration**: pushes evaluation scores back to Langfuse and Langtrace dashboards for unified observability
+- **Configurable LLM judge**: supports OpenAI, Azure, and Ollama-compatible endpoints via `DEFAULT_LLM` env var
+
+**Use Cases**: Post-hoc agent trace evaluation, automated regression testing against spec-derived criteria, integration with existing Langfuse/Langtrace observability pipelines
+
 ## Evaluation Methodologies
 
 ### LLM-as-Judge
@@ -125,6 +140,7 @@ evaluate([test_case], [AnswerRelevancyMetric(), FaithfulnessMetric()])
 | General LLM quality | DeepEval, LangChain OpenEvals |
 | MLFlow integration | MLFlow LLM Evaluate |
 | Agent evaluation | RAGAS (agent metrics), DeepEval |
+| Agent trace evaluation | AgentPex (spec-derived criteria from system prompts and tool schemas) |
 | Custom metrics | DeepEval (G-Eval), LangChain OpenEvals |
 
 ## See Also
