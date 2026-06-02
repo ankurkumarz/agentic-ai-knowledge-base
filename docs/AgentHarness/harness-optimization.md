@@ -126,6 +126,7 @@ The key differentiator is that Meta-Harness optimizes code (not text) and gives 
 
 - [Agent Harness](./agent-harness.md) — what a harness is and its core components
 - [Harness Engineering](./harness-engineering.md) — manual harness engineering: feedforward/feedback controls, regulation categories
+- [Harness Self-Evolution](./harness-self-evolution.md) — disentangles harness update capability (HUC) from benefit capability (HBC); shows update quality alone does not predict agent improvement
 - [Code as Agent Harness](./code-as-agent-harness.md) — code as the executable, inspectable substrate of agent harnesses
 - [Context Engineering Strategies](../ContextEngineering/strategies.md) — retrieval, compaction, and isolation strategies that harness optimization configures
 - [RAG Architecture](../ReferenceArchitecture/rag-architecture.md) — retrieval-augmented generation patterns relevant to harness search

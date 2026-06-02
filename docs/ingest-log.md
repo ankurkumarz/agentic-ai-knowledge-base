@@ -5,6 +5,23 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-02] ingest | Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents (arXiv:2605.30621) | sections touched: AgentHarness/harness-self-evolution.md (new), AgentHarness/agent-harness.md, AgentHarness/harness-engineering.md, AgentHarness/harness-optimization.md, mkdocs.yml
+
+**Source**: https://arxiv.org/abs/2605.30621
+**Type**: Research paper — Lin et al. (KDD 2026, Datasets and Benchmarks Track, oral); 24 pages, 9 figures, 12 tables
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/harness-self-evolution.md` | Created | New page covering harness self-evolution paradigm, HUC/HBC distinction, key findings, design implications, and best practices |
+| `docs/AgentHarness/agent-harness.md` | Updated | Added See Also link and References entry for arXiv:2605.30621 |
+| `docs/AgentHarness/harness-engineering.md` | Updated | Added See Also link to harness-self-evolution.md |
+| `docs/AgentHarness/harness-optimization.md` | Updated | Added See Also link to harness-self-evolution.md |
+| `mkdocs.yml` | Updated | Added 2.7 Harness Self-Evolution nav entry |
+
+---
+
 ## [2026-06-01] ingest | The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management (arXiv:2605.23071) | sections touched: ContextEngineering/efficiency-frontier.md (new), ContextEngineering/strategies.md, ProductionBestPractices/cost-management.md, ProductionBestPractices/context-engineering.md, index.md
 
 **Source**: https://arxiv.org/abs/2605.23071

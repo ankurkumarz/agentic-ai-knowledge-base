@@ -234,6 +234,7 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 
 - [Agent Harness](./agent-harness.md)
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness; complements manual harness engineering
+- [Harness Self-Evolution](./harness-self-evolution.md) — self-evolving harnesses; HUC vs. HBC distinction; update validation gates
 - [Code as Agent Harness](./code-as-agent-harness.md) — research survey formalizing code as the executable, inspectable, stateful substrate of agent harnesses
 - [LLM Harness Survey](./llm-harness-survey.md) — ETCLOVG taxonomy, nine technical challenges, harness completeness matrix
 - [The 8 Levels of Agentic Engineering](../MaturityModels/agentic-engineering-levels.md) — harness engineering corresponds to Level 6 in the practitioner progression framework
