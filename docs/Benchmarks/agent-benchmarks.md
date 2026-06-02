@@ -143,6 +143,47 @@ A comprehensive benchmark evaluating LLMs as agents across 8 distinct environmen
 ### τ-bench (Tau-bench)
 Evaluates agents on realistic customer service scenarios requiring multi-turn conversations, policy adherence, and tool use. Tests agents' ability to follow complex business rules while serving customers effectively.
 
+## Agent Memory Benchmarks
+
+### LongMemEval
+**Resource**: [Paper (ICLR 2025)](https://arxiv.org/abs/2410.10813) | [GitHub](https://github.com/xiaowu0162/LongMemEval) | [Website](https://xiaowu0162.github.io/long-mem-eval/)
+
+LongMemEval (Wu et al., UCLA NLP) benchmarks chat assistants on long-term interactive memory across extended multi-session histories. It formalizes a three-stage memory architecture — Indexing, Retrieval, Reading — and evaluates five core memory abilities against 500 hand-curated questions paired with timestamped chat histories.
+
+**Five Core Memory Abilities**:
+- **Information Extraction**: Retrieve specific facts stated in past sessions
+- **Multi-Session Reasoning**: Synthesize information spread across multiple conversations
+- **Temporal Reasoning**: Understand and reason about when events occurred relative to the query
+- **Knowledge Updates**: Handle cases where information changes or is contradicted over time
+- **Abstention**: Recognize when the answer is not present in memory (correct refusal)
+
+**Key Characteristics**:
+- 500 questions across 7 task categories: single-session-user, single-session-assistant, single-session-preference, temporal-reasoning, knowledge-update, multi-session, and abstention variants
+- Three difficulty variants: LongMemEval_S (~115k tokens, ~40 sessions), LongMemEval_M (~500 sessions per history), LongMemEval_Oracle (oracle retrieval upper bound)
+- Attribute-controlled pipeline generates coherent, extensible, timestamped chat histories inspired by "needle-in-a-haystack" methodology
+- GPT-4o automatic QA evaluation; supports both turn-level and session-level memory recall metrics
+- Systems evaluated include BM25, Contriever, Stella, and GTE embeddings; RAG with key expansion strategies (summarization, keyphrase extraction, user facts extraction)
+- Accepted at ICLR 2025
+
+### LongMemEval-V2
+**Resource**: [Paper (arXiv 2605.12493, May 2026)](https://arxiv.org/abs/2605.12493) | [Website](https://xiaowu0162.github.io/long-mem-eval/)
+
+LongMemEval-V2 (Wu et al., UCLA NLP) extends the benchmark to the agentic context, evaluating whether memory systems help web agents accumulate environment-specific experience — framing the goal as developing "knowledgeable colleagues" rather than accurate chat assistants. V2 shifts from conversational history to action trajectories in specialized web environments.
+
+**Five Agentic Memory Abilities**:
+- **Static State Recall**: Remember fixed facts about an environment (UI layout, available fields, configuration)
+- **Dynamic State Tracking**: Track how environment state changes across agent trajectories
+- **Workflow Knowledge**: Recall multi-step procedures for accomplishing recurring tasks
+- **Environment Gotchas**: Remember known failure modes, edge cases, and workarounds
+- **Premise Awareness**: Recognize when preconditions for a task are not satisfied
+
+**Key Characteristics**:
+- 451 manually curated questions
+- Up to 500 trajectories per history; up to 115M tokens total — substantially larger context than V1
+- Environments drawn from WebArena and WorkArena: Magento shopping, shopping admin, Postmill forum, ServiceNow
+- Targets procedural and environmental memory gaps not addressed by V1's focus on user preference recall
+- Authors: Di Wu, Zixiang Ji, Asmi Kawatkar, Bryan Kwan, Jia-Chen Gu, Nanyun Peng, Kai-Wei Chang (UCLA NLP)
+
 ## Research and Retrieval Benchmarks
 
 ### WANDR
@@ -189,6 +230,8 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Customer service agents | τ-bench |
 | Financial domain agents | Finance Agent v2 |
 | Wide/deep research orchestration | WANDR |
+| Long-term memory (chat assistants) | LongMemEval |
+| Long-term memory (web agents) | LongMemEval-V2 |
 
 ## Evaluation Considerations
 
@@ -211,3 +254,5 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 - [Observability](../Observability/Readme.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment
 - [Search as Code](../RAG/search-as-code.md) — Perplexity's SaC architecture; introduces the WANDR benchmark
+- [Agent Memory Research Papers](../AgentMemory/research-papers.md) — LongMemEval foundational papers and memory architecture research
+- [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md) — retrieval and consolidation patterns evaluated by LongMemEval
