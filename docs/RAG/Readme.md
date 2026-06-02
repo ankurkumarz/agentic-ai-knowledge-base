@@ -1,3 +1,7 @@
+## Search as Code (SaC)
+
+An emerging paradigm where language models generate code to assemble task-specific retrieval pipelines on demand, rather than routing through fixed pipelines. See [Search as Code](search-as-code.md) for Perplexity's full architecture — Models as Control Plane, Compute Sandboxes, and Agentic Search SDK — including the WANDR benchmark and CVE case study showing 85.1% token reduction.
+
 ## RAG Engines
 
 - [Contextual AI RAG Agents](https://contextual.ai): enterprise solution for building and deploying specialized RAG agents with Reranker
