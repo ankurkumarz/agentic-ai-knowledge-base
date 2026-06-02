@@ -104,6 +104,7 @@ See [Search as Code (Perplexity)](../RAG/search-as-code.md) for the full treatme
 
 ## See Also
 
+- [Claude Code Orchestration Primitives — Decision Guide](./claude-orchestration-guide.md)
 - [Search as Code (Perplexity)](../RAG/search-as-code.md)
 - [Code as Agent Harness](../AgentHarness/code-as-agent-harness.md)
 - [Workflow Orchestration](./orchestration.md)
