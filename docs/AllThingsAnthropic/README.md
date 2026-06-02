@@ -22,6 +22,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 | Anthropic Skills Repository | Official GitHub repository of ready-made Claude Code skills — review, deploy, security, docs workflows and more | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 | Anthropic Marketplace Presence | Claude models distributed via AWS Bedrock, Google Vertex AI, and Azure AI Foundry; MCP open ecosystem acts as de-facto tool/agent marketplace | [Marketplace/anthropic-marketplace.md](../Marketplace/anthropic-marketplace.md) |
 | Sandbox Runtime (`srt`) | OS-level process sandboxing for MCP servers — enforces filesystem + network restrictions via macOS Seatbelt / Linux bubblewrap without containers; research preview, Apache-2.0 | [SecurityFrameworks/anthropic-sandbox-runtime.md](../SecurityFrameworks/anthropic-sandbox-runtime.md) |
+| Dynamic Workflows | Claude writes a JavaScript orchestration script; the runtime executes it in background across up to 1,000 subagents — plan lives in code, not in context. Available Pro+ via `ultracode` keyword or `/effort ultracode`. Includes `/deep-research` bundled workflow. | [WorkflowBuilders/dynamic-workflows.md](../WorkflowBuilders/dynamic-workflows.md) |
 
 ## See Also
 

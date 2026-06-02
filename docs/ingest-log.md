@@ -5,6 +5,23 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-02] ingest | Dynamic Workflows — Claude Code (code.claude.com/docs/en/workflows) | sections touched: WorkflowBuilders/dynamic-workflows.md (new), AllThingsAnthropic/README.md, RAG/search-as-code.md, AgentHarness/code-as-agent-harness.md, mkdocs.yml
+
+**Source**: https://code.claude.com/docs/en/workflows
+**Type**: Official product documentation — Claude Code, Anthropic
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/WorkflowBuilders/dynamic-workflows.md` | Created | Full coverage: orchestration primitive comparison table (subagents/skills/agent teams/workflows), plan-in-code architectural pattern, runtime constraints (16 concurrent/1,000 total agents), bundled workflows (/deep-research), ultracode mode, save/reuse as commands, detailed comparison with Perplexity Search as Code (shared "code as orchestrator" meta-pattern, different layers: retrieval vs. coordination) |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for Dynamic Workflows with backlink |
+| `docs/RAG/search-as-code.md` | Extended | Added See Also backlink to dynamic-workflows.md with context note |
+| `docs/AgentHarness/code-as-agent-harness.md` | Extended | Added See Also backlinks to dynamic-workflows.md and search-as-code.md |
+| `mkdocs.yml` | Extended | Added 5.3.6 Dynamic Workflows (Claude Code) nav entry |
+
+---
+
 ## [2026-06-02] ingest | Rethinking Search as Code Generation (Perplexity AI Research) | sections touched: RAG/search-as-code.md (new), Benchmarks/agent-benchmarks.md, ProductionBestPractices/context-engineering.md, RAG/Readme.md, mkdocs.yml, index.md
 
 **Source**: https://research.perplexity.ai/articles/rethinking-search-as-code-generation

@@ -108,6 +108,7 @@ Perplexity Computer is a multi-model agent orchestration platform that coordinat
 - [Production Context Engineering](../ProductionBestPractices/context-engineering.md)
 - [Agent Evaluation Benchmarks](../Benchmarks/agent-benchmarks.md)
 - [Architecture Components Selection](../Architecture/components-selection.md)
+- [Dynamic Workflows (Claude Code)](../WorkflowBuilders/dynamic-workflows.md) — applies the same "plan-in-code" pattern to agent orchestration rather than retrieval
 
 ## References
 
