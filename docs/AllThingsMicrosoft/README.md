@@ -17,6 +17,7 @@ Microsoft's agentic AI strategy centres on Azure AI services, the open-source Se
 | Agent Governance Toolkit | MIT-licensed runtime governance: deterministic policy enforcement (YAML/Rego/Cedar), zero-trust identity (Ed25519 + ML-DSA-65), execution rings, MCP security gateway; covers all 10 OWASP Agentic risks | [SecurityFrameworks/agent-governance-toolkit.md](../SecurityFrameworks/agent-governance-toolkit.md) |
 | Azure Skills Repository | Official GitHub repository of ready-made skills targeting Azure AI Agent Service and Semantic Kernel toolchains | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 | SkillOpt | Text-space optimizer that trains reusable natural-language skill documents for frozen LLM agents; 52/52 benchmark wins without weight updates | [PromptEngineering/skillopt.md](../PromptEngineering/skillopt.md) |
+| AgentPex | Open-source (MIT) agent evaluation tool that imports execution traces, extracts specs from system prompts and tool schemas, and scores behavior using 8 LLM-based evaluation techniques; integrates with Langfuse and Langtrace | [EvaluationFrameworks/llm-frameworks.md](../EvaluationFrameworks/llm-frameworks.md) |
 
 ## See Also
 
