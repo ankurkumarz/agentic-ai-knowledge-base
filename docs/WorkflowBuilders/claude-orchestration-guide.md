@@ -42,72 +42,37 @@ External System → MCP Server → Agent (subagent, skill runner, teammate, work
 
 ## Decision Flowchart
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│ Do you need to expose an external system as callable tools?     │
-│ (database, API, proprietary service)                            │
-└────────────────────┬────────────────────────────────────────────┘
-                     │ YES → Add an MCP server, then continue below
-                     │ NO → Continue below
-                     ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ Is this a repeatable procedure you'll invoke again and again?   │
-│ (deploy checklist, code review process, incident runbook)       │
-└────────────────────┬────────────────────────────────────────────┘
-                     │ YES
-                     ▼
-            ┌────────────────────┐
-            │ → SKILL            │  Load on demand, cheap,
-            │   (saves as        │  shareable via repo,
-            │   /command)        │  auto-invoked by Claude
-            └────────────────────┘
-                     │ NO → Continue below
-                     ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ Who should coordinate the parallel workers?                     │
-└────────────────────┬────────────────────────────────────────────┘
-                     │
-        ┌────────────┴─────────────┐
-        │                         │
-        ▼                         ▼
-  YOU coordinate           CLAUDE coordinates
-  (hand off, check back)   (automated orchestration)
-        │                         │
-        ▼                         │
-  → AGENT VIEW                    │
-  Research preview                │
-  Good for independent            │
-  tasks you want to dispatch      │
-  and monitor at a glance         │
-                                  ▼
-        ┌─────────────────────────────────────────────────────┐
-        │ Do the workers need to talk directly to each other? │
-        └─────────────────┬───────────────────────────────────┘
-                          │ YES: debate, shared findings,     │ NO
-                          │ competing hypotheses              │
-                          ▼                                   ▼
-                 → AGENT TEAMS              ┌────────────────────────────┐
-                 (experimental)             │ How large is the job?      │
-                 Share task list,           └────────┬───────────────────┘
-                 direct messaging                    │
-                 3–10 teammates                      │
-                 Best for: parallel research,        │
-                 cross-layer implementation,         ▼
-                 adversarial debugging    FEW (1–5) tasks, results only
-                                          → SUBAGENTS
-                                          Focused workers,
-                                          context preserved,
-                                          route cheap tasks
-                                          to smaller models
+```mermaid
+flowchart TD
+    START([Start]) --> MCP_Q{Expose an external system\nas callable tools?\ne.g. database, API, service}
 
-                                          MANY (dozens–hundreds),
-                                          cross-checking needed, or
-                                          plan must be repeatable
-                                          → DYNAMIC WORKFLOWS
-                                          Script holds the plan,
-                                          up to 1,000 agents,
-                                          background execution,
-                                          save as /command
+    MCP_Q -->|Yes| MCP[🔌 Add MCP Server\nThen continue ↓]
+    MCP_Q -->|No| SKILL_Q
+    MCP --> SKILL_Q
+
+    SKILL_Q{Repeatable procedure\nyou'll invoke again?\ne.g. deploy checklist,\ncode review, runbook}
+    SKILL_Q -->|Yes| SKILL[📋 SKILL\nSave as /command\nLoad on demand · cheap\nShare via repo\nAuto-invoked by Claude]
+    SKILL_Q -->|No| COORD_Q
+
+    COORD_Q{Who coordinates\nthe workers?}
+    COORD_Q -->|You — hand off\nand check back| AGENTVIEW[🖥️ AGENT VIEW\nDispatch & monitor\nindependent sessions\nStep in when needed\nResearch preview]
+    COORD_Q -->|Claude —\nautomated| COMMS_Q
+
+    COMMS_Q{Workers need to\ntalk to each other?\nDebate · share findings\ncompeting hypotheses}
+    COMMS_Q -->|Yes| TEAMS[👥 AGENT TEAMS\nExperimental\nShared task list\nDirect inter-agent messaging\n3–10 teammates]
+    COMMS_Q -->|No —\nresults only| SCALE_Q
+
+    SCALE_Q{Scale?}
+    SCALE_Q -->|Few tasks\n1–5 workers| SUBAGENTS[🤖 SUBAGENTS\nFocused workers\nContext preserved\nRoute to cheaper model\nResults summarised back]
+    SCALE_Q -->|Dozens–hundreds\nor cross-checking\nor replayable plan| WORKFLOWS[⚙️ DYNAMIC WORKFLOWS\nScript holds the plan\nUp to 1000 agents\nBackground execution\nSave as /command]
+
+    style MCP fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
+    style SKILL fill:#dcfce7,stroke:#16a34a,color:#14532d
+    style AGENTVIEW fill:#fef9c3,stroke:#ca8a04,color:#713f12
+    style TEAMS fill:#fce7f3,stroke:#db2777,color:#831843
+    style SUBAGENTS fill:#ede9fe,stroke:#7c3aed,color:#3b0764
+    style WORKFLOWS fill:#ffedd5,stroke:#ea580c,color:#7c2d12
+    style START fill:#f1f5f9,stroke:#64748b
 ```
 
 ---
