@@ -195,3 +195,10 @@ MCP helps build agents and complex workflows on top of LLMs through three primar
 - **Section 6.3**: Agent2Agent (A2A) Protocol (complementary protocol)
 - **Section 4**: Agent Development Frameworks (MCP integration)
 - **Section 5**: Agent Technology Stack (MCP in technology stacks)
+
+## See Also
+
+- [Claude Code Orchestration Primitives — Decision Guide](../WorkflowBuilders/claude-orchestration-guide.md) — explains how MCP fits alongside Skills, Subagents, Agent Teams, and Dynamic Workflows
+- [Dynamic Workflows (Claude Code)](../WorkflowBuilders/dynamic-workflows.md)
+- [Agent Skills / SKILLS.md Standard](./skills.md)
+- [Multi-Agent Systems](../Architecture/multi-agent-system.md)

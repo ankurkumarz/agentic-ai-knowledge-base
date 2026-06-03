@@ -98,6 +98,8 @@ The three-layer taxonomy gives practitioners a theoretical scaffold for understa
 - [Agentic Design Patterns (OpenAI)](../DesignPatterns/openai-patterns.md)
 - [Production Best Practices: Deployment](../ProductionBestPractices/deployment.md)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
+- [Dynamic Workflows (Claude Code)](../WorkflowBuilders/dynamic-workflows.md) — a concrete production implementation of the plan-in-code harness pattern
+- [Search as Code (Perplexity)](../RAG/search-as-code.md) — the same pattern applied to the retrieval layer
 
 ## References
 

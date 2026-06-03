@@ -5,6 +5,45 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-02] synthesis | Claude Code Orchestration Primitives Decision Guide | sections touched: WorkflowBuilders/claude-orchestration-guide.md (new), WorkflowBuilders/dynamic-workflows.md, AllThingsAnthropic/README.md, Standards/mcp.md, mkdocs.yml
+
+**Sources**:
+- https://code.claude.com/docs/en/agents — Run agents in parallel (authoritative comparison)
+- https://code.claude.com/docs/en/sub-agents — Subagents reference
+- https://code.claude.com/docs/en/skills — Skills reference
+- https://code.claude.com/docs/en/agent-teams — Agent Teams reference
+- https://code.claude.com/docs/en/workflows — Dynamic Workflows reference
+**Type**: Decision guide / synthesis — all Claude Code orchestration primitives (MCP, Skills, Subagents, Agent View, Agent Teams, Dynamic Workflows)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/WorkflowBuilders/claude-orchestration-guide.md` | Created | Full decision guide: capability-vs-orchestration framing (MCP is orthogonal), flowchart for choosing between all five primitives, per-primitive when-to-use guidance with token cost context, capability × orchestration composition patterns (MCP + Skills, Skills + Subagents, MCP + Workflows, Subagents + Worktrees, Workflows + Saved Commands), summary decision table, best practices |
+| `docs/WorkflowBuilders/dynamic-workflows.md` | Extended | Added See Also link to new guide |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for Orchestration Primitives Guide |
+| `docs/Standards/mcp.md` | Extended | Added See Also section with backlink to guide (clarifying MCP's role as capability layer, not orchestration) |
+| `mkdocs.yml` | Extended | Added 5.3.7 Orchestration Primitives Decision Guide nav entry |
+
+---
+
+## [2026-06-02] ingest | Dynamic Workflows — Claude Code (code.claude.com/docs/en/workflows) | sections touched: WorkflowBuilders/dynamic-workflows.md (new), AllThingsAnthropic/README.md, RAG/search-as-code.md, AgentHarness/code-as-agent-harness.md, mkdocs.yml
+
+**Source**: https://code.claude.com/docs/en/workflows
+**Type**: Official product documentation — Claude Code, Anthropic
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/WorkflowBuilders/dynamic-workflows.md` | Created | Full coverage: orchestration primitive comparison table (subagents/skills/agent teams/workflows), plan-in-code architectural pattern, runtime constraints (16 concurrent/1,000 total agents), bundled workflows (/deep-research), ultracode mode, save/reuse as commands, detailed comparison with Perplexity Search as Code (shared "code as orchestrator" meta-pattern, different layers: retrieval vs. coordination) |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for Dynamic Workflows with backlink |
+| `docs/RAG/search-as-code.md` | Extended | Added See Also backlink to dynamic-workflows.md with context note |
+| `docs/AgentHarness/code-as-agent-harness.md` | Extended | Added See Also backlinks to dynamic-workflows.md and search-as-code.md |
+| `mkdocs.yml` | Extended | Added 5.3.6 Dynamic Workflows (Claude Code) nav entry |
+
+---
+
 ## [2026-06-02] ingest | Rethinking Search as Code Generation (Perplexity AI Research) | sections touched: RAG/search-as-code.md (new), Benchmarks/agent-benchmarks.md, ProductionBestPractices/context-engineering.md, RAG/Readme.md, mkdocs.yml, index.md
 
 **Source**: https://research.perplexity.ai/articles/rethinking-search-as-code-generation
