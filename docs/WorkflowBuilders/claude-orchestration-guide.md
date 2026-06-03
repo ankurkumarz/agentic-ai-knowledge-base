@@ -44,27 +44,27 @@ External System → MCP Server → Agent (subagent, skill runner, teammate, work
 
 ```mermaid
 flowchart TD
-    START([Start]) --> MCP_Q{Expose an external system\nas callable tools?\ne.g. database, API, service}
+    START([Start]) --> MCP_Q{"Expose an external system<br/>as callable tools?<br/>e.g. database, API, service"}
 
-    MCP_Q -->|Yes| MCP[🔌 Add MCP Server\nThen continue ↓]
+    MCP_Q -->|Yes| MCP["🔌 Add MCP Server<br/>Then continue ↓"]
     MCP_Q -->|No| SKILL_Q
     MCP --> SKILL_Q
 
-    SKILL_Q{Repeatable procedure\nyou'll invoke again?\ne.g. deploy checklist,\ncode review, runbook}
-    SKILL_Q -->|Yes| SKILL[📋 SKILL\nSave as /command\nLoad on demand · cheap\nShare via repo\nAuto-invoked by Claude]
+    SKILL_Q{"Repeatable procedure<br/>you'll invoke again?<br/>e.g. deploy checklist,<br/>code review, runbook"}
+    SKILL_Q -->|Yes| SKILL["📋 SKILL<br/>Save as /command<br/>Load on demand · cheap<br/>Share via repo<br/>Auto-invoked by Claude"]
     SKILL_Q -->|No| COORD_Q
 
-    COORD_Q{Who coordinates\nthe workers?}
-    COORD_Q -->|You — hand off\nand check back| AGENTVIEW[🖥️ AGENT VIEW\nDispatch & monitor\nindependent sessions\nStep in when needed\nResearch preview]
-    COORD_Q -->|Claude —\nautomated| COMMS_Q
+    COORD_Q{"Who coordinates<br/>the workers?"}
+    COORD_Q -->|"You — hand off<br/>and check back"| AGENTVIEW["🖥️ AGENT VIEW<br/>Dispatch & monitor<br/>independent sessions<br/>Step in when needed<br/>Research preview"]
+    COORD_Q -->|"Claude —<br/>automated"| COMMS_Q
 
-    COMMS_Q{Workers need to\ntalk to each other?\nDebate · share findings\ncompeting hypotheses}
-    COMMS_Q -->|Yes| TEAMS[👥 AGENT TEAMS\nExperimental\nShared task list\nDirect inter-agent messaging\n3–10 teammates]
-    COMMS_Q -->|No —\nresults only| SCALE_Q
+    COMMS_Q{"Workers need to<br/>talk to each other?<br/>Debate · share findings<br/>competing hypotheses"}
+    COMMS_Q -->|Yes| TEAMS["👥 AGENT TEAMS<br/>Experimental<br/>Shared task list<br/>Direct inter-agent messaging<br/>3–10 teammates"]
+    COMMS_Q -->|"No —<br/>results only"| SCALE_Q
 
     SCALE_Q{Scale?}
-    SCALE_Q -->|Few tasks\n1–5 workers| SUBAGENTS[🤖 SUBAGENTS\nFocused workers\nContext preserved\nRoute to cheaper model\nResults summarised back]
-    SCALE_Q -->|Dozens–hundreds\nor cross-checking\nor replayable plan| WORKFLOWS[⚙️ DYNAMIC WORKFLOWS\nScript holds the plan\nUp to 1000 agents\nBackground execution\nSave as /command]
+    SCALE_Q -->|"Few tasks<br/>1–5 workers"| SUBAGENTS["🤖 SUBAGENTS<br/>Focused workers<br/>Context preserved<br/>Route to cheaper model<br/>Results summarised back"]
+    SCALE_Q -->|"Dozens–hundreds<br/>or cross-checking<br/>or replayable plan"| WORKFLOWS["⚙️ DYNAMIC WORKFLOWS<br/>Script holds the plan<br/>Up to 1000 agents<br/>Background execution<br/>Save as /command"]
 
     style MCP fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
     style SKILL fill:#dcfce7,stroke:#16a34a,color:#14532d
