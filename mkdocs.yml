@@ -73,6 +73,7 @@ nav:
       - 5.2.4 Other SaaS Platforms: 'AgentPlatforms/saas-platforms.md'
       - 5.2.5 Enterprise Agentic AI Platforms (2026): 'AgentPlatforms/enterprise-platforms-2026.md'
       - 5.2.6 Claude Managed Agents (Anthropic): 'AgentPlatforms/claude-managed-agents.md'
+      - 5.2.7 Microsoft Build 2026 — Fabric & Databases: 'AgentPlatforms/microsoft-fabric-databases-2026.md'
     - 5.3 Workflow Engine/Frameworks:
       - 5.3.1 Open Source (MIT or Apache): 'WorkflowBuilders/open-source.md'
       - 5.3.2 Self-hosted & Limited Open Source: 'WorkflowBuilders/self-hosted.md'

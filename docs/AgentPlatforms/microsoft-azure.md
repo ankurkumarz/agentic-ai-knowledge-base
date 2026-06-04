@@ -140,11 +140,27 @@ Microsoft Azure AI Agent Service provides a comprehensive platform for building,
 - **Best Practices**: [Azure AI Best Practices](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/)
 - **Announcement Blog**: [Introducing Azure AI Agent Service](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-azure-ai-agent-service/4298357)
 
+## Microsoft Build 2026 Updates
+
+At Microsoft Build 2026, Microsoft announced a wave of data platform and database capabilities for agentic apps. Key additions include:
+
+- **Azure HorizonDB** (Public Preview): PostgreSQL-compatible, cloud-scale database with hybrid DiskANN + full-text vector search and in-database model invocation via the `azure_ai` extension.
+- **Rayfin** (Public Preview): Open-source SDK + CLI for deploying full application backends to Microsoft Fabric in one command — backends inherit Fabric's governance from day one.
+- **Fabric IQ** (GA): Shared context layer for AI agents exposing a business ontology via MCP to agents from any vendor.
+- **Azure Cosmos DB MCP Toolkit** (Preview): MCP-based Cosmos DB connector plus an Agent Memory Toolkit for durable cross-session agent memory.
+- **SQL MCP Server** (Public Preview): MCP access to Azure SQL data for agents and Copilots.
+- **Microsoft IQ**: Unified intelligence layer (Work IQ + Foundry IQ + Fabric IQ + Web IQ) with a single SLA-backed retrieval endpoint.
+- **Microsoft Agent Framework 1.0**: GA at Build 2026.
+
+See the dedicated Build 2026 page for full coverage: [Microsoft Build 2026 — Fabric & Databases](microsoft-fabric-databases-2026.md)
+
 ## See Also
 
+- [Microsoft Build 2026 — Fabric & Databases for Agentic Apps](microsoft-fabric-databases-2026.md)
 - [Enterprise Agentic AI Platforms (2026)](enterprise-platforms-2026.md)
 - [Microsoft Agent Framework](../AgenticFrameworks/microsoft-framework.md)
 - [Semantic Kernel](../AgenticFrameworks/semantic-kernel.md)
+- [MCP Standard](../Standards/mcp.md)
 - [AllThingsMicrosoft](../AllThingsMicrosoft/README.md)
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)

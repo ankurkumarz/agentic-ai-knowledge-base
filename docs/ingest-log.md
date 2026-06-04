@@ -5,6 +5,28 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-04] ingest | Microsoft Build 2026 — Building Agentic Apps with Microsoft Fabric and Microsoft Databases | sections touched: AgentPlatforms/microsoft-fabric-databases-2026.md (new), AllThingsMicrosoft/README.md, AgentPlatforms/microsoft-azure.md, mkdocs.yml
+
+**Sources**:
+- https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/ — Primary Azure Blog announcement
+- https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/The-Era-of-the-Agentic-Database-Developer-Microsoft-SQL/ba-p/5190062 — SQL/agentic developer era announcements
+- https://devblogs.microsoft.com/cosmosdb/announced-at-ms-build-2026-azure-cosmos-db-mcp-toolkit-semantic-reranking-global-secondary-indexes-and-more/ — Cosmos DB Build 2026 announcements
+- https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-IQ-The-shared-context-layer-for-AI-agents-and-real-time/ba-p/5191678 — Fabric IQ GA details
+- https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676 — Rayfin introduction
+- https://techcommunity.microsoft.com/blog/adforpostgresql/azure-horizondb-enterprise-ready-postgres-engineered-for-the-ai-era/4524094 — Azure HorizonDB details
+**Type**: Vendor announcement — Microsoft Build 2026 data platform and database capabilities for agentic AI
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/microsoft-fabric-databases-2026.md` | Created | Full coverage of Build 2026: Azure HorizonDB, Rayfin, Fabric IQ, GPU Fabric Data Warehouse, Agent Skills for Power BI, Cosmos DB MCP Toolkit + Agent Memory Toolkit, SQL MCP Server, Microsoft IQ |
+| `docs/AllThingsMicrosoft/README.md` | Extended | Added hub rows for HorizonDB, Rayfin, Fabric IQ, Microsoft IQ, Cosmos DB MCP Toolkit, SQL MCP Server, Microsoft Agent Framework 1.0 GA |
+| `docs/AgentPlatforms/microsoft-azure.md` | Extended | Added Build 2026 Updates section summarising key announcements; expanded See Also |
+| `mkdocs.yml` | Extended | Added 5.2.7 Microsoft Build 2026 — Fabric & Databases nav entry |
+
+---
+
 ## [2026-06-02] synthesis | Claude Code Orchestration Primitives Decision Guide | sections touched: WorkflowBuilders/claude-orchestration-guide.md (new), WorkflowBuilders/dynamic-workflows.md, AllThingsAnthropic/README.md, Standards/mcp.md, mkdocs.yml
 
 **Sources**:
