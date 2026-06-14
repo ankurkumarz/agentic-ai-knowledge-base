@@ -802,3 +802,22 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 ## [2026-06-01] ingest | pi.dev — Pi Coding Agent Harness | sections touched: AgentHarness, AgenticFrameworks
 
 ## [2026-06-02] ingest | https://xiaowu0162.github.io/long-mem-eval/ — LongMemEval benchmark (ICLR 2025) and LongMemEval-V2 (May 2026) | sections touched: Benchmarks, AgentMemory
+
+## [2026-06-14] ingest | Open Knowledge Format (OKF) v0.1 — Google Cloud | sections touched: Standards/open-knowledge-format.md (new), AllThingsGoogle/README.md, mkdocs.yml, index.md, Standards/agents-md.md, Standards/skills.md, ContextEngineering/strategies.md, AgentMemory/README.md
+
+**Source**: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+
+**Type**: Vendor blog post / open specification announcement (Google Cloud Data Analytics, BI, and Database teams; authors Sam McVeety and Amir Hormati; OKF v0.1, June 12, 2026)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/open-knowledge-format.md` | Created | Overview, architecture (markdown + YAML frontmatter bundles), design principles, key features, use cases, reference implementations (Enrichment Agent, Static HTML Visualizer, sample bundles), suitable for / limitations, relation to AGENTS.md/SKILLS.md/Context Engineering/AgentMemory, best practices table, See Also, References |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Open Knowledge Format (OKF) |
+| `mkdocs.yml` | Extended | Added 6.9 Open Knowledge Format (OKF) nav entry under Industry Standards |
+| `docs/index.md` | Extended | Added OKF bullet to section 7 (Agentic AI Industry Standards) |
+| `docs/Standards/agents-md.md` | Extended | Added bidirectional See Also link to open-knowledge-format.md |
+| `docs/Standards/skills.md` | Extended | Added bidirectional See Also link to open-knowledge-format.md |
+| `docs/ContextEngineering/strategies.md` | Extended | Added See Also link to open-knowledge-format.md (Offload/Write pattern) |
+| `docs/AgentMemory/README.md` | Extended | Added See Also link to open-knowledge-format.md (semantic memory storage format) |

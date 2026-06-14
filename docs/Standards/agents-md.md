@@ -282,6 +282,7 @@ agent:
 - [Agent2Agent Protocol](./agent2agent.md)
 - [Agentic AI Foundation](./agentic-ai-foundation.md)
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
+- [Open Knowledge Format (OKF)](./open-knowledge-format.md) — complementary convention for agent-readable knowledge/metadata vs. AGENTS.md's behavioral instructions
 
 ## Related Sections
 

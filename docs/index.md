@@ -76,6 +76,7 @@ Comprehensive coverage of major development frameworks:
 - **AGENTS.md**: Industry standard for AI agent instructions
 - **OpenSpec & AG-UI**: Emerging standards for development and interfaces
 - **AIDLC Workflows (AWS)**: Methodology-first AI-driven development lifecycle with structured Inception → Construction phases, approval gates, and a built-in evaluator for CI/CD quality gates
+- **Open Knowledge Format (OKF)**: Google Cloud's open specification (v0.1, June 2026) for portable, agent- and human-readable knowledge bundles — markdown files with YAML frontmatter, no SDK or runtime required; formalizes Karpathy's "LLM-wiki" pattern
 
 ### **8. Agentic AI Reference Architecture**
 - **AI Automation**: LangManus framework and automation patterns
