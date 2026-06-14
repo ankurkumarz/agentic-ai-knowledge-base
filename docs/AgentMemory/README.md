@@ -148,3 +148,4 @@ Quick reference for working memory techniques:
 - **[Research Papers](research-papers.md)**: Foundational papers
 - **[Context Engineering](../ContextEngineering/README.md)**: Context management strategies
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Framework support for memory management
+- **[Open Knowledge Format (OKF)](../Standards/open-knowledge-format.md)**: Portable markdown+frontmatter format for semantic-memory content (schemas, definitions, knowledge graphs)
