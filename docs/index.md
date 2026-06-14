@@ -127,7 +127,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 
 ### **Agent Testing & Evaluations**
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
-- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, and GAIA
+- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, GAIA, and DeepResearch Bench (RACE/FACT evaluation of deep research agents)
 - **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
 
 ### **Context Engineering**

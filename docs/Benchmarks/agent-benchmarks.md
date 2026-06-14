@@ -186,6 +186,29 @@ LongMemEval-V2 (Wu et al., UCLA NLP) extends the benchmark to the agentic contex
 
 ## Research and Retrieval Benchmarks
 
+### DeepResearch Bench
+
+**Resource**: [Project Page](https://deepresearch-bench.github.io/) | [Paper (arXiv 2506.11763)](https://arxiv.org/abs/2506.11763) | [GitHub](https://github.com/Ayanami0730/deep_research_bench) | [Dataset](https://huggingface.co/datasets/muset-ai/DeepResearch-Bench-Dataset) | [Leaderboard](https://huggingface.co/spaces/muset-ai/DeepResearch-Bench-Leaderboard)
+
+DeepResearch Bench (DRB), from researchers at the University of Science and Technology of China (USTC), is a benchmark for systematically evaluating **Deep Research Agents (DRAs)** — LLM-based agents that autonomously orchestrate multi-step web exploration, targeted retrieval, and higher-order synthesis to produce analyst-grade, citation-rich research reports.
+
+**Key Characteristics**:
+- 100 PhD-level research tasks (50 Chinese, 50 English) spanning 22 topic domains: Science & Technology (physics, chemistry, biology, environmental science, engineering), Finance & Business (investments, personal finance, marketing, HR), Software, and others (Art & Design, Entertainment, History, Industrial, Transportation, Travel)
+- Domain distribution derived from analysis of 96,147 anonymized real user queries from web-search-enabled LLM interactions, classified via the WebOrganizer taxonomy to reflect authentic research demand
+- Tasks authored and screened by PhD-level domain experts and senior practitioners (5+ years' experience) for quality, clarity, authenticity, and challenge level
+
+**Evaluation Frameworks**:
+- **RACE (Reference-based Adaptive Criteria-driven Evaluation)**: scores generated reports against reference reports across four dimensions — comprehensiveness, insight/depth, instruction-following, and readability — using dynamically generated, task-specific weighted criteria
+- **FACT (Framework for Factual Abundance and Citation Trustworthiness)**: extracts statement-URL pairs (factual claims and cited sources) from a report, deduplicates them, and uses web scraping plus LLM judgment to verify whether each source supports its claim, yielding citation accuracy and effective-citations-per-task metrics
+
+**Evaluation Infrastructure**:
+- Initial evaluator setup (July 2025): Gemini-2.5-Pro for RACE, Gemini-2.5-Flash for FACT; evaluated DRAs included Kimi-Researcher, Doubao-DeepResearch, and Claude-Researcher, with raw articles and scores published on the Hugging Face leaderboard
+- *(Updated: as of May 2026, the official evaluator transitioned to GPT-5.5 for RACE and GPT-5.4-mini for FACT, following Google's announced deprecation of Gemini-2.5-Pro. Against a human inter-annotator agreement baseline of 68.78%, candidate evaluators scored — GPT-5.5: 71.82% overall (PAR 73.00, OPC 89.70, FAP 65.35, FAS 59.23); Gemini-3.1-Pro: 70.58%; Claude-Opus-4-7: 70.11%. A dual-acceptance window through 31 May 2026 accepted submissions under both the legacy (Gemini-2.5-Pro) and new (GPT-5.5) evaluators on separate leaderboards; legacy code is preserved on the `Gemini-2.5` branch)*
+
+**Licensing**: Benchmark code under MIT license; dataset and leaderboard hosted on Hugging Face
+
+**Related**: **DeepResearch Bench II (DRB II)** (Feb 2026, [paper](https://arxiv.org/abs/2601.08536)) is a follow-up benchmark from the same lab that evaluates DRA reports against 9,430 fine-grained binary rubrics (information recall, analysis, presentation) derived from expert-written articles — a different evaluation focus from DRB. DRB continues to be maintained independently alongside DRB II.
+
 ### WANDR
 
 WANDR (Wide And Nuanced Deep Research) evaluates agents on "wide research" tasks that require careful orchestration of search, compute, and model reasoning. It is inspired by the knowledge-intensive professional tasks that Perplexity Computer handles for users and iterates on WideSearch and similar benchmarks with emphasis on more complex task structures and multi-source synthesis requirements.
@@ -230,6 +253,7 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Customer service agents | τ-bench |
 | Financial domain agents | Finance Agent v2 |
 | Wide/deep research orchestration | WANDR |
+| Deep research report quality & citation accuracy | DeepResearch Bench |
 | Long-term memory (chat assistants) | LongMemEval |
 | Long-term memory (web agents) | LongMemEval-V2 |
 

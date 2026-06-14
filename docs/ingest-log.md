@@ -821,3 +821,17 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/Standards/skills.md` | Extended | Added bidirectional See Also link to open-knowledge-format.md |
 | `docs/ContextEngineering/strategies.md` | Extended | Added See Also link to open-knowledge-format.md (Offload/Write pattern) |
 | `docs/AgentMemory/README.md` | Extended | Added See Also link to open-knowledge-format.md (semantic memory storage format) |
+
+## [2026-06-14] ingest | https://deepresearch-bench.github.io/ — DeepResearch Bench (DRB) | sections touched: Benchmarks, ProductionBestPractices, index
+
+**Source**: https://deepresearch-bench.github.io/ (project site returned HTTP 403; content sourced from the linked GitHub repo README at github.com/Ayanami0730/deep_research_bench, arXiv 2506.11763, and Hugging Face paper page)
+
+**Type**: Academic benchmark project page / GitHub repository (USTC Agent Research Lab; Du, Xu, Zhu, Wang, Mao)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Benchmarks/agent-benchmarks.md` | Extended | Added DeepResearch Bench entry under Research and Retrieval Benchmarks (100 PhD-level tasks, 22 domains, RACE/FACT evaluation frameworks, evaluator migration to GPT-5.5/GPT-5.4-mini in May 2026, DRB II follow-up); added row to Benchmark Selection Guide table |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added DeepResearch Bench row to Agent Benchmarks Reference table |
+| `docs/index.md` | Extended | Added DeepResearch Bench to Agent Benchmarks bullet under Agent Testing & Evaluations |

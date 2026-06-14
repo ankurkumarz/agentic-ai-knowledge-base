@@ -58,6 +58,7 @@ Evaluation operates at multiple levels:
 | [Terminal Bench](https://www.tbench.ai/) | Agents operating in terminal/CLI environments |
 | [VisualWebArena](https://github.com/web-arena-x/visualwebarena) | Multimodal agents interacting with web interfaces |
 | [OSWorld](https://os-world.github.io/) | Agents interacting with real operating system environments |
+| [DeepResearch Bench](https://deepresearch-bench.github.io/) | Deep research agents — report quality (RACE) and citation accuracy/grounding (FACT) across 100 PhD-level tasks |
 
 ## Evaluation as a Quality Gate (Google AgentOps Model)
 
