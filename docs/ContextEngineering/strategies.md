@@ -169,6 +169,7 @@ Only after mastering fundamentals:
 - [RAG Architecture](../ReferenceArchitecture/rag-architecture.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — automated search over context management strategies; Meta-Harness discovers retrieval routing and context budgets that outperform hand-designed equivalents
+- [Open Knowledge Format (OKF)](../Standards/open-knowledge-format.md) — standardized markdown+frontmatter substrate for the Offload (Write) pattern
 
 ## References
 
