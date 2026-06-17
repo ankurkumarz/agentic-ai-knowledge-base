@@ -878,3 +878,22 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/WorkflowBuilders/orchestration.md` | Extended | Added "Confluent Data Streaming Platform (Apache Kafka & Apache Flink)" subsection (Stream/Connect/Process/Govern, agentic patterns table, deployment options, best practices, considerations), following the existing Temporal subsection precedent; added comparison table row, See Also link, and References section |
 | `mkdocs.yml` | Extended | Added 3.2.3 Event-Driven Design Patterns (Confluent) nav entry under Agentic Design Pattern Selection |
 | `docs/index.md` | Extended | Updated Design Pattern Selection and Multi-agent Systems bullets (section 4) and Workflow Engines bullet (section 6) to reference Confluent's event-driven patterns |
+
+## [2026-06-17] ingest | Agentic AI Red Teaming Guide (Cloud Security Alliance) | sections touched: SecurityFrameworks, Standards, ProductionBestPractices, EvaluationFrameworks, index, mkdocs
+
+**Source**: https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide (PDF fetched via expiring signed S3 URL; canonical citation URL used per user instruction; text extracted locally with pdfminer.six after WebFetch native PDF parsing and pypdf both failed)
+
+**Type**: Industry whitepaper / testing guide (Cloud Security Alliance, AI Organizational Responsibilities Working Group, Aug 2025)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/SecurityFrameworks/agentic-ai-red-teaming-guide.md` | Created | Full 12-category threat taxonomy (Agent Authorization and Control Hijacking through Agent Untraceability) with representative actionable test steps; four-phase testing methodology (Preparation/Execution/Analysis/Reporting) and effectiveness metrics; MAESTRO threat-modeling framework summary; red teaming tooling landscape table (AgentDojo, Agent-SafetyBench, AgentFence, SplxAI Agentic Radar, ASB, Promptfoo LLM Security DB, Pentest Copilot, Azure AI Red Teaming Agent, FuzzAI); Future Outlook bullets; general red-teaming background note citing IBM (https://www.ibm.com/think/topics/red-teaming) |
+| `docs/Standards/csa.md` | Created | Introduces Cloud Security Alliance as an industry standards body — Red Teaming Guide, MAESTRO, AI Organizational Responsibilities artifact; comparison table vs. NIST AI RMF, Google SAIF, AAIF |
+| `mkdocs.yml` | Extended | Added 6.10 Cloud Security Alliance (CSA) under Industry Standards; added 11.8 Agentic AI Red Teaming Guide (CSA) under Agentic AI Security |
+| `docs/SecurityFrameworks/Readme.md` | Extended | Added "CSA Perspective" section (Agentic AI Red Teaming Guide summary); added See Also entries for the new guide page and Standards/csa.md |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added "Agentic AI Red Teaming (CSA)" section with threat-category table and methodology mapping to launch gates; added See Also/References entries |
+| `docs/ProductionBestPractices/security.md` | Extended | Added Red Teaming Guide row to Security Frameworks Reference table; added See Also/References entries |
+| `docs/EvaluationFrameworks/Readme.md` | Extended | Added "Red Teaming / Adversarial Testing" section (AgentDojo, Agent-SafetyBench, ASB, SplxAI Agentic Radar, Promptfoo LLM Security DB, Azure AI Red Teaming Agent); added See Also entries |
+| `docs/index.md` | Extended | Added CSA bullet under Industry Standards (section 7); added CSA Perspective bullet under Agent Security (Production Best Practices) |

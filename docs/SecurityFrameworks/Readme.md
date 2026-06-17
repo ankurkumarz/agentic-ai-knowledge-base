@@ -237,6 +237,18 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 
 For a full comparison of cloud-hosted and local sandbox solutions (E2B, Daytona, Modal, Firecracker, gVisor, Kata Containers, nsjail, and more), see the [Agent Sandboxing](./agent-sandboxing.md) reference page.
 
+## CSA Perspective
+
+### Agentic AI Red Teaming Guide
+
+The **[Cloud Security Alliance (CSA)](../Standards/csa.md)** AI Organizational Responsibilities Working Group published an **[Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide)** (Aug 2025) defining a practical testing methodology specific to autonomous, multi-step, tool-using agents — distinct from single-turn LLM red teaming.
+
+**12 threat categories** covered: Agent Authorization and Control Hijacking, Checker-Out-of-the-Loop, Agent Critical System Interaction, Agent Goal and Instruction Manipulation, Agent Hallucination Exploitation, Agent Impact Chain and Blast Radius, Agent Knowledge Base Poisoning, Agent Memory and Context Manipulation, Agent Orchestration and Multi-Agent Exploitation, Agent Resource and Service Exhaustion, Agent Supply Chain and Dependency Attacks, and Agent Untraceability.
+
+**Four-phase testing methodology**: Preparation → Execution → Analysis → Reporting, paired with a complementary threat-modeling framework (**MAESTRO**).
+
+See [Agentic AI Red Teaming Guide (CSA)](./agentic-ai-red-teaming-guide.md) for the full taxonomy, actionable test steps, and tooling landscape (AgentDojo, Agent-SafetyBench, SplxAI Agentic Radar, Azure AI Red Teaming Agent, and others).
+
 ## AI Agent Skill Security Scanners
 
 As agent skills (SKILLS.md / `.claude/commands/*.md`) become a primary distribution unit for agentic workflows, scanning them for embedded threats has become a distinct security discipline. Research shows 26.1% of skills contain vulnerabilities and 5.2% show likely malicious intent.
@@ -262,3 +274,5 @@ See [AI Agent Skill Security Scanners](./skill-scanners.md) for full detail, CLI
 - **[AI Agent Skill Security Scanners](./skill-scanners.md)**: Cisco Skill Scanner and NVIDIA SkillSpector — scanning agent skills for prompt injection, data exfiltration, and malicious patterns
 - **[MCP Standard](../Standards/mcp.md)**: Model Context Protocol (MCP Security Gateway target)
 - **[AI Governance Solutions](../AIGovernance/governance-solutions.md)**: Governance platforms and tooling
+- **[Agentic AI Red Teaming Guide (CSA)](./agentic-ai-red-teaming-guide.md)**: 12-category threat taxonomy and four-phase testing methodology for autonomous agents
+- **[Cloud Security Alliance (CSA)](../Standards/csa.md)**: Industry standards body — Agentic AI Red Teaming Guide, MAESTRO threat modeling

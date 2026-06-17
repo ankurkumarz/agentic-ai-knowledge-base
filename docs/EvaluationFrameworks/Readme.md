@@ -68,6 +68,17 @@ Evaluating agentic AI systems requires specialized approaches that go beyond tra
 
 - **[LastMile AI](https://lastmileai.dev/)**: An enterprise-grade evaluation platform providing essential tools for developers to test, evaluate, and benchmark AI applications in production environments.
 
+## Red Teaming / Adversarial Testing
+
+Distinct from capability benchmarking, this category evaluates how agents withstand deliberate adversarial attacks — prompt injection, tool-call hijacking, memory poisoning, and multi-agent exploitation. See the [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) for a full 12-category testing taxonomy and methodology.
+
+- **[AgentDojo](https://github.com/ethz-spylab/agentdojo)**: Dynamic evaluation framework for prompt injection attacks/defenses against LLM agents — 97 realistic tasks, 629 security test cases; measures utility preservation vs. attack success rate.
+- **Agent-SafetyBench**: 349 interactive environments, 2,000 test cases across 8 risk categories; automated scoring model (91.5% accuracy); evaluates 16+ LLM agents.
+- **Agent Security Bench (ASB)**: ICLR 2025 benchmark evaluating 27 attack/defense methods across 10 scenarios; benchmarks 13 LLMs (84.3% max attack success rate); introduces a utility-security balance metric.
+- **[SplxAI Agentic Radar](https://github.com/splx-ai/agentic-radar)**: Security scanner for LLM agentic workflows — workflow visualization, tool identification, and vulnerability mapping reports.
+- **[Promptfoo LLM Security DB](https://www.promptfoo.dev/lm-security-db/)**: Structured repository of security vulnerabilities for LLMs and Agentic AI.
+- **[AI Red Teaming Agent (Azure AI Foundry)](https://devblogs.microsoft.com/foundry/ai-red-teaming-agent-preview/)**: Microsoft's automated content-safety scanning and Attack Success Rate (ASR) evaluation, integrated into Azure AI Foundry.
+
 ## Evaluation Reference Frameworks
 
 ### Research Frameworks
@@ -115,3 +126,5 @@ This evaluation ecosystem provides the foundation for building reliable, measura
 - **[Benchmarks](../Benchmarks/Readme.md)**: Benchmarking methodologies and datasets
 - **[Observability](../Observability/Readme.md)**: Monitoring and measurement approaches
 - **[Best Practices](../ProductionBestPractices/README.md)**: Evaluation best practices
+- **[Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md)**: 12-category adversarial testing taxonomy for autonomous agents
+- **[Agent Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)**: Adversarial test cases and launch gates
