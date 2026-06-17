@@ -857,3 +857,24 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/ProductionBestPractices/state-memory.md` | Extended | Added best-practice row on externalizing loop state between scheduled runs; See Also link |
 | `docs/index.md` | Extended | Added Loop Engineering bullet under Agent Harness section |
 | `docs/index.md` | Extended | Added DeepResearch Bench to Agent Benchmarks bullet under Agent Testing & Evaluations |
+
+## [2026-06-17] ingest | A Guide to Event-Driven Design for Agents and Multi-Agent Systems (Confluent) | sections touched: DesignPatterns, Architecture, ProductionBestPractices, WorkflowBuilders, index, mkdocs
+
+**Source**: Local PDF — *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* by Sean Falconer, AI Entrepreneur in Residence, Confluent (ebook, © 2025 Confluent, Inc.)
+
+**Type**: Vendor ebook / whitepaper (Confluent)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/DesignPatterns/event-driven-patterns.md` | Created | Confluent's nine-component agent anatomy; Orchestrator-Worker, Hierarchical, Blackboard, and Market-Based patterns in Traditional vs. Event-Driven form (Kafka partitioning, consumer groups, Rebalance Protocol, offset replay); event sourcing for state consistency; Stream/Connect/Process/Govern data streaming platform pillars; SDR and Agentic RAG worked examples; Reworkd/Airy/Agent Taskflow case studies; best practices table |
+| `docs/DesignPatterns/Readme.md` | Extended | Added backlink row to event-driven-patterns.md |
+| `docs/Architecture/multi-agent-system.md` | Extended | Added "Event-Driven Realizations of Multi-Agent Patterns (Confluent)" section mapping Kafka mechanics onto the four primary architectures plus the new Market-Based pattern; added bidirectional See Also link |
+| `docs/Architecture/components-selection.md` | Extended | Added "Complementary Framing: Confluent's Nine-Component Anatomy" subsection under Agent Anatomy (Persona, Learning, Tool Interface vs. Arsanjani's 7-component table); added See Also/References entries |
+| `docs/ProductionBestPractices/state-memory.md` | Extended | Added "Event Sourcing for Multi-Agent State Consistency (Confluent Pattern)" section; added See Also links |
+| `docs/ProductionBestPractices/security.md` | Extended | Added Best Practices row for field-level encryption, Stream Governance, and GDPR-aligned retention in event-driven pipelines; added See Also/References entries |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Added Fault Tolerance table row for idempotent processing and dead-letter queues; added See Also/References entries |
+| `docs/WorkflowBuilders/orchestration.md` | Extended | Added "Confluent Data Streaming Platform (Apache Kafka & Apache Flink)" subsection (Stream/Connect/Process/Govern, agentic patterns table, deployment options, best practices, considerations), following the existing Temporal subsection precedent; added comparison table row, See Also link, and References section |
+| `mkdocs.yml` | Extended | Added 3.2.3 Event-Driven Design Patterns (Confluent) nav entry under Agentic Design Pattern Selection |
+| `docs/index.md` | Extended | Updated Design Pattern Selection and Multi-agent Systems bullets (section 4) and Workflow Engines bullet (section 6) to reference Confluent's event-driven patterns |

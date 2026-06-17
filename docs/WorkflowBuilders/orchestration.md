@@ -246,6 +246,59 @@ Seven language SDKs (polyglot teams can mix languages across workflows and activ
 
 ---
 
+### Confluent Data Streaming Platform (Apache Kafka & Apache Flink)
+
+**Website**: [confluent.io](https://www.confluent.io)
+**Core technology**: Apache Kafka® (event streaming, branded **Kora** as the cloud-native engine) and Apache Flink® (stream processing)
+**Architecture**: Event-driven data streaming platform serving as the communication and data layer beneath agent frameworks rather than a standalone agent orchestrator
+
+#### What It Is
+
+Confluent positions its Data Streaming Platform as the "central nervous system" for agentic systems — not a replacement for an agent framework (LangGraph, AutoGen, CrewAI), but the event backbone that those frameworks' agents publish to and consume from. The platform is organized around four pillars:
+
+| Pillar | Role |
+|---|---|
+| **Stream** | Continuously capture and share real-time events on Kora, the cloud-native Kafka engine. |
+| **Connect** | Integrate disparate data sources via 120+ pre-built and custom connectors, removing hardcoded dependencies between agents and external systems. |
+| **Process** | Use Flink stream processing (SQL/Table API, joins, filters, **Flink AI Model Inference**) to enrich data with real-time context — enabling agentic RAG and real-time embedding pipelines. |
+| **Govern** | Stream Governance enforces data lineage, quality controls, and traceability so data consumed by agents is secure and verifiable. |
+
+#### Agentic AI Patterns
+
+| Pattern | How Confluent Enables It |
+|---|---|
+| Orchestrator-Worker | Orchestrator publishes keyed command messages to a Kafka topic; worker agents form a consumer group pulling from assigned partitions, scaling and recovering via the Consumer Rebalance Protocol and offset replay |
+| Hierarchical multi-agent | Orchestrator-Worker decomposition applied recursively; each tier publishes objectives as events for the tier below |
+| Blackboard | Shared knowledge base implemented as a Kafka topic; agents publish/subscribe to updates instead of querying a shared database |
+| Market-Based coordination | Bidding agents publish offers/requests as events; a market-making service matches them, replacing O(n²) peer-to-peer negotiation with a central event log |
+| Agentic RAG | Flink ingests and embeds unstructured source data in real time, storing vectors in a database (e.g., MongoDB Atlas) via sink connector for low-latency retrieval |
+| Fault recovery | Kafka's log-based architecture lets agents replay events and recover from failures; idempotent processing avoids duplicate actions on retry; dead-letter queues handle failures requiring human oversight |
+
+Full pattern detail (traditional vs. event-driven treatment) is covered in [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md).
+
+#### Deployment Options
+
+| Mode | Description |
+|---|---|
+| **Confluent Cloud** | Fully managed Kafka (Kora engine) + Flink; consumption-based billing |
+| **Self-managed Kafka/Flink** | Open-source Apache Kafka and Apache Flink, self-hosted |
+
+#### Best Practices
+
+| Challenge | Solution |
+|---|---|
+| Worker/agent failure recovery | Use Kafka consumer groups so the Consumer Rebalance Protocol redistributes load automatically; replay from the last saved offset rather than building custom failure-handling logic |
+| Duplicate side effects on retry | Design agent actions triggered by events to be idempotent; route repeatedly failing events to a dead-letter queue for human review |
+| Stale context for agent decisions | Use Flink SQL/Table API and Flink AI Model Inference to enrich data with real-time context at query execution rather than relying on batch updates |
+| Sensitive data in shared event streams | Apply field-level encryption and access control on event payloads; enforce Stream Governance for lineage and quality; set fine-grained, regulation-aligned (e.g., GDPR) retention policies |
+| Tool/agent integration sprawl | Use the 120+ pre-built connectors plus existing agent frameworks (LangGraph, AutoGen, CrewAI) for tool calls, rather than hardcoding point-to-point integrations |
+
+#### Considerations
+
+Confluent is a data streaming and event backbone, not an agent framework — it must be paired with an orchestration/agent framework (e.g., LangGraph) for reasoning and tool-calling logic. Best suited to organizations already operating Kafka/Flink infrastructure, or building multi-agent systems where event volume, fan-out, and cross-system integration (rather than durable long-running workflow state, which Temporal targets) are the dominant scaling concern.
+
+---
+
 ## Comparison with Other Orchestration Solutions
 
 ### Enterprise Orchestration Platforms
@@ -264,6 +317,11 @@ Seven language SDKs (polyglot teams can mix languages across workflows and activ
 - **Strengths**: Durable execution via Event History replay, fault tolerance, developer-friendly SDK APIs in 7 languages, native human-in-the-loop via Signals, hierarchical multi-agent composition via Child Workflows
 - **Use Cases**: Long-running AI agent workflows, fault-tolerant LLM chains, multi-agent fan-out/fan-in, human approval gates, versioned agent deployments
 - **Considerations**: Workflows-as-Code approach requires programming knowledge; not a no-code tool; workflow code must be deterministic for replay
+
+**Confluent (Apache Kafka & Apache Flink)**:
+- **Strengths**: Event-driven backbone for high fan-out multi-agent coordination (Orchestrator-Worker, Hierarchical, Blackboard, Market-Based patterns), 120+ connectors for system integration, real-time stream processing and embedding pipelines for agentic RAG, Stream Governance for compliance
+- **Use Cases**: High-volume event-driven agent pipelines, market-based/trading-style agent coordination, real-time RAG ingestion, agent ecosystems requiring loose coupling across many independent producers/consumers
+- **Considerations**: Not an agent framework itself — must be paired with LangGraph, AutoGen, CrewAI, or similar for agent reasoning logic; optimized for event throughput and fan-out rather than long-running durable workflow state (Temporal's focus)
 
 ### Selection Criteria
 
@@ -287,8 +345,13 @@ Seven language SDKs (polyglot teams can mix languages across workflows and activ
 
 ## See Also
 
-- [Temporal — Durable Workflow Orchestration for Agentic AI](./temporal.md)
+- [Temporal — Durable Workflow Orchestration for Agentic AI](#temporal)
 - [Open Source Workflow Engines](./open-source.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
+- [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Production Deployment](../ProductionBestPractices/deployment.md)
-- [Observability](../Observability/README.md)
+- [Observability](../Observability/Readme.md)
+
+## References
+
+- Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for the Confluent Data Streaming Platform subsection.

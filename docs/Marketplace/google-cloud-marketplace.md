@@ -136,7 +136,7 @@ This prevents unsanctioned "shadow AI" deployments while keeping friction low fo
 ## See Also
 
 - [Gemini Enterprise Agent Platform](../AgentPlatforms/gemini-enterprise-agent-platform.md)
-- [A2A Standard](../Standards/a2a.md)
+- [A2A Standard](../Standards/agent2agent.md)
 - [AWS AI Agents Marketplace](../Marketplace/aws-marketplace.md)
 - [Agent Platforms Overview](../AgentPlatforms/README.md)
 - [Security Frameworks — Google SAIF](../SecurityFrameworks/google-saif.md)

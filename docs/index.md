@@ -42,8 +42,8 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 
 ### **4. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
-- **Design Pattern Selection**: Proven patterns including OpenAI's agentic patterns and the Arsanjani & Bustos pattern catalog (Agent Router, Supervisor, Swarm, Blackboard, FCoT, Instruction Fidelity Auditing, Adaptive Retry, Canary Agent Testing, and 20+ others)
-- **Multi-agent Systems**: Four architectures (centralized, decentralized, hierarchical, hybrid); Supervisor vs. Swarm comparison; Agent Router pattern; seven benefits; failure modes and decision framework; framework comparison for architecture selection
+- **Design Pattern Selection**: Proven patterns including OpenAI's agentic patterns, the Arsanjani & Bustos pattern catalog (Agent Router, Supervisor, Swarm, Blackboard, FCoT, Instruction Fidelity Auditing, Adaptive Retry, Canary Agent Testing, and 20+ others), and Confluent's event-driven realizations of Orchestrator-Worker, Hierarchical, Blackboard, and Market-Based patterns over Kafka/Flink
+- **Multi-agent Systems**: Four architectures (centralized, decentralized, hierarchical, hybrid); Supervisor vs. Swarm comparison; Agent Router pattern; seven benefits; failure modes and decision framework; framework comparison for architecture selection; event-driven (Kafka consumer-group) realizations of Orchestrator-Worker, Hierarchical, Blackboard, and Market-Based coordination
 - **12-Factor Agents**: Principles for building reliable LLM applications
 - **Gartner LLM Patterns**: Industry-recognized design patterns
 
@@ -67,7 +67,7 @@ Comprehensive coverage of major development frameworks:
 ### **6. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
 - **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform, AWS AgentCore, Microsoft Azure AI; **Enterprise Platform Comparison (2026)** covering Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, Kore.ai, UiPath Maestro, Azure AI Foundry Agent Service, IBM watsonx Orchestrate, LangGraph, and CrewAI Enterprise with pricing, adoption data, and honest constraints
-- **Workflow Engines**: Open source, self-hosted, and SaaS solutions; **Temporal** for durable execution — fault-tolerant, long-running AI agent workflows with Event History replay, Signals for human-in-the-loop, and Child Workflows for multi-agent fan-out
+- **Workflow Engines**: Open source, self-hosted, and SaaS solutions; **Temporal** for durable execution — fault-tolerant, long-running AI agent workflows with Event History replay, Signals for human-in-the-loop, and Child Workflows for multi-agent fan-out; **Confluent** (Apache Kafka & Flink) as the event-streaming backbone for high fan-out multi-agent coordination, agentic RAG ingestion, and real-time stream processing
 - **Popular AI Agents**: Coding agents, research agents, and super agents
 
 ### **7. Agentic AI Industry Standards**

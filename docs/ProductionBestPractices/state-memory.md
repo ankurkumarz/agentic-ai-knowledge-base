@@ -81,6 +81,16 @@ In multi-agent systems, agents coordinate through shared state rather than direc
 
 **Handoff payload principle**: include only what the next agent needs. Verbose payloads bloat context windows and degrade reasoning quality. Store large intermediate artifacts in S3 and pass a reference, not the content.
 
+## Event Sourcing for Multi-Agent State Consistency (Confluent Pattern)
+
+An alternative to a shared mutable state store: maintain state consistency across many agents through **immutable logs and event sourcing**, as described in Confluent's *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* (2025). The model treats every agent interaction as input → processing → output over a durable event log rather than a database record:
+
+- **Every event is recorded as an immutable, append-only entry** — no data loss, and a complete audit trail of how state evolved.
+- **Replay-based recovery**: if an agent fails, it restores its state by replaying events from its last saved offset, rather than reconstructing state from a snapshot.
+- **Parallel consumption without interference**: multiple agents can consume the same event stream independently, each tracking its own offset, enabling horizontal scaling without lock contention.
+
+This complements the AWS three-tier shared-state model above: task state and intermediate results can be derived from (or backed by) an event log instead of, or in addition to, a row-oriented store like DynamoDB, particularly when the dominant access pattern is "what happened, in order" rather than "what is the current value."
+
 ## See Also
 
 - [Context Engineering](./context-engineering.md)
@@ -88,4 +98,6 @@ In multi-agent systems, agents coordinate through shared state rather than direc
 - [Deployment](./deployment.md)
 - [Claude Managed Agents — Memory, Dreaming & Outcomes](../AgentPlatforms/claude-managed-agents.md)
 - [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md)
+- [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
+- [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md)
 - [Loop Engineering](../AgentHarness/loop-engineering.md) — externalized state as the "spine" of a scheduled, self-feeding agent loop

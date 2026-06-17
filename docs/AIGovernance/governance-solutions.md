@@ -156,8 +156,8 @@ Integrate governance metrics into the same observability stack used for operatio
 
 - [Governance Strategy](governance-strategy.md)
 - [Governance Best Practices](governance-best-practices.md)
-- [Security Frameworks](../SecurityFrameworks/README.md)
-- [Observability Solutions](../Observability/README.md)
+- [Security Frameworks](../SecurityFrameworks/Readme.md)
+- [Observability Solutions](../Observability/Readme.md)
 - [ProductionBestPractices — Security](../ProductionBestPractices/security.md)
 - [AllThingsAWS](../AllThingsAWS/README.md)
 - [AllThingsGoogle](../AllThingsGoogle/README.md)

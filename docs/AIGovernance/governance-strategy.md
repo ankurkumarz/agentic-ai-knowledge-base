@@ -95,7 +95,7 @@ The intersection of impact scope and autonomy level determines the required gove
 
 - [Governance Best Practices](governance-best-practices.md)
 - [Governance Solutions](governance-solutions.md)
-- [Security Frameworks](../SecurityFrameworks/README.md)
+- [Security Frameworks](../SecurityFrameworks/Readme.md)
 - [ProductionBestPractices — Security](../ProductionBestPractices/security.md)
 - [Agent Maturity Models](../MaturityModels/README.md)
 

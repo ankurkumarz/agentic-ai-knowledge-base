@@ -41,6 +41,7 @@ nav:
     - 3.2 Agentic Design Pattern Selection:
       - 3.2.1 Agentic Design Patterns by OpenAI: 'DesignPatterns/openai-patterns.md'
       - 3.2.2 Agentic Architectural Patterns (Arsanjani & Bustos): 'DesignPatterns/arsanjani-patterns.md'
+      - 3.2.3 Event-Driven Design Patterns (Confluent): 'DesignPatterns/event-driven-patterns.md'
     - 3.3 Multi-agent System: 'Architecture/multi-agent-system.md'
     - 3.4 12-Factor Agents: 'Architecture/12-factor-agents.md'
     - 3.5 Gartner LLM-based AI Design Patterns: 'DesignPatterns/gartner-patterns.md'

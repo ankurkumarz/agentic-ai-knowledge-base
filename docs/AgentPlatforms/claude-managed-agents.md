@@ -445,7 +445,7 @@ Note: Claude Managed Agents is stateful by design — not eligible for Zero Data
 - [Self-Learning Agents Reference Architecture](../ReferenceArchitecture/self-learning-agents.md)
 - [Production Best Practices — State & Memory](../ProductionBestPractices/state-memory.md)
 - [Anthropic Overview](../AllThingsAnthropic/README.md)
-- [Evaluation Frameworks](../EvaluationFrameworks/README.md)
+- [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Multi-Agent System Architecture](../Architecture/multi-agent-system.md)
 
 ## References

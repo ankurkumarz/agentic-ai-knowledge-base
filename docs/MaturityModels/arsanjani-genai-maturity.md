@@ -90,7 +90,7 @@ The book identifies four categories of challenges in transitioning from PoC to p
 - [Agentic Architecture Components](../Architecture/components-selection.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Standards: MCP](../Standards/mcp.md)
-- [Standards: A2A](../Standards/a2a.md)
+- [Standards: A2A](../Standards/agent2agent.md)
 
 ## References
 

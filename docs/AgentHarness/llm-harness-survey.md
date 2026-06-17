@@ -177,7 +177,7 @@ Survey B identifies eight open research directions for harness engineering:
 - [Context Engineering Strategies](../ContextEngineering/strategies.md) — C-layer strategies
 - [Agent Benchmarks](../Benchmarks/agent-benchmarks.md) — SWE-bench, OSWorld, AgentBench, HAL
 - [MCP Standard](../Standards/mcp.md) — T-layer protocol
-- [A2A Standard](../Standards/a2a.md) — multi-agent T-layer protocol
+- [A2A Standard](../Standards/agent2agent.md) — multi-agent T-layer protocol
 - [Production Best Practices: Security](../ProductionBestPractices/security.md)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 

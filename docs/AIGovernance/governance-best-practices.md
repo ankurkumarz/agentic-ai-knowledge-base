@@ -106,7 +106,7 @@ Track these metrics as leading indicators of governance health:
 - [ProductionBestPractices — Security](../ProductionBestPractices/security.md)
 - [ProductionBestPractices — Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 - [ProductionBestPractices — Observability](../ProductionBestPractices/observability.md)
-- [Security Frameworks](../SecurityFrameworks/README.md)
+- [Security Frameworks](../SecurityFrameworks/Readme.md)
 
 ## References
 

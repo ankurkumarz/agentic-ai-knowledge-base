@@ -139,7 +139,7 @@ Static and LLM analysis cannot evaluate runtime behavior; encrypted or binary co
 - [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)
 - [Agent Sandboxing](./agent-sandboxing.md)
 - [Model Context Protocol](../Standards/mcp.md)
-- [EvaluationFrameworks](../EvaluationFrameworks/README.md)
+- [EvaluationFrameworks](../EvaluationFrameworks/Readme.md)
 
 ## References
 

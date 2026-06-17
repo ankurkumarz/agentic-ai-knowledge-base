@@ -41,6 +41,7 @@ Google's three-layer defense model addresses both:
 | MCP tool tampering | Tool descriptions in Model Context Protocol integrations are modified to inject hidden instructions | Trusted MCP tool metadata without verification; agent executed poisoned tool logic | Deploy an MCP Security Gateway layer that monitors for description drift, typosquatting, and hidden instruction patterns on every tool invocation |
 | MCP server over-privilege | MCP servers run as host OS processes with invoking user's permissions; a compromised server can read arbitrary files or phone home | Relied on trust in third-party MCP server code; no OS-level restriction | Wrap each MCP server process with [Anthropic Sandbox Runtime (`srt`)](../SecurityFrameworks/anthropic-sandbox-runtime.md) to enforce an explicit filesystem + network allowlist at OS level (macOS Seatbelt / Linux bubblewrap) |
 | Malicious skills in the supply chain | Agent skills fetched from external sources may embed prompt injection, data exfiltration, or malicious code patterns; research shows 26.1% of skills contain vulnerabilities | Installed third-party skills without vetting; trusted source repo as sufficient guarantee | Scan all externally-sourced skills before installation using [Cisco Skill Scanner](../SecurityFrameworks/skill-scanners.md) or [NVIDIA SkillSpector](../SecurityFrameworks/skill-scanners.md); integrate SARIF output into GitHub Code Scanning to block unsafe skills at PR time |
+| Sensitive data exposure in event-driven agent pipelines | Agents consuming/producing events across a shared data streaming platform can expose regulated or confidential fields to unauthorized consumers of the same topic | Relied on topic-level access control only; any consumer with topic access could read all fields | Enforce field-level encryption and access control on event payloads; apply Stream Governance (data lineage and quality policies) across the pipeline; set fine-grained, regulation-aligned (e.g., GDPR) retention policies per topic rather than a single global retention setting (Confluent, 2025) |
 
 ## Layered Guardrail Taxonomy
 
@@ -158,6 +159,8 @@ When a threat is detected in production, the response follows: **contain → tri
 - [SecurityFrameworks](../SecurityFrameworks/Readme.md) — NIST AI RMF, Google SAIF, AWS coverage
 - [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — Cisco Skill Scanner and NVIDIA SkillSpector for skill supply-chain security
 - [Agent Skills / SKILLS.md Standard](../Standards/skills.md) — Skill authoring, scoping, and security best practices
+- [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — Stream Governance, field-level encryption, and retention policies for event-driven agent pipelines
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model
+- Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for Stream Governance, field-level encryption, and GDPR-aligned retention guidance
