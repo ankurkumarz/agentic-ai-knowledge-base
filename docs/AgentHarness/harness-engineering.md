@@ -233,6 +233,7 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 ## See Also
 
 - [Agent Harness](./agent-harness.md)
+- [Loop Engineering](./loop-engineering.md) — the outer, scheduled/self-feeding loop built on top of a per-run harness: automations, worktrees, skills, connectors, sub-agents, and externalized state
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness; complements manual harness engineering
 - [Harness Self-Evolution](./harness-self-evolution.md) — self-evolving harnesses; HUC vs. HBC distinction; update validation gates
 - [Code as Agent Harness](./code-as-agent-harness.md) — research survey formalizing code as the executable, inspectable, stateful substrate of agent harnesses

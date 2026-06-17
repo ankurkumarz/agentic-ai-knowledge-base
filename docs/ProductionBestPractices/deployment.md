@@ -31,6 +31,7 @@ GenOps (Generative Operations) is the evolution of MLOps for agentic systems. Ke
 | Handoff payload bloat | Verbose payloads forwarded between agents bloat context windows and degrade reasoning quality | Forwarded full intermediate results in task objects for completeness | Include only what the next agent needs; store intermediate results in S3 and reference them by pointer in DynamoDB task state |
 | Scaling tool dependencies | Agent scale-out is bottlenecked by downstream tool API rate limits | Scaled agent replicas without scaling tool capacity; hit rate limits immediately | Model tool capacity as a first-class constraint; implement queuing and backpressure for tool calls |
 | Deployment rollback | Rolling back an agent deployment is complex when memory stores have been mutated | Rolled back code but not memory; agents behaved inconsistently | Implement memory versioning or append-only memory with rollback markers; test rollback procedures regularly |
+| Self-prompting loops left unverified | A scheduled/self-feeding loop (automations, `/loop`, `/goal`) ships changes with no human reviewing each step | Trusted "loop reports done" as proof of correctness; regressions reached production unreviewed | Pair every self-feeding loop with an independent verifier sub-agent or grading model — "done" from the loop is a claim, not a proof; see [Loop Engineering](../AgentHarness/loop-engineering.md) |
 
 ## Planning Mode
 
@@ -193,6 +194,7 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 - [Agentic Architectural Patterns — Arsanjani & Bustos](../DesignPatterns/arsanjani-patterns.md) — full fault tolerance and robustness pattern catalog
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — idempotent processing, dead-letter queues, and log-based fault recovery
 - [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md) — durable execution as an alternative fault-recovery model
+- [Loop Engineering](../AgentHarness/loop-engineering.md) — scheduled, self-feeding automation loops (`/loop`, `/goal`, automations) built from worktrees, skills, connectors, and sub-agent verification
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for planning mode runtime model, step budgets, goal-like loop structure, and MVP build sequence

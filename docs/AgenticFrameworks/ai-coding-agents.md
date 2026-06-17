@@ -58,6 +58,7 @@ A source map shipped accidentally with npm package v2.1.88 exposed 512,000 lines
 - **Context Infrastructure**: 1M-token window, flat pricing, server-side compaction, per-turn context editing.
 - **MCP-native**: Integrates with any service that exposes an MCP server (databases, internal APIs, monitoring, documentation).
 - **Webhooks**: Agents can subscribe to and respond to external events.
+- **`/loop` and `/goal`**: `/loop` re-runs a prompt or command on a cadence; `/goal` keeps the agent working across turns until a user-defined stopping condition is verified true by a separate grading model — the agent that did the work is not the one that grades it. See [Loop Engineering](../AgentHarness/loop-engineering.md).
 
 ### Autonomy Level
 
@@ -87,7 +88,7 @@ Launched April 2025, Codex is OpenAI's agentic coding platform. Unlike CLI tools
 - **Cloud sandbox**: Each task runs in a secure, isolated container preloaded with the target repository.
 - **Parallel execution**: Multiple agents can work on separate tasks simultaneously, compressing weeks of work.
 - **Skills**: Codex goes beyond writing code — it understands the codebase, produces documentation, and aligns with team standards.
-- **Automations**: Codex works unprompted on routine tasks: issue triage, alert monitoring, CI/CD pipeline maintenance.
+- **Automations**: Codex works unprompted on routine tasks: issue triage, alert monitoring, CI/CD pipeline maintenance. An Automations tab lets you pick a project, prompt, cadence, and environment; runs that surface findings land in a Triage inbox, runs that find nothing self-archive. `/goal` keeps the agent working across turns until a verifiable stopping condition holds, with pause/resume/clear controls. See [Loop Engineering](../AgentHarness/loop-engineering.md).
 - **Computer use (GPT-5.4)**: The underlying model has native computer-use capabilities, enabling complex multi-application workflows.
 - **Codex Security**: Application-security agent that identifies and proposes fixes for vulnerabilities (launched March 2026).
 - **In-app browser + SSH**: Agents can browse, connect to remote dev boxes, and interact with external systems.
@@ -634,6 +635,7 @@ TERMINAL ─────────────────────┼─�
 - [Frameworks Technology Radar](solutions.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
+- [Loop Engineering](../AgentHarness/loop-engineering.md) — designing the scheduled, self-feeding automation systems (`/loop`, `/goal`, Automations) that prompt these agents
 - [Context Engineering](../ContextEngineering/strategies.md)
 - [ProductionBestPractices — Deployment](../ProductionBestPractices/deployment.md)
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)

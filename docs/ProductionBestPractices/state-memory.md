@@ -28,6 +28,7 @@ Agent memory operates across three functional tiers:
 | Working memory for tool-heavy tasks | Complex multi-step tool chains lose intermediate state | Passed all state through the context window; hit token limits | Use a scratchpad / AgentFS for intermediate tool outputs; reference by pointer in context |
 | Self-improvement without retraining | Agent makes same mistakes across sessions without model fine-tuning | Manual rule updates in system prompt; engineers couldn't keep up | Use scheduled memory consolidation (dreaming) to extract recurring patterns from episodic logs and promote them to procedural memory automatically |
 | Self-evaluation of agent output quality | Hard to know if agent succeeded without human review | Spot-checking a sample; missed regressions | Add an isolated grader agent (Outcomes pattern) that scores output against a plain-language rubric in a separate context window; loop until grader approves or max iterations reached |
+| Scheduled/automated loops losing continuity between runs | A recurring automation (cron, `/loop`, `/goal`) has no memory of what a prior run already tried or resolved | Re-ran the same triage prompt from scratch each morning; duplicated work and re-surfaced resolved findings | Externalize loop state to a markdown file or tracker board (e.g., Linear via MCP) that records what's done and what's next — the agent forgets between runs, the repo/tracker doesn't; see [Loop Engineering](../AgentHarness/loop-engineering.md) |
 
 ## Memory Solutions Reference
 
@@ -99,3 +100,4 @@ This complements the AWS three-tier shared-state model above: task state and int
 - [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md)
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md)
+- [Loop Engineering](../AgentHarness/loop-engineering.md) — externalized state as the "spine" of a scheduled, self-feeding agent loop

@@ -13,6 +13,7 @@ OpenAI's contributions to agentic AI include foundational design pattern documen
 | Practical Guide to Building Agents | End-to-end production guide covering agent definition, model/tool/instruction design, orchestration (single-agent, manager, decentralized), guardrails, and HITL — distilled from OpenAI customer deployments | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
 | AutoGPT | Early open-source autonomous agent demonstrating long-horizon goal decomposition | [AgenticFrameworks/autogpt.md](../AgenticFrameworks/autogpt.md) |
 | OpenAI Skills Repository | Official GitHub repository of ready-made skills for OpenAI Codex and Responses API-based agents | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
+| Loop Engineering (Codex app) | Automations tab (project, prompt, cadence, environment) with a Triage inbox, built-in per-thread worktrees, TOML subagents in `.codex/agents/`, and `/goal` run-until-done — composed into self-feeding automation loops | [AgentHarness/loop-engineering.md](../AgentHarness/loop-engineering.md) |
 
 ## See Also
 
