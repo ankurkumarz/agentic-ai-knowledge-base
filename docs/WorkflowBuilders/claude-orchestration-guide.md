@@ -216,6 +216,7 @@ The primitives compose. Common patterns:
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Search as Code (Perplexity)](../RAG/search-as-code.md) — parallel "primitives as code" pattern at the retrieval layer
 - [Code as Agent Harness](../AgentHarness/code-as-agent-harness.md) — theoretical foundation for why code-centric orchestration outperforms natural-language orchestration
+- [Loop Engineering](../AgentHarness/loop-engineering.md) — the outer, scheduled loop that wraps these primitives (automations, worktrees, sub-agents, connectors) into a system that prompts the agent on its own
 - [Production Best Practices: Cost Management](../ProductionBestPractices/cost-management.md)
 - [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md)
 

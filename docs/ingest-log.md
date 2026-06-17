@@ -834,4 +834,26 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 |---|---|---|
 | `docs/Benchmarks/agent-benchmarks.md` | Extended | Added DeepResearch Bench entry under Research and Retrieval Benchmarks (100 PhD-level tasks, 22 domains, RACE/FACT evaluation frameworks, evaluator migration to GPT-5.5/GPT-5.4-mini in May 2026, DRB II follow-up); added row to Benchmark Selection Guide table |
 | `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added DeepResearch Bench row to Agent Benchmarks Reference table |
+
+## [2026-06-17] ingest | https://addyosmani.com/blog/loop-engineering/ — Loop Engineering | sections touched: AgentHarness (new), WorkflowBuilders, AgenticFrameworks, AllThingsAnthropic, AllThingsOpenAI, ProductionBestPractices, index
+
+**Source**: https://addyosmani.com/blog/loop-engineering/ (host blocked by this session's network egress allowlist; full article text supplied directly by the user)
+
+**Type**: Blog post (Addy Osmani)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/loop-engineering.md` | New | Five-plus-one primitive framework (automations, worktrees, skills, connectors, sub-agents, state); Codex app vs. Claude Code mapping table; `/loop` vs `/goal`; composed example loop; unresolved risks (verification, comprehension rot, cognitive surrender) |
+| `mkdocs.yml` | Extended | Added 2.8 Loop Engineering under Agent Harness section |
+| `docs/AgentHarness/harness-engineering.md` | Extended | Added bidirectional See Also link to Loop Engineering |
+| `docs/AgentHarness/agent-harness.md` | Extended | Added bidirectional See Also link to Loop Engineering |
+| `docs/WorkflowBuilders/claude-orchestration-guide.md` | Extended | Added See Also link to Loop Engineering |
+| `docs/AgenticFrameworks/ai-coding-agents.md` | Extended | Added `/loop`/`/goal` and Automations tab/Triage inbox details to Claude Code and Codex sections; See Also link |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added Loop Engineering (Claude Code) hub row |
+| `docs/AllThingsOpenAI/README.md` | Extended | Added Loop Engineering (Codex app) hub row |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Added best-practice row on verifying self-feeding loops; See Also link |
+| `docs/ProductionBestPractices/state-memory.md` | Extended | Added best-practice row on externalizing loop state between scheduled runs; See Also link |
+| `docs/index.md` | Extended | Added Loop Engineering bullet under Agent Harness section |
 | `docs/index.md` | Extended | Added DeepResearch Bench to Agent Benchmarks bullet under Agent Testing & Evaluations |
