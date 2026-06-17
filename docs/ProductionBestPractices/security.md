@@ -100,6 +100,7 @@ Approval must be scoped to the exact action and plan version. Vague consent is n
 | [Agent Governance Toolkit](../SecurityFrameworks/agent-governance-toolkit.md) | Microsoft | Runtime governance: deterministic policy engine (YAML/OPA/Cedar), zero-trust identity, execution rings, MCP security gateway; covers all 10 OWASP Agentic risks |
 | [Skill Scanner](../SecurityFrameworks/skill-scanners.md) | Cisco AI Defense | Multi-engine skill security scanner: YAML + YARA + AST taint analysis + LLM consensus; SARIF/GitHub Actions integration |
 | [SkillSpector](../SecurityFrameworks/skill-scanners.md) | NVIDIA | Two-stage skill scanner: 64 vulnerability patterns across 16 categories including MCP risks; live OSV.dev CVE lookup; LangGraph pipeline |
+| [Agentic AI Red Teaming Guide](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) | Cloud Security Alliance (CSA) | 12-category adversarial testing taxonomy and four-phase methodology (Preparation/Execution/Analysis/Reporting) purpose-built for autonomous, multi-step agents |
 
 ## Security Controls by Risk Level
 
@@ -160,7 +161,10 @@ When a threat is detected in production, the response follows: **contain → tri
 - [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — Cisco Skill Scanner and NVIDIA SkillSpector for skill supply-chain security
 - [Agent Skills / SKILLS.md Standard](../Standards/skills.md) — Skill authoring, scoping, and security best practices
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — Stream Governance, field-level encryption, and retention policies for event-driven agent pipelines
+- [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category adversarial testing taxonomy for autonomous agents
+- [Agent Testing & Evaluations](./testing-evaluations.md) — adversarial test cases and launch gates
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for Stream Governance, field-level encryption, and GDPR-aligned retention guidance
+- [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)

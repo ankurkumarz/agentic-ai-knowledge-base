@@ -78,6 +78,7 @@ Comprehensive coverage of major development frameworks:
 - **OpenSpec & AG-UI**: Emerging standards for development and interfaces
 - **AIDLC Workflows (AWS)**: Methodology-first AI-driven development lifecycle with structured Inception → Construction phases, approval gates, and a built-in evaluator for CI/CD quality gates
 - **Open Knowledge Format (OKF)**: Google Cloud's open specification (v0.1, June 2026) for portable, agent- and human-readable knowledge bundles — markdown files with YAML frontmatter, no SDK or runtime required; formalizes Karpathy's "LLM-wiki" pattern
+- **Cloud Security Alliance (CSA)**: Industry standards body for Agentic AI testing and governance — Agentic AI Red Teaming Guide (12-category threat taxonomy) and the MAESTRO threat-modeling framework
 
 ### **8. Agentic AI Reference Architecture**
 - **AI Automation**: LangManus framework and automation patterns
@@ -143,6 +144,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Google Perspective**: SAIF Framework and secure AI agents approach
 - **AWS Perspective**: Generative AI Security Scoping Matrix
 - **Microsoft Perspective**: Agent Governance Toolkit — runtime governance with deterministic policy enforcement (YAML/OPA/Cedar), zero-trust identity, execution sandboxing, MCP Security Gateway; covers all 10 OWASP Agentic Top 10 risks
+- **CSA Perspective**: Agentic AI Red Teaming Guide — 12-category adversarial testing taxonomy (authorization hijacking, checker-out-of-the-loop, hallucination exploitation, blast radius, knowledge base poisoning, multi-agent exploitation, and more) with a four-phase Preparation/Execution/Analysis/Reporting methodology
 - **Risk Management**: Rogue actions, data disclosure, prompt injection, and mitigation strategies
 
 ### **Cost Management**

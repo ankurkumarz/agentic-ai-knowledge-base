@@ -121,6 +121,27 @@ Required adversarial scenarios for any production-bound harness:
 
 Each failed adversarial test should become a permanent regression eval.
 
+## Agentic AI Red Teaming (CSA)
+
+The [Cloud Security Alliance's Agentic AI Red Teaming Guide](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) (Aug 2025) extends the adversarial test cases above into a structured, 12-category red teaming program purpose-built for autonomous agents:
+
+| Category | Example Test Focus |
+|---|---|
+| Agent Authorization and Control Hijacking | Permission escalation, role inheritance exploitation, least-privilege enforcement |
+| Checker-Out-of-the-Loop | Threshold-breach simulation, human/checker engagement latency |
+| Agent Critical System Interaction | Physical/IoT command injection, safety interlock bypass |
+| Agent Goal and Instruction Manipulation | Goal interpretation attacks, instruction-set poisoning |
+| Agent Hallucination Exploitation | Induced hallucination, cascading hallucination across agent chains |
+| Agent Impact Chain and Blast Radius | Cross-system exploitation via a compromised agent, containment validation |
+| Agent Knowledge Base Poisoning | Training data poisoning, RAG knowledge base corruption |
+| Agent Memory and Context Manipulation | Cross-session data leakage, memory poisoning |
+| Agent Orchestration and Multi-Agent Exploitation | Inter-agent trust abuse, orchestrator state poisoning |
+| Agent Resource and Service Exhaustion | Computational/API quota depletion |
+| Agent Supply Chain and Dependency Attacks | Development-chain and deployment-pipeline compromise |
+| Agent Untraceability | Trace evasion, forensic obfuscation, accountability chain verification |
+
+CSA's recommended four-phase methodology — **Preparation → Execution → Analysis → Reporting** — maps cleanly onto a launch-gate process: define scenarios and isolated test environments, execute and log step-by-step, analyze and prioritize findings by severity, then report mitigation strategies to stakeholders. See [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) for the full taxonomy, actionable test steps, and a survey of red teaming tools (AgentDojo, Agent-SafetyBench, SplxAI Agentic Radar, Azure AI Red Teaming Agent, FuzzAI, and others).
+
 ## Launch Gates
 
 The following must be true before production rollout:
@@ -141,6 +162,9 @@ The following must be true before production rollout:
 - [Observability](./observability.md)
 - [Deployment](./deployment.md)
 - [Context Engineering](./context-engineering.md)
+- [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category threat taxonomy and four-phase testing methodology
+- [Agent Security](./security.md) — guardrails, approval workflows, and audit trails
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist
+- [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
