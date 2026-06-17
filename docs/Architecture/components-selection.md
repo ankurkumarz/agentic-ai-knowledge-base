@@ -188,13 +188,27 @@ Arsanjani & Bustos (2026) define seven internal components that form the continu
 | Inter-agent communication efficiency | Coordinate |
 | Security and governance | Reason (prompt injection), Act (sandboxing), Memory (privacy), Coordinate (AuthN/AuthZ) |
 
+### Complementary Framing: Confluent's Nine-Component Anatomy
+
+Confluent's *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* (2025) describes agent anatomy with nine components rather than seven. Most map directly onto the Arsanjani & Bustos table above (Perception↔Sense, Reasoning↔Reason, Planning↔Plan, Action↔Act, Coordination↔Coordinate), but it breaks out two components the Arsanjani table folds elsewhere:
+
+| Component | Function | Relation to Arsanjani Table |
+|---|---|---|
+| Persona (Job Function) | The agent's job description embedded in the system prompt, shaping behavior by influencing the model's token probability distribution | Not modeled separately above — sits upstream of Goals, configuring how Reason is invoked |
+| Learning | Refining reasoning via dynamic in-context adjustment or reinforcement learning (rewards/penalties), distinct from simply storing state | Not modeled separately above — treated as a capability of Reason/Memory together rather than its own component |
+| Tool Interface | Modular API handlers / plugin architecture extending the agent's reach into specialized capabilities | Corresponds to the implementation layer underneath Act |
+
+Treat Persona and explicit Tool Interface as useful additions when designing system prompts and plugin architectures; treat Learning as a reminder that context-adaptation and RL-based refinement are architecturally distinct from static Memory storage.
+
 ## See Also
 - [Multi-Agent Systems](multi-agent-system.md)
 - [12-Factor Agents](12-factor-agents.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [Agent Technology Stack](../AgenticTechStack/README.md)
 - [Agentic Architectural Patterns — Arsanjani & Bustos](../DesignPatterns/arsanjani-patterns.md)
+- [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Arsanjani GenAI Maturity Model](../MaturityModels/arsanjani-genai-maturity.md)
 
 ## References
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for agent anatomy table and hierarchy of autonomy.
+- Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — Source for the nine-component agent anatomy framing.

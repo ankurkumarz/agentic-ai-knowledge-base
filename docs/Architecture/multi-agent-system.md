@@ -478,7 +478,19 @@ The Agent Router is the foundational building block for Supervisor Architecture.
 
 This decouples the extraction layer from agent names, allows new agents to register without touching routing logic, and uses the graph as a safety whitelist preventing routing to incapable agents.
 
+## Event-Driven Realizations of Multi-Agent Patterns (Confluent)
+
+Confluent's *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* (2025) reframes agents as functioning much like microservices — and argues that the same shift from tightly coupled, request/response microservices to event-driven architecture (EDA) should apply to multi-agent coordination. Applied to the patterns above:
+
+- **Centralized / Orchestrator-Worker**: instead of the orchestrator holding direct connections to every worker, it publishes keyed command messages to a Kafka topic. Worker agents form a **consumer group**, pulling from assigned partitions; the same key is reused across a stateful sequence so it lands on the same worker. The **Kafka Consumer Rebalance Protocol** automatically rebalances load as workers are added or removed, and a failed worker recovers by **replaying the log from its last saved offset** — removing the need for the orchestrator's bespoke failure-handling logic.
+- **Hierarchical**: the orchestrator-worker decomposition is applied recursively, with every non-leaf node acting as orchestrator for its own subtree. Agents publish/subscribe to event streams across tiers rather than relying on direct supervision references, so hierarchy levels can be added or removed without touching core logic.
+- **Blackboard**: the shared knowledge base is implemented as a Kafka topic; agents publish updates as events and other agents subscribe to only the updates relevant to them, avoiding the synchronization bottleneck of a directly-queried shared database.
+- **Market-Based** *(not covered by the four architectures above — a fifth coordination mode)*: agents publish bids/offers as events; a market-making service matches them and executes transactions asynchronously. This replaces O(n²) direct peer-to-peer negotiation with interaction through a single central event log — the pattern underlying high-throughput use cases like real-time financial trading agents.
+
+Full pattern-by-pattern treatment (Traditional vs. Event-Driven, plus worked SDR and Agentic RAG examples) is in [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md).
+
 ## See Also
+- [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [Architecture Components Selection](components-selection.md)
 - [12-Factor Agents](12-factor-agents.md)

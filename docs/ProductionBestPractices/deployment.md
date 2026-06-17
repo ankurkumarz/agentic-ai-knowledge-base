@@ -183,6 +183,7 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 | API rate limit exhaustion | Agents calling shared external APIs exhaust rate limits, causing cascading failures | No throttling; bursts from parallel agents triggered 429 errors across the system | **Rate-Limited Invocation**: wrap all external API calls in a rate limiter enforcing per-agent and per-API quotas; excess requests are queued or rejected with graceful degradation |
 | Primary model unavailability | The primary LLM becomes unavailable or cost threshold is breached mid-workflow | No fallback; agent halted and returned an error | **Fallback Model Invocation**: maintain a fallback hierarchy; on primary model failure or cost trigger, route to a smaller, faster, or cheaper model for continuity |
 | Human escalation fatigue | Immediate escalation for every agent failure overwhelms operators and creates alert noise | Escalated every low-confidence result to a human reviewer; reviewers became a bottleneck | **Delayed Escalation Strategy**: attempt automated recovery first (retry → backup agent → simplified scope); only escalate to a human operator after automated paths are exhausted, with a full context packet for efficient review |
+| Duplicate side effects on event retry | In event-driven agent pipelines, transient failures (network, hardware, software) trigger retries that can re-execute an action (e.g., a double-sent email or duplicate transaction) | Retried failed event processing blindly; retries occasionally duplicated the original side effect | **Idempotent Processing**: design agent actions triggered by events to be idempotent (safe to apply more than once with the same input); pair with **dead-letter queues** to route events that repeatedly fail processing to a queue for human review rather than dropping or endlessly retrying them (Confluent, 2025) |
 
 ## See Also
 - [Observability](./observability.md)
@@ -190,7 +191,10 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 - [Agent Testing & Evaluations](./testing-evaluations.md)
 - [A2A Protocol](../Standards/agent2agent.md) — registry architectures for multi-agent deployments
 - [Agentic Architectural Patterns — Arsanjani & Bustos](../DesignPatterns/arsanjani-patterns.md) — full fault tolerance and robustness pattern catalog
+- [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — idempotent processing, dead-letter queues, and log-based fault recovery
+- [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md) — durable execution as an alternative fault-recovery model
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for planning mode runtime model, step budgets, goal-like loop structure, and MVP build sequence
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for robustness patterns: Watchdog Timeout, Adaptive Retry with Prompt Mutation, Auto-Healing, Incremental Checkpointing, Rate-Limited Invocation, Fallback Model Invocation, Delayed Escalation.
+- Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for idempotent processing and dead-letter queue fault recovery patterns.
