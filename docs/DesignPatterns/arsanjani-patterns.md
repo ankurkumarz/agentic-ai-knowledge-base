@@ -432,7 +432,7 @@ For production-grade agentic systems, combining multiple explainability patterns
 - [ProductionBestPractices: Deployment](../ProductionBestPractices/deployment.md)
 - [ProductionBestPractices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 - [Standards: MCP](../Standards/mcp.md)
-- [Standards: A2A](../Standards/a2a.md)
+- [Standards: A2A](../Standards/agent2agent.md)
 
 ## References
 

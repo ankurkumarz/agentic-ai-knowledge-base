@@ -178,4 +178,4 @@ Reward engineering sits above prompt engineering in the abstraction stack and is
 - [2026 AI Predictions (You.com)](../Concepts/ai-predictions-2026.md)
 - [Agent Definition](../Concepts/agent-definition.md)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
-- [Observability](../Observability/README.md)
+- [Observability](../Observability/Readme.md)

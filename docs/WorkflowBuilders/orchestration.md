@@ -345,12 +345,12 @@ Confluent is a data streaming and event backbone, not an agent framework — it 
 
 ## See Also
 
-- [Temporal — Durable Workflow Orchestration for Agentic AI](./temporal.md)
+- [Temporal — Durable Workflow Orchestration for Agentic AI](#temporal)
 - [Open Source Workflow Engines](./open-source.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Production Deployment](../ProductionBestPractices/deployment.md)
-- [Observability](../Observability/README.md)
+- [Observability](../Observability/Readme.md)
 
 ## References
 

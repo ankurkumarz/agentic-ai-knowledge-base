@@ -38,10 +38,10 @@ Governance frameworks address these challenges by imposing structure, checkpoint
 
 ## See Also
 
-- [Security Frameworks](../SecurityFrameworks/README.md)
+- [Security Frameworks](../SecurityFrameworks/Readme.md)
 - [ProductionBestPractices — Security](../ProductionBestPractices/security.md)
 - [Agent Maturity Models](../MaturityModels/README.md)
-- [Evaluation Frameworks](../EvaluationFrameworks/README.md)
+- [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Standards](../Standards/README.md)
 
 ## References
