@@ -2,7 +2,9 @@
 
 ## Overview
 
-OpenHuman is an open-source (GPL-3.0) desktop personal AI agent developed by TinyHumans AI, launched in beta on May 13, 2026. It positions itself as a "personal AI super intelligence" — a local-first agent that ingests data from 118+ connected services, builds a persistent 1-billion-token memory of the user's life and work, and acts autonomously on their behalf. The project hit GitHub trending on its first day (+1,694 stars/day) and reached 27k+ stars within two weeks of launch.
+OpenHuman is an open-source (GPL-3.0) desktop personal AI agent developed by TinyHumans AI, launched in beta on May 13, 2026. It positions itself as a "personal AI super intelligence" — a local-first agent that ingests data from 118+ connected services, builds a persistent 1-billion-token memory of the user's life and work, and acts autonomously on their behalf. The project hit GitHub trending on its first day (+1,694 stars/day) and reached 27k+ stars within two weeks of launch. *(Updated: as of mid-June 2026, the [GitHub repository](https://github.com/tinyhumansai/openhuman) reports 32.5k+ stars and 3,060+ commits, indicating sustained active development since the May 2026 beta.)*
+
+The project explicitly positions itself against three other hyper-personal/coding assistant products in its README: **Claude Cowork**, **[OpenClaw](openclaw.md)**, and **[Hermes Agent](hermes-agent.md)** — emphasizing open-source availability, minimal vendor dependencies, and local-first workflow retention as differentiators. Claude Cowork is not yet covered elsewhere in this wiki.
 
 Unlike task-scoped coding agents, OpenHuman is designed as a long-lived companion: it continuously absorbs context from email, calendars, code repositories, and messaging platforms, then uses that context to answer questions, complete tasks, and participate in video meetings as a speaking avatar.
 
@@ -94,15 +96,24 @@ Every tool call result, scraped page, email body, and search payload passes thro
 
 ### Installation
 
+The project's GitHub README recommends native, signed package managers over the curl/PowerShell scripts, since the scripts lack separate cryptographic signatures:
+
 | Platform | Method |
 |---|---|
-| macOS / Linux (quick) | `curl -fsSL https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.sh \| bash` |
-| macOS (recommended) | DMG download from tinyhumans.ai/openhuman — verify developer signature before installing |
-| Windows | PowerShell: `irm https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.ps1 \| iex` |
+| macOS (recommended) | Homebrew tap: `brew tap tinyhumansai/core && brew install openhuman`; or signed `.dmg` from GitHub Releases |
+| Linux — Debian/Ubuntu (recommended) | Signed APT repository with GPG verification, or `.deb` from GitHub Releases |
+| Linux — Arch (recommended) | AUR package `openhuman-bin` |
+| Windows (recommended) | Signed `.msi` installer from GitHub Releases |
+| macOS / Linux (quick, less verified) | `curl -fsSL https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.sh \| bash` |
+| Windows (quick, less verified) | PowerShell: `irm https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.ps1 \| iex` |
 
 No terminal or config file required to get started — GUI onboarding flow handles first-run setup.
 
-**Local development requirements:** Node.js 24+, pnpm 10.10.0, Rust 1.93.0, CMake, Ninja, ripgrep.
+**Local development requirements:** Git, Node.js 24+, pnpm 10.10.0, Rust 1.93.0 (with rustfmt and clippy), CMake, Ninja, ripgrep, plus platform-specific desktop build dependencies.
+
+### Contributing
+
+The repository documents two contributor paths: `CONTRIBUTING.md` for experienced developers and `CONTRIBUTING-BEGINNERS.md` for AI-assisted newcomers. Active contributors are tracked in a GitHub "Hall of Fame" and receive free merchandise and Discord access.
 
 ---
 
@@ -126,13 +137,13 @@ OpenHuman inherits the same **toxic flow trifecta** risk as OpenClaw and Hermes:
 | Risk | Description |
 |---|---|
 | **Broad OAuth surface** | Simultaneous OAuth access to email, code repositories, calendar, chat history, and payment tooling — a misconfigured or compromised token can cascade across all connected services |
-| **Piped install risk** | The `curl \| bash` install pattern grants execution privileges to remotely hosted code before inspection. DMG download + developer signature verification is safer |
+| **Piped install risk** | The `curl \| bash` / PowerShell install scripts grant execution privileges to remotely hosted code before inspection and lack separate cryptographic signatures. Native signed packages (Homebrew, signed APT repo, AUR, signed MSI) are safer |
 | **Managed backend trust** | Default model routing and OAuth flows depend on TinyHumans servers — supply chain trust applies to the managed layer, not just the OSS client |
 | **Prompt injection** | 118+ auto-fetched data sources are potential injection vectors; adversarial content in emails, calendar events, or Slack messages could influence agent behavior |
 
 ### Mitigations
 
-- Use the DMG/installer download rather than `curl | bash`
+- Use a native signed package (Homebrew, signed APT repo, AUR, signed MSI, or DMG) rather than `curl | bash` / PowerShell scripts
 - Review OAuth scopes carefully; grant only integrations you actively need
 - Inspect the Obsidian vault periodically to audit what the agent has retained
 - Run on a dedicated machine or user account if handling sensitive credentials
@@ -178,7 +189,7 @@ OpenHuman inherits the same **toxic flow trifecta** risk as OpenClaw and Hermes:
 - Default experience depends on the TinyHumans managed backend for model routing and OAuth — partial cloud trust required
 - GPL-3.0 license is more restrictive than MIT (OpenClaw) for commercial embedding
 - Very new project (May 2026 beta): production track record and long-term ecosystem maturity are unproven
-- `curl | bash` install method is a security risk; DMG download is recommended
+- `curl | bash` / PowerShell install methods are a security risk; native signed packages (Homebrew, APT, AUR, MSI, DMG) are recommended
 
 ---
 
@@ -195,6 +206,6 @@ OpenHuman inherits the same **toxic flow trifecta** risk as OpenClaw and Hermes:
 ## References
 
 - [OpenHuman — TinyHumans AI](https://tinyhumans.ai/openhuman) — official product page
-- [tinyhumansai/openhuman — GitHub](https://github.com/tinyhumansai/openhuman) — source repository (27k+ stars)
+- [tinyhumansai/openhuman — GitHub](https://github.com/tinyhumansai/openhuman) — source repository (32.5k+ stars, 3,060+ commits as of mid-June 2026)
 - [OpenHuman Documentation — GitBook](https://tinyhumans.gitbook.io/openhuman) — official documentation
 - [OpenHuman on Product Hunt](https://www.producthunt.com/products/openhuman) — launch listing

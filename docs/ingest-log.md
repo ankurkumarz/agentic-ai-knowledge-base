@@ -835,3 +835,15 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/Benchmarks/agent-benchmarks.md` | Extended | Added DeepResearch Bench entry under Research and Retrieval Benchmarks (100 PhD-level tasks, 22 domains, RACE/FACT evaluation frameworks, evaluator migration to GPT-5.5/GPT-5.4-mini in May 2026, DRB II follow-up); added row to Benchmark Selection Guide table |
 | `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added DeepResearch Bench row to Agent Benchmarks Reference table |
 | `docs/index.md` | Extended | Added DeepResearch Bench to Agent Benchmarks bullet under Agent Testing & Evaluations |
+
+## [2026-06-17] update | https://github.com/tinyhumansai/openhuman | sections touched: AgentPlatforms
+
+**Source**: GitHub repository (README + repo metadata) for the previously-ingested OpenHuman product page
+
+**Type**: Open-source repository (re-ingest with GitHub as canonical citation, refreshing prior product-page-sourced content)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/openhuman.md` | Extended | Updated star count (27k → 32.5k+) and added commit count (3,060+) with inline update note; added Claude Cowork as a named competitor from the README's positioning section; expanded Installation table with native signed package methods (Homebrew tap, signed APT repo, AUR `openhuman-bin`, signed MSI) presented as preferred over the unsigned curl/PowerShell scripts; added Contributing subsection (CONTRIBUTING.md, CONTRIBUTING-BEGINNERS.md, Hall of Fame); updated Security Considerations and Limitations to recommend native signed packages over piped install scripts |
