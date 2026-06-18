@@ -498,6 +498,7 @@ Full pattern-by-pattern treatment (Traditional vs. Event-Driven, plus worked SDR
 - [AWS AgentCore](../AgentPlatforms/aws-agentcore.md)
 - [A2A Protocol](../Standards/agent2agent.md)
 - [MCP Protocol](../Standards/mcp.md)
+- [Omnigent](../AgentHarness/omnigent.md) — meta-harness operationalizing cross-vendor multi-agent composition (Claude Code, Codex, Cursor, Pi) with shared policy and session sharing
 - [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md)
 - [ProductionBestPractices/security.md](../ProductionBestPractices/security.md)
 - [ProductionBestPractices/observability.md](../ProductionBestPractices/observability.md)

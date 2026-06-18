@@ -25,6 +25,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 | Dynamic Workflows | Claude writes a JavaScript orchestration script; the runtime executes it in background across up to 1,000 subagents — plan lives in code, not in context. Available Pro+ via `ultracode` keyword or `/effort ultracode`. Includes `/deep-research` bundled workflow. | [WorkflowBuilders/dynamic-workflows.md](../WorkflowBuilders/dynamic-workflows.md) |
 | Orchestration Primitives Guide | Decision guide for choosing between MCP, Skills, Subagents, Agent View, Agent Teams, and Dynamic Workflows — includes flowchart, capability matrix, and composition patterns | [WorkflowBuilders/claude-orchestration-guide.md](../WorkflowBuilders/claude-orchestration-guide.md) |
 | Loop Engineering (Claude Code) | `/loop`, `/goal`, scheduled tasks, hooks, and GitHub Actions composed with worktrees, skills, MCP connectors, and subagents into self-feeding automation loops | [AgentHarness/loop-engineering.md](../AgentHarness/loop-engineering.md) |
+| Omnigent (Databricks, third-party) | Open-source meta-harness that orchestrates Claude Code alongside Codex, Cursor, and Pi under shared policies, sandboxing, and live session sharing | [AgentHarness/omnigent.md](../AgentHarness/omnigent.md) |
 
 ## See Also
 

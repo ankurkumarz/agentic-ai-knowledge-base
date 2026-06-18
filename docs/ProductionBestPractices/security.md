@@ -163,6 +163,7 @@ When a threat is detected in production, the response follows: **contain → tri
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — Stream Governance, field-level encryption, and retention policies for event-driven agent pipelines
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category adversarial testing taxonomy for autonomous agents
 - [Agent Testing & Evaluations](./testing-evaluations.md) — adversarial test cases and launch gates
+- [Omnigent](../AgentHarness/omnigent.md) — meta-harness enforcing contextual, stateful approval and spend policies at the runtime layer rather than via prompts
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model

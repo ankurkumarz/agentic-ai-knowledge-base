@@ -7,6 +7,12 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ## [2026-06-04] ingest | Microsoft Build 2026 — Building Agentic Apps with Microsoft Fabric and Microsoft Databases | sections touched: AgentPlatforms/microsoft-fabric-databases-2026.md (new), AllThingsMicrosoft/README.md, AgentPlatforms/microsoft-azure.md, mkdocs.yml
 
+## [2026-06-18] ingest | Introducing Omnigent: A Meta-Harness to Combine, Control and Share Your Agents (Databricks Blog) + omnigent-ai/omnigent (GitHub) | sections touched: AgentHarness/omnigent.md (new), AgentHarness/agent-harness.md, AgentHarness/pi-dev.md, AgenticFrameworks/flue.md, SecurityFrameworks/agent-sandboxing.md, Architecture/multi-agent-system.md, ProductionBestPractices/security.md, AllThingsAnthropic/README.md, AllThingsOpenAI/README.md, index.md, mkdocs.yml
+
+**Sources**:
+- https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents — primary announcement (direct fetch blocked by site; content reconstructed via web search snippets quoting the post directly)
+- https://github.com/omnigent-ai/omnigent — source repository, README, install/architecture details
+
 **Sources**:
 - https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/ — Primary Azure Blog announcement
 - https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/The-Era-of-the-Agentic-Database-Developer-Microsoft-SQL/ba-p/5190062 — SQL/agentic developer era announcements

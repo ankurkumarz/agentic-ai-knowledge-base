@@ -17,6 +17,8 @@ Agent sandboxes exist across four tiers, trading isolation strength against star
 | **MicroVM** | Hardware virtualization (KVM); minimal guest kernel | High | 100–500 ms | Firecracker, Kata Containers |
 | **Cloud-hosted sandbox** | Managed sandbox-as-a-service; isolation handled by provider | High (opaque) | <1 s (warm) | E2B, Daytona, Modal |
 
+Omnigent, a meta-harness for orchestrating multiple agent harnesses, uses both ends of this taxonomy: local OS-level sandboxing (`bubblewrap` on Linux, `seatbelt` on macOS) plus disposable cloud-hosted sandboxes (Modal, Daytona, Islo) for teams that want to avoid local sandbox infrastructure. See [Omnigent](../AgentHarness/omnigent.md).
+
 Choosing a tier is primarily a tradeoff between the **trust level** of the code being executed and the **latency budget** of the agent workflow.
 
 ## Solution Landscape
@@ -211,6 +213,7 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 ## See Also
 
 - [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)
+- [Omnigent](../AgentHarness/omnigent.md) — meta-harness combining local OS-level sandboxing with disposable cloud-hosted sandboxes
 - [Agent Security — Production Best Practices](../ProductionBestPractices/security.md)
 - [Agentic AI Security Overview](./Readme.md)
 - [Agent Governance Toolkit (Microsoft)](./agent-governance-toolkit.md)

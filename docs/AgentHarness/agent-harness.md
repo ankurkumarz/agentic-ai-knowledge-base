@@ -158,6 +158,7 @@ The trusted control plane (user identity, credentials, approval records, audit l
 - [Harness Engineering](./harness-engineering.md)
 - [Loop Engineering](./loop-engineering.md) — designing a scheduled, self-feeding system that prompts the agent, built from automations, worktrees, skills, connectors, sub-agents, and externalized state
 - [Pi (pi.dev)](./pi-dev.md) — minimal open-source terminal coding agent harness; four-tool core (read, write, edit, bash), sub-1K-token system prompt, 15+ providers, fully extensible via TypeScript packages
+- [Omnigent](./omnigent.md) — open-source meta-harness (Databricks) that composes, governs, and shares sessions across Claude Code, Codex, Cursor, Pi, and custom harnesses
 - [Flue](../AgenticFrameworks/flue.md) — open-source TypeScript agent harness framework; implements the Agent = Model + Harness pattern with built-in sandbox, sessions, and skills
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness (Lee et al., 2026)
 - [Harness Self-Evolution](./harness-self-evolution.md) — disentangling harness update capability (HUC) from harness benefit capability (HBC) in self-evolving agents (Lin et al., KDD 2026)

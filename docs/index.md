@@ -33,6 +33,7 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 - **Harness Optimization**: Automated search over harness code using an agentic proposer with filesystem access to prior execution traces (Meta-Harness, Lee et al., 2026); +7.7 points on text classification (4x fewer tokens), +4.7 points on IMO math reasoning across 5 held-out models, surpasses hand-engineered baselines on TerminalBench-2
 - **Loop Engineering**: Designing scheduled, self-feeding systems that prompt the agent instead of being prompted by a human — six primitives (automations, worktrees, skills, connectors, sub-agents, externalized state), mapped across the Codex app and Claude Code; verification, comprehension rot, and cognitive surrender remain unresolved as the loop improves
 - **LLM Harness Survey & Taxonomy**: ETCLOVG seven-layer taxonomy (Execution, Tooling, Context, Lifecycle, Observability, Verification, Governance); formal H=(E,T,C,S,L,V) model; harness completeness matrix across 23+ systems; nine empirically-grounded technical challenges; covers 110+ papers and timeline from 1997–2026
+- **Omnigent**: Open-source meta-harness (Databricks, Apache-2.0) that composes, governs, and shares sessions across Claude Code, Codex, Cursor, Pi, and custom harnesses via a runner/server architecture; contextual policies enforced at the meta-harness layer plus OS-level and cloud-hosted sandboxing
 
 ### **3. Concepts**
 - **Agent Definition**: Fundamental definitions and terminology for agentic AI systems; Chat-Engine vs. Do-Engine framing (You.com, 2026)

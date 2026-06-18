@@ -178,6 +178,7 @@ Pi applies supply chain security practices uncommon in open-source agent tooling
 - [Agent Harness](./agent-harness.md) — foundational harness concepts; Pi directly implements the Agent = Model + Harness equation
 - [Harness Engineering](./harness-engineering.md) — feedforward/feedback control model; Pi's extension system maps to both guide and sensor categories
 - [Flue](../AgenticFrameworks/flue.md) — TypeScript harness framework; complementary to Pi (framework-builder vs. terminal agent)
+- [Omnigent](./omnigent.md) — meta-harness that can orchestrate Pi alongside Claude Code, Codex, and Cursor under shared policies and sessions
 - [AI Coding Agents](../AgenticFrameworks/ai-coding-agents.md) — comparative landscape including Pi in context
 - [Standards: Agent Skills](../Standards/skills.md) — the Agent Skills standard that Pi's skill system follows
 - [Context Engineering Strategies](../ContextEngineering/strategies.md) — context injection patterns; Pi's AGENTS.md loading and compaction align with these
