@@ -369,6 +369,7 @@ AWS explicitly distinguishes the two protocols and warns against misuse:
 ## See Also
 
 - [MCP Protocol](./mcp.md) — Complementary protocol for tool/resource access
+- [Agent Client Protocol (ACP)](./agent-client-protocol.md) — operates at the editor-agent integration layer, distinct from A2A's agent-to-agent coordination
 - [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md) — Deployment of A2A-compatible agents
 - [AgentOps](../AgentOps/README.md) — AgentOps lifecycle including multi-agent operations
 - [AllThingsGoogle](../AllThingsGoogle/README.md) — Google ADK, Gemini Enterprise Agent Platform

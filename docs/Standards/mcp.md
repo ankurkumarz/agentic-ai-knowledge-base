@@ -198,6 +198,8 @@ MCP helps build agents and complex workflows on top of LLMs through three primar
 
 ## See Also
 
+- [Agent Client Protocol (ACP)](./agent-client-protocol.md) — complementary standard for editor-agent integration, as distinct from MCP's tool/resource access role
+
 - [Claude Code Orchestration Primitives — Decision Guide](../WorkflowBuilders/claude-orchestration-guide.md) — explains how MCP fits alongside Skills, Subagents, Agent Teams, and Dynamic Workflows
 - [Dynamic Workflows (Claude Code)](../WorkflowBuilders/dynamic-workflows.md)
 - [Agent Skills / SKILLS.md Standard](./skills.md)
