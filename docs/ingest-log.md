@@ -897,3 +897,22 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/ProductionBestPractices/security.md` | Extended | Added Red Teaming Guide row to Security Frameworks Reference table; added See Also/References entries |
 | `docs/EvaluationFrameworks/Readme.md` | Extended | Added "Red Teaming / Adversarial Testing" section (AgentDojo, Agent-SafetyBench, ASB, SplxAI Agentic Radar, Promptfoo LLM Security DB, Azure AI Red Teaming Agent); added See Also entries |
 | `docs/index.md` | Extended | Added CSA bullet under Industry Standards (section 7); added CSA Perspective bullet under Agent Security (Production Best Practices) |
+
+## [2026-06-21] ingest | Agent Client Protocol (agentclientprotocol.com) | sections touched: Standards, AgenticFrameworks, AllThingsAnthropic, AllThingsGoogle, index, mkdocs
+
+**Source**: https://agentclientprotocol.com/ (site returned HTTP 403 to direct WebFetch; canonical citation URL used per user instruction; content reconstructed from the project's GitHub repository (github.com/zed-industries/agent-client-protocol) and corroborating secondary sources via WebSearch/WebFetch)
+
+**Type**: Industry standard / protocol specification (Zed Industries, August 2025)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/agent-client-protocol.md` | Created | JSON-RPC 2.0 over stdio transport; Client/Agent roles; session lifecycle (initialize, session/new, session/load, session/prompt, session/update); tool-call categories and permission requests; fs/* and terminal/* client capabilities; comparison table vs. MCP; SDK list (TS/Python/Rust/Kotlin/Java); native vs. adapter-based agent support (Gemini CLI, Claude Code, Codex CLI, etc.); JetBrains/Zed ACP Agent Registry |
+| `docs/Standards/mcp.md` | Extended | Added See Also link to the new ACP page |
+| `docs/Standards/agent2agent.md` | Extended | Added See Also link to the new ACP page |
+| `docs/AgenticFrameworks/ai-coding-agents.md` | Extended | Added See Also link to ACP page |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row noting Claude Code's ACP adapter |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row noting Gemini CLI's native ACP integration |
+| `docs/index.md` | Extended | Added ACP bullet under Industry Standards (section 7) |
+| `mkdocs.yml` | Extended | Added 6.11 Agent Client Protocol (ACP) under Industry Standards |
