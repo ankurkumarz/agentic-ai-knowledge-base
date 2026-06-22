@@ -171,6 +171,7 @@ Leading AI and cloud providers maintain public repositories of ready-made skills
 | AWS | `npx skills add aws/agent-toolkit-for-aws/skills` | Installed via the Skills CLI from the AWS Agent Toolkit registry; targets Strands Agents and Kiro |
 | Cloudflare | [github.com/cloudflare/skills](https://github.com/cloudflare/skills) | Skills for Cloudflare Workers AI and edge-deployed agents |
 | Vercel | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) | Skills targeting AI SDK and Vercel-hosted agent deployments |
+| NVIDIA | [github.com/NVIDIA/skills](https://github.com/NVIDIA/skills) | Catalog of ~200+ NVIDIA-verified skills (prefixed by product, e.g. `cuopt-`, `nemo-`, `tao-`) for using NVIDIA software/platforms; synced daily from product repos. Each skill ships a `SKILL.md`, `skill-card.md`, and an OMS-format cryptographic signature (`skill.oms.sig`) verifiable against `nv-agent-root-cert.pem` for supply-chain integrity. Dual-licensed Apache 2.0 / CC BY 4.0; installable via the `npx skills` CLI across compatible harnesses (Claude, Cursor, Codex) |
 
 ### Installing skills from a provider repository
 
@@ -220,3 +221,4 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [Claude Skills — Announcement](https://claude.com/blog/skills) — Anthropic blog post introducing Agent Skills for Claude Code
 - [Claude Skills Explained](https://claude.com/blog/skills-explained) — Deep-dive on the Skills architecture, invocation model, and scoping
 - [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Comprehensive authoring guide covering format, best practices, and examples (Anthropic, 2025)
+- [NVIDIA/skills](https://github.com/NVIDIA/skills) — Official catalog of NVIDIA-verified, cryptographically signed agent skills for NVIDIA software and platforms
