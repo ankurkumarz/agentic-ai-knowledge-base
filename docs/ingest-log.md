@@ -916,3 +916,15 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsGoogle/README.md` | Extended | Added hub row noting Gemini CLI's native ACP integration |
 | `docs/index.md` | Extended | Added ACP bullet under Industry Standards (section 7) |
 | `mkdocs.yml` | Extended | Added 6.11 Agent Client Protocol (ACP) under Industry Standards |
+
+## [2026-06-22] ingest | NVIDIA/skills (github.com/NVIDIA/skills) | sections touched: Standards/skills.md
+
+**Source**: https://github.com/NVIDIA/skills
+
+**Type**: Provider skills repository (NVIDIA)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/skills.md` | Extended | Added NVIDIA row to the "Provider Skills Repositories" table — catalog of ~200+ NVIDIA-verified, product-prefixed skills (cuopt-, nemo-, tao-, etc.), each with SKILL.md, skill-card.md, and an OMS-format cryptographic signature for supply-chain verification; dual Apache-2.0/CC-BY-4.0 licensing; installable via `npx skills` CLI. Added matching reference link. No new page created per task instruction. |
