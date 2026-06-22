@@ -928,3 +928,25 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | File | Change Type | Notes |
 |---|---|---|
 | `docs/Standards/skills.md` | Extended | Added NVIDIA row to the "Provider Skills Repositories" table — catalog of ~200+ NVIDIA-verified, product-prefixed skills (cuopt-, nemo-, tao-, etc.), each with SKILL.md, skill-card.md, and an OMS-format cryptographic signature for supply-chain verification; dual Apache-2.0/CC-BY-4.0 licensing; installable via `npx skills` CLI. Added matching reference link. No new page created per task instruction. |
+
+## [2026-06-22] ingest | Kagent / kagent.dev, Agentic Ops Framework (AOF), KAOS | sections touched: AgentOps, Standards, AllThingsGoogle, index.md, mkdocs.yml
+
+**Sources**:
+- https://kagent.dev/ (WebFetch blocked 403; supplemented via WebSearch + https://github.com/kagent-dev/kagent)
+- https://aof.sh/ (WebFetch blocked 403; supplemented via WebSearch + https://github.com/agenticdevops/aof)
+- https://opensource.googleblog.com/2025/11/unleashing-autonomous-ai-agents-why-kubernetes-needs-a-new-standard-for-agent-execution.html (WebFetch blocked 403; content reconstructed via WebSearch)
+
+**Note on KAOS naming**: the task description paired "KAOS (K8s Agent Orchestration System)" with the Google Open Source Blog URL above. Research found the Google blog actually announces a distinctly-named Kubernetes SIG Apps subproject called "Agent Sandbox" (Sandbox/SandboxTemplate/SandboxClaim CRDs) — it does not use the term "KAOS". A separate, unrelated independent OSS project (`github.com/axsaucedo/kaos`) is literally named "K8s Agent Orchestration System" (KAOS). Both were documented as distinct projects, with an explicit cross-reference note flagging the naming overlap, rather than conflating them.
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentOps/kagent.md` | Created | CNCF Sandbox project (Solo.io); architecture (Controller/Engine/UI/CLI), CRDs (Agent, ModelConfig, ToolServers), MCP/A2A composition, multi-provider LLM support, OTel tracing, 100-days community milestone |
+| `docs/AgentOps/agentic-ops-framework.md` | Created | Rust-based, kubectl-style CLI (`aofctl`) and YAML spec; Agent/AgentFleet/AgentFlow resources; integrations (Slack, PagerDuty, GitHub, MCP); human-in-the-loop approval gates; Beta status |
+| `docs/AgentOps/kaos.md` | Created | Independent OSS project (`axsaucedo/kaos`); Go control plane + Python data plane (PAIS/Pydantic AI) + React UI; OpenAI-compatible per-agent endpoints; A2A discovery; explicit naming-overlap note vs. Google's Agent Sandbox |
+| `docs/Standards/k8s-agent-sandbox.md` | Created | Google/Kubernetes SIG Apps "Agent Sandbox" subproject from the Google Open Source Blog; Sandbox/SandboxTemplate/SandboxClaim CRDs; WarmPools; KubeCon Atlanta Nov 2025 launch; explicit naming-overlap note vs. community KAOS project |
+| `docs/AgentOps/README.md` | Extended | Added "Kubernetes-Native Agent Orchestration" subsection with a comparison table (kagent/AOF/KAOS) and a pointer to the separate Agent Sandbox standard; extended See Also |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Kubernetes Agent Sandbox |
+| `docs/index.md` | Extended | Added Standards bullet for Kubernetes Agent Sandbox; extended Deployment bullet under Production Best Practices with Kubernetes-native agent orchestration tools |
+| `mkdocs.yml` | Extended | Added 6.12 Kubernetes Agent Sandbox under Industry Standards; added 13.3 Kubernetes-Native Agent Orchestration (kagent, AOF, KAOS) under AgentOps |

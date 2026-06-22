@@ -380,6 +380,18 @@ A complete AgentOps platform spans four environment types:
 | Production | Agent/app serving, short-term memory, observability/logs, monitoring, security/RAI/vulnerability response |
 | AI Governance | Repositories, CI/CD pipelines, Agent Registry, Agent Governance, Tool Registry, Tool Governance |
 
+## Kubernetes-Native Agent Orchestration
+
+A distinct category of AgentOps tooling has emerged specifically for running and orchestrating agents as Kubernetes-native workloads — treating agents, tools, and models as Custom Resources managed with the same GitOps discipline as the rest of the cluster:
+
+| Project | One-liner |
+|---|---|
+| [kagent](kagent.md) | CNCF Sandbox project (Solo.io); agents as Kubernetes CRDs, built on Google ADK, MCP/A2A tool and protocol integration |
+| [Agentic Ops Framework (AOF)](agentic-ops-framework.md) | Rust-based, `kubectl`-style CLI and YAML spec for DevOps/SRE agents, agent fleets, and agent flows |
+| [KAOS (K8s Agent Orchestration System)](kaos.md) | Independent OSS project for distributed multi-agent orchestration at scale, built on a Go control plane and Pydantic AI-based data plane |
+
+A related, separate Kubernetes SIG Apps initiative — [Agent Sandbox](../Standards/k8s-agent-sandbox.md) — standardizes isolated execution environments for individual agent tool calls via `Sandbox`/`SandboxTemplate`/`SandboxClaim` CRDs, rather than full agent orchestration.
+
 ## See Also
 
 - **[Observability](../Observability/Readme.md)**: Monitoring and observability practices
@@ -387,3 +399,5 @@ A complete AgentOps platform spans four environment types:
 - **[Maturity Models](../MaturityModels/README.md)**: Operational maturity assessment
 - **[ProductionBestPractices](../ProductionBestPractices/README.md)**: Cross-cutting production guidance
 - **[Standards/A2A](../Standards/agent2agent.md)**: A2A protocol for multi-agent operations
+- **[kagent](kagent.md)**, **[Agentic Ops Framework (AOF)](agentic-ops-framework.md)**, **[KAOS](kaos.md)**: Kubernetes-native agent orchestration projects
+- **[Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md)**: SIG Apps standard for isolated agent execution environments
