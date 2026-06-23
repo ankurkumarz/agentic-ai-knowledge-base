@@ -80,6 +80,7 @@ Comprehensive coverage of major development frameworks:
 - **Open Knowledge Format (OKF)**: Google Cloud's open specification (v0.1, June 2026) for portable, agent- and human-readable knowledge bundles — markdown files with YAML frontmatter, no SDK or runtime required; formalizes Karpathy's "LLM-wiki" pattern
 - **Cloud Security Alliance (CSA)**: Industry standards body for Agentic AI testing and governance — Agentic AI Red Teaming Guide (12-category threat taxonomy) and the MAESTRO threat-modeling framework
 - **Agent Client Protocol (ACP)**: Zed Industries' open standard (JSON-RPC over stdio) for editor-agent integration — session lifecycle, tool-call reporting, and permission requests; adopted natively by Gemini CLI and via JetBrains' ACP Agent Registry, with adapters for Claude Code and Codex CLI
+- **Kubernetes Agent Sandbox**: Kubernetes SIG Apps subproject (launched KubeCon Atlanta, November 2025) standardizing isolated execution environments for agent tool calls via Sandbox/SandboxTemplate/SandboxClaim CRDs, plus WarmPools for sub-second cold starts
 
 ### **8. Agentic AI Reference Architecture**
 - **AI Automation**: LangManus framework and automation patterns
@@ -127,6 +128,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **AgentOps & GenOps**: Evolution of MLOps for generative AI systems
 - **Lifecycle Management**: Development, testing, deployment, and operations
 - **Production Operations**: Container orchestration, auto-scaling, and multi-agent coordination
+- **Kubernetes-Native Agent Orchestration**: kagent (CNCF Sandbox), Agentic Ops Framework (AOF), and KAOS run agents, tools, and models as Kubernetes Custom Resources; the separate Kubernetes SIG Apps "Agent Sandbox" subproject standardizes isolated execution environments for individual agent tool calls
 
 ### **Agent Testing & Evaluations**
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals

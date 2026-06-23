@@ -19,6 +19,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | Google Skills Repository | Official GitHub repository of ready-made skills for Gemini CLI and Google ADK-based agent harnesses | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
 | Open Knowledge Format (OKF) | Open specification (v0.1, June 2026) for portable, agent- and human-readable knowledge bundles — markdown + YAML frontmatter, no SDK or runtime required | [Standards/open-knowledge-format.md](../Standards/open-knowledge-format.md) |
 | Agent Client Protocol (ACP) | Gemini CLI was Google's first ACP-native integration, validating Zed's editor-agent interoperability standard | [Standards/agent-client-protocol.md](../Standards/agent-client-protocol.md) |
+| Kubernetes Agent Sandbox | Kubernetes SIG Apps subproject (launched KubeCon Atlanta, Nov 2025) standardizing isolated execution environments for agent workloads via Sandbox/SandboxTemplate/SandboxClaim CRDs | [Standards/k8s-agent-sandbox.md](../Standards/k8s-agent-sandbox.md) |
 
 ## See Also
 
