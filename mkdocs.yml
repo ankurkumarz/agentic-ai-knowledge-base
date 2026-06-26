@@ -18,6 +18,7 @@ copyright: 'Supported by <a href="https://vedxai.com/" target="_blank" rel="noop
 
 nav:
   - Home: 'index.md'
+  - Recommendation Wizard: 'Wizard/README.md'
   - 1. Concepts:
     - 1.1 Introduction Overview: 'Introduction/README.md'
     - 1.2 Disclaimer and Usage Guidelines: 'Introduction/disclaimer.md'
