@@ -392,6 +392,19 @@ A distinct category of AgentOps tooling has emerged specifically for running and
 
 A related, separate Kubernetes SIG Apps initiative — [Agent Sandbox](../Standards/k8s-agent-sandbox.md) — standardizes isolated execution environments for individual agent tool calls via `Sandbox`/`SandboxTemplate`/`SandboxClaim` CRDs, rather than full agent orchestration.
 
+## AWS Perspective: Four-Pillar AgentOps Framework
+
+AWS frames operationalizing agentic AI at scale (in the context of Amazon Bedrock AgentCore) around four pillars:
+
+| Pillar | Focus |
+|---|---|
+| **Governance & Security** | Policy enforcement, access control, and compliance for agent identities, tools, and data access at scale |
+| **Build & Operations** | CI/CD for agents, environment promotion, and lifecycle management of agent code, prompts, and tool configurations |
+| **Evaluation** | Assessed at four levels: **tool** (did the right tool get called correctly), **conversation turn** (was the individual response correct), **session outcome** (did the overall interaction achieve the user's goal), and **system** (aggregate performance across all sessions) |
+| **Observability & Monitoring** | Four telemetry layers spanning infrastructure metrics, model/inference metrics, agent reasoning traces, and business-outcome metrics |
+
+This pillar structure parallels Google Cloud's GenOps framing above but is organized around AWS's evaluation-level taxonomy (tool → turn → session → system) rather than Google's four-phase lifecycle, and is presented specifically in the context of running agents on Bedrock AgentCore. See [AWS AgentCore](../AgentPlatforms/aws-agentcore.md) for the underlying managed runtime this framework operates on.
+
 ## See Also
 
 - **[Observability](../Observability/Readme.md)**: Monitoring and observability practices
@@ -401,3 +414,9 @@ A related, separate Kubernetes SIG Apps initiative — [Agent Sandbox](../Standa
 - **[Standards/A2A](../Standards/agent2agent.md)**: A2A protocol for multi-agent operations
 - **[kagent](kagent.md)**, **[Agentic Ops Framework (AOF)](agentic-ops-framework.md)**, **[KAOS](kaos.md)**: Kubernetes-native agent orchestration projects
 - **[Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md)**: SIG Apps standard for isolated agent execution environments
+- **[AWS AgentCore](../AgentPlatforms/aws-agentcore.md)**: managed runtime underlying the AWS Four-Pillar AgentOps framework
+- **[AWS — Agentic AI Overview](../AllThingsAWS/README.md)**: hub of AWS agentic AI offerings
+
+## References
+
+- [AgentOps: Operationalize agentic AI at scale with Amazon Bedrock AgentCore (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore/) — introduces the four-pillar AgentOps framework (Governance & Security, Build & Operations, Evaluation, Observability & Monitoring)

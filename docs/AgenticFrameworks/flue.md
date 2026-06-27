@@ -110,6 +110,7 @@ Connectors are Markdown installation instructions applied by an AI coding agent,
 - [Harness Engineering](../AgentHarness/harness-engineering.md) — engineering practices for building and optimizing harnesses
 - [LLM Harness Survey](../AgentHarness/llm-harness-survey.md) — ETCLOVG taxonomy and empirical benchmarks across 23+ harness systems
 - [Mastra](./mastra.md) — TypeScript-first multi-agent framework; complementary to Flue for workflow-centric patterns
+- [Eve](./eve.md) — Vercel's filesystem-first agent framework; comparable harness-first emphasis but defines agents via `instructions.md` rather than TypeScript
 - [Standards: MCP](../Standards/mcp.md) — Model Context Protocol that Flue integrates natively
 - [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — sandbox security models including the technologies Flue uses
 - [Production Best Practices: Deployment](../ProductionBestPractices/deployment.md)

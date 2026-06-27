@@ -117,6 +117,7 @@ SkillOpt's `skill.md` artifact is conceptually adjacent to the **SKILLS.md** con
 
 - [Agent Skills / SKILLS.md](../Standards/skills.md)
 - [Prompt Engineering Overview](../PromptEngineering/README.md)
+- [GEPA](./gepa.md) — reflective Pareto-frontier prompt optimizer; one of the 52/52 baselines SkillOpt compares against
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [Efficiency Frontier — LLM Context Optimization](../ContextEngineering/efficiency-frontier.md)
 - [Agent Memory — Functional Tiers](../AgentMemory/functional-tiers.md)

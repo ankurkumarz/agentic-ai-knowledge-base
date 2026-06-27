@@ -66,6 +66,7 @@ nav:
     - 4.16 Frameworks Technology Radar: 'AgenticFrameworks/solutions.md'
     - 4.17 AI Coding Agents: 'AgenticFrameworks/ai-coding-agents.md'
     - 4.18 Flue: 'AgenticFrameworks/flue.md'
+    - 4.19 Eve: 'AgenticFrameworks/eve.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.1.1 Thoughtworks Tech Radar — Agentic AI (Vol. 34, Apr 2026): 'AgenticTechStack/thoughtworks-radar-vol34.md'
@@ -123,6 +124,7 @@ nav:
     - 8.4 Prompt Engineering:
       - 8.4.0 Overview: 'PromptEngineering/README.md'
       - 8.4.1 SkillOpt (Microsoft): 'PromptEngineering/skillopt.md'
+      - 8.4.2 GEPA (Genetic-Pareto): 'PromptEngineering/gepa.md'
     - 8.5 Context Implementation References:
       - 8.5.1 Manus: 'ContextEngineering/manus.md'
       - 8.5.2 Anthropic: 'ContextEngineering/anthropic.md'

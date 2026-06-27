@@ -107,9 +107,16 @@ Meta-Harness does not replace manual harness engineering — an initial scaffold
 | ProTeGi | Prompts (text) | Textual gradient | LLM (text edit) |
 | TextGrad | Prompts + parameters | Textual gradient | LLM (text edit) |
 | DSPy | Prompts + few-shot demos | Module scores | LLM (text edit) |
+| GEPA | Prompts (text) | Full execution traces (reflective, Pareto-frontier selection) | LLM (text edit) |
 | **Meta-Harness** | **Harness code** | **Raw execution traces via filesystem** | **Coding agent** |
 
-The key differentiator is that Meta-Harness optimizes code (not text) and gives the proposer uncompressed diagnostic access through a structured filesystem, rather than compressing feedback into a gradient or summary.
+The key differentiator is that Meta-Harness optimizes code (not text) and gives the proposer uncompressed diagnostic access through a structured filesystem, rather than compressing feedback into a gradient or summary. GEPA is the closest predecessor in spirit — it also rejects scalar-reward compression in favor of full execution traces — but it stays in text space (evolving prompts via reflective mutation and Pareto-frontier candidate selection) rather than editing arbitrary harness code. See [GEPA](../PromptEngineering/gepa.md) for detail.
+
+## Productization: Databricks Omnigent
+
+Databricks Omnigent (announced 2026, open source under Apache 2.0) is a commercial meta-harness product that sits *above* existing agent harnesses — Claude Code, Codex, Pi, and custom in-house agents — rather than replacing them. It organizes its capabilities into three areas: **Composition** (combining multiple underlying agents/harnesses into a single workflow), **Control** (governance, routing, and policy enforcement across whichever harness is doing the work), and **Collaboration** (shared state and handoff between agents running under different underlying harnesses).
+
+**Naming note**: despite the shared "meta-harness" terminology, Databricks Omnigent is a distinct project from the academic Meta-Harness paper (Lee et al., arXiv:2603.28052) described above. The academic paper is about *automated search over harness code* to discover better-performing harness configurations; Omnigent is a *product* for composing and governing multiple already-built harnesses side by side. A team could in principle use Omnigent to orchestrate several harnesses, one of which was itself produced by the Meta-Harness search process — the two are complementary, not competing, despite the name collision.
 
 ## Best Practices
 
@@ -133,8 +140,11 @@ The key differentiator is that Meta-Harness optimizes code (not text) and gives 
 - [Agent Benchmarks](../Benchmarks/agent-benchmarks.md) — TerminalBench-2 and other evaluation environments used in harness optimization
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md) — LLM-as-judge, eval harnesses, and scoring methodologies
 - [Production Best Practices: Context Engineering](../ProductionBestPractices/context-engineering.md)
+- [GEPA](../PromptEngineering/gepa.md) — reflective Pareto-frontier prompt optimizer using full execution traces; closest text-space predecessor to Meta-Harness
+- [Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md) — a similar naming-overlap pattern (Agent Sandbox vs. independent KAOS project) documented for cross-reference
 
 ## References
 
 - [Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Nair, Zhang, Lee, Khattab, Finn; arXiv:2603.28052 (March 2026)](https://arxiv.org/abs/2603.28052) — Stanford / MIT / KRAFTON; introduces the harness optimization problem, filesystem-based diagnostic history, agentic proposer, and empirical results across text classification, RAG math reasoning, and agentic coding
 - [Meta-Harness Reference Code — stanford-iris-lab/meta-harness (GitHub)](https://github.com/stanford-iris-lab/meta-harness) — MIT-licensed reference implementation; includes text classification and TerminalBench-2 experiments; ONBOARDING.md for domain adaptation
+- [Introducing Omnigent: combine, control, and share your agents (Databricks Blog)](https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents) — announces the Omnigent product, its Composition/Control/Collaboration model, and Apache 2.0 licensing

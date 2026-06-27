@@ -187,8 +187,10 @@ AgentCore services work together or independently with any open-source framework
 - [ProductionBestPractices/observability.md](../ProductionBestPractices/observability.md)
 - [Standards/agent2agent.md](../Standards/agent2agent.md)
 - [Standards/mcp.md](../Standards/mcp.md)
+- [AgentOps — AWS Perspective: Four-Pillar AgentOps Framework](../AgentOps/README.md)
 
 ## References
 
 - [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop covering the 13-domain capability stack, four planes of multi-agent systems, and AWS service mappings
 - [AWS Bedrock AgentCore Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)
+- [AgentOps: Operationalize agentic AI at scale with Amazon Bedrock AgentCore (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore/)

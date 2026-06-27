@@ -190,6 +190,21 @@ cp .claude/skills/anthropics/review.md .claude/skills/review.md
 
 Provider skills are community-maintained and evolve independently of the harness. Pin to a specific commit or tag in production to prevent unreviewed changes from loading into the agent context at session start.
 
+## Community Skills Marketplaces & Curated Lists
+
+Beyond the official provider repositories above, a growing set of community-maintained lists and marketplaces aggregate skills across providers and use cases:
+
+| Resource | Type | Notes |
+|---|---|---|
+| ComposioHQ/awesome-claude-skills | Curated list | Community-curated GitHub list of Claude-specific skills |
+| VoltAgent/awesome-agent-skills | Curated list | Aggregates 1000+ skills contributed by official provider teams and the community across multiple harnesses |
+| Agent-Skills-for-Context-Engineering | Curated list | Focused specifically on context engineering and production agent system skills |
+| Agensi | Marketplace | Skills marketplace that includes paid (commercial) skills alongside free ones |
+| Claude Skills Marketplace | Directory | Searchable community directory of Claude skills |
+| Smithery | Registry | Combined registry for skills and MCP servers, supporting one-command installs into compatible harnesses |
+
+These lists overlap in coverage with the official provider repositories ([anthropics/skills](https://github.com/anthropics/skills), [openai/skills](https://github.com/openai/skills)) but extend discovery to community- and vendor-contributed skills not yet folded into an official catalog. As with provider repositories, pin to a specific commit when adopting a community skill in production, since these lists are not subject to the same review process as official repositories.
+
 ## Integration with Agent Harnesses
 
 Skills are a first-class concept in the Claude Code harness but are designed to be portable. Any harness that:
@@ -215,6 +230,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — Scan skills for prompt injection, data exfiltration, and malicious patterns before installation
 - [SkillOpt — Automated Skill Document Optimization](../PromptEngineering/skillopt.md) — Microsoft text-space optimizer that learns skill.md contents from trajectory rollouts
 - [Open Knowledge Format (OKF)](./open-knowledge-format.md) — complementary convention for reference knowledge vs. SKILLS.md's on-demand workflows
+- [Eve](../AgenticFrameworks/eve.md) — Vercel's agent framework applying a parallel filesystem-discovery convention (`instructions.md` + auto-registered `tools/`) to whole-agent definition rather than on-demand skills
 
 ## References
 
@@ -222,3 +238,4 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [Claude Skills Explained](https://claude.com/blog/skills-explained) — Deep-dive on the Skills architecture, invocation model, and scoping
 - [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Comprehensive authoring guide covering format, best practices, and examples (Anthropic, 2025)
 - [NVIDIA/skills](https://github.com/NVIDIA/skills) — Official catalog of NVIDIA-verified, cryptographically signed agent skills for NVIDIA software and platforms
+- [20+ Agent Skills, Repos, and Marketplaces — Generative Programmer](https://generativeprogrammer.com/p/20-agent-skills-repos-and-marketplaces) — survey of community skills repositories and marketplaces *(direct fetch returned HTTP 403; content sourced via web search)*

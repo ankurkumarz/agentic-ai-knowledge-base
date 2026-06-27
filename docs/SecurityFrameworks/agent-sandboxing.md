@@ -70,6 +70,24 @@ Managed services that provide on-demand isolated execution environments via API.
 - **Strengths**: GPU access; low operational overhead; per-invocation billing
 - **Limitations**: Python-centric; less control over network policy compared to lower-level tools
 
+#### AWS Lambda MicroVMs
+
+[AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-microvms-guide.html) executes every function invocation inside a dedicated Firecracker microVM (see [Firecracker](#firecracker-aws) below), giving agent tool calls hardware-virtualization-level isolation without managing VMs directly. As a managed cloud sandbox it sits alongside E2B, Daytona, and Modal — the isolation mechanism is the same microVM tier as raw Firecracker, but consumed as a fully managed, pay-per-invocation service rather than self-operated infrastructure.
+
+| Attribute | Detail |
+|---|---|
+| Deployment model | Fully managed cloud (AWS) |
+| Isolation mechanism | Firecracker microVM per invocation |
+| Max runtime | Up to 8 hours per invocation |
+| Max memory | Up to 10 GB (aligned to standard Lambda limits) |
+| Cold start overhead | ~100–200 ms added vs. standard Lambda cold start |
+| Burst scaling | Up to 4x vertical burst scaling |
+| Lifecycle control | Configurable auto-suspend and auto-resume |
+
+- **Strengths**: No infrastructure to operate; integrates directly with the broader AWS agent stack (Bedrock AgentCore, Step Functions); auto-suspend/resume reduces idle cost for long-running agent sessions
+- **Limitations**: AWS-only; the added cold-start overhead versus standard Lambda matters for latency-sensitive single-tool-call agent loops
+- **Agent relevance**: Suitable for AWS-native agent platforms needing per-invocation hardware isolation for tool execution without standing up Firecracker themselves
+
 ---
 
 ### Infrastructure Primitives
@@ -165,6 +183,7 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 | **E2B** | Cloud SaaS | < 1 s (warm) | High (provider-managed) | Yes — code interpreter focus | Cloud | Apache-2.0 |
 | **Daytona** | Cloud / OSS | < 90 ms | High (dedicated kernel) | Yes — agent workflow focus | Cloud | Apache-2.0 |
 | **Modal** | Cloud SaaS | < 1 s (warm) | Medium–High (container) | Partial — compute focus | Cloud | Proprietary |
+| **AWS Lambda MicroVMs** | Cloud (managed) | ~100–200 ms added cold start | Very High (Firecracker microVM) | Partial — general serverless, AWS-native agent stacks | Cloud (AWS) | Proprietary (managed service) |
 | **Anthropic srt** | OS-level | < 10 ms | Medium (policy-based) | Yes — MCP server focus | macOS, Linux | Apache-2.0 |
 | **Firecracker** | MicroVM | ~125 ms | Very High (KVM) | No — infrastructure primitive | Linux (KVM) | Apache-2.0 |
 | **gVisor** | Container (userspace kernel) | < 100 ms | High (syscall interception) | No — infrastructure primitive | Linux | Apache-2.0 |
@@ -182,6 +201,7 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 | Compute-intensive agent tools (GPU, ML inference) | Modal |
 | Multi-tenant Kubernetes agent platform needing VM-grade isolation | gVisor (drop-in) or Kata Containers (stronger) |
 | Serverless agent invocations at scale (own AWS infrastructure) | Firecracker microVMs |
+| Serverless agent invocations on AWS without operating Firecracker directly | AWS Lambda (managed microVM per invocation, configurable auto-suspend/resume) |
 | Sandboxing CLI tools / shell commands on Linux with zero overhead | nsjail |
 | Rapid prototype; already using Docker | Docker + resource limits (lowest bar; not sufficient for high-trust scenarios) |
 
@@ -217,6 +237,7 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Architecture Components Selection](../Architecture/components-selection.md)
 - [AgentOps — Deployment](../ProductionBestPractices/deployment.md)
+- [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
 
 ## References
 
@@ -227,3 +248,4 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 - [gVisor GitHub](https://github.com/google/gvisor) — Google userspace application kernel for container sandboxing; OCI-compatible; Apache-2.0
 - [Kata Containers GitHub](https://github.com/kata-containers/kata-containers) — VM-wrapped containers using hardware virtualization; containerd shimv2; Apache-2.0
 - [nsjail GitHub](https://github.com/google/nsjail) — Google lightweight Linux namespace+seccomp process isolation tool; Apache-2.0
+- [AWS Lambda MicroVMs Guide](https://docs.aws.amazon.com/lambda/latest/dg/lambda-microvms-guide.html) — AWS documentation on Firecracker microVM isolation per Lambda invocation, runtime/memory limits, and lifecycle controls

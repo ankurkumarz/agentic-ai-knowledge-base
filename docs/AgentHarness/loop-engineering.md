@@ -144,6 +144,22 @@ The loop changes the shape of the work; it does not remove the human from it. Th
 
 Two operators can build the structurally identical loop and arrive at opposite outcomes: one uses it to move faster on work they understand deeply; the other uses it to avoid understanding the work at all. The loop itself cannot distinguish the two cases — only the operator can. This is why loop design is harder than prompt engineering rather than easier: the work did not get simpler, the point of leverage moved from the individual prompt to the system that generates prompts, and the judgment required to use that leverage well did not disappear.
 
+## Example Implementations
+
+Cobus Greyling's [loop-engineering examples repository](https://github.com/cobusgreyling/loop-engineering/tree/main/examples/claude-code) provides concrete Claude Code loop definitions that put the six-primitive model into practice as ready-to-run automation prompts:
+
+| Example | Loop Purpose |
+|---|---|
+| `changelog-drafter` | Generates a draft changelog entry from recent merged commits/PRs |
+| `ci-sweeper` | Scans recent CI run failures and proposes fixes or flags flaky tests |
+| `daily-triage` | Daily scheduled scan of new issues and CI failures, writing findings to a triage state file |
+| `dependency-sweeper` | Checks for outdated or vulnerable dependencies and drafts update PRs |
+| `issue-triage` | Classifies and labels incoming issues against project conventions |
+| `post-merge-cleanup` | Runs housekeeping tasks (stale branch removal, follow-up TODOs) after a PR merges |
+| `pr-babysitter` | Watches an open PR, responds to review comments, and re-runs CI until green |
+
+Each example is a self-contained prompt/skill that maps onto the automations + state primitives described above — `daily-triage` and `pr-babysitter` in particular mirror the Composed Example's "automation runs, writes to state, hands off to a human inbox when unresolved" shape. They serve as a practical starting point for teams designing their own loop rather than building automation prompts from a blank file.
+
 ## Best Practices
 
 | Challenge / Area | Description | Solution / Recommendation |
@@ -173,3 +189,4 @@ Two operators can build the structurally identical loop and arrive at opposite o
 ## References
 
 - [Loop Engineering — Addy Osmani](https://addyosmani.com/blog/loop-engineering/) — source for the five-plus-one primitive framework, the Codex app/Claude Code comparison table, and the verification/comprehension-rot/cognitive-surrender risks of unattended loops
+- [cobusgreyling/loop-engineering — Claude Code examples](https://github.com/cobusgreyling/loop-engineering/tree/main/examples/claude-code) — example loop prompts (changelog-drafter, ci-sweeper, daily-triage, dependency-sweeper, issue-triage, post-merge-cleanup, pr-babysitter)

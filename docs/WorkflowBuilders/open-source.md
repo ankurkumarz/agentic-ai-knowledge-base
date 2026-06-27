@@ -123,6 +123,35 @@ docker run -d --name flowise -p 3000:3000 flowiseai/flowise
 - **Community**: Active Eclipse Foundation community
 - **Reference**: [InfoQ Multi-Agent Systems Guide](https://www.infoq.com/minibooks/from-chatbots-to-ai-agents/)
 
+### ByteChef
+
+**Repository**: [bytechefhq/bytechef](https://github.com/bytechefhq/bytechef)  
+**License**: Apache-2.0  
+**Technology Stack**: Java/Spring Boot backend, React frontend
+
+**Key Features**:
+- AI-native, low-code platform unifying workflow automation, API orchestration, and AI agent integration in a single tool
+- Visual workflow designer alongside code-based workflow definitions for teams that prefer infrastructure-as-code
+- Built-in connector library for common SaaS APIs, databases, and AI model providers
+- Self-hostable, with a managed cloud offering also available
+
+**Architecture**:
+- **Frontend**: React-based visual flow designer
+- **Backend**: Java/Spring Boot execution engine
+- **Connectors**: Pluggable component model for third-party API and AI integrations
+
+**Use Cases**:
+- Combining traditional API/SaaS workflow automation with AI agent steps in the same pipeline
+- Teams wanting an Apache-2.0, self-hostable alternative to closed-source iPaaS tools
+
+**Getting Started**:
+```bash
+# Self-hosted via Docker Compose
+git clone https://github.com/bytechefhq/bytechef
+cd bytechef
+docker compose up
+```
+
 ## Comparison Matrix
 
 | Platform | License | Primary Language | Strengths | Best For |
@@ -131,6 +160,7 @@ docker run -d --name flowise -p 3000:3000 flowiseai/flowise
 | Flowgram | Open Source | Multi-language | Enterprise scale, Flexible layouts | Complex workflows, Enterprise integration |
 | Sim.ai | Open Source | Python/JavaScript | Vector DB integration, Hybrid deployment | AI research, Knowledge systems |
 | Eclipse LMOS | EPL | Kotlin/Multi | Cloud-native, Enterprise governance | Enterprise MAS, Microservices |
+| ByteChef | Apache-2.0 | Java/Spring Boot, React | AI-native, unifies API orchestration + AI agents | Teams combining SaaS automation with AI agent steps |
 
 ## Technical Considerations
 
@@ -229,9 +259,14 @@ docker run -d --name flowise -p 3000:3000 flowiseai/flowise
 - Documentation improvements
 - Community support and mentoring
 
-## Related Sections
+## See Also
 
-- **Section 4**: Agent Development Frameworks
-- **Section 5.3.2**: Self-hosted & Limited Open Source
-- **Section 6**: Industry Standards (for protocol compatibility)
-- **Section 12**: Observability (for monitoring open source deployments)
+- [Agent Development Frameworks](../AgenticFrameworks/README.md)
+- [Self-hosted & Limited Open Source Workflow Engines](./self-hosted.md)
+- [Workflow Orchestration](./orchestration.md)
+- [Agentic AI Industry Standards](../Standards/README.md)
+- [Observability](../Observability/Readme.md)
+
+## References
+
+- [ByteChef GitHub](https://www.bytechef.io/) — AI-native, low-code workflow automation, API orchestration, and AI agent integration platform; Apache-2.0
