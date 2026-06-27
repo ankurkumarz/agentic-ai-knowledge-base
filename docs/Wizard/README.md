@@ -136,7 +136,6 @@ A guided, client-side wizard that helps you find the right starting point in thi
               desc: 'Multiple cooperating or role-based agents.',
               results: [
                 WizardUtils.page('CrewAI', 'AgenticFrameworks/crewai.md', 'Role-based multi-agent orchestration.'),
-                WizardUtils.page('AutoGen', 'AgenticFrameworks/autogen.md', 'Conversable multi-agent framework from Microsoft Research.'),
                 WizardUtils.page('Google ADK', 'AgenticFrameworks/google-adk.md', 'Google’s Agent Development Kit.')
               ]
             },
@@ -147,7 +146,7 @@ A guided, client-side wizard that helps you find the right starting point in thi
               results: [
                 WizardUtils.page('AWS Strands Agents', 'AgenticFrameworks/aws-strands.md', 'AWS’s code-first agent SDK.'),
                 WizardUtils.page('Google ADK', 'AgenticFrameworks/google-adk.md', 'Google’s Agent Development Kit.'),
-                WizardUtils.page('Semantic Kernel', 'AgenticFrameworks/semantic-kernel.md', 'Microsoft’s enterprise-oriented SDK.')
+                WizardUtils.page('Microsoft Agent Framework', 'AgenticFrameworks/microsoft-framework.md', 'Workflow-oriented multi-agent framework with enterprise/Azure integration.')
               ]
             },
             {
@@ -155,8 +154,8 @@ A guided, client-side wizard that helps you find the right starting point in thi
               title: 'General purpose / widely adopted',
               desc: 'Looking for the most established, broadly-used option.',
               results: [
-                WizardUtils.page('LangChain', 'AgenticFrameworks/langchain.md', 'The most widely adopted agent/LLM application framework.'),
-                WizardUtils.page('All Frameworks', 'AgenticFrameworks/README.md', 'Full list of frameworks covered in this wiki.')
+                WizardUtils.page('LangGraph', 'AgenticFrameworks/langgraph.md', 'Graph-based orchestration on top of LangChain.'),
+                WizardUtils.page('CrewAI', 'AgenticFrameworks/crewai.md', 'Role-based multi-agent orchestration.')
               ]
             }
           ]
