@@ -6,6 +6,8 @@ The 8 Levels of Agentic Engineering is a practitioner progression framework mapp
 
 The framework has a critical architectural insight: **Levels 3–5 are prerequisites for Levels 6–8.** If context is noisy, prompts are under-specified, or tools are poorly described, higher levels of automation only amplify the mess rather than solve problems.
 
+**Cross-reference**: Contrast Security's "8 levels of context maturity" webinar presents a structurally similar progression — three zones culminating in a plan/delegate/assess/codify-style loop — applied specifically to security context maturity rather than general engineering practice. The two frameworks were developed independently but converge on the same three-zone, eight-level shape, suggesting the progression pattern (manual → designed-context → automated-feedback → autonomous) may generalize across domains rather than being specific to Eledath's framing.
+
 ## The Eight Levels
 
 ### Level 1: Tab Complete
@@ -121,3 +123,4 @@ Claude Code's experimental Agent Teams feature is an early implementation: multi
 
 - [The 8 Levels of Agentic Engineering — Bassim Eledath (March 2026)](https://www.bassimeledath.com/blog/levels-of-agentic-engineering) — the original framework defining the eight-level progression
 - [Compounding Engineering Pattern — nibzard/awesome-agentic-patterns](https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/compounding-engineering-pattern.md) — community documentation of the plan-delegate-assess-codify loop
+- [8 Levels of Context Maturity — Contrast Security (registration-gated webinar)](https://watch.getcontrast.io/register/context-maturity) — security-focused context maturity framework with a structurally similar level progression

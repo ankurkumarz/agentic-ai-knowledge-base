@@ -489,6 +489,18 @@ Confluent's *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* 
 
 Full pattern-by-pattern treatment (Traditional vs. Event-Driven, plus worked SDR and Agentic RAG examples) is in [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md).
 
+## Multi-Tenant Multi-Agent Systems (Google Cloud)
+
+Google Cloud's reference architecture for multi-tenant agentic AI systems addresses a coordination concern orthogonal to the patterns above: how a single deployed multi-agent system serves multiple isolated tenants (customers, business units, or environments) without cross-tenant data leakage or noisy-neighbor resource contention.
+
+**Reference components**:
+- **Compute layer**: Cloud Run for stateless, per-request agent invocation with built-in per-tenant concurrency limits; GKE for workloads needing finer-grained isolation (dedicated node pools, namespaces, or — per [Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md) — per-tool-call sandboxed execution).
+- **Agent platform**: the Gemini Enterprise Agent Platform provides tenant-scoped agent registries and routing, so the same orchestrator deployment can serve distinct agent rosters per tenant.
+- **Security boundary**: Model Armor sits in front of model calls as a tenant-aware policy enforcement point — screening prompts and responses for prompt injection, data exfiltration, and policy violations before they cross tenant boundaries.
+- **Agent construction and interoperability**: Google ADK for building the per-tenant or shared agents, with the A2A protocol used for cross-agent (and potentially cross-tenant, when explicitly authorized) communication.
+
+**Tenant isolation strategies** described in the architecture mirror the [Four Planes](#the-four-planes-of-a-multi-agent-system-aws) framing — identity/auth, data, compute, and control-plane isolation each need a tenant-scoping decision — but Google's treatment is specifically about *one deployment, many tenants* rather than *one tenant, many agents*. The two concerns compose: a multi-tenant deployment still needs an internal multi-agent architecture (centralized, decentralized, hierarchical, or hybrid) for each tenant's agent roster.
+
 ## See Also
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
@@ -498,6 +510,7 @@ Full pattern-by-pattern treatment (Traditional vs. Event-Driven, plus worked SDR
 - [AWS AgentCore](../AgentPlatforms/aws-agentcore.md)
 - [A2A Protocol](../Standards/agent2agent.md)
 - [MCP Protocol](../Standards/mcp.md)
+- [Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md)
 - [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md)
 - [ProductionBestPractices/security.md](../ProductionBestPractices/security.md)
 - [ProductionBestPractices/observability.md](../ProductionBestPractices/observability.md)
@@ -506,4 +519,5 @@ Full pattern-by-pattern treatment (Traditional vs. Event-Driven, plus worked SDR
 
 - [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop slide deck covering the four planes, orchestration patterns, non-determinism math, shared state design, MCP/A2A distinction, security at agent boundaries, and distributed observability
 - [Mastering Multi-Agent Systems eBook](https://galileo.ai) — Galileo, 2026. Author: Pratik Bhavsar. Seven benefits, failure modes, decision framework, four architectures, context engineering, LangGraph production example with Galileo observability.
+- [Multi-tenant agentic AI system architecture](https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system) — Google Cloud Architecture Center. Reference architecture for serving multiple tenants from a single multi-agent deployment using Cloud Run, GKE, the Gemini Enterprise Agent Platform, Model Armor, ADK, and A2A.
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for Supervisor vs. Swarm comparison and Agent Router pattern.

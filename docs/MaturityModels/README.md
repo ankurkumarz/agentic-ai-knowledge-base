@@ -57,6 +57,9 @@ Analyzes the evolution of enterprise applications toward agentic capabilities an
 
 *IDC's perspective on the agentic evolution of enterprise applications showing the progression from traditional applications to fully agentic systems*
 
+### Dataiku's Perspective
+Dataiku frames enterprise AI transformation as a **five-phase maturity journey** — Explore (early experimentation, finding internal adopters), Experiment (testing AI value with first projects), Establish (proving tangible value from initial use cases, laying foundations to scale), Expand (broadening AI usage across the organization), and Embed (AI woven into every activity as part of organizational DNA). This phase model separates sustained transformation from stalled pilot programs, with the Establish→Expand transition flagged as the point most organizations stall. Dataiku pairs this with an operating-model maturity axis (Decentralized/Siloed Teams → Centralized Center of Excellence → Hub and Spoke, where a central hub owns infrastructure/governance while business units drive product development) and a separate five-stage governance maturity model (ad hoc → documented → operationalized → integrated → adaptive).
+
 ## Getting Started with Maturity Assessment
 
 Organizations beginning their agentic AI journey should:
@@ -82,6 +85,7 @@ Organizations beginning their agentic AI journey should:
 - [IDC: The Agentic Evolution of Enterprise Applications](https://www.idc.com/resource-center/blog/the-agentic-evolution-of-enterprise-applications/)
 - [Google Cloud AI Maturity Resources](https://cloud.google.com/ai)
 - [Arsanjani GenAI Maturity Model](./arsanjani-genai-maturity.md) — 7-level framework (Levels 0–6) mapping data foundation → RAG → tuning → grounding → single-agent → multi-agent; maps each level to design patterns and includes the Agentic AI Maturity Spectrum (6 sub-levels for Levels 5–6)
+- [Dataiku: Enterprise AI transformation](https://www.dataiku.com/stories/blog/enterprise-ai-transformation) — five-phase maturity journey (Explore/Experiment/Establish/Expand/Embed), operating-model maturity axis, and five-stage governance maturity model
 
 
 ## See Also

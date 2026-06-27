@@ -23,6 +23,7 @@
 | [**Google ADK (Agent Development Kit)**](https://google.github.io/adk-docs/) | Python, Java | Open Source | Modular, model-agnostic agent framework optimized for multi-agent systems | Platform-agnostic; ideal for enterprise or academic adaptation | GCP-heavy; evolving documentation | – / Self-hosted & Cloud |
 | [**OpenAI AgentKit**](https://openai.com/index/introducing-agentkit/) | Various (JS/Python via API) | Proprietary / Mixed | Visual builder, agent orchestration, evaluation, UI embedding | Rapid prototyping; integrated with OpenAI ecosystem | Vendor lock-in; limited low-level control | – / SaaS & Self-hosted |
 | [**Flue**](https://flueframework.com/) | TypeScript | Apache-2.0 | Harness-first agent framework; built-in virtual sandbox (just-bash) + container sandbox (Daytona); sessions, skills, MCP, OpenTelemetry | Headless programmable agents; runtime-agnostic deploy (Node, Cloudflare, CI); harness-centric design | TypeScript-only; experimental; smaller ecosystem | ~3.8K / Self-hosted |
+| [**Eve**](https://github.com/vercel/eve) | Filesystem-defined (markdown + tools) | Open Source | Filesystem-first agent framework; `instructions.md` defines the agent, tools auto-registered from `tools/`; built-in durable execution, sandboxed compute, approvals, channels, tracing, evals | Teams wanting file-based, diffable agent definitions; durable/resumable runs and HITL approvals out of the box | Public preview; API surface may change; strongest tooling fit is Vercel-hosted deployments | – / Public preview |
 
 
 

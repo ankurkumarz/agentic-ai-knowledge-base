@@ -950,3 +950,204 @@ Bassim Eledath's 8-level framework is a practitioner-oriented progression model 
 | `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Kubernetes Agent Sandbox |
 | `docs/index.md` | Extended | Added Standards bullet for Kubernetes Agent Sandbox; extended Deployment bullet under Production Best Practices with Kubernetes-native agent orchestration tools |
 | `mkdocs.yml` | Extended | Added 6.12 Kubernetes Agent Sandbox under Industry Standards; added 13.3 Kubernetes-Native Agent Orchestration (kagent, AOF, KAOS) under AgentOps |
+
+## [2026-06-27] ingest | ByteChef (bytechef.io) | sections touched: WorkflowBuilders
+
+**Source**: https://www.bytechef.io/
+
+**Type**: Vendor/product page (open source workflow platform)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/WorkflowBuilders/open-source.md` | Extended | Added new "ByteChef" subsection (Apache-2.0, Java/Spring Boot + React) describing its AI-native low-code platform unifying workflow automation, API orchestration, and AI agent integration; added a row to the Comparison Matrix table; replaced the non-standard "Related Sections" footer with a proper "See Also" + "References" section citing the source URL |
+
+## [2026-06-27] ingest | Google Cloud — Multi-tenant agentic AI system architecture | sections touched: Architecture
+
+**Source**: https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system
+
+**Type**: Vendor reference architecture (Google Cloud Architecture Center)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Architecture/multi-agent-system.md` | Extended | Added "Multi-Tenant Multi-Agent Systems (Google Cloud)" section covering Cloud Run/GKE compute, Gemini Enterprise Agent Platform, Model Armor, ADK, and A2A; framed as orthogonal to (and composable with) the existing AWS Four Planes and four-architectures content; added a cross-link to Kubernetes Agent Sandbox and a new References entry |
+
+## [2026-06-27] ingest | Eve (vercel/eve) | sections touched: AgenticFrameworks, Standards
+
+**Source**: https://github.com/vercel/eve
+
+**Type**: Framework repository (public preview)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgenticFrameworks/eve.md` | Created | Vercel's filesystem-first agent framework — `instructions.md` defines the agent, tools auto-registered from `tools/`, built-in durable execution, sandboxed compute, approvals, channels, tracing, evals |
+| `docs/AgenticFrameworks/flue.md` | Extended | Added bidirectional See Also link to Eve |
+| `docs/Standards/skills.md` | Extended | Added bidirectional See Also link to Eve, noting the parallel filesystem-discovery convention |
+| `docs/AgenticFrameworks/README.md` | Extended | Added Eve row to the main framework comparison table |
+| `mkdocs.yml` | Extended | Added 4.19 Eve under Agent Development Frameworks |
+
+## [2026-06-27] ingest | AWS Lambda MicroVMs | sections touched: SecurityFrameworks, AllThingsAWS
+
+**Source**: https://docs.aws.amazon.com/lambda/latest/dg/lambda-microvms-guide.html
+
+**Type**: Vendor documentation (AWS Lambda Developer Guide)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/SecurityFrameworks/agent-sandboxing.md` | Extended | Added "AWS Lambda MicroVMs" entry under Cloud-Hosted Sandboxes (Firecracker microVM per invocation, up to 8hr runtime, 10GB memory, ~100-200ms added cold start, 4x vertical burst scaling, configurable auto-suspend/resume); added rows to the Comparison Summary and Selection Guide tables; added References entry and a See Also link to AllThingsAWS |
+| `docs/AllThingsAWS/README.md` | Extended | Added hub row for AWS Lambda MicroVMs |
+
+## [2026-06-27] ingest | AWS Agent-EvalKit | sections touched: EvaluationFrameworks, AllThingsAWS
+
+**Source**: https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit/
+
+**Type**: Vendor blog post (AWS Machine Learning Blog)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/platforms.md` | Extended | Added "AWS Agent-EvalKit" subsection under Open Source and Developer Platforms (six-phase eval workflow, hybrid code-based + LLM-as-judge evaluators, Claude Code/Kiro CLI/Kilo Code integration); added comparison table row; added the missing References section (opportunistic gap fix) and a See Also link to AllThingsAWS |
+| `docs/AllThingsAWS/README.md` | Extended | Added hub row for AWS Agent-EvalKit |
+
+## [2026-06-27] ingest | AWS AgentOps Four-Pillar Framework | sections touched: AgentOps, AgentPlatforms, AllThingsAWS
+
+**Source**: https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore/
+
+**Type**: Vendor blog post (AWS Machine Learning Blog)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentOps/README.md` | Extended | Added "AWS Perspective: Four-Pillar AgentOps Framework" section (Governance & Security / Build & Operations / Evaluation [tool/turn/session/system levels] / Observability & Monitoring [four telemetry layers]), parallel to the existing Google Cloud Perspective; added References section (new) and See Also links |
+| `docs/AgentPlatforms/aws-agentcore.md` | Extended | Added cross-link to the new AWS AgentOps Four-Pillar Framework section |
+| `docs/AllThingsAWS/README.md` | Extended | Added hub row for AWS AgentOps Four-Pillar Framework |
+
+## [2026-06-27] ingest | Unblocked (getunblocked.com) | sections touched: AgenticTechStack
+
+**Source**: https://getunblocked.com/
+
+**Type**: Vendor product page
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgenticTechStack/README.md` | Extended | Added new "Context Engines for Coding Agents" subsection under Key Components; added the missing References section (opportunistic gap fix) citing the source URL |
+
+## [2026-06-27] ingest | Novu / Agent Communication Infrastructure (novuhq/novu) | sections touched: AgenticTechStack
+
+**Source**: https://github.com/novuhq/novu
+
+**Type**: Open-source repository
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgenticTechStack/README.md` | Extended | Added new "Agent Communication Infrastructure" subsection under Key Components describing Novu's unified conversation model across Slack/Teams/Telegram/WhatsApp/email/in-app inbox; added References entry |
+
+## [2026-06-27] ingest | GEPA (Genetic-Pareto) | sections touched: PromptEngineering, AgentHarness
+
+**Source**: https://gepa-ai.github.io/gepa/
+
+**Type**: Open-source project page / optimizer framework
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/PromptEngineering/gepa.md` | Created | Reflective Pareto-frontier prompt optimizer using full execution traces; outperforms GRPO by 10-20% with up to 35x fewer rollouts, beats MIPROv2 by >10%; DSPy-integrated |
+| `docs/AgentHarness/harness-optimization.md` | Extended | Added GEPA row to the "Relationship to Prior Optimization Work" table (positioned between text-space optimizers and Meta-Harness); added a paragraph noting GEPA as the closest text-space predecessor; added cross-links |
+| `docs/PromptEngineering/skillopt.md` | Extended | Added bidirectional See Also link to GEPA |
+| `mkdocs.yml` | Extended | Added 8.4.2 GEPA under Prompt Engineering |
+
+## [2026-06-27] ingest | Databricks Omnigent | sections touched: AgentHarness
+
+**Source**: https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents
+
+**Type**: Vendor blog post (product announcement)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/harness-optimization.md` | Extended | Added "Productization: Databricks Omnigent" subsection (Composition/Control/Collaboration, Apache 2.0) with an explicit naming-disambiguation note distinguishing the commercial Omnigent product from the academic Meta-Harness paper (arXiv:2603.28052) already documented on this page — following the same disambiguation pattern used for KAOS vs. Agent Sandbox; added References entry
+
+## [2026-06-27] ingest | cobusgreyling/loop-engineering Claude Code examples | sections touched: AgentHarness
+
+**Source**: https://github.com/cobusgreyling/loop-engineering/tree/main/examples/claude-code
+
+**Type**: GitHub examples repository — Claude Code loop prompt definitions
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/loop-engineering.md` | Extended | Added "Example Implementations" section listing 7 example loops (changelog-drafter, ci-sweeper, daily-triage, dependency-sweeper, issue-triage, post-merge-cleanup, pr-babysitter); added References entry |
+
+## [2026-06-27] verification | kagent.dev | sections touched: none (no-op)
+
+**Source**: https://kagent.dev/
+
+**Type**: Vendor/project page — verification only
+
+Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2026-06-22 KAOS/Kubernetes-native agent orchestration ingest (CNCF Sandbox project by Solo.io; Controller/Engine/UI/CLI architecture; Agent/ModelConfig/ToolServers CRDs; MCP/A2A composition; multi-provider LLM support; OTel tracing). No changes made.
+
+## [2026-06-27] ingest | Dataiku — Enterprise AI Transformation | sections touched: MaturityModels
+
+**Source**: https://www.dataiku.com/stories/blog/enterprise-ai-transformation (WebFetch blocked 403; content sourced via WebSearch)
+
+**Type**: Vendor blog post (Dataiku)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/MaturityModels/README.md` | Extended | Added "Dataiku's Perspective" subsection under Industry Perspectives — five-phase maturity journey (Explore/Experiment/Establish/Expand/Embed), operating-model maturity axis (Decentralized → Centralized CoE → Hub and Spoke), five-stage governance maturity model (ad hoc → documented → operationalized → integrated → adaptive); added Resources entry |
+
+## [2026-06-27] ingest | GKE Agent Sandbox GA + Agent Substrate (Google Cloud Blog) | sections touched: Standards, AllThingsGoogle, index.md
+
+**Source**: https://cloud.google.com/blog/products/containers-kubernetes/bringing-you-agent-sandbox-on-gke-and-agent-substrate
+
+**Type**: Vendor blog post (Google Cloud)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/k8s-agent-sandbox.md` | Extended | Updated Governance and Status to reflect GA (previously framed only as the KubeCon Atlanta launch); added "GKE Productization: GA and Agent Substrate" section with Pod Snapshots, sandbox provisioning latency (300/sec/cluster, 90% under 200ms), 30% price-performance gain on Axion, 16x adoption growth, and a new Agent Substrate subsection describing its minimal-control-plane architecture and relationship to Agent Sandbox |
+| `docs/AllThingsGoogle/README.md` | Extended | Updated Kubernetes Agent Sandbox hub row with GA status; added new Agent Substrate hub row |
+| `docs/index.md` | Extended | Updated Standards bullet (section 7) to mention GA status and Agent Substrate |
+
+## [2026-06-27] ingest | Contrast Security — 8 Levels of Context Maturity (webinar) | sections touched: MaturityModels
+
+**Source**: https://watch.getcontrast.io/register/context-maturity
+
+**Type**: Registration-gated webinar (Contrast Security) — page returned HTTP 403 on fetch; cross-reference added based on title/topic only
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/MaturityModels/agentic-engineering-levels.md` | Extended | Added cross-reference note on the structural overlap between Eledath's 8-level framework and Contrast's context-maturity webinar; added References entry | |
+
+## [2026-06-27] ingest | 20+ Agent Skills, Repos, and Marketplaces (Generative Programmer) | sections touched: Standards
+
+**Source**: https://generativeprogrammer.com/p/20-agent-skills-repos-and-marketplaces (WebFetch blocked 403; content sourced via WebSearch)
+
+**Type**: Blog post survey of community skills repositories and marketplaces
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/skills.md` | Extended | Added "Community Skills Marketplaces & Curated Lists" subsection (ComposioHQ/awesome-claude-skills, VoltAgent/awesome-agent-skills, Agent-Skills-for-Context-Engineering, Agensi, Claude Skills Marketplace, Smithery), cross-referencing the existing Provider Skills Repositories table; added References entry |

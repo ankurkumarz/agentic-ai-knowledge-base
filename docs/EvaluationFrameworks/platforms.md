@@ -93,6 +93,19 @@ Open-source LLM observability and evaluation platform. Combines tracing with eva
 
 **Best For**: Teams wanting open-source evaluation with self-hosting option
 
+### AWS Agent-EvalKit
+**Resource**: [AWS Machine Learning Blog — Evaluate AI agents systematically with Agent-EvalKit](https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit/)
+
+An Apache-2.0 open-source evaluation toolkit (`awslabs/Agent-EvalKit`) structured around a six-phase evaluation workflow, combining code-based evaluators with LLM-as-judge evaluators. Designed to plug into existing coding-agent CLIs rather than requiring a standalone evaluation UI.
+
+**Key Features**:
+- Six-phase evaluation workflow (from test-case definition through scoring and reporting)
+- Hybrid evaluator model: deterministic code-based checks alongside LLM-as-judge scoring
+- Direct integration with Claude Code, Kiro CLI, and Kilo Code
+- Open source (Apache-2.0), self-hostable, no vendor lock-in to a hosted platform
+
+**Best For**: Teams already working inside an agentic coding CLI who want a lightweight, code-first evaluation toolkit rather than a separate hosted platform
+
 ## Research Evaluation Frameworks
 
 ### Meta MLGym
@@ -115,6 +128,7 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 | LangSmith | ❌ | Limited | ✅ | ✅ | ✅ |
 | Braintrust | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
+| AWS Agent-EvalKit | ✅ | ✅ | Limited | ✅ | ✅ |
 
 ## Getting Started
 
@@ -148,3 +162,8 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 - [LLM Evaluation Frameworks](llm-frameworks.md)
 - [Benchmarks](../Benchmarks/Readme.md)
 - [Observability Solutions](../Observability/solutions.md)
+- [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
+
+## References
+
+- [Evaluate AI agents systematically with Agent-EvalKit (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit/) — introduces the six-phase evaluation workflow and CLI integrations

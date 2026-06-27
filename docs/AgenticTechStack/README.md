@@ -54,6 +54,12 @@ Agents' ability to spin up fully-isolated environments to safely execute AI-gene
 ### Web Search and Data Extraction
 - **AgentQL**: [AgentQL.com](https://www.agentql.com/) - Query language and Playwright integrations for interacting with elements and extracting data quickly
 
+### Context Engines for Coding Agents
+- **Unblocked**: [getunblocked.com](https://getunblocked.com/) - AI "context engine" that indexes a codebase alongside its documentation, tickets, and team conversations into a knowledge graph, surfaced to coding agents and developers via Slack, terminal, web, and MCP. Raised a $20M Series A; positions itself as the missing institutional-knowledge layer that pure code-search tools lack — answering "why" a piece of code exists, not just "what" it does.
+
+### Agent Communication Infrastructure
+- **Novu**: [github.com/novuhq/novu](https://github.com/novuhq/novu) - Open-source Agent Communication Infrastructure (ACI) providing a unified conversation model that connects any agent to messaging surfaces — Slack, Microsoft Teams, Telegram, WhatsApp, email, and an in-app inbox — without each agent needing bespoke integration code per channel.
+
 ### Orchestration Layer
 - **Open Source Workflow Engines**: MIT/Apache licensed orchestration frameworks
 - **Self-hosted Solutions**: Enterprise-controlled workflow platforms
@@ -113,3 +119,8 @@ For full radar assessments, decision criteria, and selection guidance see **[Age
 - **[Observability](../Observability/Readme.md)**: Monitoring and observability solutions
 - **[Observability Tech Radar](../Observability/tech-radar.md)**: Technology radar for observability tools and platforms
 - **[Security Frameworks](../SecurityFrameworks/Readme.md)**: Security considerations for tech stacks
+
+## References
+
+- [Unblocked](https://getunblocked.com/) — AI context engine indexing codebase, docs, tickets, and conversations into a knowledge graph
+- [Novu — GitHub](https://github.com/novuhq/novu) — Open-source Agent Communication Infrastructure connecting agents to messaging channels

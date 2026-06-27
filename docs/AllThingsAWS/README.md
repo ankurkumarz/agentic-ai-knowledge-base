@@ -17,6 +17,9 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 | AWS Security Perspective | AWS guidance on securing agentic AI workloads | [SecurityFrameworks/Readme.md](../SecurityFrameworks/Readme.md) |
 | AIDLC Workflows | AI-Driven Development Life Cycle — methodology-first framework guiding AI coding agents through structured Inception → Construction → Operations phases with approval gates | [Standards/aidlc.md](../Standards/aidlc.md) |
 | AWS Skills Registry | Provider skills installable via `npx skills add aws/agent-toolkit-for-aws/skills`; targets Strands Agents and Kiro harnesses | [Standards/skills.md#provider-skills-repositories](../Standards/skills.md) |
+| AWS Lambda MicroVMs | Firecracker microVM isolation per Lambda invocation; up to 8hr runtime, 10GB memory, configurable auto-suspend/resume | [SecurityFrameworks/agent-sandboxing.md](../SecurityFrameworks/agent-sandboxing.md) |
+| AWS Agent-EvalKit | Apache-2.0 OSS eval toolkit; six-phase workflow combining code-based and LLM-as-judge evaluators; integrates with Claude Code, Kiro CLI, Kilo Code | [EvaluationFrameworks/platforms.md](../EvaluationFrameworks/platforms.md) |
+| AWS AgentOps Four-Pillar Framework | Governance & Security / Build & Operations / Evaluation / Observability & Monitoring framework for operationalizing agents on Amazon Bedrock AgentCore | [AgentOps/README.md](../AgentOps/README.md) |
 
 ## See Also
 
