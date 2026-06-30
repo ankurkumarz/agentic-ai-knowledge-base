@@ -5,6 +5,8 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-30] ingest | Gartner — AI Evaluation and Observability Platforms (AEOPs) | sections touched: EvaluationFrameworks/platforms.md, Observability/Readme.md
+
 ## [2026-06-04] ingest | Microsoft Build 2026 — Building Agentic Apps with Microsoft Fabric and Microsoft Databases | sections touched: AgentPlatforms/microsoft-fabric-databases-2026.md (new), AllThingsMicrosoft/README.md, AgentPlatforms/microsoft-azure.md, mkdocs.yml
 
 **Sources**:
