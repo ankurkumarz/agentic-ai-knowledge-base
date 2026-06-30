@@ -35,8 +35,9 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 - **LLM Harness Survey & Taxonomy**: ETCLOVG seven-layer taxonomy (Execution, Tooling, Context, Lifecycle, Observability, Verification, Governance); formal H=(E,T,C,S,L,V) model; harness completeness matrix across 23+ systems; nine empirically-grounded technical challenges; covers 110+ papers and timeline from 1997–2026
 
 ### **3. Concepts**
-- **Agent Definition**: Fundamental definitions and terminology for agentic AI systems; Chat-Engine vs. Do-Engine framing (You.com, 2026)
+- **Agent Definition**: Fundamental definitions and terminology for agentic AI systems; Chat-Engine vs. Do-Engine framing (You.com, 2026); AI Engineering definition (Huyen, 2025) — an agent perceives its environment and acts upon it via tools, with a foundation model as the planning brain
 - **Agent Types**: Classification and comparison of different agent architectures
+- **AI Engineering**: The discipline of building applications on top of foundation models — prompt engineering, RAG, finetuning, and agents as the four core adaptation techniques; AI engineering stack (infrastructure, model, application layers); AI engineering vs. ML engineering comparison (Huyen, O'Reilly 2025)
 - **References**: Key research papers and foundational materials
 - **2026 AI Predictions (You.com)**: 35 predictions by Richard Socher and Bryan McCann covering workforce transformation, reward engineering, 10-person unicorns, software development, vertical AI agents, space computing, biotech, and consumer media
 
@@ -132,6 +133,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 
 ### **Agent Testing & Evaluations**
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
+- **AI as a Judge**: Using foundation models to evaluate other AI outputs — three usage patterns (absolute scoring, reference comparison, pairwise), prompt design for AI judges, limitations (inconsistency, length bias, positional bias), and judge model selection guidance (Huyen, 2025; Zheng et al., 2023 — 85% GPT-4/human agreement on MT-Bench)
 - **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, GAIA, and DeepResearch Bench (RACE/FACT evaluation of deep research agents)
 - **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
 

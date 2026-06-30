@@ -26,8 +26,9 @@ nav:
     - 1.4 Agent Definition: 'Concepts/agent-definition.md'
     - 1.5 Agent Types: 'Concepts/agent-types.md'
     - 1.6 Foundations: 'Concepts/agent-foundational.md'
-    - 1.7 References: 'Concepts/references.md'
-    - 1.8 2026 AI Predictions (You.com): 'Concepts/ai-predictions-2026.md'
+    - 1.7 AI Engineering (Huyen): 'Concepts/ai-engineering.md'
+    - 1.8 References: 'Concepts/references.md'
+    - 1.9 2026 AI Predictions (You.com): 'Concepts/ai-predictions-2026.md'
   - 2. Agent Harness:
     - 2.1 Agent Harness: 'AgentHarness/agent-harness.md'
     - 2.2 Harness Engineering: 'AgentHarness/harness-engineering.md'
@@ -105,8 +106,9 @@ nav:
     - 6.12 Kubernetes Agent Sandbox: 'Standards/k8s-agent-sandbox.md'
   - 7. Agentic AI Reference Architecture:
     - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
-    - 7.2 AI Assistant Reference Architecture: 'ReferenceArchitecture/ai-assistant-architecture.md'
-    - 7.3 AI Assistant: 'ReferenceArchitecture/ai-assistant.md'
+    - 7.2 AI Engineering Architecture (Huyen): 'ReferenceArchitecture/ai-engineering-architecture.md'
+    - 7.3 AI Assistant Reference Architecture: 'ReferenceArchitecture/ai-assistant-architecture.md'
+    - 7.4 AI Assistant: 'ReferenceArchitecture/ai-assistant.md'
     - 7.4 AI Automation:
       - 7.4.1 AI Automation Overview: 'ReferenceArchitecture/ai-automation.md'
       - 7.4.2 LangManus – AI Automation Framework: 'ReferenceArchitecture/langmanus.md'
@@ -141,11 +143,12 @@ nav:
     - 9.6 Memory Management Overview: 'AgentMemory/README.md'
   - 10. Agentic AI Evaluation:
     - 10.1 LLM Evaluation Frameworks: 'EvaluationFrameworks/llm-frameworks.md'
-    - 10.2 Agent Evaluation Benchmarks: 'Benchmarks/agent-benchmarks.md'
-    - 10.3 LLM Evaluation Benchmarks: 'Benchmarks/llm-benchmarks.md'
-    - 10.4 Agent Evaluation Platforms: 'EvaluationFrameworks/platforms.md'
-    - 10.5 Evaluation Reference Frameworks: 'EvaluationFrameworks/Readme.md'
-    - 10.6 Reference Documentation: 'Benchmarks/Readme.md'
+    - 10.2 AI as a Judge (LLM-as-Judge): 'EvaluationFrameworks/ai-as-judge.md'
+    - 10.3 Agent Evaluation Benchmarks: 'Benchmarks/agent-benchmarks.md'
+    - 10.4 LLM Evaluation Benchmarks: 'Benchmarks/llm-benchmarks.md'
+    - 10.5 Agent Evaluation Platforms: 'EvaluationFrameworks/platforms.md'
+    - 10.6 Evaluation Reference Frameworks: 'EvaluationFrameworks/Readme.md'
+    - 10.7 Reference Documentation: 'Benchmarks/Readme.md'
   - 11. Agentic AI Security:
     - 11.1 Security Standards:
       - 11.1.1 NIST AI RMF (Risk Management Framework): 'SecurityFrameworks/nist-ai-rmf.md'

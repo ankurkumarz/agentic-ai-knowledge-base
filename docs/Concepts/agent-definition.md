@@ -54,8 +54,30 @@ You.com's 2026 AI Predictions whitepaper introduces a practical framing that sha
 
 This framing predicts a wholesale shift in how AI systems are built and valued: the utility of a Chat-Engine is bounded by human bandwidth; the utility of a Do-Engine scales with task complexity. Applications that integrate LLMs without delegating execution control remain Chat-Engines under this definition — and are expected to be superseded in enterprise value by Do-Engine architectures over 2026.
 
+## AI Engineering Definition (Huyen, 2025)
+
+Chip Huyen's *AI Engineering* (O'Reilly, 2025) provides a foundational definition from first principles:
+
+> "An agent is anything that can perceive its environment and act upon that environment."
+
+An agent is characterized by two dimensions:
+1. **Environment**: The space the agent operates in — a game, the internet, a codebase, a kitchen, the road system
+2. **Set of actions**: What the agent can do — augmented by the tools it has access to
+
+The environment determines the *possible* actions. The agent's tool inventory restricts the *actual* environment it can operate in. A coding agent whose only tool is file editing is confined to the filesystem environment.
+
+An AI agent specifically uses a foundation model as its "brain" — processing the task, reasoning about what to do, planning a sequence of actions, and determining when the task is complete. The key distinction from a simple LLM-powered app is that the model *controls the execution flow*, not just the generation of individual responses.
+
+**Agent components in practice** (from Chapter 6):
+- **Planning**: Breaking the goal into achievable sub-steps; deciding which tool to invoke next
+- **Tools**: Read actions (search, retrieval, SQL query) and write actions (email, database write, API call)
+- **Memory**: Short-term (in-context), episodic (session history), semantic (vector retrieval), procedural (system prompt / learned behavior)
+
+The three main agent failure modes are: taking too long (infinite loops), making too many mistakes (compounding errors), and incurring too much cost (uncontrolled tool usage).
+
 ## See Also
 - [Agent Types](agent-types.md)
 - [Architecture and Design Patterns](../Architecture/components-selection.md)
 - [OpenAI Design Patterns](../DesignPatterns/openai-patterns.md)
+- [AI Engineering Overview](ai-engineering.md)
 - [2026 AI Predictions (You.com)](ai-predictions-2026.md)

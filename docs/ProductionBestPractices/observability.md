@@ -191,17 +191,21 @@ For multi-agent systems on AWS, a layered approach is required:
 
 Layered evaluation strategy for multi-agent systems: per-agent evaluations (isolated datasets) + full workflow evaluation (`Builtin.GoalSuccessRate`) + differential analysis correlating per-agent scores against system-level outcomes.
 
+## Monitoring Health: MTTD, MTTR, CFR (Huyen, 2025)
+
+From *AI Engineering* (Chip Huyen, O'Reilly, 2025), three DevOps-derived metrics provide a clear signal on the health of your observability infrastructure:
+
+| Metric | Definition | What It Reveals |
+|---|---|---|
+| **MTTD** (Mean Time to Detection) | Time from failure occurrence to detection | Quality of your alerting and monitoring coverage |
+| **MTTR** (Mean Time to Response) | Time from detection to resolution | Quality of your debugging tools and runbooks |
+| **CFR** (Change Failure Rate) | % of deployments that cause failures requiring rollback | Quality of your pre-deployment evaluation pipeline |
+
+**Key principle**: Evaluation and monitoring must be tightly coupled. A model that performs well in offline evaluation should also perform well in production. If CFR is high, it is a signal that your evaluation pipeline is not catching issues before deployment — not just a monitoring problem.
+
+Issues detected in monitoring must feed back into the evaluation pipeline as new test cases, closing the quality loop.
+
 ## See Also
-- [Deployment](./deployment.md)
-- [Cost Management](./cost-management.md)
-- [Agent Testing & Evaluations](./testing-evaluations.md)
-- [Multi-Agent Systems](../Architecture/multi-agent-system.md)
-- [Observability Solutions](../Observability/solutions.md)
-
-## References
-- [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for trace field taxonomy, trace grading questions, and diagnostic framework
-
-Managing an autonomous agent in production requires a continuous operational cycle rather than static monitoring:
 
 - **Observe**: Understand the system's behavior in real time via logs, traces, and metrics. This is the sensory system for everything downstream.
 - **Act**: Pull real-time levers to maintain performance, safety, and cost. Think of this as the system's automated reflexes — not strategic improvements.

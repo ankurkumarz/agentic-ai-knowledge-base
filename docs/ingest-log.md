@@ -7,6 +7,45 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ## [2026-06-30] ingest | Gartner — AI Evaluation and Observability Platforms (AEOPs) | sections touched: EvaluationFrameworks/platforms.md, Observability/Readme.md
 
+## [2025-12-04] ingest | AI Engineering: Building Applications with Foundation Models (Chip Huyen, O'Reilly) | sections touched: Concepts/ai-engineering.md (new), EvaluationFrameworks/ai-as-judge.md (new), ReferenceArchitecture/ai-engineering-architecture.md (new), PromptEngineering/README.md, RAG/Readme.md, Concepts/agent-definition.md, EvaluationFrameworks/llm-frameworks.md, ProductionBestPractices/cost-management.md, ProductionBestPractices/observability.md, mkdocs.yml, index.md
+
+**Source**: `raw/AIEngineering.pdf`
+**Type**: Book (535 pages, O'Reilly, December 2024)
+**Author**: Chip Huyen
+**ISBN**: 978-1-098-16630-4
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Concepts/ai-engineering.md` | Created | AI Engineering discipline overview — rise of AI engineering, three-factor model, 8-category use case taxonomy, AI stack layers, AI engineering vs. ML engineering comparison table, application planning framework |
+| `docs/EvaluationFrameworks/ai-as-judge.md` | Created | Comprehensive AI-as-judge guide — three usage patterns, prompt design principles, built-in criteria comparison table, limitations (inconsistency, length/positional bias, criteria ambiguity), judge model selection matrix, pairwise comparative evaluation, best practices table |
+| `docs/ReferenceArchitecture/ai-engineering-architecture.md` | Created | Five-step production architecture — base → context enhancement → guardrails → router/gateway → caching → agent patterns; monitoring metrics (MTTD, MTTR, CFR); orchestration patterns |
+| `docs/PromptEngineering/README.md` | Full rewrite | Added overview, prompting concepts (in-context learning, system/user prompt split), 6 best practices (clear instructions, context, task decomposition, CoT, iteration, versioning), defensive prompt engineering (injection, jailbreaking, defenses table), structured outputs |
+| `docs/RAG/Readme.md` | Extended | Added full RAG Architecture section (retriever/generator components, retrieval algorithm comparison table, optimization strategies, RAG vs. finetuning vs. full-context comparison) |
+| `docs/Concepts/agent-definition.md` | Extended | Added Huyen/AI Engineering definition — environment + actions framing, agent components (planning/tools/memory), three main failure modes |
+| `docs/EvaluationFrameworks/llm-frameworks.md` | Extended | Added See Also link to new ai-as-judge.md page |
+| `docs/ProductionBestPractices/cost-management.md` | Extended | Added Inference Optimization section — performance metrics (TTFT/TPOT/MFU/MBU), model-level optimizations (quantization/distillation/speculative decoding), service-level optimizations (continuous batching/KV cache/prompt caching), online vs. batch inference table |
+| `docs/ProductionBestPractices/observability.md` | Extended | Added MTTD/MTTR/CFR framework section with evaluation-monitoring coupling principle |
+| `mkdocs.yml` | Extended | Added Section 1.7 AI Engineering (Huyen); Section 7.2 AI Engineering Architecture; Section 10.2 AI as a Judge |
+| `docs/index.md` | Extended | Added AI Engineering bullet to Concepts; added AI-as-judge bullet to Agent Testing & Evaluations |
+
+### Summary
+
+Chip Huyen's *AI Engineering* is the definitive practical reference for building production AI applications on top of foundation models. The book's 10 chapters cover the full lifecycle: understanding foundation models, evaluation methodology, prompt engineering, RAG, agents, finetuning, dataset engineering, inference optimization, and end-to-end production architecture.
+
+Key concepts added to the wiki:
+- **AI Engineering discipline** — how it differs from ML engineering; three-factor model of why it emerged; 8 use case categories with consumer/enterprise breakdown
+- **Five-step production architecture** — progressive complexity model from bare model API through context augmentation, guardrails, routing/gateway, caching, and agent patterns
+- **AI as a Judge** — comprehensive treatment of LLM-as-judge methodology including three usage patterns, prompt design, limitations, and judge selection
+- **Prompt engineering best practices** — 6 principles distilled from Huyen + OpenAI/Anthropic/Google guides, with emphasis on task decomposition and defensive prompting
+- **RAG architecture** — retrieval algorithm comparison (keyword/dense/hybrid/reranking), chunking strategies, RAG vs. finetuning decision framework
+- **Inference optimization** — TTFT/TPOT/MFU/MBU metrics, quantization/distillation/speculative decoding, continuous batching/KV cache, online vs. batch API trade-offs
+- **Observability metrics** — MTTD/MTTR/CFR framework for monitoring infrastructure health; evaluation-monitoring feedback loop
+
+---
+
 ## [2026-06-04] ingest | Microsoft Build 2026 — Building Agentic Apps with Microsoft Fabric and Microsoft Databases | sections touched: AgentPlatforms/microsoft-fabric-databases-2026.md (new), AllThingsMicrosoft/README.md, AgentPlatforms/microsoft-azure.md, mkdocs.yml
 
 **Sources**:

@@ -111,6 +111,62 @@ For multi-tenant or multi-team deployments:
 - Implement chargeback reporting for internal cost allocation
 - Track cost-per-task-completion as a business metric alongside raw token spend
 
+## Inference Optimization for Cost and Latency
+
+Synthesized from Chip Huyen's *AI Engineering* (O'Reilly, 2025, Chapter 9). Relevant primarily when **self-hosting** models. Teams using third-party model APIs (OpenAI, Anthropic, Google) get these optimizations automatically from the provider.
+
+### Inference Performance Metrics
+
+Understanding these metrics is prerequisite to optimization:
+
+| Metric | Definition | What to Optimize |
+|---|---|---|
+| **TTFT** (Time to First Token) | Time from query submission to first output token | User-perceived latency; critical for chatbots |
+| **TPOT** (Time Per Output Token) | Time to generate each subsequent token | Streaming throughput |
+| **Total latency** | TTFT + TPOT × (output token count) | End-to-end response time |
+| **Throughput (TPS)** | Output tokens per second across all concurrent users | Serving capacity |
+| **Goodput** | Requests per second that meet SLO (latency threshold) | Production SLO compliance |
+| **MFU** | Model FLOP/s utilization — actual vs. theoretical peak compute | GPU efficiency |
+| **MBU** | Model Bandwidth Utilization — actual vs. peak memory bandwidth | Memory efficiency for decode |
+
+**Key insight**: LLM inference has two phases with distinct bottlenecks:
+- **Prefill** (processing input tokens in parallel): compute-bound
+- **Decode** (generating output tokens one at a time): memory bandwidth-bound
+
+Optimize for both separately. Decoupling prefill and decode onto separate hardware is a production best practice for high-throughput serving.
+
+### Model-Level Optimizations
+
+| Technique | Description | Trade-off |
+|---|---|---|
+| **Quantization** | Reduce weight precision (FP32→FP16→INT8→INT4) | Lower memory, faster inference; potential quality loss at extreme precision |
+| **Pruning** | Remove near-zero weights | Fewer parameters; requires fine-grained hardware support for sparse ops |
+| **Knowledge distillation** | Train a smaller "student" model to mimic a larger "teacher" | Smaller, cheaper model at similar quality on target tasks |
+| **Speculative decoding** | Draft model proposes multiple tokens; large model verifies in parallel | Faster generation with same output quality; requires compatible draft model |
+| **Flash Attention** | Fused kernel for attention computation; reduces memory I/O | Major speedup for long contexts; widely available in major frameworks |
+
+**Quantization in practice**: FP16 is standard for inference. INT8 reduces memory ~50% with minimal quality loss on most tasks. INT4 can reduce memory ~75% but needs careful evaluation. Quantization also reduces bandwidth consumption: fewer bytes per parameter means higher MBU for the same throughput.
+
+### Inference Service-Level Optimizations
+
+| Technique | Description | When to Use |
+|---|---|---|
+| **Continuous batching** | Add new requests to in-flight batches as slots free up | High-concurrency production services; reduces GPU idle time |
+| **KV cache management** | Reuse cached key-value states across requests sharing a common prefix | Systems with shared system prompts; reduces prefill compute |
+| **Prompt caching** | Cache entire prefill computation for identical prompt prefixes | Large, stable system prompts; 80–90% token cost reduction for cached portion |
+| **Prefill-decode disaggregation** | Separate prefill (compute-bound) and decode (bandwidth-bound) onto different hardware | Very high throughput requirements |
+| **Tensor parallelism** | Split model across multiple GPUs for single-request inference | Models too large for a single GPU; reduces per-request latency |
+| **Pipeline parallelism** | Stage different model layers across GPUs | Scale beyond tensor parallelism for very large models |
+
+### Online vs. Batch Inference
+
+| Mode | Latency | Cost | Use Cases |
+|---|---|---|---|
+| **Online API** | Low (seconds) | Standard | Chatbots, code generation, real-time queries |
+| **Batch API** | High (hours) | ~50% lower | Synthetic data generation, periodic reports, document processing, recommendation generation |
+
+Both Google Gemini and OpenAI offer batch APIs at approximately 50% cost reduction for non-real-time workloads.
+
 ## Deployment-Aware Context Strategy Selection
 
 Choosing the right context management strategy is one of the highest-leverage cost optimizations available. Shen et al. (2026) showed that a **deployment-aware** choice — accounting for reuse patterns, not just per-query cost — yields ~25% token savings at equivalent quality versus defaulting to a single strategy.

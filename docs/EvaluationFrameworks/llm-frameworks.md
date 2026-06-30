@@ -145,6 +145,7 @@ evaluate([test_case], [AnswerRelevancyMetric(), FaithfulnessMetric()])
 
 ## See Also
 
+- [AI as a Judge — Deep Dive](ai-as-judge.md)
 - [Agent Evaluation Platforms](platforms.md)
 - [Benchmarks](../Benchmarks/Readme.md)
 - [Observability](../Observability/Readme.md)
