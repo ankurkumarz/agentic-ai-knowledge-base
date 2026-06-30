@@ -299,5 +299,6 @@ This comprehensive observability framework provides the foundation for maintaini
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Framework observability features
 - **[Agent Ops](../AgentOps/README.md)**: Operational practices and methodologies
 - **[Evaluation Frameworks](../EvaluationFrameworks/Readme.md)**: Evaluation and monitoring approaches
+- **[AI Evaluation and Observability Platforms (AEOPs)](../EvaluationFrameworks/platforms.md)**: Gartner market definition, AEOP capability taxonomy, and platform comparison
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform observability capabilities
 - **[Production Observability](../ProductionBestPractices/observability.md)**: Production tracing, cost visibility, and regression practices

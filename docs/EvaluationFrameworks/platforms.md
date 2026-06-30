@@ -4,6 +4,25 @@
 
 Agent evaluation platforms provide end-to-end infrastructure for testing, measuring, and improving AI agent performance in production. They go beyond simple metric computation to offer dataset management, experiment tracking, human review workflows, and continuous monitoring.
 
+## Gartner Market Definition: AI Evaluation and Observability Platforms (AEOPs)
+
+Gartner defines **AI Evaluation and Observability Platforms (AEOPs)** as tools that help manage the challenges of nondeterminism and unpredictability in AI systems. AEOPs automate evaluations ("evals") to benchmark AI outputs against quality expectations such as performance, fairness, and accuracy. These tools create a positive feedback loop by feeding observability data (logs, metrics, traces) back to evals, which helps improve system reliability and alignment. AEOPs can be procured as a stand-alone solution or as part of broader AI application development platforms.
+
+### Core AEOP Capabilities
+
+Gartner identifies eight defining capability areas for AEOPs:
+
+| Capability | Description |
+|---|---|
+| **AI system observability** | Capture logs, metrics, and traces at varying granularity — from multistep agentic workflows to a single request-response. Covers reliability measures (latency, error rates), trust measures (explainability, correctness, relevance, fairness), and cost measures (token costs). |
+| **Automation of evaluation runs** | Systematically test an AI system against a predefined dataset and score outputs with custom rubrics using multiple evaluator types: code-based functions, human judgment, or LLM-as-a-judge. Use evals as quality gates to prevent regressions and unsafe outputs from reaching production. |
+| **Online and offline evaluations** | Offline: test application performance on curated or external datasets in preproduction. Online: "live" monitoring of application behavior in production to assess performance and take real-time action. |
+| **Prompt lifecycle management** | Create, parameterize, version, test, and replay prompts. Prompt parametrization and versioning promote reusability and reproducibility across experiments. |
+| **Sandbox environments** | Enable technical and nontechnical stakeholders to iterate on prompts rapidly, experiment with different models and parameters (e.g., temperature), and visually compare outputs in real time. Connect to model provider APIs via API keys — no model hosting required. |
+| **Dataset management and curation** | Curate and manage evaluation datasets at scale. Datasets contain sample prompts with optional context and expected outputs. Capabilities include creating datasets from scratch, uploading existing data, managing versions, and annotating with ground-truth answers. |
+| **Custom metrics support** | Support general-purpose metrics frameworks such as Ragas, G-Eval, and GEMBA to quantify subjective measures (faithfulness, coherence, relevance, precision). Enable creation of application-specific metrics tailored to safety and alignment goals. |
+| **Model-agnostic design** | Support multiple commercial and open-source models across frontier providers to prevent vendor lock-in and serve versatile use cases. |
+
 ## Enterprise Evaluation Platforms
 
 ### Galileo
@@ -162,8 +181,11 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 - [LLM Evaluation Frameworks](llm-frameworks.md)
 - [Benchmarks](../Benchmarks/Readme.md)
 - [Observability Solutions](../Observability/solutions.md)
+- [Agent Observability Overview](../Observability/Readme.md)
+- [Production Observability](../ProductionBestPractices/observability.md)
 - [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
 
 ## References
 
+- [Gartner — AI Evaluation and Observability Platforms (Market Reviews)](https://www.gartner.com/reviews/market/ai-evaluation-and-observability-platforms) — market definition, capability taxonomy, and vendor reviews for AEOPs
 - [Evaluate AI agents systematically with Agent-EvalKit (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit/) — introduces the six-phase evaluation workflow and CLI integrations
