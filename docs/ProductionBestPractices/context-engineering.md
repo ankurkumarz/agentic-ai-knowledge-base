@@ -112,6 +112,7 @@ Prompt caching reduces costs significantly for agents with large, stable system 
 - [Cost Management](./cost-management.md)
 - [Agent Security](./security.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — automated search over context management strategies; complements manual context engineering
+- [Semantic Data Layer Technology Radar](../AgenticTechStack/semantic-data-layer-radar.md) — governed semantic layers as the query surface agents consume instead of raw schemas
 
 ## References
 - [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026. Introduces deployment-aware strategy selection via amortized cost modeling.
