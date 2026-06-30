@@ -123,7 +123,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 ### **State & Memory Management**
 - **Three Functional Tiers**: Short-term, episodic, and long-term memory systems
 - **LTM Strategies**: Vector RAG, knowledge graphs, entity extraction, and reflection
-- **Memory Solutions**: Mem0, MemMachine, Zep, AgentFS, and cloud-managed memory services
+- **Memory Solutions**: Mem0, MemMachine, Zep, AgentFS, cloud-managed memory services (AWS AgentCore, Vertex, Azure, Anthropic Managed Agents, Salesforce Agentic Memory, Cloudflare Agent Memory), agentmemory, MinnsDB, and framework-native memory (LangGraph, LlamaIndex, CrewAI) — full Technology Radar comparison
 
 ### **Deployment**
 - **AgentOps & GenOps**: Evolution of MLOps for generative AI systems

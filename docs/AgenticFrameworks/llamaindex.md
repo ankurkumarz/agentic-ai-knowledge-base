@@ -46,3 +46,4 @@ LlamaIndex is a data framework for connecting custom data sources to large langu
 - [Agent Development Frameworks](README.md)
 - [RAG Reference Architecture](../ReferenceArchitecture/rag-architecture.md)
 - [Context Engineering](../ContextEngineering/README.md)
+- [Memory Solutions & Technology Radar](../AgentMemory/solutions.md) — LlamaIndex Memory module vs. dedicated memory vendors

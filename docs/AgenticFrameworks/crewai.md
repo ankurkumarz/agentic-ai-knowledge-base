@@ -49,3 +49,4 @@ CrewAI is a framework for orchestrating role-playing, autonomous AI agents. Crew
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [LangChain](langchain.md)
 - [AutoGen](autogen.md)
+- [Memory Solutions & Technology Radar](../AgentMemory/solutions.md) — CrewAI's unified Memory class vs. dedicated memory vendors

@@ -5,6 +5,25 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-30] ingest | Memory Solutions Radar updates — Anthropic, Salesforce, Cloudflare, MinnsDB, agentmemory, framework-native memory | sections touched: AgentMemory/solutions.md, AgentPlatforms/claude-managed-agents.md, AgenticFrameworks/langchain.md, AgenticFrameworks/crewai.md, AgenticFrameworks/llamaindex.md, index.md
+
+**Source**: Multi-source WebSearch/GitHub API research (no single raw document); user-supplied candidate list of 6 memory tools/vendors to evaluate for radar inclusion, verified against primary sources where accessible
+**Type**: Vendor/tool research — Technology Radar update
+**Processed by**: Claude Code
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentMemory/solutions.md` | Extended | Added 5 new radar entries: Anthropic Claude Managed Agents — Memory (🔵 Trial), Salesforce Agentic Memory/Agentforce (🔵 Trial), agentmemory by rohitg00 (🟡 Assess), Cloudflare Agent Memory (🟡 Assess), MinnsDB (🔴 Caution, unverified primary source — third-party listicle only). Added new "Framework-Native Memory" subsection comparing LangGraph Checkpointer/Store, LlamaIndex Memory module, and CrewAI's unified Memory class as baseline architectures. Updated both Mermaid radar charts, Radar Summary Table, Selection Guide, References, and See Also. Fixed a pre-existing missing `#### Azure AI Foundry Memory` heading. |
+| `docs/AgentPlatforms/claude-managed-agents.md` | Extended | Added backlink to `../AgentMemory/solutions.md` in See Also (bidirectional link for knowledge graph) |
+| `docs/AgenticFrameworks/langchain.md` | Extended | Added backlink to `../AgentMemory/solutions.md` in See Also |
+| `docs/AgenticFrameworks/crewai.md` | Extended | Added backlink to `../AgentMemory/solutions.md` in See Also |
+| `docs/AgenticFrameworks/llamaindex.md` | Extended | Added backlink to `../AgentMemory/solutions.md` in See Also |
+| `docs/index.md` | Extended | Updated State & Memory Management bullet to reflect expanded radar coverage |
+
+**Note**: WebFetch returned 403 for engineering.salesforce.com, blog.cloudflare.com, and dev.to; those three sources were summarized via WebSearch snippets rather than direct page reads. MinnsDB could not be independently verified beyond a single third-party dev.to listicle — no GitHub repository, company site, or other primary source was located; the radar entry is explicitly flagged Caution with unverified/unconfirmed placeholders rather than invented data.
+
 ## [2026-06-30] ingest | Gartner — AI Evaluation and Observability Platforms (AEOPs) | sections touched: EvaluationFrameworks/platforms.md, Observability/Readme.md
 
 ## [2025-12-04] ingest | AI Engineering: Building Applications with Foundation Models (Chip Huyen, O'Reilly) | sections touched: Concepts/ai-engineering.md (new), EvaluationFrameworks/ai-as-judge.md (new), ReferenceArchitecture/ai-engineering-architecture.md (new), PromptEngineering/README.md, RAG/Readme.md, Concepts/agent-definition.md, EvaluationFrameworks/llm-frameworks.md, ProductionBestPractices/cost-management.md, ProductionBestPractices/observability.md, mkdocs.yml, index.md
