@@ -37,6 +37,57 @@ This radar reframes Thoughtworks' generic quadrants into four landscape-specific
 
 ---
 
+## Technology Radar
+
+Solutions are split across two charts to avoid label clutter. Both share the same x-axis (ring position: Assess → Trial/Adopt). The y-axis differs per chart.
+
+**How to read:**
+- **Right side** (x > 0.5) = Trial/Adopt — production-ready, stronger default candidates
+- **Left side** (x < 0.5) = Assess — situational, niche, or still maturing
+
+### Chart 1 — Cloud Data Platform-Native & BI Semantic Layers
+
+Y-axis: BI-tool-scoped (bottom) → warehouse/lakehouse-native (top)
+
+```mermaid
+quadrantChart
+    title Cloud Data Platform & BI Semantic Layers — June 2026
+    x-axis Assess --> Trial/Adopt
+    y-axis BI-Native --> Platform-Native
+    quadrant-1 Platform-Native - Production Ready
+    quadrant-2 Platform-Native - Emerging
+    quadrant-3 BI-Native - Emerging
+    quadrant-4 BI-Native - Production Ready
+    AWS QuickSight Topics: [0.42, 0.22]
+    Looker LookML: [0.82, 0.20]
+    Power BI + Fabric OneLake: [0.85, 0.55]
+    Databricks Metric Views: [0.60, 0.82]
+    Snowflake Semantic Views: [0.74, 0.88]
+```
+
+### Chart 2 — Universal Semantic Layers & Metrics Stores
+
+Y-axis: domain-specific (bottom) → general-purpose / enterprise-wide (top)
+
+```mermaid
+quadrantChart
+    title Universal Semantic Layers & Metrics Stores — June 2026
+    x-axis Assess --> Trial/Adopt
+    y-axis Domain-Specific --> General-Purpose
+    quadrant-1 General-Purpose - Production Ready
+    quadrant-2 General-Purpose - Emerging
+    quadrant-3 Domain-Specific - Emerging
+    quadrant-4 Domain-Specific - Production Ready
+    Bright Analytics: [0.25, 0.18]
+    Honeydew: [0.45, 0.35]
+    Denodo Universal Semantic Layer: [0.60, 0.62]
+    dbt Semantic Layer MetricFlow: [0.62, 0.72]
+    Cube Core/Cloud: [0.78, 0.75]
+    AtScale: [0.85, 0.85]
+```
+
+---
+
 ## Cloud Data Platform-Native Semantic Layers
 
 ### Snowflake — Semantic Views
