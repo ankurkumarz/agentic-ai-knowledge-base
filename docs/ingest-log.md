@@ -5,6 +5,8 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-06-30] ingest | Semantic Data Layer Landscape — ThoughtWorks-style Technology Radar (pasted research) | sections touched: AgenticTechStack/semantic-data-layer-radar.md (new), AgenticTechStack/README.md, AgenticTechStack/thoughtworks-radar-vol34.md, AllThingsAWS/README.md, AllThingsGoogle/README.md, AllThingsMicrosoft/README.md, AgentPlatforms/microsoft-fabric-databases-2026.md, RAG/Readme.md, ProductionBestPractices/context-engineering.md, mkdocs.yml, index.md
+
 ## [2026-06-30] ingest | Gartner — AI Evaluation and Observability Platforms (AEOPs) | sections touched: EvaluationFrameworks/platforms.md, Observability/Readme.md
 
 ## [2025-12-04] ingest | AI Engineering: Building Applications with Foundation Models (Chip Huyen, O'Reilly) | sections touched: Concepts/ai-engineering.md (new), EvaluationFrameworks/ai-as-judge.md (new), ReferenceArchitecture/ai-engineering-architecture.md (new), PromptEngineering/README.md, RAG/Readme.md, Concepts/agent-definition.md, EvaluationFrameworks/llm-frameworks.md, ProductionBestPractices/cost-management.md, ProductionBestPractices/observability.md, mkdocs.yml, index.md

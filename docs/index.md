@@ -67,6 +67,7 @@ Comprehensive coverage of major development frameworks:
 
 ### **6. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
+- **Semantic Data Layer Technology Radar**: Thoughtworks-style radar of cloud-native semantic layers (Snowflake Semantic Views, Databricks Metric Views, Power BI/Fabric semantic models, AWS QuickSight Topics, Google Looker/LookML) vs. universal semantic layers and metrics stores (dbt Semantic Layer, Cube, AtScale, Denodo, Honeydew, Bright Analytics) and the emerging Open Semantic Interchange (OSI) standard
 - **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform, AWS AgentCore, Microsoft Azure AI; **Enterprise Platform Comparison (2026)** covering Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, Kore.ai, UiPath Maestro, Azure AI Foundry Agent Service, IBM watsonx Orchestrate, LangGraph, and CrewAI Enterprise with pricing, adoption data, and honest constraints
 - **Workflow Engines**: Open source, self-hosted, and SaaS solutions; **Temporal** for durable execution — fault-tolerant, long-running AI agent workflows with Event History replay, Signals for human-in-the-loop, and Child Workflows for multi-agent fan-out; **Confluent** (Apache Kafka & Flink) as the event-streaming backbone for high fan-out multi-agent coordination, agentic RAG ingestion, and real-time stream processing
 - **Popular AI Agents**: Coding agents, research agents, and super agents

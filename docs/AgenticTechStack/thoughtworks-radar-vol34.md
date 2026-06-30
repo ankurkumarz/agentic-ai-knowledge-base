@@ -266,6 +266,7 @@ Teams invest in **coding agent harnesses**: feedforward controls (Agent Skills, 
 ## See Also
 
 - [Agent Tech Stack References](README.md)
+- [Semantic Data Layer Technology Radar](semantic-data-layer-radar.md)
 - [Agentic Framework Solutions Tech Radar](../AgenticFrameworks/solutions.md)
 - [Context Engineering](../ContextEngineering/README.md)
 - [Agent Observability Tech Radar](../Observability/tech-radar.md)

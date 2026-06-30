@@ -21,6 +21,7 @@ The modern agent technology stack encompasses multiple layers:
 Across these layers, this wiki maintains **Technology Radars** that summarize ecosystem choices:
 
 - **Thoughtworks Tech Radar (Vol. 34, Apr 2026)**: [Agentic AI Digest](thoughtworks-radar-vol34.md) — 118-blip industry radar with full agentic AI coverage (Section 5.1.1)
+- **Semantic Data Layer Radar**: [Semantic Data Layer Technology Radar](semantic-data-layer-radar.md) — cloud-native (Snowflake Semantic Views, Databricks Metric Views, Power BI/Fabric, QuickSight Topics, Looker) vs. universal semantic layers (dbt Semantic Layer, Cube, AtScale, Denodo, Honeydew) and the emerging Open Semantic Interchange (OSI) standard (Section 5.1.2)
 - **Frameworks Radar**: [Agentic Framework Solutions](../AgenticFrameworks/solutions.md) (Section 4.16)
 - **Agent Platforms & Stack**: Platform coverage in this section (5.2) plus vendor deep dives in Section 5 and 18
 - **Observability Radar**: [Agent Observability Tech Radar](../Observability/tech-radar.md) (Section 12.4)
@@ -112,6 +113,7 @@ For full radar assessments, decision criteria, and selection guidance see **[Age
 
 #### See Also
 
+- **[Semantic Data Layer Technology Radar](semantic-data-layer-radar.md)**: Radar for cloud-native and universal semantic data layer products
 - **[Agent Memory Solutions Radar](../AgentMemory/solutions.md)**: Full radar for memory and context management tooling
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Development tools and frameworks
 - **[Frameworks Technology Radar](../AgenticFrameworks/solutions.md)**: Technology radar for development frameworks

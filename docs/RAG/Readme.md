@@ -73,6 +73,7 @@ Agentic contextual retrieval:
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [RAG Reference Architecture](../ReferenceArchitecture/rag-architecture.md)
 - [Search as Code](search-as-code.md)
+- [Semantic Data Layer Technology Radar](../AgenticTechStack/semantic-data-layer-radar.md)
 
 ## References
 

@@ -154,6 +154,7 @@ Foundry IQ knowledge bases unify Work IQ, Fabric IQ, File Search, Azure SQL, and
 - [RAG Architecture](../ReferenceArchitecture/rag-architecture.md)
 - [Agent Memory](../AgentMemory/README.md)
 - [Context Engineering](../ContextEngineering/README.md)
+- [Semantic Data Layer Technology Radar](../AgenticTechStack/semantic-data-layer-radar.md)
 - [AllThingsMicrosoft](../AllThingsMicrosoft/README.md)
 - [Production Best Practices — State and Memory](../ProductionBestPractices/state-memory.md)
 - [Production Best Practices — Cost Management](../ProductionBestPractices/cost-management.md)
