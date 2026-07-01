@@ -49,7 +49,9 @@ quadrantChart
     LanceDB: [0.73, 0.32]
     LangMem: [0.40, 0.70]
     OpenViking: [0.30, 0.85]
+    agentmemory: [0.45, 0.85]
     AgentFS: [0.20, 0.30]
+    MinnsDB: [0.18, 0.62]
     Holographic: [0.10, 0.18]
 ```
 
@@ -68,8 +70,11 @@ quadrantChart
     quadrant-4 Startup - Production
     AWS AgentCore: [0.88, 0.85]
     Vertex AI Memory: [0.72, 0.82]
+    Salesforce Agentic Memory: [0.62, 0.88]
     Azure Foundry: [0.65, 0.75]
+    Anthropic Managed Memory: [0.70, 0.78]
     Oracle AgentMem: [0.58, 0.68]
+    Cloudflare Agent Memory: [0.38, 0.62]
     Maximem Synap: [0.44, 0.38]
     RetainDB: [0.30, 0.22]
 ```
@@ -252,6 +257,7 @@ The key differentiator is Oracle AI Database's converged engine — hybrid retri
 
 ---
 
+#### Azure AI Foundry Memory
 
 **Type**: Fully managed cloud service (Microsoft Azure)
 **Memory types served**: Working (session state), Semantic
@@ -272,6 +278,54 @@ Microsoft's managed state and memory layer within Azure AI Foundry. Provides ent
 | Open source | No |
 | Production readiness | GA (Azure AI Foundry) |
 | Backing | Microsoft |
+
+---
+
+#### Anthropic Claude Managed Agents — Memory
+**Type**: Fully managed memory feature within Claude Managed Agents (Anthropic)
+**Memory types served**: Working (mounted memory-store filesystem), Semantic, Episodic, Procedural (curated via Dreaming)
+**Docs**: [Using agent memory — Claude API Docs](https://platform.claude.com/docs/en/managed-agents/memory)
+
+Anthropic's first-party memory layer for agents built on Claude Managed Agents, in public beta since April 23, 2026. A **memory store** is a workspace-scoped collection of text documents mounted as a directory (`/mnt/memory/`) inside the agent's container, read and written with ordinary file tools rather than a separate memory API. Every mutation creates an immutable, auditable version (30-day retention). The companion **Dreaming** feature (research preview) runs between sessions to deduplicate, de-conflict, and consolidate memory — Anthropic's production implementation of the Reflection/Consolidation LTM strategy. Pilot customer Harvey reported roughly a 6× jump in task completion rates using the combined Memory + Dreaming + Outcomes loop for legal-drafting workflows. Full architecture, API, and best practices are documented on the dedicated [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md) page.
+
+**Why Trial**: Backed by Anthropic's own infrastructure and model roadmap, with a filesystem-native design that avoids inventing a bespoke memory query language. The Dreaming consolidation loop is a differentiated, research-grounded approach to memory curation not offered by other hyperscaler memory products. Real production evidence (Harvey) strengthens the signal. Held at Trial rather than Adopt because Memory and Multiagent Orchestration are public beta and Dreaming remains a request-gated research preview, and the platform is explicitly not eligible for Zero Data Retention or HIPAA BAA coverage.
+
+**Best for**: Teams already building on Claude Managed Agents who want memory, self-grading (Outcomes), and multiagent orchestration as part of the same managed harness rather than bolting on a separate memory vendor.
+
+**Limitations**: Anthropic/Claude lock-in — not portable to other model providers. Filesystem-mounted memory defaults to read-write access, which creates a prompt-injection risk if untrusted content reaches the store (Anthropic recommends `read_only` for reference material). Per-file size capped at 100 kB. Dreaming requires a separate beta request.
+
+| Dimension | Signal |
+|---|---|
+| Research | Reflection/Consolidation LTM strategy (CoALA); hippocampal-consolidation analogy |
+| GitHub stars | N/A (managed service) |
+| Open source | No |
+| Production readiness | Public beta (Memory, Outcomes, Multiagent); research preview (Dreaming) |
+| Backing | Anthropic |
+
+---
+
+#### Salesforce Agentic Memory (Agentforce)
+**Type**: Governed memory layer within Agentforce (proprietary, Salesforce)
+**Memory types served**: Working (session-scoped context), Semantic (persistent profile graph), Episodic (cross-channel interaction history)
+**Docs**: [How Agentic Memory Enables Reliable AI Agents Across Enterprise Users — Salesforce Engineering Blog](https://engineering.salesforce.com/how-agentic-memory-enables-durable-reliable-ai-agents-across-millions-of-enterprise-users/)
+
+Salesforce's enterprise memory core for Agentforce agents, designed to serve millions of concurrent enterprise users without degrading into noisy or stale context. Short-term memory stays tethered to the active session; long-term memory is linked to a persistent **profile graph** that endures across sessions and across communication channels (chat, email, voice). Salesforce engineering describes the accuracy problem as a governance problem: a **Write Validation Gate** acts as a truth-maintenance system, checking new facts against established core facts and rejecting writes that contradict them, while a **Read Filtering** path enforces access scopes and temporal relevance at retrieval time. Confidence scoring and hybrid semantic validation let the system represent uncertainty (e.g., a conflict between a CRM record and a conversational signal) rather than asserting false certainty. A related but narrower capability, **Agentforce Variables** (April 2025), gives developers structured short-term memory for deterministic action invocation within a single session.
+
+**Why Trial**: The write/read gate architecture and confidence-scored profile graph are a more rigorously governed design than most dedicated memory startups publish, and Salesforce's "millions of enterprise users" scale claim is credible given Agentforce's existing CRM install base. Held at Trial rather than Adopt because it is a built-in platform capability rather than an independently adoptable product — there is no standalone SDK, no GitHub presence, and no public API reference outside the Agentforce platform itself.
+
+**Best for**: Enterprises already standardized on Salesforce/Agentforce that need governed, audit-friendly memory tied to existing CRM identity and profile data, particularly where conflicting signals between systems of record and live conversation must be reconciled rather than silently overwritten.
+
+**Limitations**: Fully proprietary and Agentforce-only — not usable outside the Salesforce platform, no self-hosting, no open-source component. No independent GitHub or community signal to evaluate. Architecture details are disclosed via engineering blog rather than formal documentation or benchmarks.
+
+| Dimension | Signal |
+|---|---|
+| Research | Salesforce Engineering blog (write/read gates, confidence scoring, hybrid semantic validation) |
+| GitHub stars | N/A (platform capability) |
+| Open source | No |
+| Production readiness | GA within Agentforce |
+| Backing | Salesforce |
+
+---
 
 #### Supermemory
 **Type**: Open-source memory engine (MIT) + managed cloud API
@@ -447,6 +501,53 @@ OpenViking is a context database from ByteDance's Volcano Engine that replaces f
 
 ---
 
+#### agentmemory (rohitg00)
+**Type**: Open-source persistent memory server for coding agents (Apache 2.0)
+**Memory types served**: Working (session capture), Semantic (knowledge graph), Episodic (session history, daily logs)
+**GitHub**: [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) — 24K+ stars
+**Docs**: npm [`@agentmemory/agentmemory`](https://www.npmjs.com/package/@agentmemory/agentmemory)
+
+A persistent memory runtime built on the `iii-engine` (Worker/Function/Trigger) primitives, purpose-built for coding agents rather than general-purpose conversational memory. A local server (REST on `:3111`, streaming on `:3112`, a viewer UI on `:3113`) silently captures agent activity — file edits, tool calls, decisions — compresses it into searchable memory, and injects relevant context at the start of the next session. The bundled MCP server exposes 53 tools (falling back to a 7-tool local set when no server is reachable) plus 8 invocable and 7 reference skills (`/recall`, `/remember`, `/handoff`, etc.). Twelve lifecycle hooks integrate natively with Claude Code (SessionStart, PreCompact, SubagentStop, and others), with additional native or MCP-based integrations for Codex CLI, GitHub Copilot CLI, Cursor, Gemini CLI, Hermes, OpenClaw, and other MCP clients — all sharing one memory server. Hybrid retrieval combines vector embeddings with BM25 keyword search; the project reports 95.2% on an internal retrieval benchmark and a 92% reduction in tokens needed to restore context, backed by 1,400+ passing tests.
+
+**Why Assess**: The breadth of agent integrations (16+), the MCP tool surface, and the hybrid retrieval design are genuinely capable, and the npm package and CI signal indicate real engineering behind it. However, the repository is only a few months old (created February 2026) and its 24K+ star count grew unusually fast even by this radar's standards — faster than OpenViking's already-rapid growth — which warrants verification before treating star count as a reliable adoption signal. Internal-only benchmarks (no independent LongMemEval/LoCoMo results) and a narrow focus on coding-agent workflows (rather than general conversational/personalization memory) further argue for monitoring rather than committing.
+
+**Best for**: Teams using coding agents (Claude Code, Cursor, Codex CLI, OpenClaw) who want session-to-session continuity and cross-tool shared memory without standing up a separate vector/graph database.
+
+**Limitations**: Very young project — production track record and independent benchmark validation are limited. Reported growth metrics are not independently verified. Scope is coding-agent-specific, not a general-purpose semantic/episodic memory layer. Requires running and maintaining a local `iii-engine`-based server.
+
+| Dimension | Signal |
+|---|---|
+| Research | Internal benchmarks (95.2% retrieval, 92% token reduction); extends a public design-gist pattern |
+| GitHub stars | 24K+ (as of June 2026; very rapid growth since Feb 2026 creation) |
+| Open source | Yes (Apache 2.0) |
+| Production readiness | GA — npm package, self-hosted only |
+| Backing | Independent maintainer |
+
+---
+
+#### Cloudflare Agent Memory
+**Type**: Managed cloud service, private beta (Cloudflare)
+**Memory types served**: Working (conversation extraction), Semantic (durable facts), Episodic (events), Procedural (extracted instructions/tasks)
+**Docs**: [developers.cloudflare.com/agent-memory](https://developers.cloudflare.com/agent-memory/)
+
+Announced during Cloudflare's Agents Week (April 12–17, 2026) and currently in private beta (waitlist), Agent Memory extracts structured memories — facts, events, instructions, and tasks — from agent conversations rather than retaining raw transcripts, then retrieves and injects only the relevant items at inference time. It is positioned explicitly as a fix for context rot in long-running agents. Access is via a binding from any Cloudflare Worker, or a REST API for agents running outside Workers. Agents interact with memory through an ingest/recall/forget profile-based API. Cloudflare emphasizes data portability — every memory is exportable — and is not currently billing during the beta period.
+
+**Why Assess**: Cloudflare's existing edge network and Workers/Durable Objects ecosystem (also the substrate behind Supermemory's self-hosted option, elsewhere on this radar) give the service credible infrastructure backing, and the extract-don't-replay design mirrors the architecture used by more mature competitors like Mem0 and Salesforce Agentic Memory. It is held at Assess rather than Trial because it is private beta only, pricing is undisclosed, and there is no public production case study yet.
+
+**Best for**: Teams already running agents on Cloudflare Workers who want managed memory without adding a separate vector/graph database vendor, once the service exits private beta.
+
+**Limitations**: Private beta — requires waitlist access. No disclosed pricing. Cloudflare-platform-coupled (Workers binding is the primary integration path). No independent production evidence yet.
+
+| Dimension | Signal |
+|---|---|
+| Research | Cloudflare engineering blog |
+| GitHub stars | N/A (managed service) |
+| Open source | No |
+| Production readiness | Private beta (announced April 2026) |
+| Backing | Cloudflare |
+
+---
+
 #### Maximem (Synap + Vity)
 **Type**: Managed cloud memory platform (proprietary)
 **Memory types served**: Working (short-term session context), Semantic (knowledge graph + vector), Episodic (interaction traces), Organizational (shared knowledge pipelines)
@@ -549,6 +650,28 @@ AgentFS provides a portable, SQLite-backed virtual filesystem for agents — a "
 
 ---
 
+#### MinnsDB
+**Type**: Multi-modal memory database, single Rust binary (license unconfirmed)
+**Memory types served**: Semantic (temporal knowledge graph, vector store, claim store), Episodic (episodic recall), Working (structured/temporal tables)
+
+MinnsDB is described as a single-binary memory database combining a temporal knowledge graph, vector store, BM25 index, claim store, temporal tables, and structured memory, with no external database dependencies (embedded `redb` storage). Every fact is stored as a graph edge with a validity window (`valid_from`/`valid_until`); an OWL/RDFS ontology layer drives cascade invalidation, so a new fact (e.g., "I moved to New York") automatically invalidates contradicted and dependent facts (e.g., "lives in London", "visits the British Museum on weekends"). Claimed retrieval fuses seven sources via Reciprocal Rank Fusion (BM25, node/edge vector similarity, confidence-scored verified claims, one-hop entity resolution, DRIFT community search, episodic recall), and a "MinnsDB Connect" component claims 49 source connectors (Slack, Gmail, Jira, Salesforce, GitHub, etc.).
+
+**Why Caution**: The architecture description (if accurate) is one of the more sophisticated temporal-graph designs covered on this radar, comparable in ambition to Graphiti. However, at the time of writing no independent GitHub repository, company identity, license, or production deployment could be located beyond a single third-party comparison article — the same evidence gap that places RetainDB and Maximem in this radar with caution flags. Treat all architectural claims as unverified until a primary source (repo, docs site, or vendor page) is found.
+
+**Best for**: Not currently recommended for adoption. Worth a closer look once a verifiable source (repository, official docs, or company page) becomes available — the temporal cascade-invalidation design is relevant for agents tracking state that changes over time (CRM, deal pipelines, personalization).
+
+**Limitations**: No verified GitHub repository, license, or vendor identity found as of this assessment. All technical claims trace to a single third-party listicle rather than primary documentation or benchmarks. Treat star count, performance, and connector claims as unverified.
+
+| Dimension | Signal |
+|---|---|
+| Research | Third-party comparison article only — no primary source located |
+| GitHub stars | Unverified — no repository located |
+| Open source | Unconfirmed |
+| Production readiness | Unverified |
+| Backing | Unconfirmed |
+
+---
+
 #### Holographic Memory (via Nuggets)
 **Type**: Open-source local memory module (individual project)
 **Memory types served**: Working (active context), Semantic (holographic vector memory)
@@ -572,6 +695,22 @@ An experimental personal AI assistant module that uses Holographic Reduced Repre
 
 ---
 
+## Framework-Native Memory
+
+The radar above covers dedicated, standalone memory products. Most agent frameworks also ship a built-in memory subsystem — not radar-rated here since they are framework features rather than independently adoptable products, but they are the realistic default for teams that have not yet decided to bring in a dedicated memory vendor.
+
+| Framework | Built-in Memory Mechanism | Notes |
+|---|---|---|
+| **LangGraph** (LangChain) | `Checkpointer` (thread-scoped working memory / state persistence) + `Store` (cross-thread long-term memory, typically backed by a vector store) | The lowest-level, most composable option — checkpointers and stores are pluggable (in-memory, Postgres, Redis), making LangGraph a common substrate teams wrap with LangMem or Mem0 rather than relying on the bare primitives in production |
+| **LlamaIndex** | `Memory` module — chat-history buffer plus pluggable long-term memory blocks (static facts, fact-extraction, vector-backed retrieval) composed per agent | Tightly coupled to LlamaIndex's retrieval-first design; most natural fit when memory and document/RAG retrieval should share the same indexing layer |
+| **CrewAI** | Unified `Memory` class — a single intelligent API that replaces the framework's earlier separate short-term, long-term, entity, and external memory types | *(Updated: earlier CrewAI releases exposed separate short-term/long-term/entity memory types enabled via `memory=True`; current docs describe these as consolidated into one `Memory` class)* — designed around CrewAI's multi-agent crew/task model rather than general-purpose conversational memory |
+
+**Why this matters for the radar**: teams evaluating Mem0, Graphiti, Letta, or the other dedicated solutions above are usually choosing between "use the framework's native memory" and "bring in a dedicated memory layer." The framework-native option has zero additional infrastructure cost and is sufficient for simple session continuity; the dedicated solutions earn their place on this radar where multi-hop relational reasoning (Graphiti, Cognee), cross-framework portability (Mem0), or production-scale governance (cloud-provider and enterprise offerings) are required.
+
+See [LangChain](../AgenticFrameworks/langchain.md), [LlamaIndex](../AgenticFrameworks/llamaindex.md), and [CrewAI](../AgenticFrameworks/crewai.md) for full framework profiles.
+
+---
+
 ## Radar Summary Table
 
 | Solution | Ring | Memory Types | Open Source | GitHub Stars | Provider |
@@ -590,11 +729,16 @@ An experimental personal AI assistant module that uses Holographic Reduced Repre
 | **Oracle AI Agent Memory** | 🔵 Trial | Working, Semantic, Episodic | No | N/A | Oracle |
 | **Vertex AI Memory Bank** | 🔵 Trial | Semantic | No | N/A | Google Cloud |
 | **Azure AI Foundry Memory** | 🔵 Trial | Working, Semantic | No | N/A | Microsoft |
+| **Anthropic Managed Agents Memory** | 🔵 Trial | Working, Semantic, Episodic, Procedural | No | N/A | Anthropic |
+| **Salesforce Agentic Memory** | 🔵 Trial | Working, Semantic, Episodic | No | N/A | Salesforce |
 | **OpenViking** | 🟡 Assess | Working, Semantic, Episodic, Procedural | Yes (Apache 2.0) | ~15K+ | Volcano Engine / ByteDance |
+| **agentmemory** | 🟡 Assess | Working, Semantic, Episodic | Yes (Apache 2.0) | 24K+ | Independent |
+| **Cloudflare Agent Memory** | 🟡 Assess | Working, Semantic, Episodic, Procedural | No | N/A | Cloudflare |
 | **Maximem (Synap + Vity)** | 🟡 Assess | Working, Semantic, Episodic, Organizational | No | N/A | Maximem AI |
 | **RetainDB** | 🟡 Assess | Episodic, Semantic | No | N/A | Undisclosed |
 | **LangMem** | 🟡 Assess | Semantic, Episodic, Procedural | Yes (MIT) | ~1.5K | LangChain |
 | **AgentFS** | 🔴 Caution | Working, Episodic | Yes (MIT) | ~2.5K | Turso |
+| **MinnsDB** | 🔴 Caution | Working, Semantic, Episodic | Unconfirmed | Unverified | Unconfirmed |
 | **Holographic (Nuggets)** | 🔴 Caution | Working, Semantic | Unspecified | ~200 | Individual |
 
 ---
@@ -619,21 +763,27 @@ Use this to narrow down options based on your constraints.
 | Enterprise Oracle DB with governed memory | **Oracle AI Agent Memory** |
 | Managed memory on GCP | **Vertex AI Memory Bank** |
 | Managed memory on Azure | **Azure AI Foundry Memory** |
+| Memory + self-grading + multiagent orchestration in one managed harness | **Anthropic Claude Managed Agents Memory** |
+| Governed memory tied to existing CRM/Agentforce identity | **Salesforce Agentic Memory** |
 | Hierarchical filesystem context with 80%+ token savings | **OpenViking** |
+| MCP-based shared memory across many coding-agent CLIs (Claude Code, Cursor, Codex) | **agentmemory** (verify adoption claims independently) |
+| Managed memory on Cloudflare Workers, extract-not-replay design | **Cloudflare Agent Memory** (private beta) |
 | Managed memory across 9 agent frameworks, privacy-first | **Maximem Synap** (evaluate vendor risk) |
 | Personal memory vault across ChatGPT, Claude, Gemini, Slack | **Maximem Vity** |
 | Managed memory API, zero infrastructure, hybrid retrieval | **RetainDB** (evaluate vendor risk) |
 | Procedural memory + LangGraph integration | **LangMem** |
 | Filesystem/scratchpad for tool logs | **AgentFS** (as complement) |
 | Holographic vector memory, zero external dependencies | **Holographic / Nuggets** (experimental) |
-| Open source only, no vendor dependency | **Mem0**, **Graphiti**, **Letta**, **Hindsight**, **Supermemory**, **Honcho**, **Redis** |
-| Enterprise SLAs + compliance | **AWS AgentCore**, **Vertex**, **Azure**, **Oracle** |
+| Temporal knowledge graph with cascade invalidation (unverified source) | **MinnsDB** (confirm primary source before adopting) |
+| Already using LangGraph, LlamaIndex, or CrewAI and want zero added infrastructure | **Framework-native memory** (see below) |
+| Open source only, no vendor dependency | **Mem0**, **Graphiti**, **Letta**, **Hindsight**, **Supermemory**, **Honcho**, **Redis**, **agentmemory** |
+| Enterprise SLAs + compliance | **AWS AgentCore**, **Vertex**, **Azure**, **Oracle**, **Anthropic Managed Agents**, **Salesforce Agentic Memory** |
 
 ---
 
 ## Radar Assessment Criteria
 
-Each solution was assessed on the following dimensions. Ratings are as of May 2026.
+Each solution was assessed on the following dimensions. Ratings are as of May–June 2026.
 
 | Criterion | Weight | Notes |
 |---|---|---|
@@ -654,6 +804,8 @@ Each solution was assessed on the following dimensions. Ratings are as of May 20
 - [Long-term Memory Strategies](ltm-strategies.md)
 - [Working Memory Management](short-term.md)
 - [Research Papers](research-papers.md)
+- [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md) — full Memory + Dreaming + Outcomes architecture
+- [LangChain](../AgenticFrameworks/langchain.md), [LlamaIndex](../AgenticFrameworks/llamaindex.md), [CrewAI](../AgenticFrameworks/crewai.md) — framework-native memory subsystems
 
 ## References
 
@@ -696,5 +848,19 @@ Each solution was assessed on the following dimensions. Ratings are as of May 20
 - [RetainDB](https://www.retaindb.com/) — cloud-only delta-compressed memory API
 - [Holographic memory (Nuggets)](https://github.com/NeoVertex1/nuggets) — HRR-based local memory module
 - [Redis Agent Memory context engine docs](https://redis.io/docs/latest/develop/ai/context-engine/agent-memory/) — Redis agent memory architecture reference
+- [Using agent memory — Claude API Docs](https://platform.claude.com/docs/en/managed-agents/memory) — Anthropic Claude Managed Agents Memory documentation
+- [New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration](https://claude.com/blog/new-in-claude-managed-agents) — Anthropic official blog, May 2026
+- [How Agentic Memory Enables Reliable AI Agents Across Enterprise Users](https://engineering.salesforce.com/how-agentic-memory-enables-durable-reliable-ai-agents-across-millions-of-enterprise-users/) — Salesforce Engineering blog, write/read gates and confidence scoring
+- [Breaking the Memory Trilemma: How to Build AI Agents That Actually Remember](https://www.salesforce.com/blog/agentic-memory-agents/) — Salesforce blog, memory architecture overview
+- [Agentforce Variables: A New Way to Structure Agent Memory](https://developer.salesforce.com/blogs/2025/04/agentforce-variables-a-new-way-to-structure-agent-memory) — Salesforce Developers blog, structured short-term memory
+- [Agents that remember: introducing Agent Memory](https://blog.cloudflare.com/introducing-agent-memory/) — Cloudflare official blog, April 2026
+- [Cloudflare Agent Memory docs](https://developers.cloudflare.com/agent-memory/) — official documentation
+- [Cloudflare Announces Agent Memory, a Managed Persistent Memory Service for AI Agents](https://www.infoq.com/news/2026/04/cloudflare-agent-memory-beta/) — InfoQ coverage
+- [agentmemory GitHub](https://github.com/rohitg00/agentmemory) — MCP-based persistent memory server for coding agents
+- [agentmemory on npm](https://www.npmjs.com/package/@agentmemory/agentmemory) — package distribution
+- [The 10 Best AI Memory Layers for Agents in 2026](https://dev.to/jonathanfarrow/the-10-best-ai-memory-layers-for-agents-in-2026-448e) — third-party comparison article; sole located source describing MinnsDB
+- [LangGraph memory docs](https://docs.langchain.com/oss/python/langgraph/memory) — Checkpointer and Store memory primitives
+- [LlamaIndex Memory module docs](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/memory/) — chat-history buffer and long-term memory blocks
+- [CrewAI Memory docs](https://docs.crewai.com/en/concepts/memory) — unified `Memory` class API
 - [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) — radar methodology reference
 - [Cognitive Architectures for Language Agents (CoALA)](https://arxiv.org/abs/2309.02427) — memory type taxonomy
