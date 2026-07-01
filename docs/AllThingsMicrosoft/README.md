@@ -25,6 +25,7 @@ Microsoft's agentic AI strategy centres on Azure AI services, the open-source Se
 | Azure Cosmos DB MCP Toolkit | MCP-based connector for Cosmos DB + semantic reranking + Agent Memory Toolkit (Cosmos DB + Durable Functions + Foundry models for persistent agent memory); Preview (Build 2026) | [AgentPlatforms/microsoft-fabric-databases-2026.md](../AgentPlatforms/microsoft-fabric-databases-2026.md) |
 | SQL MCP Server | Securely connects Azure SQL data to AI agents and Copilots via Model Context Protocol; Public Preview (Build 2026) | [AgentPlatforms/microsoft-fabric-databases-2026.md](../AgentPlatforms/microsoft-fabric-databases-2026.md) |
 | Microsoft Agent Framework 1.0 | GA at Build 2026; opinionated framework for building production-grade agents on Azure | [AgenticFrameworks/microsoft-framework.md](../AgenticFrameworks/microsoft-framework.md) |
+| Power BI Semantic Models + Fabric OneLake | Mature tabular BI semantic layer now materializing as Delta tables in OneLake via Direct Lake mode, bridging BI semantics with the lakehouse | [AgenticTechStack/semantic-data-layer-radar.md](../AgenticTechStack/semantic-data-layer-radar.md) |
 
 ## See Also
 

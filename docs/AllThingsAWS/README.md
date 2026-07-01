@@ -20,6 +20,7 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 | AWS Lambda MicroVMs | Firecracker microVM isolation per Lambda invocation; up to 8hr runtime, 10GB memory, configurable auto-suspend/resume | [SecurityFrameworks/agent-sandboxing.md](../SecurityFrameworks/agent-sandboxing.md) |
 | AWS Agent-EvalKit | Apache-2.0 OSS eval toolkit; six-phase workflow combining code-based and LLM-as-judge evaluators; integrates with Claude Code, Kiro CLI, Kilo Code | [EvaluationFrameworks/platforms.md](../EvaluationFrameworks/platforms.md) |
 | AWS AgentOps Four-Pillar Framework | Governance & Security / Build & Operations / Evaluation / Observability & Monitoring framework for operationalizing agents on Amazon Bedrock AgentCore | [AgentOps/README.md](../AgentOps/README.md) |
+| AWS QuickSight Topics | BI-native semantic layer for QuickSight — business terms, synonyms, field roles, and semantic types powering natural-language Q&A via Amazon Q | [AgenticTechStack/semantic-data-layer-radar.md](../AgenticTechStack/semantic-data-layer-radar.md) |
 
 ## See Also
 

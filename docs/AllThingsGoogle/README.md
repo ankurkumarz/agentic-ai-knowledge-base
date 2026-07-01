@@ -21,6 +21,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | Agent Client Protocol (ACP) | Gemini CLI was Google's first ACP-native integration, validating Zed's editor-agent interoperability standard | [Standards/agent-client-protocol.md](../Standards/agent-client-protocol.md) |
 | Kubernetes Agent Sandbox | Kubernetes SIG Apps subproject (launched KubeCon Atlanta, Nov 2025); GKE productization now GA with Pod Snapshots, sub-second sandbox provisioning, and up to 30% better price-performance on Axion | [Standards/k8s-agent-sandbox.md](../Standards/k8s-agent-sandbox.md) |
 | Agent Substrate | New Google open-source project — minimal control plane built on Agent Sandbox's runtime/snapshotting for ultra-scale, sub-second tool-call agent fleets | [Standards/k8s-agent-sandbox.md](../Standards/k8s-agent-sandbox.md#agent-substrate-new-separate-open-source-project) |
+| Looker Semantic Layer (LookML) | Mature BI-native semantic modeling language — single source of truth for business metrics, grounding gen AI trustworthiness; OSI ecosystem participant | [AgenticTechStack/semantic-data-layer-radar.md](../AgenticTechStack/semantic-data-layer-radar.md) |
 
 ## See Also
 
