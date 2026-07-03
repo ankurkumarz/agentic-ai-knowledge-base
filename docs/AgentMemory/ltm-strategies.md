@@ -30,7 +30,19 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 3. At retrieval time, the query is embedded and nearest neighbors are found
 4. Top-k results are injected into the agent's context
 
-**Limitations**: Struggles with precise factual recall, multi-hop reasoning, and relational queries.
+**Limitations**: Struggles with precise factual recall, multi-hop reasoning, and relational queries. For relationship-aware retrieval, combine with Knowledge Graphs (see Graph RAG below).
+
+**Vector index architectures** (relevant for store selection):
+
+| Index | Recall | Scale | Used By |
+|---|---|---|---|
+| Flat | Exact | < 100K docs | Dev/prototype |
+| HNSW | ~95%+ | Tens of millions | Pinecone, Weaviate, Qdrant, MongoDB Atlas |
+| IVF | Good | 100M+ docs | Zilliz Cloud (Milvus) |
+
+**Hybrid search**: Combining vector similarity with BM25 keyword search via Reciprocal Rank Fusion (RRF) improves recall for proper nouns, technical identifiers, and domain terminology the embedding model may not represent well. Weaviate and Amazon Bedrock Knowledge Bases (OpenSearch Serverless) both support hybrid search natively.
+
+**Re-ranking**: A cross-encoder second stage (retrieve top 20, re-rank to top 5) improves result quality at the cost of additional latency. Amazon Bedrock Knowledge Bases supports built-in reranking.
 
 ---
 
@@ -53,6 +65,32 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 **Advantages**: Precise factual recall, explainable reasoning paths, handles complex relationships.
 
 **Solutions**: [Graphiti by Zep](https://github.com/getzep/graphiti) — a temporal knowledge graph that tracks how facts evolve over time.
+
+---
+
+### 2b. Graph RAG
+
+**Memory type**: Semantic (relational)
+
+**Mechanism**: Extends standard RAG with graph traversal — the query first matches an entity node via semantic vector search, then traverses the graph to collect structurally related entities. Agents receive both directly matched content and relationship-derived context.
+
+**Best For**: Domains with many-to-many entity relationships that matter for answering queries — service dependency analysis, blast-radius assessment, ownership chains, root-cause investigation.
+
+**Storage**: Property graph database (Neo4j AuraDB, Amazon Neptune) with co-located vector indexes on node properties
+
+**How It Works**:
+1. Entities and relationships are extracted and written to a graph database (nodes carry embedding vectors as properties)
+2. At retrieval, the query is embedded and matched to the nearest entry-point nodes via vector similarity
+3. Graph traversal expands from those nodes — first-degree relationships (direct dependencies) or multi-hop (second-order dependents)
+4. Matched nodes + traversal-collected related entities are combined and injected into context
+
+**Two traversal strategies:**
+- **Entity-first**: Query anchors to a named entity, traversal expands from it. Best for "what depends on service X?"
+- **Community-first**: Pre-processed graph clusters (communities) are identified; retrieval finds the most relevant community, then representative nodes. Best for open-ended structural queries.
+
+**When Graph RAG is worth the complexity**: Three conditions must hold simultaneously — the domain has many-to-many relationships that matter for agent queries; those relationships are not well-expressed in free-text documents; agents regularly need to reason over relationship structure. If vector retrieval already answers queries well, graph infrastructure adds overhead without measurable gain.
+
+**Solutions**: [Neo4j AuraDB](https://aws.amazon.com/marketplace/pp/prodview-xd42uzj2v7dae) on AWS Marketplace — native vector index on node properties, Cypher for composable graph + vector queries in one round-trip, native LangChain integration (`Neo4jVector`, `GraphCypherQAChain`). Graphiti (see above) also implements a temporal knowledge graph suitable for Graph RAG patterns.
 
 ---
 
@@ -125,6 +163,12 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 2. It identifies patterns, failures, and successful strategies
 3. Extracted insights are stored as long-term knowledge
 4. Future agent instances benefit from these consolidated learnings
+
+**AWS implementation pattern**: An EventBridge Scheduler-triggered Step Functions workflow queries the session memory store for recently closed sessions, runs a consolidation LLM call (Amazon Bedrock text generation) for each session, writes the results as structured JSON records to the long-term semantic memory store, and marks the session as consolidated. The consolidation prompt targets specific extraction fields — user preferences, configuration facts, resolved problems, outstanding issues, key decisions — rather than producing a generic summary.
+
+Two scheduling variants:
+- **Scheduled consolidation**: Runs nightly on all closed sessions. Predictable and easy to operate; introduces a lag between session close and LTM availability.
+- **Threshold-triggered consolidation**: Fires when a session exceeds a token count threshold; runs a partial consolidation on the oldest portion, replacing it with a compact structured summary. Keeps session memory bounded without discarding older context, and makes consolidated facts available within the same session.
 
 **Research Foundation**: Inspired by the [Generative Agents paper](https://arxiv.org/abs/2304.03442) (Park et al., Stanford/Google) which demonstrated agents that reflect on their experiences to form higher-level insights.
 
@@ -262,6 +306,14 @@ Most production systems combine multiple strategies:
 - [Four Memory Types](functional-tiers.md)
 - [Short-term / Working Memory Management](short-term.md)
 - [Agent Memory README](README.md)
+- [Memory Solutions Radar](solutions.md)
 - [Research Papers](research-papers.md)
 - [Claude Managed Agents — Dreaming & Outcomes](../AgentPlatforms/claude-managed-agents.md)
 - [Self-Learning Agents Reference Architecture](../ReferenceArchitecture/self-learning-agents.md)
+- [AWS AgentCore Platform](../AgentPlatforms/aws-agentcore.md)
+
+## References
+
+- [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AWS "Building Agentic Systems on AWS" series; covers memory taxonomy, vector store selection, Graph RAG with Neo4j, Redis/MongoDB architecture, memory governance, and consolidation patterns
+- [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) — Park et al. (Stanford/Google, 2023); foundational paper for Reflection/Consolidation strategy
+- [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) — Packer et al. (UC Berkeley, 2023); OS-inspired working memory management, basis for Letta

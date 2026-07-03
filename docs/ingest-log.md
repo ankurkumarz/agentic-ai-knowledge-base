@@ -1213,3 +1213,16 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 | File | Change Type | Notes |
 |---|---|---|
 | `docs/Standards/skills.md` | Extended | Added "Community Skills Marketplaces & Curated Lists" subsection (ComposioHQ/awesome-claude-skills, VoltAgent/awesome-agent-skills, Agent-Skills-for-Context-Engineering, Agensi, Claude Skills Marketplace, Smithery), cross-referencing the existing Provider Skills Repositories table; added References entry |
+
+## [2026-07-04] fix + ingest | Mermaid quadrantChart fix + AWS Marketplace Agent Memory Systems (Module 7) | sections touched: AgentMemory/solutions.md, AgentMemory/ltm-strategies.md
+
+**Source**: https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems (WebFetch, rendered)
+**Type**: Bug fix (Mermaid) + vendor/architecture guide ingest
+**Processed by**: Kiro
+
+### Changes
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentMemory/solutions.md` | Fixed + Extended | Fixed both quadrantChart Mermaid diagrams — quoted all multi-word labels (axis labels, quadrant names, data point labels with spaces) which caused rendering failure. Added new "AWS Memory Architecture Guide" section covering: memory taxonomy (duration × scope), context window management strategies, session memory backend selection (DynamoDB / ElastiCache / Redis Cloud), vector store selection (HNSW/IVF/flat, Pinecone/Weaviate/Qdrant/Zilliz/MongoDB Atlas), Graph RAG with Neo4j AuraDB, MongoDB Atlas unified document+vector model, shared cross-agent memory with DynamoDB access control, memory governance (data lineage, retention, PII handling with Bedrock Guardrails), and memory consolidation patterns (scheduled vs threshold-triggered). Updated See Also and References. |
+| `docs/AgentMemory/ltm-strategies.md` | Extended | Added AWS consolidation implementation details to Reflection/Consolidation strategy (EventBridge → Step Functions pattern, scheduled vs threshold-triggered variants). Added vector index architecture comparison table and hybrid search + re-ranking notes to Vector RAG strategy. Added new Graph RAG strategy (2b) covering entity-first vs community-first traversal, Neo4j AuraDB implementation. Updated See Also with new backlinks and added References section. |

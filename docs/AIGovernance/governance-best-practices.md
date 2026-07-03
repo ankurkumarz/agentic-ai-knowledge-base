@@ -99,6 +99,16 @@ Track these metrics as leading indicators of governance health:
 | Fairness disparity score | Difference in agent recommendation rates across demographic subgroups; monitored on a rolling basis |
 | Model/prompt change frequency | How often configuration changes are deployed; high frequency without corresponding test coverage is a risk signal |
 
+## Google Agentic ROI Framework
+
+![Google AI Framework](../assets/images/google-ai-impact.png)
+
+![Google AI Framework](../assets/images/google-roi-framework.png)
+
+![Google AI Framework](../assets/images/google-cloud-roi-framework-3.png)
+
+Reference: https://www.youtube.com/watch?v=aqvYd8c36gg&t=1s
+
 ## See Also
 
 - [Governance Strategy](governance-strategy.md)

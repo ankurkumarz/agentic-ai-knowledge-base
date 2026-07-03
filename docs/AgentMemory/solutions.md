@@ -31,19 +31,19 @@ Y-axis: narrow/storage-only (bottom) → broad full-stack memory abstraction (to
 ```mermaid
 quadrantChart
     title Open Source Agent Memory — May 2026
-    x-axis Caution/Assess --> Trial/Adopt
-    y-axis Storage Substrate --> Full Memory Abstraction
-    quadrant-1 Full Abstraction - Production
-    quadrant-2 Full Abstraction - Emerging
-    quadrant-3 Storage Layer - Emerging
-    quadrant-4 Storage Layer - Production
+    x-axis "Caution/Assess" --> "Trial/Adopt"
+    y-axis "Storage Substrate" --> "Full Memory Abstraction"
+    quadrant-1 "Full Abstraction - Production"
+    quadrant-2 "Full Abstraction - Emerging"
+    quadrant-3 "Storage Layer - Emerging"
+    quadrant-4 "Storage Layer - Production"
     Mem0: [0.92, 0.85]
     Graphiti: [0.84, 0.72]
     Letta: [0.72, 0.90]
     Supermemory: [0.63, 0.82]
     Cognee: [0.80, 0.58]
     Hindsight: [0.76, 0.68]
-    Redis AgentMem: [0.60, 0.68]
+    "Redis AgentMem": [0.60, 0.68]
     Honcho: [0.54, 0.58]
     ByteRover: [0.65, 0.45]
     LanceDB: [0.73, 0.32]
@@ -62,20 +62,20 @@ Y-axis: startup / niche (bottom) → enterprise hyperscaler (top)
 ```mermaid
 quadrantChart
     title Managed & Proprietary Agent Memory — May 2026
-    x-axis Assess --> Trial/Adopt
-    y-axis Startup/Niche --> Enterprise/Hyperscaler
-    quadrant-1 Hyperscaler - Production
-    quadrant-2 Hyperscaler - Emerging
-    quadrant-3 Startup - Emerging
-    quadrant-4 Startup - Production
-    AWS AgentCore: [0.88, 0.85]
-    Vertex AI Memory: [0.72, 0.82]
-    Salesforce Agentic Memory: [0.62, 0.88]
-    Azure Foundry: [0.65, 0.75]
-    Anthropic Managed Memory: [0.70, 0.78]
-    Oracle AgentMem: [0.58, 0.68]
-    Cloudflare Agent Memory: [0.38, 0.62]
-    Maximem Synap: [0.44, 0.38]
+    x-axis Assess --> "Trial/Adopt"
+    y-axis "Startup/Niche" --> "Enterprise/Hyperscaler"
+    quadrant-1 "Hyperscaler - Production"
+    quadrant-2 "Hyperscaler - Emerging"
+    quadrant-3 "Startup - Emerging"
+    quadrant-4 "Startup - Production"
+    "AWS AgentCore": [0.88, 0.85]
+    "Vertex AI Memory": [0.72, 0.82]
+    "Salesforce Agentic": [0.62, 0.88]
+    "Azure Foundry": [0.65, 0.75]
+    "Anthropic Memory": [0.70, 0.78]
+    "Oracle AgentMem": [0.58, 0.68]
+    "Cloudflare Memory": [0.38, 0.62]
+    "Maximem Synap": [0.44, 0.38]
     RetainDB: [0.30, 0.22]
 ```
 
@@ -695,6 +695,148 @@ An experimental personal AI assistant module that uses Holographic Reduced Repre
 
 ---
 
+## AWS Memory Architecture Guide
+
+> Source: [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems)
+>
+> This section distills the architectural guidance from AWS's "Building Agentic Systems on AWS" learning series. It covers memory type taxonomy, implementation patterns, partner vector stores, Graph RAG, and governance — all framed around AWS services and AWS Marketplace partner tools.
+
+### Memory Taxonomy: Two Dimensions
+
+AWS organises agent memory along two independent axes:
+
+| Dimension | Variants |
+|---|---|
+| **Duration** | Single inference → Session → Operational lifetime → Permanent |
+| **Scope** | Single invocation (private) → Single user session → Agent-type-wide → Multi-agent system-wide |
+
+Plotting duration × scope yields four quadrant types: in-context working memory, short-term session memory, long-term semantic memory, and shared cross-agent memory.
+
+### In-Context Working Memory (Context Window)
+
+The context window is the agent's immediate cognitive workspace. On Amazon Bedrock, Claude models support a 200K token context window (1M beta), roughly 500 pages of text. Despite generous sizing, context management matters for two reasons: cost grows with every token in context, and model attention is non-uniform — content at the beginning and end of the context window receives stronger attention than content in the middle.
+
+**Four management strategies:**
+
+| Strategy | Mechanism | When to Use |
+|---|---|---|
+| Full history | Retain every message | Short conversations only |
+| Windowed history | Keep last k turns | When recent turns dominate relevance |
+| Summary history | Compress oldest turns to a rolling summary via Bedrock text generation | Long conversations needing some older context |
+| Hybrid summary + window | Recent turns full + older turns compressed | Best balance; most complex |
+
+LangChain's `ConversationSummaryBufferMemory` implements the hybrid strategy and integrates with LangGraph state management.
+
+**Design principle**: Specialise context per agent role. A code-analysis agent needs the code and its dependencies, not full conversation history. A dialogue agent needs history, not raw code files.
+
+### Short-Term Session Memory
+
+LangGraph implements session memory via the **checkpointer abstraction** — a persistent store that serialises the entire agent state object (message history, task state, user preferences, intermediate results) to a backing store, keyed by a thread ID representing the user session.
+
+**Backend selection:**
+
+| Backend | Use When | Notes |
+|---|---|---|
+| Amazon DynamoDB | Multi-step workflows where state must survive failures | Strongly consistent reads, conditional writes for optimistic concurrency, On-Demand capacity |
+| Amazon ElastiCache (Redis) | Conversational agents, sub-millisecond latency required | TTL-based auto-expiry; state can be reconstructed if lost |
+| Redis Cloud (AWS Marketplace) | High-throughput, multi-region, or >ElastiCache scale | Active-active geo-replication, Redis on Flash (NVMe tiering), Redis Data Integration pipeline |
+
+Redis Cloud adds capabilities beyond ElastiCache: active-active geo-replication keeps session state consistent across AWS regions; Redis on Flash extends memory footprint by tiering to NVMe SSDs; hash/sorted-set/stream data structures map directly to agentic state patterns (windowed history, append-only event logs). The LangGraph Redis checkpointer works identically against ElastiCache and Redis Cloud — only the connection string changes.
+
+### Long-Term Semantic Memory and Vector Stores
+
+Long-term semantic memory persists indefinitely, is retrieved by semantic similarity (not direct lookup), and is the foundation of RAG. Amazon Bedrock provides two embedding models:
+
+- **Amazon Titan Text Embeddings v2** — 1,024-dimensional, optimised for English-language retrieval
+- **Cohere Embed Multilingual v3** — 1,024-dimensional, 100+ languages
+
+**Vector index architectures:**
+
+| Index | Characteristics | When to Use |
+|---|---|---|
+| Flat | Exact nearest-neighbor, linear scan | < 100K documents |
+| HNSW | Multi-layer graph, ~95%+ recall, logarithmic search growth | General-purpose; used by Pinecone, Weaviate, Qdrant |
+| IVF (Inverted File) | Cluster-partitioned, lower memory cost, requires offline training | Very large datasets (millions+ docs); used by Zilliz Cloud / Milvus |
+
+**Hybrid search** combines vector (semantic) retrieval with BM25 (keyword) retrieval, merged via Reciprocal Rank Fusion (RRF). Weaviate provides strong out-of-the-box hybrid search; Amazon Bedrock Knowledge Bases uses Amazon OpenSearch Serverless with combined BM25 + vector search.
+
+**Re-ranking** applies a cross-encoder model as a second stage — retrieve top 20 candidates from the vector DB, re-rank to top 5 for context injection. Bedrock Knowledge Bases supports built-in reranking.
+
+**Vector store selection (AWS Marketplace partners):**
+
+| Store | Index | Differentiation | AWS Marketplace |
+|---|---|---|---|
+| Pinecone | HNSW | Fully managed, production-simple | Yes |
+| Weaviate | HNSW | Strong hybrid search, multimodal | Yes |
+| Qdrant | HNSW | Open-source, high-performance | Yes |
+| Zilliz Cloud | HNSW + IVF | Managed Milvus, memory-efficient at scale | Yes |
+| MongoDB Atlas | HNSW | Unified document + vector in one store; hybrid metadata + semantic query | Yes |
+| Amazon Bedrock Knowledge Bases | OpenSearch | Fully managed RAG stack, native Bedrock integration | Native AWS |
+
+### MongoDB Atlas: Unified Document + Vector Memory
+
+MongoDB Atlas eliminates the split between the operational data store (structured records) and the vector store (embeddings) by co-locating both in the same document. A deployment record can carry structured metadata (timestamp, environment, services affected, outcome) alongside its embedding vector — a single Atlas query can filter on structured metadata and retrieve by vector similarity simultaneously, without joining across two systems.
+
+This unified model maps naturally to memory consolidation: consolidated session records are written as Atlas documents with both queryable fields and embedding vectors, enabling both exact-attribute lookup ("find all records for user X, service Y") and semantic similarity ("find records similar to this incident").
+
+### Graph RAG with Neo4j AuraDB
+
+Vector retrieval finds content by meaning. Graph RAG adds structural/relational reasoning on top — agents can answer questions that require traversing entity relationships, not just finding similar text.
+
+**Graph RAG retrieval pipeline (vs. standard RAG):**
+
+| Step | Standard RAG | Graph RAG |
+|---|---|---|
+| 1 | Embed query | Embed query |
+| 2 | Retrieve top-k similar chunks | Retrieve top-k similar graph nodes |
+| 3 | Inject into context | Traverse graph from matched nodes to collect related entities |
+| 4 | — | Combine directly matched + traversal-collected context |
+| 5 | — | Inject enriched result set |
+
+**Two traversal strategies:**
+
+- **Entity-first**: Query anchors to a named entity, traversal expands from it. Best for "what depends on service X?".
+- **Community-first**: Pre-computed graph clusters identify communities; retrieval finds the most relevant community then representative nodes. Best for open-ended queries without a named anchor.
+
+**Neo4j AuraDB** (AWS Marketplace) is the recommended backing store. It provides: native vector index on node properties (no separate vector DB required for the entity-finding step), Cypher query language for composable graph traversal + vector similarity in one round-trip, and native LangChain integration (`Neo4jVector`, `GraphCypherQAChain`).
+
+Graph RAG earns its complexity when three conditions hold simultaneously: the domain has many-to-many relationships that matter for queries; those relationships are not well-expressed in free-text documents; and agents regularly need to reason over relationship structure. Good signals: blast-radius/cascading-failure queries, dependency ordering, ownership chains, root-cause investigation.
+
+### Shared Cross-Agent Memory
+
+Shared memory allows agents in a multi-agent system to coordinate through a common store rather than fragile direct message-passing. Design considerations:
+
+- **Concurrency**: DynamoDB conditional expressions enable optimistic concurrency control for concurrent writes; strongly consistent reads are required for coordination state (not just session state).
+- **Schema**: Single-table DynamoDB design with `(workflow_execution_id, record_type)` composite key; schema version numbers on every record for graceful evolution.
+- **Access control**: IAM condition keys scope each agent role to its authorised partition key prefix — the analysis agent can only read/write `analysis#*` records; the deployment agent is restricted to `deployment#*`. Limits blast radius from prompt injection or supply chain compromise.
+
+### Memory as a Data Asset: Governance
+
+Memory infrastructure holds sensitive data and must be governed like any enterprise data asset.
+
+| Concern | Mechanism |
+|---|---|
+| Data lineage | Bedrock Knowledge Bases stores source URI, ingestion timestamp, document version alongside every chunk; CloudTrail records all ingestion and retrieval API calls |
+| Retention | S3 lifecycle policies for source documents; DynamoDB TTL for session expiry; vector store delete API or periodic re-ingestion for embedding cleanup |
+| PII handling | Bedrock Guardrails PII detection/redaction applied before storing conversation histories — replace detected PII with placeholder tokens (`[PERSON]`, `[EMAIL]`); actual values stored separately in an access-controlled lookup table if needed |
+
+### Memory Consolidation Patterns
+
+Memory consolidation extracts durable knowledge from ephemeral session histories, preventing agents from rediscovering the same information in every subsequent session.
+
+**What to consolidate** (not raw turn-by-turn messages): explicit user preferences and constraints, environment/configuration facts that persist across sessions, workflow decisions and rationale, resolved problems and their solutions, patterns observed across multiple tool calls.
+
+| Pattern | Mechanism | Trade-off |
+|---|---|---|
+| Scheduled | EventBridge Scheduler → Step Functions → consolidation agent → long-term store; runs nightly on all closed sessions | Predictable, easy to operate; lag between session close and LTM availability |
+| Threshold-triggered | Partial consolidation when session token count exceeds threshold; replaces oldest portion with compact structured summary | Bounds session memory without windowing; makes consolidated facts available within the same session |
+
+The consolidation step uses Amazon Bedrock text generation with a structured extraction prompt — producing a JSON record with fields for user preferences, configuration facts, resolved problems, outstanding issues, and key decisions. The record is ingested into the LTM store with metadata linking it to the originating session (session ID, user ID, time range, consolidation timestamp).
+
+**Practical advice from AWS**: Get session memory right before investing in vector stores — it is the most immediately visible capability and the foundation on which consolidation depends. Memory consolidation is technically straightforward but operationally demanding: the nightly workflow must run reliably, extraction prompts require ongoing tuning, and consolidated record quality needs monitoring over months of production operation.
+
+---
+
 ## Framework-Native Memory
 
 The radar above covers dedicated, standalone memory products. Most agent frameworks also ship a built-in memory subsystem — not radar-rated here since they are framework features rather than independently adoptable products, but they are the realistic default for teams that have not yet decided to bring in a dedicated memory vendor.
@@ -805,9 +947,12 @@ Each solution was assessed on the following dimensions. Ratings are as of May–
 - [Working Memory Management](short-term.md)
 - [Research Papers](research-papers.md)
 - [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md) — full Memory + Dreaming + Outcomes architecture
+- [AWS AgentCore Platform](../AgentPlatforms/aws-agentcore.md) — AgentCore Memory managed service
 - [LangChain](../AgenticFrameworks/langchain.md), [LlamaIndex](../AgenticFrameworks/llamaindex.md), [CrewAI](../AgenticFrameworks/crewai.md) — framework-native memory subsystems
 
 ## References
+
+- [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AWS "Building Agentic Systems on AWS" series; memory taxonomy (duration × scope), context window management strategies, vector index architectures (HNSW/IVF/flat), hybrid search + re-ranking, Graph RAG with Neo4j, Redis/MongoDB architecture patterns, shared cross-agent memory with DynamoDB, PII governance with Bedrock Guardrails, memory consolidation patterns (scheduled and threshold-triggered)
 
 - [Mem0 Series A announcement](https://www.prnewswire.com/news-releases/mem0-raises-24m-series-a-to-build-memory-layer-for-ai-agents-302597157.html) — adoption metrics
 - [Graphiti GitHub](https://github.com/getzep/graphiti) — temporal knowledge graph framework
