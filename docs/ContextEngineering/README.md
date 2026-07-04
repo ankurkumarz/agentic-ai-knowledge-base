@@ -50,6 +50,10 @@ Lance Martin's four-strategy framework (write, select, compress, isolate), the o
 #### [Devin / Cognition](./devin.md)
 Two core principles: share full agent traces (not just messages), and actions carry implicit decisions. Argues against multi-agent parallelism for tasks with interdependencies. Recommends single-threaded agents with fine-tuned compression for long-horizon tasks.
 
+#### [Letta](https://www.letta.com/blog/guide-to-context-engineering/)
+
+
+
 ## Additional Resources
 
 - [Context Engineering by Human Layer](https://docs.google.com/presentation/d/16ykxEU78250wG3mPKNrF5IfxxD1fIVgdLQD9tlSZa6M/) — presentation on context engineering principles
