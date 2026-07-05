@@ -299,6 +299,51 @@ Confluent is a data streaming and event backbone, not an agent framework — it 
 
 ---
 
+### Kestra
+
+**Website**: [kestra.io](https://kestra.io) | **Repository**: [kestra-io/kestra](https://github.com/kestra-io/kestra)
+**License**: Apache 2.0 (fully open source; Enterprise Edition adds governance features)
+**Architecture**: Event-driven orchestration platform with declarative YAML workflows; modular control plane, executor, scheduler, and worker components
+**Technology**: Java backend (with Vue.js/TypeScript UI); PostgreSQL, MySQL, or H2 as the metadata backend; queue-based task distribution for horizontal scaling
+
+#### What Is Kestra
+
+Kestra is an open-source, event-driven orchestration platform for data, AI, and infrastructure workflows that unifies scheduled and event-driven automation behind a declarative, language-agnostic interface. Workflows ("flows") are defined in YAML — via the built-in code editor, API, Git, or a no-code editor — and can embed scripts in Python, Node.js, R, Go, or Shell alongside native plugin tasks. With **Kestra 1.0** (its first Long-Term Support release), the project repositioned itself as a **"Declarative Agentic Orchestration Platform,"** adding native AI Agent tasks, a Copilot, and a Model Context Protocol (MCP) server alongside production-hardening features (unit tests, SLAs, plugin versioning, Helm charts).
+
+#### Agentic AI Capabilities
+
+**AI Agent task**: Launches an autonomous process driven by an LLM, memory, and tools (web search, task execution, flow calling) that dynamically decides which actions to take and in what order, rather than following a fixed task sequence. Memory lets an agent retain context across executions to inform later prompts.
+
+**MCP integration**: A Kestra MCP Server exposes flow and execution management (listing flows, triggering runs, managing namespace files) to MCP-compatible AI tools (e.g., Claude Code, Cursor); Kestra can also act as an MCP *client*, letting AI Agent tasks call external MCP tool servers.
+
+**Guardrails for agentic workflows**: Human-in-the-loop approval steps for high-risk actions, retry logic for transient tool/LLM failures, timeouts to bound runaway execution, and stateful/durable execution for long-running agent loops — all defined declaratively and fully observable in the Kestra UI.
+
+**Multi-agent orchestration**: Agents can run independently or be composed into multi-agent systems (e.g., an orchestrator flow calling specialized sub-agent flows), while remaining inspectable and governable as code rather than opaque agent-framework internals.
+
+#### Core Features
+
+| Area | Capability |
+|---|---|
+| Workflow definition | Declarative YAML with Git-based version control; no-code editor and REST API as alternate authoring paths |
+| Triggers | Scheduled (cron) and real-time event-driven triggers — file arrivals, message-bus events (Kafka, Redis, Pulsar, AMQP, MQTT, NATS, AWS SQS, Google Pub/Sub, Azure Event Hubs) |
+| Plugin ecosystem | 1,500+ integrations/tasks spanning databases, cloud storage, APIs, and scripting languages |
+| Reliability | Built-in retries, conditional logic, dynamic tasks, and error handling at the flow level |
+| Scale | Queue-based worker architecture designed to scale to millions of workflow executions |
+
+#### Deployment Options
+
+| Mode | Description |
+|---|---|
+| **Open Source (self-hosted)** | Apache 2.0; Docker, Docker Compose, or Helm chart (stable as of 1.0) for Kubernetes |
+| **Kestra Cloud** | Fully managed SaaS offering |
+| **Enterprise Edition** | Adds RBAC, audit logs, SSO, self-service "Apps" forms, and worker isolation on top of the open-source core |
+
+#### Considerations
+
+Kestra overlaps with Apache Airflow (data pipeline orchestration) and with Temporal (durable, code-first workflow execution), but distinguishes itself with a YAML-first/language-agnostic authoring model, a broader out-of-the-box trigger and plugin surface, and — since 1.0 — first-class AI Agent tasks and MCP connectivity aimed squarely at agentic AI use cases rather than requiring a separate agent framework bolted on top.
+
+---
+
 ## Comparison with Other Orchestration Solutions
 
 ### Enterprise Orchestration Platforms
@@ -323,6 +368,11 @@ Confluent is a data streaming and event backbone, not an agent framework — it 
 - **Use Cases**: High-volume event-driven agent pipelines, market-based/trading-style agent coordination, real-time RAG ingestion, agent ecosystems requiring loose coupling across many independent producers/consumers
 - **Considerations**: Not an agent framework itself — must be paired with LangGraph, AutoGen, CrewAI, or similar for agent reasoning logic; optimized for event throughput and fan-out rather than long-running durable workflow state (Temporal's focus)
 
+**Kestra**:
+- **Strengths**: Apache 2.0 fully open source; declarative YAML authoring with Git version control; 1,500+ plugins; broad native trigger support (cron and multiple message buses); native AI Agent task with memory/tools since 1.0; built-in MCP server and MCP-client support
+- **Use Cases**: Unified data + AI + infrastructure orchestration, event-driven automation, teams wanting agentic workflows defined declaratively (YAML) rather than in a code-first agent framework
+- **Considerations**: Newer entrant to durable agent orchestration than Temporal; AI Agent tasks and MCP support were only introduced with the 1.0 LTS release, so ecosystem maturity for agentic use cases is still developing relative to general-purpose data-pipeline orchestration where Kestra is already established
+
 ### Selection Criteria
 
 **Technical Requirements**:
@@ -346,7 +396,9 @@ Confluent is a data streaming and event backbone, not an agent framework — it 
 ## See Also
 
 - [Temporal — Durable Workflow Orchestration for Agentic AI](#temporal)
+- [Kestra — Declarative Agentic Orchestration Platform](#kestra)
 - [Open Source Workflow Engines](./open-source.md)
+- [Standards — Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Production Deployment](../ProductionBestPractices/deployment.md)
@@ -355,3 +407,7 @@ Confluent is a data streaming and event backbone, not an agent framework — it 
 ## References
 
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for the Confluent Data Streaming Platform subsection.
+- [Kestra GitHub Repository](https://github.com/kestra-io/kestra) — license, architecture, and feature overview
+- [Introducing Kestra 1.0: The Declarative Agentic Orchestration Platform](https://kestra.io/1-0) — LTS release, AI Agent tasks, Copilot, MCP server
+- [AI Tools in Kestra: Copilot, Agents, MCP Server & More](https://kestra.io/docs/ai-tools) — AI Agent task, memory, tools, and MCP integration details
+- [AI Agents in Kestra – Autonomous Orchestration](https://kestra.io/docs/ai-tools/ai-agents) — AI Agent task mechanics, guardrails, multi-agent composition

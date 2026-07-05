@@ -5,6 +5,22 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-07-05] ingest | Kestra — Declarative Agentic Orchestration Platform | sections touched: WorkflowBuilders/orchestration.md, Standards/mcp.md, index.md
+
+**Source**: Multi-source WebSearch/WebFetch research (kestra.io, github.com/kestra-io/kestra) — no raw document or user-supplied URL; task was to find the right bucket for Kestra and add coverage
+**Type**: Vendor/tool research — new orchestration platform entry
+**Processed by**: Claude Code
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/WorkflowBuilders/orchestration.md` | Extended | Added new "Kestra" subsection alongside Littlehorse/Temporal/Confluent: license (Apache 2.0), architecture, agentic AI capabilities (AI Agent task with memory/tools, MCP server + MCP-client support, human-in-the-loop guardrails, multi-agent composition), core features table, deployment options table, and considerations. Added Kestra row to the platform comparison section, plus References and See Also entries. |
+| `docs/Standards/mcp.md` | Extended | Added backlink from MCP page to the new Kestra subsection (bidirectional link for knowledge graph) |
+| `docs/index.md` | Extended | Extended the Workflow Engines bullet to mention Kestra's AI Agent tasks and MCP support |
+
+**Note**: No raw source file or URL was supplied for this task; content was researched directly via WebSearch/WebFetch against Kestra's official site, docs, and GitHub repository. `kestra.io/1-0` and `kestra.io` returned HTTP 403 to direct WebFetch, so those facts are sourced via WebSearch snippets citing the same URLs (included in References) rather than full-page fetches.
+
 ## [2026-06-30] ingest | Memory Solutions Radar updates — Anthropic, Salesforce, Cloudflare, MinnsDB, agentmemory, framework-native memory | sections touched: AgentMemory/solutions.md, AgentPlatforms/claude-managed-agents.md, AgenticFrameworks/langchain.md, AgenticFrameworks/crewai.md, AgenticFrameworks/llamaindex.md, index.md
 
 **Source**: Multi-source WebSearch/GitHub API research (no single raw document); user-supplied candidate list of 6 memory tools/vendors to evaluate for radar inclusion, verified against primary sources where accessible
