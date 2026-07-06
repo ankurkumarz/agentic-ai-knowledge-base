@@ -30,7 +30,7 @@ A comprehensive benchmark specifically designed for AI agents operating in termi
 
 ### TerminalBench-2
 
-An expanded version of Terminal Bench used to evaluate harness-level improvements in agentic coding. Includes 89 Dockerized tasks spanning diverse technical domains.
+An expanded version of Terminal Bench used to evaluate harness-level improvements in agentic coding. Includes 89 Dockerized tasks spanning diverse technical domains. Terminal-Bench 2.0 tasks are implemented in the [Harbor](../EvaluationFrameworks/platforms.md#harbor) task format and executed via the Harbor harness — Harbor reworked the original Terminal-Bench harness to support cloud-deployed containers and a provider-agnostic agent interface.
 
 **Key Characteristics**:
 - 89 Dockerized tasks covering code translation, distributed ML setup, systems programming, bioinformatics, and cryptanalysis
@@ -38,6 +38,7 @@ An expanded version of Terminal Bench used to evaluate harness-level improvement
 - Used in the Meta-Harness paper to show that automatically discovered harnesses surpass hand-engineered baselines (Terminus 2, Terminus-KIRA)
 - Relevant for evaluating harness optimization approaches, not just model selection
 - Strong baselines: Terminus 2 and Terminus-KIRA provide hand-engineered orchestration paradigms
+- Official harness: [Harbor](../EvaluationFrameworks/platforms.md#harbor) — supports running agents like Claude Code, OpenHands, and Codex CLI against the task set across distributed cloud sandbox providers
 
 ### Terminal-Bench 2.1
 **Resource**: [Terminal Bench](https://www.tbench.ai/)
@@ -50,6 +51,7 @@ An incremental update to TerminalBench-2 with an expanded task set, improved Doc
 - Refined completion-checking logic to reduce ambiguous pass/fail edge cases
 - Continues to evaluate the full agent harness rather than isolated model capability
 - Backward-comparable with TerminalBench-2 results for longitudinal tracking of agent progress
+- Runs on the same [Harbor](../EvaluationFrameworks/platforms.md#harbor) harness as TerminalBench-2
 
 ### METR (Model Evaluation & Threat Research)
 **Resource**: [METR](https://metr.org/)
@@ -275,6 +277,7 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 
 - [LLM Benchmarks](llm-benchmarks.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
+- [Agent Evaluation Platforms — Harbor](../EvaluationFrameworks/platforms.md#harbor) — the open-source harness that executes Terminal-Bench 2.0/2.1 at scale
 - [Observability](../Observability/Readme.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment
 - [Search as Code](../RAG/search-as-code.md) — Perplexity's SaC architecture; introduces the WANDR benchmark

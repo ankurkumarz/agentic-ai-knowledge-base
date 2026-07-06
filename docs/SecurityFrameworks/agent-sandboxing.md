@@ -70,6 +70,24 @@ Managed services that provide on-demand isolated execution environments via API.
 - **Strengths**: GPU access; low operational overhead; per-invocation billing
 - **Limitations**: Python-centric; less control over network policy compared to lower-level tools
 
+#### LangSmith Sandboxes
+
+[LangSmith Sandboxes](https://www.langchain.com/langsmith/sandboxes) (launched in Private Preview) are secure, ephemeral environments for running untrusted agent-generated code, built by LangChain. Each sandbox runs in a hardware-virtualized microVM with kernel-level isolation between sandboxes — a stronger guarantee than shared-namespace containers.
+
+| Attribute | Detail |
+|---|---|
+| Deployment model | Fully managed cloud (LangSmith) |
+| Isolation mechanism | Hardware-virtualized microVM per sandbox |
+| SDK languages | Python, TypeScript (LangSmith SDK) |
+| Framework coupling | Framework-agnostic — works with any agent framework or none; integrates natively with Deep Agents |
+| Credential handling | Authentication Proxy — sandboxes reach external services through the proxy, so secrets never enter the sandbox runtime |
+| Primary use case | Untrusted agent code execution; horizontally scaled evals where each trial gets a fresh, state-isolated sandbox |
+| Status | Private Preview |
+
+- **Strengths**: Single-line-of-code setup for teams already on the LangSmith SDK (tracing or deployment); each eval trial runs in its own sandbox so trials never share state, enabling hundreds of parallel runs; credentials never touch the sandbox thanks to the Authentication Proxy
+- **Limitations**: Private Preview — not yet generally available; tied to the LangSmith platform for provisioning and billing
+- **Agent relevance**: Used as one of the pluggable sandbox providers behind the [Harbor](../EvaluationFrameworks/platforms.md#harbor) evaluation harness for distributed, parallel agent benchmark execution
+
 #### AWS Lambda MicroVMs
 
 [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-microvms-guide.html) executes every function invocation inside a dedicated Firecracker microVM (see [Firecracker](#firecracker-aws) below), giving agent tool calls hardware-virtualization-level isolation without managing VMs directly. As a managed cloud sandbox it sits alongside E2B, Daytona, and Modal — the isolation mechanism is the same microVM tier as raw Firecracker, but consumed as a fully managed, pay-per-invocation service rather than self-operated infrastructure.
@@ -183,6 +201,7 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 | **E2B** | Cloud SaaS | < 1 s (warm) | High (provider-managed) | Yes — code interpreter focus | Cloud | Apache-2.0 |
 | **Daytona** | Cloud / OSS | < 90 ms | High (dedicated kernel) | Yes — agent workflow focus | Cloud | Apache-2.0 |
 | **Modal** | Cloud SaaS | < 1 s (warm) | Medium–High (container) | Partial — compute focus | Cloud | Proprietary |
+| **LangSmith Sandboxes** | Cloud SaaS (Private Preview) | Not published | High (microVM) | Yes — untrusted agent code & eval scaling | Cloud | Proprietary |
 | **AWS Lambda MicroVMs** | Cloud (managed) | ~100–200 ms added cold start | Very High (Firecracker microVM) | Partial — general serverless, AWS-native agent stacks | Cloud (AWS) | Proprietary (managed service) |
 | **Anthropic srt** | OS-level | < 10 ms | Medium (policy-based) | Yes — MCP server focus | macOS, Linux | Apache-2.0 |
 | **Firecracker** | MicroVM | ~125 ms | Very High (KVM) | No — infrastructure primitive | Linux (KVM) | Apache-2.0 |
@@ -199,6 +218,7 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 | Execute AI-generated code in cloud with minimal setup | E2B (SDK-first, cloud-native) |
 | Multi-step agent workflows with persistent state across steps | Daytona (stateful snapshots, dedicated kernel) |
 | Compute-intensive agent tools (GPU, ML inference) | Modal |
+| Horizontally scaling agent evals with per-trial state isolation | LangSmith Sandboxes (fresh sandbox per trial, Authentication Proxy for credentials) |
 | Multi-tenant Kubernetes agent platform needing VM-grade isolation | gVisor (drop-in) or Kata Containers (stronger) |
 | Serverless agent invocations at scale (own AWS infrastructure) | Firecracker microVMs |
 | Serverless agent invocations on AWS without operating Firecracker directly | AWS Lambda (managed microVM per invocation, configurable auto-suspend/resume) |
@@ -238,11 +258,15 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 - [Architecture Components Selection](../Architecture/components-selection.md)
 - [AgentOps — Deployment](../ProductionBestPractices/deployment.md)
 - [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
+- [Agent Evaluation Platforms](../EvaluationFrameworks/platforms.md) — LangSmith and Harbor, which uses LangSmith Sandboxes as one of its pluggable execution providers
+- [Agent Evaluation Benchmarks](../Benchmarks/agent-benchmarks.md) — Terminal-Bench 2.0/2.1, executed via the Harbor harness
 
 ## References
 
 - [E2B GitHub](https://github.com/e2b-dev/e2b) — Open-source cloud sandbox infrastructure for AI-generated code; ~12.4k stars; Apache-2.0
 - [Daytona GitHub](https://github.com/daytonaio/daytona) — Secure, elastic sandbox runtime for agent workflows; dedicated kernel per sandbox; Apache-2.0
+- [LangSmith Sandboxes](https://www.langchain.com/langsmith/sandboxes) — LangChain's product page for its microVM-isolated agent code execution sandboxes
+- [Introducing LangSmith Sandboxes: Secure Code Execution for Agents (LangChain Blog)](https://blog.langchain.com/introducing-langsmith-sandboxes-secure-code-execution-for-agents/) — architecture, Authentication Proxy, and eval-scaling use case
 - [Anthropic Sandbox Runtime](https://github.com/anthropic-experimental/sandbox-runtime) — OS-level MCP server sandboxing via Seatbelt/bubblewrap; ~4.1k stars; Apache-2.0
 - [Firecracker GitHub](https://github.com/firecracker-microvm/firecracker) — AWS microVM VMM using KVM; powers Lambda and Fargate; Apache-2.0
 - [gVisor GitHub](https://github.com/google/gvisor) — Google userspace application kernel for container sandboxing; OCI-compatible; Apache-2.0

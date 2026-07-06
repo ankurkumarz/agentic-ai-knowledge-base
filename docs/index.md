@@ -135,8 +135,8 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 ### **Agent Testing & Evaluations**
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
 - **AI as a Judge**: Using foundation models to evaluate other AI outputs — three usage patterns (absolute scoring, reference comparison, pairwise), prompt design for AI judges, limitations (inconsistency, length bias, positional bias), and judge model selection guidance (Huyen, 2025; Zheng et al., 2023 — 85% GPT-4/human agreement on MT-Bench)
-- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, GAIA, and DeepResearch Bench (RACE/FACT evaluation of deep research agents)
-- **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
+- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, GAIA, and DeepResearch Bench (RACE/FACT evaluation of deep research agents); Terminal-Bench 2.0/2.1 now run via the open-source [Harbor](EvaluationFrameworks/platforms.md#harbor) evaluation harness
+- **Evaluation Platforms**: Galileo, Google Stax, LastMile AI, and Harbor (distributed benchmark/RL-rollout harness)
 
 ### **Context Engineering**
 - **Key Challenges**: Context rot, poisoning, distraction, confusion, and clash — with empirical evidence from DeepMind, Gemini 2.5, Berkeley, Microsoft/Salesforce research
@@ -152,6 +152,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Microsoft Perspective**: Agent Governance Toolkit — runtime governance with deterministic policy enforcement (YAML/OPA/Cedar), zero-trust identity, execution sandboxing, MCP Security Gateway; covers all 10 OWASP Agentic Top 10 risks
 - **CSA Perspective**: Agentic AI Red Teaming Guide — 12-category adversarial testing taxonomy (authorization hijacking, checker-out-of-the-loop, hallucination exploitation, blast radius, knowledge base poisoning, multi-agent exploitation, and more) with a four-phase Preparation/Execution/Analysis/Reporting methodology
 - **Risk Management**: Rogue actions, data disclosure, prompt injection, and mitigation strategies
+- **Agent Sandboxing**: Isolation taxonomy spanning OS-level policy, container, microVM, and cloud-hosted tiers — E2B, Daytona, Modal, LangSmith Sandboxes, AWS Lambda MicroVMs, Firecracker, gVisor, Kata Containers, Anthropic srt, and nsjail
 
 ### **Cost Management**
 - **Token Optimization**: Model routing, prompt optimization, and caching strategies

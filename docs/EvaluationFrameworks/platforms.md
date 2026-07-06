@@ -69,6 +69,21 @@ An enterprise-grade evaluation platform providing essential tools for developers
 
 ## Open Source and Developer Platforms
 
+### Harbor
+**Resource**: [harborframework.com](https://www.harborframework.com) | [GitHub — harbor-framework/harbor](https://github.com/harbor-framework/harbor)
+
+Harbor is an open-source framework, from the creators of Terminal-Bench, for evaluating and optimizing agents and language models at scale. It is the official harness for [Terminal-Bench 2.0/2.1](../Benchmarks/agent-benchmarks.md), reworking the original Terminal-Bench harness to support cloud-deployed containers, RL/SFT rollout generation, and a provider-agnostic interface that works with any agent installable in a container.
+
+**Key Features**:
+- **Agent evaluation**: Runs arbitrary agents — Claude Code, OpenHands, Codex CLI, Mini-SWE-Agent, and the neutral Terminus 2 testbed — against standardized benchmarks
+- **Benchmark creation**: Lets teams build and share custom benchmarks and task environments in the Harbor task format
+- **Distributed execution**: Fans experiments out across thousands of parallel environments via pluggable sandbox providers — [Daytona, Modal](../SecurityFrameworks/agent-sandboxing.md), [LangSmith Sandboxes](../SecurityFrameworks/agent-sandboxing.md#langsmith-sandboxes), Blaxel, and Novita Sandbox
+- **RL optimization**: Generates rollouts for reinforcement learning and supervised fine-tuning pipelines
+- Apache-2.0 licensed; installable via `uv tool install harbor` or `pip`; primarily Python (~93%) with a TypeScript CLI/UI layer
+- 3,000+ GitHub stars, 1,300+ forks, 23+ releases as of mid-2026
+
+**Best For**: Teams and researchers running agent benchmarks (especially Terminal-Bench) at scale across cloud sandbox providers, or generating RL/SFT rollout data from agent trajectories
+
 ### LangSmith
 **Resource**: [LangSmith](https://www.langchain.com/langsmith)
 
@@ -81,6 +96,7 @@ LangChain's integrated development and evaluation platform. Combines tracing, da
 - Prompt versioning and A/B testing
 - Human annotation workflows
 - CI/CD integration for regression testing
+- **[LangSmith Sandboxes](../SecurityFrameworks/agent-sandboxing.md#langsmith-sandboxes)** (Private Preview): secure, microVM-isolated environments for running untrusted agent code; each eval trial gets a fresh sandbox so trials never share state, enabling horizontally scaled evals with hundreds of parallel runs; used as one of [Harbor](#harbor)'s pluggable execution providers
 
 **Best For**: Teams using LangChain/LangGraph who want integrated tracing and evaluation
 
@@ -144,6 +160,7 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 | Galileo | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Google Stax | ❌ | ❌ | ✅ | ✅ | ✅ |
 | LastMile AI | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Harbor | ✅ | ✅ | ❌ | Limited | ✅ |
 | LangSmith | ❌ | Limited | ✅ | ✅ | ✅ |
 | Braintrust | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -180,6 +197,8 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 
 - [LLM Evaluation Frameworks](llm-frameworks.md)
 - [Benchmarks](../Benchmarks/Readme.md)
+- [Agent Evaluation Benchmarks — Terminal-Bench 2.0/2.1](../Benchmarks/agent-benchmarks.md) — benchmarks executed via the Harbor harness
+- [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — LangSmith Sandboxes and other cloud-hosted sandbox providers Harbor can run on
 - [Observability Solutions](../Observability/solutions.md)
 - [Agent Observability Overview](../Observability/Readme.md)
 - [Production Observability](../ProductionBestPractices/observability.md)
@@ -189,3 +208,7 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 
 - [Gartner — AI Evaluation and Observability Platforms (Market Reviews)](https://www.gartner.com/reviews/market/ai-evaluation-and-observability-platforms) — market definition, capability taxonomy, and vendor reviews for AEOPs
 - [Evaluate AI agents systematically with Agent-EvalKit (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit/) — introduces the six-phase evaluation workflow and CLI integrations
+- [Harbor](https://www.harborframework.com) — official site for the Harbor agent evaluation framework
+- [Harbor GitHub — harbor-framework/harbor](https://github.com/harbor-framework/harbor) — source, README, and release history
+- [Introducing Terminal-Bench 2.0 and Harbor (tbench.ai)](https://www.tbench.ai/news/announcement-2-0) — announcement explaining Harbor's role as the Terminal-Bench 2.0 harness
+- [LangSmith Sandboxes](https://www.langchain.com/langsmith/sandboxes) — LangChain's secure, microVM-isolated runtime for agent code execution and eval scaling
