@@ -1242,3 +1242,18 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 |---|---|---|
 | `docs/AgentMemory/solutions.md` | Fixed + Extended | Fixed both quadrantChart Mermaid diagrams — quoted all multi-word labels (axis labels, quadrant names, data point labels with spaces) which caused rendering failure. Added new "AWS Memory Architecture Guide" section covering: memory taxonomy (duration × scope), context window management strategies, session memory backend selection (DynamoDB / ElastiCache / Redis Cloud), vector store selection (HNSW/IVF/flat, Pinecone/Weaviate/Qdrant/Zilliz/MongoDB Atlas), Graph RAG with Neo4j AuraDB, MongoDB Atlas unified document+vector model, shared cross-agent memory with DynamoDB access control, memory governance (data lineage, retention, PII handling with Bedrock Guardrails), and memory consolidation patterns (scheduled vs threshold-triggered). Updated See Also and References. |
 | `docs/AgentMemory/ltm-strategies.md` | Extended | Added AWS consolidation implementation details to Reflection/Consolidation strategy (EventBridge → Step Functions pattern, scheduled vs threshold-triggered variants). Added vector index architecture comparison table and hybrid search + re-ranking notes to Vector RAG strategy. Added new Graph RAG strategy (2b) covering entity-first vs community-first traversal, Neo4j AuraDB implementation. Updated See Also with new backlinks and added References section. |
+
+## [2026-07-06] ingest | Harbor Framework + LangSmith Sandboxes | sections touched: EvaluationFrameworks/platforms.md, Benchmarks/agent-benchmarks.md, SecurityFrameworks/agent-sandboxing.md, ProductionBestPractices/testing-evaluations.md, index.md
+
+**Sources**: https://www.harborframework.com, https://github.com/harbor-framework/harbor, https://www.langchain.com/langsmith/sandboxes (WebFetch/WebSearch — harborframework.com and langchain.com blocked direct WebFetch with HTTP 403; content sourced from GitHub README fetch and WebSearch summaries of the LangChain/LangSmith blog and the tbench.ai Terminal-Bench 2.0 announcement)
+**Type**: New tool/platform ingest (no local raw file)
+
+### Changes
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/platforms.md` | Extended | Added new "Harbor" entry under Open Source and Developer Platforms — official Terminal-Bench 2.0/2.1 harness, distributed agent evaluation across cloud sandbox providers, RL/SFT rollout generation, Apache-2.0. Updated LangSmith entry with LangSmith Sandboxes (Private Preview). Added both to the platform comparison table, See Also, and References. |
+| `docs/Benchmarks/agent-benchmarks.md` | Extended | Cross-referenced Harbor as the executing harness in the TerminalBench-2 and Terminal-Bench 2.1 sections; added See Also link. |
+| `docs/SecurityFrameworks/agent-sandboxing.md` | Extended | Added new "LangSmith Sandboxes" cloud-hosted sandbox entry (microVM isolation, Authentication Proxy, Deep Agents integration) with comparison table row, selection guide row, See Also, and References updates. |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added Harbor to the Evaluation Platforms table; added Agent Sandboxing cross-link to See Also. |
+| `docs/index.md` | Extended | Updated Agent Testing & Evaluations bullets to mention Harbor; added new Agent Sandboxing bullet under Agent Security (page existed but had no index representation). |

@@ -47,6 +47,7 @@ Evaluation operates at multiple levels:
 | [Google Stax](https://stax.withgoogle.com/) | Managed test datasets, pre-built and custom evaluators, visual tracking |
 | [LastMile AI](https://lastmileai.dev/) | Enterprise-grade testing and benchmarking in production |
 | [Braintrust](https://www.braintrust.dev/) | Regression detection using real user data |
+| [Harbor](../EvaluationFrameworks/platforms.md#harbor) | Open-source harness for running Terminal-Bench and custom benchmarks across thousands of parallel cloud sandboxes; generates RL/SFT rollouts |
 
 ## Agent Benchmarks Reference
 
@@ -164,6 +165,7 @@ The following must be true before production rollout:
 - [Context Engineering](./context-engineering.md)
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category threat taxonomy and four-phase testing methodology
 - [Agent Security](./security.md) — guardrails, approval workflows, and audit trails
+- [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — cloud-hosted sandbox providers (including LangSmith Sandboxes) used to isolate parallel eval trials
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist
