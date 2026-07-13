@@ -5,6 +5,40 @@ Format: `## [YYYY-MM-DD] <operation> | <source> | sections touched: <list>`
 
 ---
 
+## [2026-07-10] ingest | AWS Marketplace — Building Agentic Systems on AWS: Agent Memory Systems (Module 7) | sections touched: AgentMemory/short-term.md, AgentMemory/functional-tiers.md, AgentMemory/ltm-strategies.md, ProductionBestPractices/state-memory.md, AgentPlatforms/aws-agentcore.md, AllThingsAWS/README.md, index.md
+
+**Source**: `raw/awsmp-building-agentic-systems-module-7.pdf`
+**Type**: Vendor workshop slide deck (35 pages, AWS Marketplace, 2026)
+**Presenters**: Leonardo Murillo (Developer Relations, AWS Marketplace), Thaddeus Worsnop (Principal Solutions Architect, AWS)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentMemory/short-term.md` | Extended | Added context window token budget layout table, KV cache hit rate optimization note, semantic window strategy, progressive summarization strategy, windowing strategy comparison table, LangGraph checkpointer pattern detail, updated best practices with KV cache guidance, added References section |
+| `docs/AgentMemory/functional-tiers.md` | Extended | Added AWS Duration × Scope Memory Taxonomy section mapping CoALA types to AWS services (in-context / session / cross-agent / semantic), session memory implementation patterns, shared cross-agent state notes; added References |
+| `docs/AgentMemory/ltm-strategies.md` | Extended | Expanded HNSW vs IVF+PQ selection guide with memory-per-vector numbers and detailed parameter guidance; updated hybrid search section with full pipeline latency table (BM25+dense+RRF+reranker ~62ms end-to-end) and dense-only failure cases; added Strategy 9 (AgentCore Memory — extraction strategy tiers, event API, record types); added Strategy 10 (Three-Tier Partner Memory Stack — Redis Cloud, MongoDB Atlas, Neo4j AuraDB with hot/cold handoff pattern); updated References |
+| `docs/ProductionBestPractices/state-memory.md` | Extended | Added Memory Governance section: data lineage (CloudTrail/DynamoDB Streams), retention policies by tier, PII detection (Bedrock Guardrails + Macie + field-level encryption), right-to-delete implementation patterns; updated See Also |
+| `docs/AgentPlatforms/aws-agentcore.md` | Extended | Expanded Memory Management bullet with short-term/long-term architecture details and extraction strategy tiers; added Module 7 to References |
+| `docs/AllThingsAWS/README.md` | Extended | Added two hub rows: AWS AgentCore Memory and Agent Memory Systems (Module 7 Workshop); added state-memory to See Also |
+| `docs/index.md` | Extended | Updated State & Memory Management section to reflect new coverage: AWS taxonomy, context window budget, vector index selection guide, memory governance |
+
+### Key Knowledge Added
+
+- **AWS memory taxonomy**: Duration × Scope quadrant (in-context / session / cross-agent / semantic) complementing CoALA's functional types
+- **Context window budget engineering**: Token region layout, KV cache hit rate (~85% cost savings for stable system prompts), four windowing strategies with latency comparison
+- **HNSW vs IVF+PQ**: Memory-per-vector numbers (~120KB vs ~8–15KB per 1K vectors), parameter tuning guidance, selection decision tree
+- **Hybrid search pipeline**: BM25 +5ms → HNSW dense +15ms → RRF +2ms → cross-encoder reranker +40ms = ~62ms end-to-end; dense-only failure cases for exact strings/CVEs/error codes
+- **Amazon Bedrock Knowledge Bases**: Chunking strategies, metadata filtering for pre-ANN search space reduction, Retrieve vs RetrieveAndGenerate API patterns
+- **GraphRAG with Neo4j AuraDB**: Blast-radius queries, dependency traversal at distance 1 and 2, when vector-only retrieval fails for structural facts
+- **AgentCore Memory**: Session (CreateEvent/ListEvents), long-term (Extraction → Consolidation → Reflection), three extraction tiers (zero-config / guided / custom)
+- **Partner memory stack**: Redis Cloud (CRDT active-active, Redis on Flash, session data structures), MongoDB Atlas (unified doc+vector, aggregation pipeline, change streams), Neo4j AuraDB (graph structural knowledge) — each at a distinct latency tier (< 2ms / ~18ms / ~30ms)
+- **Hot/cold handoff**: Redis TTL expiry → EventBridge → Lambda → Bedrock (Haiku extraction) → Pydantic validation → MongoDB Atlas upsert (idempotent)
+- **Memory governance**: Lineage per store, retention TTLs by tier (24h session / 90d workflow / 7yr archive), PII detect-and-mask via Guardrails + Macie, right-to-delete implementation with user_id indexes
+
+---
+
 ## [2026-07-05] ingest | Kestra — Declarative Agentic Orchestration Platform | sections touched: WorkflowBuilders/orchestration.md, Standards/mcp.md, index.md
 
 **Source**: Multi-source WebSearch/WebFetch research (kestra.io, github.com/kestra-io/kestra) — no raw document or user-supplied URL; task was to find the right bucket for Kestra and add coverage

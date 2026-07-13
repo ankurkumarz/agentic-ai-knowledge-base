@@ -34,15 +34,38 @@ Long-term memory for AI agents spans three distinct types from the CoALA taxonom
 
 **Vector index architectures** (relevant for store selection):
 
-| Index | Recall | Scale | Used By |
-|---|---|---|---|
-| Flat | Exact | < 100K docs | Dev/prototype |
-| HNSW | ~95%+ | Tens of millions | Pinecone, Weaviate, Qdrant, MongoDB Atlas |
-| IVF | Good | 100M+ docs | Zilliz Cloud (Milvus) |
+| Index | Recall | Scale | Memory per 1K vectors (d=1536) | Best For |
+|---|---|---|---|---|
+| Flat | Exact | < 100K docs | — | Dev/prototype |
+| HNSW (M=16, ef default) | ~95–99% | Up to ~100M vectors (RAM-bound) | ~120 KB | < 5ms P99 SLA; native incremental inserts; default for session memory retrieval |
+| IVF + PQ (nlist/nprobe tuned) | ~90–95% (recoverable with re-ranker) | > 100M–1B+ vectors | ~8–15 KB | Billion-scale corpora; batch nightly rebuild pattern |
 
-**Hybrid search**: Combining vector similarity with BM25 keyword search via Reciprocal Rank Fusion (RRF) improves recall for proper nouns, technical identifiers, and domain terminology the embedding model may not represent well. Weaviate and Amazon Bedrock Knowledge Bases (OpenSearch Serverless) both support hybrid search natively.
+**HNSW key parameters**: `M` (edges per node, default 16): ↑M = ↑recall, ↑memory. `ef_construction` (build recall): ↑ = ↑quality, ↑build time. Best for latency-sensitive workloads (sub-5ms P99). Weakness: memory-heavy; rebuild required on major updates.
 
-**Re-ranking**: A cross-encoder second stage (retrieve top 20, re-rank to top 5) improves result quality at the cost of additional latency. Amazon Bedrock Knowledge Bases supports built-in reranking.
+**IVF+PQ key parameters**: `nlist` (# clusters): ↑ = finer partition. `nprobe` (cells to search): ↑ = ↑recall, ↑latency. Product Quantization compresses 1536-dim float32 → 8-byte code (8–32× size reduction). Lower recall than HNSW at same latency; PQ adds quantization error — add a re-ranking layer to recover.
+
+**Selection guide**:
+- Corpus < 10M vectors → HNSW (default)
+- 10M–100M vectors → benchmark both
+- > 100M vectors → IVF + PQ
+- Corpus updates continuously (new records daily) → prefer HNSW (native incremental inserts avoid nightly full rebuild)
+- Using a cross-encoder re-ranker downstream → IVF recall loss at ANN stage is recoverable; optimize the full pipeline together, not ANN in isolation
+
+**Hybrid search**: Combining vector similarity with BM25 keyword search via Reciprocal Rank Fusion (RRF) improves recall for proper nouns, technical identifiers, and domain terminology the embedding model may not represent well. Full hybrid pipeline with latency breakdown:
+
+| Stage | Component | Latency |
+|---|---|---|
+| Sparse retrieval | BM25 (term frequency × IDF) | +5ms |
+| Dense retrieval | HNSW cosine similarity | +15ms |
+| Fusion | RRF: score = 1/(60+r_dense) + 1/(60+r_sparse) | +2ms |
+| Re-ranking | Cross-encoder full attention pass per (query, chunk) pair | +40ms |
+| **Total** | End-to-end | **~62ms** |
+
+Dense-only retrieval fails for DevOps-style queries involving exact version strings, error codes (e.g., `ERR_TOO_MANY_REDIRECTS`), or CVE identifiers — BM25 exact token match is essential for these cases.
+
+**Re-ranking tradeoff**: +40ms is worth it when the query is ambiguous, the corpus has many near-duplicate chunks, or the interaction is not real-time (batch workflows, background research).
+
+**Weaviate and Amazon Bedrock Knowledge Bases** (OpenSearch Serverless) both support hybrid search natively. Amazon Bedrock Knowledge Bases supports built-in reranking.
 
 ---
 
@@ -254,7 +277,57 @@ Two scheduling variants:
 
 ---
 
-## LTM Solutions
+### 9. Amazon Bedrock AgentCore Memory — Managed Extraction Pipeline
+
+**Memory type**: Episodic and Semantic
+
+**Mechanism**: A fully managed service that stores raw turn-by-turn events per session (short-term) and asynchronously extracts insights via an Extraction → Consolidation → Reflection pipeline (long-term). Key insights — preferences, facts, summaries, episodes — persist across all future sessions.
+
+**Event storage**: Agents call `CreateEvent` each turn; the full conversation history is reloaded via `ListEvents` on subsequent turns. Event retention: up to 365 days, KMS encryption, namespaced by `sessionId + actorId`.
+
+**Long-term extraction**: `RetrieveMemoryRecords` provides semantic search over extracted records with metadata filters. Four record types produced by extraction:
+
+| Record Type | Description |
+|---|---|
+| Semantic facts | Knowledge extracted from conversations |
+| User preferences | Preferences retained across sessions |
+| Summary | Session summaries for cross-session continuity |
+| Episodic | Structured episodes: actor · action · outcome |
+
+**Extraction strategy tiers** — choose based on control needs:
+
+| Tier | Mode | Tradeoffs |
+|---|---|---|
+| Built-in (zero config) | AgentCore manages entire pipeline with predefined algorithms | Lowest cost, no customization; ideal for standard conversational agents |
+| Built-in with overrides | Modify extraction prompts, keep managed pipeline | Moderate cost; targets customization without full DIY |
+| Custom (self-managed) | Any model, any prompt, custom record schemas, external DB integration (MongoDB Atlas, Neo4j AuraDB) | Full control, highest operational cost |
+
+---
+
+### 10. Three-Tier Partner Memory Stack (Redis Cloud → MongoDB Atlas → Neo4j AuraDB)
+
+**Memory type**: Session (hot path), Long-term document + vector, Graph
+
+**Mechanism**: Three complementary data stores, each occupying a distinct tier of the memory stack. They are not alternatives — each has a different role.
+
+| Tier | Store | Latency | Role |
+|---|---|---|---|
+| Session (hot path) | Amazon ElastiCache (default) or Redis Cloud | < 2ms | TTL-bounded, sub-millisecond session state; upgrade to Redis Cloud for geo-distribution or corpus exceeding DRAM |
+| Long-term document + vector | Amazon Bedrock Knowledge Bases + OpenSearch (default) or MongoDB Atlas | ~18ms | Durable filtered semantic retrieval; MongoDB Atlas unifies document store + vector index in one collection |
+| Graph structural knowledge | Amazon Neptune (default) or Neo4j AuraDB | ~30ms | Relationship traversal, topology queries; use when dependency/ownership relationships are structural facts, not prose |
+
+**Redis Cloud for session state**: When ElastiCache limits are exceeded (multi-region active-active, session corpus > available DRAM), Redis Cloud adds CRDTs (active-active geo-replication), Redis on Flash, and enterprise clustering. Data structures fit for agent session state:
+- `Hash` — O(1) read/write per field; atomic partial updates; no JSON parse on load
+- `Sorted Set (ZADD/ZREVRANGEBYSCORE)` — timestamp-scored windowed turn history; retrieves latest k turns without full scan
+- `Stream (XADD)` — append-only session event log; replay for debugging; consumer groups for async processing
+
+Migration from ElastiCache to Redis Cloud requires only updating `REDIS_URL` — no application code changes.
+
+**MongoDB Atlas for long-term memory**: Unifies structured metadata filtering + vector similarity in a single aggregation pipeline. A memory record contains both structured fields (`session_id`, `service`, `env`, `outcome`) and a 1024-dim embedding vector. The aggregation pipeline runs `$vectorSearch` over the embedding field, then `$match` on metadata fields, reducing the search space before ANN scoring (~18ms total). Change Streams propagate new memory records to downstream pipelines in real time without polling.
+
+**Hot/cold handoff pattern**: When a Redis session expires (TTL or explicit close), an Amazon EventBridge rule fires a Lambda that reads the history, runs a structured extraction call via Amazon Bedrock (Claude Haiku — 5× cheaper than Sonnet for well-defined extraction), validates output with Pydantic schema enforcement, and upserts the consolidated record to MongoDB Atlas using `session_id` as an idempotency key. DynamoDB serves as a fallback source of truth if the Redis key has already expired when Lambda fires.
+
+---
 
 For a full vendor comparison with Technology Radar ratings, see **[Memory Solutions](solutions.md)**.
 
@@ -311,9 +384,10 @@ Most production systems combine multiple strategies:
 - [Claude Managed Agents — Dreaming & Outcomes](../AgentPlatforms/claude-managed-agents.md)
 - [Self-Learning Agents Reference Architecture](../ReferenceArchitecture/self-learning-agents.md)
 - [AWS AgentCore Platform](../AgentPlatforms/aws-agentcore.md)
+- [RAG Architecture — Hybrid Search and Vector Indexes](../ReferenceArchitecture/rag-architecture.md)
 
 ## References
 
-- [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AWS "Building Agentic Systems on AWS" series; covers memory taxonomy, vector store selection, Graph RAG with Neo4j, Redis/MongoDB architecture, memory governance, and consolidation patterns
+- [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AWS "Building Agentic Systems on AWS" series; covers memory taxonomy, vector store selection (HNSW vs IVF+PQ), Graph RAG with Neo4j, Redis/MongoDB hot-cold handoff, AgentCore Memory extraction tiers, and memory governance
 - [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) — Park et al. (Stanford/Google, 2023); foundational paper for Reflection/Consolidation strategy
 - [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) — Packer et al. (UC Berkeley, 2023); OS-inspired working memory management, basis for Letta

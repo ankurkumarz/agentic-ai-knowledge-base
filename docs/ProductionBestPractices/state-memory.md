@@ -81,6 +81,44 @@ In multi-agent systems, agents coordinate through shared state rather than direc
 
 **Handoff payload principle**: include only what the next agent needs. Verbose payloads bloat context windows and degrade reasoning quality. Store large intermediate artifacts in S3 and pass a reference, not the content.
 
+## Memory Governance: Lineage, Retention, PII, Right-to-Delete
+
+Memory stores accumulate sensitive data under regulatory obligation. Governance must be built in at design time, not added retroactively.
+
+### Data Lineage
+
+Every memory write should emit an audit record with: `session_id`, `agent_id`, `user_id`, `timestamp`, `source_ip`. Tag all memory records with `{tenant_id, data_classification, retention_class}`.
+
+| Store | Lineage Mechanism |
+|---|---|
+| All memory writes | AWS CloudTrail API records |
+| Workflow state changes | Amazon DynamoDB Streams (audit replay) |
+| S3 knowledge base records | Amazon S3 object metadata (document source) |
+
+### Retention Policies by Tier
+
+| Tier | Store | Recommended TTL | Notes |
+|---|---|---|---|
+| Session | Redis / ElastiCache | 24h default | Sessions older than 24h are stale; aggressive TTL frees DRAM |
+| Workflow | DynamoDB | 90 days | Step Functions execution logs: 90-day retention |
+| Long-term | MongoDB Atlas | Per-tenant configurable via `expireAfterSeconds` | Fields: timestamp |
+| Knowledge base source docs | Amazon S3 | Glacier after 1 year, delete after 7 years | S3 Lifecycle rules |
+
+### PII Detection and Handling
+
+Apply Amazon Bedrock Guardrails PII filter in the consolidation Lambda before any write to long-term stores. Configurable modes: detect-and-mask vs. detect-and-block. PII types covered: name, SSN, email, credit card, IP. Use field-level encryption in MongoDB Atlas for PII-bearing fields with KMS-managed keys. Scan S3 source buckets with Amazon Macie before knowledge base sync jobs ingest documents.
+
+### Right-to-Delete (GDPR/CCPA)
+
+Indexed `user_id` on each memory store tier enables targeted purge without full-table scans:
+
+| Store | Deletion Approach |
+|---|---|
+| MongoDB Atlas | `deleteMany({user_id: X})` via `user_id` index |
+| DynamoDB | GSI on `user_id` — workflow log purge without full-table scan |
+| Redis Cloud | `SCAN pattern 'session:*:{user_id}:*' + DEL` — async Lambda task triggered by deletion request |
+| Amazon Bedrock Knowledge Bases | S3 object delete + sync job re-indexes to exclude deleted docs |
+
 ## Event Sourcing for Multi-Agent State Consistency (Confluent Pattern)
 
 An alternative to a shared mutable state store: maintain state consistency across many agents through **immutable logs and event sourcing**, as described in Confluent's *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* (2025). The model treats every agent interaction as input → processing → output over a durable event log rather than a database record:
@@ -98,6 +136,9 @@ This complements the AWS three-tier shared-state model above: task state and int
 - [Deployment](./deployment.md)
 - [Claude Managed Agents — Memory, Dreaming & Outcomes](../AgentPlatforms/claude-managed-agents.md)
 - [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md)
+- [Four Memory Types (CoALA + AWS Taxonomy)](../AgentMemory/functional-tiers.md)
+- [Working Memory Management](../AgentMemory/short-term.md)
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md)
 - [Loop Engineering](../AgentHarness/loop-engineering.md) — externalized state as the "spine" of a scheduled, self-feeding agent loop
+- [AI Governance — Best Practices](../AIGovernance/governance-best-practices.md)

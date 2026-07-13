@@ -34,7 +34,7 @@ AWS Marketplace provides 2,800+ agentic AI tools and capabilities mapped to thes
 
 ### Core Services
 - **AgentCore Runtime**: Scalable execution environment for agents
-- **Memory Management**: Persistent and session-based memory systems
+- **Memory Management**: Persistent and session-based memory systems — short-term session memory (events per session, up to 365-day retention, KMS encryption) and long-term persistent knowledge extracted via the Extraction → Consolidation → Reflection pipeline. Three extraction strategy tiers: Built-in (zero config), Built-in with overrides (custom prompts), and Custom self-managed (external DB integration). Retrieval via `RetrieveMemoryRecords` semantic search with metadata filters.
 - **Observability**: Comprehensive monitoring and logging capabilities
 - **Identity & Access Management**: Fine-grained security and permissions
 - **Gateway**: API gateway for agent interactions
@@ -192,5 +192,6 @@ AgentCore services work together or independently with any open-source framework
 ## References
 
 - [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop covering the 13-domain capability stack, four planes of multi-agent systems, and AWS service mappings
+- [AWS Marketplace — Building Agentic Systems: Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AgentCore Memory short-term/long-term architecture, extraction strategy tiers, partner memory stack (Redis Cloud, MongoDB Atlas, Neo4j AuraDB), memory governance
 - [AWS Bedrock AgentCore Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)
 - [AgentOps: Operationalize agentic AI at scale with Amazon Bedrock AgentCore (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore/)

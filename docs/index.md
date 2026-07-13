@@ -122,8 +122,10 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Best Practices**: Distributed tracing, alerting, dashboards, and predictive observability; three-level tracking (session/step/system); production benchmarks (Action Completion, Tool Selection Quality)
 
 ### **State & Memory Management**
-- **Three Functional Tiers**: Short-term, episodic, and long-term memory systems
-- **LTM Strategies**: Vector RAG, knowledge graphs, entity extraction, and reflection
+- **Three Functional Tiers**: Short-term, episodic, and long-term memory systems; AWS duration × scope taxonomy (in-context / session / cross-agent / semantic)
+- **Context Window Token Budget**: KV cache hit rate optimization, windowing strategies (last-k, token-budget, semantic, progressive summarization), LangGraph checkpointer pattern
+- **LTM Strategies**: Vector RAG (HNSW vs IVF+PQ selection guide), hybrid BM25+dense+RRF+reranker pipeline (~62ms end-to-end), knowledge graphs, GraphRAG for structural dependency queries, AgentCore Memory extraction tiers, Redis/MongoDB hot-cold handoff pattern
+- **Memory Governance**: Data lineage (CloudTrail), retention policies by tier (24h session → 90d workflow → 7yr archive), PII detection (Bedrock Guardrails + Macie), right-to-delete (GDPR/CCPA) implementation patterns
 - **Memory Solutions**: Mem0, MemMachine, Zep, AgentFS, cloud-managed memory services (AWS AgentCore, Vertex, Azure, Anthropic Managed Agents, Salesforce Agentic Memory, Cloudflare Agent Memory), agentmemory, MinnsDB, and framework-native memory (LangGraph, LlamaIndex, CrewAI) — full Technology Radar comparison
 
 ### **Deployment**

@@ -183,13 +183,32 @@ LLM Reasoning → Response
 | **Updated by** | Each inference step | Entity extraction, RAG writes | Event logging | Reflection, fine-tuning |
 | **Human analogy** | Working memory | Semantic memory | Autobiographical memory | Skill / habit memory |
 
+## AWS Duration × Scope Memory Taxonomy
+
+AWS presents a complementary memory taxonomy that maps onto the CoALA types using two dimensions: **duration** (short-lived vs. long-lived) and **scope** (single-agent vs. multi-agent). This is useful for selecting the right AWS service for each memory concern.
+
+| Memory Type | Duration | Scope | AWS Services | CoALA Equivalent |
+|---|---|---|---|---|
+| In-context working memory | Current inference only | Single agent | Amazon Bedrock (context window, KV cache) | Working Memory |
+| Short-term session memory | Session lifetime (minutes to hours) | Single agent | Amazon ElastiCache, Amazon DynamoDB, LangGraph checkpointer | Working Memory (persisted) |
+| Shared cross-agent memory | Workflow lifetime | Multiple agents | Amazon DynamoDB, Amazon S3, Amazon ElastiCache | Episodic + Working (shared state) |
+| Semantic memory | Persistent (days to permanent) | Agent type / domain | Amazon Bedrock Knowledge Bases, MongoDB Atlas, Pinecone, Neo4j AuraDB | Semantic + Episodic |
+
+**Session memory implementation patterns**:
+- *Window / summary / full history strategies* manage short-term session memory for single-agent invocations
+- LangGraph checkpointer middleware serializes state each turn and loads it on the next; storage backend can be DynamoDB or ElastiCache
+
+**Shared cross-agent state**: In multi-agent workflows, a DynamoDB state plane gives all agents a consistent, authoritative shared view — task state, inter-agent handoff payloads, and consolidated analysis from multiple agents. Access controllers enforce per-agent read/write scope.
+
 ## See Also
 
 - [Agent Memory README](README.md)
 - [Long-term Memory Strategies](ltm-strategies.md)
 - [Short-term Memory Management](short-term.md)
 - [Research Papers](research-papers.md)
+- [AWS AgentCore Memory](../AgentPlatforms/aws-agentcore.md)
 
 ## References
 
 - [Cognitive Architectures for Language Agents (CoALA)](https://arxiv.org/abs/2309.02427) — Sumers et al. (Princeton, 2023). Defines the four-type memory taxonomy for language agents.
+- [AWS Marketplace — Building Agentic Systems: Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — Duration × scope taxonomy, cross-agent shared state patterns, AWS service mappings

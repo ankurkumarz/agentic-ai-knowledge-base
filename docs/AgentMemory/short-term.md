@@ -14,6 +14,21 @@ LLMs have a fixed context window (ranging from 4K to 1M+ tokens depending on the
 - What to offload to semantic, episodic, or procedural memory
 - What to discard entirely
 
+## Context Window Token Budget Layout
+
+Production agents on large-context models (e.g., Claude 200K tokens) must manage a layered token budget across several competing consumers:
+
+| Context Region | Typical Size | Notes |
+|---|---|---|
+| System prompt | Stable, design-time | Best candidate for KV cache — stable across turns saves ~85% of input token cost for that portion |
+| Windowed conversation history | ~1,200–3,500 tokens per turn (windowed) | Variable; managed by the strategies below |
+| Retrieved RAG chunks | top-k × chunk_size tokens | Injected per turn; size depends on retrieval strategy |
+| Tool call results | Per-tool, often large | Accumulated during reasoning; may need summarization |
+| Agent scratchpad / CoT | Intermediate reasoning | LLM-internal; may be exposed or hidden depending on framework |
+| Reserved for response | max_tokens budget | Must be reserved; cannot be consumed by history |
+
+**Key metric**: KV cache hit rate. On Amazon Bedrock, Claude caches the system prompt portion of every context — cache hits save approximately 85% of input token cost for that portion. Design system prompts to be stable across turns (no per-turn dynamic content injected into the system prompt block).
+
 ## Working Memory Techniques
 
 ### Sliding Window
@@ -97,6 +112,28 @@ memory = ConversationSummaryMemory(llm=ChatOpenAI())
 
 ---
 
+### Semantic Window (Semantic Compression)
+**Logic**: Embeds all history chunks into a vector store, then retrieves only the turns semantically relevant to the current query instead of the most recent k turns.
+
+**Primary Benefit**: Reduces a 50+ turn history to 3–5 highly relevant turns. Improves response quality for long-running sessions with branching topics.
+
+**Tradeoff**: Requires a vector store for history (+15ms retrieval latency). More complex to implement than sliding window.
+
+**Best For**: Long-running sessions where topic branching makes recency a poor proxy for relevance.
+
+---
+
+### Progressive Summarization
+**Logic**: When the accumulated token count exceeds a threshold, call a model to summarize older turns, replacing the raw turns with a structured summary object.
+
+**Primary Benefit**: Preserves semantic content while reducing token count by 80–90%.
+
+**Tradeoff**: One extra LLM call per compression event introduces latency.
+
+**Best For**: Sessions where raw history exceeds context budget but semantic fidelity must be preserved.
+
+---
+
 ## Working Memory Solutions
 
 | Category | Solution | Memory Philosophy | Best For |
@@ -109,9 +146,22 @@ memory = ConversationSummaryMemory(llm=ChatOpenAI())
 | Technique | Summarization | Recursive Compression | Condensing old messages into a brief "recap" to save space |
 | Technique | Scratchpad | Working Draft | Agent-written notes used only for the current task logic |
 
-## LangGraph Checkpoints
+## Windowing Strategy Comparison
 
-LangGraph's checkpointing system is the most powerful short-term memory solution for stateful agent workflows. It saves the complete state of a graph execution at each step, enabling:
+| Strategy | Eviction Logic | Complexity | Latency | Best For |
+|---|---|---|---|---|
+| Last-k turns | Keep most recent k=10–20 turns | O(1) | Zero | Most conversational agents |
+| Token-budget window | Slide window until token count ≤ budget; add newest first, evict oldest | Low | Zero | Precise token control |
+| Semantic window | Embed all turns; retrieve top-k most relevant to current query | Moderate (+vector store) | +15ms | Long sessions with branching topics |
+| Progressive summarization | Summarize oldest segment when threshold exceeded | High (+LLM call) | +model latency | High-fidelity preservation at scale |
+
+## LangGraph Checkpointer Pattern
+
+The LangGraph checkpointer implements the checkpoint storage and retrieval pattern for session memory. On each `invoke()`, the agent runs a think-act-observe loop, serializes state, and writes an atomic checkpoint keyed by `thread_id + checkpoint_id`. On the next turn, it loads the checkpoint, deserializes state, and continues.
+
+**Storage backends**: Amazon DynamoDB (consistent read, `GET` by `thread_id`) or Amazon ElastiCache (sub-millisecond, `PUT`/`GET`).
+
+LangGraph's checkpointing system saves the complete state of a graph execution at each step, enabling:
 
 - **Pause and Resume**: Stop a long-running agent and resume later
 - **Human-in-the-Loop**: Pause for human approval before continuing
@@ -145,13 +195,20 @@ The agent uses special memory management functions (`core_memory_append`, `archi
 ## Best Practices
 
 1. **Always pin system instructions**: Use context pinning to ensure the agent's persona and core instructions are never trimmed
-2. **Choose the right technique for your use case**: Sliding window for simple chatbots, summarization for long conversations, checkpoints for complex workflows
-3. **Monitor context utilization**: Track what percentage of the context window is being used to identify optimization opportunities
-4. **Test edge cases**: Verify behavior when context is nearly full — does the agent degrade gracefully?
-5. **Consider cost**: Longer contexts cost more per inference — balance quality with cost
+2. **Stabilize system prompts**: Keep system prompt content stable across turns to maximize KV cache hit rates (~85% cost savings on cached tokens on Amazon Bedrock)
+3. **Choose the right windowing strategy**: Last-k for simple conversational agents, token-budget for precise control, semantic window for branching topics, progressive summarization for high-fidelity long sessions
+4. **Monitor context utilization**: Track what percentage of the context window is being used to identify optimization opportunities
+5. **Test edge cases**: Verify behavior when context is nearly full — does the agent degrade gracefully?
+6. **Consider cost**: Longer contexts cost more per inference — balance quality with cost
 
 ## See Also
 
 - [Four Memory Types](functional-tiers.md)
 - [Long-term Memory Strategies](ltm-strategies.md)
 - [Agent Memory README](README.md)
+- [AWS AgentCore Memory](../AgentPlatforms/aws-agentcore.md)
+- [RAG Architecture](../ReferenceArchitecture/rag-architecture.md)
+
+## References
+
+- [AWS Marketplace — Building Agentic Systems: Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — Context window token budget layout, windowing strategies, LangGraph checkpointer pattern, KV cache optimization
