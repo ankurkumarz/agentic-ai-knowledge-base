@@ -150,6 +150,7 @@ nav:
     - 10.5 Agent Evaluation Platforms: 'EvaluationFrameworks/platforms.md'
     - 10.6 Evaluation Reference Frameworks: 'EvaluationFrameworks/Readme.md'
     - 10.7 Reference Documentation: 'Benchmarks/Readme.md'
+    - 10.8 Evaluation Tech Radar: 'EvaluationFrameworks/tech-radar.md'
   - 11. Agentic AI Security:
     - 11.1 Security Standards:
       - 11.1.1 NIST AI RMF (Risk Management Framework): 'SecurityFrameworks/nist-ai-rmf.md'

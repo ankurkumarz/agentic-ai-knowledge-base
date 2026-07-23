@@ -31,3 +31,4 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
 - [Agent Evaluation Platforms](../EvaluationFrameworks/platforms.md)
+- [Evaluation Tech Radar](../EvaluationFrameworks/tech-radar.md)

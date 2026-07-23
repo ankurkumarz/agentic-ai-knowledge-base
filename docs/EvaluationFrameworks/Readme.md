@@ -128,3 +128,4 @@ This evaluation ecosystem provides the foundation for building reliable, measura
 - **[Best Practices](../ProductionBestPractices/README.md)**: Evaluation best practices
 - **[Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md)**: 12-category adversarial testing taxonomy for autonomous agents
 - **[Agent Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)**: Adversarial test cases and launch gates
+- **[Evaluation Tech Radar](tech-radar.md)**: Adopt/Trial/Assess/Hold radar mapping open-source frameworks and managed platforms, including AWS Bedrock Evaluations and Azure AI Foundry Evaluation

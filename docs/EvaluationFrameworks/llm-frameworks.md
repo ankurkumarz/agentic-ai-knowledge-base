@@ -147,5 +147,6 @@ evaluate([test_case], [AnswerRelevancyMetric(), FaithfulnessMetric()])
 
 - [AI as a Judge — Deep Dive](ai-as-judge.md)
 - [Agent Evaluation Platforms](platforms.md)
+- [Evaluation Tech Radar](tech-radar.md)
 - [Benchmarks](../Benchmarks/Readme.md)
 - [Observability](../Observability/Readme.md)

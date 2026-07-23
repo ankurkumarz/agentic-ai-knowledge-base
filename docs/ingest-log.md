@@ -1305,3 +1305,22 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 | `docs/EvaluationFrameworks/platforms.md` | Extended | Added new "Google LLM EvalKit" entry under Open Source and Developer Platforms — open-source, self-hostable, no-code prompt engineering + evaluation hub built on Vertex AI SDKs; metric-driven three-step methodology (define problem → build test dataset → define objective metrics); integrates with Vertex AI Evaluation. Added row to the platform comparison table, See Also (added AllThingsGoogle backlink), and References. |
 | `docs/AllThingsGoogle/README.md` | Extended | Added "LLM EvalKit" row to the Key Offerings hub table with backlink to `EvaluationFrameworks/platforms.md`; added reciprocal See Also link. |
 | `docs/index.md` | Extended | Updated Evaluation Platforms bullet to mention AWS Agent-EvalKit and Google LLM EvalKit. |
+
+## [2026-07-23] ingest | AWS Bedrock Evaluations + Azure AI Foundry Evaluation + new Evaluation Tech Radar | sections touched: EvaluationFrameworks/platforms.md, EvaluationFrameworks/tech-radar.md (new), EvaluationFrameworks/llm-frameworks.md, EvaluationFrameworks/ai-as-judge.md, EvaluationFrameworks/Readme.md, AllThingsAWS/README.md, AllThingsMicrosoft/README.md, AllThingsGoogle/README.md, AgenticFrameworks/solutions.md, Observability/tech-radar.md, mkdocs.yml, index.md
+
+**Sources**: https://aws.amazon.com/bedrock/evaluations/ and https://learn.microsoft.com/en-us/azure/foundry/how-to/evaluate-generative-ai-app — both hosts (`aws.amazon.com`, `learn.microsoft.com`) returned a hard 403 policy denial at the session's outbound proxy (confirmed via proxy status endpoint as `connect_rejected`). Per environment guidance these were not retried. Content for both was instead sourced via WebSearch, which surfaced and summarized the target pages plus adjacent official docs (AWS Bedrock LLM-as-judge GA announcement; Microsoft Foundry risk/safety evaluators page). The user-provided URLs are retained as the canonical citations.
+**Type**: New tool ingest (2 sources, no local raw files) + new synthesis page (Evaluation Tech Radar), requested directly by the user
+
+### Changes
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/platforms.md` | Extended | Added "AWS Bedrock Evaluations" (LLM-as-judge, bring-your-own-inference, Knowledge Bases RAG evaluation with citation metrics, human review via SageMaker Ground Truth) and "Azure AI Foundry Evaluation" (quality/NLP/risk-safety evaluator families, agent evaluation, Observability dashboard integration) entries under Enterprise Evaluation Platforms. Added both to the comparison table, See Also (added Microsoft hub + tech radar links), and References. |
+| `docs/EvaluationFrameworks/tech-radar.md` | **New page** | Created an Adopt/Trial/Assess/Hold Evaluation Tech Radar (mirroring the Frameworks and Observability radars) with two Mermaid quadrant charts: open-source frameworks/toolkits (DeepEval, RAGAS, MLFlow LLM Evaluate, LangChain OpenEvals, Langfuse, Harbor, AgentPex, AWS Agent-EvalKit, Google LLM EvalKit) and managed/enterprise platforms (Galileo, Google Stax, LastMile AI, LangSmith, Braintrust, AWS Bedrock Evaluations, Azure AI Foundry Evaluation). Includes ring guidance tables, radar summary table, best practices, See Also, and References. Added to `mkdocs.yml` nav as 10.8. |
+| `docs/EvaluationFrameworks/llm-frameworks.md`, `docs/EvaluationFrameworks/ai-as-judge.md`, `docs/EvaluationFrameworks/Readme.md` | Extended | Added See Also backlinks to the new tech radar page. |
+| `docs/AllThingsAWS/README.md` | Extended | Added "AWS Bedrock Evaluations" row to the Key Offerings hub table; added Evaluation Tech Radar to See Also. |
+| `docs/AllThingsMicrosoft/README.md` | Extended | Added "Azure AI Foundry Evaluation" row to the Key Offerings hub table; added Evaluation Tech Radar to See Also. |
+| `docs/AllThingsGoogle/README.md` | Extended | Added reciprocal Evaluation Tech Radar link to See Also. |
+| `docs/AgenticFrameworks/solutions.md`, `docs/Observability/tech-radar.md` | Extended | Added reciprocal See Also links to the new Evaluation Tech Radar for cross-radar navigation. |
+| `docs/index.md` | Extended | Updated Evaluation Platforms bullet to include AWS Bedrock Evaluations and Azure AI Foundry Evaluation; added new Evaluation Tech Radar bullet. |
+| `mkdocs.yml` | Extended | Added nav entry `10.8 Evaluation Tech Radar: 'EvaluationFrameworks/tech-radar.md'`. |
