@@ -145,6 +145,7 @@ Comparative evaluation — asking evaluators (human or AI) to pick the better of
 
 - [LLM Evaluation Frameworks](llm-frameworks.md)
 - [Agent Evaluation Platforms](platforms.md)
+- [Evaluation Tech Radar](tech-radar.md)
 - [Benchmarks](../Benchmarks/Readme.md)
 - [Prompt Engineering Best Practices](../PromptEngineering/README.md)
 - [AI Engineering Architecture](../ReferenceArchitecture/ai-engineering-architecture.md)

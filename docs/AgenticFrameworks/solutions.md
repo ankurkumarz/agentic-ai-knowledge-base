@@ -559,6 +559,7 @@ Each framework was assessed on the following dimensions. Ratings are as of May 2
 - [Agent Memory Solutions](../AgentMemory/solutions.md)
 - [Observability Solutions](../Observability/solutions.md)
 - [Thoughtworks Tech Radar Vol. 34 — Agentic AI Digest](../AgenticTechStack/thoughtworks-radar-vol34.md)
+- [Evaluation Tech Radar](../EvaluationFrameworks/tech-radar.md)
 
 ## References
 

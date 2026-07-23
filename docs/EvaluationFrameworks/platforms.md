@@ -67,6 +67,33 @@ An enterprise-grade evaluation platform providing essential tools for developers
 
 **Best For**: Enterprise teams needing comprehensive production evaluation
 
+### AWS Bedrock Evaluations
+**Resource**: [Amazon Bedrock Evaluations](https://aws.amazon.com/bedrock/evaluations/)
+
+A fully managed evaluation capability built into Amazon Bedrock for comparing and selecting foundation models and assessing RAG applications built on Bedrock Knowledge Bases. Combines automatic metrics, LLM-as-a-judge scoring, and human review in one workflow, generally available (RAG evaluation and LLM-as-a-judge) since March 2025.
+
+**Key Features**:
+- **LLM-as-a-judge**: choose from several judge LLMs available on Bedrock; score responses on curated quality metrics (correctness, completeness, professional style/tone) and responsible-AI metrics (harmfulness, answer refusal), with explanations for each score
+- **Bring-your-own-inference**: evaluate any model or system — Bedrock-hosted or external — by supplying pre-generated responses in the input prompt dataset, rather than requiring live inference through Bedrock
+- **RAG evaluation**: automatic evaluation of Bedrock Knowledge Bases-based RAG applications, including citation coverage and citation precision metrics
+- **Human evaluation**: custom human review workflows via Bedrock + SageMaker Ground Truth for criteria that automated judges can't reliably capture
+
+**Best For**: Teams already on Amazon Bedrock wanting evaluation (model comparison, RAG quality, human review) without standing up a separate evaluation platform
+
+### Azure AI Foundry Evaluation
+**Resource**: [Evaluate Generative AI Models and Apps with Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/how-to/evaluate-generative-ai-app)
+
+Microsoft Foundry's native evaluation service for generative AI models, apps, and agents, spanning three metric families and integrating with the platform's Observability dashboard for continuous, in-production evaluation alongside pre-production testing.
+
+**Key Features**:
+- **Three metric families**: AI-assisted quality metrics (overall quality/coherence via LLM judges), NLP-based quality metrics (text-similarity metrics against reference answers), and risk-and-safety metrics
+- **Risk and safety evaluators**: assess generated output for hateful/unfair content, sexual content, violent content, self-harm content, direct/indirect jailbreak vulnerability, and protected material
+- **Agent evaluation**: dedicated evaluators for agent behavior, not just single-turn model output
+- **Observability integration**: the Foundry Observability dashboard surfaces performance, safety, and quality metrics in real time alongside evaluation results
+- **Local + cloud evaluation**: supports both the local Azure AI Evaluation SDK and cloud-run evaluation jobs
+
+**Best For**: Azure AI Foundry teams needing built-in risk/safety guardrail evaluation alongside quality metrics, with results feeding directly into production observability
+
 ## Open Source and Developer Platforms
 
 ### Harbor
@@ -141,6 +168,20 @@ An Apache-2.0 open-source evaluation toolkit (`awslabs/Agent-EvalKit`) structure
 
 **Best For**: Teams already working inside an agentic coding CLI who want a lightweight, code-first evaluation toolkit rather than a separate hosted platform
 
+### Google LLM EvalKit
+**Resource**: [Google Cloud Blog — Introducing LLM EvalKit](https://cloud.google.com/blog/products/ai-machine-learning/introducing-llm-evalkit) | [GitHub — GoogleCloudPlatform/generative-ai](https://github.com/GoogleCloudPlatform/generative-ai/tree/main/tools/llmevalkit)
+
+A lightweight, open-source application built on Vertex AI SDKs that centralizes prompt engineering and evaluation into a single hub, replacing the scattered, feel-based iteration typical of prompt work spread across documents, spreadsheets, and cloud consoles.
+
+**Key Features**:
+- Centralized hub for prompt creation, testing, versioning, and benchmarking, giving teams a system of record for prompt history and performance
+- Metric-driven three-step methodology: define the problem, gather/create a representative test dataset, then build concrete objective metrics to score outputs against it
+- No-code UI aimed at product managers, UX writers, and other non-developer stakeholders, alongside the technical workflow
+- Integrates with Vertex AI Evaluation and the Google Cloud console evaluation surface
+- Open source (GitHub), no separate licensing cost beyond underlying Vertex AI usage
+
+**Best For**: Google Cloud / Vertex AI teams wanting a self-hostable, no-code front end for systematic prompt engineering and evaluation rather than a fully managed SaaS platform like Google Stax
+
 ## Research Evaluation Frameworks
 
 ### Meta MLGym
@@ -165,6 +206,9 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 | Braintrust | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
 | AWS Agent-EvalKit | ✅ | ✅ | Limited | ✅ | ✅ |
+| Google LLM EvalKit | ✅ | ✅ | ❌ | Limited | ❌ |
+| AWS Bedrock Evaluations | ❌ | ❌ | ✅ | Limited | ✅ |
+| Azure AI Foundry Evaluation | ❌ | ❌ | ✅ | ✅ | ✅ |
 
 ## Getting Started
 
@@ -203,6 +247,9 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 - [Agent Observability Overview](../Observability/Readme.md)
 - [Production Observability](../ProductionBestPractices/observability.md)
 - [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
+- [Google — Agentic AI Overview](../AllThingsGoogle/README.md)
+- [Microsoft — Agentic AI Overview](../AllThingsMicrosoft/README.md)
+- [Evaluation Tech Radar](tech-radar.md)
 
 ## References
 
@@ -212,3 +259,8 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 - [Harbor GitHub — harbor-framework/harbor](https://github.com/harbor-framework/harbor) — source, README, and release history
 - [Introducing Terminal-Bench 2.0 and Harbor (tbench.ai)](https://www.tbench.ai/news/announcement-2-0) — announcement explaining Harbor's role as the Terminal-Bench 2.0 harness
 - [LangSmith Sandboxes](https://www.langchain.com/langsmith/sandboxes) — LangChain's secure, microVM-isolated runtime for agent code execution and eval scaling
+- [Introducing LLM EvalKit (Google Cloud Blog)](https://cloud.google.com/blog/products/ai-machine-learning/introducing-llm-evalkit) — announces LLM EvalKit's centralized, metric-driven prompt engineering and evaluation workflow
+- [Amazon Bedrock Evaluations](https://aws.amazon.com/bedrock/evaluations/) — product page for Bedrock's model comparison, RAG, and human evaluation capabilities
+- [Amazon Bedrock Model Evaluation LLM-as-a-judge is now generally available (AWS What's New)](https://aws.amazon.com/about-aws/whats-new/2025/03/amazon-bedrock-model-evaluation-llm-as-a-judge/) — GA announcement, March 2025
+- [Evaluate Generative AI Models and Apps with Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/how-to/evaluate-generative-ai-app) — describes the three evaluator metric families and evaluation workflow
+- [Risk and Safety Evaluators for Generative AI (Microsoft Foundry)](https://learn.microsoft.com/en-us/azure/foundry/concepts/evaluation-evaluators/risk-safety-evaluators) — details the risk/safety evaluator taxonomy

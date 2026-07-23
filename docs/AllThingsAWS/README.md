@@ -23,6 +23,7 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 | AWS QuickSight Topics | BI-native semantic layer for QuickSight — business terms, synonyms, field roles, and semantic types powering natural-language Q&A via Amazon Q | [AgenticTechStack/semantic-data-layer-radar.md](../AgenticTechStack/semantic-data-layer-radar.md) |
 | AWS AgentCore Memory | Fully managed short-term + long-term memory service; Extraction → Consolidation → Reflection pipeline; configurable retention up to 365 days; three extraction tiers (zero-config / guided / custom) | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
 | Agent Memory Systems (Module 7 Workshop) | Deep-dive on memory taxonomy, HNSW vs IVF+PQ vector indexes, hybrid BM25+dense+RRF+reranker pipeline, GraphRAG with Neo4j, Redis/MongoDB hot-cold handoff, memory governance (lineage, retention, PII, right-to-delete) | [AgentMemory/ltm-strategies.md](../AgentMemory/ltm-strategies.md) |
+| AWS Bedrock Evaluations | Managed Bedrock evaluation service — model comparison, LLM-as-a-judge (GA Mar 2025), Knowledge Bases RAG evaluation, and SageMaker Ground Truth human review | [EvaluationFrameworks/platforms.md](../EvaluationFrameworks/platforms.md) |
 
 ## See Also
 
@@ -30,3 +31,4 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)
 - [Production Best Practices — State & Memory](../ProductionBestPractices/state-memory.md)
+- [Evaluation Tech Radar](../EvaluationFrameworks/tech-radar.md)

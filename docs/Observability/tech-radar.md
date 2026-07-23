@@ -153,6 +153,7 @@ quadrantChart
 - [Observability Solutions](solutions.md)
 - [Production Observability](../ProductionBestPractices/observability.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
+- [Evaluation Tech Radar](../EvaluationFrameworks/tech-radar.md)
 
 ## References
 
