@@ -141,6 +141,20 @@ An Apache-2.0 open-source evaluation toolkit (`awslabs/Agent-EvalKit`) structure
 
 **Best For**: Teams already working inside an agentic coding CLI who want a lightweight, code-first evaluation toolkit rather than a separate hosted platform
 
+### Google LLM EvalKit
+**Resource**: [Google Cloud Blog — Introducing LLM EvalKit](https://cloud.google.com/blog/products/ai-machine-learning/introducing-llm-evalkit) | [GitHub — GoogleCloudPlatform/generative-ai](https://github.com/GoogleCloudPlatform/generative-ai/tree/main/tools/llmevalkit)
+
+A lightweight, open-source application built on Vertex AI SDKs that centralizes prompt engineering and evaluation into a single hub, replacing the scattered, feel-based iteration typical of prompt work spread across documents, spreadsheets, and cloud consoles.
+
+**Key Features**:
+- Centralized hub for prompt creation, testing, versioning, and benchmarking, giving teams a system of record for prompt history and performance
+- Metric-driven three-step methodology: define the problem, gather/create a representative test dataset, then build concrete objective metrics to score outputs against it
+- No-code UI aimed at product managers, UX writers, and other non-developer stakeholders, alongside the technical workflow
+- Integrates with Vertex AI Evaluation and the Google Cloud console evaluation surface
+- Open source (GitHub), no separate licensing cost beyond underlying Vertex AI usage
+
+**Best For**: Google Cloud / Vertex AI teams wanting a self-hostable, no-code front end for systematic prompt engineering and evaluation rather than a fully managed SaaS platform like Google Stax
+
 ## Research Evaluation Frameworks
 
 ### Meta MLGym
@@ -165,6 +179,7 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 | Braintrust | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
 | AWS Agent-EvalKit | ✅ | ✅ | Limited | ✅ | ✅ |
+| Google LLM EvalKit | ✅ | ✅ | ❌ | Limited | ❌ |
 
 ## Getting Started
 
@@ -203,6 +218,7 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 - [Agent Observability Overview](../Observability/Readme.md)
 - [Production Observability](../ProductionBestPractices/observability.md)
 - [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
+- [Google — Agentic AI Overview](../AllThingsGoogle/README.md)
 
 ## References
 
@@ -212,3 +228,4 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 - [Harbor GitHub — harbor-framework/harbor](https://github.com/harbor-framework/harbor) — source, README, and release history
 - [Introducing Terminal-Bench 2.0 and Harbor (tbench.ai)](https://www.tbench.ai/news/announcement-2-0) — announcement explaining Harbor's role as the Terminal-Bench 2.0 harness
 - [LangSmith Sandboxes](https://www.langchain.com/langsmith/sandboxes) — LangChain's secure, microVM-isolated runtime for agent code execution and eval scaling
+- [Introducing LLM EvalKit (Google Cloud Blog)](https://cloud.google.com/blog/products/ai-machine-learning/introducing-llm-evalkit) — announces LLM EvalKit's centralized, metric-driven prompt engineering and evaluation workflow

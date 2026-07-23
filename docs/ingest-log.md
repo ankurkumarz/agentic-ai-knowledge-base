@@ -1291,3 +1291,17 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 | `docs/SecurityFrameworks/agent-sandboxing.md` | Extended | Added new "LangSmith Sandboxes" cloud-hosted sandbox entry (microVM isolation, Authentication Proxy, Deep Agents integration) with comparison table row, selection guide row, See Also, and References updates. |
 | `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added Harbor to the Evaluation Platforms table; added Agent Sandboxing cross-link to See Also. |
 | `docs/index.md` | Extended | Updated Agent Testing & Evaluations bullets to mention Harbor; added new Agent Sandboxing bullet under Agent Security (page existed but had no index representation). |
+
+## [2026-07-23] ingest | Google Cloud LLM EvalKit | sections touched: EvaluationFrameworks/platforms.md, AllThingsGoogle/README.md, index.md
+
+**Sources**: https://cloud.google.com/blog/products/ai-machine-learning/introducing-llm-evalkit (WebFetch — succeeded)
+**Not ingested**: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/evaluation-overview and https://aws.amazon.com/blogs/machine-learning/llm-as-a-judge-on-amazon-bedrock-model-evaluation/ — both hosts (`docs.cloud.google.com`, `aws.amazon.com`) returned a hard 403 policy denial at the session's outbound proxy (confirmed via proxy status endpoint as `connect_rejected` / gateway policy denial, not a transient error). Per the environment's network guidance these are not to be retried or routed around. User was consulted and chose to proceed with only the reachable source; the two blocked URLs remain un-ingested pending network access.
+**Type**: New tool/platform ingest (no local raw file)
+
+### Changes
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/platforms.md` | Extended | Added new "Google LLM EvalKit" entry under Open Source and Developer Platforms — open-source, self-hostable, no-code prompt engineering + evaluation hub built on Vertex AI SDKs; metric-driven three-step methodology (define problem → build test dataset → define objective metrics); integrates with Vertex AI Evaluation. Added row to the platform comparison table, See Also (added AllThingsGoogle backlink), and References. |
+| `docs/AllThingsGoogle/README.md` | Extended | Added "LLM EvalKit" row to the Key Offerings hub table with backlink to `EvaluationFrameworks/platforms.md`; added reciprocal See Also link. |
+| `docs/index.md` | Extended | Updated Evaluation Platforms bullet to mention AWS Agent-EvalKit and Google LLM EvalKit. |
