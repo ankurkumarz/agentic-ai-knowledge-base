@@ -57,6 +57,7 @@ Evaluation operates at multiple levels:
 | [GAIA](https://huggingface.co/gaia-benchmark) | General-purpose agent capabilities across diverse tasks |
 | [SWE-Bench](https://www.swebench.com/) | Code generation and GitHub issue resolution |
 | [Terminal Bench](https://www.tbench.ai/) | Agents operating in terminal/CLI environments |
+| [ClawBench](../Benchmarks/agent-benchmarks.md#clawbench) | Browser agents completing everyday tasks on live websites, with isolated execution and five-layer traces |
 | [VisualWebArena](https://github.com/web-arena-x/visualwebarena) | Multimodal agents interacting with web interfaces |
 | [OSWorld](https://os-world.github.io/) | Agents interacting with real operating system environments |
 | [DeepResearch Bench](https://deepresearch-bench.github.io/) | Deep research agents — report quality (RACE) and citation accuracy/grounding (FACT) across 100 PhD-level tasks |
@@ -166,6 +167,7 @@ The following must be true before production rollout:
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category threat taxonomy and four-phase testing methodology
 - [Agent Security](./security.md) — guardrails, approval workflows, and audit trails
 - [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — cloud-hosted sandbox providers (including LangSmith Sandboxes) used to isolate parallel eval trials
+- [Agent Evaluation Benchmarks](../Benchmarks/agent-benchmarks.md) — benchmark selection guidance, including live-website browser-agent evaluation
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist

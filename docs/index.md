@@ -137,7 +137,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 ### **Agent Testing & Evaluations**
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
 - **AI as a Judge**: Using foundation models to evaluate other AI outputs — three usage patterns (absolute scoring, reference comparison, pairwise), prompt design for AI judges, limitations (inconsistency, length bias, positional bias), and judge model selection guidance (Huyen, 2025; Zheng et al., 2023 — 85% GPT-4/human agreement on MT-Bench)
-- **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, GAIA, and DeepResearch Bench (RACE/FACT evaluation of deep research agents); Terminal-Bench 2.0/2.1 now run via the open-source [Harbor](EvaluationFrameworks/platforms.md#harbor) evaluation harness
+- **Agent Benchmarks**: METR, Terminal Bench, ClawBench (283 live-website browser tasks with five-layer execution traces), VisualWebArena, GAIA, and DeepResearch Bench (RACE/FACT evaluation of deep research agents); Terminal-Bench 2.0/2.1 now run via the open-source [Harbor](EvaluationFrameworks/platforms.md#harbor) evaluation harness
 - **Evaluation Platforms**: Galileo, Google Stax, LastMile AI, Harbor (distributed benchmark/RL-rollout harness), AWS Agent-EvalKit, Google LLM EvalKit (open-source, no-code prompt engineering and evaluation hub on Vertex AI), AWS Bedrock Evaluations (managed model/RAG/human evaluation, GA Mar 2025), and Azure AI Foundry Evaluation (quality + risk/safety evaluators)
 - **Evaluation Tech Radar**: Adopt/Trial/Assess/Hold mapping of open-source evaluation frameworks (DeepEval, RAGAS, MLFlow) and managed platforms (Galileo, LangSmith, Bedrock Evaluations, Foundry Evaluation)
 
