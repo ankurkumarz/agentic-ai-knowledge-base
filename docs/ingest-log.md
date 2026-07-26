@@ -1324,3 +1324,16 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 | `docs/AgenticFrameworks/solutions.md`, `docs/Observability/tech-radar.md` | Extended | Added reciprocal See Also links to the new Evaluation Tech Radar for cross-radar navigation. |
 | `docs/index.md` | Extended | Updated Evaluation Platforms bullet to include AWS Bedrock Evaluations and Azure AI Foundry Evaluation; added new Evaluation Tech Radar bullet. |
 | `mkdocs.yml` | Extended | Added nav entry `10.8 Evaluation Tech Radar: 'EvaluationFrameworks/tech-radar.md'`. |
+
+## [2026-07-27] ingest | ClawBench live-website browser-agent benchmark | sections touched: Benchmarks/agent-benchmarks.md, ProductionBestPractices/testing-evaluations.md, index.md
+
+**Sources**: https://github.com/TIGER-AI-Lab/ClawBench, https://claw-bench.com/, https://arxiv.org/abs/2604.08523
+**Type**: Research benchmark and open-source project (no local raw file)
+
+### Changes
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Benchmarks/agent-benchmarks.md` | Extended | Added ClawBench under Web and Computer Interaction Benchmarks, covering its 283 live-website tasks, isolated execution, five-layer traces, multi-harness support, V1 Lite subset, and live-site reproducibility tradeoff; added it to the selection guide and linked the testing guidance. |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added ClawBench to the Agent Benchmarks Reference and added a reciprocal link to the detailed benchmark selection page. |
+| `docs/index.md` | Extended | Added ClawBench to the Agent Testing & Evaluations overview. |

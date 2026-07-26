@@ -66,6 +66,19 @@ METR is a research organization that develops and runs evaluations of frontier A
 
 ## Web and Computer Interaction Benchmarks
 
+### ClawBench
+**Resource**: [Project Page](https://claw-bench.com/) | [Paper (arXiv 2604.08523)](https://arxiv.org/abs/2604.08523) | [GitHub](https://github.com/TIGER-AI-Lab/ClawBench)
+
+ClawBench evaluates browser agents on everyday online tasks performed against live websites, including travel booking, food ordering, job applications, and email management. Its two main suites contain 283 tasks: V1 has 153 tasks spanning 144 websites and 15 life categories, while V2 adds 130 tasks.
+
+**Key Characteristics**:
+- Runs each task in an isolated container with a real browser and a selectable agent harness
+- Captures five synchronized evidence layers: session video, action screenshots, HTTP traffic, browser actions, and agent messages
+- Uses request interception and trajectory-aware judging to evaluate end-to-end task completion rather than answer text alone
+- Supports multiple harnesses so model and agent-system effects can be reported separately
+- Includes a 20-task V1 Lite suite for lower-cost iteration
+- Trades greater deployment realism for additional reproducibility risk when live websites change
+
 ### VisualWebArena
 **Resource**: [VisualWebArena](https://github.com/web-arena-x/visualwebarena)
 
@@ -244,6 +257,7 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Use Case | Recommended Benchmark |
 |----------|----------------------|
 | General agent capability | GAIA |
+| Live-website browser automation | ClawBench |
 | Web automation | VisualWebArena |
 | Computer use (broad) | OSWorld |
 | Computer use (reliable signal) | OSWorld-Verified |
@@ -277,6 +291,7 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 
 - [LLM Benchmarks](llm-benchmarks.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
+- [Agent Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 - [Agent Evaluation Platforms — Harbor](../EvaluationFrameworks/platforms.md#harbor) — the open-source harness that executes Terminal-Bench 2.0/2.1 at scale
 - [Observability](../Observability/Readme.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment
