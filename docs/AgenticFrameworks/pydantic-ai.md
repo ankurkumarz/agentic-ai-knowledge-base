@@ -13,7 +13,7 @@ timestamp: 2026-07-17T00:00:00Z
 
 ## High-level Architecture
 
-![PydanticAI Components](pydantic-ai-architecture.png)
+![PydanticAI Components](../assets/images/frameworks-pydantic-ai-architecture.png)
 
 *PydanticAI Components*
 

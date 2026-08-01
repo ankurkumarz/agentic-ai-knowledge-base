@@ -1,5 +1,5 @@
 ---
-type: Framework
+type: AI Tool
 title: AI Coding Agents
 description: "AI coding agents are purpose-built autonomous tools that read codebases, plan changes, execute them using real development tools (terminal, editor, browser), and iterate on the results"
 tags: [frameworks, agentic-ai]

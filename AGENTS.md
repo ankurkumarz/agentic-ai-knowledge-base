@@ -22,6 +22,9 @@ docs/
 ├── index.md                        # Home page — executive overview + structure map
 ├── Introduction/
 ├── Concepts/                       # Agent definitions, types, foundations
+├── AICodingAgents/                 # Coding agents: Claude Code, Kiro, Cursor, Devin, etc.
+│   ├── ai-coding-agents.md         # Comparison table, per-tool deep dives, positioning map
+│   └── claude-code.md              # Claude Code plugins, maturity model, persona setups
 ├── AgentHarness/                   # Agent harness concepts and engineering practices
 │   ├── agent-harness.md            # What an agent harness is, components, patterns
 │   └── harness-engineering.md      # Engineering practices, implementation guidance
@@ -53,13 +56,15 @@ docs/
 │   ├── context-engineering.md
 │   ├── security.md
 │   └── cost-management.md
+├── AIGovernance/                   # AI governance strategy, best practices, solutions
 ├── AllThingsAWS/                   # AWS vendor hub — one-liners + backlinks
 ├── AllThingsGoogle/                # Google vendor hub — one-liners + backlinks
 ├── AllThingsMicrosoft/             # Microsoft vendor hub — one-liners + backlinks
 ├── AllThingsAnthropic/             # Anthropic vendor hub — one-liners + backlinks
-└── AllThingsOpenAI/                # OpenAI vendor hub — one-liners + backlinks
-                                    # Note: AllThings* pages are index hubs, not content stores.
-                                    # Detailed content lives in topical sections; vendor pages link back.
+├── AllThingsOpenAI/                # OpenAI vendor hub — one-liners + backlinks
+│                                   # Note: AllThings* pages are index hubs, not content stores.
+│                                   # Detailed content lives in topical sections; vendor pages link back.
+└── Wizard/                         # Recommendation wizard for technology selection
 
 raw/                                # Drop source documents here — agent reads, never modifies
 mkdocs.yml                          # Site nav — agent updates when pages are added
@@ -74,6 +79,7 @@ When a raw source arrives, use this table to decide which `docs/` directory and 
 | Topic in Source | Primary Section | File(s) to Update |
 |---|---|---|
 | Agent definition, terminology, types | `Concepts/` | `agent-definition.md`, `agent-types.md`, `agent-foundational.md` |
+| AI coding agents, coding tools (Claude Code, Cursor, Devin, Kiro, etc.) | `AICodingAgents/` | `ai-coding-agents.md`, `claude-code.md` (create per-tool page if warranted) |
 | Agent harness concepts, components, patterns | `AgentHarness/` | `agent-harness.md` |
 | Agent harness engineering, implementation, tooling | `AgentHarness/` | `harness-engineering.md` |
 | Architecture components, system design | `Architecture/` | `components-selection.md`, `multi-agent-system.md` |
@@ -378,6 +384,7 @@ This is the **complete, approved set** of `type` values for this wiki. Do not us
 
 | Directory | `type` |
 |---|---|
+| `AICodingAgents/` | `AI Tool` |
 | `Concepts/` | `Concept` |
 | `AgentHarness/` | `Playbook` |
 | `AgentMemory/` | `Reference` |

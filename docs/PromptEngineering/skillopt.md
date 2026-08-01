@@ -13,7 +13,7 @@ SkillOpt (Yang et al., Microsoft, 2026) is a **text-space optimizer** that train
 
 The approach was introduced in arXiv:2605.23904 and demonstrated best-or-tied-best results across all 52 evaluated (model, benchmark, harness) cells.
 
-![SkillOpt conceptual overview: bounded skill edits navigate a validation-error landscape toward a better task-specific skill, avoiding the instability of ad hoc updates](assets/skillopt-teaser.png)
+![SkillOpt conceptual overview: bounded skill edits navigate a validation-error landscape toward a better task-specific skill, avoiding the instability of ad hoc updates](../assets/images/prompteng-skillopt-teaser.png)
 
 *Figure 1: The optimization landscape for skill documents. Bounded edits with a held-out selection gate produce stable convergence (blue path), whereas ad hoc updates make large, unstable jumps (red path). The right panel maps neural-network training concepts to their text-space equivalents. Source: [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) (MIT license)*
 
@@ -58,7 +58,7 @@ At the end of training, only `best_skill.md` persists. It:
 
 ## Architecture
 
-![SkillOpt full training pipeline: mini-batch rollouts flow through optimizer models, are merged and validated, then either accepted into best_skill.md or rejected into a buffer; an epoch-wise meta update refines the optimizer itself](assets/skillopt-pipeline.png)
+![SkillOpt full training pipeline: mini-batch rollouts flow through optimizer models, are merged and validated, then either accepted into best_skill.md or rejected into a buffer; an epoch-wise meta update refines the optimizer itself](../assets/images/prompteng-skillopt-pipeline.png)
 
 *Figure 2: The full SkillOpt training pipeline. Top: mini-batches of rollout evidence are sent to parallel optimizer model instances, which propose atomic edits; these are merged, ranked under the textual learning-rate budget, and passed through the validation gate. Bottom: after each epoch, improvements, regressions, persistent failures, and stable successes are reflected on by an optimizer meta-skill that updates future optimizer calls. Source: [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) (MIT license)*
 
@@ -87,7 +87,7 @@ Evaluated across 6 benchmarks, 7 target models, and 3 execution harnesses:
 
 **Comparison**: 52/52 wins against Trace2Skill, TextGrad, GEPA, EvoSkill, hand-crafted human skills, and one-shot skills.
 
-![SkillOpt epoch learning curves for SpreadsheetBench, SearchQA, and LiveMath: selection-best score (orange) stays stable above unseen-test generalization (green) while train-rollout score (blue) fluctuates](assets/skillopt-epoch-trends.png)
+![SkillOpt epoch learning curves for SpreadsheetBench, SearchQA, and LiveMath: selection-best score (orange) stays stable above unseen-test generalization (green) while train-rollout score (blue) fluctuates](../assets/images/prompteng-skillopt-epoch-trends.png)
 
 *Figure 3: Learning curves across epoch checkpoints for three benchmarks. The held-out selection gate (orange, "Selection best") reliably tracks generalization performance (green, "Unseen test") while suppressing the noisier train-rollout signal (blue). Source: [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) (MIT license)*
 

@@ -27,6 +27,7 @@ RESERVED = {"index.md", "log.md", "ingest-log.md", "graph.md"}
 # Do NOT add values here without user approval.
 # -----------------------------------------------------------------------
 APPROVED_TYPES = {
+    "AI Tool",
     "Architecture",
     "Benchmark",
     "Concept",

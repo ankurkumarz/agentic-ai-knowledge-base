@@ -13,7 +13,7 @@ timestamp: 2026-07-17T00:00:00Z
 
 ## High-level Architecture
 
-![Spring AI for Building Agentic Systems](spring-ai-architecture.jpeg)
+![Spring AI for Building Agentic Systems](../assets/images/frameworks-spring-ai-architecture.jpeg)
 
 *Source: [Spring AI for Building Agentic Systems](https://spring.io/blog/2025/01/21/spring-ai-agentic-patterns)*
 

@@ -65,9 +65,11 @@ nav:
     - 4.14 Other Frameworks: 'AgenticFrameworks/README.md'
     - 4.15 Mastra: 'AgenticFrameworks/mastra.md'
     - 4.16 Frameworks Technology Radar: 'AgenticFrameworks/solutions.md'
-    - 4.17 AI Coding Agents: 'AgenticFrameworks/ai-coding-agents.md'
-    - 4.18 Flue: 'AgenticFrameworks/flue.md'
-    - 4.19 Eve: 'AgenticFrameworks/eve.md'
+    - 4.17 Flue: 'AgenticFrameworks/flue.md'
+    - 4.18 Eve: 'AgenticFrameworks/eve.md'
+  - 4a. AI Coding Agents:
+    - 4a.1 AI Coding Agents Overview: 'AICodingAgents/ai-coding-agents.md'
+    - 4a.2 Claude Code: 'AICodingAgents/claude-code.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.1.1 Thoughtworks Tech Radar — Agentic AI (Vol. 34, Apr 2026): 'AgenticTechStack/thoughtworks-radar-vol34.md'

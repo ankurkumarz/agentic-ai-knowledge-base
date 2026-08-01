@@ -1,5 +1,5 @@
 ---
-type: Framework
+type: AI Tool
 title: Claude Code
 description: Claude Code is Anthropic's terminal-based AI coding agent that operates directly in the developer's environment with full filesystem and shell access.
 tags: [frameworks, agentic-ai, coding-agents]
@@ -121,5 +121,38 @@ npx -y skills add Graphify-Labs/graphify --agent claude-code
 
 ## Claude Code Maturity Model
 
-![Coding Maturity Model](../assets/images/coding-maturity-model.jpeg)
-(Reference: https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf)
+The AI-Native Software Engineering Maturity Model defines five levels of organizational adoption, from restricted access to fully autonomous multi-agent ecosystems.
+
+| Level | Name | Key Pattern | What It Looks Like |
+|---|---|---|---|
+| **0** | Gated: Legacy & Governance | Restricted adoption | AI access controlled by policy and process. Governance and security are top priorities. No agent autonomy. |
+| **1** | Assisted: Individual Proliferation | Single engineer + single agent | AI pair programming. Focused on individual productivity gains. Manual supervision and review throughout. |
+| **2** | Parallel: Workflow Optimization | One engineer orchestrates 5–10 agents | Agents run independent workstreams via git worktrees. Automated code and security reviews become default policy. |
+| **3** | Supervised Autonomy: Scaled Operations | "Manager of Managers" | Organizational structure with an AI Manager layer under executive oversight. Complex multi-agent orchestration with governance controls. |
+| **4** | AI-Native: Autonomous Ecosystem | Mass-scale multi-agent autonomy | Hundreds to thousands of agents. Operators steer by intent and monitor by exception. Fully integrated and scalable. |
+
+**Key message:** Most teams today sit at Level 1–2. The jump to Level 3 requires org-level governance and multi-agent orchestration patterns, not just better prompts. Level 4 is the long-horizon target — operators become intent-setters, not task-executors.
+
+*Source: [The AI-Native Software Engineering Maturity Model](https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf) (Claude artifact)*
+
+## See Also
+
+- [AI Coding Agents Overview](ai-coding-agents.md)
+- [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
+- [Loop Engineering](../AgentHarness/loop-engineering.md)
+- [Pi (pi.dev)](../AgentHarness/pi-dev.md)
+- [Model Context Protocol (MCP)](../Standards/mcp.md)
+- [Agent Skills / SKILLS.md](../Standards/skills.md)
+- [Context Engineering Strategies](../ContextEngineering/strategies.md)
+- [AllThingsAnthropic](../AllThingsAnthropic/README.md)
+
+## References
+
+- [Claude Code](https://code.claude.com) — Anthropic's official Claude Code product page
+- [Claude Code Skills documentation](https://docs.anthropic.com/en/docs/claude-code/skills) — official skills and plugin system reference
+- [Graphify](https://github.com/Graphify-Labs/graphify) — codebase knowledge graph / AST indexer plugin
+- [Neuralmind](https://github.com/dfrostar/neuralmind) — persistent memory and cognitive store plugin
+- [Andrej Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills) — curated workflow and prompt skills
+- [Ponytail](https://github.com/DietrichGebert/ponytail) — agent execution and workflow tooling plugin
+- [Superpowers](https://obra-superpowers.mintlify.app/introduction) — structured engineering discipline framework
+- [BMAD Method](https://github.com/bmad-code-org/bmad-method) — multi-agent agile methodology framework
