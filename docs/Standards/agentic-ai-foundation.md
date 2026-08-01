@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Agentic AI Foundation (AAIF)
+description: "The Linux Foundation announced the formation of the **Agentic AI Foundation (AAIF)** on December 9, 2025"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic AI Foundation (AAIF)
 
 ## Overview

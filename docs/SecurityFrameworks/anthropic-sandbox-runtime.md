@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Anthropic Sandbox Runtime
+description: "The **Anthropic Sandbox Runtime** (`srt`) is a lightweight, OS-level sandboxing tool that enforces filesystem and network restrictions on arbitrary processes without requiring a container"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Anthropic Sandbox Runtime
 
 ## Overview

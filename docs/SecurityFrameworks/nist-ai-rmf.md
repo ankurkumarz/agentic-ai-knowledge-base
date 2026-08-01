@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: NIST AI RMF (Risk Management Framework)
+description: "NIST's AI Risk Management Framework for managing risks in AI systems"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # NIST AI RMF (Risk Management Framework)
 
 ## Overview

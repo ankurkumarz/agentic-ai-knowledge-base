@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agent Sandboxing
+description: "Sandboxing is the practice of running agent-invoked code or tools in an isolated execution environment that constrains what resources the process can access"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Sandboxing
 
 ## Overview
@@ -87,6 +94,57 @@ Managed services that provide on-demand isolated execution environments via API.
 - **Strengths**: Single-line-of-code setup for teams already on the LangSmith SDK (tracing or deployment); each eval trial runs in its own sandbox so trials never share state, enabling hundreds of parallel runs; credentials never touch the sandbox thanks to the Authentication Proxy
 - **Limitations**: Private Preview — not yet generally available; tied to the LangSmith platform for provisioning and billing
 - **Agent relevance**: Used as one of the pluggable sandbox providers behind the [Harbor](../EvaluationFrameworks/platforms.md#harbor) evaluation harness for distributed, parallel agent benchmark execution
+
+#### Docker Sandboxes
+
+[Docker Sandboxes](https://www.docker.com/products/docker-sandboxes/) is a dedicated product for running AI coding agents in disposable, isolated microVM environments on a developer's local machine. It is distinct from standard Docker containers: each sandbox is a full microVM with a hard security boundary from the host, not just a namespaced container.
+
+| Attribute | Detail |
+|---|---|
+| Deployment model | Local (developer machine); macOS and Windows |
+| Isolation mechanism | MicroVM per agent session |
+| Supported agents | Claude Code, Gemini CLI, Copilot CLI, Codex, OpenCode, Kiro (and custom) |
+| Install (macOS) | `brew trust docker/tap && brew install docker/tap/sbx` |
+| Install (Windows) | `winget install Docker.sbx` |
+| Docker Desktop required | No |
+| License | Proprietary (free to get started; team/enterprise admin controls require talking to Docker) |
+
+Key capabilities:
+- **YOLO mode safely** — enables `--dangerously-skip-permissions` (no approval prompts) without risk to the host, because the agent runs inside a microVM rather than directly on the machine
+- **Agents can use Docker inside sandboxes** — agents can spin up their own containers within the sandbox environment
+- **Real dev environment** — agents can install packages, modify configs, and run services unattended; only the project workspace is mounted in
+- **Customizable controls** — fine-grained network, filesystem, and resource limits; enterprise tier adds centralized admin configuration for team-wide policies
+- **Disposable by default** — faster to spin up than VMs; tear down with one command
+
+- **Strengths**: Zero-friction local setup; no Kubernetes required; works with all major coding agents; microVM isolation is stronger than standard Docker containers; purpose-built for the agentic coding workflow
+- **Limitations**: Local-only (not a cloud execution platform); team-level network/filesystem policy controls require contacting Docker sales; macOS and Windows only (no Linux client mentioned)
+- **Agent relevance**: The primary use case is giving AI coding agents (Claude Code, Gemini CLI, Kiro, etc.) unattended execution without risking the developer's host machine
+
+#### Kubernetes Agent Sandbox (kubernetes-sigs)
+
+[Agent Sandbox](https://agent-sandbox.sigs.k8s.io/) is a Kubernetes-native platform for managing isolated, stateful, singleton workloads — purpose-built for AI agent runtimes, development environments, and scenarios that demand long-running containers with a stable identity. It is a formal Kubernetes SIG Apps subproject (`kubernetes-sigs/agent-sandbox`).
+
+| Attribute | Detail |
+|---|---|
+| Deployment model | Self-hosted on any Kubernetes cluster |
+| Isolation backends | Standard containers, gVisor (userspace kernel), Kata Containers (VM-grade hardware virtualization) |
+| Provisioning speed | Pre-warmed pools via `SandboxWarmPool` — sub-millisecond sandbox assignment |
+| SDK languages | Python, Go |
+| License | Apache-2.0 |
+| Status | Active (last updated April 2026) |
+
+Key capabilities beyond standard Pods:
+- **`SandboxWarmPool`** — pre-warmed pod pools eliminate cold-start latency; sandboxes are handed out in milliseconds rather than waiting for pod scheduling
+- **Hibernation & resume** — sandboxes pause on idle and resume automatically on incoming network connections; compute cost during idle periods drops to near-zero while state is preserved
+- **Stable identity** — each Sandbox has a stable DNS hostname and optional PVC-backed persistent storage that survives restarts; agents reconnect without application-level re-initialization
+- **Scheduled deletion** — TTL-based automatic cleanup via the controller
+- **Filesystem and volume APIs** — Python/Go SDKs expose read/write/list/transfer operations directly into sandboxes; volumes can be mounted for persistent data
+
+- **Strengths**: Kubernetes-native (RBAC, namespaces, network policies all apply); runtime-agnostic isolation; WarmPool solves cold-start for interactive agent workloads; first-class Python and Go SDKs; no vendor lock-in
+- **Limitations**: Requires an existing Kubernetes cluster; operational complexity of cluster management; isolation strength depends on chosen backend (gVisor or Kata required for strong guarantees)
+- **Agent relevance**: Suitable as the execution layer for multi-tenant agent platforms on Kubernetes, CI/CD agent pipelines, coding agents, computer-use agents, and long-running agent environments (OpenClaw on Agent Sandbox is a documented use case)
+
+See [Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md) for full architecture detail including GKE productization and Agent Substrate.
 
 #### AWS Lambda MicroVMs
 
@@ -203,27 +261,31 @@ See [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md) for full detail.
 | **Modal** | Cloud SaaS | < 1 s (warm) | Medium–High (container) | Partial — compute focus | Cloud | Proprietary |
 | **LangSmith Sandboxes** | Cloud SaaS (Private Preview) | Not published | High (microVM) | Yes — untrusted agent code & eval scaling | Cloud | Proprietary |
 | **AWS Lambda MicroVMs** | Cloud (managed) | ~100–200 ms added cold start | Very High (Firecracker microVM) | Partial — general serverless, AWS-native agent stacks | Cloud (AWS) | Proprietary (managed service) |
+| **Docker Sandboxes** | Local (developer machine) | Fast (sub-VM) | High (microVM) | Yes — local AI coding agents (Claude Code, Kiro, Gemini CLI, etc.) | macOS, Windows | Proprietary |
+| **Kubernetes Agent Sandbox** | Self-hosted (Kubernetes) | < 1 ms (warm pool) | Configurable: Low→Very High | Yes — multi-tenant k8s agent platforms | Any Kubernetes cluster | Apache-2.0 |
 | **Anthropic srt** | OS-level | < 10 ms | Medium (policy-based) | Yes — MCP server focus | macOS, Linux | Apache-2.0 |
 | **Firecracker** | MicroVM | ~125 ms | Very High (KVM) | No — infrastructure primitive | Linux (KVM) | Apache-2.0 |
 | **gVisor** | Container (userspace kernel) | < 100 ms | High (syscall interception) | No — infrastructure primitive | Linux | Apache-2.0 |
 | **Kata Containers** | MicroVM + Container | ~200–500 ms | Very High (hypervisor) | No — infrastructure primitive | Linux | Apache-2.0 |
 | **nsjail** | OS-level | < 10 ms | Medium (namespace+seccomp) | No — general-purpose | Linux | Apache-2.0 |
-| **Docker (standard)** | Container | < 100 ms | Low–Medium (namespaces) | No — general-purpose | Linux, macOS, Windows | Apache-2.0 |
+| **Docker (standard containers)** | Container | < 100 ms | Low–Medium (namespaces) | No — general-purpose | Linux, macOS, Windows | Apache-2.0 |
 
 ## Selection Guide
 
 | Requirement | Recommended Approach |
 |---|---|
 | Sandbox individual MCP server processes on a developer machine | Anthropic srt (`npm install -g @anthropic-ai/sandbox-runtime`) |
+| Run AI coding agents (Claude Code, Kiro, Gemini CLI) unattended on a local machine | Docker Sandboxes (`brew install docker/tap/sbx`) — microVM isolation, no Docker Desktop required |
 | Execute AI-generated code in cloud with minimal setup | E2B (SDK-first, cloud-native) |
 | Multi-step agent workflows with persistent state across steps | Daytona (stateful snapshots, dedicated kernel) |
 | Compute-intensive agent tools (GPU, ML inference) | Modal |
 | Horizontally scaling agent evals with per-trial state isolation | LangSmith Sandboxes (fresh sandbox per trial, Authentication Proxy for credentials) |
-| Multi-tenant Kubernetes agent platform needing VM-grade isolation | gVisor (drop-in) or Kata Containers (stronger) |
+| Multi-tenant Kubernetes agent platform needing configurable isolation | Kubernetes Agent Sandbox (WarmPool + gVisor or Kata backends) |
+| Multi-tenant Kubernetes agent platform needing VM-grade isolation (non-k8s) | gVisor (drop-in) or Kata Containers (stronger) |
 | Serverless agent invocations at scale (own AWS infrastructure) | Firecracker microVMs |
 | Serverless agent invocations on AWS without operating Firecracker directly | AWS Lambda (managed microVM per invocation, configurable auto-suspend/resume) |
 | Sandboxing CLI tools / shell commands on Linux with zero overhead | nsjail |
-| Rapid prototype; already using Docker | Docker + resource limits (lowest bar; not sufficient for high-trust scenarios) |
+| Rapid prototype; already using Docker | Docker standard containers + resource limits (lowest bar; not sufficient for high-trust scenarios) |
 
 ## Best Practices
 
@@ -251,6 +313,7 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 ## See Also
 
 - [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)
+- [Kubernetes Agent Sandbox (kubernetes-sigs)](../Standards/k8s-agent-sandbox.md)
 - [Agent Security — Production Best Practices](../ProductionBestPractices/security.md)
 - [Agentic AI Security Overview](./Readme.md)
 - [Agent Governance Toolkit (Microsoft)](./agent-governance-toolkit.md)
@@ -265,6 +328,8 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 
 - [E2B GitHub](https://github.com/e2b-dev/e2b) — Open-source cloud sandbox infrastructure for AI-generated code; ~12.4k stars; Apache-2.0
 - [Daytona GitHub](https://github.com/daytonaio/daytona) — Secure, elastic sandbox runtime for agent workflows; dedicated kernel per sandbox; Apache-2.0
+- [Docker Sandboxes](https://www.docker.com/products/docker-sandboxes/) — Docker's microVM sandbox product for running AI coding agents locally on macOS and Windows; supports Claude Code, Gemini CLI, Kiro, Codex, and others
+- [Docker Sandboxes Documentation](https://docs.docker.com/ai/sandboxes/) — official docs including installation, configuration, and agent integration guides
 - [LangSmith Sandboxes](https://www.langchain.com/langsmith/sandboxes) — LangChain's product page for its microVM-isolated agent code execution sandboxes
 - [Introducing LangSmith Sandboxes: Secure Code Execution for Agents (LangChain Blog)](https://blog.langchain.com/introducing-langsmith-sandboxes-secure-code-execution-for-agents/) — architecture, Authentication Proxy, and eval-scaling use case
 - [Anthropic Sandbox Runtime](https://github.com/anthropic-experimental/sandbox-runtime) — OS-level MCP server sandboxing via Seatbelt/bubblewrap; ~4.1k stars; Apache-2.0

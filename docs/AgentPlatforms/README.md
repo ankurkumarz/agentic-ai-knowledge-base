@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Popular AI Agents
+description: The AI agent ecosystem has exploded with specialized agents designed for specific domains and use cases
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Popular AI Agents
 
 ## Overview

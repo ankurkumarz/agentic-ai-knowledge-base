@@ -1,3 +1,10 @@
+---
+type: Concept
+title: Agent Definition
+description: "An AI agent is an autonomous software entity that can perceive its environment, make decisions, and take actions to achieve specific goals"
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Definition
 
 ## What is an AI Agent?

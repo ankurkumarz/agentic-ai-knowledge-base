@@ -1,3 +1,10 @@
+---
+type: Standard
+title: AGENTS.md Standard
+description: "*Source: [Weights & Biases AGENTS"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AGENTS.md Standard
 
 ## Overview

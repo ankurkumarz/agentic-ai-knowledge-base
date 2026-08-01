@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "Self-hosted & Limited Open Source"
+description: "Self-hosted and limited open source workflow engines provide organizations with greater control over their agent infrastructure while maintaining some level of open source flexibility"
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Self-hosted & Limited Open Source
 
 ## Overview

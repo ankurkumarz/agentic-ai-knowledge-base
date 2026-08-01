@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Deployment
+description: Deploying agentic AI systems requires practices that go beyond standard software deployment
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Deployment
 
 Deploying agentic AI systems requires practices that go beyond standard software deployment. Agents are non-deterministic, stateful, and can take real-world actions — which means deployment failures have higher blast radius than typical services.

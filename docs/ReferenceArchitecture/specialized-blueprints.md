@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: Specialized Domain Blueprints
+description: "Specialized domain blueprints provide industry-specific reference architectures and implementations that address unique requirements, workflows, and challenges in particular domains"
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Specialized Domain Blueprints
 
 ## Overview

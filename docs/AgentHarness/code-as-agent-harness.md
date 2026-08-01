@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Code as Agent Harness
+description: "\"Code as Agent Harness\" is a survey framework that reframes the role of code in agentic AI systems"
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Code as Agent Harness
 
 ## Overview

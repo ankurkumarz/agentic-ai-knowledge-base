@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: AI Agent Skill Security Scanners
+description: "AI agent skill security scanners are dedicated tools for vetting the safety of agent skills — markdown-defined workflow definitions used by Claude Code, OpenAI Codex CLI, Cursor, and similar agent ..."
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Agent Skill Security Scanners
 
 ## Overview

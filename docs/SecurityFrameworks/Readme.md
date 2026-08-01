@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agentic AI Security
+description: "This section provides comprehensive coverage of security frameworks, standards, and best practices for building secure agentic AI systems"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic AI Security
 
 This section provides comprehensive coverage of security frameworks, standards, and best practices for building secure agentic AI systems. From industry standards like NIST AI RMF to vendor-specific security approaches from Google and AWS, this collection offers the essential security guidance needed to deploy AI agents safely in production environments.

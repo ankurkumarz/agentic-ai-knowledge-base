@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agent Harness
+description: "An agent harness is everything that wraps a model to make it useful — every piece of code, configuration, and execution logic that is not the model itself"
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Harness
 
 ## Overview

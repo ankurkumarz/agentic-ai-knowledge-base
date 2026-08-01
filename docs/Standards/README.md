@@ -1,3 +1,10 @@
+---
+type: Standard
+title: "AG-UI Protocol"
+description: "**AG-UI** is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AG-UI Protocol
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "Agent Testing & Evaluations"
+description: Evaluating agentic AI systems is fundamentally different from traditional software testing
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Testing & Evaluations
 
 Evaluating agentic AI systems is fundamentally different from traditional software testing. Outputs are non-deterministic, tasks are multi-step, and quality is often subjective. A robust evaluation strategy combines automated metrics, human review, and continuous regression detection.

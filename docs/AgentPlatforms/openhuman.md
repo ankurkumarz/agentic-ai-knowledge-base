@@ -1,3 +1,10 @@
+---
+type: Platform
+title: OpenHuman (TinyHumans AI)
+description: "OpenHuman is an open-source (GPL-3"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # OpenHuman (TinyHumans AI)
 
 ## Overview

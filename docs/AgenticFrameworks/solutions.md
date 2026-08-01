@@ -1,3 +1,10 @@
+---
+type: Framework
+title: Agentic Framework Solutions
+description: "This page consolidates all agentic AI development frameworks — open-source libraries, managed cloud SDKs, and specialized platforms — and maps them to a **Technology Radar** adapted from the [Thoug..."
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic Framework Solutions
 
 ## Overview

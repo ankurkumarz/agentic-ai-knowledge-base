@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Anthropic Agents Marketplace Presence
+description: Anthropic does not operate a standalone agent marketplace
+tags: [marketplace, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Anthropic Agents Marketplace Presence
 
 ## Overview

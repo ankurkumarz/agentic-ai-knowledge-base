@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "AI as a Judge (LLM-as-Judge)"
+description: "AI as a judge — also called LLM-as-judge — is the practice of using an AI model to evaluate the outputs of another AI model"
+tags: [evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI as a Judge (LLM-as-Judge)
 
 ## Overview

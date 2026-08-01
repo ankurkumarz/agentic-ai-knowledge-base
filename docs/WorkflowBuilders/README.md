@@ -1,8 +1,17 @@
+---
+type: Reference
+title: "SaaS (No-code) Workflow Solutions"
+description: "SaaS no-code workflow solutions provide user-friendly, cloud-based platforms that enable non-technical users to create, deploy, and manage automated workflows without writing code"
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # SaaS (No-code) Workflow Solutions
 
 ## Overview
 
 SaaS no-code workflow solutions provide user-friendly, cloud-based platforms that enable non-technical users to create, deploy, and manage automated workflows without writing code. These platforms focus on ease of use, rapid deployment, and broad integration capabilities.
+
+**Market landscape (May 2026):** Gartner's Emerging Market Quadrant for No-Code Agent Builders places **Glean** and **Pipefy** as Market Shapers (highest execution + disruption potential), **WRITER** and **n8n** as Pace Setters, and a cluster of Specialists including Sema4.ai, Tines, Relay.app, Botpress, and Ema. See [Gartner's Perspective — Maturity Models](../MaturityModels/gartner.md#emerging-market-quadrant-for-no-code-agent-builders--startup-vendors-may-2026) for the full vendor placement breakdown.
 
 ## Major SaaS No-code Platforms
 
@@ -262,3 +271,11 @@ Actions:
 - **Section 5.3.2**: Self-hosted Solutions (for alternative approaches)
 - **Section 11**: Security (for security considerations in SaaS platforms)
 - **Section 12**: Observability (for monitoring SaaS workflow performance)
+
+## See Also
+
+- [WorkflowBuilders — Open Source](open-source.md)
+- [WorkflowBuilders — Workflow Orchestration](orchestration.md)
+- [Gartner — No-Code Agent Builder Quadrant (May 2026)](../MaturityModels/gartner.md)
+- [SecurityFrameworks — Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md)
+- [AgentOps Overview](../AgentOps/README.md)

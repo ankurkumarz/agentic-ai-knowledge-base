@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "Research Papers & Technical White Papers on Agent Memory"
+description: This section curates key research papers and technical white papers that have shaped the field of agent memory management
+tags: [memory, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Research Papers & Technical White Papers on Agent Memory
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Vendor Hub
+title: Microsoft — Agentic AI Overview
+description: "Microsoft's agentic AI strategy centres on Azure AI services, the open-source Semantic Kernel SDK, and the AutoGen multi-agent framework"
+tags: [microsoft, vendor, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Microsoft — Agentic AI Overview
 
 ## Overview

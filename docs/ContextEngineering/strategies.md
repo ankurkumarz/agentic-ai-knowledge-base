@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Common Strategies for Context Management
+description: "Context engineering is the art and science of filling the context window with just the right information at each step of an agent's trajectory"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Common Strategies for Context Management
 
 ## Overview

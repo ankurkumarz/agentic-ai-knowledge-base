@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Arsanjani GenAI Maturity Model
+description: "The **GenAI Maturity Model** from *Agentic Architectural Patterns for Building Multi-Agent Systems* (Arsanjani & Bustos, Packt, 2026) defines seven levels (0–6) as a strategic roadmap for enterpris..."
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Arsanjani GenAI Maturity Model
 
 ## Overview

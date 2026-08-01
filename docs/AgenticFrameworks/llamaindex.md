@@ -1,3 +1,10 @@
+---
+type: Framework
+title: LlamaIndex
+description: LlamaIndex is a data framework for connecting custom data sources to large language models
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LlamaIndex
 
 ## Overview

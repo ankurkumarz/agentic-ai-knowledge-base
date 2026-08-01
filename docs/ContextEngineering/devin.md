@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "Cognition / Devin: Context Engineering Principles"
+description: "Walden Yan (Cognition, builders of Devin) published \"Don't Build Multi-Agents\" as a challenge to the prevailing trend of multi-agent architectures"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Cognition / Devin: Context Engineering Principles
 
 ## Overview

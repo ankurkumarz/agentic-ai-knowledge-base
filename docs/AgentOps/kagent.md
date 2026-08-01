@@ -1,3 +1,10 @@
+---
+type: Reference
+title: kagent
+description: "kagent (\"Cloud Native Agentic AI\") is an open source framework for building, deploying, and managing AI agents as native Kubernetes resources"
+tags: [agentops, operations, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # kagent
 
 ## Overview

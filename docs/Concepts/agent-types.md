@@ -1,3 +1,10 @@
+---
+type: Concept
+title: Agent Types
+description: "AI agents can be classified based on various characteristics including their capabilities, architecture, and application domains"
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Types
 
 ## Classification of AI Agents

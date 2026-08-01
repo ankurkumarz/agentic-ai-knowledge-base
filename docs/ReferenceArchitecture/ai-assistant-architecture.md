@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: AI Assistant Reference Architecture
+description: "AI Assistant architectures provide comprehensive patterns for building intelligent assistant systems that can understand context, maintain conversations, perform complex tasks, and integrate seamle..."
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Assistant Reference Architecture
 
 ## Overview

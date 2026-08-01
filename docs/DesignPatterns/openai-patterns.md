@@ -1,3 +1,10 @@
+---
+type: Design Pattern
+title: OpenAI Agent Design Patterns
+description: "OpenAI's practical guide to building agents distills insights from numerous customer deployments into actionable patterns for product and engineering teams"
+tags: [design-patterns, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # OpenAI Agent Design Patterns
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Open Source Workflow Engines (MIT or Apache)
+description: "Open source workflow engines provide the foundation for building scalable, customizable agent orchestration systems"
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Open Source Workflow Engines (MIT or Apache)
 
 ## Overview

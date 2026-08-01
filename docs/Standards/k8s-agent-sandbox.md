@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Kubernetes Agent Sandbox
+description: "Agent Sandbox is a Kubernetes-native standard, proposed in Google's Open Source Blog (November 2025) and launched as a formal subproject of Kubernetes SIG Apps at KubeCon Atlanta (November 2025), f..."
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Kubernetes Agent Sandbox
 
 ## Overview
@@ -20,11 +27,51 @@ The ecosystem shift driving this proposal: agentic systems are moving from short
 
 **Performance feature — WarmPools**: an extension that maintains a pool of pre-warmed pods so the Sandbox Controller can hand out a ready instance on claim, reducing cold-start latency to under one second.
 
+## Core CRD API Reference
+
+The official `kubernetes-sigs/agent-sandbox` release (as of April 2026) exposes the following CRDs:
+
+| CRD | Purpose |
+|---|---|
+| `Sandbox` | Declarative API for a single, stateful pod with a stable hostname and optional persistent storage |
+| `SandboxTemplate` | Reusable templates that codify runtime configuration for consistent sandbox provisioning |
+| `SandboxClaim` | User-facing abstraction that provisions a sandbox from a template without exposing low-level details |
+| `SandboxWarmPool` | Pre-warmed pod pools for near-instant sandbox allocation (sub-millisecond assignment vs. cold pod scheduling) |
+
 ## Key Features
 
 - Managed through familiar Kubernetes constructs (controllers, CRDs) rather than a bespoke agent runtime
 - Designed to let higher-level agent frameworks request execution environments declaratively via `SandboxClaim`, decoupling agent framework code from sandbox provisioning details
 - Targets the security requirement that individual tool calls/code execution should run in isolated environments, not a shared long-lived process
+- **Stable identity and persistent storage**: each Sandbox has a stable hostname and can be backed by a PVC that survives restarts, allowing agents to reconnect across sessions without application-level coordination
+- **Hibernation & resume**: the controller can pause sandboxes to free compute resources and resume them automatically on incoming network connections — state is preserved during the sleep window, eliminating cold-state cost for bursty workloads
+- **Scheduled deletion**: TTL-based automatic cleanup via the controller, removing the need for manual sandbox lifecycle management
+- **Runtime-agnostic isolation**: pluggable backends — standard containers, gVisor (kernel-level), and Kata Containers (VM-grade) — are selected at deploy time, not baked into the API
+
+## Client SDKs
+
+Agent Sandbox ships first-class client libraries for programmatic sandbox management:
+
+| SDK | Language | Capabilities |
+|---|---|---|
+| **Python Client** | Python | Create/query/manage sandboxes; filesystem read/write/transfer; designed for Python-based agent runtimes |
+| **Go Client** | Go | Same API surface; designed for Go services, controllers, and platform tooling |
+
+Both SDKs expose `Filesystem` operations (read, write, list, transfer files into/out of sandboxes) and `Volume` attachment for mounting persistent storage.
+
+## Use Cases
+
+The project documents several canonical deployment patterns:
+
+| Pattern | Lifecycle | Description |
+|---|---|---|
+| **Code Execution** | Short-lived | Run untrusted LLM-generated code in fully isolated sandboxes; ideal for code interpreters, analytics tools, on-demand computation |
+| **Coding Agents** | Medium-lived | Autonomous agents that write, debug, and refactor code inside secure sandboxes with full dev tooling |
+| **Computer Use** | Medium-lived | AI agents that interact with graphical desktops, browsers, and GUI applications inside isolated sandboxes |
+| **CI/CD Integration** | Short-to-medium | Isolated testing, validation, and automated workflows integrated into CI/CD pipelines |
+| **Always-on Agent Environments (OpenClaw)** | Long-lived | Run [OpenClaw](../AgentPlatforms/openclaw.md) agent environments persistently inside Agent Sandbox for long-running workloads |
+| **gVisor Isolation** | Any | Harden sandbox isolation with gVisor's userspace kernel — intercepts system calls to protect the host |
+| **Kata Containers Isolation** | Any | Hardware virtualization with a dedicated kernel per sandbox via Kata Containers + QEMU |
 
 ## Governance and Status
 
@@ -69,3 +116,5 @@ Agent Substrate is a distinct Google open-source project — not a renamed or me
 - [Unleashing autonomous AI agents: Why Kubernetes needs a new standard for agent execution (Google Open Source Blog, November 2025)](https://opensource.googleblog.com/2025/11/unleashing-autonomous-ai-agents-why-kubernetes-needs-a-new-standard-for-agent-execution.html)
 - [Bringing you Agent Sandbox on GKE and Agent Substrate (Google Cloud Blog)](https://cloud.google.com/blog/products/containers-kubernetes/bringing-you-agent-sandbox-on-gke-and-agent-substrate)
 - [Running Agents on Kubernetes with Agent Sandbox (Kubernetes Blog, March 2026)](https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/)
+- [Agent Sandbox — Official Documentation](https://agent-sandbox.sigs.k8s.io/docs) — full CRD reference, SDK docs, use-case guides, runtime templates; CC BY 4.0
+- [Agent Sandbox — GitHub (kubernetes-sigs)](https://github.com/kubernetes-sigs/agent-sandbox) — source repository; last updated April 2026

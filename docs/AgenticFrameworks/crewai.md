@@ -1,3 +1,10 @@
+---
+type: Framework
+title: CrewAI
+description: "CrewAI is a framework for orchestrating role-playing, autonomous AI agents"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # CrewAI
 
 ## Overview

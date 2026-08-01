@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Dynamic Workflows (Claude Code)
+description: Dynamic workflows are an orchestration primitive in Claude Code (v2
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Dynamic Workflows (Claude Code)
 
 ## Overview

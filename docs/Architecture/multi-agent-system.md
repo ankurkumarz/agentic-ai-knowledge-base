@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: "Multi-Agent Systems"
+description: "Multi-agent systems (MAS) consist of multiple autonomous agents that interact and collaborate to solve complex problems that are beyond the capabilities of individual agents"
+tags: [architecture, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Multi-Agent Systems
 
 ## Overview

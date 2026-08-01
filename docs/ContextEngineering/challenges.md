@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Key Challenges in Context Management
+description: "As AI agents handle longer tasks and accumulate tool call feedback, the context window becomes a critical bottleneck"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Key Challenges in Context Management
 
 ## Overview

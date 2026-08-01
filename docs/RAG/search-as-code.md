@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Search as Code (SaC)
+description: "Search as Code (SaC) is a retrieval architecture paradigm introduced by Perplexity AI (September 2025) in which language models generate executable code to assemble task-specific retrieval pipeline..."
+tags: [rag, retrieval, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Search as Code (SaC)
 
 ## Overview

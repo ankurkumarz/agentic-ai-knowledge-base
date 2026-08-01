@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agentic AI Evaluation
+description: "This section provides comprehensive coverage of evaluation frameworks, benchmarks, and platforms for assessing the performance and capabilities of agentic AI systems"
+tags: [evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic AI Evaluation
 
 This section provides comprehensive coverage of evaluation frameworks, benchmarks, and platforms for assessing the performance and capabilities of agentic AI systems. From LLM evaluation frameworks to specialized agent benchmarks, this collection offers the tools and methodologies needed to measure, validate, and improve AI agent performance across various domains and use cases.

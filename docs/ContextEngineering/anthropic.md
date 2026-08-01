@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Anthropic Context Engineering
+description: "Anthropic has published two major pieces on context engineering: a detailed post on their multi-agent research system, and a broader guide on effective context engineering for AI agents"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Anthropic Context Engineering
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: Agentic AI Reference Architecture
+description: "This section provides comprehensive reference architectures, blueprints, and implementation patterns for building production-ready agentic AI systems"
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic AI Reference Architecture
 
 This section provides comprehensive reference architectures, blueprints, and implementation patterns for building production-ready agentic AI systems. These architectures serve as proven templates for various use cases, from AI automation frameworks to self-learning agents and specialized domain applications.

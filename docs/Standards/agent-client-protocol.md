@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Agent Client Protocol (ACP)
+description: "The **Agent Client Protocol (ACP)** is an open standard, originally published by Zed Industries in August 2025, that standardizes communication between *code editors* (interactive programs for view..."
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Client Protocol (ACP)
 
 ## Overview

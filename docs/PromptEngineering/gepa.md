@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "GEPA: Genetic-Pareto Prompt Optimization"
+description: "GEPA (Genetic-Pareto) is a reflective prompt-optimization framework that evolves text prompts using full natural-language execution traces — rather than the scalar reward signals consumed by reinfo..."
+tags: [prompt-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # GEPA: Genetic-Pareto Prompt Optimization
 
 ## Overview

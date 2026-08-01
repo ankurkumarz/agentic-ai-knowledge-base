@@ -1,3 +1,10 @@
+---
+type: Concept
+title: Agent Foundational
+description: Foundational definitions, internal architecture, and core capabilities of AI agents drawn from primary academic and industry sources.
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 
 ## Definition
 

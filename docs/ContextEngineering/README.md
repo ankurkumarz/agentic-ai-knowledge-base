@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Context Engineering
+description: "Context engineering is the art and science of filling the context window with just the right information at each step of an agent's trajectory"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Context Engineering
 
 Context engineering is the art and science of filling the context window with just the right information at each step of an agent's trajectory. As agents handle longer tasks and accumulate tool call feedback, managing what goes into the context window becomes the primary engineering challenge — not the model itself.

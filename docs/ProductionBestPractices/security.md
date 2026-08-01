@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agent Security
+description: "Agentic AI systems introduce security risks that don't exist in traditional software"
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Security
 
 Agentic AI systems introduce security risks that don't exist in traditional software. Agents can take real-world actions, access sensitive data, and be manipulated through their inputs. Security must be designed in from the start, not bolted on.

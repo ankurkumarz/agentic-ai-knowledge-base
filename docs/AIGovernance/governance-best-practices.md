@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Governance Best Practices
+description: "Governance best practices translate high-level policy into repeatable engineering and operational controls"
+tags: [governance, agentic-ai, production]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Governance Best Practices
 
 ## Overview

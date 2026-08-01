@@ -1,3 +1,10 @@
+---
+type: Standard
+title: OpenSpec
+description: "**OpenSpec** is an open-source, lightweight framework for spec-driven development (SDD) with AI coding assistants, developed by Fission AI"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # OpenSpec
 
 ## Overview

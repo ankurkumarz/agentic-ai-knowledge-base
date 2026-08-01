@@ -1,3 +1,10 @@
+---
+type: Reference
+title: The 8 Levels of Agentic Engineering
+description: "The 8 Levels of Agentic Engineering is a practitioner progression framework mapping the journey from basic AI-assisted coding to fully autonomous multi-agent teams"
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # The 8 Levels of Agentic Engineering
 
 ## Overview

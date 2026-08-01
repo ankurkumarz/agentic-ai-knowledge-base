@@ -1,3 +1,10 @@
+---
+type: Platform
+title: "Microsoft Build 2026 — Fabric & Databases for Agentic Apps"
+description: "At Microsoft Build 2026, Microsoft announced a set of data platform capabilities anchored on the thesis that the bottleneck for enterprise agentic AI is no longer model capability, but **consistent..."
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Microsoft Build 2026 — Fabric & Databases for Agentic Apps
 
 ## Overview

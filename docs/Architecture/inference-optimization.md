@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: Inference Optimization
+description: Inference optimization makes AI models faster and cheaper to run in production
+tags: [architecture, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Inference Optimization
 
 ## Overview

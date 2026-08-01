@@ -1,3 +1,10 @@
+---
+type: Reference
+title: AWS Maturity Model for Generative AI
+description: "AWS's framework for assessing and advancing generative AI maturity in organizations"
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AWS Maturity Model for Generative AI
 
 ## Overview

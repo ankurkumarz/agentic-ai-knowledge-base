@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "State & Memory Management"
+description: "Effective memory management determines whether an agent feels like a persistent, intelligent system or a stateless chatbot"
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # State & Memory Management
 
 Effective memory management determines whether an agent feels like a persistent, intelligent system or a stateless chatbot. The core challenge is deciding what to keep in the expensive context window versus what to offload to external storage.

@@ -1,3 +1,10 @@
+---
+type: Platform
+title: OpenClaw
+description: "OpenClaw is a free, MIT-licensed, open-source personal AI agent that runs locally on your own devices and connects to messaging platforms you already use"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # OpenClaw
 
 ## Overview

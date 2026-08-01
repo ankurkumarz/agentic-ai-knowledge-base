@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: AI Engineering Architecture
+description: "This page describes the production architecture for foundation model applications, synthesized from Chip Huyen's *AI Engineering* (O'Reilly, 2025, Chapter 10)"
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Engineering Architecture
 
 ## Overview

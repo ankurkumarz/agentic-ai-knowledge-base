@@ -1,3 +1,10 @@
+---
+type: Reference
+title: RAG Overview
+description: Retrieval-Augmented Generation architecture, retrieval algorithms, and implementation patterns for grounding LLM responses in external knowledge.
+tags: [rag, retrieval, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 ## RAG Architecture (Huyen, 2025)
 
 A RAG system has two core components:

@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Cloud Security Alliance (CSA)
+description: "The **Cloud Security Alliance (CSA)** is a not-for-profit organization focused on defining and promoting best practices for secure cloud and, increasingly, AI computing"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Cloud Security Alliance (CSA)
 
 ## Overview

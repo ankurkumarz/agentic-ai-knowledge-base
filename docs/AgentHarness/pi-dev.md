@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Pi (pi.dev)
+description: "Pi is a minimal, open-source terminal coding agent harness built around a single design thesis: a coding agent needs exactly four tools — read, write, edit, bash — and a system prompt under 1,000 t..."
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Pi (pi.dev)
 
 ## Overview

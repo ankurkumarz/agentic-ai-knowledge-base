@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: RAG Reference Architecture
+description: "Retrieval-Augmented Generation (RAG) architectures combine the power of large language models with external knowledge retrieval systems to provide accurate, up-to-date, and contextually relevant re..."
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # RAG Reference Architecture
 
 ## Overview

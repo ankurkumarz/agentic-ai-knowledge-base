@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Introduction
+description: "**Agentic AI Knowledge Base** is a consolidated knowledge base designed to serve as a practical and strategic reference for building, evaluating, and operating agentic AI systems at scale"
+tags: [introduction, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Introduction
 
 **Agentic AI Knowledge Base** is a consolidated knowledge base designed to serve as a practical and strategic reference for building, evaluating, and operating agentic AI systems at scale. It brings together curated knowledge articles, architecture patterns, white papers, research insights, and industry best practices to support the full lifecycle of Agentic AI—from design and development to production, governance, and optimization. 

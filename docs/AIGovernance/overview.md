@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: AI Governance
+description: "AI Governance is the set of policies, processes, standards, and oversight mechanisms that ensure agentic AI systems are developed and operated responsibly, safely, and in compliance with applicable..."
+tags: [governance, agentic-ai, production]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Governance
 
 ## Overview

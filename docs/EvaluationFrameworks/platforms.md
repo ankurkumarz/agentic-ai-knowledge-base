@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agent Evaluation Platforms
+description: "Agent evaluation platforms provide end-to-end infrastructure for testing, measuring, and improving AI agent performance in production"
+tags: [evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Evaluation Platforms
 
 ## Overview

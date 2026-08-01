@@ -1,3 +1,10 @@
+---
+type: Vendor Hub
+title: Google — Agentic AI Overview
+description: "Google's agentic AI portfolio spans foundational research, developer frameworks, managed cloud platforms, and security standards"
+tags: [google, vendor, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Google — Agentic AI Overview
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Benchmark
+title: Benchmarks Overview
+description: Curated index of LLM and agent evaluation leaderboards, benchmarks, and inference performance suites.
+tags: [benchmarks, evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 
 ## LLM Evaluation Dashboards
 

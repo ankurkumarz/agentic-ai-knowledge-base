@@ -1,3 +1,10 @@
+---
+type: Reference
+title: AgentOps Marketplace
+description: "The AgentOps Marketplace is a specialized platform that focuses on operational tools, monitoring solutions, and management capabilities for AI agents"
+tags: [marketplace, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AgentOps Marketplace
 
 ## Overview

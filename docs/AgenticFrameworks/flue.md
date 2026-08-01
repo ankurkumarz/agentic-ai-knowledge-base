@@ -1,3 +1,10 @@
+---
+type: Framework
+title: Flue
+description: Flue is a TypeScript agent harness framework for building autonomous AI agents that are fully headless and programmable
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Flue
 
 ## Overview

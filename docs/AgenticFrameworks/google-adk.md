@@ -1,3 +1,10 @@
+---
+type: Framework
+title: Google ADK (Agent Development Kit)
+description: Agent Development Kit (ADK) is a flexible and modular framework for developing and deploying AI agents
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Google ADK (Agent Development Kit)
 
 ## Overview

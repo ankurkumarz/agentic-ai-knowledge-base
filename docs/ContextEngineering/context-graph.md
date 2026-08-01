@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Context Graph
+description: "A Context Graph (CG) is a knowledge structure that extends traditional triple-based Knowledge Graphs (KGs) by attaching rich contextual metadata — temporal validity, geographic location, provenance..."
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Context Graph
 
 ## Overview

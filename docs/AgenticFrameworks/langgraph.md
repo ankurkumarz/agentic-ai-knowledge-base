@@ -1,3 +1,10 @@
+---
+type: Framework
+title: LangGraph
+description: "LangGraph is a library for building stateful, multi-actor applications with LLMs"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LangGraph
 
 ## Overview

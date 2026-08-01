@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Microsoft Agent Governance Toolkit
+description: "The **Agent Governance Toolkit (AGT)** is an open-source, MIT-licensed runtime governance framework from Microsoft that enforces deterministic policy over autonomous AI agents"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Microsoft Agent Governance Toolkit
 
 ## Overview

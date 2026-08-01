@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "Harness Self-Evolution"
+description: "Harness self-evolution is a paradigm for improving LLM agent systems by automatically updating the external harness — prompts, skills, memories, and tools — from execution evidence, without modifyi..."
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Harness Self-Evolution
 
 ## Overview

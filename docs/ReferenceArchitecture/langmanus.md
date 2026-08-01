@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: LangManus – AI Automation Framework
+description: LangManus framework for building AI automation systems and workflows
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LangManus – AI Automation Framework
 
 ## Overview

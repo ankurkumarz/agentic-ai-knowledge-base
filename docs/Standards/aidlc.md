@@ -1,3 +1,10 @@
+---
+type: Standard
+title: "AI-Driven Development Life Cycle (AIDLC)"
+description: "**AIDLC** (AI-Driven Development Life Cycle) is an open-source, methodology-first framework from AWS Labs that guides AI coding agents through structured, human-approved phases of software development"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI-Driven Development Life Cycle (AIDLC)
 
 ## Overview

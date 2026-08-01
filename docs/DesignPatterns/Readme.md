@@ -1,3 +1,10 @@
+---
+type: Design Pattern
+title: Design Patterns Overview
+description: Curated index of generative AI and agentic design patterns from OpenAI, Gartner, LangChain, and academic sources.
+tags: [design-patterns, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 
 ## GenAI Design Patterns
 

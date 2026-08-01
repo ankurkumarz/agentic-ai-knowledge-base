@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Microsoft Azure AI Agent Service
+description: "Microsoft Azure AI Agent Service provides a comprehensive platform for building, deploying, and managing AI agents within the Azure ecosystem"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Microsoft Azure AI Agent Service
 
 ## Overview

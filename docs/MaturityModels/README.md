@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agentic AI Maturity Models
+description: Agentic AI maturity models provide frameworks for organizations to assess their current capabilities and plan their journey toward advanced AI agent implementations
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 
 # Agentic AI Maturity Models
 

@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "SkillOpt: Executive Strategy for Self-Evolving Agent Skills"
+description: "The approach was introduced in arXiv:2605"
+tags: [prompt-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # SkillOpt: Executive Strategy for Self-Evolving Agent Skills
 
 ## Overview

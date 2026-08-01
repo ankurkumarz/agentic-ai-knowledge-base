@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Loop Engineering
+description: "Loop engineering is the practice of designing a system that prompts a coding agent on your behalf, rather than prompting the agent yourself turn by turn"
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Loop Engineering
 
 ## Overview

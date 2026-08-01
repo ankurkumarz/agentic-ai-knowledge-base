@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "IDC's Perspective on Agentic AI Maturity"
+description: "IDC (International Data Corporation) provides a comprehensive analysis of the agentic evolution of enterprise applications, focusing on how organizations transform from traditional software systems..."
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # IDC's Perspective on Agentic AI Maturity
 
 ## Overview

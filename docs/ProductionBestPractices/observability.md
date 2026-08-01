@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Observability
+description: Observability for agentic AI goes beyond traditional APM
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Observability
 
 Observability for agentic AI goes beyond traditional APM. You need visibility into LLM calls, tool invocations, reasoning chains, token costs, and output quality — not just latency and error rates.

@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Hermes Agent (Nous Research)
+description: "Hermes Agent is an open-source, self-improving personal AI agent developed by Nous Research, launched in February 2026"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Hermes Agent (Nous Research)
 
 ## Overview

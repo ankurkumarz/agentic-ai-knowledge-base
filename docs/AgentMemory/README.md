@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agent Memory Management
+description: "Memory management is the \"engine\" that enables an AI agent to move from a one-shot calculator to a persistent entity"
+tags: [memory, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Memory Management
 
 Memory management is the "engine" that enables an AI agent to move from a one-shot calculator to a persistent entity. It is essentially the art of deciding what to keep in the expensive, high-speed context window and what to offload to external storage.

@@ -1,3 +1,10 @@
+---
+type: Vendor Hub
+title: AWS — Agentic AI Overview
+description: "Amazon Web Services offers a broad portfolio of agentic AI services spanning agent development frameworks, managed runtime platforms, maturity guidance, and a growing agent marketplace"
+tags: [aws, vendor, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AWS — Agentic AI Overview
 
 ## Overview

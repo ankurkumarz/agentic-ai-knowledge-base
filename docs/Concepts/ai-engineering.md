@@ -1,3 +1,10 @@
+---
+type: Concept
+title: AI Engineering
+description: AI engineering is the process of building applications on top of readily available foundation models
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Engineering
 
 ## Overview

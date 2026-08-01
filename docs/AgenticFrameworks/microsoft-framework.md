@@ -1,3 +1,10 @@
+---
+type: Framework
+title: Microsoft Agent Framework
+description: "Microsoft Agent Framework is an open-source development kit for building AI agents and multi-agent workflows for"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Microsoft Agent Framework
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agentic AI Operations (AgentOps)
+description: "This section provides comprehensive coverage of operational practices, methodologies, and frameworks for managing agentic AI systems in production environments"
+tags: [agentops, operations, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic AI Operations (AgentOps)
 
 This section provides comprehensive coverage of operational practices, methodologies, and frameworks for managing agentic AI systems in production environments. From Google Cloud's GenOps evolution to operational best practices, this collection offers the essential guidance needed to successfully operate AI agents at scale.

@@ -1,3 +1,10 @@
+---
+type: Design Pattern
+title: "Agentic Architectural Patterns — Arsanjani & Bustos"
+description: "This page synthesizes the pattern catalog from *Agentic Architectural Patterns for Building Multi-Agent Systems* (Arsanjani & Bustos, Packt, 2026, ISBN 978-1-80602-957-0)"
+tags: [design-patterns, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic Architectural Patterns — Arsanjani & Bustos
 
 ## Overview

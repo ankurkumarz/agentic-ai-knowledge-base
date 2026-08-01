@@ -19,3 +19,4 @@ raw/
 .vscode/
 docs/assets/graph-data.json
 docs/graph-data.json
+.hypothesis/

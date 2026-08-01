@@ -1,3 +1,10 @@
+---
+type: Concept
+title: Foundation Models
+description: "Foundation models are large-scale AI models trained on broad data that can be adapted to a wide range of downstream tasks"
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Foundation Models
 
 ## Overview

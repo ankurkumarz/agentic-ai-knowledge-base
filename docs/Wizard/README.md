@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Recommendation Wizard
+description: "A guided, client-side wizard that helps you find the right starting point in this knowledge base"
+tags: [wizard, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Recommendation Wizard
 
 A guided, client-side wizard that helps you find the right starting point in this knowledge base. Answer two short questions and it recommends the most relevant pages — no data leaves your browser.

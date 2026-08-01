@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agentic AI Red Teaming Guide (CSA)
+description: "Red teaming is the practice of simulating real-world adversarial attacks against a system to uncover exploitable weaknesses before malicious actors do"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic AI Red Teaming Guide (CSA)
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Other SaaS Platforms
+description: "Beyond the major cloud providers, numerous specialized SaaS platforms offer unique capabilities for agent development, deployment, and management"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Other SaaS Platforms
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Framework
+title: Semantic Kernel
+description: "Semantic Kernel (by Microsoft) is designed for creating stable, enterprise-ready applications with strong integration capabilities"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Semantic Kernel
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: LangGraph Context Engineering
+description: Lance Martin (LangChain) has been one of the most active voices synthesizing context engineering patterns across the industry
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LangGraph Context Engineering
 
 ## Overview

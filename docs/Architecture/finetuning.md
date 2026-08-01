@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: Finetuning
+description: "Finetuning is the process of adapting a pre-trained foundation model to a specific task or style by continuing to train on targeted data"
+tags: [architecture, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Finetuning
 
 ## Overview

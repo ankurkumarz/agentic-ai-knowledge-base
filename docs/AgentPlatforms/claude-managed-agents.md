@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Claude Managed Agents
+description: "Claude Managed Agents is Anthropic's hosted agent execution platform — a pre-built, configurable agent harness that runs in managed infrastructure"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Claude Managed Agents
 
 ## Overview

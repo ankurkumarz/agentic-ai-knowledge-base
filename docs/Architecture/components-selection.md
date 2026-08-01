@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: Agentic Architecture Components Selection
+description: Selecting the right architectural components is crucial for building effective agentic AI systems
+tags: [architecture, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic Architecture Components Selection
 
 ## Overview

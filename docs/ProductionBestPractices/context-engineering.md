@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Context Engineering
+description: "Context engineering is the discipline of deciding what information goes into an agent's context window, when, and in what form"
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Context Engineering
 
 Context engineering is the discipline of deciding what information goes into an agent's context window, when, and in what form. Poor context management is one of the most common causes of agent quality degradation in production.

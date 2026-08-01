@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Working Memory Management
+description: "Working memory (also called short-term memory) is the active state the agent is reasoning over right now — the running conversation and the scratchpad the model sees at inference time"
+tags: [memory, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Working Memory Management
 
 ## Overview

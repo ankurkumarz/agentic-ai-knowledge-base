@@ -1,3 +1,10 @@
+---
+type: Benchmark
+title: LLM Evaluation Benchmarks
+description: "LLM benchmarks measure the capabilities of large language models across dimensions including reasoning, knowledge, coding, mathematics, instruction following, and safety"
+tags: [benchmarks, evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LLM Evaluation Benchmarks
 
 ## Overview

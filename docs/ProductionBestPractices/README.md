@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "Production Best Practices & Guidelines"
+description: A consolidated reference for teams moving agentic AI systems from prototype to production
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Production Best Practices & Guidelines
 
 A consolidated reference for teams moving agentic AI systems from prototype to production. Each page covers a specific production concern with a structured best practices table: **Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied**.

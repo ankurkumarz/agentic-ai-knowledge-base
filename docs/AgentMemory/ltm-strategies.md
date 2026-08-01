@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "Long-Term Memory (LTM) Strategies"
+description: "Long-term memory for AI agents spans three distinct types from the CoALA taxonomy: **semantic memory** (durable facts and knowledge), **episodic memory** (specific past experiences), and **procedur..."
+tags: [memory, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Long-Term Memory (LTM) Strategies
 
 ## Overview

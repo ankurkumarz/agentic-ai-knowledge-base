@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Workflow Orchestration
+description: "Workflow orchestration platforms provide sophisticated capabilities for managing complex, multi-step processes that involve coordination between multiple systems, services, and agents"
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Workflow Orchestration
 
 ## Overview

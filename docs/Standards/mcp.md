@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Model Context Protocol (MCP)
+description: "The **Model Context Protocol (MCP)** is an open protocol built by Anthropic that standardizes how applications provide context to Large Language Models (LLMs)"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Model Context Protocol (MCP)
 
 ## Overview

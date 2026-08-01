@@ -1,3 +1,10 @@
+---
+type: Reference
+title: LLM Evaluation Frameworks
+description: "LLM evaluation frameworks provide programmatic tools for measuring the quality, accuracy, and safety of LLM outputs"
+tags: [evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LLM Evaluation Frameworks
 
 ## Overview

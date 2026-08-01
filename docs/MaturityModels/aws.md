@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "AWS's Perspective on Agentic AI Maturity"
+description: AWS provides a comprehensive maturity model for generative AI that organizations can use to assess their current capabilities and plan their journey toward advanced agentic AI implementations
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AWS's Perspective on Agentic AI Maturity
 
 ## Overview

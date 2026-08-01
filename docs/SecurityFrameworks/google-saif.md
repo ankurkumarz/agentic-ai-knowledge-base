@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Google SAIF Framework
+description: "Google's Secure AI Framework (SAIF) for implementing security in AI systems"
+tags: [security, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Google SAIF Framework
 
 ## Overview

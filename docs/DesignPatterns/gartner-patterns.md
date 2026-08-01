@@ -1,3 +1,10 @@
+---
+type: Design Pattern
+title: "Gartner LLM-based AI Design Patterns"
+description: "[Emerging Patterns for Building LLM-Based AI Agents](https://www"
+tags: [design-patterns, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Gartner LLM-based AI Design Patterns
 
 ## Overview

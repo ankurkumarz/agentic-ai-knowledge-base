@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "Observability Goals & Objectives"
+description: Observability for agentic AI systems goes beyond traditional application monitoring
+tags: [observability, production, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Observability Goals & Objectives
 
 ## Overview

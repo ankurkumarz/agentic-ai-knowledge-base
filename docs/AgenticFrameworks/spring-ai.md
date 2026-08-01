@@ -1,3 +1,10 @@
+---
+type: Framework
+title: Spring AI
+description: "[Spring AI](https://spring"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Spring AI
 
 ## Overview

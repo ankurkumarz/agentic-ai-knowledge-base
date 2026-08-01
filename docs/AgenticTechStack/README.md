@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agent Technology Stack
+description: "The Agent Technology Stack represents the comprehensive ecosystem of platforms, tools, and frameworks that enable the development, deployment, and operation of AI agents at scale"
+tags: [tech-stack, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Technology Stack
 
 ## Overview

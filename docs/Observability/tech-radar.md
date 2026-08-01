@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agent Observability Tech Radar
+description: "This page consolidates **agent/LLM observability tools, standards, and adjacent APM platforms** and maps them to a **Technology Radar** adapted from the [Thoughtworks Technology Radar](https://www"
+tags: [observability, production, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Observability Tech Radar
 
 ## Overview

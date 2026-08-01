@@ -1,3 +1,10 @@
+---
+type: Framework
+title: AWS Strands Agents
+description: "AWS Strands Agents is an open-source multi-agent framework for building AI Agents"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AWS Strands Agents
 
 ## Overview

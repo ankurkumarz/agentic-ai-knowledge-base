@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Agent Skills / SKILLS.md
+description: "**Agent Skills** (also referred to by the emerging convention **SKILLS"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Skills / SKILLS.md
 
 ## Overview

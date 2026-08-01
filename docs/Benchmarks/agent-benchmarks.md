@@ -1,3 +1,10 @@
+---
+type: Benchmark
+title: Agent Evaluation Benchmarks
+description: "Agent benchmarks evaluate AI systems on complex, multi-step tasks that require planning, tool use, and autonomous decision-making"
+tags: [benchmarks, evaluation, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Evaluation Benchmarks
 
 ## Overview

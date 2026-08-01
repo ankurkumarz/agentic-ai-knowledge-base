@@ -1,3 +1,10 @@
+---
+type: Concept
+title: 2026 AI Predictions (You.com Whitepaper)
+description: "The central thesis is a shift from **Chat-Engines** (AI systems you converse with) to **Do-Engines** (AI systems that autonomously complete tasks end-to-end)"
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # 2026 AI Predictions (You.com Whitepaper)
 
 ## Overview

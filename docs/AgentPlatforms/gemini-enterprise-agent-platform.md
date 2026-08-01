@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Gemini Enterprise Agent Platform
+description: "Gemini Enterprise Agent Platform is Google Cloud's comprehensive platform for building, scaling, governing, and optimizing AI agents in production"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Gemini Enterprise Agent Platform
 
 ## Overview

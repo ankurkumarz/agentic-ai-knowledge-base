@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "The Efficiency Frontier: Cost-Performance Optimization in LLM Context Management"
+description: "As LLMs increasingly rely on long-context processing, expanding context windows introduces substantial computational and financial costs"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # The Efficiency Frontier: Cost-Performance Optimization in LLM Context Management
 
 ## Overview

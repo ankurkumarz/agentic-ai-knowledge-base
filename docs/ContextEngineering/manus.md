@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Manus Context Engineering
+description: "Manus is an autonomous AI agent built by a team led by Yichao 'Peak' Ji"
+tags: [context-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Manus Context Engineering
 
 ## Overview

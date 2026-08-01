@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Claude Code Orchestration Primitives — Decision Guide
+description: "Claude Code provides five orchestration primitives (Skills, Subagents, Agent View, Agent Teams, Dynamic Workflows) and one capability-exposure protocol (MCP)"
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Claude Code Orchestration Primitives — Decision Guide
 
 ## Overview

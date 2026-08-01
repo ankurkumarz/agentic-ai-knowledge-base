@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: AI Automation Reference Architecture
+description: "AI Automation frameworks provide the foundation for building sophisticated multi-agent systems that can handle complex, multi-step workflows with minimal human intervention"
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Automation Reference Architecture
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Open Knowledge Format (OKF)
+description: "The **Open Knowledge Format (OKF)** is an open specification published by Google Cloud's Data Analytics, BI, and Database teams (authored by Sam McVeety and Amir Hormati) on June 12, 2026, at versi..."
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Open Knowledge Format (OKF)
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Reference
+title: KAOS (K8s Agent Orchestration System)
+description: "KAOS is an open source, Kubernetes-native framework for deploying and orchestrating distributed multi-agent AI systems at scale — tool access, multi-agent coordination, and LLM integration managed ..."
+tags: [agentops, operations, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # KAOS (K8s Agent Orchestration System)
 
 ## Overview

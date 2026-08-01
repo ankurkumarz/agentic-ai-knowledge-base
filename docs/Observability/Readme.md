@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Agent Observability
+description: "This section provides comprehensive coverage of observability solutions, best practices, and methodologies for monitoring and understanding agentic AI systems in production"
+tags: [observability, production, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Observability
 
 This section provides comprehensive coverage of observability solutions, best practices, and methodologies for monitoring and understanding agentic AI systems in production. From goals and objectives to specific tools and platforms, this collection offers the essential guidance needed to maintain visibility into AI agent behavior, performance, and reliability.

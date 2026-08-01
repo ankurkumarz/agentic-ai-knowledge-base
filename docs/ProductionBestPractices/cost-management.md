@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Cost Management for Agentic AI
+description: "Cost management is a first-class production concern for agentic AI systems"
+tags: [production, best-practices, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Cost Management for Agentic AI
 
 Cost management is a first-class production concern for agentic AI systems. Unlike traditional software, agent costs scale with token consumption, tool call frequency, model selection, and memory retrieval patterns — all of which can compound unexpectedly at scale.

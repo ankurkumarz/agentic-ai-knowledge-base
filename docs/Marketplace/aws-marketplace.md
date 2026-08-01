@@ -1,3 +1,10 @@
+---
+type: Reference
+title: AWS AI Agents Marketplace
+description: "The AWS AI Agents Marketplace is a comprehensive platform launched by Amazon Web Services that provides organizations with access to pre-built AI agents, tools, and solutions"
+tags: [marketplace, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AWS AI Agents Marketplace
 
 ## Overview

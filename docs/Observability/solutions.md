@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Observability Solutions
+description: "A growing ecosystem of tools and platforms provides observability for AI agents and LLM-based applications"
+tags: [observability, production, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Observability Solutions
 
 ## Overview

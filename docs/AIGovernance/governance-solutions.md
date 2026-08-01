@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Governance Solutions
+description: "Governance solutions are the platforms, tools, and services that operationalize AI governance policy at scale"
+tags: [governance, agentic-ai, production]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Governance Solutions
 
 ## Overview

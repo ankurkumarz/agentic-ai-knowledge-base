@@ -1,3 +1,10 @@
+---
+type: Platform
+title: AWS AgentCore
+description: "Launched in July 2025, Amazon Bedrock AgentCore enables you to deploy and operate Enterprise AI agents securely, at scale"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AWS AgentCore
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Governance Strategy
+description: "A governance strategy defines *how* an organization frames accountability, risk appetite, and policy for its agentic AI systems before those systems reach production"
+tags: [governance, agentic-ai, production]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Governance Strategy
 
 ## Overview

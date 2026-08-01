@@ -1,3 +1,10 @@
+---
+type: Concept
+title: References
+description: "- **\"Intelligent Agents: Theory and Practice\"** - Wooldridge & Jennings (1995)"
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # References
 
 ## Foundational Papers and Research

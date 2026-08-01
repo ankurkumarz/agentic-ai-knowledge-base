@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Agent2Agent (A2A) Protocol
+description: "The **Agent2Agent (A2A) Protocol** is a standard for agent interoperability launched by Google, focusing on direct agent-to-agent communication and coordination"
+tags: [standards, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent2Agent (A2A) Protocol
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Vendor Hub
+title: OpenAI — Agentic AI Overview
+description: "OpenAI's contributions to agentic AI include foundational design pattern documentation, the AutoGPT reference implementation, and the Responses API with built-in tool use"
+tags: [openai, vendor, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # OpenAI — Agentic AI Overview
 
 ## Overview

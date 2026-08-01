@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Business Process Workflow Engines
+description: "Business process workflow engines are specialized platforms designed to model, execute, and optimize complex business processes"
+tags: [workflow, orchestration, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Business Process Workflow Engines
 
 ## Overview

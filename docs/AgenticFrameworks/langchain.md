@@ -1,3 +1,10 @@
+---
+type: Framework
+title: LangChain
+description: LangChain is a comprehensive framework for developing applications powered by language models
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # LangChain
 
 ## Overview

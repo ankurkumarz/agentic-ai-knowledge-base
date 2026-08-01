@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Harness Optimization
+description: "Harness optimization is the automated search over LLM harness code to discover high-performing configurations without manual design"
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Harness Optimization
 
 ## Overview

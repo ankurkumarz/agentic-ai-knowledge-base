@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Harness Engineering
+description: Harness engineering is the practice of designing and maintaining the system of guides and sensors that wrap a coding agent to increase confidence in its output
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Harness Engineering
 
 ## Overview

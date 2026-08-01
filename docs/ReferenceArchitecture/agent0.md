@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: "Agent0 Series: Self-Evolving Agents from Zero Data"
+description: "Reference architecture for self-evolving AI agents that can learn and adapt from minimal initial data"
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent0 Series: Self-Evolving Agents from Zero Data
 
 ## Overview

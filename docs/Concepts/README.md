@@ -1,3 +1,10 @@
+---
+type: Concept
+title: Concepts
+description: "This section provides foundational definitions, terminology, and conceptual frameworks essential for understanding agentic AI systems"
+tags: [concepts, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Concepts
 
 This section provides foundational definitions, terminology, and conceptual frameworks essential for understanding agentic AI systems. It covers agent definitions, types, and key references that form the basis for more advanced topics throughout this knowledge base.

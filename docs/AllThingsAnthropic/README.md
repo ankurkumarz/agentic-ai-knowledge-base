@@ -1,3 +1,10 @@
+---
+type: Vendor Hub
+title: Anthropic — Agentic AI Overview
+description: "Anthropic builds the Claude model family with a focus on safety, interpretability, and reliable long-horizon task performance"
+tags: [anthropic, vendor, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Anthropic — Agentic AI Overview
 
 ## Overview

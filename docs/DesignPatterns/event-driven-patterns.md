@@ -1,3 +1,10 @@
+---
+type: Design Pattern
+title: "Event-Driven Design Patterns for Multi-Agent Systems (Confluent)"
+description: "This page synthesizes *A Guide to Event-Driven Design for Agents and Multi-Agent Systems* (Sean Falconer, Confluent, 2025)"
+tags: [design-patterns, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Event-Driven Design Patterns for Multi-Agent Systems (Confluent)
 
 ## Overview

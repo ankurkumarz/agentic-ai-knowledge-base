@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agentic Ops Framework (AOF)
+description: "The Agentic Ops Framework (AOF) is an open source, Rust-based framework that lets DevOps, SRE, and platform engineers build and orchestrate AI agents using Kubernetes-style YAML specifications and ..."
+tags: [agentops, operations, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agentic Ops Framework (AOF)
 
 ## Overview

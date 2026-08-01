@@ -1,3 +1,10 @@
+---
+type: Framework
+title: AutoGen
+description: "AutoGen is a programming framework, developed by Microsoft, for building Agentic AI agents and applications"
+tags: [frameworks, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AutoGen
 
 ## Overview

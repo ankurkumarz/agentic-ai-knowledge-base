@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: Prompt Engineering
+description: Prompt engineering is the practice of designing inputs to foundation models to reliably produce desired outputs
+tags: [prompt-engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Prompt Engineering
 
 ## Overview

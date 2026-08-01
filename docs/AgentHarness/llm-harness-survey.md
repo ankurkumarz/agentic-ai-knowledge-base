@@ -1,3 +1,10 @@
+---
+type: Playbook
+title: "Agent Harness Engineering: Survey & Taxonomy"
+description: "This page synthesizes two related 2026 surveys that together define the harness engineering discipline:"
+tags: [agent-harness, engineering, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agent Harness Engineering: Survey & Taxonomy
 
 ## Overview

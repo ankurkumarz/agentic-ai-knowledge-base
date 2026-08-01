@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Semantic Data Layer — Technology Radar
+description: "A **semantic layer** is a data architecture technique that introduces a shared business-logic layer between raw data stores and consuming applications (BI tools, AI agents, APIs), centralizing metr..."
+tags: [tech-stack, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Semantic Data Layer — Technology Radar
 
 ## Overview

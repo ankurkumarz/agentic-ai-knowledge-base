@@ -1324,3 +1324,69 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 | `docs/AgenticFrameworks/solutions.md`, `docs/Observability/tech-radar.md` | Extended | Added reciprocal See Also links to the new Evaluation Tech Radar for cross-radar navigation. |
 | `docs/index.md` | Extended | Updated Evaluation Platforms bullet to include AWS Bedrock Evaluations and Azure AI Foundry Evaluation; added new Evaluation Tech Radar bullet. |
 | `mkdocs.yml` | Extended | Added nav entry `10.8 Evaluation Tech Radar: 'EvaluationFrameworks/tech-radar.md'`. |
+
+## [2026-07-13] ingest | Kubernetes Agent Sandbox (agent-sandbox.sigs.k8s.io) | sections touched: Standards/k8s-agent-sandbox.md, SecurityFrameworks/agent-sandboxing.md
+
+**Source**: https://agent-sandbox.sigs.k8s.io/ and https://agent-sandbox.sigs.k8s.io/docs
+**Type**: Official project documentation — kubernetes-sigs/agent-sandbox, Kubernetes SIG Apps subproject; CC BY 4.0
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/k8s-agent-sandbox.md` | Extended | Added Core CRD API Reference table (Sandbox/SandboxTemplate/SandboxClaim/SandboxWarmPool); Client SDKs section (Python + Go, filesystem/volume APIs); Use Cases table (code execution, coding agents, computer use, CI/CD, always-on OpenClaw, gVisor, Kata isolation patterns); updated References with official docs and GitHub links |
+| `docs/SecurityFrameworks/agent-sandboxing.md` | Extended | Added Kubernetes Agent Sandbox entry under Cloud-Hosted Sandboxes with full attribute table and capability notes; added row to Comparison Summary table; added dedicated selection-guide row; updated See Also with backlink |
+
+### Key Knowledge Added
+
+- **SandboxWarmPool CRD**: pre-warmed pod pools enabling sub-millisecond sandbox assignment vs. cold pod scheduling
+- **Hibernation & resume**: controller pauses idle sandboxes and resumes on incoming network connections; state preserved, compute cost drops to near-zero
+- **Stable identity**: each Sandbox gets a persistent hostname and optional PVC-backed storage that survives restarts
+- **Client SDKs**: first-class Python and Go libraries with Filesystem (read/write/list/transfer) and Volume attachment APIs
+- **Use case catalog**: 7 canonical patterns documented — code execution (short), coding agents (medium), computer use (medium), CI/CD (short-to-medium), always-on OpenClaw environments (long), gVisor isolation, Kata Containers isolation
+- **Isolation is deployment-time choice**: standard containers / gVisor / Kata Containers all pluggable via the same Sandbox API
+
+---
+
+## [2026-07-13] ingest | Docker Sandboxes (docker.com/products/docker-sandboxes) | sections touched: SecurityFrameworks/agent-sandboxing.md
+
+**Source**: https://www.docker.com/products/docker-sandboxes/
+**Type**: Product page — Docker Inc., 2026
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/SecurityFrameworks/agent-sandboxing.md` | Extended | Added Docker Sandboxes entry under Cloud-Hosted Sandboxes (before Kubernetes Agent Sandbox); added row to Comparison Summary table; added dedicated selection-guide row ("Run AI coding agents unattended on local machine"); renamed "Docker (standard)" to "Docker (standard containers)" to distinguish from Docker Sandboxes product; added References entries |
+
+### Key Knowledge Added
+
+- **Docker Sandboxes is a distinct product from Docker Desktop / standard containers**: microVM isolation per session, not just namespace-based containers
+- **YOLO mode support**: `--dangerously-skip-permissions` is safe inside a Docker Sandbox because the microVM provides a hard host boundary
+- **Agents can run Docker inside sandboxes**: nested container execution is supported
+- **Supported agents**: Claude Code, Gemini CLI, Copilot CLI, Codex, OpenCode, Kiro
+- **Local-first**: macOS (`brew install docker/tap/sbx`) and Windows (`winget install Docker.sbx`); no Docker Desktop dependency
+- **Team/enterprise tier**: centralized network and filesystem policy management available via Docker sales channel
+
+---
+
+## [2026-07-13] ingest | Gartner — Emerging Market Quadrant for No-Code Agent Builders — Startup Vendors (May 2026) | sections touched: MaturityModels/gartner.md, WorkflowBuilders/README.md
+
+**Source**: Attached image (Gartner report 850246, dated May 2026)
+**Type**: Gartner market quadrant — no-code agent builder startup vendor landscape
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/MaturityModels/gartner.md` | Extended | Added new "Emerging Market Quadrant for No-Code Agent Builders" section with full vendor placement table (15 vendors across 4 quadrants), quadrant interpretation notes, and relationship mapping to existing WorkflowBuilders wiki coverage; added See Also section (was missing — knowledge graph now includes this page) |
+| `docs/WorkflowBuilders/README.md` | Extended | Added market landscape callout in Overview paragraph linking to Gartner quadrant; added See Also section (was missing) with bidirectional links to Gartner maturity page, open-source/orchestration workflow pages, and agent sandboxing |
+
+### Key Knowledge Added
+
+- **Market Shapers**: Glean (enterprise AI search/agents), Pipefy (business process automation) — highest execution + disruption scores
+- **Pace Setters**: WRITER (enterprise AI platform), n8n (open-source workflow builder) — high execution, lower disruption potential
+- **Pioneers**: Airia, Dify, Dust, Relevance AI — high disruption potential, earlier execution maturity
+- **Specialists cluster**: Sema4.ai, aiXplain, Tines, Relay.app, Botpress, Thunk.AI, Ema — focused-niche positions
+- **n8n** is the only open-source project in the Pace Setters quadrant; developer adoption advantage could drive upward movement
+- **Tines** (security automation SOAR) appearing in this quadrant signals AI agent capabilities expanding into security workflow automation

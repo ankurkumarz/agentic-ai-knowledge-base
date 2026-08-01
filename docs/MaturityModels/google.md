@@ -1,3 +1,10 @@
+---
+type: Reference
+title: "Google's Perspective on Agentic AI Maturity"
+description: "Google's approach to agentic AI maturity focuses on the technical and organizational capabilities required to build, deploy, and scale AI agents effectively"
+tags: [maturity, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Google's Perspective on Agentic AI Maturity
 
 ## Overview

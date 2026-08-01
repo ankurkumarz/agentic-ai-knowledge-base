@@ -1,3 +1,10 @@
+---
+type: Reference
+title: The Four Memory Types of Agent Memory
+description: "The canonical taxonomy for agent memory comes from the **Cognitive Architectures for Language Agents (CoALA)** paper (Sumers et al"
+tags: [memory, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # The Four Memory Types of Agent Memory
 
 ## Overview

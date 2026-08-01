@@ -1,3 +1,10 @@
+---
+type: Platform
+title: Enterprise Agentic AI Platforms (2026)
+description: "By 2026, enterprise agentic AI has moved from pilot budgets to production commitments"
+tags: [platforms, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Enterprise Agentic AI Platforms (2026)
 
 ## Overview

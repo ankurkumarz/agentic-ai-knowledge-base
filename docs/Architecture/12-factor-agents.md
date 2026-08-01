@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: "12-Factor Agents"
+description: "The [12-Factor Agent](https://github"
+tags: [architecture, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # 12-Factor Agents
 
 ## Overview

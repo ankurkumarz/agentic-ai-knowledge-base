@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: "Self-Learning Agents Reference Architecture"
+description: "Self-learning agents represent the next evolution in AI systems - agents that can autonomously improve their capabilities, learn from experience, and evolve without requiring human-annotated data"
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Self-Learning Agents Reference Architecture
 
 ## Overview

@@ -1,3 +1,11 @@
+---
+type: Reference
+title: Evaluation Tech Radar
+description: Technology radar mapping LLM and agent evaluation tools — open-source frameworks and managed enterprise platforms — to Adopt/Trial/Assess/Hold rings.
+tags: [evaluation, benchmarks, agentic-ai]
+timestamp: 2026-07-23T00:00:00Z
+---
+
 # Evaluation Tech Radar
 
 ## Overview

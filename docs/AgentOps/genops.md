@@ -1,3 +1,10 @@
+---
+type: Reference
+title: GenOps – Evolution of MLOps for GenAI
+description: GenOps (Generative Operations) represents the evolution of MLOps practices specifically tailored for generative AI and agentic systems
+tags: [agentops, operations, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # GenOps – Evolution of MLOps for GenAI
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Google Cloud Agents Marketplace (Agent Gallery)
+description: "Google Cloud's Agent Gallery is the partner-built agents hub embedded directly in the Gemini Enterprise app"
+tags: [marketplace, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Google Cloud Agents Marketplace (Agent Gallery)
 
 ## Overview

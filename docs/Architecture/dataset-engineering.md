@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: Dataset Engineering
+description: "Dataset engineering is the discipline of acquiring, curating, generating, and processing data for training and adapting AI models"
+tags: [architecture, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Dataset Engineering
 
 ## Overview

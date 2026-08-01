@@ -1,3 +1,10 @@
+---
+type: Architecture
+title: AI Assistant Reference Architecture
+description: Comprehensive reference architecture for building AI assistant systems
+tags: [architecture, reference, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # AI Assistant Reference Architecture
 
 ## Overview

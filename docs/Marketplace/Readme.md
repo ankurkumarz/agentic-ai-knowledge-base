@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Agents Marketplace
+description: "The agents marketplace ecosystem represents a rapidly growing segment of the AI industry, providing organizations with access to pre-built AI agents, operational tools, and specialized solutions"
+tags: [marketplace, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Agents Marketplace
 
 ## Overview

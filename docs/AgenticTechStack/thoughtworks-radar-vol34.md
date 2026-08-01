@@ -1,3 +1,10 @@
+---
+type: Reference
+title: Thoughtworks Technology Radar Vol. 34 — Agentic AI Digest
+description: "The Thoughtworks Technology Radar Volume 34 (April 2026) was assembled at the TAB meeting in Bengaluru, March 2026"
+tags: [tech-stack, agentic-ai]
+timestamp: 2026-07-17T00:00:00Z
+---
 # Thoughtworks Technology Radar Vol. 34 — Agentic AI Digest
 
 ## Overview
