@@ -3,7 +3,7 @@ type: AI Tool
 title: AI Coding Agents
 description: "AI coding agents are purpose-built autonomous tools that read codebases, plan changes, execute them using real development tools (terminal, editor, browser), and iterate on the results"
 tags: [frameworks, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-08-07T00:00:00Z
 ---
 # AI Coding Agents
 
@@ -21,8 +21,11 @@ The category spans terminal-first CLIs, IDE extensions, cloud sandboxes, and sta
 |---|---|---|---|---|---|
 | **Claude Code** | Anthropic | CLI + IDE + web | Proprietary | Claude (Anthropic) | Deepest agentic loop; swarm & daemon support; MCP-native |
 | **OpenAI Codex** | OpenAI | Cloud / Desktop / Web | Proprietary | GPT-5.4+ (OpenAI) | Cloud sandbox; parallel tasks; computer-use model |
-| **Gemini CLI** | Google | Terminal CLI | Apache 2.0 | Gemini (multi-provider) | Open-source; Google Search grounding; free tier |
-| **Kiro** | Amazon / AWS | Agentic IDE | Proprietary | Claude (Bedrock) + Amazon Nova | Spec-driven development; agent hooks; AWS-native |
+| **Gemini CLI** | Google | Terminal CLI | Apache 2.0 | Gemini (multi-provider) | *(Sunsetting)* Open-source; Google Search grounding; free tier — superseded by Antigravity CLI |
+| **Antigravity CLI** | Google | Terminal CLI (Go) | Proprietary | Gemini 3.5 Flash (multi-agent) | Successor to Gemini CLI; async multi-agent orchestration; part of the Antigravity platform |
+| **Kiro** | Amazon / AWS | Agentic IDE | Proprietary | Claude Opus 4.7 (Bedrock) + Amazon Nova | Spec-driven development; ground-up replacement for Amazon Q Developer |
+| **Snowflake CoCo** | Snowflake | CLI + Desktop + IDE + Slack | Proprietary (SaaS) | Multi-model (Snowflake Cortex) | Data-native coding agent — reads warehouse schemas, RBAC, and lineage; formerly Cortex Code |
+| **Databricks Genie Code** | Databricks | Web command center + IDE | Proprietary (SaaS) | Multi-model | Lakehouse-native coding agent; part of the Genie agentic product family |
 | **Devin** | Cognition | Cloud + Desktop | Proprietary (SaaS) | Proprietary model | Fully autonomous end-to-end engineer; $20/month |
 | **Cline** | Cline (open source) | VS Code extension / CLI | Apache 2.0 | 30+ providers | HITL approval per action; largest VS Code install base |
 | **Goose** | Block (Square) | Desktop + CLI | Apache 2.0 | 15+ providers | Donated to Linux Foundation; Rust-based; 70+ MCP extensions |
@@ -118,6 +121,7 @@ Launched April 2025, Codex is OpenAI's agentic coding platform. Unlike CLI tools
 **Vendor**: Google
 **GitHub**: [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) — Apache 2.0
 **Language**: TypeScript (Node.js)
+**Status**: *(Updated: Google announced the transition of Gemini CLI to Antigravity CLI in May 2026. Gemini CLI stops serving requests for free-tier, Google AI Pro, and Google AI Ultra users on June 18, 2026. Enterprise users on Standard/Enterprise licenses, Google Cloud-billed users, and paid API-key holders retain Gemini CLI access. See [Google Antigravity](#google-antigravity-cli-ide-sdk) below.)*
 
 Open-source terminal agent that brings Gemini models directly into command-line workflows. Built in TypeScript (98% of codebase). The free tier provides 60 requests/min and 1,000 requests/day via OAuth, making it accessible without API billing.
 
@@ -147,7 +151,41 @@ Open-source terminal agent that brings Gemini models directly into command-line 
 | LLM | Gemini (multi-provider via API) |
 | Open source | Yes |
 | MCP support | Yes |
-| Production readiness | GA |
+| Production readiness | Sunsetting for Free/Pro/Ultra tiers (Jun 18, 2026); GA for Enterprise/API-key users |
+
+---
+
+## Google Antigravity (CLI / IDE / SDK)
+
+**Type**: Agent-first development platform (CLI + standalone desktop app + SDK + IDE)
+**Vendor**: Google
+**Language (CLI)**: Go
+**Announced**: May 19, 2026 (Google I/O), expanded to Antigravity 2.0 May 18, 2026
+
+Antigravity is Google's successor brand to Gemini CLI, spanning four surfaces that share one agent harness: **Antigravity CLI** (terminal tool replacing Gemini CLI), **Antigravity 2.0** (standalone desktop app with multi-agent orchestration), **Antigravity SDK** (programmatic access to the same harness Google uses internally), and **Antigravity IDE** (the original VS Code-style app, launched November 2025). Where Gemini CLI was built around a single-prompt, single-response interaction model, Antigravity CLI is built for orchestration — a developer can kick off multiple parallel agent tasks and monitor them asynchronously.
+
+### Key Features
+
+- **Async multi-agent orchestration**: Kick off several agent tasks in parallel and monitor progress rather than waiting on a single synchronous response.
+- **Retained Gemini CLI concepts**: Agent Skills, Hooks, and Subagents carry over; Gemini CLI Extensions are now called Antigravity plugins.
+- **Go-based CLI**: Rewritten from TypeScript to Go for faster startup and lower overhead.
+- **Unified harness across surfaces**: CLI, desktop app, SDK, and IDE share the same underlying agent runtime.
+- **Gemini 3.5 Flash default model**: Antigravity 2.0 runs on Gemini 3.5 Flash by default.
+
+### Migration Notes
+
+- **Sunset date**: Gemini CLI stops serving free-tier, Google AI Pro, and Google AI Ultra requests on June 18, 2026 — a 30-day migration window from the May 19, 2026 announcement.
+- **Who keeps Gemini CLI**: Enterprise (Standard/Enterprise license) users, Google Cloud-billed users, and users authenticating with a paid API key.
+- **Early feedback**: Community reports (as of mid-2026) note Antigravity CLI consumes tokens faster than Gemini CLI, is not open source (unlike Gemini CLI's Apache 2.0 license), and has more limited cost controls — factors to weigh before migrating high-volume workflows.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary |
+| LLM | Gemini 3.5 Flash (default) |
+| Open source | No |
+| CLI language | Go |
+| Predecessor | Gemini CLI (Apache 2.0, TypeScript) |
+| Production readiness | GA (Antigravity 2.0, CLI); Gemini CLI parity gaps reported early |
 
 ---
 
@@ -157,26 +195,98 @@ Open-source terminal agent that brings Gemini models directly into command-line 
 **Vendor**: Amazon / AWS
 **Docs**: [kiro.dev](https://kiro.dev)
 
-AWS's agentic IDE, launched mid-2025. Kiro's defining characteristic is **spec-driven development** — natural-language specifications are the source of truth, and code is a build artifact generated, verified, and kept in sync by agents running on Amazon Bedrock. It routes between Claude Sonnet for reasoning-heavy specs and Amazon Nova for high-throughput code generation.
+AWS's agentic IDE, launched mid-2025 and relaunched internationally on May 7, 2026 as a **ground-up replacement for Amazon Q Developer**. Kiro's defining characteristic is **spec-driven development** — natural-language specifications are the source of truth, and code is a build artifact generated, verified, and kept in sync by agents running on Amazon Bedrock. It routes between Claude Opus/Sonnet for reasoning-heavy specs and Amazon Nova for high-throughput code generation. AWS has stated that "the most impactful AI developer experiences go far beyond code generation and completion," positioning Kiro's structured, spec-first workflow against Q Developer's reactive chat-and-completion model.
+
+### Amazon Q Developer Transition
+
+- **New signups blocked**: May 15, 2026 — Amazon Q Developer is closed to new users.
+- **End of support**: IDE plugins and paid Q Developer subscriptions reach full end-of-support on April 30, 2027; existing customers have a multi-quarter window to migrate to Kiro.
+- **Model access differentiator**: Kiro is the only AWS coding tool offering Claude Opus 4.7 (as of May 29, 2026); Q Developer Pro remained capped at Opus 4.6.
 
 ### Key Features
 
-- **Spec-driven development**: Write a spec in natural language; agents generate, verify, and maintain the code. Specs are versioned, reviewed, and owned like code.
+- **Spec-driven development**: Write a spec in natural language; agents generate, verify, and maintain the code. Specs are versioned, reviewed, and owned like code — enforced via required `requirements.md`, `design.md`, and `tasks.md` approvals before code generation begins.
 - **Agent Hooks**: Event-driven hooks fire on file save, PR open, and repo events — automatically running tests, updating documentation, regenerating fixtures, or cascading spec changes.
-- **Multi-model routing**: Claude Sonnet for complex reasoning; Amazon Nova for throughput-intensive code generation. Unified via Bedrock.
+- **Multi-model routing**: Claude Opus/Sonnet for complex reasoning; Amazon Nova for throughput-intensive code generation. Unified via Bedrock.
 - **Persistent context**: Context is maintained across sessions, enabling tasks that run autonomously for hours or days.
 - **Multimodal input**: Processes files, codebases, docs, images, repo maps, git diffs, terminal output, URLs, and external docs via MCP.
 - **Broad language support**: Python, Java, JavaScript, TypeScript, C#, Go, Rust, PHP, Ruby, Kotlin, C, C++, shell, SQL, Scala, JSON, YAML, HCL.
 - **AGENTS.md / KIRO.md**: Project-specific agent instructions for per-project behavior.
 - **MCP support**: External integrations via Model Context Protocol.
+- **Native iOS app**: Announced at AWS Summit NYC, June 17, 2026.
+
+### Pricing (2026)
+
+| Plan | Price | Notes |
+|---|---|---|
+| Free | $0 | 50 agentic interactions/month |
+| Pro | $19/month | 1,000 agentic interactions/month |
+| Pro+ | $39/month | 3,000 agentic interactions/month |
+| Pro Max | $100/month | Announced AWS Summit NYC, June 17, 2026 |
 
 | Dimension | Signal |
 |---|---|
 | License | Proprietary (AWS) |
-| LLM | Claude Sonnet + Amazon Nova (via Bedrock) |
+| LLM | Claude Opus 4.7 / Sonnet + Amazon Nova (via Bedrock) |
 | Open source | No |
 | Spec-driven | Yes (unique differentiator) |
+| Replaces | Amazon Q Developer (new signups blocked May 15, 2026; EOS Apr 30, 2027) |
+| Production readiness | GA (international relaunch May 7, 2026) |
+
+---
+
+## Snowflake CoCo
+
+**Type**: Data-native AI coding agent (CLI + Desktop + Snowsight + VS Code + Claude Code + Slack)
+**Vendor**: Snowflake
+**Docs**: [snowflake.com/en/product/snowflake-coco](https://www.snowflake.com/en/product/snowflake-coco/)
+**Rebranded**: June 2, 2026, at Snowflake Summit 2026 (formerly **Cortex Code**)
+
+CoCo is Snowflake's warehouse-native coding agent — it is data-native rather than general-purpose, reading Snowflake schemas, RBAC policies, and data lineage before generating SQL, dbt models, or pipelines from natural language. Snowflake's EVP of Product noted that customers had already started calling the product "CoCo" organically before Cortex Code was officially renamed, prompting the rebrand. Functionality and architecture are unchanged from Cortex Code — only the name and surrounding integrations expanded.
+
+### Key Features
+
+- **Schema/RBAC/lineage awareness**: Reads the target Snowflake account's schemas, role-based access policies, and lineage graph before generating code — code generation respects existing permissions rather than introducing a new access surface (if a user can't query a table, CoCo can't query it on their behalf).
+- **Multi-surface availability**: Snowsight (web), CoCo Desktop, CLI, VS Code extension, and Claude Code integration.
+- **Slack integration**: Mention CoCo in a Slack channel and it executes against the Snowflake account using the invoking user's role and permissions — a governed conversational interface for data work.
+- **Cloud Agents & Automations** (Summit 2026): Scheduled and event-driven autonomous execution surfaces added alongside the CoCo rename.
+- **Benchmark performance**: Reported 72.1% pass rate on real-world analytics-engineering tasks.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (SaaS) |
+| LLM | Multi-model via Snowflake Cortex |
+| Open source | No |
+| Data-native | Yes — schema/RBAC/lineage-aware (unique differentiator) |
+| Predecessor name | Cortex Code (renamed June 2026) |
 | Production readiness | GA |
+
+---
+
+## Databricks Genie Code
+
+**Type**: Lakehouse-native coding agent (web command center + IDE)
+**Vendor**: Databricks
+**Docs**: [docs.databricks.com/genie](https://docs.databricks.com/aws/en/genie/)
+**Part of**: The Genie agentic product family (see [Databricks Genie](../AgentPlatforms/databricks-genie.md) for the full platform)
+
+Genie Code is the coding-agent member of Databricks' Genie family, which grew out of the April 2026 rebrand of Databricks One into Genie. It targets production data and ML engineering work inside the Databricks lakehouse — generating and maintaining notebooks, pipelines, and jobs with awareness of Unity Catalog metadata. At Data + AI Summit 2026, Databricks expanded Genie Code with a full-page command center, upgrades for production data/ML engineering workflows, and scheduled tasks.
+
+### Key Features
+
+- **Command center UI**: Full-page interface (added at Data + AI Summit 2026) for managing and monitoring agentic coding tasks.
+- **Production data/ML engineering focus**: Optimized for pipeline, notebook, and job maintenance rather than general-purpose software engineering.
+- **Scheduled tasks**: Agent runs can be scheduled rather than only triggered interactively.
+- **Lakehouse/Unity Catalog awareness**: Operates with context from the same governed metadata layer used by Genie Agents and Genie One.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (SaaS) |
+| LLM | Multi-model |
+| Open source | No |
+| Lakehouse-native | Yes — Unity Catalog-aware (unique differentiator) |
+| Part of | Genie product family (Genie One, Genie Agents, Genie Code, Genie App Builder, Genie ZeroOps, Genie Ontology) |
+| Production readiness | GA; expanded at Data + AI Summit 2026 |
 
 ---
 
@@ -595,8 +705,11 @@ These tools occupy distinct positions across two axes: **interface** (terminal �
                               │
                Kiro ──────────┼──────── IDE
     GitHub Copilot ───────────┤ (Coding Agent)
+   Databricks Genie Code ─────┤
+       Snowflake CoCo ────────┤
 TERMINAL ─────────────────────┼────────────────────
-         Gemini CLI ──────────┤
+         Gemini CLI ──────────┤ (sunsetting)
+     Antigravity CLI ─────────┤
                Warp ──────────┤
                               │
             Augment ──────────┤──────── IDE
@@ -621,9 +734,12 @@ TERMINAL ─────────────────────┼─�
 | Maximum autonomy, minimal supervision | Devin, Claude Code (KAIROS mode) |
 | Cloud-isolated task parallelism | OpenAI Codex |
 | Open source, self-hosted, compliance-sensitive | Pi, OpenCode, Cline, Goose, Aider |
-| AWS ecosystem, spec-driven workflows | Kiro |
+| AWS ecosystem, spec-driven workflows (Amazon Q Developer successor) | Kiro |
 | VS Code integration with strong HITL | Cline |
-| Free tier with Google Search grounding | Gemini CLI |
+| Free tier with Google Search grounding *(sunsetting Jun 2026)* | Gemini CLI → Antigravity CLI |
+| Async multi-agent orchestration (Google ecosystem) | Antigravity CLI / 2.0 |
+| Snowflake-native, RBAC/lineage-aware data engineering | Snowflake CoCo |
+| Databricks lakehouse-native production data/ML engineering | Databricks Genie Code |
 | General-purpose agent (not just coding) | Goose |
 | Multi-provider flexibility, LSP diagnostics | OpenCode |
 | Familiar VS Code UX, Fortune 500 scale | Cursor |
@@ -646,6 +762,8 @@ TERMINAL ─────────────────────┼─�
 - [Loop Engineering](../AgentHarness/loop-engineering.md) — designing the scheduled, self-feeding automation systems (`/loop`, `/goal`, Automations) that prompt these agents
 - [Context Engineering](../ContextEngineering/strategies.md)
 - [ProductionBestPractices — Deployment](../ProductionBestPractices/deployment.md)
+- [Databricks Genie (platform family)](../AgentPlatforms/databricks-genie.md)
+- [Gemini Enterprise Agent Platform](../AgentPlatforms/gemini-enterprise-agent-platform.md)
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)
 - [AllThingsOpenAI](../AllThingsOpenAI/README.md)
 - [AllThingsGoogle](../AllThingsGoogle/README.md)
@@ -656,8 +774,13 @@ TERMINAL ─────────────────────┼─�
 - [Claude Code product page](https://www.anthropic.com/product/claude-code) — Anthropic's agentic coding system
 - [The New Stack: Claude Code source leak](https://thenewstack.io/claude-code-source-leak/) — 512K lines of TypeScript accidentally exposed via npm source map; reveals swarms, KAIROS daemon, 44 feature flags
 - [OpenAI Codex](https://openai.com/codex/) — OpenAI's cloud coding agent
-- [Gemini CLI GitHub](https://github.com/google-gemini/gemini-cli) — Google's open-source terminal AI agent
-- [Kiro](https://kiro.dev/) — Amazon's spec-driven agentic IDE
+- [Gemini CLI GitHub](https://github.com/google-gemini/gemini-cli) — Google's open-source terminal AI agent (sunsetting for Free/Pro/Ultra tiers June 18, 2026)
+- [Transitioning Gemini CLI to Antigravity CLI — Google Developers Blog](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) — official transition announcement, May 2026
+- [Gemini CLI → Antigravity CLI migration discussion — GitHub](https://github.com/google-gemini/gemini-cli/discussions/27274) — sunset timeline, retained features, migration FAQ
+- [Kiro](https://kiro.dev/) — Amazon's spec-driven agentic IDE; ground-up replacement for Amazon Q Developer
+- [Amazon Q Developer end-of-support announcement — AWS DevOps Blog](https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/) — new signups blocked May 15, 2026; EOS April 30, 2027
+- [Snowflake CoCo](https://www.snowflake.com/en/product/snowflake-coco/) — Snowflake-native AI coding agent; rebrand of Cortex Code (June 2026)
+- [Databricks Genie](https://www.databricks.com/blog/next-generation-databricks-genie) — Genie product family overview including Genie Code
 - [Devin](https://devin.ai/) — Cognition's autonomous AI software engineer
 - [Cline GitHub](https://github.com/cline/cline) — Open-source VS Code coding agent
 - [Goose GitHub](https://github.com/block/goose) — Block's open-source AI agent (Linux Foundation)

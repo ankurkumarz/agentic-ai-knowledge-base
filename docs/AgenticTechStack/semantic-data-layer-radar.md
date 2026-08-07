@@ -3,7 +3,7 @@ type: Reference
 title: Semantic Data Layer — Technology Radar
 description: "A **semantic layer** is a data architecture technique that introduces a shared business-logic layer between raw data stores and consuming applications (BI tools, AI agents, APIs), centralizing metr..."
 tags: [tech-stack, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-08-07T00:00:00Z
 ---
 # Semantic Data Layer — Technology Radar
 
@@ -221,6 +221,7 @@ The **Open Semantic Interchange (OSI)** initiative, led by Snowflake with partne
 - [Agent Tech Stack References](README.md)
 - [Thoughtworks Technology Radar Vol. 34 — Agentic AI Digest](thoughtworks-radar-vol34.md)
 - [Microsoft Build 2026 — Fabric & Databases](../AgentPlatforms/microsoft-fabric-databases-2026.md)
+- [Databricks Genie (platform family, incl. Genie Code)](../AgentPlatforms/databricks-genie.md)
 - [RAG Implementation](../RAG/Readme.md)
 - [Production Best Practices — Context Engineering](../ProductionBestPractices/context-engineering.md)
 - [AllThingsAWS](../AllThingsAWS/README.md)
