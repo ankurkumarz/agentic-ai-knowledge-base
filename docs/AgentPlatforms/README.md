@@ -3,7 +3,7 @@ type: Platform
 title: Popular AI Agents
 description: The AI agent ecosystem has exploded with specialized agents designed for specific domains and use cases
 tags: [platforms, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-08-07T00:00:00Z
 ---
 # Popular AI Agents
 
@@ -149,7 +149,8 @@ Each category provides detailed analysis of popular implementations, their capab
 **Platform**: [Gemini CLI](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli)  
 **Usage**: `gemini -p "analyze this codebase" -m "gemini-2.5-flash"`  
 **Key Features**: Google Cloud integration, codebase analysis, multi-model support  
-**Resources**: [Code Lab Tutorial](https://codelabs.developers.google.com/gemini-cli-hands-on)
+**Resources**: [Code Lab Tutorial](https://codelabs.developers.google.com/gemini-cli-hands-on)  
+**Status**: Sunsetting for Free/Pro/Ultra tiers on June 18, 2026 — superseded by **Antigravity CLI**. See [AI Coding Agents — Google Antigravity](../AICodingAgents/ai-coding-agents.md#google-antigravity-cli-ide-sdk) for full detail.
 
 ### Opencode
 **Platform**: [Opencode.ai](https://opencode.ai/)  
@@ -259,6 +260,8 @@ Each category provides detailed analysis of popular implementations, their capab
 - [Hermes Agent (Nous Research)](hermes-agent.md)
 - [OpenHuman (TinyHumans AI)](openhuman.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
+- [AI Coding Agents (incl. Google Antigravity, Kiro, Snowflake CoCo, Databricks Genie Code)](../AICodingAgents/ai-coding-agents.md)
+- [Databricks Genie](databricks-genie.md)
 - [Agentic AI Platforms](../AgentPlatforms/gemini-enterprise-agent-platform.md)
 - [Agents Marketplace](../Marketplace/Readme.md)
 - [Production Best Practices](../ProductionBestPractices/README.md)

@@ -1390,3 +1390,35 @@ Content already fully covered by `docs/AgentOps/kagent.md`, created during the 2
 - **Specialists cluster**: Sema4.ai, aiXplain, Tines, Relay.app, Botpress, Thunk.AI, Ema — focused-niche positions
 - **n8n** is the only open-source project in the Pace Setters quadrant; developer adoption advantage could drive upward movement
 - **Tines** (security automation SOAR) appearing in this quadrant signals AI agent capabilities expanding into security workflow automation
+
+## [2026-08-07] ingest | AI tool rebranding updates (Gemini CLI→Antigravity, Vertex AI→Gemini Enterprise Agent Platform, Kiro replaces Amazon Q, Snowflake Cortex Code→CoCo, Databricks Genie family) | sections touched: AICodingAgents, AgenticFrameworks, AgentPlatforms, AllThingsGoogle, AllThingsAWS, AgenticTechStack, index
+
+**Source**: WebSearch/WebFetch (no local raw file or single URL supplied by user — five distinct topic prompts researched independently)
+**Type**: Multiple short vendor rebrand/announcement items, batched per the "short, clearly distinct sources" batch-ingest rule (5.1 Section Mapping / Batch vs. Single File guidance)
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AICodingAgents/ai-coding-agents.md` | Extended | Added Antigravity CLI/2.0/SDK/IDE section (successor to Gemini CLI, sunsetting Jun 18 2026 for Free/Pro/Ultra tiers); updated Kiro section with Amazon Q Developer EOL timeline, Pro Max tier, Claude Opus 4.7, iOS app; added new Snowflake CoCo and Databricks Genie Code sections; updated comparison table, positioning map, Best Practices table, See Also, and References |
+| `docs/AgenticFrameworks/ai-coding-agents.md` | Extended | Mirrored the same content as the canonical `AICodingAgents/ai-coding-agents.md` (pre-existing duplicate file differing only in frontmatter `type`) |
+| `docs/AgentPlatforms/gemini-enterprise-agent-platform.md` | Updated | Corrected announcement/GA timeline — GA April 22, 2026 at Google Cloud Next '26 (previous page text said "Announced in 2025"); added Agentspace consolidation into the sibling Gemini Enterprise app; added inline update note per contradiction-handling rule |
+| `docs/AgentPlatforms/databricks-genie.md` | Created | New Platform-type page covering the full Genie family: Genie One (GA), Genie Agents (formerly Genie Spaces, renamed Jul 2026), Genie Code, Genie App Builder, Genie ZeroOps, Genie Ontology, Account-Level Genie |
+| `docs/AgentPlatforms/README.md` | Extended | Added Antigravity CLI transition note to the existing Gemini CLI entry; added See Also links to AI Coding Agents and Databricks Genie |
+| `docs/AllThingsGoogle/README.md` | Extended | Added Antigravity CLI/2.0/SDK/IDE hub row; updated Gemini CLI row to note sunset; updated Gemini Enterprise Agent Platform row with corrected GA date and Agentspace note |
+| `docs/AllThingsAWS/README.md` | Extended | Updated Kiro row to note it replaces Amazon Q Developer, with EOL dates and Claude Opus 4.7 access |
+| `docs/AgenticTechStack/semantic-data-layer-radar.md` | Extended | Added bidirectional See Also link to the new Databricks Genie platform page |
+| `docs/index.md` | Extended | Added AI Coding Agents bullet to Section 5; updated Agentic AI Platforms bullet in Section 6 with Gemini Enterprise Agent Platform GA date/Agentspace and Databricks Genie family |
+| `mkdocs.yml` | Extended | Added nav entry 5.2.8 for `AgentPlatforms/databricks-genie.md` |
+
+### Key Knowledge Added
+
+- **Gemini CLI → Antigravity CLI**: Google announced the transition May 19, 2026 at I/O; Gemini CLI stops serving Free/Pro/Ultra-tier requests June 18, 2026 (Enterprise/Cloud-billed/API-key users retain access). Antigravity spans four surfaces sharing one harness: Antigravity CLI (Go-based terminal tool), Antigravity 2.0 (standalone desktop app), Antigravity SDK, and Antigravity IDE (launched Nov 2025). Antigravity CLI retains Agent Skills/Hooks/Subagents from Gemini CLI (Extensions renamed to plugins) but is proprietary (not Apache 2.0 like its predecessor) and community feedback flags higher token consumption and fewer cost controls.
+- **Vertex AI → Gemini Enterprise Agent Platform**: Announced and GA April 22, 2026 at Google Cloud Next '26 — not a 2025 announcement as the wiki previously stated. The same event absorbed Agentspace into a unified Gemini Enterprise app, ending the prior Vertex AI + Agentspace + Gemini API split. No forced migration for existing customers.
+- **Kiro replaces Amazon Q Developer**: Kiro relaunched internationally May 7, 2026 as AWS's ground-up spec-driven-IDE replacement for Amazon Q Developer. Amazon Q Developer closed to new signups May 15, 2026; full end-of-support April 30, 2027. Kiro is the only AWS coding tool offering Claude Opus 4.7. New Kiro Pro Max tier ($100/month) and native iOS app announced at AWS Summit NYC, June 17, 2026.
+- **Snowflake Cortex Code → CoCo**: Renamed at Snowflake Summit 2026 (June 2, 2026) — same product, same architecture, name change only (customers had already started calling it "CoCo" informally). Data-native coding agent reading Snowflake schemas/RBAC/lineage before generating code; available via Snowsight, CoCo Desktop, CLI, VS Code, Claude Code, and Slack; reported 72.1% pass rate on real-world analytics-engineering tasks.
+- **Databricks Genie family**: Databricks One rebranded to Genie in April 2026. Family now spans Genie One (GA agentic coworker for business teams), Genie Agents (formerly Genie Spaces, renamed July 2026 — curated domain-specific autonomous agents), Genie Code (lakehouse-native coding agent, expanded with a command center and scheduled tasks at Data + AI Summit 2026), Genie App Builder, Genie ZeroOps, and Genie Ontology. Account-Level Genie is GA, giving one Genie instance across all workspaces.
+
+### Notes on Sourcing
+
+Several primary vendor blog URLs (Google Developers Blog, AWS Blog, Snowflake product page, Databricks Blog) returned HTTP 403 to WebFetch in this environment; content was corroborated via WebSearch result synthesis (which surfaces and cites the same primary URLs) and one successfully fetched primary source (the official `google-gemini/gemini-cli` GitHub Discussion #27274 announcing the Antigravity CLI transition). Reference sections cite the primary/official URLs identified by search rather than the secondary aggregator articles used for corroboration, per the citation rule.

@@ -2,6 +2,34 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-08-07
+
+* **Ingest**: [Gemini CLI → Antigravity CLI transition] → AICodingAgents, AgenticFrameworks, AgentPlatforms, AllThingsGoogle — https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/ and https://github.com/google-gemini/gemini-cli/discussions/27274
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md`
+  * Extended: `docs/AgenticFrameworks/ai-coding-agents.md`
+  * Extended: `docs/AgentPlatforms/README.md`
+  * Extended: `docs/AllThingsGoogle/README.md`
+
+* **Update**: [Vertex AI → Gemini Enterprise Agent Platform, GA + Agentspace consolidation] → AgentPlatforms, AllThingsGoogle — https://cloud.google.com/blog/products/ai-machine-learning/the-new-gemini-enterprise-one-platform-for-agent-development
+  * Updated: `docs/AgentPlatforms/gemini-enterprise-agent-platform.md` *(previous claim: announced 2025; current evidence: GA April 22, 2026 at Cloud Next '26, absorbing Agentspace)*
+  * Extended: `docs/AllThingsGoogle/README.md`
+
+* **Ingest**: [Kiro as replacement for Amazon Q Developer] → AICodingAgents, AgenticFrameworks, AllThingsAWS — https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md`
+  * Extended: `docs/AgenticFrameworks/ai-coding-agents.md`
+  * Extended: `docs/AllThingsAWS/README.md`
+
+* **Ingest**: [Snowflake Cortex Code renamed CoCo] → AICodingAgents, AgenticFrameworks — https://www.snowflake.com/en/product/snowflake-coco/
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md`
+  * Extended: `docs/AgenticFrameworks/ai-coding-agents.md`
+
+* **Ingest**: [Databricks Genie product family — Genie One, Genie Agents (formerly Genie Spaces), Genie Code] → AgentPlatforms (new), AICodingAgents, AgenticFrameworks, AgenticTechStack — https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents
+  * Created: `docs/AgentPlatforms/databricks-genie.md`
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md`
+  * Extended: `docs/AgenticFrameworks/ai-coding-agents.md`
+  * Extended: `docs/AgenticTechStack/semantic-data-layer-radar.md`
+  * Extended: `docs/index.md`
+
 ## 2026-07-23
 
 * **Ingest**: [Google Cloud LLM EvalKit] → EvaluationFrameworks/platforms.md, AllThingsGoogle/README.md, index.md — https://cloud.google.com/blog/products/ai-machine-learning/introducing-llm-evalkit (WebFetch

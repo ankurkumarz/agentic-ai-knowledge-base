@@ -3,15 +3,15 @@ type: Platform
 title: Gemini Enterprise Agent Platform
 description: "Gemini Enterprise Agent Platform is Google Cloud's comprehensive platform for building, scaling, governing, and optimizing AI agents in production"
 tags: [platforms, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-08-07T00:00:00Z
 ---
 # Gemini Enterprise Agent Platform
 
 ## Overview
 
-Gemini Enterprise Agent Platform is Google Cloud's comprehensive platform for building, scaling, governing, and optimizing AI agents in production. Announced in 2025, it is the evolution of Vertex AI — consolidating model selection, model building, and agent building capabilities from Vertex AI with new features for agent integration, DevOps, orchestration, and security. All Vertex AI services and roadmap evolutions are now delivered exclusively through Agent Platform.
+Gemini Enterprise Agent Platform is Google Cloud's comprehensive platform for building, scaling, governing, and optimizing AI agents in production. It is the evolution of Vertex AI — consolidating model selection, model building, and agent building capabilities from Vertex AI with new features for agent integration, DevOps, orchestration, and security. Google announced and made the platform generally available on **April 22, 2026**, from the stage of **Google Cloud Next '26** in Las Vegas — the rename and consolidation event, not merely a 2025 preview. *(Updated: earlier coverage on this page dated the announcement to 2025; that referred to preview-stage Vertex AI Agent Builder capabilities. The Gemini Enterprise Agent Platform brand, GA status, and full feature set launched at Cloud Next '26.)* All Vertex AI services and roadmap evolutions are now delivered exclusively through Agent Platform, and as of May 21, 2026, Vertex AI no longer exists as a standalone product name.
 
-The platform provides a single destination for technical teams to build agents that can transform products, services, and operations, with delivery to employees through the Gemini Enterprise app and tight integration with IT operations for control, governance, and security at scale.
+The same Cloud Next '26 announcement also **absorbed Agentspace** into a unified **Gemini Enterprise** product — ending the prior three-product split of Vertex AI, Agentspace, and the Gemini API. Two related but distinct names now exist: **Gemini Enterprise** is the end-user app (licensed per user/month) that employees open to search company data, chat with an assistant, and run agents someone else built; **Gemini Enterprise Agent Platform** is the underlying developer platform covered on this page, accessible at `console.cloud.google.com/agent-platform/overview`. The platform provides a single destination for technical teams to build agents that can transform products, services, and operations, with delivery to employees through the Gemini Enterprise app and tight integration with IT operations for control, governance, and security at scale.
 
 ## Key Components
 
@@ -79,14 +79,17 @@ The ADK now supports a graph-based framework for organizing agents into networks
 - **Enterprise knowledge**: Turning decades of project data into real-time actionable intelligence (e.g., Burns & McDonnell)
 - **Commerce**: Trusted agent-based payment flows (e.g., PayPal AP2 integration)
 
-## Relationship to Vertex AI
+## Relationship to Vertex AI and Agentspace
 
-Gemini Enterprise Agent Platform is the direct successor to Vertex AI. Key transition points:
+Gemini Enterprise Agent Platform is the direct successor to Vertex AI, and its sibling product Gemini Enterprise absorbed Agentspace. Key transition points:
 
-- All Vertex AI services are now delivered through Agent Platform — Vertex AI no longer exists as a standalone service
-- Existing Vertex AI capabilities (model building, agent building, model selection) are preserved and extended
-- The ADK, previously associated with Vertex AI, is now a first-class component of Agent Platform
-- Documentation and console access have migrated to the Agent Platform destination in Google Cloud Console
+- **Timeline**: Announced and GA April 22, 2026, at Google Cloud Next '26; Vertex AI ceased to exist as a standalone product name by May 21, 2026.
+- All Vertex AI services are now delivered through Agent Platform — Vertex AI no longer exists as a standalone service.
+- **Agentspace consolidation**: Agentspace's employee-facing search/assistant/agent capabilities were folded into Gemini Enterprise (the app), ending the prior Vertex AI + Agentspace + Gemini API three-product split.
+- Existing Vertex AI capabilities (model building, agent building, model selection) are preserved and extended.
+- The ADK, previously associated with Vertex AI, is now a first-class component of Agent Platform.
+- Documentation and console access have migrated to the Agent Platform destination (`console.cloud.google.com/agent-platform/overview`) in Google Cloud Console.
+- **No forced migration**: Existing Vertex AI / Agentspace customers do not need to take migration action — the underlying services are unchanged, only the branding and console destination moved.
 
 ## Best Practices
 
@@ -114,3 +117,5 @@ Gemini Enterprise Agent Platform is the direct successor to Vertex AI. Key trans
 ## References
 
 - [Introducing Gemini Enterprise Agent Platform](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform) — Google Cloud blog post announcing the platform, its components, and the transition from Vertex AI
+- [The new Gemini Enterprise: one platform for agent development](https://cloud.google.com/blog/products/ai-machine-learning/the-new-gemini-enterprise-one-platform-for-agent-development) — Google Cloud blog post on the Cloud Next '26 rebrand and Agentspace consolidation
+- [Gemini Enterprise Agent Platform product page](https://cloud.google.com/products/gemini-enterprise-agent-platform) — Google Cloud product page confirming the Vertex AI → Agent Platform rename
