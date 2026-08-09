@@ -2,6 +2,28 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-08-09 (3)
+
+* **Ingest**: [Agent Plugins package your skills, tools, and more] → Standards, AICodingAgents, AgentHarness, SecurityFrameworks, AllThingsGoogle, AllThingsOpenAI, AllThingsMicrosoft, AllThingsAWS — https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/
+  * Created: `docs/Standards/agent-plugins.md`
+  * Extended: `docs/Standards/skills.md`
+  * Extended: `docs/Standards/mcp.md`
+  * Extended: `docs/Standards/agents-md.md`
+  * Extended: `docs/Standards/agent2agent.md`
+  * Extended: `docs/Standards/agentic-ai-foundation.md`
+  * Extended: `docs/Standards/open-knowledge-format.md`
+  * Extended: `docs/Standards/index.md`
+  * Extended: `docs/AICodingAgents/claude-code.md`
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md`
+  * Extended: `docs/AgentHarness/harness-engineering.md`
+  * Extended: `docs/SecurityFrameworks/skill-scanners.md`
+  * Extended: `docs/AllThingsGoogle/README.md`
+  * Extended: `docs/AllThingsOpenAI/README.md`
+  * Extended: `docs/AllThingsMicrosoft/README.md`
+  * Extended: `docs/AllThingsAWS/README.md`
+  * Extended: `docs/index.md`
+  * Extended: `mkdocs.yml`
+
 ## 2026-08-09 (2)
 
 * **Ingest**: [Dosu] → AgentPlatforms — https://dosu.dev/

@@ -186,6 +186,14 @@ The foundation was established through collaborative efforts from major industry
 - **Section 5**: Integration with agent technology stacks
 - **Section 16**: Best practices alignment with foundation standards
 
+## See Also
+
+- [Model Context Protocol (MCP)](./mcp.md)
+- [Agent2Agent (A2A) Protocol](./agent2agent.md)
+- [AGENTS.md Standard](./agents-md.md)
+- [Agent Plugins Specification](./agent-plugins.md) — separately governed vendor-neutral standards body (Amazon, Cursor, Microsoft, OpenAI, Vercel, Google) covering plugin packaging
+- [Agent Skills / SKILLS.md](./skills.md)
+
 ## Related Sections
 
 - **Section 6.2**: Model Context Protocol (detailed technical documentation)

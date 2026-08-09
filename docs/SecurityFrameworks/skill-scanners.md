@@ -146,6 +146,7 @@ Static and LLM analysis cannot evaluate runtime behavior; encrypted or binary co
 - [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)
 - [Agent Sandboxing](./agent-sandboxing.md)
 - [Model Context Protocol](../Standards/mcp.md)
+- [Agent Plugins Specification](../Standards/agent-plugins.md) — packaging standard that bundles skills with MCP servers; it defines path containment but explicitly leaves signing, provenance, and permissions to clients
 - [EvaluationFrameworks](../EvaluationFrameworks/Readme.md)
 
 ## References

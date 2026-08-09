@@ -380,3 +380,4 @@ AWS explicitly distinguishes the two protocols and warns against misuse:
 - [ProductionBestPractices/deployment.md](../ProductionBestPractices/deployment.md) — Deployment of A2A-compatible agents
 - [AgentOps](../AgentOps/README.md) — AgentOps lifecycle including multi-agent operations
 - [AllThingsGoogle](../AllThingsGoogle/README.md) — Google ADK, Gemini Enterprise Agent Platform
+- [Agent Plugins Specification](./agent-plugins.md) — packaging-layer standard (skills + MCP servers in one directory), complementary to A2A's runtime agent-to-agent coordination

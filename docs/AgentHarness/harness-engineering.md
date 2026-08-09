@@ -252,6 +252,7 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 - [Production Best Practices: Deployment](../ProductionBestPractices/deployment.md)
 - [Observability](../ProductionBestPractices/observability.md)
 - [Agentic Design Patterns](../DesignPatterns/openai-patterns.md)
+- [Agent Plugins Specification](../Standards/agent-plugins.md) — fixed-location discovery rules and conformance requirements a harness must implement to load portable skill + MCP bundles
 
 ## References
 

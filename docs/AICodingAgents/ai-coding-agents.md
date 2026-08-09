@@ -758,6 +758,7 @@ TERMINAL ─────────────────────┼─�
 - [Frameworks Technology Radar](solutions.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Agent Client Protocol (ACP)](../Standards/agent-client-protocol.md) — editor-agent integration standard used by Gemini CLI natively and Claude Code via adapter
+- [Agent Plugins Specification](../Standards/agent-plugins.md) — common plugin packaging format adopted across VS Code, Cursor, GitHub Copilot, Codex, and Kiro
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
 - [Loop Engineering](../AgentHarness/loop-engineering.md) — designing the scheduled, self-feeding automation systems (`/loop`, `/goal`, Automations) that prompt these agents
 - [Context Engineering](../ContextEngineering/strategies.md)

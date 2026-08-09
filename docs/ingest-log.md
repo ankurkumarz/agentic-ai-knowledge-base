@@ -1486,3 +1486,50 @@ Several primary vendor blog URLs (Google Developers Blog, AWS Blog, Snowflake pr
 ### Notes on Sourcing
 
 All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetch. Content was reconstructed via WebSearch synthesis of each vendor's own site copy (surfaced in search snippets), official blog posts (LlamaIndex, Cloudgeni), GitHub repositories (Dosu, OpenGeni, OpenWorker), and independent press coverage (OpenWorker via MarkTechPost/Medium). The user-supplied URLs are retained as the canonical citations in each case per the citation rule.
+
+---
+
+## [2026-08-09] ingest | Agent Plugins package your skills, tools, and more (Google Developers Blog) | sections touched: Standards, AICodingAgents, AgentHarness, SecurityFrameworks, AllThingsGoogle, AllThingsOpenAI, AllThingsMicrosoft, AllThingsAWS
+
+**Source type**: Vendor blog announcement + the underlying open specification repository
+**Canonical URL**: https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/
+
+### Files Modified
+
+| File | Change |
+|---|---|
+| `docs/Standards/agent-plugins.md` | **Created** — full spec page |
+| `docs/Standards/skills.md` | See Also backlink |
+| `docs/Standards/mcp.md` | See Also backlink |
+| `docs/Standards/agents-md.md` | See Also backlink |
+| `docs/Standards/agent2agent.md` | See Also backlink |
+| `docs/Standards/agentic-ai-foundation.md` | Added a missing `See Also` section (5 links) |
+| `docs/Standards/open-knowledge-format.md` | See Also backlink |
+| `docs/Standards/index.md` | Directory listing entry |
+| `docs/AICodingAgents/claude-code.md` | See Also backlink (migration path for Claude Code–style manifests) |
+| `docs/AICodingAgents/ai-coding-agents.md` | See Also backlink (client adoption) |
+| `docs/AgentHarness/harness-engineering.md` | See Also backlink (client conformance) |
+| `docs/SecurityFrameworks/skill-scanners.md` | See Also backlink (trust left to clients) |
+| `docs/AllThingsGoogle/README.md` | Hub row — Core Maintainer |
+| `docs/AllThingsOpenAI/README.md` | Hub row — Core Maintainer, ChatGPT/Codex clients |
+| `docs/AllThingsMicrosoft/README.md` | Hub row — Core Maintainer, VS Code/Copilot clients |
+| `docs/AllThingsAWS/README.md` | Hub row — Core Maintainer, Kiro client |
+| `docs/index.md` | Section 7 bullet |
+| `mkdocs.yml` | Nav entry 6.13 |
+
+### Key Knowledge Added
+
+- **What it is**: Agent Plugins v1.0.0 (August 2026) — an open, vendor-neutral specification for packaging reusable agent extensions into a distributable plugin directory. Fills the packaging gap between the Agent Skills format (how a skill is written) and MCP (how tools are exposed): neither defined how a vendor ships both as one installable unit.
+- **Structure**: A plugin is a directory rooted at a single filesystem location with a required `plugin.json`. Components are discovered from *fixed* locations — `skills/*/SKILL.md` (one level deep) and a root `mcp.json` — rather than enumerated inline. Missing locations are non-fatal; the smallest valid plugin is `plugin.json` alone.
+- **Closed manifest**: `plugin.json` requires `$schema` and `name` (1–64 chars, lowercase alphanumeric plus `-`/`.`); optional `version` (SemVer recommended), `description`, `author`, `homepage`, `repository`, `license`, `keywords`, `extensions`. `hooks`, `agents`, `commands`, `mcpServers`, `lspServers` are explicitly banned at the top level — client-specific capability goes in `extensions` (reverse-domain keyed) or a reverse-domain namespace directory.
+- **MCP transports**: `stdio` (`command` as a single non-shell executable token, `args`, `env`, `cwd`), `streamable-http` (absolute HTTPS URL, HTTP for localhost only, `headers`), and deprecated `sse`. `mcp.json` `$schema` version must match `plugin.json`; a mismatch disables MCP but is non-fatal.
+- **Environment model**: Clients supply exactly two reserved variables to subprocesses — `PLUGIN_ROOT` (absolute plugin path) and `PLUGIN_DATA` (client-managed writable directory). Expansion is limited to `${PLUGIN_ROOT}`/`${PLUGIN_DATA}`, only in `args`/`env`/`cwd`, non-recursive and literal. Client `env` overlays apply before reserved variables are set.
+- **Security**: Central invariant is path containment — any discovered, read, or executed file must resolve within the plugin root; symlinks escaping it are rejected; plugin-relative paths must start with `./`; non-path fields (command args, env values) are opaque. Graduated failure boundaries: bad `plugin.json` rejects the plugin, bad component location invalidates that component type, a bad `SKILL.md` or MCP entry is skipped individually. Signing, provenance, sandboxing, and permission models are **not** covered.
+- **Non-goals**: Marketplaces, registries, install mechanisms, distribution protocols, permission/consent models, and UI for surfacing skills are all explicitly left to individual clients — the spec standardizes the artifact only.
+- **Migration**: Claude Code–style plugins move `mcpServers` → `mcp.json` (with explicit `type`), loose skills → `skills/<name>/SKILL.md`, and `hooks`/`agents`/`commands`/`lspServers` → a client-owned reverse-domain directory (e.g. `com.vendor.client/hooks/`). The reference guide recommends an additive migration: add and validate the root `plugin.json` before deleting working platform files.
+- **Governance**: Community-governed (Contributors → Maintainers → Core Maintainers → Lead Core Maintainer); TSC = all Core Maintainers + Lead. No single vendor may hold a majority of seats; roles are held by individuals, not organizations. Consensus-seeking with 50% quorum / majority-present voting; charter amendments need a two-thirds TSC vote. Spec text under CC-BY-4.0, code under Apache 2.0. `MAINTAINERS` lists Clare Liguori (Amazon), Roshan Sadanani (Cursor), Harald Kirschner (Microsoft), Gav Verma (OpenAI), Jonathan Hefner (Vercel, Lead).
+- **Adoption**: VS Code, Cursor, GitHub Copilot, ChatGPT, OpenAI Codex, and Amazon Kiro reported as supporting clients at launch; Vercel published a parallel launch post. Google announced joining as a Core Maintainer in the source blog post.
+
+### Notes on Sourcing
+
+The user-supplied Google Developers Blog URL returned `EGRESS_BLOCKED` from the network proxy, as did `agent-plugins.org`, `code.visualstudio.com`, and several secondary press sites. The specification itself was read directly from `raw.githubusercontent.com` — `spec/1.0.0.md`, `GOVERNANCE.md`, `MAINTAINERS.md` in `agentplugins/agent-plugins-spec`, and the `agentplugins/agent-plugins-example` migration guide — which supplied all normative detail (manifest fields, transports, conformance, security, governance, licensing). Google's Core Maintainer role and the client-adoption list were corroborated via WebSearch synthesis of launch coverage rather than the primary blog. The Google blog URL is retained as the canonical citation per the citation rule, with the fetch limitation flagged inline on the wiki page.
