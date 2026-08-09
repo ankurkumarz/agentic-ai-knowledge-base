@@ -103,6 +103,7 @@ The guide identifies priority areas for the evolution of Agentic AI red teaming:
 - [Agent Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md) — adversarial test cases, launch gates
 - [Cloud Security Alliance (Industry Standards)](../Standards/csa.md)
 - [Agent Sandboxing](./agent-sandboxing.md)
+- [Learn Prompt Hacking](./learn-prompt-hacking.md) — single-turn jailbreak/prompt-injection techniques that underpin several of these agentic threat categories
 
 ## References
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance, AI Organizational Responsibilities Working Group (Aug 2025) — primary source for this page

@@ -363,6 +363,7 @@ Source: Spring AI Documentation
 * **[Swarms AI](https://www.swarms.ai/)**: Choose from multiple swarm architectures to build sophisticated Enterprise AI systems
 * **[IBM Granite BeeAI](https://iambee.ai/)**: Build production-ready AI agents in both Python and Typescript
 * **[MetaGPT](https://github.com/geekan/MetaGPT)**: The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming
+* **[FreePHDLabor](freephdlabor.md)**: Open-source, customizable multiagent framework (built on smolagents) that automates the scientific research lifecycle — hypothesis generation, experimentation, and LaTeX manuscript writing — via a ManagerAgent orchestrating specialized IdeationAgent, ExperimentationAgent, WriteupAgent, ReviewerAgent, and ProofreadingAgent roles
 
 ## Additional Resources
 

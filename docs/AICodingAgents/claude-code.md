@@ -145,6 +145,7 @@ The AI-Native Software Engineering Maturity Model defines five levels of organiz
 - [Agent Skills / SKILLS.md](../Standards/skills.md)
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)
+- [LifeOS](../AgentPlatforms/lifeos.md) — personal AI operating system distributed as a single Claude Code skill (persistent memory, intent routing, self-improvement loop)
 
 ## References
 

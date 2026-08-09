@@ -2,6 +2,40 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-08-09
+
+* **Ingest**: [FreePHDLabor] → AgenticFrameworks, Architecture, ReferenceArchitecture — https://freephdlabor.github.io/
+  * Created: `docs/AgenticFrameworks/freephdlabor.md`
+  * Extended: `docs/AgenticFrameworks/README.md`
+  * Extended: `docs/Architecture/multi-agent-system.md`
+  * Extended: `docs/ReferenceArchitecture/self-learning-agents.md`
+  * Extended: `docs/index.md`
+  * Extended: `mkdocs.yml`
+
+* **Ingest**: [LifeOS] → AgentPlatforms, AICodingAgents, AgentMemory, ReferenceArchitecture — https://github.com/danielmiessler/LifeOS
+  * Created: `docs/AgentPlatforms/lifeos.md`
+  * Extended: `docs/AgentPlatforms/README.md`
+  * Extended: `docs/AICodingAgents/claude-code.md`
+  * Extended: `docs/AgentMemory/ltm-strategies.md`
+  * Extended: `docs/ReferenceArchitecture/self-learning-agents.md`
+  * Extended: `docs/index.md`
+  * Extended: `mkdocs.yml`
+
+* **Ingest**: [Learn-Prompt-Hacking] → SecurityFrameworks, PromptEngineering — https://github.com/TrustAI-laboratory/Learn-Prompt-Hacking
+  * Created: `docs/SecurityFrameworks/learn-prompt-hacking.md`
+  * Extended: `docs/SecurityFrameworks/Readme.md`
+  * Extended: `docs/SecurityFrameworks/agentic-ai-red-teaming-guide.md`
+  * Extended: `docs/PromptEngineering/README.md`
+  * Extended: `docs/index.md`
+  * Extended: `mkdocs.yml`
+
+* **Ingest**: [Discovery Loop] → AgentPlatforms, ReferenceArchitecture — https://www.discoveryloop.com/
+  * Created: `docs/AgentPlatforms/discovery-loop.md`
+  * Extended: `docs/AgentPlatforms/README.md`
+  * Extended: `docs/ReferenceArchitecture/self-learning-agents.md`
+  * Extended: `docs/AgenticFrameworks/freephdlabor.md`
+  * Extended: `mkdocs.yml`
+
 ## 2026-08-07
 
 * **Ingest**: [Gemini CLI → Antigravity CLI transition] → AICodingAgents, AgenticFrameworks, AgentPlatforms, AllThingsGoogle — https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/ and https://github.com/google-gemini/gemini-cli/discussions/27274

@@ -392,6 +392,7 @@ Most production systems combine multiple strategies:
 - [Self-Learning Agents Reference Architecture](../ReferenceArchitecture/self-learning-agents.md)
 - [AWS AgentCore Platform](../AgentPlatforms/aws-agentcore.md)
 - [RAG Architecture — Hybrid Search and Vector Indexes](../ReferenceArchitecture/rag-architecture.md)
+- [LifeOS](../AgentPlatforms/lifeos.md) — personal AI operating system with a knowledge-graph memory subsystem (Cortex) and git-backed persistence
 
 ## References
 
