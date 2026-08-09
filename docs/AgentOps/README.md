@@ -399,6 +399,19 @@ A distinct category of AgentOps tooling has emerged specifically for running and
 
 A related, separate Kubernetes SIG Apps initiative — [Agent Sandbox](../Standards/k8s-agent-sandbox.md) — standardizes isolated execution environments for individual agent tool calls via `Sandbox`/`SandboxTemplate`/`SandboxClaim` CRDs, rather than full agent orchestration.
 
+## Open-Source Agentic Runtimes
+
+A related but Kubernetes-independent category: general-purpose, self-hostable runtimes for operating long-running agents safely in production, exposing a session-based API rather than a chat API.
+
+**[OpenGeni](https://opengeni.ai/)** (Cloudgeni-ai, Apache-2.0) is an open-source, self-hostable agentic runtime aimed at making long-running agents safe to trust with real work:
+
+- **Durable, replayable sessions** — a session-based API for creating, steering, observing, interrupting, and replaying agent runs, agnostic to what the agent actually does
+- **Human approvals** — built-in checkpoints for human sign-off on sensitive actions
+- **Governed credentials and memory** — credential and memory access is policy-controlled rather than freely available to the agent
+- **Deployment choice** — the control plane, sessions API, event history, and audit trail run either in a managed sandbox (`app.opengeni.ai`) or on the operator's own hardware — nothing lives on a third-party vendor's servers by default in the self-hosted mode
+
+OpenGeni is positioned as infrastructure *underneath* an agent framework (comparable in spirit to how [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) tools provide execution isolation) rather than a framework for authoring agent logic itself.
+
 ## AWS Perspective: Four-Pillar AgentOps Framework
 
 AWS frames operationalizing agentic AI at scale (in the context of Amazon Bedrock AgentCore) around four pillars:
@@ -421,6 +434,7 @@ This pillar structure parallels Google Cloud's GenOps framing above but is organ
 - **[Standards/A2A](../Standards/agent2agent.md)**: A2A protocol for multi-agent operations
 - **[kagent](kagent.md)**, **[Agentic Ops Framework (AOF)](agentic-ops-framework.md)**, **[KAOS](kaos.md)**: Kubernetes-native agent orchestration projects
 - **[Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md)**: SIG Apps standard for isolated agent execution environments
+- **[Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md)**: execution-isolation tools OpenGeni's sandboxed deployment mode sits alongside
 - **[AWS AgentCore](../AgentPlatforms/aws-agentcore.md)**: managed runtime underlying the AWS Four-Pillar AgentOps framework
 - **[AWS — Agentic AI Overview](../AllThingsAWS/README.md)**: hub of AWS agentic AI offerings
 

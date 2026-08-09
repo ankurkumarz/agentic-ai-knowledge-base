@@ -60,7 +60,7 @@ Comprehensive coverage of major development frameworks:
 - **Microsoft Agent Framework**: Unified .NET and Python framework
 - **AutoGen**: Multi-agent conversation framework by Microsoft
 - **Semantic Kernel**: Production-ready SDK for enterprise applications
-- **LlamaIndex**: Data-intensive LLM applications and knowledge management
+- **LlamaIndex**: Data-intensive LLM applications and knowledge management; **Parse Gateway** routes each PDF page to the cheapest capable parser tier based on per-page complexity (LiteParse `is_complex`), avoiding uniform premium-tier parsing costs
 - **AutoGPT**: Continuous AI agents for workflow automation
 - **CrewAI**: Role-based multi-agent collaboration framework; minimal configuration
 - **Agno**: High-performance multi-agent framework (~2μs agent creation, ~3.75 KiB per agent)
@@ -76,7 +76,7 @@ Comprehensive coverage of major development frameworks:
 - **Semantic Data Layer Technology Radar**: Thoughtworks-style radar of cloud-native semantic layers (Snowflake Semantic Views, Databricks Metric Views, Power BI/Fabric semantic models, AWS QuickSight Topics, Google Looker/LookML) vs. universal semantic layers and metrics stores (dbt Semantic Layer, Cube, AtScale, Denodo, Honeydew, Bright Analytics) and the emerging Open Semantic Interchange (OSI) standard
 - **Agentic AI Platforms**: Google Gemini Enterprise Agent Platform (GA April 22, 2026 at Cloud Next '26, successor to Vertex AI and absorbing Agentspace), AWS AgentCore, Microsoft Azure AI, **Databricks Genie** (Genie One, Genie Agents/formerly Genie Spaces, Genie Code, Genie App Builder, Genie ZeroOps, Genie Ontology); **Enterprise Platform Comparison (2026)** covering Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, Kore.ai, UiPath Maestro, Azure AI Foundry Agent Service, IBM watsonx Orchestrate, LangGraph, and CrewAI Enterprise with pricing, adoption data, and honest constraints
 - **Workflow Engines**: Open source, self-hosted, and SaaS solutions; **Temporal** for durable execution — fault-tolerant, long-running AI agent workflows with Event History replay, Signals for human-in-the-loop, and Child Workflows for multi-agent fan-out; **Confluent** (Apache Kafka & Flink) as the event-streaming backbone for high fan-out multi-agent coordination, agentic RAG ingestion, and real-time stream processing; **Kestra** (Apache 2.0) as a declarative, YAML-first orchestration platform that added native AI Agent tasks, memory/tools, and an MCP server/client in its 1.0 LTS release
-- **Popular AI Agents**: Coding agents, research agents, and super agents; personal AI agents now include **LifeOS** (Daniel Miessler's harness-agnostic personal operating system built as a Claude Code skill); **Discovery Loop** (Jeff Dean, Sanjay Ghemawat, Oriol Vinyals, Quoc Le's PBC for massively parallel automated ML research)
+- **Popular AI Agents**: Coding agents, research agents, and super agents; personal AI agents now include **LifeOS** (Daniel Miessler's harness-agnostic personal operating system built as a Claude Code skill) and **OpenWorker** (Andrew Ng's open-source, local-first desktop AI coworker that returns finished deliverables); **Discovery Loop** (Jeff Dean, Sanjay Ghemawat, Oriol Vinyals, Quoc Le's PBC for massively parallel automated ML research); **Dosu** (AI GitHub/GitLab maintainer agent for issue triage and docs upkeep); **MindStudio** (no-code AI agent builder with 200+ model access)
 
 ### **7. Agentic AI Industry Standards**
 - **Agentic AI Foundation**: Linux Foundation initiative for open standards
@@ -136,7 +136,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 
 ### **Deployment**
 - **AgentOps & GenOps**: Evolution of MLOps for generative AI systems
-- **Lifecycle Management**: Development, testing, deployment, and operations
+- **Lifecycle Management**: Development, testing, deployment, and operations; **OpenGeni** (Apache-2.0) is a self-hostable agentic runtime for durable, replayable sessions, human approvals, and governed credentials/memory
 - **Production Operations**: Container orchestration, auto-scaling, and multi-agent coordination
 - **Kubernetes-Native Agent Orchestration**: kagent (CNCF Sandbox), Agentic Ops Framework (AOF), and KAOS run agents, tools, and models as Kubernetes Custom Resources; the separate Kubernetes SIG Apps "Agent Sandbox" subproject standardizes isolated execution environments for individual agent tool calls
 

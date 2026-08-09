@@ -1458,3 +1458,31 @@ Several primary vendor blog URLs (Google Developers Blog, AWS Blog, Snowflake pr
 ### Notes on Sourcing
 
 `freephdlabor.github.io` and `discoveryloop.com` were both blocked by the network egress proxy (`EGRESS_BLOCKED`). For FreePHDLabor, the GitHub mirror (`github.com/ltjed/freephdlabor`) and the arXiv abstract page were fetched directly as substitute primary sources, and the project site URL is retained as the canonical citation per the citation rule since it was the URL the user supplied. For Discovery Loop, no primary page content was retrievable; the page was built from WebSearch-surfaced press coverage (TechCrunch, GeekWire, Tech Times) and the Radical Ventures investment announcement, with `discoveryloop.com` retained as the canonical citation.
+
+## [2026-08-09] ingest | Dosu, MindStudio, LlamaIndex Parse Gateway, OpenGeni, OpenWorker (extend-only batch) | sections touched: AgentPlatforms, AgenticFrameworks, AgentOps, SecurityFrameworks, index
+
+**Source**: Five URLs supplied directly by the user, with explicit instruction not to create unnecessary new pages. All five were blocked by the network egress proxy (`dosu.dev`, `www.mindstudio.ai`, `www.llamaindex.ai`, `opengeni.ai`, `openworker.com`); content was sourced via WebSearch of the vendor sites, official blog posts, GitHub repos, and press coverage.
+**Type**: Five short, independent items — batched per the "short reference documents" batch-ingest rule. Every one was mapped onto an existing page (list entry, subsection, or See Also link) rather than a new file, per the user's explicit "don't create pages unnecessarily" instruction.
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/README.md` | Extended | Added "Dosu" entry under Coding/Software Development Agents (AI GitHub/GitLab maintainer agent — issue triage, docs freshness, Dosu MCP Server); added "OpenWorker" entry under Personal AI Agents (Andrew Ng/Rohit Prasad's open-source, local-first desktop AI coworker) |
+| `docs/AgentPlatforms/saas-platforms.md` | Extended | Added "MindStudio" entry under Development and Workflow Platforms (no-code AI agent builder, 200+ model access, 150k+ agents deployed) |
+| `docs/AgenticFrameworks/llamaindex.md` | Extended | Added "Parse Gateway — Smart Page-Level Parser Routing" subsection describing LiteParse's `is_complex`-driven per-page routing between free local parsing and paid LlamaParse tiers; added References entries for LiteParse and the Parse Gateway blog post |
+| `docs/AgentOps/README.md` | Extended | Added "Open-Source Agentic Runtimes" subsection covering OpenGeni (Cloudgeni-ai, Apache-2.0) — durable/replayable session API, human approvals, governed credentials/memory, managed-sandbox or self-hosted deployment; added See Also cross-link to Agent Sandboxing |
+| `docs/SecurityFrameworks/agent-sandboxing.md` | Extended | Added bidirectional See Also link back to AgentOps' new Open-Source Agentic Runtimes section |
+| `docs/index.md` | Extended | Added Parse Gateway clause to the LlamaIndex bullet (Section 5); added Dosu/MindStudio/OpenWorker mentions to the Popular AI Agents bullet (Section 6); added OpenGeni mention to the Lifecycle Management bullet (Production Best Practices → Deployment) |
+
+### Key Knowledge Added
+
+- **Dosu**: AI maintainer agent installed as a GitHub/GitLab bot; triages incoming issues (bug vs. feature request), answers contributor questions in 14+ languages, keeps docs synced with code changes; free Community Edition used by 50,000+ projects (Apache Airflow, LlamaIndex, BetterAuth); ships a Dosu MCP Server for token-efficient cross-tool context.
+- **MindStudio**: No-code visual builder for AI-native agents (extensible with code); instant access to 200+ models without individual API key management; 100+ templates, 15-minute-to-1-hour typical build time; deploys as web apps, browser extensions, scheduled automations, or API endpoints; 150k+ agents deployed (Stanford/Harvard/BYU teaching use, ServiceNow sales workflows, Advance Local newsroom automation).
+- **LlamaIndex Parse Gateway**: New (2026) routing layer in front of LlamaParse. Uses open-source LiteParse's `is_complex` page-level complexity estimator (flags *why* a page is hard — scanned, sparse text, garbled encoding, vector text, embedded images — and *how severely*) to send simple pages through free local parsing and only escalate genuinely hard pages to paid LlamaParse tiers. Gateway logic is open-source and also exposed as an MCP server so agents can self-select a parsing tier.
+- **OpenGeni** (Cloudgeni-ai): Apache-2.0, self-hostable "agentic runtime" — a session-based API (create/steer/observe/interrupt/replay) agnostic to what the agent does, with durable/replayable event history, human-approval checkpoints, and governed credential/memory access. Runs in a managed sandbox (`app.opengeni.ai`) or fully on the operator's own hardware, keeping the control plane, sessions API, event history, and audit trail off third-party servers in the self-hosted mode.
+- **OpenWorker**: Andrew Ng and Rohit Prasad's open-source, local-first desktop "AI coworker." Distinguishing design goal: returns finished deliverables (a document, a sent Slack message, an updated calendar entry) rather than chat replies, planning and executing multi-step tasks in the user's own tools with approval gates before important actions. Runs the agent loop locally; fully local and private when paired with Ollama; model-independent (GPT, Claude, Gemini, open-weight, Ollama, bring-your-own-key). macOS available at launch, Windows support in progress.
+
+### Notes on Sourcing
+
+All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetch. Content was reconstructed via WebSearch synthesis of each vendor's own site copy (surfaced in search snippets), official blog posts (LlamaIndex, Cloudgeni), GitHub repositories (Dosu, OpenGeni, OpenWorker), and independent press coverage (OpenWorker via MarkTechPost/Medium). The user-supplied URLs are retained as the canonical citations in each case per the citation rule.

@@ -323,6 +323,7 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 - [AWS — Agentic AI Overview](../AllThingsAWS/README.md)
 - [Agent Evaluation Platforms](../EvaluationFrameworks/platforms.md) — LangSmith and Harbor, which uses LangSmith Sandboxes as one of its pluggable execution providers
 - [Agent Evaluation Benchmarks](../Benchmarks/agent-benchmarks.md) — Terminal-Bench 2.0/2.1, executed via the Harbor harness
+- [AgentOps Overview](../AgentOps/README.md) — Open-Source Agentic Runtimes section: OpenGeni, a self-hostable agent runtime offering managed-sandbox or self-hosted execution alongside durable sessions and audit trails
 
 ## References
 

@@ -2,6 +2,27 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-08-09 (2)
+
+* **Ingest**: [Dosu] → AgentPlatforms — https://dosu.dev/
+  * Extended: `docs/AgentPlatforms/README.md`
+
+* **Ingest**: [MindStudio] → AgentPlatforms — https://www.mindstudio.ai/
+  * Extended: `docs/AgentPlatforms/saas-platforms.md`
+
+* **Update**: [LlamaIndex Parse Gateway] → AgenticFrameworks — https://www.llamaindex.ai/blog/parse-gateway-smart-page-level-document-parser-routing
+  * Extended: `docs/AgenticFrameworks/llamaindex.md`
+
+* **Ingest**: [OpenGeni] → AgentOps, SecurityFrameworks — https://opengeni.ai/
+  * Extended: `docs/AgentOps/README.md`
+  * Extended: `docs/SecurityFrameworks/agent-sandboxing.md`
+
+* **Ingest**: [OpenWorker] → AgentPlatforms — https://openworker.com/
+  * Extended: `docs/AgentPlatforms/README.md`
+
+* No new pages created for this batch — all five sources were added as entries/subsections on existing pages per explicit instruction.
+  * Extended: `docs/index.md`
+
 ## 2026-08-09
 
 * **Ingest**: [FreePHDLabor] → AgenticFrameworks, Architecture, ReferenceArchitecture — https://freephdlabor.github.io/

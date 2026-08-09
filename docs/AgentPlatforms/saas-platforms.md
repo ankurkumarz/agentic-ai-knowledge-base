@@ -201,6 +201,23 @@ Beyond the major cloud providers, numerous specialized SaaS platforms offer uniq
 - Rapid prototyping and testing
 - Educational applications
 
+### MindStudio
+
+**Platform**: [MindStudio.ai](https://www.mindstudio.ai/)
+
+**Key Features**:
+- No-code visual builder for AI-native agents, extensible with code when needed
+- Instant access to 200+ AI models (OpenAI, Anthropic Claude, Google Gemini, and others) without managing individual API keys
+- 100+ pre-built templates; typical build time 15 minutes to an hour
+- Runs entirely in the browser; deploys agents as web apps, browser extensions, scheduled automations, or API endpoints
+- Integrates into other systems via APIs and webhooks
+
+**Use Cases**:
+- Rapid, non-technical agent prototyping and deployment
+- Education (used by Stanford, Harvard, and Brigham Young to teach AI)
+- Enterprise workflow automation (e.g., ServiceNow sales workflows, Advance Local newsroom operations)
+- 150k+ agents deployed across individuals, SMBs, enterprises, and government agencies
+
 ## Enterprise and Specialized Solutions
 
 ### Solace Agent Mesh
