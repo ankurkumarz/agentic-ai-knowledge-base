@@ -172,6 +172,7 @@ Longer prompts consume more tokens, increasing cost and latency. Strategies for 
 - [Agent Security / Prompt Injection](../ProductionBestPractices/security.md)
 - [SkillOpt (Microsoft)](skillopt.md)
 - [GEPA (Genetic-Pareto)](gepa.md)
+- [Learn Prompt Hacking](../SecurityFrameworks/learn-prompt-hacking.md) — open-source course on jailbreaks, prompt injection, and red/blue team defenses
 
 ## Tutorials and Guides
 

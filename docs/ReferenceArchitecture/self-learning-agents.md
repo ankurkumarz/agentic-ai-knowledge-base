@@ -295,3 +295,6 @@ This is the first major first-party productization of the Reflection/Consolidati
 - [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md)
 - [Long-Term Memory Strategies](../AgentMemory/ltm-strategies.md)
 - [Agent Memory Management](../AgentMemory/README.md)
+- [LifeOS](../AgentPlatforms/lifeos.md) — personal AI operating system implementing a seven-phase self-improvement loop (OBSERVE→THINK→PLAN→BUILD→EXECUTE→VERIFY→LEARN)
+- [FreePHDLabor](../AgenticFrameworks/freephdlabor.md) — dynamic multiagent framework for continual, automated scientific research
+- [Discovery Loop](../AgentPlatforms/discovery-loop.md) — commercial platform for large-scale parallel automation of ML research and science

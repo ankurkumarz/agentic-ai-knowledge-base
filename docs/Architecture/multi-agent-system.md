@@ -511,6 +511,7 @@ Google Cloud's reference architecture for multi-tenant agentic AI systems addres
 ## See Also
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
+- [FreePHDLabor](../AgenticFrameworks/freephdlabor.md) — hierarchical ManagerAgent + specialized-worker multiagent framework for automated scientific research
 - [Architecture Components Selection](components-selection.md)
 - [12-Factor Agents](12-factor-agents.md)
 - [Context Engineering](../ContextEngineering/README.md)

@@ -269,6 +269,14 @@ Two open-source tools address skill supply-chain security:
 
 See [AI Agent Skill Security Scanners](./skill-scanners.md) for full detail, CLI usage, and a threat-model comparison.
 
+## Educational Resources
+
+### Learn Prompt Hacking
+
+**[Learn Prompt Hacking](./learn-prompt-hacking.md)** (TrustAI-laboratory) is an open-source course-style repository covering ChatGPT jailbreaks, prompt injection against GPT Assistants/custom GPTs, and red team/blue team defense techniques for LLM applications — the single-turn precursor discipline to agentic red teaming.
+
+See [Learn Prompt Hacking](./learn-prompt-hacking.md) for full detail.
+
 ## See Also
 
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Security considerations for frameworks
@@ -283,3 +291,4 @@ See [AI Agent Skill Security Scanners](./skill-scanners.md) for full detail, CLI
 - **[AI Governance Solutions](../AIGovernance/governance-solutions.md)**: Governance platforms and tooling
 - **[Agentic AI Red Teaming Guide (CSA)](./agentic-ai-red-teaming-guide.md)**: 12-category threat taxonomy and four-phase testing methodology for autonomous agents
 - **[Cloud Security Alliance (CSA)](../Standards/csa.md)**: Industry standards body — Agentic AI Red Teaming Guide, MAESTRO threat modeling
+- **[Learn Prompt Hacking](./learn-prompt-hacking.md)**: Open-source jailbreak/prompt-injection course covering offensive techniques and red/blue team defenses
