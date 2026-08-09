@@ -1533,3 +1533,28 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 ### Notes on Sourcing
 
 The user-supplied Google Developers Blog URL returned `EGRESS_BLOCKED` from the network proxy, as did `agent-plugins.org`, `code.visualstudio.com`, and several secondary press sites. The specification itself was read directly from `raw.githubusercontent.com` — `spec/1.0.0.md`, `GOVERNANCE.md`, `MAINTAINERS.md` in `agentplugins/agent-plugins-spec`, and the `agentplugins/agent-plugins-example` migration guide — which supplied all normative detail (manifest fields, transports, conformance, security, governance, licensing). Google's Core Maintainer role and the client-adoption list were corroborated via WebSearch synthesis of launch coverage rather than the primary blog. The Google blog URL is retained as the canonical citation per the citation rule, with the fetch limitation flagged inline on the wiki page.
+
+---
+
+## [2026-08-09] ingest | Agent Plugins Specification — JSON Schemas + FUTURE_CONSIDERATIONS.md (second pass) | sections touched: Standards, ProductionBestPractices
+
+**Source type**: Normative machine-readable schemas and project roadmap document from the specification repository
+**Canonical URL**: https://github.com/agentplugins/agent-plugins-spec
+
+### Files Modified
+
+| File | Change |
+|---|---|
+| `docs/Standards/agent-plugins.md` | Added schema-level constraints and a "Deferred to Future Versions" section |
+| `docs/ProductionBestPractices/security.md` | Added a plugin supply-chain row to the challenge table + See Also backlink |
+
+### Key Knowledge Added
+
+- **Manifest schema specifics** (`schemas/1.0.0/plugin.schema.json`): JSON Schema 2020-12; `additionalProperties: false`; only `$schema` and `name` are `required`. The `name` pattern is `^(?!.*(?:--|\.\.))[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$` — no leading/trailing separator and no `--` or `..` sequence. `author` is itself closed (`name`, `email`, `url`); `extensions` values must be objects.
+- **MCP schema specifics** (`schemas/1.0.0/mcp.schema.json`): both `$schema` and `mcpServers` are `required` (correcting the weaker "when present" reading taken from the prose spec on the first pass). Each server is a closed `oneOf`: stdio requires `type` + `command`; streamable-http and sse require `type` + `url`. The `env` object forbids `PLUGIN_ROOT`/`PLUGIN_DATA` via a `propertyNames.not.enum` constraint, and `cwd` is pattern-constrained to `./…`, `${PLUGIN_ROOT}…`, or `${PLUGIN_DATA}…`.
+- **Deferred capabilities** (`FUTURE_CONSIDERATIONS.md`) — seven items, most of them trust-related: permission/approval UX (manifest permission declarations, install-time consent), provenance verification (signatures, attestation chains), secret handling (client-mediated injection, cross-plugin credential isolation), enterprise controls (allow/blocklists, org-scoped registries), audit-trail standardization (event schema for install/enable/disable/update/uninstall), dependency resolution (version constraints, conflict resolution), and plugin testing/validation (linting, conformance suites).
+- **Analytical framing added**: the deferred list functions as an adoption risk register — a v1.0.0-conformant plugin is a portable container with no signature, no declared permissions, no credential isolation, and no audit schema. Conformance is a portability property, not a security property. This was carried into `ProductionBestPractices/security.md` as a challenge row with concrete mitigations (pre-install skill scanning, version pinning, client-mediated secret injection instead of `env` literals, client-layer allowlists).
+
+### Notes on Sourcing
+
+`agent-plugins.org`, `vercel.com`, `code.visualstudio.com`, and `developers.googleblog.com` all remain `EGRESS_BLOCKED`; `api.github.com` returned HTTP 403. Both JSON Schemas and `FUTURE_CONSIDERATIONS.md` were fetched successfully and verbatim from `raw.githubusercontent.com`, so all content in this pass is primary-sourced. One first-pass claim was corrected against the schema: `mcp.json`'s `$schema` is unconditionally required, not merely validated when present.

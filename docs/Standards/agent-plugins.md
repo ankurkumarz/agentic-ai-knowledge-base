@@ -72,7 +72,9 @@ Missing component locations are **non-fatal** — a plugin with no `skills/` and
 | `keywords` | No | string[] | Discovery and search tags |
 | `extensions` | No | object | Client-specific data keyed by reverse-domain namespace |
 
-**The schema is closed.** `hooks`, `agents`, `commands`, `mcpServers`, and `lspServers` must **not** appear at the top level. Client-owned capabilities belong either inside `extensions` (keyed by reverse-domain namespace) or in a reverse-domain namespace *directory* that the client owns and documents. Unknown top-level fields are reported and ignored; unimplemented `extensions` namespaces are ignored without validation.
+The published JSON Schema enforces `name` with the pattern `^(?!.*(?:--|\.\.))[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$` — no leading or trailing separator, and no `--` or `..` sequence anywhere. `author` is itself a closed object (`name`, `email`, `url` only), and `extensions` values must be objects. Only `$schema` and `name` are `required`.
+
+**The schema is closed** (`"additionalProperties": false`). `hooks`, `agents`, `commands`, `mcpServers`, and `lspServers` must **not** appear at the top level. Client-owned capabilities belong either inside `extensions` (keyed by reverse-domain namespace) or in a reverse-domain namespace *directory* that the client owns and documents. Unknown top-level fields are reported and ignored; unimplemented `extensions` namespaces are ignored without validation.
 
 Plugins **should** follow SemVer, but a plugin **must not** be rejected merely for a non-conforming version string.
 
@@ -127,7 +129,9 @@ Three transports are defined:
 
 **sse** carries the same URL and header requirements; clients SHOULD prefer `streamable-http`.
 
-If `mcp.json` declares a `$schema`, its version MUST match the one in `plugin.json`. A mismatch disables MCP loading but is **non-fatal** to the rest of the plugin.
+Both `$schema` and `mcpServers` are `required` by the published schema, and each server object is a closed `oneOf` across the three transports — `type` plus `command` are required for stdio, `type` plus `url` for the two HTTP transports, with no additional properties permitted. The `env` object uses a schema-level `propertyNames` constraint to forbid `PLUGIN_ROOT` and `PLUGIN_DATA` keys outright, and `cwd` is pattern-constrained to `./…`, `${PLUGIN_ROOT}…`, or `${PLUGIN_DATA}…` forms (filesystem containment is validated separately, after expansion).
+
+The `mcp.json` `$schema` version MUST match the one declared in `plugin.json`. A mismatch disables MCP loading but is **non-fatal** to the rest of the plugin.
 
 ## Environment Variables and Placeholder Expansion
 
@@ -192,6 +196,22 @@ How a client *exposes* loaded skills to users is explicitly outside the standard
 | Path containment and failure boundaries | Signing, provenance, and sandboxing |
 | Client conformance requirements | UI/UX for surfacing skills |
 
+### Deferred to Future Versions
+
+The project publishes an explicit future-considerations document, which is the clearest statement of what v1.0.0 knowingly leaves unsolved. Notably, most deferred items are **trust and governance** concerns:
+
+| Deferred capability | What is missing in v1.0.0 |
+|---|---|
+| Permission and approval UX | No trust model or sandboxing; future versions may add permission declarations in the manifest and user consent flows at install time |
+| Provenance verification | No way to verify plugin authenticity; cryptographic signature verification and attestation chains are future work |
+| Secret and sensitive value handling | Plugins need runtime credentials, but secure handling is unspecified; client-mediated secret injection and cross-plugin credential isolation are deferred |
+| Enterprise controls | No allowlist/blocklist policies or organization-scoped registries for centralized governance at scale |
+| Audit-trail standardization | No standard event schema for plugin install, enable, disable, update, and uninstall actions |
+| Dependency resolution | Plugins cannot declare interdependencies, version constraints, or conflict resolution |
+| Plugin testing and validation | No standardized linting or conformance test suite |
+
+For anyone evaluating adoption, this table is the risk register: a v1.0.0-conformant plugin is a portable *container* with no signature, no declared permissions, no credential isolation, and no audit schema. Those controls must come from the client or the surrounding platform.
+
 This restraint is the specification's main design decision: it standardizes the *artifact*, leaving competition and differentiation in discovery, curation, and trust to individual clients. It is a narrower bet than [MCP](./mcp.md) (a wire protocol) or [A2A](./agent2agent.md) (an agent interoperability protocol) — closer in spirit to [AGENTS.md](./agents-md.md) and [OKF](./open-knowledge-format.md), which likewise standardize on-disk conventions rather than runtime behavior.
 
 ## Migration from Client-Specific Plugin Formats
@@ -241,6 +261,7 @@ The practical target is the vendor-integration long tail: a platform vendor (Rai
 - [AI Coding Agents](../AICodingAgents/ai-coding-agents.md) — the client landscape adopting the format
 - [AI Agent Skill Security Scanners](../SecurityFrameworks/skill-scanners.md) — trust concerns the spec explicitly leaves to clients
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md) — how harnesses load and expose plugin components
+- [Production Best Practices — Security](../ProductionBestPractices/security.md) — plugin supply-chain controls to apply while the spec's trust features remain deferred
 
 ## References
 
@@ -248,6 +269,10 @@ The practical target is the vendor-integration long tail: a platform vendor (Rai
 - [agentplugins/agent-plugins-spec](https://github.com/agentplugins/agent-plugins-spec) — canonical specification repository
 - [Agent Plugins Specification v1.0.0](https://github.com/agentplugins/agent-plugins-spec/blob/main/spec/1.0.0.md) — the authoritative spec text
 - [agentplugins/agent-plugins-example](https://github.com/agentplugins/agent-plugins-example) — canonical example plugin and v1 migration guide
+- [plugin.schema.json](https://github.com/agentplugins/agent-plugins-spec/blob/main/schemas/1.0.0/plugin.schema.json) — machine-readable manifest schema (JSON Schema 2020-12, closed, `$schema` + `name` required)
+- [mcp.schema.json](https://github.com/agentplugins/agent-plugins-spec/blob/main/schemas/1.0.0/mcp.schema.json) — machine-readable MCP configuration schema with the three-transport `oneOf`
+- [FUTURE_CONSIDERATIONS.md](https://github.com/agentplugins/agent-plugins-spec/blob/main/FUTURE_CONSIDERATIONS.md) — capabilities deliberately deferred past v1.0.0 (permissions, provenance, secrets, enterprise controls, audit trails, dependencies, conformance testing)
+- [GOVERNANCE.md](https://github.com/agentplugins/agent-plugins-spec/blob/main/GOVERNANCE.md) — technical charter, TSC structure, voting rules, and licensing
 - [agent-plugins.org](https://agent-plugins.org/) — specification site hosting the JSON Schemas, plugin-author and client-implementer guides, governance charter, and future-considerations document
 - [Introducing Agent Plugins](https://vercel.com/blog/introducing-agent-plugins) — Vercel launch post
 - [Agent plugins in VS Code](https://code.visualstudio.com/docs/agent-customization/agent-plugins) — VS Code client documentation

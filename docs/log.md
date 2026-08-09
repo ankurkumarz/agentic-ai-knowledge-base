@@ -4,6 +4,10 @@
 
 ## 2026-08-09 (3)
 
+* **Update**: [Agent Plugins Specification — JSON Schemas and FUTURE_CONSIDERATIONS.md] → Standards, ProductionBestPractices — https://github.com/agentplugins/agent-plugins-spec
+  * Extended: `docs/Standards/agent-plugins.md` — schema-level constraints (name regex, closed objects, required fields per transport) and a "Deferred to Future Versions" roadmap table
+  * Extended: `docs/ProductionBestPractices/security.md` — plugin supply-chain challenge row
+
 * **Ingest**: [Agent Plugins package your skills, tools, and more] → Standards, AICodingAgents, AgentHarness, SecurityFrameworks, AllThingsGoogle, AllThingsOpenAI, AllThingsMicrosoft, AllThingsAWS — https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/
   * Created: `docs/Standards/agent-plugins.md`
   * Extended: `docs/Standards/skills.md`
