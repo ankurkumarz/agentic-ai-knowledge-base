@@ -1,3 +1,5 @@
+
+
 # Agentic AI Knowledge Base
 
 ![Agentic AI](docs/assets/images/agentic-header.png)
@@ -228,6 +230,7 @@ Curated hub pages linking to topical content across the knowledge base:
 2. **Choose Your Path**: Select a learning path based on your role and experience
 3. **Start with Concepts**: Begin with foundational concepts if new to agentic AI
 4. **Pick a Framework**: Choose a development framework that fits your technology stack
+5. **Run Locally**: Install dependencies (`pip install -r docs/requirements.txt`) and serve the site (`mkdocs serve`) to explore the interactive knowledge graph and full documentation offline.
 
 ### **For Developers**
 - Start with **Agent Development Frameworks** to choose your development approach
