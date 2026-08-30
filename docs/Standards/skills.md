@@ -229,6 +229,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 
 - [AGENTS.md Standard](./agents-md.md)
 - [Model Context Protocol](./mcp.md)
+- [Agent Plugins Specification](./agent-plugins.md) — vendor-neutral packaging format that bundles `skills/*/SKILL.md` together with MCP servers into one portable, installable plugin directory
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
 - [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md)
 - [Anthropic Overview](../AllThingsAnthropic/README.md)

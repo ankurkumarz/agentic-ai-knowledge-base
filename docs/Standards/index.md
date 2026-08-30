@@ -4,6 +4,7 @@
 
 * [AG-UI Protocol](README.md) - AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications
 * [Agent Client Protocol (ACP)](agent-client-protocol.md) - The **Agent Client Protocol (ACP)** is an open standard, originally published by Zed Industries in August 2025, that standardizes communication between *code editors* (interactive programs for view...
+* [Agent Plugins Specification](agent-plugins.md) - Open, vendor-neutral specification (v1.0.0, August 2026) that packages Agent Skills and MCP servers into a single portable plugin directory readable by any conformant agent client
 * [Agent2Agent (A2A) Protocol](agent2agent.md) - The **Agent2Agent (A2A) Protocol** is a standard for agent interoperability launched by Google, focusing on direct agent-to-agent communication and coordination
 * [Agentic AI Foundation (AAIF)](agentic-ai-foundation.md) - The Linux Foundation announced the formation of the **Agentic AI Foundation (AAIF)** on December 9, 2025
 * [AGENTS.md Standard](agents-md.md) - *Source: [Weights & Biases AGENTS

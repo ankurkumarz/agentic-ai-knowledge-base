@@ -290,6 +290,7 @@ agent:
 - [Agentic AI Foundation](./agentic-ai-foundation.md)
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
 - [Open Knowledge Format (OKF)](./open-knowledge-format.md) — complementary convention for agent-readable knowledge/metadata vs. AGENTS.md's behavioral instructions
+- [Agent Plugins Specification](./agent-plugins.md) — sibling filesystem-convention standard, packaging skills and MCP servers into a distributable plugin directory
 
 ## Related Sections
 

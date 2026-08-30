@@ -210,5 +210,6 @@ MCP helps build agents and complex workflows on top of LLMs through three primar
 - [Claude Code Orchestration Primitives — Decision Guide](../WorkflowBuilders/claude-orchestration-guide.md) — explains how MCP fits alongside Skills, Subagents, Agent Teams, and Dynamic Workflows
 - [Dynamic Workflows (Claude Code)](../WorkflowBuilders/dynamic-workflows.md)
 - [Agent Skills / SKILLS.md Standard](./skills.md)
+- [Agent Plugins Specification](./agent-plugins.md) — declares MCP servers in a plugin-local `mcp.json` (stdio, streamable-http, legacy sse) alongside packaged skills
 - [Multi-Agent Systems](../Architecture/multi-agent-system.md)
 - [Kestra — Declarative Agentic Orchestration Platform](../WorkflowBuilders/orchestration.md#kestra) — orchestration platform with a built-in MCP server and MCP-client support for AI Agent tasks

@@ -143,6 +143,7 @@ OKF is also the ingest format for the [Google Cloud Knowledge Catalog](https://c
 - [Common Strategies for Context Management](../ContextEngineering/strategies.md)
 - [Agent Memory Management](../AgentMemory/README.md)
 - [Google — Agentic AI Overview](../AllThingsGoogle/README.md)
+- [Agent Plugins Specification](./agent-plugins.md) — parallel markdown-plus-manifest packaging convention, for executable agent extensions rather than knowledge bundles
 
 ## References
 
