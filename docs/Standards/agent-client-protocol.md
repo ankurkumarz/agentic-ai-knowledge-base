@@ -73,7 +73,7 @@ In practice, a single coding agent can speak ACP to its host editor while separa
 - [Model Context Protocol (MCP)](./mcp.md) — complementary protocol for tool/resource access by LLM applications
 - [Agent2Agent (A2A) Protocol](./agent2agent.md) — peer-to-peer agent coordination, a different layer than ACP's editor-agent integration
 - [Agentic AI Foundation](./agentic-ai-foundation.md) — open-standards governance context for the broader agentic protocol ecosystem
-- [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) — coding agents such as Claude Code and Gemini CLI that integrate with ACP
+- [AI Coding Agents](../AICodingAgents/ai-coding-agents.md) — coding agents such as Claude Code and Gemini CLI that integrate with ACP
 - [AllThingsAnthropic/README.md](../AllThingsAnthropic/README.md) — Claude Code's ACP adapter integration
 - [AllThingsGoogle/README.md](../AllThingsGoogle/README.md) — Gemini CLI's native ACP support
 

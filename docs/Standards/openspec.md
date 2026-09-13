@@ -114,7 +114,7 @@ OpenSpec's primary differentiator is that it solves unpredictability when requir
 - [AG-UI Protocol](./README.md)
 - [AIDLC Workflows (AWS)](./aidlc.md)
 - [AgentHarness Engineering](../AgentHarness/harness-engineering.md)
-- [Context Engineering](../ContextEngineering/)
+- [Context Engineering](../ContextEngineering/README.md)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 
 ## References

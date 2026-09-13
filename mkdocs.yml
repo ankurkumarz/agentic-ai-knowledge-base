@@ -29,6 +29,7 @@ nav:
     - 1.7 AI Engineering (Huyen): 'Concepts/ai-engineering.md'
     - 1.8 References: 'Concepts/references.md'
     - 1.9 2026 AI Predictions (You.com): 'Concepts/ai-predictions-2026.md'
+    - 1.10 Foundation Models: 'Concepts/foundation-models.md'
   - 2. Agent Harness:
     - 2.1 Agent Harness: 'AgentHarness/agent-harness.md'
     - 2.2 Harness Engineering: 'AgentHarness/harness-engineering.md'
@@ -48,6 +49,9 @@ nav:
     - 3.4 12-Factor Agents: 'Architecture/12-factor-agents.md'
     - 3.5 Gartner LLM-based AI Design Patterns: 'DesignPatterns/gartner-patterns.md'
     - 3.6 Miscellaneous: 'DesignPatterns/Readme.md'
+    - 3.7 Dataset Engineering: 'Architecture/dataset-engineering.md'
+    - 3.8 Finetuning: 'Architecture/finetuning.md'
+    - 3.9 Inference Optimization: 'Architecture/inference-optimization.md'
   - 4. Agent Development Frameworks:
     - 4.1 LangChain: 'AgenticFrameworks/langchain.md'
     - 4.2 LangGraph: 'AgenticFrameworks/langgraph.md'

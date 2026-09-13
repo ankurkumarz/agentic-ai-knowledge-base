@@ -185,7 +185,7 @@ Each example is a self-contained prompt/skill that maps onto the automations + s
 - [Harness Engineering](./harness-engineering.md) — the per-run guides/sensors discipline that loop engineering builds on top of
 - [Agent Harness](./agent-harness.md) — core harness components (hooks, orchestration, memory) referenced by loop primitives
 - [Claude Code Orchestration Primitives — Decision Guide](../WorkflowBuilders/claude-orchestration-guide.md) — decision framework for Skills, Subagents, Agent Teams, MCP within a single Claude Code session
-- [AI Coding Agents](../AgenticFrameworks/ai-coding-agents.md) — full comparison of Claude Code, OpenAI Codex, and other coding agent products
+- [AI Coding Agents](../AICodingAgents/ai-coding-agents.md) — full comparison of Claude Code, OpenAI Codex, and other coding agent products
 - [Model Context Protocol (MCP)](../Standards/mcp.md) — the connector standard underlying plugins/connectors
 - [Agent Skills Standard](../Standards/skills.md) — SKILL.md authoring convention
 - [Production Best Practices: Deployment](../ProductionBestPractices/deployment.md) — goal-like loops, step budgets, and scheduling patterns

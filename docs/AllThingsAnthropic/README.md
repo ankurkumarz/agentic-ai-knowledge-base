@@ -15,7 +15,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
-| Claude Code | Anthropic's agentic coding CLI/IDE — swarm orchestration, KAIROS daemon, 44 feature flags; architecture partially revealed via 2026 source leak | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
+| Claude Code | Anthropic's agentic coding CLI/IDE — swarm orchestration, KAIROS daemon, 44 feature flags; architecture partially revealed via 2026 source leak | [AICodingAgents/ai-coding-agents.md](../AICodingAgents/ai-coding-agents.md) |
 | Claude Managed Agents | Hosted agent execution platform with persistent memory, dreaming (scheduled memory consolidation), outcomes (self-grading loop), and multiagent orchestration — Harvey reported 6× task completion improvement | [AgentPlatforms/claude-managed-agents.md](../AgentPlatforms/claude-managed-agents.md) |
 | Claude Managed Agents — Dreaming | Scheduled between-session memory curation inspired by hippocampal sleep consolidation; merges patterns, removes outdated facts, surfaces team-wide learnings; research preview | [AgentPlatforms/claude-managed-agents.md](../AgentPlatforms/claude-managed-agents.md) |
 | Claude Managed Agents — Outcomes | Self-grading loop: developer writes plain-language rubric, isolated grader agent scores output, agent iterates; up to +10 pp task success over baseline prompting | [AgentPlatforms/claude-managed-agents.md](../AgentPlatforms/claude-managed-agents.md) |

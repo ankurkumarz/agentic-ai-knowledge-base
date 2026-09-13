@@ -15,7 +15,7 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
-| Kiro | Amazon's spec-driven agentic IDE — ground-up replacement for Amazon Q Developer (new signups blocked May 15, 2026; Q Developer EOS Apr 30, 2027); specs as source of truth, agent hooks, Bedrock multi-model routing (Claude Opus 4.7 + Amazon Nova) | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
+| Kiro | Amazon's spec-driven agentic IDE — ground-up replacement for Amazon Q Developer (new signups blocked May 15, 2026; Q Developer EOS Apr 30, 2027); specs as source of truth, agent hooks, Bedrock multi-model routing (Claude Opus 4.7 + Amazon Nova) | [AICodingAgents/ai-coding-agents.md](../AICodingAgents/ai-coding-agents.md) |
 | AWS Strands Agents | Open-source SDK for building agents with tool use and multi-agent orchestration | [AgenticFrameworks/aws-strands.md](../AgenticFrameworks/aws-strands.md) |
 | AWS AgentCore | Managed runtime for deploying, scaling, and monitoring agents | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
 | AWS AI Agents Marketplace | Catalogue of pre-built agents and integrations available via AWS Marketplace | [Marketplace/aws-marketplace.md](../Marketplace/aws-marketplace.md) |

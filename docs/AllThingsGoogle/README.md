@@ -15,7 +15,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
-| Gemini CLI | *(Sunsetting)* Open-source terminal coding agent (Apache 2.0) for Free/Pro/Ultra tiers — retired June 18, 2026 in favor of Antigravity CLI; Enterprise/Cloud-billed/API-key users retain access | [AgenticFrameworks/ai-coding-agents.md](../AgenticFrameworks/ai-coding-agents.md) |
+| Gemini CLI | *(Sunsetting)* Open-source terminal coding agent (Apache 2.0) for Free/Pro/Ultra tiers — retired June 18, 2026 in favor of Antigravity CLI; Enterprise/Cloud-billed/API-key users retain access | [AICodingAgents/ai-coding-agents.md](../AICodingAgents/ai-coding-agents.md) |
 | Google Antigravity (CLI / 2.0 / SDK / IDE) | Agent-first development platform succeeding Gemini CLI — async multi-agent orchestration, Go-based CLI, Gemini 3.5 Flash default | [AICodingAgents/ai-coding-agents.md](../AICodingAgents/ai-coding-agents.md#google-antigravity-cli-ide-sdk) |
 | Google ADK | Agent Development Kit — open-source framework for building single and multi-agent systems | [AgenticFrameworks/google-adk.md](../AgenticFrameworks/google-adk.md) |
 | Gemini Enterprise Agent Platform | Google Cloud's comprehensive platform for building, scaling, governing, and optimizing agents — successor to Vertex AI; GA April 22, 2026 at Cloud Next '26, absorbing Agentspace into the sibling Gemini Enterprise app | [AgentPlatforms/gemini-enterprise-agent-platform.md](../AgentPlatforms/gemini-enterprise-agent-platform.md) |
