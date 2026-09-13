@@ -86,7 +86,7 @@ The initiative specifically targets challenges unique to agentic AI that are not
 - [Cloud Security Alliance (CSA)](./csa.md)
 - [Agentic AI Foundation](./agentic-ai-foundation.md)
 - [Agent Security](../ProductionBestPractices/security.md)
-- [AI Governance Overview](../AIGovernance/Readme.md)
+- [AI Governance Overview](../AIGovernance/overview.md)
 - [Model Context Protocol](./mcp.md)
 - [Agent2Agent (A2A) Protocol](./agent2agent.md)
 

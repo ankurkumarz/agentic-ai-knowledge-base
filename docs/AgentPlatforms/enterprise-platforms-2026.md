@@ -319,7 +319,7 @@ Fast (4–6 wks)              Slow (12+ wks)
 - [Production Best Practices — Deployment](../ProductionBestPractices/deployment.md)
 - [Production Best Practices — Cost Management](../ProductionBestPractices/cost-management.md)
 - [Production Best Practices — Security](../ProductionBestPractices/security.md)
-- [AI Governance](../AIGovernance/Readme.md)
+- [AI Governance](../AIGovernance/overview.md)
 - [AllThingsGoogle](../AllThingsGoogle/README.md)
 - [AllThingsMicrosoft](../AllThingsMicrosoft/README.md)
 

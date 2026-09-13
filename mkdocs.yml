@@ -154,6 +154,7 @@ nav:
   - 10. Agentic AI Evaluation:
     - 10.1 LLM Evaluation Frameworks: 'EvaluationFrameworks/llm-frameworks.md'
     - 10.1.1 LLM App Evaluation Metrics: 'EvaluationFrameworks/llm-eval-metrics.md'
+    - 10.1.2 Designing Evaluations for AI Agents: 'EvaluationFrameworks/agent-evals-design.md'
     - 10.2 AI as a Judge (LLM-as-Judge): 'EvaluationFrameworks/ai-as-judge.md'
     - 10.3 Agent Evaluation Benchmarks: 'Benchmarks/agent-benchmarks.md'
     - 10.4 LLM Evaluation Benchmarks: 'Benchmarks/llm-benchmarks.md'
@@ -216,7 +217,7 @@ nav:
     - 16.7 Agent Security: 'ProductionBestPractices/security.md'
     - 16.8 Cost Management: 'ProductionBestPractices/cost-management.md'
   - 17. AI Governance:
-    - 17.1 Overview: 'AIGovernance/Readme.md'
+    - 17.1 Overview: 'AIGovernance/overview.md'
     - 17.2 Governance Strategy: 'AIGovernance/governance-strategy.md'
     - 17.3 Governance Best Practices: 'AIGovernance/governance-best-practices.md'
     - 17.4 Governance Solutions: 'AIGovernance/governance-solutions.md'

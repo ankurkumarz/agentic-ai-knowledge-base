@@ -1726,3 +1726,57 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - **RULER** — extends NIAH with multi-needle variants and 4 task categories; 4K–128K token range; synthetic generation
 - **MMNeedle** — 40,000 images, 280,000 needle-haystack pairs; evaluates multimodal long-context retrieval
 - **FEVER** — 185,000+ Wikipedia-based claims; Supported/Refuted/Not Enough Info labels; tests full retrieve-reason-decide pipeline
+
+## [2026-09-13] ingest | DeepSWE — Long-Horizon Software Engineering Benchmark | sections touched: Benchmarks/agent-benchmarks.md
+
+**Source**: https://deepswe.datacurve.ai/ | https://arxiv.org/abs/2607.07946 | https://github.com/datacurve-ai/deep-swe
+**Type**: Benchmark — Datacurve AI, 2026. Contamination-free coding agent benchmark, 113 tasks.
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Benchmarks/agent-benchmarks.md` | Extended | Added DeepSWE section under Software Development Benchmarks; added row to Benchmark Selection Guide; updated timestamp |
+
+### Key Knowledge Added
+
+- **113 original tasks** across 91 repos, 5 languages (TypeScript, Go, Python, JavaScript, Rust)
+- Contamination-free: tasks written from scratch, not sourced from existing GitHub commits or PRs
+- Solutions require ~5.5× more code and ~2× more output tokens than SWE-bench Pro tasks
+- Hand-written behavior-based verifiers eliminate the high false-positive/false-negative rates in automated test graders
+- Consistent scaffolding: all models run on mini-swe-agent
+- Live leaderboard as of Sep 2026: gpt-6-astra 74%, gemini-3.8-flash 74%, claude-opus-5 74%
+- Addresses SWE-bench Pro's 8% false-positive / 24% false-negative verifier misgrading rates
+
+---
+
+## [2026-09-13] ingest | Demystifying Evals for AI Agents — Anthropic Engineering | sections touched: EvaluationFrameworks/agent-evals-design.md, ProductionBestPractices/testing-evaluations.md, Benchmarks/agent-benchmarks.md, AllThingsAnthropic/README.md, index.md, mkdocs.yml
+
+**Source**: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+**Type**: Engineering blog post — Anthropic (2026)
+**Authors**: Mikaela Grace, Jeremy Hadfield, Rodrigo Olivares, Jiri De Jonghe
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/agent-evals-design.md` | Created | New page: core eval terminology (task/trial/grader/transcript/outcome/harness), three grader types (code-based, model-based, human) with strengths/weaknesses tables, capability vs regression eval distinction, pass@k and pass^k non-determinism metrics, per-agent-type design patterns (coding, conversational, research, computer-use) with illustrative YAML examples, zero-to-trustworthy roadmap (8 steps), holistic methods comparison table (automated evals vs production monitoring vs A/B testing vs user feedback vs manual review vs systematic studies), eval frameworks reference table |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added "Capability vs Regression Evals" section; added "Measuring Non-Determinism: pass@k and pass^k" section; added four new Best Practices rows (delayed eval adoption, brittle path-checking graders, flaky eval environments, LLM judge hallucination); added Harbor and Braintrust to Evaluation Frameworks table; added See Also link to agent-evals-design.md; added Anthropic reference; updated timestamp to 2026-09-13 |
+| `docs/Benchmarks/agent-benchmarks.md` | Extended | Expanded τ-bench entry with additional detail; added τ2-bench as adversarial multi-turn successor with full Key Characteristics section; added BrowseComp under Research and Retrieval Benchmarks; added both to Benchmark Selection Guide table; added See Also link to agent-evals-design.md |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for "Demystifying Evals for AI Agents" → EvaluationFrameworks/agent-evals-design.md |
+| `docs/index.md` | Extended | Enriched LLM Evaluation Frameworks bullet with link to agent-evals-design.md and Anthropic attribution; updated Agent Benchmarks bullet to add BrowseComp and τ2-bench |
+| `mkdocs.yml` | Extended | Added 10.1.2 Designing Evaluations for AI Agents nav entry |
+
+### Key Knowledge Added
+
+- **Eval terminology standardised**: task / trial / grader / transcript / outcome / eval harness / agent harness / eval suite — all with precise definitions distinguishing outcome (DB state) from transcript (what the agent said)
+- **Three grader types**: code-based (fast, cheap, brittle), model-based (flexible, requires calibration), human (gold standard, expensive) — with recommended combinations per agent type
+- **Capability vs regression evals**: capability evals start low and track progress; regression evals run at ~100% and catch backsliding; saturation detection guidance
+- **pass@k and pass^k**: complementary metrics for non-deterministic agents — pass@k for "one success sufficient" scenarios, pass^k for "consistent every time" customer-facing agents
+- **Per-agent-type patterns**: coding (unit tests + LLM rubric + static analysis), conversational (LLM rubric + state checks + max_turns constraint + simulated user), research (groundedness + coverage + source quality checks), computer-use (env state verification + modality selection evals)
+- **Zero-to-trustworthy roadmap**: 8 concrete steps from 20–50 initial tasks through harness isolation, grader design, saturation monitoring, and living artifact maintenance
+- **Holistic evaluation model**: automated evals + production monitoring + A/B testing + user feedback + manual transcript review + systematic human studies — Swiss Cheese Model analogy
+- **New benchmarks**: τ2-bench (adversarial multi-turn successor to τ-bench), BrowseComp (open-web needle-in-haystack for research agents)
+- **Eval-driven development pattern**: build evals to define planned capabilities before agents can fulfil them; capability evals that start low make model upgrade bets visible

@@ -171,7 +171,17 @@ A benchmark for long-horizon, objective-driven algorithm engineering, developed 
 A comprehensive benchmark evaluating LLMs as agents across 8 distinct environments including operating systems, databases, knowledge graphs, digital card games, lateral thinking puzzles, house-holding tasks, web shopping, and web browsing.
 
 ### τ-bench (Tau-bench)
-Evaluates agents on realistic customer service scenarios requiring multi-turn conversations, policy adherence, and tool use. Tests agents' ability to follow complex business rules while serving customers effectively.
+Evaluates agents on realistic customer service scenarios requiring multi-turn conversations, policy adherence, and tool use. Tests agents' ability to follow complex business rules while serving customers effectively. One model plays a user persona while the agent navigates scenarios in domains like retail support and airline booking.
+
+### τ2-bench (Tau2-bench)
+The successor to τ-bench, extending multi-turn evaluation to more complex and adversarial scenarios. Simulates extended, realistic conversations where agents must navigate policy edge cases, handle frustrated users, and maintain consistent behavior across many turns. Used by Anthropic internally to stress-test models through adversarial conversations, including in alignment auditing workflows.
+
+**Key Characteristics**:
+- Multi-turn interaction simulation across retail and airline booking domains
+- One model plays a user persona; the agent must navigate realistic policy constraints
+- Tests both task completion and interaction quality as separate dimensions
+- Extended conversation length exposes consistency failures not visible in shorter evals
+- Adversarial variants used for alignment auditing — stress-testing model behavior under sustained pressure
 
 ## Agent Memory Benchmarks
 
@@ -215,6 +225,17 @@ LongMemEval-V2 (Wu et al., UCLA NLP) extends the benchmark to the agentic contex
 - Authors: Di Wu, Zixiang Ji, Asmi Kawatkar, Bryan Kwan, Jia-Chen Gu, Nanyun Peng, Kai-Wei Chang (UCLA NLP)
 
 ## Research and Retrieval Benchmarks
+
+### BrowseComp
+
+A benchmark for testing whether AI agents can find specific, hard-to-locate facts across the open web — "needles in haystacks" that are easy to verify once found but difficult to locate. Designed to test research agent capability rather than general knowledge: questions are answerable by a determined human researcher but require navigating multiple pages and sources.
+
+**Key Characteristics**:
+- Questions are designed to be easy to verify but hard to solve — correct answers can be confirmed immediately, eliminating ambiguity in grading
+- Targets retrieval and navigation skill rather than memorised knowledge
+- Graded with exact-match or verifiable-fact checks, making it deterministic despite open-web scope
+- Relevant for teams building research agents, deep-research pipelines, or web-browsing agents
+- Used by Anthropic as a reference point for evaluating research-oriented agent capability
 
 ### DeepResearch Bench
 
@@ -281,9 +302,10 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Algorithm engineering / optimization | ALE-Bench |
 | Terminal/CLI tasks | Terminal-Bench 2.1 |
 | Safety evaluation | METR |
-| Customer service agents | τ-bench |
+| Customer service agents | τ-bench / τ2-bench |
 | Financial domain agents | Finance Agent v2 |
 | Wide/deep research orchestration | WANDR |
+| Open-web needle-in-haystack research | BrowseComp |
 | Deep research report quality & citation accuracy | DeepResearch Bench |
 | Long-term memory (chat assistants) | LongMemEval |
 | Long-term memory (web agents) | LongMemEval-V2 |
@@ -306,6 +328,7 @@ As benchmarks become public, training data contamination becomes a concern. Pref
 
 - [LLM Benchmarks](llm-benchmarks.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
+- [Designing Evaluations for AI Agents](../EvaluationFrameworks/agent-evals-design.md) — grader types, pass@k/pass^k metrics, and per-agent-type eval design patterns
 - [Agent Evaluation Platforms — Harbor](../EvaluationFrameworks/platforms.md#harbor) — the open-source harness that executes Terminal-Bench 2.0/2.1 at scale
 - [Observability](../Observability/Readme.md)
 - [Harness Optimization](../AgentHarness/harness-optimization.md) — TerminalBench-2 as a harness-level evaluation environment

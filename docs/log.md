@@ -4,6 +4,14 @@
 
 ## 2026-09-13
 
+* **Ingest**: [Demystifying Evals for AI Agents — Anthropic Engineering] → EvaluationFrameworks, ProductionBestPractices, Benchmarks, AllThingsAnthropic — https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+  * Created: `docs/EvaluationFrameworks/agent-evals-design.md`
+  * Extended: `docs/ProductionBestPractices/testing-evaluations.md`
+  * Extended: `docs/Benchmarks/agent-benchmarks.md`
+  * Extended: `docs/AllThingsAnthropic/README.md`
+  * Extended: `docs/index.md`
+  * Extended: `mkdocs.yml`
+
 * **Ingest**: [DeepSWE — Long-Horizon Software Engineering Benchmark] → Benchmarks — https://deepswe.datacurve.ai/
   * Extended: `docs/Benchmarks/agent-benchmarks.md`
 

@@ -3,7 +3,7 @@ type: Playbook
 title: "Agent Testing & Evaluations"
 description: Evaluating agentic AI systems is fundamentally different from traditional software testing
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-09-13T00:00:00Z
 ---
 # Agent Testing & Evaluations
 
@@ -34,6 +34,34 @@ Evaluation operates at multiple levels:
 | Evaluation cost | Running LLM-as-judge on every output is expensive | Evaluated 100% of outputs; costs were unsustainable | Sample strategically — evaluate 100% of failures, 10–20% of successes, and all edge case categories |
 | Single-model critical decisions | Relying on one non-deterministic LLM for a high-stakes decision (credit scoring, compliance) | Trusted a single model call; hallucinations or biased outputs went undetected | **Parallel Execution Consensus**: run two or more independent agents on the same task using different models or prompts; orchestrator validates result when outputs agree within a tolerance; escalates to a resolver or human when they disagree significantly |
 | Silent agent version regressions | Deploying a new agent version to all users risks widespread quality degradation | Rolled out new versions 100% immediately; regressions only detected after users complained | **Canary Agent Testing**: route a small traffic fraction (e.g., 5%) to the new agent version; compare performance metrics against the stable version; block full rollout if regression rate exceeds threshold |
+| Delayed eval adoption | Teams delay building evals because they think they need hundreds of tasks — by the time they start, requirements are baked into a live system and edge cases are implicit | Waited until scaling bottlenecks forced the issue; reverse-engineered success criteria from production bugs | Start with 20–50 tasks drawn from real failures; one-sided or brittle evals are better than none — evals get harder to build the longer you wait |
+| Brittle graders checking execution paths | Checking that agents followed a specific tool-call sequence makes tests fail whenever the agent finds a valid but unanticipated approach | Wrote graders that required exact tool-call ordering; creative solutions were penalised | Grade what the agent produced (outcome and output quality), not the path it took; reserve tool-call checks for verifying security or compliance requirements, not general correctness |
+| Flaky eval environments | Shared state between trial runs — leftover files, cached data, resource exhaustion — causes correlated failures that measure infrastructure, not agent performance | Did not isolate trial environments; shared state inflated scores when a previous trial cached useful results | Start every trial from a clean, isolated environment; treat correlated trial failures as infrastructure bugs, not agent regressions |
+| LLM judge hallucinating verdicts | Model-based graders sometimes return confident scores even when they lack enough information to make a determination | Trusted raw LLM judge output without calibration; graders returned invented pass/fail decisions | Give the LLM judge a way out ("return Unknown if insufficient information"); calibrate model judges against human experts periodically; grade each rubric dimension with an isolated LLM call rather than one judge for all dimensions |
+
+## Capability vs. Regression Evals
+
+Two distinct eval types serve different purposes and must both be maintained in any mature eval program:
+
+| Type | Goal | Expected Pass Rate | When to Run |
+|---|---|---|---|
+| **Capability** ("quality") | Measure what the agent can do; give teams a hill to climb | Starts low — targets tasks the agent currently struggles with | During active development; on every new model release |
+| **Regression** | Verify the agent still handles tasks it used to handle | Near 100% — a drop signals something broke | On every code or prompt change; in CI/CD |
+
+After an agent is launched and optimised, capability evals with high pass rates can **graduate** to become regression suites run continuously. Tasks that once asked "Can we do this at all?" then ask "Can we still do this reliably?"
+
+**Saturation warning**: an eval at 100% pass rate tracks regressions but provides no signal for improvement. Build harder tasks or a successor suite before saturation makes scores uninterpretable.
+
+## Measuring Non-Determinism: pass@k and pass^k
+
+Agent outputs vary between runs. Two complementary metrics capture this:
+
+- **pass@k** — probability that at least one of k trials succeeds. Rises as k increases. Use when one success is sufficient (e.g., a coding agent that generates any working solution).
+- **pass^k** — probability that all k trials succeed. Falls as k increases. Use when consistent reliability is required for every user interaction. At a 75% per-trial success rate, pass^3 ≈ 42%.
+
+At k=1, both metrics are identical (equal to the per-trial success rate). By k=10, pass@k approaches 100% while pass^k approaches 0% — they tell opposite stories.
+
+Choose based on product requirements: pass@k for developer tools where one success matters, pass^k for customer-facing agents where users expect reliable behavior every time.
 
 ## Evaluation Frameworks
 
@@ -45,6 +73,8 @@ Evaluation operates at multiple levels:
 | [LangChain OpenEvals](https://github.com/langchain-ai/openevals) | Open source | LLM-as-judge with pre-built rubrics |
 | [AIDLC Evaluator](../Standards/aidlc.md) | Open source (AWS Labs) | Golden test cases, semantic evaluation, code analysis (linting, security), NFR testing (tokens, execution time), CI/CD integration — bundled with AIDLC Workflows framework |
 | [AgentPex](https://github.com/microsoft/agentpex) | Open source (Microsoft) | Trace-based agent evaluation: imports execution traces (JSON, Langfuse, Langtrace/OTEL), extracts specs from system prompts and tool schemas, applies 8 evaluation techniques including groundedness and argument checking; pushes scores to Langfuse/Langtrace |
+| [Harbor](../EvaluationFrameworks/platforms.md#harbor) | Open source | Containerised trial execution at scale; ships Terminal-Bench 2.0; standardised task/grader format; generates RL/SFT rollouts |
+| [Braintrust](https://www.braintrust.dev/) | Commercial | Offline eval + production observability + experiment tracking; `autoevals` library with pre-built scorers for factuality, relevance, and other common dimensions |
 
 ## Evaluation Platforms
 
@@ -167,6 +197,7 @@ The following must be true before production rollout:
 - Evals run on both realistic and adversarial task sets
 
 ## See Also
+- [Designing Evaluations for AI Agents](../EvaluationFrameworks/agent-evals-design.md) — grader types, capability vs regression evals, pass@k / pass^k, per-agent-type design patterns, and eval lifecycle roadmap
 - [Observability](./observability.md)
 - [Deployment](./deployment.md)
 - [Context Engineering](./context-engineering.md)
@@ -177,3 +208,4 @@ The following must be true before production rollout:
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
+- [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Anthropic Engineering (2026). Source for capability vs regression evals, pass@k/pass^k metrics, grader design patterns, eval lifecycle roadmap, and Braintrust/Harbor framework references.

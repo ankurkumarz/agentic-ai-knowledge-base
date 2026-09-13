@@ -886,8 +886,8 @@ TERMINAL ─────────────────────┼─�
 
 ## See Also
 
-- [Agent Development Frameworks Overview](README.md)
-- [Frameworks Technology Radar](solutions.md)
+- [Agent Development Frameworks Overview](../AgenticFrameworks/README.md)
+- [Frameworks Technology Radar](../AgenticFrameworks/solutions.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Agent Client Protocol (ACP)](../Standards/agent-client-protocol.md) — editor-agent integration standard used by Gemini CLI natively and Claude Code via adapter
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
