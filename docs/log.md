@@ -4,6 +4,17 @@
 
 ## 2026-09-13
 
+* **Ingest**: [7 RAG Benchmarks — Evidently AI] → Benchmarks — https://www.evidentlyai.com/blog/rag-benchmarks
+  * Created: `docs/Benchmarks/rag-benchmarks.md`
+  * Extended: `docs/Benchmarks/llm-benchmarks.md` (RULER entry links to new page; RAG Benchmarks added to See Also)
+  * Extended: `docs/RAG/Readme.md` (added RAG Evaluation Benchmarks to See Also)
+  * Extended: `mkdocs.yml` (added 10.4.1 RAG Evaluation Benchmarks)
+
+* **Update**: [LLM App Evaluation Metrics — metrics.csv] → EvaluationFrameworks — metrics.csv
+  * Created: `docs/EvaluationFrameworks/llm-eval-metrics.md`
+  * Extended: `docs/EvaluationFrameworks/llm-frameworks.md` (metrics section replaced with link to new page)
+  * Extended: `mkdocs.yml` (added 10.1.1 LLM App Evaluation Metrics)
+
 * **Ingest**: [OpenSandbox — Universal Sandbox Infrastructure for AI Applications] → AgentHarness — https://open-sandbox.ai/
   * Extended: `docs/AgentHarness/agent-harness.md`
 

@@ -1681,3 +1681,48 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - Online (production monitoring, real-time alerting) and offline (pre-production test datasets) evaluation modes
 - Adopted at scale: DeepL (daily data quality/drift), Wise (production distribution monitoring), Plaid (continuous model monitoring), Databricks, Realtor.com, PlushCare, Western Governors University
 - Differentiator from single-purpose tools: unified framework for both LLM/agent quality evaluation and classical ML observability (drift, data quality, predictive performance) in one install
+
+## [2026-09-13] update | LLM App Evaluation Metrics (metrics.csv) | sections touched: EvaluationFrameworks/llm-frameworks.md
+
+**Source**: `metrics.csv` (user-provided, 22 metrics)
+**Type**: Metrics reference — LLM evaluation metrics catalogue covering trace, chat, tool, session, and retriever scopes
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/llm-frameworks.md` | Extended | Added "LLM App Metrics Reference" section with 22 metrics organized into five subsections: Trace-Level (4), LLM & Chat (13), Tool (1), Session (3), Retriever (1). Each metric includes its Level (all LLM except Precision@K which is Code) and a description. |
+
+### Key Knowledge Added
+
+- **Trace-Level Metrics**: Output Toxicity (Vision), Prompt Injection, Prompt Injection (Audio), Prompt Injection (Vision)
+- **LLM & Chat Metrics**: Reasoning Coherence (base + Audio + Vision), SQL Adherence, SQL Correctness, SQL Efficiency, SQL Injection, Tool Selection Quality (base + Audio + Vision), Unsafe Output, Visual Fidelity, Visual Quality
+- **Tool Metrics**: Tool Error Rate
+- **Session Metrics**: User Intent Change (base + Audio + Vision)
+- **Retriever Metrics**: Precision@K (Code-level)
+
+## [2026-09-13] ingest | 7 RAG Benchmarks (Evidently AI Blog) | sections touched: Benchmarks/rag-benchmarks.md (new), Benchmarks/llm-benchmarks.md, RAG/Readme.md, mkdocs.yml
+
+**Source**: https://www.evidentlyai.com/blog/rag-benchmarks
+**Type**: Blog post / benchmark survey — Evidently AI, 2026. Lists seven RAG evaluation benchmarks.
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Benchmarks/rag-benchmarks.md` | Created | New page with all 7 benchmarks: NIAH, BeIR, FRAMES, RAGTruth, RULER, MMNeedle, FEVER. Each entry includes what it tests, how it works, why it matters for RAG, and resource links. Includes a benchmark selection guide table keyed to RAG failure modes. |
+| `docs/Benchmarks/llm-benchmarks.md` | Extended | RULER entry updated to link to new rag-benchmarks.md; RAG Evaluation Benchmarks added to See Also |
+| `docs/RAG/Readme.md` | Extended | Added RAG Evaluation Benchmarks backlink to See Also (bidirectional graph edge) |
+| `mkdocs.yml` | Extended | Added 10.4.1 RAG Evaluation Benchmarks nav entry |
+
+### Key Knowledge Added
+
+- **NIAH** — 2D retrieval accuracy test (context length × needle depth); original Paul Graham essay corpus; configurable haystack
+- **BeIR** — 18 datasets, 9 task types; zero-shot cross-domain retriever evaluation; covers dense, sparse, hybrid, and re-ranking systems
+- **FRAMES** — 800+ multi-hop questions requiring 2–15 Wikipedia articles; numerical, tabular, temporal reasoning types
+- **RAGTruth** — 18,000 annotated RAG responses; four hallucination types (evident/subtle × conflict/baseless)
+- **RULER** — extends NIAH with multi-needle variants and 4 task categories; 4K–128K token range; synthetic generation
+- **MMNeedle** — 40,000 images, 280,000 needle-haystack pairs; evaluates multimodal long-context retrieval
+- **FEVER** — 185,000+ Wikipedia-based claims; Supported/Refuted/Not Enough Info labels; tests full retrieve-reason-decide pipeline

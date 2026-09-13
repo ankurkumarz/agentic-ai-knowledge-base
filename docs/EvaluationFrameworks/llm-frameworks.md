@@ -3,7 +3,7 @@ type: Reference
 title: LLM Evaluation Frameworks
 description: "LLM evaluation frameworks provide programmatic tools for measuring the quality, accuracy, and safety of LLM outputs"
 tags: [evaluation, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-09-13T00:00:00Z
 ---
 # LLM Evaluation Frameworks
 
@@ -152,6 +152,7 @@ evaluate([test_case], [AnswerRelevancyMetric(), FaithfulnessMetric()])
 
 ## See Also
 
+- [LLM App Evaluation Metrics](llm-eval-metrics.md) — full catalogue of 22 metrics (trace, chat, tool, session, retriever)
 - [AI as a Judge — Deep Dive](ai-as-judge.md)
 - [Agent Evaluation Platforms](platforms.md)
 - [Evaluation Tech Radar](tech-radar.md)

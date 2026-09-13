@@ -98,7 +98,7 @@ American Invitational Mathematics Examination problems. Tests frontier mathemati
 ### Long Context
 
 **RULER**
-Evaluates long-context understanding across tasks including retrieval, multi-hop reasoning, and aggregation at various context lengths (4K to 128K tokens).
+Evaluates long-context understanding across tasks including retrieval, multi-hop reasoning, and aggregation at various context lengths (4K to 128K tokens). See [RAG Evaluation Benchmarks](rag-benchmarks.md) for full coverage of RULER and six other RAG-specific benchmarks.
 
 **HELMET**
 Holistic Evaluation of Long-context Language Models across diverse tasks requiring genuine long-context understanding.
@@ -143,6 +143,7 @@ No single benchmark covers all real-world use cases. Use multiple benchmarks and
 
 ## See Also
 
+- [RAG Evaluation Benchmarks](rag-benchmarks.md)
 - [Agent Benchmarks](agent-benchmarks.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [LLM Evaluation Dashboards](Readme.md)
