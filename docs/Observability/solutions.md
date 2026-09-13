@@ -40,6 +40,11 @@ Galileo tracks three distinct levels: Session (did it complete the task?), Step 
 
 ## Specialized Observability Platforms
 
+### Evidently AI
+**Platform**: [Evidently AI](https://www.evidentlyai.com/)
+
+Open-source (Apache 2.0) AI evaluation and observability framework with 7,500+ GitHub stars and 40M+ downloads. Covers LLMs, RAG applications, AI agents, and ML models in a single framework. Key capabilities: 100+ built-in metrics spanning hallucinations, PII detection, retrieval quality, data drift, and jailbreak detection; composable custom evals using rules, classifiers, or LLM judges; offline pre-production testing and online production monitoring with real-time alerts. Used daily at DeepL, Wise, Plaid, and Databricks for production drift detection and model monitoring.
+
 ### Langfuse
 **Platform**: [Langfuse](https://langfuse.com/)
 
@@ -77,6 +82,7 @@ Open-source local TUI and report generator for AI coding-agent session history. 
 | AgentOps | ❌ | ✅ | ✅ | ✅ | ✅ |
 | LangSmith | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Galileo | ❌ | ✅ | ✅ | ✅ | ✅ |
+| Evidently AI | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Langfuse | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Openlit | ✅ | ✅ | ✅ | ✅ | ✅ |
 | W&B Weave | ❌ | ✅ | ✅ | ✅ | ✅ |

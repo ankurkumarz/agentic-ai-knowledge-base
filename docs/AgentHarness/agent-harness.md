@@ -53,6 +53,10 @@ Running agent-generated code locally is risky and does not scale. Sandboxes prov
 
 Browsers, logs, screenshots, and test runners give agents self-verification loops: write code → run tests → inspect logs → fix errors.
 
+**OpenSandbox** (open-sandbox.ai, by Alibaba Cloud) is a CNCF-listed universal sandbox infrastructure layer purpose-built for AI workloads. It provides sandbox lifecycle management via Docker and Kubernetes runtimes (provision, monitor, renew, pause/resume, terminate), multi-language SDKs (Python, JavaScript/TypeScript, Java/Kotlin, Go, C#/.NET), and in-sandbox execution primitives including shell commands, multi-language code interpreters, file management, port exposure, and log/metrics streaming. Designed use cases include coding agents, browser automation, remote development, code execution sandboxes, and reinforcement learning environments. It surfaces as a low-level infrastructure primitive that can underpin any agent harness needing managed, reproducible execution environments at scale.
+
+**Opengeni** (opengeni.ai) takes a self-sovereignty angle on the harness sandbox layer, positioning itself as a "sovereign AI harness" — the full harness layer running on infrastructure the operator controls. Key capabilities: durable sessions with history and recovery, MCP tool integration, sandboxed execution, SDK and React integration surfaces, human approval workflows, access controls, and usage/audit logging. Unlike cloud-hosted harness products, Opengeni is self-hosted: the team owns the execution environment, session state, and model routing. Source: [github.com/Cloudgeni-ai/opengeni](https://github.com/Cloudgeni-ai/opengeni).
+
 ### Memory and Search — Continual Learning
 
 Models have no knowledge beyond their weights and current context. Harnesses extend this via:
@@ -179,6 +183,8 @@ The trusted control plane (user identity, credentials, approval records, audit l
 
 ## References
 
+- [OpenSandbox](https://open-sandbox.ai/) — CNCF-listed universal sandbox infrastructure for AI applications; Docker/Kubernetes runtimes, multi-language SDKs, in-sandbox execution primitives (Alibaba Cloud)
+- [Opengeni](https://opengeni.ai/) — sovereign AI harness; self-hosted, durable sessions, MCP tools, sandboxed execution, human approvals, access controls, usage/audit ([GitHub](https://github.com/Cloudgeni-ai/opengeni))
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — provider-neutral agent harness skill; covers loop invariants, maturity levels, permission model, planning mode, context compaction, and launch gates
 - [Agent Harness for Large Language Model Agents: A Survey — Meng et al., arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — H=(E,T,C,S,L,V) formal model with LTS semantics; Harness Completeness Matrix for 23 systems; eight future directions; 110+ papers annotated
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — proposes ETCLOVG seven-layer taxonomy; evaluates 23+ systems; establishes harness design as the binding performance constraint (tool format optimization: 6.7% → 68.3% on SWE-bench)

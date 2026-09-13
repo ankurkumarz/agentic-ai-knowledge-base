@@ -103,7 +103,22 @@ Microsoft Foundry's native evaluation service for generative AI models, apps, an
 
 ## Open Source and Developer Platforms
 
-### Harbor
+### Evidently AI
+**Resource**: [Evidently AI](https://www.evidentlyai.com/)
+
+An open-source AI evaluation and observability framework (Apache 2.0) designed for teams that need to evaluate, test, and monitor LLMs, RAG applications, AI agents, and ML models in a single unified framework. With 7,500+ GitHub stars and 40M+ downloads, it is one of the most widely adopted open-source tools in the ML/AI observability space.
+
+**Key Features**:
+- **100+ built-in metrics**: covers hallucinations and factuality, PII detection, retrieval quality and context relevance, sentiment/toxicity/tone/trigger words, jailbreak detection, data drift, cascading error detection
+- **Custom evals**: combine rule-based checks, ML classifiers, and LLM-as-judge evaluations using any prompt, model, or ruleset
+- **Online and offline evaluation**: offline test datasets for pre-production; online production monitoring with real-time alerting
+- **Dual target audience**: LLM-powered systems (chatbots, RAG apps, AI agents, copilots) and predictive ML systems (drift detection, data quality, model performance)
+- **Composable design**: compose reports from any combination of metrics, tests, and dashboards without writing boilerplate
+- **Wide adoption**: used by DeepL, Wise, Plaid, PlushCare, Databricks, Western Governors University, and Realtor.com for daily production monitoring
+
+**Best For**: Teams needing a comprehensive, self-hostable, open-source evaluation framework that spans both LLM/agent evals and classical ML monitoring in one tool
+
+
 **Resource**: [harborframework.com](https://www.harborframework.com) | [GitHub — harbor-framework/harbor](https://github.com/harbor-framework/harbor)
 
 Harbor is an open-source framework, from the creators of Terminal-Bench, for evaluating and optimizing agents and language models at scale. It is the official harness for [Terminal-Bench 2.0/2.1](../Benchmarks/agent-benchmarks.md), reworking the original Terminal-Bench harness to support cloud-deployed containers, RL/SFT rollout generation, and a provider-agnostic interface that works with any agent installable in a container.
@@ -208,6 +223,7 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 | Galileo | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Google Stax | ❌ | ❌ | ✅ | ✅ | ✅ |
 | LastMile AI | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Evidently AI | ✅ | ✅ | Limited | ✅ | ✅ |
 | Harbor | ✅ | ✅ | ❌ | Limited | ✅ |
 | LangSmith | ❌ | Limited | ✅ | ✅ | ✅ |
 | Braintrust | ❌ | ❌ | ✅ | ✅ | ✅ |
@@ -260,7 +276,8 @@ A framework and benchmark for advancing AI research agents. Provides standardize
 
 ## References
 
-- [Gartner — AI Evaluation and Observability Platforms (Market Reviews)](https://www.gartner.com/reviews/market/ai-evaluation-and-observability-platforms) — market definition, capability taxonomy, and vendor reviews for AEOPs
+- [Evidently AI](https://www.evidentlyai.com/) — open-source (Apache 2.0) AI evaluation and observability framework; 7,500+ stars, 40M+ downloads; covers LLMs, RAG, AI agents, and ML models with 100+ built-in metrics
+- [Galileo — AI Evaluation and Observability Platforms (Market Reviews)](https://www.gartner.com/reviews/market/ai-evaluation-and-observability-platforms) — market definition, capability taxonomy, and vendor reviews for AEOPs
 - [Evaluate AI agents systematically with Agent-EvalKit (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit/) — introduces the six-phase evaluation workflow and CLI integrations
 - [Harbor](https://www.harborframework.com) — official site for the Harbor agent evaluation framework
 - [Harbor GitHub — harbor-framework/harbor](https://github.com/harbor-framework/harbor) — source, README, and release history

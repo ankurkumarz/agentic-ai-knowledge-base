@@ -4,6 +4,19 @@
 
 ## 2026-09-13
 
+* **Ingest**: [OpenSandbox — Universal Sandbox Infrastructure for AI Applications] → AgentHarness — https://open-sandbox.ai/
+  * Extended: `docs/AgentHarness/agent-harness.md`
+
+* **Ingest**: [Opengeni — Sovereign AI Harness] → AgentHarness — https://opengeni.ai/
+  * Extended: `docs/AgentHarness/agent-harness.md`
+
+* **Ingest**: [Gartner Magic Quadrant for Enterprise AI Coding Agents (May 2026)] → AICodingAgents — raw/Gartner-Magic Quadrant for Enterprise AI Coding Agents-2026.pdf
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md`
+
+* **Ingest**: [Evidently AI — Open-source AI Evaluation and Observability] → EvaluationFrameworks, Observability — https://www.evidentlyai.com/
+  * Extended: `docs/EvaluationFrameworks/platforms.md`
+  * Extended: `docs/Observability/solutions.md`
+
 * **Ingest**: [W3C AI Agent Protocol Community Group] → Standards — https://www.w3.org/community/agentprotocol/
   * Created: `docs/Standards/w3c-agent-protocol.md`
   * Extended: `docs/Standards/agentic-ai-foundation.md`

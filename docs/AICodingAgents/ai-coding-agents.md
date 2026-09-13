@@ -3,7 +3,7 @@ type: AI Tool
 title: AI Coding Agents
 description: "AI coding agents are purpose-built autonomous tools that read codebases, plan changes, execute them using real development tools (terminal, editor, browser), and iterate on the results"
 tags: [frameworks, agentic-ai]
-timestamp: 2026-08-07T00:00:00Z
+timestamp: 2026-09-13T00:00:00Z
 ---
 # AI Coding Agents
 
@@ -17,27 +17,33 @@ The category spans terminal-first CLIs, IDE extensions, cloud sandboxes, and sta
 
 ## Comparison Table
 
-| Tool | Vendor | Interface | License | LLM Support | Notable Differentiator |
-|---|---|---|---|---|---|
-| **Claude Code** | Anthropic | CLI + IDE + web | Proprietary | Claude (Anthropic) | Deepest agentic loop; swarm & daemon support; MCP-native |
-| **OpenAI Codex** | OpenAI | Cloud / Desktop / Web | Proprietary | GPT-5.4+ (OpenAI) | Cloud sandbox; parallel tasks; computer-use model |
-| **Gemini CLI** | Google | Terminal CLI | Apache 2.0 | Gemini (multi-provider) | *(Sunsetting)* Open-source; Google Search grounding; free tier — superseded by Antigravity CLI |
-| **Antigravity CLI** | Google | Terminal CLI (Go) | Proprietary | Gemini 3.5 Flash (multi-agent) | Successor to Gemini CLI; async multi-agent orchestration; part of the Antigravity platform |
-| **Kiro** | Amazon / AWS | Agentic IDE | Proprietary | Claude Opus 4.7 (Bedrock) + Amazon Nova | Spec-driven development; ground-up replacement for Amazon Q Developer |
-| **Snowflake CoCo** | Snowflake | CLI + Desktop + IDE + Slack | Proprietary (SaaS) | Multi-model (Snowflake Cortex) | Data-native coding agent — reads warehouse schemas, RBAC, and lineage; formerly Cortex Code |
-| **Databricks Genie Code** | Databricks | Web command center + IDE | Proprietary (SaaS) | Multi-model | Lakehouse-native coding agent; part of the Genie agentic product family |
-| **Devin** | Cognition | Cloud + Desktop | Proprietary (SaaS) | Proprietary model | Fully autonomous end-to-end engineer; $20/month |
-| **Cline** | Cline (open source) | VS Code extension / CLI | Apache 2.0 | 30+ providers | HITL approval per action; largest VS Code install base |
-| **Goose** | Block (Square) | Desktop + CLI | Apache 2.0 | 15+ providers | Donated to Linux Foundation; Rust-based; 70+ MCP extensions |
-| **OpenCode** | OpenCode (open source) | Terminal TUI / Desktop / IDE | MIT | 75+ providers | Plan/Build mode; LSP diagnostics; 147K GitHub stars |
-| **Pi** | earendil.works | Terminal CLI | MIT | 15+ providers | Radical minimalism: 4 tools, sub-1K-token system prompt |
-| **Cursor** | Anysphere | Standalone IDE (VS Code fork) | Proprietary | Claude, GPT-4o, Gemini (Auto) | $2B ARR; Composer multi-file editing; half of Fortune 500 |
-| **Aider** | Paul Gauthier (open source) | Terminal CLI | Apache 2.0 | Claude, DeepSeek, GPT-4o, local | Git-native: every edit is a commit; 15B tokens/week |
-| **GitHub Copilot** | Microsoft / GitHub | VS Code + JetBrains + web | Proprietary | Multi-model (Claude, GPT, Gemini) | 150M users; Coding Agent assigns issues autonomously via PR |
-| **Augment Code** | Augment (enterprise) | IDE + CLI + code review | Proprietary | Multi-provider (MCP) | 200K-token Context Engine; 70% win rate vs Copilot |
-| **Factory AI** | Factory | Web + API + integrations | Proprietary | Claude (multi-model) | Specialized Droid agents for full SDLC; #1 on Terminal-Bench |
-| **Warp** | Warp | AI-native terminal | Freemium | Claude 3.5 Sonnet, GPT-4o | Terminal-as-IDE; Cloud Agents; agent marketplace; MCP |
-| **IBM Bob** | IBM | IDE + web + enterprise integrations | Proprietary (SaaS) | Claude, Mistral, IBM Granite | Role-based SDLC agents; 80K IBM employees; enterprise governance |
+| Tool | Vendor | Interface | License | LLM Support | Notable Differentiator | Gartner MQ 2026 |
+|---|---|---|---|---|---|---|
+| **Claude Code** | Anthropic | CLI + IDE + web | Proprietary | Claude (Anthropic) | Deepest agentic loop; swarm & daemon support; MCP-native | Leader |
+| **OpenAI Codex** | OpenAI | Cloud / Desktop / Web | Proprietary | GPT-5.4+ (OpenAI) | Cloud sandbox; parallel tasks; computer-use model | Leader |
+| **Cursor** | Anysphere | Standalone IDE (VS Code fork) | Proprietary | Claude, GPT-4o, Gemini (Auto) | $2B ARR; Composer multi-file editing; half of Fortune 500 | Leader |
+| **GitHub Copilot** | Microsoft / GitHub | VS Code + JetBrains + web | Proprietary | Multi-model (Claude, GPT, Gemini) | 150M users; Coding Agent assigns issues autonomously via PR | Leader |
+| **Kiro** | Amazon / AWS | Agentic IDE | Proprietary | Claude Opus 4.7 (Bedrock) + Amazon Nova | Spec-driven development; ground-up replacement for Amazon Q Developer | Challenger |
+| **Cognition (Windsurf + Devin)** | Cognition | IDE + cloud + CLI | Proprietary | Proprietary model | Fully autonomous end-to-end engineer; FedRAMP High (Windsurf) | Challenger |
+| **Alibaba Cloud Qoder** | Alibaba Cloud | Qoder IDE + JetBrains + CLI + GitHub Actions | Proprietary (SaaS) | Multi-model | 100K users in 5 days; APAC strength; multi-vertical fine-tuning | Challenger |
+| **Tabnine** | Tabnine | IDE plug-ins + CLI + web | Proprietary | Multi-model | Enterprise Context Engine; neurosymbolic verification; VPC/on-prem/air-gapped | Visionary |
+| **Atlassian Rovo Dev** | Atlassian | CLI + web + browser extension | Proprietary (SaaS) | Multi-model | Jira/Confluence/Bitbucket integration via Teamwork Graph | Niche Player |
+| **BytePlus TRAE** | BytePlus (ByteDance) | Proprietary IDE + CLI + VS Code / JetBrains + web | Proprietary (SaaS) | Multi-model | Free in China; low global pricing; SOC 1/2/3 certified | Niche Player |
+| **JetBrains (Junie / Air)** | JetBrains | IDE plug-ins + JetBrains Air + Central | Proprietary | Multi-model | Large installed base; JetBrains Central multi-agent governance | Niche Player |
+| **Gemini CLI** | Google | Terminal CLI | Apache 2.0 | Gemini (multi-provider) | *(Sunsetting)* Open-source; Google Search grounding; free tier — superseded by Antigravity CLI |  |
+| **Antigravity CLI** | Google | Terminal CLI (Go) | Proprietary | Gemini 3.5 Flash (multi-agent) | Successor to Gemini CLI; async multi-agent orchestration; part of the Antigravity platform |  |
+| **Snowflake CoCo** | Snowflake | CLI + Desktop + IDE + Slack | Proprietary (SaaS) | Multi-model (Snowflake Cortex) | Data-native coding agent — reads warehouse schemas, RBAC, and lineage; formerly Cortex Code |  |
+| **Databricks Genie Code** | Databricks | Web command center + IDE | Proprietary (SaaS) | Multi-model | Lakehouse-native coding agent; part of the Genie agentic product family |  |
+| **Devin** | Cognition | Cloud + Desktop | Proprietary (SaaS) | Proprietary model | Fully autonomous end-to-end engineer; $20/month | (see Cognition) |
+| **Cline** | Cline (open source) | VS Code extension / CLI | Apache 2.0 | 30+ providers | HITL approval per action; largest VS Code install base |  |
+| **Goose** | Block (Square) | Desktop + CLI | Apache 2.0 | 15+ providers | Donated to Linux Foundation; Rust-based; 70+ MCP extensions |  |
+| **OpenCode** | OpenCode (open source) | Terminal TUI / Desktop / IDE | MIT | 75+ providers | Plan/Build mode; LSP diagnostics; 147K GitHub stars |  |
+| **Pi** | earendil.works | Terminal CLI | MIT | 15+ providers | Radical minimalism: 4 tools, sub-1K-token system prompt |  |
+| **Aider** | Paul Gauthier (open source) | Terminal CLI | Apache 2.0 | Claude, DeepSeek, GPT-4o, local | Git-native: every edit is a commit; 15B tokens/week |  |
+| **Augment Code** | Augment (enterprise) | IDE + CLI + code review | Proprietary | Multi-provider (MCP) | 200K-token Context Engine; 70% win rate vs Copilot |  |
+| **Factory AI** | Factory | Web + API + integrations | Proprietary | Claude (multi-model) | Specialized Droid agents for full SDLC; #1 on Terminal-Bench |  |
+| **Warp** | Warp | AI-native terminal | Freemium | Claude 3.5 Sonnet, GPT-4o | Terminal-as-IDE; Cloud Agents; agent marketplace; MCP |  |
+| **IBM Bob** | IBM | IDE + web + enterprise integrations | Proprietary (SaaS) | Claude, Mistral, IBM Granite | Role-based SDLC agents; 80K IBM employees; enterprise governance |  |
 
 ---
 
@@ -688,6 +694,129 @@ IBM Bob is IBM's enterprise-grade AI development partner, built to take teams fr
 
 ---
 
+## Atlassian Rovo Dev
+
+**Type**: AI coding agent (CLI + web + browser extension)
+**Vendor**: Atlassian
+**GA**: October 2025
+
+Atlassian's coding agent, positioned as an intent-driven SDLC collaborator. Its key differentiator is tight integration with Jira, Confluence, and Bitbucket via the **Atlassian Teamwork Graph**, giving agents deep organizational context — requirements, planning data, and code workflows in one governed layer. Rovo Dev includes AI-native DevEx metrics and embedded governance. Most compelling for organizations already standardized on the Atlassian platform; value proposition weakens in heterogeneous environments.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (SaaS) |
+| LLM | Multi-model |
+| Open source | No |
+| Ecosystem tie-in | Jira / Confluence / Bitbucket |
+| Gartner 2026 MQ | Niche Player |
+| Production readiness | GA (October 2025) |
+
+---
+
+## BytePlus TRAE
+
+**Type**: AI-native IDE + CLI + VS Code / JetBrains plug-ins + web
+**Vendor**: BytePlus (ByteDance)
+**Launched**: Q4 2025 (operated as Volcano Engine during evaluation; moved to BytePlus post-cutoff)
+
+ByteDance's enterprise coding agent, available globally with strongest adoption in Greater China. Offered completely free in China with significantly lower pricing than global competitors elsewhere, driving rapid early adoption (1,000+ customer organizations reported after launch). Backed by BytePlus's SOC 1/2/3 and ISO certifications and an exceptionally fast SLA response for critical issues in the top support tier.
+
+**Cautions per Gartner**: lacks a differentiated product vision; all certified SI partners are in China, limiting multinational support; pricing model is still maturing.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary (SaaS) |
+| LLM | Multi-model |
+| Open source | No |
+| Free tier | Yes (China); discounted globally |
+| Gartner 2026 MQ | Niche Player |
+| Production readiness | GA |
+
+---
+
+## JetBrains (Junie / JetBrains Air)
+
+**Type**: IDE plug-ins + agent-first IDE (JetBrains Air) + agent governance (JetBrains Central)
+**Vendor**: JetBrains
+
+JetBrains ships several overlapping AI products: **Junie** (first-party coding agent), **JetBrains AI** (multi-agent IDE access), **JetBrains Air** (agent-first development environment), and **JetBrains Central** (agent governance and interoperability layer for multi-agent coordination). Their relationship and relative strategic priority remain difficult for buyers to assess — a noted caution in Gartner's 2026 evaluation.
+
+Strengths include a globally distributed installed base, strong customer retention, and structural monetization advantage from AI capabilities embedded in popular IDEs. However, Gartner found the AI coding offering underperforms across nearly all evaluated use cases, and the pace of feature delivery makes closing the gap challenging.
+
+| Dimension | Signal |
+|---|---|
+| License | Proprietary |
+| LLM | Multi-model |
+| Open source | No |
+| Product breadth | Junie + JetBrains AI + JetBrains Air + JetBrains Central |
+| Gartner 2026 MQ | Niche Player |
+| Production readiness | GA |
+
+---
+
+## Gartner Magic Quadrant for Enterprise AI Coding Agents (May 2026)
+
+**Report**: Magic Quadrant for Enterprise AI Coding Agents — May 20, 2026, ID G00841434
+**Authors**: Philip Walsh, Keith Holloway, + 3 more
+
+This is the first edition of this Magic Quadrant. The market is defined as autonomous or semi-autonomous software engineering solutions that perceive context, translate human intent into multistep plans, and execute and verify those steps across code, tests, and related engineering artifacts.
+
+### Quadrant Placement
+
+| Vendor | Product | Quadrant |
+|---|---|---|
+| Anthropic | Claude Code | **Leader** |
+| Cursor | Cursor IDE | **Leader** |
+| GitHub (Microsoft) | GitHub Copilot | **Leader** |
+| OpenAI | OpenAI Codex | **Leader** |
+| Alibaba Cloud | Qoder | Challenger |
+| Amazon Web Services | Kiro | Challenger |
+| Cognition | Windsurf + Devin | Challenger |
+| Tabnine | Tabnine | Visionary |
+| Atlassian | Rovo Dev | Niche Player |
+| BytePlus (ByteDance) | TRAE | Niche Player |
+| JetBrains | Junie / JetBrains Air | Niche Player |
+
+**Vendors added** to this edition: Anthropic, Atlassian, BytePlus, OpenAI
+**Vendors dropped** from prior edition: Augment Code, GitLab, Harness, IBM, Qodo, Tencent Cloud
+
+### Gartner Strategic Planning Assumptions
+
+| Horizon | Assumption |
+|---|---|
+| By 2027 | Over 65% of engineering teams using agentic coding will treat IDEs as optional, shifting control, governance and validation to automated platforms |
+| By 2028 | More than 70% of enterprise software engineers will rely on AI coding agents for both synchronous and asynchronous development tasks |
+| By 2028 | Asynchronous AI coding agent workflows will improve productivity by 30–50%, surpassing the 0–20% gains from AI code assistants in 2025 |
+| By 2028 | AI coding costs will overtake the average developer's salary due to rising LLM token consumption and consumption-based licensing |
+
+### Mandatory Features (per Gartner)
+
+Gartner requires all included products to demonstrate:
+- **Autonomous task execution**: multistep coding workflows from natural language without continuous user guidance
+- **Iterative verification and self-correction**: build/test/debug loops until success criteria are met
+- **Extensible tool and environment integration**: IDEs, CLIs, build systems, CI/CD pipelines
+- **Advanced context awareness**: automatic selection and management of project context across tasks
+- **MCP support**: native Model Context Protocol for standardized tool access and context retrieval
+- **Human oversight, traceability, and auditability**: review/approval mechanisms with detailed action logs
+- **Enterprise controls and data protection**: access management, behavioral configuration, codebase indexing exclusions, no training on customer code
+
+### Key Market Statistics (2026)
+
+| Metric | Value |
+|---|---|
+| Engineering leaders reporting AI productivity gains | 90% |
+| Net average productivity gain (self-reported) | 19.3% |
+| GitHub Copilot licensed seats | 4.7M (+75% YoY) |
+| OpenAI Codex weekly active users | 4M |
+| Cursor customer organizations | 50,000+ |
+| Async workflow productivity improvement (projected by 2028) | 30–50% |
+
+### Pricing Shift
+
+Gartner notes an industry-wide shift from per-seat subscriptions toward **hybrid pricing** combining seats, shared consumption pools, and usage-based charges. Agentic workflows, background execution, and parallel tasking increase token consumption significantly, complicating budget forecasting. Some harness providers are betting on proprietary fine-tuned/distilled models to reduce serving costs; vertically integrated model providers may retain an economic advantage by efficiently serving their own models through their own agents.
+
+---
+
 ## Positioning Map
 
 These tools occupy distinct positions across two axes: **interface** (terminal ↔ full IDE) and **autonomy** (HITL-first ↔ fully autonomous).
@@ -748,6 +877,9 @@ TERMINAL ─────────────────────┼─�
 | Large enterprise codebases, deep codebase context | Augment Code |
 | Full SDLC automation with specialized role agents | Factory AI |
 | AI-augmented terminal with Cloud Agents and MCP | Warp |
+| Atlassian-native SDLC, Jira/Confluence-driven workflows | Atlassian Rovo Dev |
+| ByteDance/China region deployment, cost-sensitive | BytePlus TRAE |
+| JetBrains IDE users wanting native agent integration | JetBrains Junie / JetBrains Air |
 | IBM ecosystem, enterprise governance, legacy modernization | IBM Bob |
 
 ---
@@ -770,6 +902,8 @@ TERMINAL ─────────────────────┼─�
 - [AllThingsAWS](../AllThingsAWS/README.md)
 
 ## References
+
+- [Gartner Magic Quadrant for Enterprise AI Coding Agents (May 2026)](https://www.gartner.com/doc/reprints?id=1-2NE1VQ48&ct=260519&st=sb) — ID G00841434; Leaders: Anthropic, Cursor, GitHub, OpenAI; Challengers: AWS, Cognition, Alibaba Cloud; Visionaries: Tabnine; Niche Players: Atlassian, BytePlus, JetBrains
 
 - [Claude Code product page](https://www.anthropic.com/product/claude-code) — Anthropic's agentic coding system
 - [The New Stack: Claude Code source leak](https://thenewstack.io/claude-code-source-leak/) — 512K lines of TypeScript accidentally exposed via npm source map; reveals swarms, KAIROS daemon, 44 feature flags

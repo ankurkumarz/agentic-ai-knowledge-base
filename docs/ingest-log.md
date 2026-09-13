@@ -1587,3 +1587,97 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - YAML definitions in `model/` are normative; `docs/` is generated via Weaver toolchain
 - Openlit and Langfuse v3 emit conformant spans natively; AWS ADOT, Datadog, New Relic also support
 - Enables portable dashboards, cost attribution, and MCP tool latency visibility across any OTel-compatible backend
+
+## [2026-09-13] ingest | OpenSandbox (open-sandbox.ai) | sections touched: AgentHarness/agent-harness.md
+
+**Source**: https://open-sandbox.ai/
+**Type**: Vendor/product page (Alibaba Cloud, CNCF-listed open-source project)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/agent-harness.md` | Extended | Added OpenSandbox description in the Sandboxes section: CNCF-listed universal sandbox infrastructure, Docker/K8s lifecycle management, multi-language SDKs (Python, JS/TS, Java/Kotlin, Go, C#/.NET), in-sandbox execution primitives (shell, code interpreters, file management, port exposure, log/metrics streaming); added to References |
+
+### Key Knowledge Added
+
+- OpenSandbox is a CNCF-listed sandbox infrastructure layer purpose-built for AI workloads by Alibaba Cloud
+- Supports sandbox lifecycle management (provision, monitor, renew, pause/resume, terminate) via Docker and Kubernetes runtimes
+- Multi-language SDK surface: Python, JavaScript/TypeScript, Java/Kotlin, Go, C#/.NET — standardized lifecycle and execution protocols across all
+- In-sandbox execution: shell commands, multi-language code interpreters, file management, port exposure, log/metrics streaming
+- Use cases: coding agents, browser automation, remote development, code execution sandboxes, reinforcement learning environments
+- Positioned as a low-level infrastructure primitive that can underpin any agent harness needing managed, reproducible execution at scale
+
+---
+
+## [2026-09-13] ingest | Opengeni — Sovereign AI Harness (opengeni.ai) | sections touched: AgentHarness/agent-harness.md
+
+**Source**: https://opengeni.ai/
+**Type**: Vendor/product page (Cloudgeni-ai, open-source self-hosted harness)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentHarness/agent-harness.md` | Extended | Added Opengeni description as a self-sovereignty-focused harness: durable sessions, MCP tool integration, sandboxed execution, SDK/React surfaces, human approvals, access controls, usage/audit — fully self-hosted; added to References alongside OpenSandbox |
+
+### Key Knowledge Added
+
+- Opengeni positions itself as a "sovereign AI harness" — the full harness layer running on operator-controlled infrastructure
+- Core features: durable sessions with history/recovery, MCP tool integration, sandboxed execution, SDK and React integration surfaces, human approval workflows, access controls, usage and audit logging
+- Self-hosted: operator owns execution environment, session state, model routing, audit trail — no cloud dependency
+- GitHub: github.com/Cloudgeni-ai/opengeni (Apache-2.0)
+- Distinct from cloud-hosted harness products: designed for organizations with data sovereignty requirements or compliance constraints
+
+---
+
+## [2026-09-13] ingest | Gartner Magic Quadrant for Enterprise AI Coding Agents (May 2026) | sections touched: AICodingAgents/ai-coding-agents.md
+
+**Source**: `raw/Gartner-Magic Quadrant for Enterprise AI Coding Agents-2026.pdf`
+**Type**: Gartner Magic Quadrant research report (ID G00841434, May 20, 2026, 37 pages)
+**Authors**: Philip Walsh, Keith Holloway, + 3 more
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AICodingAgents/ai-coding-agents.md` | Extended | (1) Comparison table: added Gartner MQ 2026 column; added three new vendor rows (Atlassian Rovo Dev, BytePlus TRAE, JetBrains Junie/Air); (2) New vendor profiles for Atlassian Rovo Dev (Niche Player, Jira/Confluence/Bitbucket integration, Teamwork Graph), BytePlus TRAE (Niche Player, free in China, SOC 1/2/3), JetBrains Junie/Air/Central (Niche Player, large installed base, unclear product strategy); (3) New "Gartner Magic Quadrant for Enterprise AI Coding Agents (May 2026)" section with quadrant placement table, strategic planning assumptions table, mandatory features list, key market stats table, and pricing shift discussion; (4) Gartner MQ reference added to References; (5) Best Practices table updated with three new rows; (6) timestamp updated to 2026-09-13 |
+
+### Key Knowledge Added
+
+- **Quadrant placements**: Leaders — Anthropic (Claude Code), Cursor, GitHub (Copilot), OpenAI (Codex); Challengers — Alibaba Cloud (Qoder), AWS (Kiro), Cognition (Windsurf+Devin); Visionaries — Tabnine; Niche Players — Atlassian (Rovo Dev), BytePlus (TRAE), JetBrains (Junie/Air)
+- **Added to this edition**: Anthropic, Atlassian, BytePlus, OpenAI
+- **Dropped**: Augment Code, GitLab, Harness, IBM, Qodo, Tencent Cloud
+- **Strategic assumptions**: 65% of teams will treat IDEs as optional by 2027; 70% of engineers will use AI agents by 2028; async workflows to deliver 30–50% productivity gain by 2028; AI coding costs to overtake avg developer salary by 2028
+- **Mandatory Gartner features**: autonomous task execution, iterative verification/self-correction, extensible tool integration, advanced context awareness, MCP support, human oversight/auditability, enterprise controls/data protection
+- **Market stats (2026)**: 90% of engineering leaders report productivity gains; net avg 19.3% productivity gain; GitHub Copilot 4.7M licensed seats (+75% YoY); OpenAI Codex 4M weekly active users; Cursor 50K+ customer organizations
+- **Pricing shift**: industry-wide move from flat per-seat to hybrid seat + consumption pool + usage-based models; agentic/parallel/background workflows increase token consumption significantly
+- **New vendor highlights**: Atlassian Rovo Dev is platform-locked (Jira/Confluence/Bitbucket) with Teamwork Graph differentiation; BytePlus TRAE is pricing-aggressive (free in China) with SOC 1/2/3 compliance; JetBrains has overlapping products (Junie/AI/Air/Central) with unclear strategic priority
+
+---
+
+## [2026-09-13] ingest | Evidently AI — Open-source AI Evaluation and Observability (evidentlyai.com) | sections touched: EvaluationFrameworks/platforms.md, Observability/solutions.md
+
+**Source**: https://www.evidentlyai.com/
+**Type**: Vendor/product page (open-source, Apache 2.0)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/EvaluationFrameworks/platforms.md` | Extended | Added new "Evidently AI" subsection under Open Source and Developer Platforms; added to comparison table; added to References |
+| `docs/Observability/solutions.md` | Extended | Added new "Evidently AI" subsection under Specialized Observability Platforms; added to platform comparison table |
+
+### Key Knowledge Added
+
+- Open-source (Apache 2.0) AI evaluation and observability framework; 7,500+ GitHub stars, 40M+ downloads, 3,000+ community members
+- Single framework covers LLMs, RAG applications, AI agents, and classical ML models — unusual breadth for an open-source tool
+- 100+ built-in metrics: hallucinations/factuality, PII detection, retrieval quality/context relevance, sentiment/toxicity/trigger words, jailbreak detection, data drift, cascading error detection
+- Custom evals: compose rule-based checks, ML classifiers, and LLM-as-judge evaluations together
+- Online (production monitoring, real-time alerting) and offline (pre-production test datasets) evaluation modes
+- Adopted at scale: DeepL (daily data quality/drift), Wise (production distribution monitoring), Plaid (continuous model monitoring), Databricks, Realtor.com, PlushCare, Western Governors University
+- Differentiator from single-purpose tools: unified framework for both LLM/agent quality evaluation and classical ML observability (drift, data quality, predictive performance) in one install
