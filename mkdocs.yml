@@ -111,6 +111,9 @@ nav:
     - 6.10 Cloud Security Alliance (CSA): 'Standards/csa.md'
     - 6.11 Agent Client Protocol (ACP): 'Standards/agent-client-protocol.md'
     - 6.12 Kubernetes Agent Sandbox: 'Standards/k8s-agent-sandbox.md'
+    - 6.13 W3C AI Agent Protocol: 'Standards/w3c-agent-protocol.md'
+    - 6.14 NIST AI Agent Standards Initiative: 'Standards/nist-ai-agent-standards.md'
+    - 6.15 DESIGN.md (Google Labs): 'Standards/design-md.md'
   - 7. Agentic AI Reference Architecture:
     - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
     - 7.2 AI Engineering Architecture (Huyen): 'ReferenceArchitecture/ai-engineering-architecture.md'
@@ -176,6 +179,7 @@ nav:
     - 12.2 Observability Solutions: 'Observability/solutions.md'
     - 12.3 Best Practices and Guidelines: 'Observability/Readme.md'
     - 12.4 Observability Tech Radar: 'Observability/tech-radar.md'
+    - 12.5 OTel GenAI Semantic Conventions: 'Observability/otel-genai-conventions.md'
   - 13. Agentic AI Operations (AgentOps):
     - 13.1 AgentOps Overview: 'AgentOps/README.md'
     - 13.2 Google Cloud Perspective:

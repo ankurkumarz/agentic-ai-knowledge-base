@@ -22,6 +22,7 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
 | Retrofitting observability | Adding monitoring after deployment is costly and incomplete | Considered post-hoc log scraping; found it misses intermediate reasoning steps | Instrument agent architecture from day one using OpenTelemetry-compatible SDKs |
+| Span attribute standardization | Each observability tool invents its own span names, making cross-tool queries and portable dashboards impossible | Considered custom attribute schemas per tool; led to vendor lock-in and unmaintainable dashboards | Adopt [OpenTelemetry GenAI Semantic Conventions](../Observability/otel-genai-conventions.md) (`gen_ai.*`, `mcp.*`) as the normative attribute schema — platforms like Openlit and Langfuse v3 emit conformant spans natively |
 | Trace correlation in multi-agent systems | Requests span multiple agents, tools, and services making debugging hard | Tried per-service logging; couldn't reconstruct full execution paths | Propagate a consistent trace ID through every agent and tool call — it is the only way to correlate logs into a single execution graph; use distributed tracing (Jaeger, Langfuse, Amazon CloudWatch Traces) |
 | Multi-agent cost attribution | In multi-agent systems, it is unclear which agent is responsible for the majority of inference costs | Tracked total cost per workflow; couldn't identify which agent to optimize | Use LangFuse token cost tracking across agents — it shows per-agent cost attribution for optimization decisions |
 | 100% trace capture cost | Full tracing at production scale is expensive | Evaluated always-on tracing; storage and egress costs were prohibitive | Sample intelligently — 100% of errors, 10–20% of successful requests |
@@ -72,6 +73,7 @@ Trace grading is the feedback mechanism that turns production observations into 
 | Platform | Open Source | Cost Tracking | Evaluations | Best For |
 |---|---|---|---|---|
 | [Langfuse](https://langfuse.com/) | ✅ | ✅ | ✅ | Self-hosted, cost-conscious teams |
+| [OTel GenAI Conventions](../Observability/otel-genai-conventions.md) | ✅ | ✅ | — | Portable span/attribute standard across all OTel-compatible backends |
 | [Openlit](https://openlit.io/) | ✅ | ✅ | ✅ | OpenTelemetry-native stacks |
 | [LangSmith](https://www.langchain.com/langsmith) | ❌ | ✅ | ✅ | LangChain/LangGraph ecosystems |
 | [Galileo](https://galileo.ai) | ❌ | ✅ | ✅ | Multi-agent reliability; Graph/Trace/Timeline views; Insights Engine |
@@ -267,6 +269,7 @@ For multi-agent systems on AWS, a layered approach is required:
 Layered evaluation strategy for multi-agent systems: per-agent evaluations (isolated datasets) + full workflow evaluation (`Builtin.GoalSuccessRate`) + differential analysis correlating per-agent scores against system-level outcomes.
 
 ## See Also
+- [OTel GenAI Semantic Conventions](../Observability/otel-genai-conventions.md)
 - [Deployment](./deployment.md)
 - [Cost Management](./cost-management.md)
 - [Agent Testing & Evaluations](./testing-evaluations.md)

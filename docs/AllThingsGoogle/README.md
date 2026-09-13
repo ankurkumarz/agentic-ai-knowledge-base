@@ -31,6 +31,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | Agent Substrate | New Google open-source project — minimal control plane built on Agent Sandbox's runtime/snapshotting for ultra-scale, sub-second tool-call agent fleets | [Standards/k8s-agent-sandbox.md](../Standards/k8s-agent-sandbox.md#agent-substrate-new-separate-open-source-project) |
 | Looker Semantic Layer (LookML) | Mature BI-native semantic modeling language — single source of truth for business metrics, grounding gen AI trustworthiness; OSI ecosystem participant | [AgenticTechStack/semantic-data-layer-radar.md](../AgenticTechStack/semantic-data-layer-radar.md) |
 | LLM EvalKit | Open-source, self-hostable app on Vertex AI SDKs — no-code UI centralizing prompt creation, testing, versioning, and metric-driven evaluation | [EvaluationFrameworks/platforms.md](../EvaluationFrameworks/platforms.md) |
+| DESIGN.md | Google Labs format spec for giving coding agents a persistent, structured understanding of a product's visual identity — YAML design tokens + markdown rationale prose | [Standards/design-md.md](../Standards/design-md.md) |
 
 ## See Also
 

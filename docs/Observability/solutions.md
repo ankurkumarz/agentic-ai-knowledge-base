@@ -86,6 +86,9 @@ Open-source local TUI and report generator for AI coding-agent session history. 
 
 ## Infrastructure-Level Observability
 
+### OpenTelemetry GenAI Semantic Conventions
+The [OpenTelemetry GenAI Semantic Conventions](otel-genai-conventions.md) (`open-telemetry/semantic-conventions-genai`) extend the core OTel spec with standardized span attributes, metrics, and events specific to GenAI clients, MCP servers, and individual providers (OpenAI, Anthropic, etc.). Key attributes include `gen_ai.system`, `gen_ai.request.model`, `gen_ai.usage.input_tokens`, `gen_ai.usage.output_tokens`, and `mcp.tool.name`. Adopting these conventions enables portable dashboards and cost-attribution queries across any OTel-compatible backend.
+
 ### OpenTelemetry
 The [OpenTelemetry](https://opentelemetry.io/) standard provides vendor-neutral instrumentation for traces, metrics, and logs. Many AI observability platforms (Openlit, Langfuse) are built on OpenTelemetry, enabling integration with existing observability stacks (Jaeger, Zipkin, Prometheus, Grafana).
 
@@ -121,6 +124,7 @@ Consider **Braintrust** or **W&B Weave** for comprehensive coverage. Integrate w
 ## See Also
 
 - [Observability Goals](goals.md)
+- [OTel GenAI Semantic Conventions](otel-genai-conventions.md)
 - [Agent Ops](../AgentOps/README.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Production Observability](../ProductionBestPractices/observability.md)

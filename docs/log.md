@@ -2,6 +2,29 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-09-13
+
+* **Ingest**: [W3C AI Agent Protocol Community Group] → Standards — https://www.w3.org/community/agentprotocol/
+  * Created: `docs/Standards/w3c-agent-protocol.md`
+  * Extended: `docs/Standards/agentic-ai-foundation.md`
+
+* **Ingest**: [DESIGN.md — Visual Identity Format for Coding Agents (google-labs-code)] → Standards, AICodingAgents — https://github.com/google-labs-code/design.md
+  * Created: `docs/Standards/design-md.md`
+  * Extended: `docs/AllThingsGoogle/README.md`
+
+* **Ingest**: [NIST AI Agent Standards Initiative] → Standards, SecurityFrameworks — https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative
+  * Created: `docs/Standards/nist-ai-agent-standards.md`
+  * Extended: `docs/SecurityFrameworks/nist-ai-rmf.md`
+
+* **Ingest**: [OpenTelemetry GenAI Semantic Conventions] → Observability, Standards — https://github.com/open-telemetry/semantic-conventions-genai
+  * Created: `docs/Observability/otel-genai-conventions.md`
+  * Extended: `docs/Observability/solutions.md`
+  * Extended: `docs/ProductionBestPractices/observability.md`
+
+* **Update**: [Standards cross-linking] → Standards — internal
+  * Extended: `docs/Standards/README.md`
+  * Extended: `mkdocs.yml`
+
 ## 2026-08-09 (2)
 
 * **Ingest**: [Dosu] → AgentPlatforms — https://dosu.dev/

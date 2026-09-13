@@ -1486,3 +1486,104 @@ Several primary vendor blog URLs (Google Developers Blog, AWS Blog, Snowflake pr
 ### Notes on Sourcing
 
 All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetch. Content was reconstructed via WebSearch synthesis of each vendor's own site copy (surfaced in search snippets), official blog posts (LlamaIndex, Cloudgeni), GitHub repositories (Dosu, OpenGeni, OpenWorker), and independent press coverage (OpenWorker via MarkTechPost/Medium). The user-supplied URLs are retained as the canonical citations in each case per the citation rule.
+
+---
+
+## [2026-09-13] ingest | W3C AI Agent Protocol Community Group | sections touched: Standards/w3c-agent-protocol.md, Standards/agentic-ai-foundation.md, Standards/README.md, mkdocs.yml
+
+**Source**: https://www.w3.org/community/agentprotocol/
+**Type**: Standards body community group page (W3C, active 2025–2026)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/w3c-agent-protocol.md` | Created | Full page: mission (inter-agent comms, agent identity, metadata formats, security, protocol interoperability), five scope areas table, published drafts table, relationship to MCP/A2A/ACP/NIST, strategic significance of W3C venue, engagement guidance, best practices table |
+| `docs/Standards/agentic-ai-foundation.md` | Extended | Added See Also section with links to W3C, NIST, MCP, A2A, and security pages |
+| `docs/Standards/README.md` | Extended | Added full See Also section linking to all major Standards pages including new ones |
+| `mkdocs.yml` | Extended | Added 6.13 W3C AI Agent Protocol under Section 6 |
+
+### Key Knowledge Added
+
+- W3C AI Agent Protocol CG established to build open, royalty-free inter-agent protocols for the Web
+- Five scope areas: inter-agent communication, agent identity (DID/VCs), metadata formats, security/privacy, protocol interoperability
+- Published drafts: use case (2025-08-19), protocol draft (2025-08-19), white paper (2025-05-23)
+- Positioned as vendor-neutral W3C home for concepts overlapping with A2A and ACP
+- Aligns with NIST AI Agent Standards Initiative goals for community-led interoperable protocols
+
+---
+
+## [2026-09-13] ingest | DESIGN.md — Visual Identity Format for Coding Agents (google-labs-code) | sections touched: Standards/design-md.md, AllThingsGoogle/README.md, mkdocs.yml
+
+**Source**: https://github.com/google-labs-code/design.md
+**Type**: Open-source format specification (Google Labs, alpha, 2026)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/design-md.md` | Created | Full page: overview, file structure (YAML front matter + markdown body), token schema (colors/typography/rounded/spacing/components), token type table, minimal example, CLI tooling (lint + diff), relationship to AGENTS.md and other agent steering files, maturity (alpha), best practices |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row: "DESIGN.md — format spec for giving coding agents persistent visual identity understanding" → Standards/design-md.md |
+| `mkdocs.yml` | Extended | Added 6.15 DESIGN.md (Google Labs) under Section 6 |
+
+### Key Knowledge Added
+
+- DESIGN.md is the design-system analogue to AGENTS.md: a well-known file agents read to understand visual identity conventions
+- Two-layer format: normative YAML tokens (exact values) + markdown rationale prose (application context)
+- Token types: Color (any CSS), Dimension (px/em/rem), Token Reference ({path.to.token}), Typography (object)
+- CLI: `npx @google/design.md lint` (validates + WCAG contrast), `npx @google/design.md diff` (regression detection)
+- Alpha maturity as of mid-2026; hosted at github.com/google-labs-code/design.md
+
+---
+
+## [2026-09-13] ingest | NIST AI Agent Standards Initiative | sections touched: Standards/nist-ai-agent-standards.md, SecurityFrameworks/nist-ai-rmf.md, mkdocs.yml
+
+**Source**: https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative
+**Type**: US federal standards initiative page (NIST, launched February 2026, updated August 2026)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Standards/nist-ai-agent-standards.md` | Created | Full page: three strategic pillars (industry-led standards, community-led protocols, research), active workstreams (CAISI RFI on agent security, NCCOE identity/authorization concept paper, listening sessions for healthcare/finance/education), scope/focus areas table, relationship to other standards, practitioner significance, best practices table |
+| `docs/SecurityFrameworks/nist-ai-rmf.md` | Extended | Added See Also section linking to nist-ai-agent-standards.md, CSA, AI Governance, and agent security pages |
+| `mkdocs.yml` | Extended | Added 6.14 NIST AI Agent Standards Initiative under Section 6 |
+
+### Key Knowledge Added
+
+- Initiative launched February 2026; official page updated August 14, 2026
+- Three pillars: (1) NIST hosts technical convenings + gap analyses for voluntary guidelines; (2) NSF POSE funds open-source agent protocol ecosystem security; (3) fundamental research into agent authentication/identity
+- Active CAISI RFI on AI agent security threats and mitigations (deadline March 9, 2026)
+- NCCOE concept paper: applying identity standards to enterprise agent use cases
+- Focus areas: agent authentication, authorization, multi-agent trust, human-agent security, interoperability
+- Expected to inform regulated-sector baseline requirements (finance, healthcare, federal contracts)
+
+---
+
+## [2026-09-13] ingest | OpenTelemetry GenAI Semantic Conventions (open-telemetry/semantic-conventions-genai) | sections touched: Observability/otel-genai-conventions.md, Observability/solutions.md, ProductionBestPractices/observability.md, mkdocs.yml
+
+**Source**: https://github.com/open-telemetry/semantic-conventions-genai
+**Type**: Open-source specification repository (OpenTelemetry, active)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/Observability/otel-genai-conventions.md` | Created | Full page: scope (GenAI client spans, MCP instrumentation, provider-specific conventions), repo structure (docs/model/reference), key span attributes table (gen_ai.system, gen_ai.operation.name, gen_ai.request.model, gen_ai.usage.input_tokens, gen_ai.usage.output_tokens, gen_ai.response.finish_reasons), MCP attributes (mcp.method, mcp.tool.name), structured events (system/user/assistant/tool messages), OTel pipeline diagram, tooling integration table, best practices |
+| `docs/Observability/solutions.md` | Extended | Added "OpenTelemetry GenAI Semantic Conventions" subsection under Infrastructure-Level Observability; added otel-genai-conventions.md to See Also |
+| `docs/ProductionBestPractices/observability.md` | Extended | Added OTel GenAI Conventions row to Tooling table; added "Span attribute standardization" best-practice row to Best Practices table; added otel-genai-conventions.md to See Also |
+| `mkdocs.yml` | Extended | Added 12.5 OTel GenAI Semantic Conventions under Section 12 |
+
+### Key Knowledge Added
+
+- GenAI conventions extend core OTel spec with `gen_ai.*` and `mcp.*` attribute namespaces
+- Key span attributes: `gen_ai.system` (provider), `gen_ai.request.model`, `gen_ai.usage.input_tokens`, `gen_ai.usage.output_tokens`, `gen_ai.response.finish_reasons`
+- MCP instrumentation: `mcp.method` (e.g., tools/call), `mcp.tool.name`
+- Structured events for full message content: gen_ai.system.message, gen_ai.user.message, gen_ai.assistant.message, gen_ai.tool.message
+- YAML definitions in `model/` are normative; `docs/` is generated via Weaver toolchain
+- Openlit and Langfuse v3 emit conformant spans natively; AWS ADOT, Datadog, New Relic also support
+- Enables portable dashboards, cost attribution, and MCP tool latency visibility across any OTel-compatible backend

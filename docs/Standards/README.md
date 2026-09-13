@@ -236,3 +236,15 @@ client.emit('user-message', { message: userInput });
 - **Section 6.2**: Model Context Protocol (complementary protocol)
 - **Section 4**: Agent Development Frameworks (integration with development tools)
 - **Section 5.2**: Agentic AI Platforms (platform integration considerations)
+
+## See Also
+
+- [Model Context Protocol](./mcp.md)
+- [Agent2Agent (A2A) Protocol](./agent2agent.md)
+- [Agent Client Protocol (ACP)](./agent-client-protocol.md)
+- [AGENTS.md](./agents-md.md)
+- [W3C AI Agent Protocol](./w3c-agent-protocol.md)
+- [NIST AI Agent Standards Initiative](./nist-ai-agent-standards.md)
+- [DESIGN.md — Visual Identity for Coding Agents](./design-md.md)
+- [OTel GenAI Semantic Conventions](../Observability/otel-genai-conventions.md)
+- [Agentic AI Foundation](./agentic-ai-foundation.md)

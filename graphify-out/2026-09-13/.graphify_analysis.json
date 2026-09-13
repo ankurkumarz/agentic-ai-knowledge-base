@@ -1,0 +1,1027 @@
+{
+  "communities": {
+    "0": [
+      "docs_agenticframeworks_crewai_crewai",
+      "docs_agenticframeworks_freephdlabor_ai_scientist_v2",
+      "docs_agenticframeworks_freephdlabor_arxiv_2510_15624",
+      "docs_agenticframeworks_freephdlabor_freephdlabor",
+      "docs_agenticframeworks_freephdlabor_github_ltjed_freephdlabor",
+      "docs_agenticframeworks_freephdlabor_llm_config_yaml",
+      "docs_agenticframeworks_freephdlabor_phoenix",
+      "docs_agenticframeworks_freephdlabor_smolagents",
+      "docs_agenticframeworks_google_adk_google_adk",
+      "docs_agenticframeworks_haystack_chroma",
+      "docs_agenticframeworks_haystack_deepset",
+      "docs_agenticframeworks_haystack_haystack",
+      "docs_agenticframeworks_haystack_huggingface",
+      "docs_agenticframeworks_haystack_marqo",
+      "docs_agenticframeworks_haystack_openai",
+      "docs_agenticframeworks_index_index",
+      "docs_agenticframeworks_langchain_langchain",
+      "docs_agenticframeworks_langgraph_langgraph",
+      "docs_agenticframeworks_llamaindex_liteparse",
+      "docs_agenticframeworks_llamaindex_llamaindex",
+      "docs_agenticframeworks_llamaindex_llamaparse",
+      "docs_agenticframeworks_mastra_mastra",
+      "docs_agenticframeworks_microsoft_framework_autogen",
+      "docs_agenticframeworks_microsoft_framework_microsoft_agent_framework",
+      "docs_agenticframeworks_pydantic_ai_pydantic_ai",
+      "docs_agenticframeworks_semantic_kernel_semantic_kernel",
+      "docs_agenticframeworks_solutions_solutions",
+      "docs_agentictechstack_thoughtworks_radar_vol34_thoughtworks_radar_vol34",
+      "docs_architecture_multi_agent_system_multi_agent_system"
+    ],
+    "1": [
+      "docs_EvaluationFrameworks_platforms_agent_evaluation_platforms",
+      "docs_EvaluationFrameworks_tech_radar_evaluation_tech_radar",
+      "docs_Marketplace_Readme_agents_marketplace",
+      "docs_Marketplace_agentops_agentops_marketplace",
+      "docs_Marketplace_anthropic_marketplace_presence_anthropic_agents_marketplace_presence",
+      "docs_Marketplace_aws_marketplace_aws_ai_agents_marketplace",
+      "docs_Marketplace_google_cloud_marketplace_google_cloud_agents_marketplace_agent_gallery",
+      "docs_Observability_Readme_agent_observability",
+      "platform_agentpex",
+      "platform_agenttrace",
+      "platform_aws_agent_evalkit",
+      "platform_aws_bedrock_evaluations",
+      "platform_azure_ai_foundry_evaluation",
+      "platform_braintrust",
+      "platform_deepeval",
+      "platform_galileo",
+      "platform_google_llm_evalkit",
+      "platform_google_stax",
+      "platform_harbor",
+      "platform_langchain_openevals",
+      "platform_langfuse",
+      "platform_langsmith",
+      "platform_lastmile_ai",
+      "platform_meta_mlgym",
+      "platform_mlflow_llm_evaluate",
+      "platform_openlit",
+      "platform_opentelemetry",
+      "platform_ragas"
+    ],
+    "2": [
+      "docs_benchmarks_agent-benchmarks_agentbench",
+      "docs_benchmarks_agent-benchmarks_ale-bench",
+      "docs_benchmarks_agent-benchmarks_deepresearch_bench",
+      "docs_benchmarks_agent-benchmarks_finance-agent-v2",
+      "docs_benchmarks_agent-benchmarks_gaia",
+      "docs_benchmarks_agent-benchmarks_longmemeval",
+      "docs_benchmarks_agent-benchmarks_longmemeval_v2",
+      "docs_benchmarks_agent-benchmarks_metr",
+      "docs_benchmarks_agent-benchmarks_osworld",
+      "docs_benchmarks_agent-benchmarks_osworld_verified",
+      "docs_benchmarks_agent-benchmarks_page",
+      "docs_benchmarks_agent-benchmarks_swe-bench",
+      "docs_benchmarks_agent-benchmarks_swe-bench-pro",
+      "docs_benchmarks_agent-benchmarks_tau-bench",
+      "docs_benchmarks_agent-benchmarks_terminal-bench",
+      "docs_benchmarks_agent-benchmarks_terminalbench_2",
+      "docs_benchmarks_agent-benchmarks_terminalbench_2_1",
+      "docs_benchmarks_agent-benchmarks_visualwebarena",
+      "docs_benchmarks_agent-benchmarks_wandr",
+      "docs_benchmarks_llm-benchmarks_page",
+      "docs_designpatterns_event-driven-patterns_page",
+      "docs_evaluationframeworks_ai-as-judge_page",
+      "docs_evaluationframeworks_platforms_harbor",
+      "docs_evaluationframeworks_readme_page",
+      "docs_llm-benchmarks_berkeley_function_calling_leaderboard",
+      "docs_llm-benchmarks_galileo_agent_leaderboard",
+      "docs_llm-benchmarks_lmsys_chatbot_arena",
+      "docs_llm-benchmarks_vellum_board"
+    ],
+    "3": [
+      "docs_agenticframeworks_ai-coding-agents_doc",
+      "docs_agenticframeworks_autogen_doc",
+      "docs_agenticframeworks_autogpt_doc",
+      "docs_agenticframeworks_aws-strands_doc",
+      "docs_agenticframeworks_crewai_doc",
+      "docs_agenticframeworks_flue_doc",
+      "docs_agenticframeworks_langgraph_concept",
+      "docs_agenticframeworks_llamaindex_concept",
+      "docs_agenticframeworks_readme_doc",
+      "docs_agentplatforms_aws-agentcore_doc",
+      "docs_agentplatforms_claude-managed-agents_doc",
+      "docs_agentplatforms_claude-managed-agents_dreaming_feature",
+      "docs_agentplatforms_claude-managed-agents_memory_feature",
+      "docs_agentplatforms_claude-managed-agents_multiagent_feature",
+      "docs_agentplatforms_claude-managed-agents_outcomes_feature",
+      "docs_agentplatforms_databricks-genie_doc",
+      "docs_agentplatforms_gemini-enterprise-agent-platform_doc",
+      "docs_agentplatforms_hermes-agent_doc",
+      "docs_agentplatforms_hermes-agent_nous_hermes_models_concept",
+      "docs_agentplatforms_index_doc",
+      "docs_agentplatforms_lifeos_doc",
+      "docs_agentplatforms_openclaw_clawhavoc_concept",
+      "docs_agentplatforms_openclaw_doc",
+      "docs_agentplatforms_openhuman_doc",
+      "docs_agentplatforms_readme_doc",
+      "docs_agentplatforms_vertex_ai_concept"
+    ],
+    "4": [
+      "tests_test_section_completeness",
+      "tests_test_section_completeness_py_given",
+      "tests_test_section_completeness_py_settings",
+      "tests_test_section_completeness_rationale_145",
+      "tests_test_section_completeness_rationale_172",
+      "tests_test_section_completeness_rationale_190",
+      "tests_test_section_completeness_rationale_214",
+      "tests_test_section_completeness_rationale_22",
+      "tests_test_section_completeness_rationale_237",
+      "tests_test_section_completeness_rationale_26",
+      "tests_test_section_completeness_rationale_47",
+      "tests_test_section_completeness_rationale_54",
+      "tests_test_section_completeness_rationale_66",
+      "tests_test_section_completeness_rationale_93",
+      "tests_test_section_completeness_testsectioncompleteness",
+      "tests_test_section_completeness_testsectioncompleteness_extract_nav_paths",
+      "tests_test_section_completeness_testsectioncompleteness_setup_class",
+      "tests_test_section_completeness_testsectioncompleteness_test_all_current_folders_exist",
+      "tests_test_section_completeness_testsectioncompleteness_test_all_readme_files_preserved",
+      "tests_test_section_completeness_testsectioncompleteness_test_content_consolidation_without_loss_property",
+      "tests_test_section_completeness_testsectioncompleteness_test_content_file_preservation",
+      "tests_test_section_completeness_testsectioncompleteness_test_content_word_count_preservation",
+      "tests_test_section_completeness_testsectioncompleteness_test_image_references_preservation",
+      "tests_test_section_completeness_testsectioncompleteness_test_link_preservation_in_content",
+      "tests_test_section_completeness_testsectioncompleteness_test_navigation_references_preserved_content"
+    ],
+    "5": [
+      "docs_agentharness_agent-harness_page",
+      "docs_agentharness_code-as-agent-harness_survey_paper",
+      "docs_agentharness_harness-optimization_meta-harness_paper",
+      "docs_agentharness_loop-engineering_page",
+      "docs_aicodingagents_ai-coding-agents_antigravity_cli",
+      "docs_aicodingagents_ai-coding-agents_cline",
+      "docs_aicodingagents_ai-coding-agents_databricks_genie_code",
+      "docs_aicodingagents_ai-coding-agents_devin",
+      "docs_aicodingagents_ai-coding-agents_gemini_cli",
+      "docs_aicodingagents_ai-coding-agents_goose",
+      "docs_aicodingagents_ai-coding-agents_kiro",
+      "docs_aicodingagents_ai-coding-agents_openai_codex",
+      "docs_aicodingagents_ai-coding-agents_opencode",
+      "docs_aicodingagents_ai-coding-agents_page",
+      "docs_aicodingagents_ai-coding-agents_snowflake_coco",
+      "docs_aicodingagents_claude-code_claude_code",
+      "docs_aicodingagents_claude-code_plugin_bmad_method",
+      "docs_aicodingagents_claude-code_plugin_graphify",
+      "docs_aicodingagents_claude-code_plugin_neuralmind",
+      "docs_aicodingagents_claude-code_plugin_ponytail",
+      "docs_aicodingagents_claude-code_plugin_superpowers",
+      "docs_standards_agent-client-protocol_page",
+      "docs_standards_mcp_page",
+      "docs_standards_skills_page"
+    ],
+    "6": [
+      "tests_test_mkdocs_config",
+      "tests_test_mkdocs_config_py_given",
+      "tests_test_mkdocs_config_py_settings",
+      "tests_test_mkdocs_config_rationale_127",
+      "tests_test_mkdocs_config_rationale_145",
+      "tests_test_mkdocs_config_rationale_162",
+      "tests_test_mkdocs_config_rationale_21",
+      "tests_test_mkdocs_config_rationale_25",
+      "tests_test_mkdocs_config_rationale_31",
+      "tests_test_mkdocs_config_rationale_41",
+      "tests_test_mkdocs_config_rationale_50",
+      "tests_test_mkdocs_config_rationale_69",
+      "tests_test_mkdocs_config_rationale_98",
+      "tests_test_mkdocs_config_testmkdocsconfiguration",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_extract_nav_paths",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_setup_class",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_content_preservation_property",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_enhanced_features_enabled",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_material_theme_configuration",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_mkdocs_config_exists_and_valid_yaml",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_navigation_structure_has_eight_sections",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_required_mkdocs_fields_present",
+      "tests_test_mkdocs_config_testmkdocsconfiguration_test_yaml_structure_integrity"
+    ],
+    "7": [
+      "tests_test_vendor_consistency",
+      "tests_test_vendor_consistency_py_given",
+      "tests_test_vendor_consistency_py_settings",
+      "tests_test_vendor_consistency_rationale_137",
+      "tests_test_vendor_consistency_rationale_167",
+      "tests_test_vendor_consistency_rationale_21",
+      "tests_test_vendor_consistency_rationale_25",
+      "tests_test_vendor_consistency_rationale_37",
+      "tests_test_vendor_consistency_rationale_44",
+      "tests_test_vendor_consistency_rationale_51",
+      "tests_test_vendor_consistency_rationale_71",
+      "tests_test_vendor_consistency_rationale_84",
+      "tests_test_vendor_consistency_testvendorsectionconsistency",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_setup_class",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_all_vendor_directories_exist",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_all_vendor_readmes_exist",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_content_uniqueness",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_naming_convention_consistency",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_readme_content_structure",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_section_completeness",
+      "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_section_consistency_property"
+    ],
+    "8": [
+      "scripts_okf_frontmatter",
+      "scripts_okf_frontmatter_build_frontmatter",
+      "scripts_okf_frontmatter_extract_description",
+      "scripts_okf_frontmatter_extract_title",
+      "scripts_okf_frontmatter_has_frontmatter",
+      "scripts_okf_frontmatter_main",
+      "scripts_okf_frontmatter_process_file",
+      "scripts_okf_frontmatter_py_path",
+      "scripts_okf_frontmatter_rationale_124",
+      "scripts_okf_frontmatter_rationale_133",
+      "scripts_okf_frontmatter_rationale_177",
+      "scripts_okf_frontmatter_rationale_182",
+      "scripts_okf_frontmatter_rationale_192",
+      "scripts_okf_frontmatter_rationale_228",
+      "scripts_okf_frontmatter_rationale_233",
+      "scripts_okf_frontmatter_rationale_248",
+      "scripts_okf_frontmatter_should_skip",
+      "scripts_okf_frontmatter_slug_to_title",
+      "scripts_okf_frontmatter_yaml_str"
+    ],
+    "9": [
+      "docs_standards_agents_md_agents_md",
+      "docs_standards_aidlc_aidlc",
+      "docs_standards_csa_csa",
+      "docs_standards_index_index",
+      "docs_standards_k8s_agent_sandbox_k8s_agent_sandbox",
+      "docs_standards_mcp_mcp",
+      "docs_standards_open_knowledge_format_open_knowledge_format",
+      "docs_standards_openspec_openspec",
+      "docs_standards_skills_skills",
+      "docs_wizard_index_index",
+      "docs_wizard_readme_recommendation_wizard",
+      "docs_workflowbuilders_business_process_business_process",
+      "docs_workflowbuilders_claude_orchestration_guide_claude_orchestration_guide",
+      "docs_workflowbuilders_dynamic_workflows_dynamic_workflows",
+      "docs_workflowbuilders_open_source_open_source",
+      "docs_workflowbuilders_orchestration_orchestration",
+      "docs_workflowbuilders_readme_saas_no_code",
+      "docs_workflowbuilders_self_hosted_self_hosted"
+    ],
+    "10": [
+      "docs_agentharness_harness_engineering_page",
+      "docs_observability_otel_genai_conventions_playbook",
+      "docs_observability_solutions_playbook",
+      "docs_productionbestpractices_observability_playbook",
+      "external_agents_best_practices_denissergeevitch_2025",
+      "external_bockeler_martinfowler_2026",
+      "external_langfuse",
+      "external_lopopolo_openai_2026",
+      "external_meng_et_al_arxiv_260529682_2026",
+      "external_meta_harness_lee_2026",
+      "external_ning_et_al_arxiv_260518747_2026",
+      "external_open_telemetry_semantic_conventions_genai_repo",
+      "external_openlit_io",
+      "external_picrew_openreview_2026",
+      "external_trivedy_langchain_2026"
+    ],
+    "11": [
+      "scripts_generate_okf_indexes",
+      "scripts_generate_okf_indexes_dir_description",
+      "scripts_generate_okf_indexes_extract_first_sentence",
+      "scripts_generate_okf_indexes_generate_index",
+      "scripts_generate_okf_indexes_get_concept_info",
+      "scripts_generate_okf_indexes_main",
+      "scripts_generate_okf_indexes_process_directory",
+      "scripts_generate_okf_indexes_py_path",
+      "scripts_generate_okf_indexes_rationale_107",
+      "scripts_generate_okf_indexes_rationale_120",
+      "scripts_generate_okf_indexes_rationale_135",
+      "scripts_generate_okf_indexes_rationale_175",
+      "scripts_generate_okf_indexes_rationale_74",
+      "scripts_generate_okf_indexes_rationale_86",
+      "scripts_generate_okf_indexes_read_frontmatter"
+    ],
+    "12": [
+      "docs_allthingsgoogle_readme_google_agentic_ai_overview",
+      "docs_architecture_index_architecture_overview",
+      "docs_concepts_agent_foundational_agent_foundational",
+      "docs_concepts_agent_types_agent_types",
+      "docs_concepts_ai_engineering_ai_engineering",
+      "docs_concepts_foundation_models_foundation_models",
+      "docs_concepts_index_core_concepts_index",
+      "docs_concepts_readme_concepts_overview",
+      "docs_concepts_references_references",
+      "docs_designpatterns_gartner_patterns_gartner_patterns",
+      "docs_designpatterns_index_design_patterns_index",
+      "docs_designpatterns_readme_design_patterns_overview",
+      "docs_evaluationframeworks_index_evaluation_frameworks",
+      "external_kaggle_agents_intro_whitepaper"
+    ],
+    "13": [
+      "docs_contextengineering_anthropic_clear_tool_uses_20250919",
+      "docs_contextengineering_anthropic_compact_20260112",
+      "docs_contextengineering_anthropic_memory_20250818",
+      "docs_contextengineering_anthropic_page",
+      "docs_contextengineering_challenges_page",
+      "docs_contextengineering_context-graph_page",
+      "docs_contextengineering_devin_page",
+      "docs_contextengineering_efficiency-frontier_page",
+      "docs_contextengineering_langgraph_page",
+      "docs_contextengineering_manus_page",
+      "docs_contextengineering_readme_page",
+      "docs_contextengineering_strategies_page"
+    ],
+    "14": [
+      "docs_productionbestpractices_testing_evaluations_testing_evaluations",
+      "docs_securityframeworks_agent_governance_toolkit_agent_governance_toolkit",
+      "docs_securityframeworks_agent_sandboxing_agent_sandboxing",
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_agentic_ai_red_teaming_guide",
+      "docs_securityframeworks_anthropic_sandbox_runtime_anthropic_sandbox_runtime",
+      "docs_securityframeworks_learn_prompt_hacking_learn_prompt_hacking",
+      "docs_securityframeworks_nist_ai_rmf_nist_ai_rmf",
+      "docs_securityframeworks_readme_agentic_ai_security",
+      "docs_securityframeworks_skill_scanners_ai_agent_skill_security_scanners"
+    ],
+    "15": [
+      "docs_aigovernance_overview_page",
+      "docs_log_page",
+      "docs_observability_otel_genai_conventions_page",
+      "docs_observability_solutions_page",
+      "docs_standards_design_md_page",
+      "docs_standards_nist_ai_agent_standards_page",
+      "docs_standards_w3c_agent_protocol_page",
+      "mkdocs_page"
+    ],
+    "16": [
+      "docs_promptengineering_gepa_gepa",
+      "docs_promptengineering_readme_prompt_engineering",
+      "docs_promptengineering_skillopt_skillopt",
+      "docs_rag_readme_rag_overview",
+      "docs_rag_search_as_code_search_as_code",
+      "docs_referencearchitecture_rag_architecture_rag_reference_architecture",
+      "docs_referencearchitecture_readme_agentic_ai_reference_architecture"
+    ],
+    "17": [
+      "scripts_migrate_ingest_log",
+      "scripts_migrate_ingest_log_build_log_md",
+      "scripts_migrate_ingest_log_format_entry",
+      "scripts_migrate_ingest_log_parse_entries",
+      "scripts_migrate_ingest_log_rationale_109",
+      "scripts_migrate_ingest_log_rationale_39",
+      "scripts_migrate_ingest_log_rationale_82"
+    ],
+    "18": [
+      "docs_agentmemory_functional_tiers_the_four_memory_types_of_agent_memory",
+      "docs_agentmemory_ltm_strategies_long_term_memory_ltm_strategies",
+      "docs_agentmemory_readme_agent_memory_management",
+      "docs_agentmemory_research_papers_research_papers_on_agent_memory",
+      "docs_agentmemory_short_term_working_memory_management",
+      "docs_agentmemory_solutions_agent_memory_solutions"
+    ],
+    "19": [
+      "docs_agentops_agentic_ops_framework_agentic_ops_framework_aof",
+      "docs_agentops_genops_genops",
+      "docs_agentops_index_agent_operations_index",
+      "docs_agentops_kagent_kagent",
+      "docs_agentops_kaos_kaos",
+      "docs_agentops_readme_agentops"
+    ],
+    "20": [
+      "docs_ProductionBestPractices_README_production_best_practices_guidelines",
+      "docs_ProductionBestPractices_context_engineering_context_engineering",
+      "docs_ProductionBestPractices_cost_management_cost_management_for_agentic_ai",
+      "docs_ProductionBestPractices_deployment_deployment",
+      "docs_ProductionBestPractices_state_memory_state_and_memory_management"
+    ],
+    "21": [
+      "docs_agentictechstack_readme_agent_technology_stack",
+      "docs_allthingsaws_readme_aws_agentcore",
+      "docs_allthingsaws_readme_aws_agentic_ai_overview",
+      "docs_allthingsaws_readme_aws_strands_agents",
+      "docs_allthingsaws_readme_kiro"
+    ],
+    "22": [
+      "docs_agentharness_harness_optimization_harness_optimization",
+      "docs_agentharness_harness_self_evolution_harness_self_evolution",
+      "docs_agentharness_index_agent_harness_index",
+      "docs_agentharness_llm_harness_survey_agent_harness_survey"
+    ],
+    "23": [
+      "hooks_graph_hook",
+      "hooks_graph_hook_on_pre_build",
+      "hooks_graph_hook_page_url",
+      "hooks_graph_hook_py_path"
+    ],
+    "24": [
+      "agents_md",
+      "docs_dir",
+      "raw_dir"
+    ],
+    "25": [
+      "docs_agentops_agentic-ops-framework_page",
+      "docs_agentops_kagent_page",
+      "docs_securityframeworks_agent-sandboxing_page"
+    ],
+    "26": [
+      "docs_aigovernance_governance-strategy_page",
+      "standards_eu_ai_act",
+      "standards_nist_ai_rmf"
+    ],
+    "27": [
+      "docs_allthingsanthropic_readme_anthropic_agentic_ai_overview",
+      "docs_allthingsanthropic_readme_claude_code",
+      "docs_allthingsanthropic_readme_mcp"
+    ],
+    "28": [
+      "docs_architecture_components_selection_page",
+      "docs_concepts_agent_definition_page",
+      "docs_index_index"
+    ],
+    "29": [
+      "docs_standards_agentic_ai_foundation_standard",
+      "docs_standards_nist_ai_agent_standards_standard",
+      "docs_standards_w3c_agent_protocol_standard"
+    ],
+    "30": [
+      "tests_run_tests",
+      "tests_run_tests_main",
+      "tests_run_tests_rationale_11"
+    ],
+    "31": [
+      "docs_agentplatforms_microsoft-azure_doc",
+      "docs_agentplatforms_microsoft-fabric-databases-2026_doc"
+    ],
+    "32": [
+      "docs_aigovernance_governance-best-practices_page",
+      "docs_aigovernance_governance-solutions_page"
+    ],
+    "33": [
+      "docs_designpatterns_arsanjani-patterns_page",
+      "docs_designpatterns_openai-patterns_page"
+    ],
+    "34": [
+      "docs_graph_graph",
+      "external_cytoscape_js"
+    ],
+    "35": [
+      "docs_referencearchitecture_agent0_agent0",
+      "docs_referencearchitecture_self_learning_agents_self_learning_agents"
+    ],
+    "36": [
+      "docs_standards_agent2agent_agent2agent",
+      "docs_standards_agent_client_protocol_agent_client_protocol"
+    ],
+    "37": [
+      "person_ankur_kumar",
+      "readme_readme"
+    ],
+    "38": [
+      "utils_doc2md",
+      "utils_doc2md_sh__entry"
+    ],
+    "39": [
+      "claude_md"
+    ],
+    "40": [
+      "docs_Introduction_README_introduction"
+    ],
+    "41": [
+      "docs_Introduction_disclaimer_disclaimer_and_usage_guidelines"
+    ],
+    "42": [
+      "docs_Introduction_index_index"
+    ],
+    "43": [
+      "docs_Marketplace_index_index"
+    ],
+    "44": [
+      "docs_MaturityModels_README_agentic_ai_maturity_models"
+    ],
+    "45": [
+      "docs_MaturityModels_agentic_engineering_levels_8_levels_of_agentic_engineering"
+    ],
+    "46": [
+      "docs_MaturityModels_arsanjani_genai_maturity_arsanjani_genai_maturity_model"
+    ],
+    "47": [
+      "docs_MaturityModels_aws_aws_perspective_on_agentic_ai_maturity"
+    ],
+    "48": [
+      "docs_MaturityModels_aws_genai_aws_maturity_model_for_generative_ai"
+    ],
+    "49": [
+      "docs_MaturityModels_gartner_gartner_perspective_agentic_ai_maturity"
+    ],
+    "50": [
+      "docs_MaturityModels_google_google_perspective_agentic_ai_maturity"
+    ],
+    "51": [
+      "docs_MaturityModels_idc_idc_perspective_agentic_ai_maturity"
+    ],
+    "52": [
+      "docs_MaturityModels_index_index"
+    ],
+    "53": [
+      "docs_Observability_goals_observability_goals_and_objectives"
+    ],
+    "54": [
+      "docs_Observability_index_index"
+    ],
+    "55": [
+      "docs_Observability_tech_radar_agent_observability_tech_radar"
+    ],
+    "56": [
+      "docs_ProductionBestPractices_index_index"
+    ],
+    "57": [
+      "docs_ProductionBestPractices_security_agent_security"
+    ],
+    "58": [
+      "docs_agentharness_agent_harness_page"
+    ],
+    "59": [
+      "docs_agentharness_code-as-agent-harness_page"
+    ],
+    "60": [
+      "docs_agentharness_loop_engineering_loop_engineering"
+    ],
+    "61": [
+      "docs_agentharness_pi_dev_pi_dev"
+    ],
+    "62": [
+      "docs_agenticframeworks_eve_doc"
+    ],
+    "63": [
+      "docs_agenticframeworks_langchain_page"
+    ],
+    "64": [
+      "docs_agenticframeworks_langgraph_langsmith"
+    ],
+    "65": [
+      "docs_agenticframeworks_spring_ai_spring_ai"
+    ],
+    "66": [
+      "docs_agentictechstack_index_index"
+    ],
+    "67": [
+      "docs_agentictechstack_semantic_data_layer_radar_semantic_data_layer_radar"
+    ],
+    "68": [
+      "docs_agentmemory_functional_tiers_page"
+    ],
+    "69": [
+      "docs_agentmemory_index_agent_memory_index"
+    ],
+    "70": [
+      "docs_agentmemory_ltm_strategies_page"
+    ],
+    "71": [
+      "docs_agentmemory_short_term_page"
+    ],
+    "72": [
+      "docs_agentops_kaos_page"
+    ],
+    "73": [
+      "docs_agentplatforms_aws_agentcore_page"
+    ],
+    "74": [
+      "docs_agentplatforms_databricks-genie_page"
+    ],
+    "75": [
+      "docs_agentplatforms_discovery-loop_doc"
+    ],
+    "76": [
+      "docs_agentplatforms_enterprise-platforms-2026_doc"
+    ],
+    "77": [
+      "docs_agentplatforms_gemini-enterprise-agent-platform_page"
+    ],
+    "78": [
+      "docs_agentplatforms_gemini_enterprise_agent_platform_page"
+    ],
+    "79": [
+      "docs_agentplatforms_saas-platforms_doc"
+    ],
+    "80": [
+      "docs_aicodingagents_ai_coding_agents_page"
+    ],
+    "81": [
+      "docs_aicodingagents_index_page"
+    ],
+    "82": [
+      "docs_aigovernance_index_ai_governance"
+    ],
+    "83": [
+      "docs_allthingsanthropic_index_anthropic_agentic_ai"
+    ],
+    "84": [
+      "docs_allthingsaws_index_aws_agentic_ai"
+    ],
+    "85": [
+      "docs_allthingsaws_readme_page"
+    ],
+    "86": [
+      "docs_allthingsgoogle_index_google_agentic_ai"
+    ],
+    "87": [
+      "docs_allthingsmicrosoft_index_microsoft_agentic_ai"
+    ],
+    "88": [
+      "docs_allthingsmicrosoft_readme_microsoft_agentic_ai_overview"
+    ],
+    "89": [
+      "docs_allthingsopenai_index_openai_agentic_ai"
+    ],
+    "90": [
+      "docs_allthingsopenai_readme_openai_agentic_ai_overview"
+    ],
+    "91": [
+      "docs_architecture_12_factor_agents_12_factor_agents"
+    ],
+    "92": [
+      "docs_architecture_components_selection_components_selection"
+    ],
+    "93": [
+      "docs_architecture_dataset_engineering_dataset_engineering"
+    ],
+    "94": [
+      "docs_architecture_finetuning_finetuning"
+    ],
+    "95": [
+      "docs_architecture_inference_optimization_inference_optimization"
+    ],
+    "96": [
+      "docs_benchmarks_index_page"
+    ],
+    "97": [
+      "docs_benchmarks_readme_benchmarks_overview"
+    ],
+    "98": [
+      "docs_concepts_ai_predictions_2026_ai_predictions_2026"
+    ],
+    "99": [
+      "docs_contextengineering_index_context_engineering"
+    ],
+    "100": [
+      "docs_evaluationframeworks_llm_frameworks_page"
+    ],
+    "101": [
+      "docs_ingest_log_page"
+    ],
+    "102": [
+      "docs_observability_goals_page"
+    ],
+    "103": [
+      "docs_productionbestpractices_state_memory_page"
+    ],
+    "104": [
+      "docs_promptengineering_index_index"
+    ],
+    "105": [
+      "docs_rag_index_index"
+    ],
+    "106": [
+      "docs_referencearchitecture_ai_assistant_ai_assistant"
+    ],
+    "107": [
+      "docs_referencearchitecture_ai_assistant_architecture_ai_assistant_architecture"
+    ],
+    "108": [
+      "docs_referencearchitecture_ai_automation_ai_automation"
+    ],
+    "109": [
+      "docs_referencearchitecture_ai_engineering_architecture_ai_engineering_architecture"
+    ],
+    "110": [
+      "docs_referencearchitecture_index_index"
+    ],
+    "111": [
+      "docs_referencearchitecture_langmanus_langmanus"
+    ],
+    "112": [
+      "docs_referencearchitecture_rag_architecture_page"
+    ],
+    "113": [
+      "docs_referencearchitecture_specialized_blueprints_specialized_domain_blueprints"
+    ],
+    "114": [
+      "docs_requirements_requirements"
+    ],
+    "115": [
+      "docs_securityframeworks_google_saif_google_saif"
+    ],
+    "116": [
+      "docs_securityframeworks_index_index"
+    ],
+    "117": [
+      "docs_standards_design_md_standard"
+    ],
+    "118": [
+      "docs_standards_readme_ag_ui_protocol"
+    ],
+    "119": [
+      "docs_wizard_readme"
+    ],
+    "120": [
+      "docs_workflowbuilders_index_workflow_builders"
+    ],
+    "121": [
+      "gemini_md"
+    ],
+    "122": [
+      "llm_wiki_page"
+    ],
+    "123": [
+      "okf_preview_indexes"
+    ],
+    "124": [
+      "platform_agentops"
+    ],
+    "125": [
+      "platform_comet_opik"
+    ],
+    "126": [
+      "platform_datadog"
+    ],
+    "127": [
+      "platform_dynatrace"
+    ],
+    "128": [
+      "platform_jaeger"
+    ],
+    "129": [
+      "platform_new_relic"
+    ],
+    "130": [
+      "platform_prometheus_grafana"
+    ],
+    "131": [
+      "platform_signoz"
+    ],
+    "132": [
+      "platform_wandb_weave"
+    ],
+    "133": [
+      "platform_zipkin"
+    ],
+    "134": [
+      "readthedocs_yaml_page"
+    ],
+    "135": [
+      "requirements_txt_page"
+    ],
+    "136": [
+      "scripts_okf_verify"
+    ],
+    "137": [
+      "utils_convert_to_doc"
+    ]
+  },
+  "cohesion": {
+    "0": 0.09113300492610837,
+    "1": 0.08994708994708994,
+    "2": 0.07671957671957672,
+    "3": 0.09846153846153846,
+    "4": 0.08333333333333333,
+    "5": 0.08333333333333333,
+    "6": 0.09090909090909091,
+    "7": 0.09523809523809523,
+    "8": 0.16374269005847952,
+    "9": 0.24836601307189543,
+    "10": 0.14285714285714285,
+    "11": 0.2571428571428571,
+    "12": 0.17582417582417584,
+    "13": 0.25757575757575757,
+    "14": 0.25,
+    "15": 0.32142857142857145,
+    "16": 0.42857142857142855,
+    "17": 0.3333333333333333,
+    "18": 1.0,
+    "19": 0.6,
+    "20": 0.4,
+    "21": 0.4,
+    "22": 0.6666666666666666,
+    "23": 0.8333333333333334,
+    "24": 0.6666666666666666,
+    "25": 0.6666666666666666,
+    "26": 0.6666666666666666,
+    "27": 0.6666666666666666,
+    "28": 0.6666666666666666,
+    "29": 0.6666666666666666,
+    "30": 0.6666666666666666,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0,
+    "123": 1.0,
+    "124": 1.0,
+    "125": 1.0,
+    "126": 1.0,
+    "127": 1.0,
+    "128": 1.0,
+    "129": 1.0,
+    "130": 1.0,
+    "131": 1.0,
+    "132": 1.0,
+    "133": 1.0,
+    "134": 1.0,
+    "135": 1.0,
+    "136": 1.0,
+    "137": 1.0
+  },
+  "gods": [
+    {
+      "id": "docs_benchmarks_agent-benchmarks_page",
+      "label": "Agent Evaluation Benchmarks",
+      "degree": 21
+    },
+    {
+      "id": "docs_EvaluationFrameworks_platforms_agent_evaluation_platforms",
+      "label": "Agent Evaluation Platforms",
+      "degree": 14
+    },
+    {
+      "id": "docs_aicodingagents_ai-coding-agents_page",
+      "label": "AI Coding Agents (page)",
+      "degree": 13
+    },
+    {
+      "id": "tests_test_section_completeness_testsectioncompleteness",
+      "label": "TestSectionCompleteness",
+      "degree": 12
+    },
+    {
+      "id": "docs_EvaluationFrameworks_tech_radar_evaluation_tech_radar",
+      "label": "Evaluation Tech Radar",
+      "degree": 12
+    },
+    {
+      "id": "tests_test_mkdocs_config_testmkdocsconfiguration",
+      "label": "TestMkDocsConfiguration",
+      "degree": 11
+    },
+    {
+      "id": "tests_test_vendor_consistency_testvendorsectionconsistency",
+      "label": "TestVendorSectionConsistency",
+      "degree": 10
+    },
+    {
+      "id": "docs_aicodingagents_claude-code_claude_code",
+      "label": "Claude Code (page)",
+      "degree": 9
+    },
+    {
+      "id": "docs_agentharness_harness_engineering_page",
+      "label": "Harness Engineering",
+      "degree": 9
+    },
+    {
+      "id": "scripts_okf_frontmatter_build_frontmatter",
+      "label": "build_frontmatter()",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Harness Engineering",
+      "target": "Birgitta B\u00f6ckeler \u2014 Harness Engineering (martinfowler.com, 2026)",
+      "source_files": [
+        "docs/AgentHarness/harness-engineering.md",
+        "https://martinfowler.com/articles/harness-engineering.html"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "cites",
+      "why": "connects across different repos/directories; peripheral node `Birgitta B\u00f6ckeler \u2014 Harness Engineering (martinfowler.com, 2026)` unexpectedly reaches hub `Harness Engineering`"
+    },
+    {
+      "source": "Harness Engineering",
+      "target": "Meng et al., arXiv:2605.29682 (2026)",
+      "source_files": [
+        "docs/AgentHarness/harness-engineering.md",
+        "https://arxiv.org/pdf/2605.29682"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "cites",
+      "why": "connects across different repos/directories; peripheral node `Meng et al., arXiv:2605.29682 (2026)` unexpectedly reaches hub `Harness Engineering`"
+    },
+    {
+      "source": "Harness Engineering",
+      "target": "Meta-Harness \u2014 Lee et al., arXiv:2603.28052 (2026)",
+      "source_files": [
+        "docs/AgentHarness/harness-engineering.md",
+        "https://arxiv.org/abs/2603.28052"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "cites",
+      "why": "connects across different repos/directories; peripheral node `Meta-Harness \u2014 Lee et al., arXiv:2603.28052 (2026)` unexpectedly reaches hub `Harness Engineering`"
+    },
+    {
+      "source": "Harness Engineering",
+      "target": "Ning et al., Code as Agent Harness, arXiv:2605.18747 (2026)",
+      "source_files": [
+        "docs/AgentHarness/harness-engineering.md",
+        "https://arxiv.org/abs/2605.18747"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "cites",
+      "why": "connects across different repos/directories; peripheral node `Ning et al., Code as Agent Harness, arXiv:2605.18747 (2026)` unexpectedly reaches hub `Harness Engineering`"
+    },
+    {
+      "source": "Multi-Agent Systems",
+      "target": "Google \u2014 Agentic AI Overview",
+      "source_files": [
+        "docs/Architecture/multi-agent-system.md",
+        "docs/AllThingsGoogle/README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities; peripheral node `Google \u2014 Agentic AI Overview` unexpectedly reaches hub `Multi-Agent Systems`"
+    }
+  ],
+  "tokens": {
+    "input": 22575,
+    "output": 8272
+  }
+}
