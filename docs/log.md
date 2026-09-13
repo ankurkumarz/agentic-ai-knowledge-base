@@ -4,6 +4,9 @@
 
 ## 2026-09-13
 
+* **Ingest**: [DeepSWE — Long-Horizon Software Engineering Benchmark] → Benchmarks — https://deepswe.datacurve.ai/
+  * Extended: `docs/Benchmarks/agent-benchmarks.md`
+
 * **Ingest**: [7 RAG Benchmarks — Evidently AI] → Benchmarks — https://www.evidentlyai.com/blog/rag-benchmarks
   * Created: `docs/Benchmarks/rag-benchmarks.md`
   * Extended: `docs/Benchmarks/llm-benchmarks.md` (RULER entry links to new page; RAG Benchmarks added to See Also)

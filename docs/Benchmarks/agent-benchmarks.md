@@ -3,7 +3,7 @@ type: Benchmark
 title: Agent Evaluation Benchmarks
 description: "Agent benchmarks evaluate AI systems on complex, multi-step tasks that require planning, tool use, and autonomous decision-making"
 tags: [benchmarks, evaluation, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-09-13T00:00:00Z
 ---
 # Agent Evaluation Benchmarks
 
@@ -129,6 +129,27 @@ A significantly harder extension of SWE-bench targeting production-grade softwar
 - Designed to differentiate top-tier coding agents where standard SWE-bench scores are converging
 - Maintains the same automated test-suite evaluation methodology as the original
 - Relevant for teams building or selecting agents for production software engineering workflows
+
+### DeepSWE
+
+**Resource**: [deepswe.datacurve.ai](https://deepswe.datacurve.ai/) | [Paper (arXiv 2607.07946)](https://arxiv.org/abs/2607.07946) | [GitHub](https://github.com/datacurve-ai/deep-swe)
+
+DeepSWE, by Datacurve, is a contamination-free benchmark of 113 original long-horizon software engineering tasks designed to differentiate frontier coding agents where saturating benchmarks like SWE-bench Pro can no longer separate them. Tasks are written from scratch — not adapted from existing commits or PRs — ensuring no model has seen solutions during pretraining.
+
+**Key Characteristics**:
+- **113 tasks** across **91 repositories** and **5 languages**: TypeScript, Go, Python, JavaScript, and Rust
+- **Contamination-free**: all tasks are original, not drawn from existing GitHub issues or PRs
+- **High complexity**: prompts are roughly half the length of SWE-bench Pro's, yet solutions require ~5.5× more code and ~2× more output tokens than SWE-bench Pro tasks
+- **Behavior-based verification**: hand-written verifiers test software behavior rather than implementation details, avoiding the high false-positive/false-negative rates found in automated test-suite graders
+- **Consistent scaffolding**: all models run on mini-swe-agent for apples-to-apples comparison
+- **Live leaderboard** updated continuously (last updated September 3, 2026; 28 models evaluated)
+
+**Current leaderboard leaders** (Pass@1, as of September 2026):
+- gpt-6-astra: 74% ±3% ($6.52/task, 29 steps)
+- gemini-3.8-flash: 74% ±1% ($2.36/task, 166 steps)
+- claude-opus-5: 74% ±4% ($11.84/task, 99 steps)
+
+**Why it matters**: Addresses three key gaps in existing coding benchmarks — (1) SWE-bench Pro's verifier misgrading rates (~8% false positives, ~24% false negatives flagged in the DeepSWE audit), (2) benchmark contamination from tasks derived from public GitHub history, and (3) task complexity ceilings where top models cluster within overlapping confidence intervals. DeepSWE's real-world task diversity (91 repos, 5 languages, complex multi-file changes) provides a more reliable signal for selecting or comparing frontier coding agents.
 
 ### ALE-Bench
 **Resource**: [ALE-Bench Leaderboard](https://sakanaai.github.io/ALE-Bench-Leaderboard/) | [Paper (NeurIPS 2025)](https://arxiv.org/abs/2506.09050) | [GitHub](https://github.com/SakanaAI/ALE-Bench)
@@ -256,6 +277,7 @@ A domain-specific benchmark evaluating AI agents on complex financial tasks requ
 | Computer use (reliable signal) | OSWorld-Verified |
 | Software development (standard) | SWE-Bench |
 | Software development (hard/production) | SWE-bench Pro |
+| Software development (contamination-free, frontier) | DeepSWE |
 | Algorithm engineering / optimization | ALE-Bench |
 | Terminal/CLI tasks | Terminal-Bench 2.1 |
 | Safety evaluation | METR |
