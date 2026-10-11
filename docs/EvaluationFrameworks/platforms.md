@@ -101,6 +101,19 @@ Microsoft Foundry's native evaluation service for generative AI models, apps, an
 
 **Best For**: Azure AI Foundry teams needing built-in risk/safety guardrail evaluation alongside quality metrics, with results feeding directly into production observability
 
+### JudgeMyAI
+**Resource**: [JudgeMyAI](https://judgemyai.com/)
+
+A managed evaluation service for agentic AI systems: automated LLM-as-a-judge scoring pipelines that produce per-item scores and version comparisons, red teaming, and RAG grounding checks, with human review on flagged cases.
+
+**Key Features**:
+- **LLM-as-a-judge**: automated scoring pipelines with custom rubrics; per-item scores and version comparisons
+- **Red teaming**: managed adversarial testing of AI agents and LLM applications
+- **RAG grounding checks**: automated verification of retrieval grounding in agent outputs
+- **Human review**: experts review flagged cases and calibration samples
+
+**Best For**: Teams that want evaluation infrastructure without building and maintaining it in-house
+
 ## Open Source and Developer Platforms
 
 ### Evidently AI

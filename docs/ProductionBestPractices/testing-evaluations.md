@@ -85,6 +85,7 @@ Choose based on product requirements: pass@k for developer tools where one succe
 | [LastMile AI](https://lastmileai.dev/) | Enterprise-grade testing and benchmarking in production |
 | [Braintrust](https://www.braintrust.dev/) | Regression detection using real user data |
 | [Harbor](../EvaluationFrameworks/platforms.md#harbor) | Open-source harness for running Terminal-Bench and custom benchmarks across thousands of parallel cloud sandboxes; generates RL/SFT rollouts |
+| [JudgeMyAI](https://judgemyai.com/) | Managed service: LLM-as-a-judge scoring pipelines, red teaming, and RAG grounding checks with human review on flagged cases |
 
 ## Agent Benchmarks Reference
 

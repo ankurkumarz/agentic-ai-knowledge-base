@@ -108,7 +108,7 @@ Comprehensive coverage of 15 major development frameworks:
 - **LLM Evaluation Frameworks**: DeepEval, MLFlow, RAGAS, and OpenEvals
 - **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, and GAIA
 - **LLM Benchmarks**: Model-level evaluation benchmarks and leaderboards
-- **Evaluation Platforms**: Galileo, Google Stax, and LastMile AI
+- **Evaluation Platforms**: Galileo, Google Stax, LastMile AI, and JudgeMyAI
 - **Reference Frameworks**: Meta MLGym and Microsoft RELEVANCE
 
 ### **11. Agentic AI Security**
