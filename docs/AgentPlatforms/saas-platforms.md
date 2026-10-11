@@ -218,6 +218,104 @@ Beyond the major cloud providers, numerous specialized SaaS platforms offer uniq
 - Enterprise workflow automation (e.g., ServiceNow sales workflows, Advance Local newsroom operations)
 - 150k+ agents deployed across individuals, SMBs, enterprises, and government agencies
 
+## AI Workforce Platforms
+
+Platforms that provision AI agents as an on-demand workforce — covering sales, marketing, support, ops, finance — without requiring users to build or host an agent control plane. For a detailed comparison including governance, pricing, and autonomy level, see [Agent Workforce SaaS Platforms](agent-workforce-saas.md).
+
+### Relevance AI
+
+**Platform**: [Relevance AI](https://relevanceai.com/)
+
+**Key Features**:
+- No/low-code builder for agents and multi-agent "Workforces" owning end-to-end processes
+- 1,000+ app connectors (HubSpot, Salesforce, Slack, Gmail, Sheets, and more)
+- Enterprise controls: RBAC, SSO, audit trails, OpenTelemetry
+- Dual pricing meter: Actions (tool runs) + Vendor Credits (model compute)
+- Partially open source: core SaaS runtime is proprietary; JS SDK and docs are OSS
+
+**Pricing**: Free: 200 Actions + credits; Pro from $19/mo; Team $234/mo; Enterprise: contact sales
+
+**Use Cases**:
+- Mid-market/enterprise RevOps, GTM, CS, and ops teams
+- End-to-end sales, support, and operations workflow automation
+- Organisations needing enterprise governance (RBAC, SSO, audit) without building the platform
+
+### Lindy
+
+**Platform**: [Lindy](https://lindy.ai/)
+
+**Key Features**:
+- Framed as "AI employees" for ops and sales
+- Focuses on email, CRM-related workflows and inbox management
+- Hosted SaaS; configure roles and connect to your systems
+
+**Pricing**: $49.99/mo entry plan
+
+**Use Cases**:
+- Smaller teams needing inbox + CRM automation without building multi-agent orchestration
+- Sales and ops automation framed as an employee experience
+
+### Sistava
+
+**Platform**: [Sistava](https://sistava.com/)
+
+**Key Features**:
+- "Hire AI employees on demand" for sales, marketing, support, recruiting, ops
+- Agents work inside your existing tools (CRMs, support tools) and report back
+- Plans from $25–$200/mo with compute and model calls included
+
+**Use Cases**:
+- Teams wanting plug-and-play AI employees without building a full agent control plane
+
+### Tycoon
+
+**Platform**: [Tycoon](https://tycoon.ai/)
+
+**Key Features**:
+- Pre-hired managed AI team for one-person companies and solo founders
+- Managed SaaS; proprietary
+
+**Use Cases**:
+- Solo founders wanting a managed AI team for general business ops
+
+### Ceres
+
+**Platform**: [Ceres (Agent Ceres)](https://agentceres.com/)
+
+**Key Features**:
+- Managed AI marketing team scoped to marketing workflows: content, campaigns, SEO
+- Hosted SaaS; positioned as a managed service, not an OSS platform
+
+**Use Cases**:
+- Founders wanting a dark-factory specifically for marketing
+
+### Agentforce Vibes 2.0 (Salesforce)
+
+**Platform**: [Salesforce Agentforce](https://www.salesforce.com/agentforce/)
+
+**Key Features**:
+- Multi-model agent platform: Claude Sonnet, GPT-5, open harness
+- Headless 360 exposes Salesforce capabilities as APIs, MCP, and CLI for external agents
+- Enterprise SaaS; no free tier
+
+**Use Cases**:
+- Existing Salesforce shops wanting agent teams orchestrating across CRM and 360-data surfaces
+
+### Polsia (Commercial SaaS)
+
+**Platform**: [Polsia](https://polsia.com/)
+
+**Key Features**:
+- Fully managed SaaS that provisions web server, DB, GitHub, email, Stripe, and ad accounts on signup
+- Nine agents: orchestrator/CEO, coding, marketing, sales outreach, support, finance, planning, competitor research, social; run on staggered schedules
+- $49/mo base + 20% of revenue and managed ad spend; 3-day trial (card required)
+- Operates as a "dark factory" — largely without human approval
+
+**Use Cases**:
+- Solo founders comfortable with deep autonomy and rev-share pricing
+
+> **Note:** The open-source reference implementation is [Open Polsia (GitHub)](https://github.com/PolsiaAI/Polsia) — FastAPI + Next.js 14, PostgreSQL, Redis/Celery, ChromaDB, powered by Claude Code CLI. See [AgenticFrameworks README](../AgenticFrameworks/README.md) for OSS architecture details.
+
 ## Enterprise and Specialized Solutions
 
 ### Solace Agent Mesh
@@ -299,3 +397,11 @@ Beyond the major cloud providers, numerous specialized SaaS platforms offer uniq
 - **Section 5.3**: Workflow Engine/Frameworks
 - **Section 6**: Industry Standards and Protocols
 - **Section 15**: Agents Marketplace
+
+## See Also
+
+- [Agent Workforce SaaS Platforms](agent-workforce-saas.md)
+- [Agent Company Platforms — Comparison Guide](agent-company-platforms.md)
+- [Paperclip](paperclip.md)
+- [Agentic Frameworks](../AgenticFrameworks/README.md)
+- [Popular AI Agents](README.md)

@@ -102,6 +102,9 @@ nav:
     - 5.7 OpenHuman (TinyHumans AI): 'AgentPlatforms/openhuman.md'
     - 5.8 LifeOS (Daniel Miessler): 'AgentPlatforms/lifeos.md'
     - 5.9 Discovery Loop: 'AgentPlatforms/discovery-loop.md'
+    - 5.10 Paperclip: 'AgentPlatforms/paperclip.md'
+    - 5.11 Agent Company Platforms — Comparison Guide: 'AgentPlatforms/agent-company-platforms.md'
+    - 5.12 Agent Workforce SaaS Platforms: 'AgentPlatforms/agent-workforce-saas.md'
   - 6. Agentic AI Industry Standards:
     - 6.1 Agentic AI Foundation: 'Standards/agentic-ai-foundation.md'
     - 6.2 Model Context Protocol: 'Standards/mcp.md'
@@ -233,6 +236,8 @@ nav:
     - 18.2 AI Labs:
       - 18.2.1 Anthropic: 'AllThingsAnthropic/README.md'
       - 18.2.2 OpenAI: 'AllThingsOpenAI/README.md'
+  - 19. Agent Skills Catalog:
+    - 19.1 Skills Catalog: 'AgentSkills/catalog.md'
   - Knowledge Graph: 'graph.md'
 
 hooks:

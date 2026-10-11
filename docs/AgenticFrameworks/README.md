@@ -31,6 +31,11 @@ timestamp: 2026-07-17T00:00:00Z
 | [**OpenAI AgentKit**](https://openai.com/index/introducing-agentkit/) | Various (JS/Python via API) | Proprietary / Mixed | Visual builder, agent orchestration, evaluation, UI embedding | Rapid prototyping; integrated with OpenAI ecosystem | Vendor lock-in; limited low-level control | – / SaaS & Self-hosted |
 | [**Flue**](https://flueframework.com/) | TypeScript | Apache-2.0 | Harness-first agent framework; built-in virtual sandbox (just-bash) + container sandbox (Daytona); sessions, skills, MCP, OpenTelemetry | Headless programmable agents; runtime-agnostic deploy (Node, Cloudflare, CI); harness-centric design | TypeScript-only; experimental; smaller ecosystem | ~3.8K / Self-hosted |
 | [**Eve**](https://github.com/vercel/eve) | Filesystem-defined (markdown + tools) | Open Source | Filesystem-first agent framework; `instructions.md` defines the agent, tools auto-registered from `tools/`; built-in durable execution, sandboxed compute, approvals, channels, tracing, evals | Teams wanting file-based, diffable agent definitions; durable/resumable runs and HITL approvals out of the box | Public preview; API surface may change; strongest tooling fit is Vercel-hosted deployments | – / Public preview |
+| [**FleetQ**](https://github.com/fleetq/fleetq) | TypeScript / Python | AGPLv3 | Visual DAG builder for multi-agent orchestration; 675+ MCP tools; supports "crews", workflows, and process types; human-in-the-loop approvals; full audit trail; mission-control UI | Teams wanting visual multi-agent mission control with MCP tool ecosystem and HITL approvals | AGPLv3 license (copyleft); newer ecosystem; community edition only | – / Self-hosted |
+| [**Open Multi-Agent**](https://github.com/open-multi-agent/open-multi-agent) | TypeScript | MIT | Runtime DAG planning with approval gates, tracing, evaluation, checkpoints, and resume; requires Node 20+ | JS/TS shops wanting multi-agent orchestration in the same stack as their web apps; durability and resumability first-class | TypeScript-only; org semantics (teams, roles) are application-defined; smaller community | – / Self-hosted |
+| [**Auto-Company**](https://github.com/auto-company/auto-company) | Python | MIT | Fully autonomous multi-agent "company" on a single PC; agents collaborate autonomously without human approval; built-in persistence | Experimental local dark-factory; lab setups and autonomous ops experiments | Experimental; minimal governance; not production-ready | – / Self-hosted (local) |
+| [**SmythOS**](https://smythos.com/) | Python / TypeScript | MIT | Open agent OS: Runtime, CLI, SDK, and visual Studio are all OSS; cloud-native; orchestrates agents with tools, memory, workflows; open MCP | Teams wanting a general agent OS to embed under a custom control plane or product UI; extensible and brandable | Org/governance patterns are application-defined; cloud-native focus may add infra overhead for fully local deploys | – / Self-hosted & Cloud |
+| [**Open Polsia**](https://github.com/PolsiaAI/Polsia) | Python (FastAPI) + TypeScript (Next.js 14) | OSS | Nine specialised agents (orchestrator/CEO, coding, marketing, sales outreach, support, finance, planning, competitor research, social) on staggered schedules; each agent calls Claude Code CLI (`claude -p ... --output-format json`) as a subprocess; PostgreSQL 16 (15 tables), Redis + Celery task queue, ChromaDB vector memory; SANDBOX_MODE for safe testing | Reference implementation of a fully autonomous multi-agent company; good for forking and experimentation; powered by Claude Code CLI in headless mode | Requires Claude Code CLI authenticated via OAuth; experimental; not designed as a production SaaS foundation; commercial hosted variant (Polsia SaaS) is separate | – / Self-hosted (Docker Compose) |
 
 
 
@@ -365,6 +370,16 @@ Source: Spring AI Documentation
 * **[MetaGPT](https://github.com/geekan/MetaGPT)**: The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming
 * **[FreePHDLabor](freephdlabor.md)**: Open-source, customizable multiagent framework (built on smolagents) that automates the scientific research lifecycle — hypothesis generation, experimentation, and LaTeX manuscript writing — via a ManagerAgent orchestrating specialized IdeationAgent, ExperimentationAgent, WriteupAgent, ReviewerAgent, and ProofreadingAgent roles
 
+## Agent Company Platforms & Autonomous Systems
+
+Frameworks and reference implementations specifically designed to model a multi-agent system as a company or autonomous organisation. For managed SaaS counterparts, see [Agent Workforce SaaS Platforms](../AgentPlatforms/agent-workforce-saas.md) and the full [Agent Company Platforms Comparison](../AgentPlatforms/agent-company-platforms.md).
+
+* **[FleetQ](https://github.com/fleetq/fleetq)** (AGPLv3): Visual DAG builder for multi-agent orchestration with 675+ MCP tools, human-in-the-loop approvals, full audit trail, and a mission-control UI. Closest to Paperclip-style mission control but with visual DAGs and a richer MCP tool ecosystem. Community Edition is fully open source.
+* **[Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent)** (MIT, TypeScript, Node 20+): Plans task DAGs at runtime with approval gates, tracing, evaluation, checkpoints, and resume. Focused on durability and composability in TypeScript stacks; org semantics (teams, roles) are application-defined.
+* **[Auto-Company](https://github.com/auto-company/auto-company)** (MIT): Experimental open-source project that runs a fully autonomous multi-agent company on a single PC. Agents collaborate autonomously to operate like a company. Useful as a reference for dark-factory patterns; not production-ready.
+* **[SmythOS Runtime](https://smythos.com/)** (MIT): Open agent OS — Runtime, CLI, SDK, and visual Studio are all open source. Cloud-native; orchestrates agents with tools, memory, and workflows. Positioned as a general agent OS that teams can embed under their own control plane or product UI.
+* **[Open Polsia](https://github.com/PolsiaAI/Polsia)** (OSS): Open-source reference implementation of an autonomous multi-agent company. Nine specialised agents (orchestrator/CEO, coding, marketing, sales outreach, support, finance, planning, competitor research, social) run on staggered schedules via Celery Beat. Each agent calls Claude Code CLI (`claude -p "..." --output-format json`) as a subprocess. Stack: FastAPI + Next.js 14, PostgreSQL 16 (15 tables), Redis + Celery task queue, ChromaDB vector memory, nginx reverse proxy. SANDBOX_MODE=true prevents real posts/emails/charges during testing. CI mocks the CLI with `CLAUDE_CLI_MOCK=true`. The commercial hosted variant (Polsia SaaS) is a separate product.
+
 ## Additional Resources
 
 ### Large Foundation Models for Enterprises
@@ -382,3 +397,13 @@ Source: Spring AI Documentation
 | Language | Python, TypeScript | Python, TypeScript | Python, C# | Python, C#, Java | Python, TypeScript | Python | Python |
 | Enterprise Support | Yes | Yes | Yes | - | Yes | Yes | Yes |
 | Deployment Model | Self-hosted | SaaS & Self-hosted | Self-hosted | - | SaaS & Self-hosted | SaaS & Self-hosted | SaaS & Self-hosted |
+
+
+## See Also
+
+- [Agent Company Platforms — Comparison Guide](../AgentPlatforms/agent-company-platforms.md)
+- [Agent Workforce SaaS Platforms](../AgentPlatforms/agent-workforce-saas.md)
+- [Paperclip](../AgentPlatforms/paperclip.md)
+- [Multi-Agent System Architecture](../Architecture/multi-agent-system.md)
+- [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
+- [Popular AI Agents](../AgentPlatforms/README.md)

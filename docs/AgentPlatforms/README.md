@@ -48,6 +48,14 @@ Each category provides detailed analysis of popular implementations, their capab
 
 - **[Hermes Agent](hermes-agent.md)** (Nous Research): Open-source, self-improving personal AI assistant with built-in learning loop, skill creation from experience, cross-session memory, MCP support, and multi-platform access (Telegram, Discord, Slack, WhatsApp). Successor to OpenClaw. Backed by the Hermes OSS model family (Hermes-2-Pro, Hermes-3) fine-tuned for function calling and GOAP reasoning.
 - **[OpenClaw](openclaw.md)**: Local-first, MIT-licensed personal AI agent with 20+ messaging platform integrations (WhatsApp, iMessage, Telegram, Slack, Discord, and more), ClawHub skills marketplace (3,000+ skills), and voice support on macOS/iOS/Android. Predecessor to Hermes Agent. Note: Thoughtworks Radar Vol. 34 places this at **Caution** due to the permission-hungry pattern and active supply chain security incidents (ClawHavoc).
+- **[Paperclip](paperclip.md)**: Self-hosted, MIT-licensed agent orchestration platform that organises AI agents into a company structure with org charts, roles, heartbeat scheduling, per-agent budgets, immutable ticket-based audit logs, and board-level governance. Model-agnostic — orchestrates any agent (Claude Code, Codex, Cursor, Gemini, Hermes, OpenClaw, Pi, OpenCode) that can receive a heartbeat signal. Mental model: users are the board of directors; agents are the workforce. `npx paperclipai onboard --yes`.
+
+### Agent Company Platforms & Orchestration
+
+A growing category of tools models AI agents as a coordinated company or workforce. See the full landscape in:
+
+- **[Agent Company Platforms — Comparison Guide](agent-company-platforms.md)**: Side-by-side comparison of agent control planes and OSS orchestration frameworks — Paperclip, LangGraph, CrewAI, FleetQ, Open Multi-Agent, Auto-Company, SmythOS, Open Polsia, and Microsoft Agent Framework.
+- **[Agent Workforce SaaS Platforms](agent-workforce-saas.md)**: Managed hosted platforms where agents are pre-hired — Polsia SaaS, Sistava, Relevance AI, Lindy, Tycoon, Ceres, and Agentforce Vibes 2.0 (Salesforce). Includes pricing, autonomy level, and vendor lock-in considerations.
 - **[OpenHuman](openhuman.md)** (TinyHumans AI): Open-source (GPL-3.0) desktop personal AI agent with 1-billion-token persistent memory (NeoCortex), 118+ OAuth integrations, automatic model routing across 200+ LLMs, TokenJuice token compression, native voice, animated mascot, and live Google Meet participation. Launched May 2026.
 - **[LifeOS](lifeos.md)** (Daniel Miessler): MIT-licensed, harness-agnostic personal AI operating system distributed as a single Claude Code skill — adds persistent memory (Cortex), intent routing (Synapse), a seven-phase self-improvement loop (OBSERVE→THINK→PLAN→BUILD→EXECUTE→VERIFY→LEARN), and a 49+ skill library on top of an existing AI coding harness.
 - **[OpenWorker](https://openworker.com/)** (Andrew Ng, Rohit Prasad): Open-source, local-first desktop AI "coworker" — runs the agent loop locally (fully local when paired with Ollama), plans and executes multi-step tasks in the user's own tools (documents, Slack, calendar), and asks for approval before important actions; returns finished deliverables rather than chat replies; model-independent (GPT, Claude, Gemini, open-weight, or Ollama); macOS available, Windows in progress. ([GitHub](https://github.com/andrewyng/openworker))
@@ -273,6 +281,9 @@ Each category provides detailed analysis of popular implementations, their capab
 - [Hermes Agent (Nous Research)](hermes-agent.md)
 - [OpenHuman (TinyHumans AI)](openhuman.md)
 - [LifeOS (Daniel Miessler)](lifeos.md)
+- [Paperclip](paperclip.md)
+- [Agent Company Platforms — Comparison Guide](agent-company-platforms.md)
+- [Agent Workforce SaaS Platforms](agent-workforce-saas.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
 - [AI Coding Agents (incl. Google Antigravity, Kiro, Snowflake CoCo, Databricks Genie Code)](../AICodingAgents/ai-coding-agents.md)
 - [Databricks Genie](databricks-genie.md)

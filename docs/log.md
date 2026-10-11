@@ -2,6 +2,28 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-10
+
+* **Ingest**: [Agent Skills Catalog — 6 community skill repos] → AgentSkills (new), Standards, AICodingAgents, AgentHarness — https://github.com/cathrynlavery/diagram-design, https://github.com/latent-spaces/brag, https://github.com/mvschwarz/openrig, https://github.com/Panniantong/Agent-Reach, https://github.com/juliusbrussee/caveman, https://github.com/multica-ai/andrej-karpathy-skills
+  * Created: `docs/AgentSkills/catalog.md`
+  * Extended: `mkdocs.yml` (section 19 Agent Skills Catalog)
+  * Extended: `docs/index.md` (section 19 bullet)
+
+## 2026-09-14
+
+* **Ingest**: [Agent Company Platform Landscape — 3 comparison tables + Polsia GitHub] → AgentPlatforms, AgenticFrameworks — https://github.com/PolsiaAI/Polsia
+  * Created: `docs/AgentPlatforms/agent-company-platforms.md`
+  * Created: `docs/AgentPlatforms/agent-workforce-saas.md`
+  * Extended: `docs/AgenticFrameworks/README.md`
+  * Extended: `docs/AgentPlatforms/saas-platforms.md`
+  * Extended: `docs/AgentPlatforms/README.md`
+  * Extended: `mkdocs.yml`
+
+* **Ingest**: [Paperclip — Agent Orchestration Platform] → AgentPlatforms — https://paperclip.ing/
+  * Created: `docs/AgentPlatforms/paperclip.md`
+  * Extended: `docs/AgentPlatforms/README.md`
+  * Extended: `mkdocs.yml`
+
 ## 2026-09-13
 
 * **Ingest**: [Demystifying Evals for AI Agents — Anthropic Engineering] → EvaluationFrameworks, ProductionBestPractices, Benchmarks, AllThingsAnthropic — https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents

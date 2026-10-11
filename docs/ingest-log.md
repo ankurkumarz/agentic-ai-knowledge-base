@@ -1780,3 +1780,99 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - **Holistic evaluation model**: automated evals + production monitoring + A/B testing + user feedback + manual transcript review + systematic human studies — Swiss Cheese Model analogy
 - **New benchmarks**: τ2-bench (adversarial multi-turn successor to τ-bench), BrowseComp (open-web needle-in-haystack for research agents)
 - **Eval-driven development pattern**: build evals to define planned capabilities before agents can fulfil them; capability evals that start low make model upgrade bets visible
+
+## [2026-09-14] ingest | Paperclip — Agent Orchestration Platform | sections touched: AgentPlatforms/paperclip.md, AgentPlatforms/README.md, mkdocs.yml
+
+**Source**: https://paperclip.ing/ (WebFetch)
+**Type**: Product website — SaaS/self-hosted agent orchestration platform
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/paperclip.md` | Created | New page: overview of org-chart model, goal alignment hierarchy, heartbeat scheduling, ticket system with full tracing, per-agent budget controls, governance model (board of directors pattern), architecture table, bring-your-own-agent support (Claude Code, Codex, Cursor, Gemini, Hermes, OpenClaw, Pi, OpenCode), deployment modes (local/remote/multi-company), positioning comparison table vs individual agents, best practices table, limitations |
+| `docs/AgentPlatforms/README.md` | Extended | Added Paperclip to Personal AI Agents list with one-liner description; added paperclip.md to See Also section |
+| `mkdocs.yml` | Extended | Added 5.10 Paperclip nav entry under AgentPlatforms section |
+
+### Key Knowledge Added
+
+- **Org-chart orchestration model**: Paperclip treats agents as a workforce — CEO, CTO, CMO, engineers — with hierarchical reporting, delegation, and cross-team routing
+- **Goal alignment hierarchy**: Mission → Project Goal → Agent Goal → Task; every piece of work carries context back to the company mission
+- **Heartbeat scheduling**: agents run on timed heartbeats (e.g., every 4–12 hours) rather than continuously; triggered also by ticket assignment or @-mention
+- **Immutable audit log**: all instructions, responses, tool calls, and decisions recorded in append-only ticket threads with full trace
+- **Budget controls**: per-agent monthly spend limits; soft warning at 80%, auto-pause at 100%; board can override
+- **Board-of-directors governance**: users approve agent hires, review CEO strategy, pause/reassign/terminate any agent at any time; autonomy is a granted privilege, not a default
+- **Model-agnostic and agent-agnostic**: any agent that can receive a heartbeat can be hired; adapters connect to Claude Code sessions, OpenClaw bots, Python scripts, shell commands, HTTP webhooks
+- **SKILL.md integration**: agents use Paperclip's SKILL.md to discover the context they need for deployment and operation
+- **Self-hosted, MIT licensed**: `npx paperclipai onboard --yes`; embedded Postgres for local mode; external Postgres for cloud; multi-company isolation in a single deployment
+- **Positioning**: sits above individual agents — "OpenClaw is an employee, Paperclip is the company"
+
+## [2026-09-14] ingest | Agent Company Platform Landscape — comparison tables + Polsia GitHub | sections touched: AgentPlatforms/agent-company-platforms.md, AgentPlatforms/agent-workforce-saas.md, AgenticFrameworks/README.md, AgentPlatforms/saas-platforms.md, AgentPlatforms/README.md, mkdocs.yml
+
+**Source**: User-provided comparison tables (3 tables covering OSS orchestration frameworks, managed SaaS workforce platforms, and open-source suitability) + https://github.com/PolsiaAI/Polsia (WebFetch)
+**Type**: Curated comparison tables + OSS GitHub repository
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentPlatforms/agent-company-platforms.md` | Created | New comparison hub page: three-layer taxonomy (agent control planes, OSS orchestration frameworks, managed SaaS); full comparison table for 9 tools (Paperclip, Microsoft Agent Framework, LangGraph, CrewAI, FleetQ, Open Multi-Agent, Auto-Company, SmythOS, Open Polsia); OSS suitability table for agentic SaaS builders |
+| `docs/AgentPlatforms/agent-workforce-saas.md` | Created | New page for managed AI workforce SaaS category: Polsia SaaS, Sistava, Relevance AI, Lindy, Tycoon, Ceres, Agentforce Vibes 2.0; per-platform attribute tables; full comparison table with pricing/autonomy/OSS columns; positioning vs agent control planes; best practices table |
+| `docs/AgenticFrameworks/README.md` | Extended | Added FleetQ (AGPLv3 visual DAG + MCP), Open Multi-Agent (MIT TS runtime DAGs), Auto-Company (MIT experimental local), SmythOS (MIT open agent OS), Open Polsia (OSS FastAPI+Next.js autonomous company system) to both framework comparison table and new "Agent Company Platforms & Autonomous Systems" prose section; added See Also section |
+| `docs/AgentPlatforms/saas-platforms.md` | Extended | Added new "AI Workforce Platforms" section with entries for Relevance AI, Lindy, Sistava, Tycoon, Ceres, Agentforce Vibes 2.0 (Salesforce), and Polsia SaaS; added See Also section linking to new pages |
+| `docs/AgentPlatforms/README.md` | Extended | Added "Agent Company Platforms & Orchestration" sub-section linking to agent-company-platforms.md and agent-workforce-saas.md; added both new pages to See Also |
+| `mkdocs.yml` | Extended | Added 5.11 Agent Company Platforms — Comparison Guide and 5.12 Agent Workforce SaaS Platforms nav entries |
+
+### Key Knowledge Added
+
+**Category taxonomy established:**
+- Layer 1 — Agent control planes: Paperclip (company OS, bring-your-own-agent, board-of-directors governance)
+- Layer 2 — OSS orchestration frameworks: LangGraph (stateful graphs), CrewAI (role-based crews), FleetQ (visual DAGs + MCP), Open Multi-Agent (TS runtime DAGs), Auto-Company (experimental local dark-factory), SmythOS (open agent OS), Microsoft Agent Framework (SK + AutoGen unified SDK)
+- Layer 3 — Managed AI workforce SaaS: Polsia, Sistava, Relevance AI, Lindy, Tycoon, Ceres, Agentforce Vibes 2.0
+
+**Tool-specific details captured:**
+- **FleetQ** (AGPLv3): visual DAG builder, 675+ MCP tools, HITL approvals, full audit trail, mission-control UI; closest to Paperclip with visual DAGs
+- **Open Multi-Agent** (MIT, TS, Node 20+): runtime DAG planning, approval gates, tracing, evaluation, checkpoints, resume; built for JS/TS web stacks
+- **Auto-Company** (MIT): experimental fully autonomous multi-agent company on a single PC; minimal governance; reference pattern only
+- **SmythOS** (MIT): open agent OS — Runtime, CLI, SDK, Studio all OSS; cloud-native; general agent runtime for custom control planes
+- **Open Polsia** (OSS): 9 agents (orchestrator/CEO, coding, marketing, sales outreach, support, finance, planning, competitor research, social); FastAPI + Next.js 14 + PostgreSQL 16 + Redis/Celery + ChromaDB; each agent calls Claude Code CLI as subprocess (`claude -p "..." --output-format json`); SANDBOX_MODE for safe testing; CLAUDE_CLI_MOCK=true for CI; Docker Compose deploy
+- **Polsia SaaS** (commercial): $49/mo + 20% rev-share; provisions full infra stack on signup; dark-factory by default; distinct from Open Polsia OSS
+- **Sistava**: $25–$200/mo; agents run inside existing tools; plug-and-play AI employees
+- **Relevance AI**: dual-meter pricing (Actions + Vendor Credits); 1,000+ connectors; RBAC/SSO/audit/OpenTelemetry; Gartner Pioneer classification; partially OSS (JS SDK)
+- **Lindy**: $49.99/mo; email + CRM focus; framed as AI employees
+- **Tycoon**: managed AI team for solo founders; no OSS
+- **Ceres**: marketing-only managed AI workforce
+- **Agentforce Vibes 2.0**: Claude Sonnet + GPT-5 + open harness; Headless 360 exposes Salesforce as APIs/MCP/CLI; no free tier
+
+**OSS suitability analysis for agentic SaaS builders:**
+- Very relevant foundations: Paperclip (MIT), LangGraph (MIT), Open Multi-Agent (MIT), SmythOS (MIT)
+- Strong fit: CrewAI (MIT), FleetQ (AGPLv3 — note copyleft), Microsoft Agent Framework (MIT)
+- Reference/experimental: Open Polsia (OSS), Auto-Company (MIT)
+- Not suitable as foundations: Polsia SaaS, Lindy, Tycoon, Ceres, Agentforce Vibes (all proprietary)
+
+## [2026-10-10] ingest | Agent Skills Catalog — 6 community skill repos | sections touched: AgentSkills, Standards, AICodingAgents, AgentHarness
+
+**Source type:** GitHub repositories (6 × community/open-source)
+**Primary section:** AgentSkills (new)
+**Secondary sections:** Standards/skills.md (See Also), AICodingAgents, AgentHarness
+
+**Files modified:**
+
+| Change | File |
+|---|---|
+| Created | `docs/AgentSkills/catalog.md` |
+| Extended | `mkdocs.yml` (section 19) |
+| Extended | `docs/index.md` (section 19 bullet) |
+| Extended | `docs/log.md` |
+| Extended | `docs/ingest-log.md` |
+
+**Key knowledge added:**
+
+- **diagram-design** (cathrynlavery): skill for 44 diagram types as self-contained HTML+SVG; no Mermaid, no shadows; brand onboarding via one command; install via `npx skills add` or Claude Code / Codex marketplaces; cross-agent symlinks cover Cursor, Gemini CLI, Windsurf, Amp, Warp
+- **brag** (latent-spaces): skill that produces a 20-second launch video (music + motion + share copy) from a finished project; routes a composition brief to Hyperframes; `/brag-slim` single-file variant for Opus 5.5; no-install variant at letsbrag.app
+- **openrig** (mvschwarz): harness-level tool (not a single SKILL.md) for building persistent multi-agent networks; YAML team definitions; Claude Code + Codex in the same rig; SQLite state; `rig doctor` diagnostics; v0.6.8; requires Node.js 22/24 + tmux
+- **Agent-Reach** (Panniantong): multi-platform internet-access skill; zero API fees; multi-backend fallback routing (e.g. yt-dlp → bili-cli on Bilibili after platform block, June 2026); covers YouTube, Twitter/X, Reddit, GitHub, Bilibili, XiaoHongShu, LinkedIn, RSS, and more; cookies stored locally only
+- **caveman** (juliusbrussee): token compression proxy + skill; 33.2% fewer input tokens (54-run Claude Code study, 18/18 correct); 129.8× smaller web pages for agent browsing; 1.4–2.4× cost reduction per Adobe Research CAVEWOMAN paper; JetBrains A/B (86 tasks, p=0.82, no quality loss); Elastic (63.6% fewer response tokens, zero information loss); three variants: /caveman, /ultracave, /megacave; based on ASD-STE100 controlled English
+- **andrej-karpathy-skills** (multica-ai): CLAUDE.md with 4 principles (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) derived from Karpathy's public LLM coding observations; installable as Claude Code plugin or per-project CLAUDE.md append; Cursor rule included in repo

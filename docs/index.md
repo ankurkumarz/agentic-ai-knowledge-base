@@ -170,6 +170,11 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Cost Monitoring**: Langfuse, Openlit, LangSmith, Braintrust cost tracking
 - **Vendor Guidance**: Anthropic, OpenAI, Google, and AWS cost optimization approaches
 
+### **19. Agent Skills Catalog**
+- **Skills Catalog**: Curated catalog of open-source agent skills installable into Claude Code, Codex, Cursor, Gemini CLI, and compatible harnesses — [diagram-design](AgentSkills/catalog.md) (44 diagram types, self-contained HTML+SVG), [brag](AgentSkills/catalog.md) (one-command project launch video), [openrig](AgentSkills/catalog.md) (persistent YAML-defined multi-agent teams), [Agent-Reach](AgentSkills/catalog.md) (multi-platform internet access with zero API fees), [caveman](AgentSkills/catalog.md) (33%+ token compression proxy+skill, cited by Adobe Research and JetBrains), and [andrej-karpathy-skills](AgentSkills/catalog.md) (four LLM coding-behavior principles from Karpathy)
+
+---
+
 ## Target Audiences
 
 ### **Architects & Technical Leaders**
