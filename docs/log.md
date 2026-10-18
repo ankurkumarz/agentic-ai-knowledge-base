@@ -2,6 +2,15 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-18
+
+* **Ingest**: [8 Chunking Strategies for RAG — ByteByteGo (EP229)] → RAG, ReferenceArchitecture, index — https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag
+  * Created: `docs/RAG/chunking-strategies.md`
+  * Extended: `docs/RAG/Readme.md`
+  * Extended: `docs/ReferenceArchitecture/rag-architecture.md`
+  * Extended: `docs/index.md`
+  * Extended: `mkdocs.yml`
+
 ## 2026-10-10
 
 * **Ingest**: [Agent Skills Catalog — 6 community skill repos] → AgentSkills (new), Standards, AICodingAgents, AgentHarness — https://github.com/cathrynlavery/diagram-design, https://github.com/latent-spaces/brag, https://github.com/mvschwarz/openrig, https://github.com/Panniantong/Agent-Reach, https://github.com/juliusbrussee/caveman, https://github.com/multica-ai/andrej-karpathy-skills

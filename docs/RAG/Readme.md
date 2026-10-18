@@ -30,7 +30,7 @@ Retrieval is the backbone of RAG. The choice of algorithm determines quality, co
 
 Key strategies for improving retrieval quality:
 
-- **Chunking strategy**: Splitting documents into workable chunks is a core design decision. Chunk size and overlap affect both recall and context length. Common approaches: fixed-size chunks, sentence-level chunks, semantic chunking (split at topic boundaries).
+- **Chunking strategy**: Splitting documents into workable chunks is a core design decision. Chunk size and overlap affect both recall and context length. Common approaches: fixed-size chunks, sentence-level chunks, semantic chunking (split at topic boundaries). Eight strategies (fixed-size, recursive, document-based, semantic, LLM-based, agentic, late chunking, hierarchical) are compared in [Chunking Strategies for RAG](chunking-strategies.md).
 - **Query expansion**: Rewrite or augment the user query to improve recall (hypothetical document embeddings, multi-query retrieval)
 - **Metadata filtering**: Attach and filter by document metadata (date, source, category) to reduce irrelevant retrievals
 - **Contextual compression**: After retrieval, extract only the passages most relevant to the specific query rather than including whole chunks
@@ -81,6 +81,7 @@ Agentic contextual retrieval:
 - [RAG Reference Architecture](../ReferenceArchitecture/rag-architecture.md)
 - [RAG Evaluation Benchmarks](../Benchmarks/rag-benchmarks.md)
 - [Search as Code](search-as-code.md)
+- [Chunking Strategies for RAG](chunking-strategies.md)
 - [Semantic Data Layer Technology Radar](../AgenticTechStack/semantic-data-layer-radar.md)
 
 ## References
