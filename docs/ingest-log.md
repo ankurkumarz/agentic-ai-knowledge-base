@@ -1876,3 +1876,30 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - **Agent-Reach** (Panniantong): multi-platform internet-access skill; zero API fees; multi-backend fallback routing (e.g. yt-dlp → bili-cli on Bilibili after platform block, June 2026); covers YouTube, Twitter/X, Reddit, GitHub, Bilibili, XiaoHongShu, LinkedIn, RSS, and more; cookies stored locally only
 - **caveman** (juliusbrussee): token compression proxy + skill; 33.2% fewer input tokens (54-run Claude Code study, 18/18 correct); 129.8× smaller web pages for agent browsing; 1.4–2.4× cost reduction per Adobe Research CAVEWOMAN paper; JetBrains A/B (86 tasks, p=0.82, no quality loss); Elastic (63.6% fewer response tokens, zero information loss); three variants: /caveman, /ultracave, /megacave; based on ASD-STE100 controlled English
 - **andrej-karpathy-skills** (multica-ai): CLAUDE.md with 4 principles (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) derived from Karpathy's public LLM coding observations; installable as Claude Code plugin or per-project CLAUDE.md append; Cursor rule included in repo
+
+---
+
+## [2026-10-18] ingest | 8 Chunking Strategies for RAG — ByteByteGo (EP229) | sections touched: RAG/chunking-strategies.md, RAG/Readme.md, ReferenceArchitecture/rag-architecture.md, index.md, mkdocs.yml
+
+**Source**: https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag
+**Image**: https://substack-post-media.s3.amazonaws.com/public/images/88462ca4-b0a1-4441-9537-59dae9d5ef65_2484x3002.png (hotlinked; returned HTTP 200 `image/png`)
+**Type**: Blog post (ByteByteGo newsletter)
+**Primary section**: RAG
+**Secondary sections**: ReferenceArchitecture (indexing path), ContextEngineering and ProductionBestPractices (See Also only)
+
+**Files modified:**
+
+| Change | File |
+|---|---|
+| Created | `docs/RAG/chunking-strategies.md` |
+| Extended | `docs/RAG/Readme.md` (chunking bullet, See Also) |
+| Extended | `docs/ReferenceArchitecture/rag-architecture.md` (See Also) |
+| Extended | `docs/index.md` (RAG Architecture bullet) |
+| Extended | `mkdocs.yml` (section 7.10) |
+| Extended | `docs/log.md` |
+| Extended | `docs/ingest-log.md` |
+
+**Key knowledge added:**
+
+- **Eight strategies** compared in one table: fixed-size (token-count cuts with small overlap), recursive (paragraphs → lines → words → characters, only when still too big), document-based (headings, chapters, HTML tags), semantic (sentence-embedding similarity drops), LLM-based (standalone propositions; high quality, expensive at corpus scale), agentic (per-file method selection by document type), late chunking (full-document embedding, then mean-pooling within boundaries), hierarchical (sections → paragraphs → sentences)
+- The source does not rank the strategies; the page's selection guidance is derived from the source descriptions only

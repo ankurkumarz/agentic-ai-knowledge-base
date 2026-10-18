@@ -343,3 +343,9 @@ async def process_query(query: str, user_context: dict = None):
 - [AI Assistant Architecture](ai-assistant-architecture.md): For interactive assistant integration
 - [Self-Learning Agents](self-learning-agents.md): For adaptive knowledge systems
 - [Specialized Domain Blueprints](specialized-blueprints.md): For domain-specific implementations
+
+## See Also
+
+- [Chunking Strategies for RAG](../RAG/chunking-strategies.md): Eight chunking strategies for the ingestion pipeline's text-chunking step
+- [RAG Implementation Overview](../RAG/Readme.md)
+- [Search as Code](../RAG/search-as-code.md)

@@ -94,7 +94,7 @@ Comprehensive coverage of major development frameworks:
 - **AI Automation**: LangManus framework and automation patterns
 - **Self-learning Agents**: Agent0 series and self-evolving systems
 - **AI Assistant Architecture**: Reference implementations and blueprints
-- **RAG Architecture**: Retrieval-augmented generation patterns
+- **RAG Architecture**: Retrieval-augmented generation patterns; eight chunking strategies (fixed-size, recursive, document-based, semantic, LLM-based, agentic, late chunking, hierarchical) — [Chunking Strategies for RAG](RAG/chunking-strategies.md)
 - **Search as Code (SaC)**: Perplexity's paradigm where models generate code to assemble task-specific retrieval pipelines; three layers — Models as Control Plane, Compute Sandboxes, Agentic Search SDK; 2.5× advantage on WANDR benchmark; 85.1% token reduction in CVE audit case study
 - **NVIDIA AI Blueprints**: Video search and summarization agents
 
