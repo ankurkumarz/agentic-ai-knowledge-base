@@ -3,7 +3,7 @@ type: Playbook
 title: Loop Engineering
 description: "Loop engineering is the practice of designing a system that prompts a coding agent on your behalf, rather than prompting the agent yourself turn by turn"
 tags: [agent-harness, engineering, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Loop Engineering
 
@@ -192,8 +192,10 @@ Each example is a self-contained prompt/skill that maps onto the automations + s
 - [Production Best Practices: State & Memory](../ProductionBestPractices/state-memory.md) — externalized state patterns for long-running agents
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)
 - [AllThingsOpenAI](../AllThingsOpenAI/README.md)
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the same closed-loop pattern applied to the full software development lifecycle
 
 ## References
 
 - [Loop Engineering — Addy Osmani](https://addyosmani.com/blog/loop-engineering/) — source for the five-plus-one primitive framework, the Codex app/Claude Code comparison table, and the verification/comprehension-rot/cognitive-surrender risks of unattended loops
 - [cobusgreyling/loop-engineering — Claude Code examples](https://github.com/cobusgreyling/loop-engineering/tree/main/examples/claude-code) — example loop prompts (changelog-drafter, ci-sweeper, daily-triage, dependency-sweeper, issue-triage, post-merge-cleanup, pr-babysitter)
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the closed-loop SDLC that this page's loop-primitive pattern is applied to end-to-end, from intent capture to autonomous monitoring.

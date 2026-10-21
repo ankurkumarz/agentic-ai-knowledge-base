@@ -1903,3 +1903,45 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 
 - **Eight strategies** compared in one table: fixed-size (token-count cuts with small overlap), recursive (paragraphs → lines → words → characters, only when still too big), document-based (headings, chapters, HTML tags), semantic (sentence-embedding similarity drops), LLM-based (standalone propositions; high quality, expensive at corpus scale), agentic (per-file method selection by document type), late chunking (full-document embedding, then mean-pooling within boundaries), hierarchical (sections → paragraphs → sentences)
 - The source does not rank the strategies; the page's selection guidance is derived from the source descriptions only
+
+## [2026-10-20] ingest | The AI-native SDLC playbook — Anthropic | sections touched: AgentOps/ai-native-sdlc.md (new), AICodingAgents/claude-code.md, AgentHarness/loop-engineering.md, AgentOps/genops.md, Standards/skills.md, AgentPlatforms/claude-managed-agents.md, AllThingsAnthropic/README.md, ProductionBestPractices/README.md, ProductionBestPractices/deployment.md, ProductionBestPractices/testing-evaluations.md, ProductionBestPractices/security.md, ProductionBestPractices/observability.md, EvaluationFrameworks/agent-evals-design.md, SecurityFrameworks/anthropic-sandbox-runtime.md, Observability/Readme.md, index.md, mkdocs.yml (log.md and ingest-log.md updated with this ingest)
+
+**Source**: https://claude.com/resources/articles/the-ai-native-sdlc-playbook
+**Type**: Vendor playbook (Anthropic, Aug 21, 2026)
+**Author**: Louis Claxton (Anthropic Applied AI)
+**Product context**: Claude Enterprise, Claude Code, Claude Tag
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentOps/ai-native-sdlc.md` | Created | New primary page: six-stage AI-native SDLC (Plan/Design/Build/Test/Deploy/Maintain), artifact chain, plays, cross-cutting themes, best practices, bidirectional See Also links, References with canonical URL |
+| `docs/AICodingAgents/claude-code.md` | Extended | See Also + References link to AI-Native SDLC page |
+| `docs/AgentHarness/loop-engineering.md` | Extended | See Also + References link noting the closed-loop pattern applied to full SDLC |
+| `docs/AgentOps/genops.md` | Extended | See Also + References link |
+| `docs/Standards/skills.md` | Extended | See Also + References link contextualizing skills as advisory + hooks as deterministic enforcement |
+| `docs/AgentPlatforms/claude-managed-agents.md` | Extended | See Also + References link |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for AI-Native SDLC Playbook (per vendor-hub rule: one-liner + backlink only) and See Also |
+| `docs/ProductionBestPractices/README.md` | Extended | Added AI-Native SDLC Playbook URL to the Anthropic row in vendor best practices table |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Added 3 best-practice rows (CI/CD judgment steps, tiered environment autonomy, rehearsed rollback); added References |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added 3 best-practice rows (configuration-regression evals, incident-to-eval feedback, protected test files during agent fixes); added References |
+| `docs/ProductionBestPractices/security.md` | Extended | Added 5 best-practice rows (advisory-vs-deterministic controls, bypass-resistant managed settings, OS-level sandbox for shell egress, separation of duties, recurring scans); added References |
+| `docs/ProductionBestPractices/observability.md` | Extended | Added 3 best-practice rows (verification evidence in PR, deterministic drift detection, per-gate metrics); added See Also and new References section |
+| `docs/index.md` | Extended | Updated AgentOps & GenOps bullet to note the playbook |
+| `docs/EvaluationFrameworks/agent-evals-design.md` | Extended | See Also + References link for configuration-regression evals and incident-to-eval feedback |
+| `docs/SecurityFrameworks/anthropic-sandbox-runtime.md` | Extended | See Also + References link for the managed-settings sandbox configuration |
+| `docs/Observability/Readme.md` | Extended | New subsection: SDLC Observability Patterns (verification evidence in PR, per-gate timing, deterministic drift detection) |
+| `mkdocs.yml` | Extended | Added 13.4 Lifecycle Playbooks / 13.4.1 AI-Native SDLC (Anthropic) |
+
+### Key Knowledge Added
+
+- **AI-native SDLC core idea**: The SDLC becomes a loop, not a linear phase sequence. The unifying mechanism is the committed artifact chain — `intent.md` → `spec.md` → `plan.md` → code/tests → PR + review findings → incident record — where each stage's artifact is what the next stage reads, and the commit chain is the audit trail.
+- **Bottleneck migration**: When build collapses to hours, the bottleneck moves left and right to plan, review/test, and deploy; governance controls sized for human output become the new bottleneck.
+- **Plan (Stage 1)**: `intent.md` as version-controlled proto-spec in originator's own terms, with a shared intent home (often an `intent/` folder in the product repo) and VCS connector so non-engineers commit through claude.ai/Cowork.
+- **Design (Stage 2)**: Requirements + design in one working session; flagged concerns routed to policy owners before engineering sees the spec; Claude Design (beta) for front-end mocks exported to Claude Code.
+- **Build (Stage 3)**: Plan mode as the default starting point; `plan.md` committed as an auditable artifact that PR review checks the diff against; `CLAUDE.md` as the per-repo working-knowledge file (mistake-twice rule, under a page); skills as institutional knowledge (advisory); hooks as deterministic build-time guardrails; parallel sessions via worktrees and subagents via `.claude/agents/*.md`.
+- **Test (Stage 4)**: Feedback loop (session verifies own work before human sees it); bug-fix workflow writes the failing test first with a hook blocking agent edits to test files; continuous evals in CI gating `CLAUDE.md`/skills/hooks changes — configuration steers the agent and deserves the regression testing code gets; each production incident becomes an eval.
+- **Deploy (Stage 5)**: PR review loop with `REVIEW.md` policy and severity-ranked findings; branch protection still requires a human code owner (separation of duties preserved — the agent that wrote the code has no route to approve it); hooks as approval gates (`allow`/`ask`/`block`); managed settings for regulated enterprise (sandbox, credential denial, managed-only hooks/MCP, plugin marketplace allowlist, required minimum version); CI/CD with `claude -p` non-interactive judgment steps, tiered autonomy by environment, MCP-exposed deployment tools, most-rehearsed rollback path.
+- **Maintain (Stage 6)**: Deterministic detection script (Western Electric bands on a stable metric, `bands.yaml` response tiers 1σ log / 2σ diagnose / 3σ act via PR or runbook); Claude stateless, writes findings back as `intent.md`; recurring codebase scans (Claude Security, public beta); Claude Tag (public beta, Slack) makes Claude a first-responder member of incident channels with the channel as the audit trail.
+- **Cross-cutting**: Skills vs. hooks (advisory vs. deterministic); source-of-truth rules for legacy SDLC tooling (repo as source of truth / legacy system as source of truth / linkage as minimum bar); measures of effectiveness as a leading+lagging indicator pair per play.
+- **Note**: Sigma bands, suggested eval-suite size (20–50 tasks), and expected speed gains are recommendations/examples from the source, not measured outcomes.

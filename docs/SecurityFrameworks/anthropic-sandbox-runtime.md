@@ -79,7 +79,9 @@ Linux requires `bubblewrap`, `socat`, and `ripgrep` as system dependencies.
 - [Agentic AI Security Overview](./Readme.md)
 - [Agent Governance Toolkit (Microsoft)](./agent-governance-toolkit.md)
 - [Anthropic — Agentic AI Overview](../AllThingsAnthropic/README.md)
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the managed-settings sandbox configuration this playbook recommends for agent CI/CD jobs (network allowlist, credential-file denial, `failIfUnavailable` as a hard gate)
 
 ## References
 
 - [anthropic-experimental/sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) — GitHub repository; Apache-2.0; ~4.1k stars; research preview for OS-level process sandboxing aimed at MCP servers
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the managed-settings sandbox configuration recommended for agent CI/CD jobs: OS-level network allowlist, credential-file denial, `failIfUnavailable` as a hard gate, and stripping named secrets from sandboxed command environments.

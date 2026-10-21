@@ -2,6 +2,27 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-20
+
+* **Ingest**: [The AI-native SDLC playbook — Anthropic] → AgentOps, AICodingAgents, AgentHarness, Standards, AgentPlatforms, AllThingsAnthropic, ProductionBestPractices, EvaluationFrameworks, SecurityFrameworks, Observability, index — https://claude.com/resources/articles/the-ai-native-sdlc-playbook
+  * Created: `docs/AgentOps/ai-native-sdlc.md`
+  * Extended: `docs/AICodingAgents/claude-code.md` (See Also, References)
+  * Extended: `docs/AgentHarness/loop-engineering.md` (See Also, References)
+  * Extended: `docs/AgentOps/genops.md` (See Also, References)
+  * Extended: `docs/Standards/skills.md` (See Also, References)
+  * Extended: `docs/AgentPlatforms/claude-managed-agents.md` (See Also, References)
+  * Extended: `docs/AllThingsAnthropic/README.md` (hub row, See Also)
+  * Extended: `docs/ProductionBestPractices/README.md` (Anthropic vendor row)
+  * Extended: `docs/ProductionBestPractices/deployment.md` (3 best-practice rows, See Also, References)
+  * Extended: `docs/ProductionBestPractices/testing-evaluations.md` (3 best-practice rows, References)
+  * Extended: `docs/ProductionBestPractices/security.md` (5 best-practice rows, References)
+  * Extended: `docs/ProductionBestPractices/observability.md` (3 best-practice rows, See Also, References)
+  * Extended: `docs/EvaluationFrameworks/agent-evals-design.md` (See Also, References)
+  * Extended: `docs/SecurityFrameworks/anthropic-sandbox-runtime.md` (See Also, References)
+  * Extended: `docs/Observability/Readme.md` (SDLC Observability Patterns subsection)
+  * Extended: `docs/index.md` (AgentOps bullet, References)
+  * Extended: `mkdocs.yml` (section 13.4 Lifecycle Playbooks)
+
 ## 2026-10-18
 
 * **Ingest**: [8 Chunking Strategies for RAG — ByteByteGo (EP229)] → RAG, ReferenceArchitecture, index — https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag

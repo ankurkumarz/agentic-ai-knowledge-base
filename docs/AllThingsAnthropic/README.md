@@ -3,7 +3,7 @@ type: Vendor Hub
 title: Anthropic — Agentic AI Overview
 description: "Anthropic builds the Claude model family with a focus on safety, interpretability, and reliable long-horizon task performance"
 tags: [anthropic, vendor, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Anthropic — Agentic AI Overview
 
@@ -34,6 +34,7 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 | Orchestration Primitives Guide | Decision guide for choosing between MCP, Skills, Subagents, Agent View, Agent Teams, and Dynamic Workflows — includes flowchart, capability matrix, and composition patterns | [WorkflowBuilders/claude-orchestration-guide.md](../WorkflowBuilders/claude-orchestration-guide.md) |
 | Loop Engineering (Claude Code) | `/loop`, `/goal`, scheduled tasks, hooks, and GitHub Actions composed with worktrees, skills, MCP connectors, and subagents into self-feeding automation loops | [AgentHarness/loop-engineering.md](../AgentHarness/loop-engineering.md) |
 | Agent Client Protocol (ACP) | Claude Code integrates with ACP-compatible editors (e.g., Zed, JetBrains) via an adapter rather than native ACP support | [Standards/agent-client-protocol.md](../Standards/agent-client-protocol.md) |
+| AI-Native SDLC Playbook | Anthropic's six-stage playbook for rebuilding the SDLC as a loop with agentic AI: intent.md → spec.md → plan.md → build/test/deploy with hooks as deterministic enforcement and skills as advisory policy, closed by autonomous monitoring | [AgentOps/ai-native-sdlc.md](../AgentOps/ai-native-sdlc.md) |
 
 ## See Also
 
@@ -44,3 +45,8 @@ Anthropic builds the Claude model family with a focus on safety, interpretabilit
 - [Agentic AI Industry Standards](../Standards/mcp.md)
 - [Agent Memory Management](../AgentMemory/README.md)
 - [Self-Learning Agents Reference Architecture](../ReferenceArchitecture/self-learning-agents.md)
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md)
+
+## References
+
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the AI-Native SDLC Playbook hub row.

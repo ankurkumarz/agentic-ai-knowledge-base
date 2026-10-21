@@ -3,7 +3,7 @@ type: Reference
 title: GenOps – Evolution of MLOps for GenAI
 description: GenOps (Generative Operations) represents the evolution of MLOps practices specifically tailored for generative AI and agentic systems
 tags: [agentops, operations, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # GenOps – Evolution of MLOps for GenAI
 
@@ -186,3 +186,8 @@ Reward engineering sits above prompt engineering in the abstraction stack and is
 - [Agent Definition](../Concepts/agent-definition.md)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 - [Observability](../Observability/Readme.md)
+- [AI-Native SDLC (Anthropic playbook)](./ai-native-sdlc.md)
+
+## References
+
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the AI-native SDLC that extends GenOps lifecycle thinking to the full software development lifecycle.

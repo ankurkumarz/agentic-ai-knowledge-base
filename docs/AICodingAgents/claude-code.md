@@ -3,7 +3,7 @@ type: AI Tool
 title: Claude Code
 description: Claude Code is Anthropic's terminal-based AI coding agent that operates directly in the developer's environment with full filesystem and shell access.
 tags: [frameworks, agentic-ai, coding-agents]
-timestamp: 2026-08-01T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 
 # Claude Code
@@ -146,6 +146,7 @@ The AI-Native Software Engineering Maturity Model defines five levels of organiz
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)
 - [LifeOS](../AgentPlatforms/lifeos.md) — personal AI operating system distributed as a single Claude Code skill (persistent memory, intent routing, self-improvement loop)
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the end-to-end SDLC built around Claude Code's plan mode, skills, hooks, and artifact chain
 
 ## References
 
@@ -155,5 +156,6 @@ The AI-Native Software Engineering Maturity Model defines five levels of organiz
 - [Neuralmind](https://github.com/dfrostar/neuralmind) — persistent memory and cognitive store plugin
 - [Andrej Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills) — curated workflow and prompt skills
 - [Ponytail](https://github.com/DietrichGebert/ponytail) — agent execution and workflow tooling plugin
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for Claude Code plan mode as default starting point, CLAUDE.md conventions, skills-as-institutional-knowledge, hooks, parallel sessions via worktrees, and the artifact chain the SDLC is built around.
 - [Superpowers](https://obra-superpowers.mintlify.app/introduction) — structured engineering discipline framework
 - [BMAD Method](https://github.com/bmad-code-org/bmad-method) — multi-agent agile methodology framework

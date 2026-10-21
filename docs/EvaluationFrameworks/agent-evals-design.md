@@ -275,7 +275,9 @@ Frameworks accelerate progress and standardise processes, but they are only as g
 - [Agent Testing & Evaluations — Production Playbook](../ProductionBestPractices/testing-evaluations.md) — harness-level eval categories, adversarial test cases, launch gates
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md) — harness design patterns evaluated by these techniques
 - [Observability](../Observability/Readme.md) — production monitoring that complements automated evals
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — configuration-regression evals gating `CLAUDE.md`/skills/hooks changes, and the incident-to-eval feedback loop
 
 ## References
 
 - [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Anthropic Engineering (2026). Primary source for this page.
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for configuration-regression evals gating `CLAUDE.md`/skills/hooks changes and the incident-to-eval feedback loop.

@@ -3,7 +3,7 @@ type: Playbook
 title: Observability
 description: Observability for agentic AI goes beyond traditional APM
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Observability
 
@@ -32,6 +32,9 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | Hallucination detection | Hard to know when agent outputs are factually wrong | Manual spot-checking doesn't scale | Integrate LLM-as-judge evaluation on sampled outputs; track hallucination rate as a KPI |
 | Tool call failure visibility | Tool failures silently degrade agent quality | Checked only final output quality; missed upstream tool errors | Log every tool invocation with input, output, latency, and success/failure status |
 | Business metric correlation | Technical metrics don't reflect actual agent value | Tracked only P99 latency; missed that task completion rate was declining | Define business KPIs (task completion rate, escalation rate, resolution rate) and correlate with technical traces |
+| Verification evidence not attached to the PR | Engineers must re-run tests to confirm an agent's claim that the work is done; the reviewer cannot verify from the PR alone | Not reported in the source | Require the agent to paste the literal output of `make test`, the build log, or the screenshot diff into the PR — evidence comes from the toolchain, and the reviewer and auditor can both see it ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Drift detection relies on human eyes or lagging dashboards | Monitoring often alerts only after users notice; slow drift goes undetected | Not reported in the source | Deterministic detection script (no model) computes mean/stddev over a rolling window with Western Electric-style rules; response tiers in version-controlled `bands.yaml` — 1σ log, 2σ agent diagnoses read-only, 3σ agent acts via PR or pre-approved runbook; findings written back as `intent.md` ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Gate and stage metrics not visible | Time spent waiting on approval gates is invisible, so gates stay slow | Not reported in the source | Every hook decision is logged to the OpenTelemetry export with a timestamp and an allow/block verdict, so wait time is visible per gate and per stage ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 
 ## Trace Fields Reference
 
@@ -273,3 +276,8 @@ Layered evaluation strategy for multi-agent systems: per-agent evaluations (isol
 - [Deployment](./deployment.md)
 - [Cost Management](./cost-management.md)
 - [Agent Testing & Evaluations](./testing-evaluations.md)
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — verification evidence attached to PRs, per-gate metrics from hook decisions, deterministic drift detection with tiered response
+
+## References
+
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for verification-evidence-in-PR, per-gate OpenTelemetry logging of hook decisions, and deterministic drift detection with version-controlled response tiers.

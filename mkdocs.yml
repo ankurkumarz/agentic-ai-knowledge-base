@@ -199,6 +199,8 @@ nav:
       - 13.3.1 kagent (CNCF): 'AgentOps/kagent.md'
       - 13.3.2 Agentic Ops Framework (AOF): 'AgentOps/agentic-ops-framework.md'
       - 13.3.3 KAOS (K8s Agent Orchestration System): 'AgentOps/kaos.md'
+    - 13.4 Lifecycle Playbooks:
+      - 13.4.1 AI-Native SDLC (Anthropic): 'AgentOps/ai-native-sdlc.md'
   - 14. Agentic AI Maturity Models:
     - 14.1 Gartner's Perspective: 'MaturityModels/gartner.md'
     - 14.2 AWS's Perspective:

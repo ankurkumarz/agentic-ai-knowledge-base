@@ -3,7 +3,7 @@ type: Playbook
 title: "Agent Testing & Evaluations"
 description: Evaluating agentic AI systems is fundamentally different from traditional software testing
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-09-13T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Agent Testing & Evaluations
 
@@ -38,6 +38,9 @@ Evaluation operates at multiple levels:
 | Brittle graders checking execution paths | Checking that agents followed a specific tool-call sequence makes tests fail whenever the agent finds a valid but unanticipated approach | Wrote graders that required exact tool-call ordering; creative solutions were penalised | Grade what the agent produced (outcome and output quality), not the path it took; reserve tool-call checks for verifying security or compliance requirements, not general correctness |
 | Flaky eval environments | Shared state between trial runs — leftover files, cached data, resource exhaustion — causes correlated failures that measure infrastructure, not agent performance | Did not isolate trial environments; shared state inflated scores when a previous trial cached useful results | Start every trial from a clean, isolated environment; treat correlated trial failures as infrastructure bugs, not agent regressions |
 | LLM judge hallucinating verdicts | Model-based graders sometimes return confident scores even when they lack enough information to make a determination | Trusted raw LLM judge output without calibration; graders returned invented pass/fail decisions | Give the LLM judge a way out ("return Unknown if insufficient information"); calibrate model judges against human experts periodically; grade each rubric dimension with an isolated LLM call rather than one judge for all dimensions |
+| Agent-configuration changes not regression-tested | `CLAUDE.md`, skills, and hooks steer agent behavior but are typically reviewed only by code review — a subtle change can silently regress quality | Not reported in the source | Run a continuous eval suite in CI (Anthropic recommends collecting 20 to 50 real tasks as the suite) whenever the agent's configuration changes, since that configuration deserves the regression testing code gets; gate merges on pass rate ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Production incidents not fed back into the eval suite | Each incident is triaged, fixed, and forgotten; the same class of failure recurs | Not reported in the source | Add an eval for each production incident, written by the team that owned it, that stays in the suite as a regression test ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Agent can weaken its own check during a fix | An agent asked to fix code may rewrite or delete the failing test to make the suite green | Alternative: review the diff manually and reject test changes case-by-case; limitation: not reported in the source | Enforce a hook that blocks edits to test files during a fix task; alternatively reject any diff that touches a test in review — a test that existed before the fix, that the agent could not rewrite, is proof the bug is gone ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 
 ## Capability vs. Regression Evals
 
@@ -204,8 +207,10 @@ The following must be true before production rollout:
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category threat taxonomy and four-phase testing methodology
 - [Agent Security](./security.md) — guardrails, approval workflows, and audit trails
 - [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — cloud-hosted sandbox providers (including LangSmith Sandboxes) used to isolate parallel eval trials
+- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — configuration-regression evals, incident-to-eval feedback, and the feedback-loop play
 
 ## References
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
 - [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Anthropic Engineering (2026). Source for capability vs regression evals, pass@k/pass^k metrics, grader design patterns, eval lifecycle roadmap, and Braintrust/Harbor framework references.
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for configuration-regression evals, incident-to-eval feedback, feedback loop with failing-test-first bug-fix workflow, and protected test files during agent fixes.

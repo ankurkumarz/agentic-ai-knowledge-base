@@ -135,7 +135,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Memory Solutions**: Mem0, MemMachine, Zep, AgentFS, cloud-managed memory services (AWS AgentCore, Vertex, Azure, Anthropic Managed Agents, Salesforce Agentic Memory, Cloudflare Agent Memory), agentmemory, MinnsDB, and framework-native memory (LangGraph, LlamaIndex, CrewAI) — full Technology Radar comparison
 
 ### **Deployment**
-- **AgentOps & GenOps**: Evolution of MLOps for generative AI systems
+- **AgentOps & GenOps**: Evolution of MLOps for generative AI systems; includes Anthropic's AI-native SDLC playbook — a six-stage loop from intent capture to autonomous loop closure
 - **Lifecycle Management**: Development, testing, deployment, and operations; **OpenGeni** (Apache-2.0) is a self-hostable agentic runtime for durable, replayable sessions, human approvals, and governed credentials/memory
 - **Production Operations**: Container orchestration, auto-scaling, and multi-agent coordination
 - **Kubernetes-Native Agent Orchestration**: kagent (CNCF Sandbox), Agentic Ops Framework (AOF), and KAOS run agents, tools, and models as Kubernetes Custom Resources; the separate Kubernetes SIG Apps "Agent Sandbox" subproject standardizes isolated execution environments for individual agent tool calls
@@ -297,3 +297,11 @@ This knowledge base builds upon the incredible work of the open source community
 **GitHub Repository**: [https://github.com/ankurkumarz/agentic-ai-knowledge-base/](https://github.com/ankurkumarz/agentic-ai-knowledge-base/)
 
 **Documentation Site**: [https://agentic-ai.readthedocs.io](https://agentic-ai.readthedocs.io)
+
+## References
+
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the AI-native SDLC playbook noted in the AgentOps & GenOps section above.
+
+## See Also
+
+- [AI-Native SDLC (Anthropic playbook)](AgentOps/ai-native-sdlc.md) — six-stage loop from intent capture to autonomous loop closure
