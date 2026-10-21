@@ -1962,3 +1962,159 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - **Portfolio**: Mercury Voice (TTFAT-optimized for voice agents; reported at Audivi AI, Altur, OpenCall); Mercury Decide (high-volume classification; claimed to outperform Jev on JevBench and LegalBench)
 - **Pricing/availability**: $0.20/$0.70 per M input/output tokens; 50% launch discount ($0.10/$0.35); cached input 90% off; OpenAI API-compatible; Inception API Platform, OpenRouter, Baseten, Vercel; 100M free tokens; enterprise dedicated capacity, autoscaling, compliance controls, configurable data retention
 - **Production cost guidance**: diffusion LLMs added as a model-routing option for latency-sensitive agentic workloads (browser-use, voice, search)
+
+## [2026-10-20] ingest | The AI-native SDLC playbook — Anthropic | sections touched: AgentOps/ai-native-sdlc.md (new), AICodingAgents/claude-code.md, AgentHarness/loop-engineering.md, AgentOps/genops.md, Standards/skills.md, AgentPlatforms/claude-managed-agents.md, AllThingsAnthropic/README.md, ProductionBestPractices/README.md, ProductionBestPractices/deployment.md, ProductionBestPractices/testing-evaluations.md, ProductionBestPractices/security.md, ProductionBestPractices/observability.md, EvaluationFrameworks/agent-evals-design.md, SecurityFrameworks/anthropic-sandbox-runtime.md, Observability/Readme.md, index.md, mkdocs.yml (log.md and ingest-log.md updated with this ingest)
+
+**Source**: https://claude.com/resources/articles/the-ai-native-sdlc-playbook
+**Type**: Vendor playbook (Anthropic, Aug 21, 2026)
+**Author**: Louis Claxton (Anthropic Applied AI)
+**Product context**: Claude Enterprise, Claude Code, Claude Tag
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgentOps/ai-native-sdlc.md` | Created | New primary page: six-stage AI-native SDLC (Plan/Design/Build/Test/Deploy/Maintain), artifact chain, plays, cross-cutting themes, best practices, bidirectional See Also links, References with canonical URL |
+| `docs/AICodingAgents/claude-code.md` | Extended | See Also + References link to AI-Native SDLC page |
+| `docs/AgentHarness/loop-engineering.md` | Extended | See Also + References link noting the closed-loop pattern applied to full SDLC |
+| `docs/AgentOps/genops.md` | Extended | See Also + References link |
+| `docs/Standards/skills.md` | Extended | See Also + References link contextualizing skills as advisory + hooks as deterministic enforcement |
+| `docs/AgentPlatforms/claude-managed-agents.md` | Extended | See Also + References link |
+| `docs/AllThingsAnthropic/README.md` | Extended | Added hub row for AI-Native SDLC Playbook (per vendor-hub rule: one-liner + backlink only) and See Also |
+| `docs/ProductionBestPractices/README.md` | Extended | Added AI-Native SDLC Playbook URL to the Anthropic row in vendor best practices table |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Added 3 best-practice rows (CI/CD judgment steps, tiered environment autonomy, rehearsed rollback); added References |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added 3 best-practice rows (configuration-regression evals, incident-to-eval feedback, protected test files during agent fixes); added References |
+| `docs/ProductionBestPractices/security.md` | Extended | Added 5 best-practice rows (advisory-vs-deterministic controls, bypass-resistant managed settings, OS-level sandbox for shell egress, separation of duties, recurring scans); added References |
+| `docs/ProductionBestPractices/observability.md` | Extended | Added 3 best-practice rows (verification evidence in PR, deterministic drift detection, per-gate metrics); added See Also and new References section |
+| `docs/index.md` | Extended | Updated AgentOps & GenOps bullet to note the playbook |
+| `docs/EvaluationFrameworks/agent-evals-design.md` | Extended | See Also + References link for configuration-regression evals and incident-to-eval feedback |
+| `docs/SecurityFrameworks/anthropic-sandbox-runtime.md` | Extended | See Also + References link for the managed-settings sandbox configuration |
+| `docs/Observability/Readme.md` | Extended | New subsection: SDLC Observability Patterns (verification evidence in PR, per-gate timing, deterministic drift detection) |
+| `mkdocs.yml` | Extended | Added 13.4 Lifecycle Playbooks / 13.4.1 AI-Native SDLC (Anthropic) |
+
+### Key Knowledge Added
+
+- **AI-native SDLC core idea**: The SDLC becomes a loop, not a linear phase sequence. The unifying mechanism is the committed artifact chain — `intent.md` → `spec.md` → `plan.md` → code/tests → PR + review findings → incident record — where each stage's artifact is what the next stage reads, and the commit chain is the audit trail.
+- **Bottleneck migration**: When build collapses to hours, the bottleneck moves left and right to plan, review/test, and deploy; governance controls sized for human output become the new bottleneck.
+- **Plan (Stage 1)**: `intent.md` as version-controlled proto-spec in originator's own terms, with a shared intent home (often an `intent/` folder in the product repo) and VCS connector so non-engineers commit through claude.ai/Cowork.
+- **Design (Stage 2)**: Requirements + design in one working session; flagged concerns routed to policy owners before engineering sees the spec; Claude Design (beta) for front-end mocks exported to Claude Code.
+- **Build (Stage 3)**: Plan mode as the default starting point; `plan.md` committed as an auditable artifact that PR review checks the diff against; `CLAUDE.md` as the per-repo working-knowledge file (mistake-twice rule, under a page); skills as institutional knowledge (advisory); hooks as deterministic build-time guardrails; parallel sessions via worktrees and subagents via `.claude/agents/*.md`.
+- **Test (Stage 4)**: Feedback loop (session verifies own work before human sees it); bug-fix workflow writes the failing test first with a hook blocking agent edits to test files; continuous evals in CI gating `CLAUDE.md`/skills/hooks changes — configuration steers the agent and deserves the regression testing code gets; each production incident becomes an eval.
+- **Deploy (Stage 5)**: PR review loop with `REVIEW.md` policy and severity-ranked findings; branch protection still requires a human code owner (separation of duties preserved — the agent that wrote the code has no route to approve it); hooks as approval gates (`allow`/`ask`/`block`); managed settings for regulated enterprise (sandbox, credential denial, managed-only hooks/MCP, plugin marketplace allowlist, required minimum version); CI/CD with `claude -p` non-interactive judgment steps, tiered autonomy by environment, MCP-exposed deployment tools, most-rehearsed rollback path.
+- **Maintain (Stage 6)**: Deterministic detection script (Western Electric bands on a stable metric, `bands.yaml` response tiers 1σ log / 2σ diagnose / 3σ act via PR or runbook); Claude stateless, writes findings back as `intent.md`; recurring codebase scans (Claude Security, public beta); Claude Tag (public beta, Slack) makes Claude a first-responder member of incident channels with the channel as the audit trail.
+- **Cross-cutting**: Skills vs. hooks (advisory vs. deterministic); source-of-truth rules for legacy SDLC tooling (repo as source of truth / legacy system as source of truth / linkage as minimum bar); measures of effectiveness as a leading+lagging indicator pair per play.
+- **Note**: Sigma bands, suggested eval-suite size (20–50 tasks), and expected speed gains are recommendations/examples from the source, not measured outcomes.
+
+## [2026-10-20] ingest | Software AI Factory category and Anthropic playbook relocation | sections touched: SoftwareAIFactory, AgentOps, AICodingAgents, AgentHarness, AgentPlatforms, AllThingsAnthropic, Standards, EvaluationFrameworks, SecurityFrameworks, Observability, ProductionBestPractices, index
+
+**Source**: https://claude.com/resources/articles/the-ai-native-sdlc-playbook
+**Authorization**: User requested a new Software AI Factory category and relocation of the Anthropic playbook.
+**Type**: Editorial category organization and relocation of an already ingested vendor playbook.
+
+**Files modified**:
+- Created `docs/SoftwareAIFactory/README.md` as the category index; moved the full playbook to `docs/SoftwareAIFactory/ai-native-sdlc.md`.
+- Retained `docs/AgentOps/ai-native-sdlc.md` as a compatibility pointer rather than breaking old paths.
+- Updated existing canonical backlinks in `docs/AICodingAgents/claude-code.md`, `docs/AgentHarness/loop-engineering.md`, `docs/AgentOps/README.md`, `docs/AgentOps/genops.md`, `docs/AgentPlatforms/claude-managed-agents.md`, `docs/AllThingsAnthropic/README.md`, `docs/EvaluationFrameworks/agent-evals-design.md`, `docs/Observability/Readme.md`, `docs/ProductionBestPractices/README.md`, `docs/ProductionBestPractices/deployment.md`, `docs/ProductionBestPractices/observability.md`, `docs/ProductionBestPractices/security.md`, `docs/ProductionBestPractices/testing-evaluations.md`, `docs/SecurityFrameworks/agent-sandboxing.md`, `docs/SecurityFrameworks/anthropic-sandbox-runtime.md`, `docs/Standards/aidlc.md`, `docs/Standards/openspec.md`, `docs/Standards/skills.md`, and `docs/index.md`.
+- Updated `AGENTS.md` directory layout, section mapping, and directory-to-approved-type guidance; no new type was introduced.
+- Added category navigation in `mkdocs.yml`, category color in `hooks/graph_hook.py`, and records in both logs.
+
+**Key knowledge added**: Category distinguishes end-to-end delivery operating models from individual coding-agent interfaces; editorial selection questions cover intent, context, runtime, verification, approval, and feedback without asserting an industry certification or identical vendor architectures.
+
+**Audit clarification**: The earlier Anthropic entry above reflects the original ingest location and contains a malformed deployment/testing table row. The intended two entries were `docs/ProductionBestPractices/deployment.md` (CI/CD judgment, tiered autonomy, rollback) and `docs/ProductionBestPractices/testing-evaluations.md` (configuration regression, incident-to-eval feedback, protected test files); this append-only note preserves the original record.
+
+## [2026-10-20] ingest | Factory AI and Droids | sections touched: SoftwareAIFactory, AICodingAgents, AgentHarness, ProductionBestPractices, index
+
+**Sources**:
+- https://factory.com/product/droids
+- https://docs.factory.ai/cli/getting-started/overview
+- https://factory.com/news/factory-is-ga
+
+**Type**: Vendor product documentation, CLI reference, and historical GA announcement.
+**Files modified**: Created `docs/SoftwareAIFactory/factory-ai.md`; extended category overview, `docs/AICodingAgents/ai-coding-agents.md`, `docs/AgentHarness/loop-engineering.md`, production deployment/security backlinks, `docs/index.md`, `mkdocs.yml`, and both logs.
+**Key knowledge added**: Droids across engineering surfaces; Missions, Custom Droids, skills, MCP/hooks/plugins, and headless `droid exec`; platform-versus-playbook distinction; procurement and runtime boundary questions.
+**Provenance limits**: Preserved the existing 2025 Factory survey as historical material with a current-source caveat rather than silently deleting it. No current pricing, independent benchmark rank, or verified enterprise data-residency claim.
+
+## [2026-10-20] ingest | Devin cloud and local CLI | sections touched: SoftwareAIFactory, AICodingAgents, ProductionBestPractices, index
+
+**Sources**:
+- https://docs.devin.ai/get-started/devin-intro
+- https://docs.devin.ai/cli
+
+**Type**: Vendor product documentation.
+**Files modified**: Created `docs/SoftwareAIFactory/devin.md`; extended category overview, coding-agent survey backlinks, production testing guidance backlinks, `docs/index.md`, `mkdocs.yml`, and both logs.
+**Key knowledge added**: Delegated engineering with shell, IDE, and browser; verifiable scoped tasks; cloud-versus-local CLI capability distinction, including cloud Knowledge/Playbooks/Secrets not being available in the documented CLI surface.
+**Provenance limits**: Vendor documentation is not an independently measured completion rate or evidence of identical features across execution surfaces.
+
+## [2026-10-20] ingest | OpenHands ecosystem and software delivery | sections touched: SoftwareAIFactory, AICodingAgents, SecurityFrameworks, ProductionBestPractices, index
+
+**Sources**:
+- https://docs.openhands.dev/overview/introduction
+- https://docs.openhands.dev/sdk
+- https://docs.openhands.dev/openhands/usage/essential-guidelines/sdlc-integration
+- https://www.openhands.dev/
+
+**Type**: Vendor/project documentation and platform overview.
+**Files modified**: Created `docs/SoftwareAIFactory/openhands.md`; extended category overview, coding-agent survey backlinks, `docs/SecurityFrameworks/agent-sandboxing.md`, production deployment/testing backlinks, `docs/index.md`, `mkdocs.yml`, and both logs.
+**Key knowledge added**: Agent Canvas, SDK, Agent Server, Automation Server, Sandbox Server, Cloud and Enterprise responsibilities; SDK integration and event-driven delivery workflows; component-specific licensing and runtime boundary evaluation.
+**Provenance limits**: SDK MIT license is not extrapolated to every repository or Enterprise terms. Documentation examples are not represented as tested installation procedures; self-hosting does not by itself guarantee local data handling.
+
+## [2026-10-20] ingest | Building your own software factory: Eric Zakariasson, Cursor | sections touched: SoftwareAIFactory, AICodingAgents, AgentHarness, ContextEngineering, SecurityFrameworks, Observability, ProductionBestPractices, index
+
+**Canonical source**: https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz
+**Supporting publisher resource**: https://ai.engineer/talks/rnDm57Py54A-building-your-own-software-factory
+**Type**: AI Engineer workshop video, ingested using the full timestamped transcript including Q&A through the closing remarks. The publisher page supplies a corrected-transcript resource and chapter guide.
+
+**Files modified**:
+- Created `docs/SoftwareAIFactory/building-your-own-software-factory.md`.
+- Extended all five other `docs/SoftwareAIFactory/` pages with relevant links and source references.
+- Extended `docs/AICodingAgents/ai-coding-agents.md`, `docs/AgentHarness/harness-engineering.md`, `docs/AgentHarness/loop-engineering.md`, `docs/ContextEngineering/strategies.md`, `docs/Observability/Readme.md`, and `docs/SecurityFrameworks/agent-sandboxing.md` with bidirectional related coverage and canonical references.
+- Extended existing best-practice tables in `docs/ProductionBestPractices/deployment.md`, `testing-evaluations.md`, `security.md`, `observability.md`, `state-memory.md`, and `context-engineering.md`; added an event-triggering cost caveat to `cost-management.md`. All seven files receive canonical References and See Also links.
+- Updated `docs/index.md`, `mkdocs.yml`, `AGENTS.md` layout, and both logs.
+
+**Key knowledge added**: Runnable/accessible/verifiable readiness; code patterns and guardrails; synchronous planning and asynchronous execution; state isolation beyond worktrees; functional versus visual evidence; feedback from PR comments and transcripts; risk-aware ownership, event-triggered maintenance, and costly indiscriminate dispatch; prototype intent versus accidental architecture; team ownership of versioned factory rules; loop/non-progress detection.
+
+**Source distinctions and limits**: Cursor's low-risk delegated-approval example is explicitly contrasted with Anthropic's human code-owner gate. The opening says a fully autonomous factory has not yet been achieved; nested-agent management and talk-time product observations are not treated as generally available guarantees. Transcript-to-rule extraction is not model-weight training. No generalized throughput, cost, or staffing estimate is claimed, and no raw source files were modified.
+
+**Graph maintenance**: Renamed an earlier, non-link “See Also” heading in production observability to “Production Feedback Loop,” preserving its content, so the graph hook can discover the actual related-page section and reciprocal Software AI Factory links.
+
+## [2026-10-20] ingest | Inside OpenAI's agentic software factory | sections touched: SoftwareAIFactory, AllThingsOpenAI, AICodingAgents, AgentHarness, ProductionBestPractices, index
+
+**Canonical source**: https://newsletter.pragmaticengineer.com/p/openai-software-factory
+**Type**: Interview-based engineering case study by Gergely Orosz, The Pragmatic Engineer, September 15, 2026; not first-party product documentation.
+
+**Access boundary**: Read the publicly accessible introduction, sections 1–3, and the opening of section 4. Cleaned text and visible HTML both end at an explicit paid-subscriber gate. The remainder of sections 4–7 was not available; no content was inferred from the table of contents and no paywall bypass was attempted.
+
+**Files modified**:
+- Created `docs/SoftwareAIFactory/openai-software-factory.md` as a Reference with an explicit partial-access note.
+- Extended `docs/SoftwareAIFactory/README.md`, `ai-native-sdlc.md`, and `building-your-own-software-factory.md` with related links, approval-model distinctions, and canonical references.
+- Added a short case-study pointer and backlinks in `docs/AllThingsOpenAI/README.md`; added related coverage in `docs/AICodingAgents/ai-coding-agents.md`, `docs/AgentHarness/harness-engineering.md`, and `docs/AgentHarness/loop-engineering.md`.
+- Extended existing tables in `docs/ProductionBestPractices/deployment.md`, `testing-evaluations.md`, `observability.md`, `security.md`, and `context-engineering.md`; added meaningful bidirectional links and References.
+- Updated `docs/index.md`, `mkdocs.yml`, `AGENTS.md` layout/type guidance, and both logs.
+
+**Key knowledge added**: Rich internal integrations; implementation/CI repair; performance harness and Synthetics A/B; domain-context review; opted-in low-risk PR approval distinct from human production approval; per-change rollout dashboards; Perf Factory regression feedback; Sevbot's recommendation/human-directed mitigation boundary; downstream CI/build/release capacity constraints.
+
+**Provenance limits**: Internal Codex integrations are not public-product guarantees. Reported tenfold growth is load on some delivery systems over about six months, not a measured tenfold productivity gain. Unusually broad internal access and token budgets are not assumed transferable. Fully autonomous per-change SRE and mitigation are reported aspirations, not current universal capabilities.
+
+## [2026-10-20] ingest | Warp Factories | sections touched: SoftwareAIFactory, AICodingAgents, AgentHarness, SecurityFrameworks, ProductionBestPractices, index
+
+**Canonical source**: https://docs.warp.dev/factories/
+**Supporting sources**:
+- https://docs.warp.dev/factories/how-factories-work/
+- https://docs.warp.dev/factories/infrastructure-and-security/
+- https://docs.warp.dev/factories/measure-and-improve/
+
+**Type**: First-party platform documentation, updated October 19, 2026 in the fetched pages.
+
+**Files modified**:
+- Created `docs/SoftwareAIFactory/warp-factories.md`.
+- Extended `docs/SoftwareAIFactory/README.md`, `factory-ai.md`, `openhands.md`, and `building-your-own-software-factory.md` with relevant bidirectional links and canonical References.
+- Added a standing-factory pointer alongside existing terminal coverage in `docs/AICodingAgents/ai-coding-agents.md`.
+- Added related coverage in `docs/AgentHarness/harness-engineering.md`, `docs/AgentHarness/loop-engineering.md`, and `docs/SecurityFrameworks/agent-sandboxing.md`.
+- Extended existing tables in `docs/ProductionBestPractices/deployment.md`, `testing-evaluations.md`, `security.md`, and `observability.md`; added cost-attribution guidance to `cost-management.md`. All receive canonical References and reciprocal related links.
+- Updated `docs/index.md`, `mkdocs.yml`, `AGENTS.md` layout, and both logs.
+
+**Key knowledge added**: Source-preserving work items; foreman/triage/spec/implement/review responsibilities; non-mandatory stage sequence; editable checkpoints versus repository-enforced merge authority; reviewed definitions-as-code changes; factory sizing; hosted versus managed self-hosted execution; Docker/Kubernetes/Direct isolation differences; inference and credential boundaries; factory roles; scorer calibration, repeatable benchmarks, reviewed self-improvement, and metric definitions.
+
+**Provenance limits**: Managed self-hosting does not make control-plane run data local-only or guarantee provider retention. A review verdict is advisory, not merge authorization. Autonomy measures absence of human code pushes, not absence of human review/approval. Cost per PR is an attributed comparison metric, not an invoice or total-cost estimate; no current pricing or performance results were asserted.
+
+**Batch validation**: All 195 concept documents pass OKF verification with zero errors/warnings. All 37 changed wiki Markdown files have valid relative Markdown links; canonical video/OpenAI/Warp sources appear in References wherever used. Normal MkDocs build succeeds; its 11-warning set matches the pristine baseline. Tests remain 14 passed/8 failed with the same eight failures verified on a clean pre-change archive. Graph generation includes 195 nodes/1,292 edges and all eight category pages, with no missing reciprocal edges from SoftwareAIFactory pages. `git diff --check` is clean.

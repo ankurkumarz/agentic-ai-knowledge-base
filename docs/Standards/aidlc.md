@@ -151,6 +151,8 @@ Update to the latest version: `openspec update` (if using the CLI wrapper) or re
 
 ## See Also
 
+- [Software AI Factory](../SoftwareAIFactory/README.md): related lifecycle operating models and software delivery platforms.
+
 - [OpenSpec (Fission AI)](./openspec.md)
 - [AGENTS.md Standard](./agents-md.md)
 - [Agentic AI Foundation](./agentic-ai-foundation.md)

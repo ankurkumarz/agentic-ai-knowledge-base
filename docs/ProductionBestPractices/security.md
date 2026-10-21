@@ -3,7 +3,7 @@ type: Playbook
 title: Agent Security
 description: "Agentic AI systems introduce security risks that don't exist in traditional software"
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Agent Security
 
@@ -28,6 +28,9 @@ Google's three-layer defense model addresses both:
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Editable workflow policy confused with authorization | Warp's spec/question checkpoints are foreman instructions and review verdicts are advisory | Factory roles do not control specification or PR approval; repository permissions and branch protection govern merges | Enforce required review outside the agent's instructions; separately scope inference credentials, execution secrets, harness authentication, and repository identity ([Warp lifecycle](https://docs.warp.dev/factories/how-factories-work/); [infrastructure](https://docs.warp.dev/factories/infrastructure-and-security/)) |
+| PR approval conflated with permission to deploy or mitigate | OpenAI reporting permits low-risk auto-approval in opted-in areas but separately describes human production approval and engineer-directed Sevbot mitigation | Autonomous incident mitigation is a stated goal, not the reported current default | Model PR acceptance, production release, and incident-action authorization as distinct decisions; do not infer one grant from another ([Pragmatic Engineer, section 3](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) |
+| Approval policy assumed identical across software-factory sources | Cursor describes delegated approval of some low-risk PRs; Anthropic's model retains human code-owner approval | These are different source-specific governance choices, not interchangeable defaults | Choose policy explicitly; retain human judgment for critical security, authentication, payment, and database decisions rather than inferring broad auto-merge permission ([Cursor workshop, 27:38–31:53](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz); [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 | Prompt injection | Malicious content in retrieved documents or user inputs hijacks agent behavior | Trusted all inputs equally; agents executed injected instructions | Treat user input and retrieved content as untrusted; use input classifiers (e.g., Perspective API) before passing to agent |
 | Overprivileged agents | Agents granted broad tool access use capabilities beyond their intended scope | Gave agents all tools for flexibility; scope creep led to unintended actions | Apply principle of least privilege — grant only the tools and permissions required for the specific task; in multi-agent systems, use AWS STS to generate time-limited, scoped credentials per task |
 | Prompt injection propagation in multi-agent systems | Malicious content processed by one agent is forwarded to the next, compounding the attack | Trusted content that had already passed through one agent; downstream agents executed injected instructions | Treat all externally-originated content as untrusted regardless of how many agents have processed it; apply Amazon Bedrock Guardrails at every agent boundary, not just the entry point |
@@ -49,6 +52,11 @@ Google's three-layer defense model addresses both:
 | MCP server over-privilege | MCP servers run as host OS processes with invoking user's permissions; a compromised server can read arbitrary files or phone home | Relied on trust in third-party MCP server code; no OS-level restriction | Wrap each MCP server process with [Anthropic Sandbox Runtime (`srt`)](../SecurityFrameworks/anthropic-sandbox-runtime.md) to enforce an explicit filesystem + network allowlist at OS level (macOS Seatbelt / Linux bubblewrap) |
 | Malicious skills in the supply chain | Agent skills fetched from external sources may embed prompt injection, data exfiltration, or malicious code patterns; research shows 26.1% of skills contain vulnerabilities | Installed third-party skills without vetting; trusted source repo as sufficient guarantee | Scan all externally-sourced skills before installation using [Cisco Skill Scanner](../SecurityFrameworks/skill-scanners.md) or [NVIDIA SkillSpector](../SecurityFrameworks/skill-scanners.md); integrate SARIF output into GitHub Code Scanning to block unsafe skills at PR time |
 | Sensitive data exposure in event-driven agent pipelines | Agents consuming/producing events across a shared data streaming platform can expose regulated or confidential fields to unauthorized consumers of the same topic | Relied on topic-level access control only; any consumer with topic access could read all fields | Enforce field-level encryption and access control on event payloads; apply Stream Governance (data lineage and quality policies) across the pipeline; set fine-grained, regulation-aligned (e.g., GDPR) retention policies per topic rather than a single global retention setting (Confluent, 2025) |
+| Advisory controls (skills, prompts) confused with enforcement | A policy encoded only as a skill or prompt instruction can be bypassed and cannot guarantee a 0% violation rate | Alternative offered by the source: rely on the skill alone; limitation: nothing forces a session to comply | Layer a deterministic control behind every advisory policy: a skill makes violations rare, a hook (or middleware policy engine) makes them close to impossible; the skill is the input, the hook is the enforcement ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Approval gates easy to bypass locally | Individual engineers or project-level settings can widen rules the security team intended to lock | Alternative: rely on repo-level settings alone; limitation: any engineer, project file, or CLI flag can widen them | Put non-negotiable gates in managed settings owned by the platform admin (`allowManagedPermissionRulesOnly`, `disableBypassPermissionsMode`, `allowManagedHooksOnly`) so no engineer, project file, or CLI flag can widen them ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Tool-level permissions insufficient against shell-based egress | A tool-level deny on WebFetch does not stop a shell command from reaching the network | Not reported in the source | Close the gap with an OS-level sandbox: domain allowlist for egress, deny on credential files (`~/.ssh`, `~/.aws/credentials`), strip named secrets from every sandboxed command's environment; `failIfUnavailable` makes the sandbox a hard gate ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Separation of duties between author and approver | The agent that wrote code must not also be able to approve it | Alternative: let the writing agent also approve; limitation: the approval is not independent of the author | Preserve separation of duties: the writing agent has no route to approve; approval always comes from a human code owner through branch protection, informed by the agent's severity-ranked findings ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Security scans go stale between releases | A point-in-time scan is a statement about a codebase under a particular model; both the code and the model change weekly | Scanned before release or audit only; code written in between was covered only by whatever PR review caught | Run scans on a schedule with no human in the invocation path; validate each finding before reporting with a confidence rating; bounded fixes go through the PR gate, anything wider becomes `intent.md` ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 
 ## Layered Guardrail Taxonomy
 
@@ -161,6 +169,12 @@ When a threat is detected in production, the response follows: **contain → tri
 | Scalable state management exploits | Memory stored across interactions can be exploited for cross-session attacks | Strict tenant isolation in all memory stores; audit access patterns regularly |
 
 ## See Also
+
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [Software AI Factory](../SoftwareAIFactory/README.md)
+- [Factory AI](../SoftwareAIFactory/factory-ai.md): configurable approval and execution boundaries.
 - [Observability](./observability.md) — Security monitoring as part of observability; Evolving Security section
 - [Deployment](./deployment.md) — Secure deployment practices
 - [Context Engineering](./context-engineering.md) — Context isolation and sanitization
@@ -170,8 +184,15 @@ When a threat is detected in production, the response follows: **contain → tri
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — Stream Governance, field-level encryption, and retention policies for event-driven agent pipelines
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category adversarial testing taxonomy for autonomous agents
 - [Agent Testing & Evaluations](./testing-evaluations.md) — adversarial test cases and launch gates
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — advisory-vs-deterministic controls, bypass-resistant managed settings, OS-level sandbox, and recurring security scans
 
 ## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [Factory Droid CLI](https://docs.factory.ai/cli/getting-started/overview): approval workflows and tool integration surfaces.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for Stream Governance, field-level encryption, and GDPR-aligned retention guidance
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for advisory-vs-deterministic controls (skills + hooks), managed settings that cannot be locally widened, OS-level sandbox enforcement against shell egress, separation of duties in PR approval, and recurring codebase scans.

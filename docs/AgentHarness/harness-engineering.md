@@ -239,6 +239,9 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 
 ## See Also
 
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - [Agent Harness](./agent-harness.md)
 - [Loop Engineering](./loop-engineering.md) — the outer, scheduled/self-feeding loop built on top of a per-run harness: automations, worktrees, skills, connectors, sub-agents, and externalized state
 - [Harness Optimization](./harness-optimization.md) — automated harness search with Meta-Harness; complements manual harness engineering
@@ -255,6 +258,9 @@ See [LLM Harness Survey](./llm-harness-survey.md) for the full survey context an
 
 ## References
 
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — provider-neutral skill; source for loop invariants, retry policy, parallelization rules, entropy management, and harness maturity levels
 - [Agent Harness for Large Language Model Agents: A Survey — Meng et al., arXiv:2605.29682 (2026)](https://arxiv.org/pdf/2605.29682) — H=(E,T,C,S,L,V) formal model; Harness Completeness Matrix; eight future research directions; 110+ papers annotated; DOI: 10.20944/preprints202604.0428.v3
 - [Agent Harness Engineering: A Survey — picrew et al., OpenReview / TMLR submission (2026)](https://openreview.net/forum?id=3hXEPbG0dh) — ETCLOVG seven-layer taxonomy; nine empirically-grounded technical challenges; completeness matrix for 23+ systems

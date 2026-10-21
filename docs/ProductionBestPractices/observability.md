@@ -3,7 +3,7 @@ type: Playbook
 title: Observability
 description: Observability for agentic AI goes beyond traditional APM
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Observability
 
@@ -21,6 +21,9 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Autonomy metric misread as absence of human oversight | Warp defines autonomy as merged PRs needing no human code push, not no review or approval | Code-host connection and post-connection coverage are required; total runs also include evaluations and improvement activity | Preserve each metric's denominator and observation scope; use dashboard counts to investigate, not infer causality or blanket autonomy ([Warp measurement guide](https://docs.warp.dev/factories/measure-and-improve/)) |
+| Service-wide dashboards miss change-specific questions | The reported OpenAI rollout agent identifies signals for an individual code or feature-flag change | The article contrasts standing service dashboards with agent-created per-change dashboards and Perf Factory's deduplicated regression feedback | Wiki recommendation: validate per-change monitoring and stop conditions; turn detected regressions into reviewable repair proposals, not implicit release authority ([Pragmatic Engineer, section 3](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) |
+| Agent activity mistaken for progress | A long-running agent may repeat failed access attempts without producing a useful change | A Q&A participant reports a wrong-repository run repeatedly trying to obtain access; the speaker discusses instrumentation and loop detection | Observe duration, meaningful output changes, and repeated tool loops; investigate stuck runs rather than counting activity as success ([Cursor workshop, 1:21:00–1:23:19](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz)) |
 | Retrofitting observability | Adding monitoring after deployment is costly and incomplete | Considered post-hoc log scraping; found it misses intermediate reasoning steps | Instrument agent architecture from day one using OpenTelemetry-compatible SDKs |
 | Span attribute standardization | Each observability tool invents its own span names, making cross-tool queries and portable dashboards impossible | Considered custom attribute schemas per tool; led to vendor lock-in and unmaintainable dashboards | Adopt [OpenTelemetry GenAI Semantic Conventions](../Observability/otel-genai-conventions.md) (`gen_ai.*`, `mcp.*`) as the normative attribute schema — platforms like Openlit and Langfuse v3 emit conformant spans natively |
 | Trace correlation in multi-agent systems | Requests span multiple agents, tools, and services making debugging hard | Tried per-service logging; couldn't reconstruct full execution paths | Propagate a consistent trace ID through every agent and tool call — it is the only way to correlate logs into a single execution graph; use distributed tracing (Jaeger, Langfuse, Amazon CloudWatch Traces) |
@@ -32,6 +35,9 @@ The four pillars of agent observability are **Traces** (full execution paths inc
 | Hallucination detection | Hard to know when agent outputs are factually wrong | Manual spot-checking doesn't scale | Integrate LLM-as-judge evaluation on sampled outputs; track hallucination rate as a KPI |
 | Tool call failure visibility | Tool failures silently degrade agent quality | Checked only final output quality; missed upstream tool errors | Log every tool invocation with input, output, latency, and success/failure status |
 | Business metric correlation | Technical metrics don't reflect actual agent value | Tracked only P99 latency; missed that task completion rate was declining | Define business KPIs (task completion rate, escalation rate, resolution rate) and correlate with technical traces |
+| Verification evidence not attached to the PR | Engineers must re-run tests to confirm an agent's claim that the work is done; the reviewer cannot verify from the PR alone | Not reported in the source | Require the agent to paste the literal output of `make test`, the build log, or the screenshot diff into the PR — evidence comes from the toolchain, and the reviewer and auditor can both see it ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Drift detection relies on human eyes or lagging dashboards | Monitoring often alerts only after users notice; slow drift goes undetected | Not reported in the source | Deterministic detection script (no model) computes mean/stddev over a rolling window with Western Electric-style rules; response tiers in version-controlled `bands.yaml` — 1σ log, 2σ agent diagnoses read-only, 3σ agent acts via PR or pre-approved runbook; findings written back as `intent.md` ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Gate and stage metrics not visible | Time spent waiting on approval gates is invisible, so gates stay slow | Not reported in the source | Every hook decision is logged to the OpenTelemetry export with a timestamp and an allow/block verdict, so wait time is visible per gate and per stage ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 
 ## Trace Fields Reference
 
@@ -214,7 +220,7 @@ From *AI Engineering* (Chip Huyen, O'Reilly, 2025), three DevOps-derived metrics
 
 Issues detected in monitoring must feed back into the evaluation pipeline as new test cases, closing the quality loop.
 
-## See Also
+## Production Feedback Loop
 
 - **Observe**: Understand the system's behavior in real time via logs, traces, and metrics. This is the sensory system for everything downstream.
 - **Act**: Pull real-time levers to maintain performance, safety, and cost. Think of this as the system's automated reflexes — not strategic improvements.
@@ -269,7 +275,19 @@ For multi-agent systems on AWS, a layered approach is required:
 Layered evaluation strategy for multi-agent systems: per-agent evaluations (isolated datasets) + full workflow evaluation (`Builtin.GoalSuccessRate`) + differential analysis correlating per-agent scores against system-level outcomes.
 
 ## See Also
+
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): outcome evidence and non-progress detection.
 - [OTel GenAI Semantic Conventions](../Observability/otel-genai-conventions.md)
 - [Deployment](./deployment.md)
 - [Cost Management](./cost-management.md)
 - [Agent Testing & Evaluations](./testing-evaluations.md)
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — verification evidence attached to PRs, per-gate metrics from hook decisions, deterministic drift detection with tiered response
+
+## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for verification-evidence-in-PR, per-gate OpenTelemetry logging of hook decisions, and deterministic drift detection with version-controlled response tiers.

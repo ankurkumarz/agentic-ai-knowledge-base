@@ -3,7 +3,7 @@ type: Playbook
 title: Deployment
 description: Deploying agentic AI systems requires practices that go beyond standard software deployment
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Deployment
 
@@ -27,6 +27,9 @@ GenOps (Generative Operations) is the evolution of MLOps for agentic systems. Ke
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Self-hosted execution mistaken for a local-only factory | Warp's managed worker performs checkout and commands locally, while control-plane run data still flows through Warp | Docker, Kubernetes, and Direct have different isolation/operations properties; customer teams provision worker capacity | Evaluate control, execution, inference, and data paths independently; managed self-hosting is not an end-to-end residency guarantee ([Warp infrastructure](https://docs.warp.dev/factories/infrastructure-and-security/)) |
+| Faster coding shifts load into delivery infrastructure | OpenAI interviewees report roughly tenfold load growth on some systems over about six months | The source describes new source-control, CI, and release bottlenecks, not a tenfold measured productivity gain | Wiki recommendation: capacity-plan the entire delivery path; the reported rollout agent follows a change only after human production approval ([Pragmatic Engineer, sections 2–3](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) |
+| Parallel coding tasks share runtime state | Separate checkouts can still collide through databases, caches, or user state | The speaker contrasts shared-service worktrees with separate VMs; VMs add setup effort and expense | Isolate each task's runtime state as well as its files, and provide a reproducible startup interface ([Cursor workshop, 20:33–22:07](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz)) |
 | Big-bang deployments | Releasing agent changes to all users at once risks widespread quality regressions | Tried feature flags only; still exposed too many users to broken prompts | Use canary deployments — route 5% of traffic to new version, monitor quality metrics before full rollout |
 | Prompt versioning | Prompt changes are as impactful as code changes but often untracked | Stored prompts in code comments; no history or rollback | Treat prompts as versioned artifacts in source control; tie prompt version to deployment version |
 | Environment parity | Agents behave differently in dev vs prod due to different tool configs or model versions | Used different model versions per environment; bugs only appeared in prod | Pin model versions and tool configurations per environment; use infrastructure-as-code for agent config |
@@ -39,6 +42,9 @@ GenOps (Generative Operations) is the evolution of MLOps for agentic systems. Ke
 | Scaling tool dependencies | Agent scale-out is bottlenecked by downstream tool API rate limits | Scaled agent replicas without scaling tool capacity; hit rate limits immediately | Model tool capacity as a first-class constraint; implement queuing and backpressure for tool calls |
 | Deployment rollback | Rolling back an agent deployment is complex when memory stores have been mutated | Rolled back code but not memory; agents behaved inconsistently | Implement memory versioning or append-only memory with rollback markers; test rollback procedures regularly |
 | Self-prompting loops left unverified | A scheduled/self-feeding loop (automations, `/loop`, `/goal`) ships changes with no human reviewing each step | Trusted "loop reports done" as proof of correctness; regressions reached production unreviewed | Pair every self-feeding loop with an independent verifier sub-agent or grading model — "done" from the loop is a claim, not a proof; see [Loop Engineering](../AgentHarness/loop-engineering.md) |
+| Judgment steps still human-gated in CI/CD | Triage of failed builds, flaky-test summarization, and changelog drafting wait for a human | Not reported in the source | Run the agent non-interactively in the pipeline (`claude -p`) for judgment steps; sandbox execution with short-lived scoped tokens and no standing production credentials ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Autonomy not tiered by environment | One-size-fits-all autonomy either blocks dev velocity or puts production at risk | Not reported in the source | Tier autonomy by environment — dev: agent deploys freely; staging: middle ground; production: agent prepares the release, a named release manager authorizes, and a hook enforces the gate ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Rollback path not rehearsed | Rollback is only exercised under pressure when something has already broken | Not reported in the source | Make rollback the most rehearsed path in the pipeline — a single command the agent can run, exercised regularly in staging, so it is proven before the loop needs it ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 
 ## Planning Mode
 
@@ -194,6 +200,13 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 | Duplicate side effects on event retry | In event-driven agent pipelines, transient failures (network, hardware, software) trigger retries that can re-execute an action (e.g., a double-sent email or duplicate transaction) | Retried failed event processing blindly; retries occasionally duplicated the original side effect | **Idempotent Processing**: design agent actions triggered by events to be idempotent (safe to apply more than once with the same input); pair with **dead-letter queues** to route events that repeatedly fail processing to a queue for human review rather than dropping or endlessly retrying them (Confluent, 2025) |
 
 ## See Also
+
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [Software AI Factory](../SoftwareAIFactory/README.md)
+- [Factory AI](../SoftwareAIFactory/factory-ai.md): Droid Exec for headless CI/CD.
+- [OpenHands](../SoftwareAIFactory/openhands.md): client, execution, automation, and sandbox component boundaries.
 - [Observability](./observability.md)
 - [Cost Management](./cost-management.md)
 - [Agent Testing & Evaluations](./testing-evaluations.md)
@@ -202,8 +215,16 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — idempotent processing, dead-letter queues, and log-based fault recovery
 - [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md) — durable execution as an alternative fault-recovery model
 - [Loop Engineering](../AgentHarness/loop-engineering.md) — scheduled, self-feeding automation loops (`/loop`, `/goal`, automations) built from worktrees, skills, connectors, and sub-agent verification
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — CI/CD judgment steps, tiered environment autonomy, and rehearsed rollback
 
 ## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [Factory Droid CLI](https://docs.factory.ai/cli/getting-started/overview): structured headless execution in scripts and CI/CD.
+- [OpenHands introduction](https://docs.openhands.dev/overview/introduction): execution and deployment components.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for planning mode runtime model, step budgets, goal-like loop structure, and MVP build sequence
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for robustness patterns: Watchdog Timeout, Adaptive Retry with Prompt Mutation, Auto-Healing, Incremental Checkpointing, Rate-Limited Invocation, Fallback Model Invocation, Delayed Escalation.
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for idempotent processing and dead-letter queue fault recovery patterns.
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for CI/CD judgment steps, tiered environment autonomy, sandboxed agent jobs with no standing production credentials, and rehearsed rollback.

@@ -312,6 +312,10 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 
 ## See Also
 
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [OpenHands](../SoftwareAIFactory/openhands.md): Agent Server and Sandbox Server are distinct execution components.
+
 - [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)
 - [Kubernetes Agent Sandbox (kubernetes-sigs)](../Standards/k8s-agent-sandbox.md)
 - [Agent Security — Production Best Practices](../ProductionBestPractices/security.md)
@@ -326,6 +330,10 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 - [AgentOps Overview](../AgentOps/README.md) — Open-Source Agentic Runtimes section: OpenGeni, a self-hostable agent runtime offering managed-sandbox or self-hosted execution alongside durable sessions and audit trails
 
 ## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [OpenHands introduction](https://docs.openhands.dev/overview/introduction): runtime, sandbox, and deployment boundaries.
 
 - [E2B GitHub](https://github.com/e2b-dev/e2b) — Open-source cloud sandbox infrastructure for AI-generated code; ~12.4k stars; Apache-2.0
 - [Daytona GitHub](https://github.com/daytonaio/daytona) — Secure, elastic sandbox runtime for agent workflows; dedicated kernel per sandbox; Apache-2.0

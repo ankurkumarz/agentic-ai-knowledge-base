@@ -107,6 +107,8 @@ OpenSpec's primary differentiator is that it solves unpredictability when requir
 
 ## See Also
 
+- [Software AI Factory](../SoftwareAIFactory/README.md): lifecycle context for specification-driven delivery.
+
 - [Agentic AI Foundation](./agentic-ai-foundation.md)
 - [AGENTS.md Standard](./agents-md.md)
 - [Model Context Protocol](./mcp.md)

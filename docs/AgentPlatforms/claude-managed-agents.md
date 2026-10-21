@@ -3,7 +3,7 @@ type: Platform
 title: Claude Managed Agents
 description: "Claude Managed Agents is Anthropic's hosted agent execution platform — a pre-built, configurable agent harness that runs in managed infrastructure"
 tags: [platforms, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Claude Managed Agents
 
@@ -455,6 +455,7 @@ Note: Claude Managed Agents is stateful by design — not eligible for Zero Data
 - [Anthropic Overview](../AllThingsAnthropic/README.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Multi-Agent System Architecture](../Architecture/multi-agent-system.md)
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md)
 
 ## References
 
@@ -465,3 +466,4 @@ Note: Claude Managed Agents is stateful by design — not eligible for Zero Data
 - [Define outcomes — Claude API Docs](https://platform.claude.com/docs/en/managed-agents/define-outcomes) — Official Outcomes documentation
 - [Multiagent sessions — Claude API Docs](https://platform.claude.com/docs/en/managed-agents/multi-agent) — Official Multiagent documentation
 - [Claude Managed Agents overview — Claude API Docs](https://platform.claude.com/docs/en/managed-agents/overview) — Platform overview
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the artifact-chain SDLC that composes with Claude Code and managed settings for regulated enterprises.

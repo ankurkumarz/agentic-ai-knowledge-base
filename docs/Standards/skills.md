@@ -3,7 +3,7 @@ type: Standard
 title: Agent Skills / SKILLS.md
 description: "**Agent Skills** (also referred to by the emerging convention **SKILLS"
 tags: [standards, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Agent Skills / SKILLS.md
 
@@ -238,6 +238,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [SkillOpt — Automated Skill Document Optimization](../PromptEngineering/skillopt.md) — Microsoft text-space optimizer that learns skill.md contents from trajectory rollouts
 - [Open Knowledge Format (OKF)](./open-knowledge-format.md) — complementary convention for reference knowledge vs. SKILLS.md's on-demand workflows
 - [Eve](../AgenticFrameworks/eve.md) — Vercel's agent framework applying a parallel filesystem-discovery convention (`instructions.md` + auto-registered `tools/`) to whole-agent definition rather than on-demand skills
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — Anthropic's SDLC playbook that uses skills as the institutional-knowledge layer, with hooks as the deterministic enforcement behind them
 
 ## References
 
@@ -245,4 +246,5 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [Claude Skills Explained](https://claude.com/blog/skills-explained) — Deep-dive on the Skills architecture, invocation model, and scoping
 - [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Comprehensive authoring guide covering format, best practices, and examples (Anthropic, 2025)
 - [NVIDIA/skills](https://github.com/NVIDIA/skills) — Official catalog of NVIDIA-verified, cryptographically signed agent skills for NVIDIA software and platforms
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the advisory-vs-deterministic distinction — a skill makes a policy violation rare, a hook makes it close to impossible — and the rule of writing a skill for institutional knowledge that must be applied consistently.
 - [20+ Agent Skills, Repos, and Marketplaces — Generative Programmer](https://generativeprogrammer.com/p/20-agent-skills-repos-and-marketplaces) — survey of community skills repositories and marketplaces *(direct fetch returned HTTP 403; content sourced via web search)*

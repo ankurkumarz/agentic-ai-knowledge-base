@@ -4,6 +4,53 @@
 
 ## 2026-10-20
 
+* **Ingest**: Warp Factories documentation: https://docs.warp.dev/factories/
+  * Created: `docs/SoftwareAIFactory/warp-factories.md`
+  * Extended: category/product/workshop links, AI Coding Agents, harness/loop engineering, sandboxing, production deployment/testing/security/observability/cost guidance, index, navigation, and `AGENTS.md` layout.
+  * Preserved distinctions: editable foreman policy versus repository-enforced authorization; control/execution/inference/data boundaries; scorer calibration; reviewed improvement; metric coverage and cost attribution.
+* **Ingest**: Inside OpenAI's agentic software factory, The Pragmatic Engineer: https://newsletter.pragmaticengineer.com/p/openai-software-factory
+  * Created: `docs/SoftwareAIFactory/openai-software-factory.md`
+  * Extended: category/playbook/workshop links, OpenAI vendor hub, AI Coding Agents, harness/loop engineering, production deployment/testing/security/observability/context guidance, index, navigation, and `AGENTS.md` layout.
+  * Access limitation: accessible introduction, sections 1–3, and start of section 4 only; subscriber-gated remainder not ingested or inferred.
+* **Creation**: Software AI Factory category requested by the user, organizing lifecycle playbooks separately from individual coding agents.
+  * Created: `docs/SoftwareAIFactory/README.md`
+  * Extended: `AGENTS.md` (layout, section mapping, approved-type directory guidance), `mkdocs.yml` (4b category), `hooks/graph_hook.py` (category color), `docs/index.md`
+* **Update**: Anthropic AI-Native SDLC canonical home moved to Software AI Factory at the user's request: https://claude.com/resources/articles/the-ai-native-sdlc-playbook
+  * Moved: `docs/AgentOps/ai-native-sdlc.md` content to `docs/SoftwareAIFactory/ai-native-sdlc.md`; old path retained as a compatibility pointer.
+  * Extended: existing backlinks in AgentOps, AICodingAgents, AgentHarness, AgentPlatforms, AllThingsAnthropic, Standards, EvaluationFrameworks, SecurityFrameworks, Observability, ProductionBestPractices, and the site index.
+* **Ingest**: Factory AI / Droids product and CLI documentation: https://factory.com/product/droids and https://docs.factory.ai/cli/getting-started/overview
+  * Created: `docs/SoftwareAIFactory/factory-ai.md`
+  * Extended: category overview, AI Coding Agents survey, Loop Engineering, deployment/security guidance, index, and navigation; older survey material retained as historical context.
+* **Ingest**: Devin cloud and CLI documentation: https://docs.devin.ai/get-started/devin-intro and https://docs.devin.ai/cli
+  * Created: `docs/SoftwareAIFactory/devin.md`
+  * Extended: category overview, AI Coding Agents survey, testing guidance, index, and navigation.
+* **Ingest**: OpenHands component map, SDK, platform, and SDLC guidance: https://docs.openhands.dev/overview/introduction
+  * Created: `docs/SoftwareAIFactory/openhands.md`
+  * Extended: category overview, AI Coding Agents survey, deployment/testing guidance, agent sandboxing, index, and navigation.
+* **Ingest**: Building your own software factory, Eric Zakariasson (Cursor), full workshop transcript including Q&A: https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz
+  * Created: `docs/SoftwareAIFactory/building-your-own-software-factory.md`
+  * Extended: category and platform pages, Anthropic playbook cross-reference, coding-agent survey, harness/loop engineering, context strategies, observability, sandboxing, index, and navigation.
+  * Extended: ProductionBestPractices deployment, testing/evaluations, security, observability, state/memory, context engineering, and cost management; preserved differing source-specific approval models.
+
+* **Ingest**: [The AI-native SDLC playbook — Anthropic] → AgentOps, AICodingAgents, AgentHarness, Standards, AgentPlatforms, AllThingsAnthropic, ProductionBestPractices, EvaluationFrameworks, SecurityFrameworks, Observability, index — https://claude.com/resources/articles/the-ai-native-sdlc-playbook
+  * Created: `docs/AgentOps/ai-native-sdlc.md`
+  * Extended: `docs/AICodingAgents/claude-code.md` (See Also, References)
+  * Extended: `docs/AgentHarness/loop-engineering.md` (See Also, References)
+  * Extended: `docs/AgentOps/genops.md` (See Also, References)
+  * Extended: `docs/Standards/skills.md` (See Also, References)
+  * Extended: `docs/AgentPlatforms/claude-managed-agents.md` (See Also, References)
+  * Extended: `docs/AllThingsAnthropic/README.md` (hub row, See Also)
+  * Extended: `docs/ProductionBestPractices/README.md` (Anthropic vendor row)
+  * Extended: `docs/ProductionBestPractices/deployment.md` (3 best-practice rows, See Also, References)
+  * Extended: `docs/ProductionBestPractices/testing-evaluations.md` (3 best-practice rows, References)
+  * Extended: `docs/ProductionBestPractices/security.md` (5 best-practice rows, References)
+  * Extended: `docs/ProductionBestPractices/observability.md` (3 best-practice rows, See Also, References)
+  * Extended: `docs/EvaluationFrameworks/agent-evals-design.md` (See Also, References)
+  * Extended: `docs/SecurityFrameworks/anthropic-sandbox-runtime.md` (See Also, References)
+  * Extended: `docs/Observability/Readme.md` (SDLC Observability Patterns subsection)
+  * Extended: `docs/index.md` (AgentOps bullet, References)
+  * Extended: `mkdocs.yml` (section 13.4 Lifecycle Playbooks)
+
 * **Ingest**: [Maxwell: The first Code Execution Model — doubleAI] → AICodingAgents, Architecture, index — https://heymaxwell.ai/
   * Created: `docs/AICodingAgents/maxwell.md`
   * Extended: `docs/AICodingAgents/ai-coding-agents.md` (Complementary Tools section, See Also, References)

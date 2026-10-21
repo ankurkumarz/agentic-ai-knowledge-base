@@ -3,7 +3,7 @@ type: Playbook
 title: "Agent Testing & Evaluations"
 description: Evaluating agentic AI systems is fundamentally different from traditional software testing
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-09-13T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Agent Testing & Evaluations
 
@@ -24,6 +24,9 @@ Evaluation operates at multiple levels:
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Automated factory improvement adopted without evidence | Warp Scorers classify completed runs and Self-improvement proposes fixes from recurring failures | The documented process calls for comparing judge results with manual review, collecting a baseline, and benchmarking the same fixed tasks | Calibrate the scorer, inspect failure evidence, repeat configuration comparisons, and review improvement PRs before adoption ([Warp measurement guide](https://docs.warp.dev/factories/measure-and-improve/)) |
+| Code correctness does not establish performance safety | The reported OpenAI factory adds performance checks alongside build/test and CI | A performance harness routes problematic PRs to Synthetics A/B evaluation; no universal pass threshold is published in the accessible text | Include performance regression evidence for relevant changes and preserve the CI/review repair loop; thresholds remain workload-specific ([Pragmatic Engineer, section 3](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) |
+| Completion claims lack behavior evidence | Passing code checks alone does not establish functional or visual acceptance | The workshop contrasts deterministic browser tests with agent-led interaction and screenshots for human inspection | Require verifiable outcomes, retain test output and UI evidence, and separately review visual acceptance and architecture ([Cursor workshop, 46:01–50:42](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz)) |
 | Non-deterministic outputs | Same input produces different outputs, making assertion-based tests brittle | Tried exact string matching; tests were flaky and unmaintainable | Use LLM-as-judge evaluation with rubric-based scoring; assert on score thresholds not exact strings |
 | No ground truth for open-ended tasks | Many agent tasks have no single correct answer | Tried human labeling for all outputs; didn't scale | Build golden datasets for representative tasks; use automated scoring for coverage, human review for edge cases |
 | Evaluation coverage gaps | Unit tests pass but end-to-end quality degrades | Tested components in isolation; missed emergent failures in full pipelines | Maintain end-to-end eval suites that run on every deployment; track pass rate as a deployment gate |
@@ -38,6 +41,9 @@ Evaluation operates at multiple levels:
 | Brittle graders checking execution paths | Checking that agents followed a specific tool-call sequence makes tests fail whenever the agent finds a valid but unanticipated approach | Wrote graders that required exact tool-call ordering; creative solutions were penalised | Grade what the agent produced (outcome and output quality), not the path it took; reserve tool-call checks for verifying security or compliance requirements, not general correctness |
 | Flaky eval environments | Shared state between trial runs — leftover files, cached data, resource exhaustion — causes correlated failures that measure infrastructure, not agent performance | Did not isolate trial environments; shared state inflated scores when a previous trial cached useful results | Start every trial from a clean, isolated environment; treat correlated trial failures as infrastructure bugs, not agent regressions |
 | LLM judge hallucinating verdicts | Model-based graders sometimes return confident scores even when they lack enough information to make a determination | Trusted raw LLM judge output without calibration; graders returned invented pass/fail decisions | Give the LLM judge a way out ("return Unknown if insufficient information"); calibrate model judges against human experts periodically; grade each rubric dimension with an isolated LLM call rather than one judge for all dimensions |
+| Agent-configuration changes not regression-tested | `CLAUDE.md`, skills, and hooks steer agent behavior but are typically reviewed only by code review — a subtle change can silently regress quality | Not reported in the source | Run a continuous eval suite in CI (Anthropic recommends collecting 20 to 50 real tasks as the suite) whenever the agent's configuration changes, since that configuration deserves the regression testing code gets; gate merges on pass rate ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Production incidents not fed back into the eval suite | Each incident is triaged, fixed, and forgotten; the same class of failure recurs | Not reported in the source | Add an eval for each production incident, written by the team that owned it, that stays in the suite as a regression test ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
+| Agent can weaken its own check during a fix | An agent asked to fix code may rewrite or delete the failing test to make the suite green | Alternative: review the diff manually and reject test changes case-by-case; limitation: not reported in the source | Enforce a hook that blocks edits to test files during a fix task; alternatively reject any diff that touches a test in review — a test that existed before the fix, that the agent could not rewrite, is proof the bug is gone ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 
 ## Capability vs. Regression Evals
 
@@ -198,6 +204,13 @@ The following must be true before production rollout:
 - Evals run on both realistic and adversarial task sets
 
 ## See Also
+
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [Software AI Factory](../SoftwareAIFactory/README.md)
+- [Devin](../SoftwareAIFactory/devin.md): explicit completion criteria and verifiable delegated tasks.
+- [OpenHands](../SoftwareAIFactory/openhands.md): SDLC testing and review integration.
 - [Designing Evaluations for AI Agents](../EvaluationFrameworks/agent-evals-design.md) — grader types, capability vs regression evals, pass@k / pass^k, per-agent-type design patterns, and eval lifecycle roadmap
 - [Observability](./observability.md)
 - [Deployment](./deployment.md)
@@ -205,8 +218,16 @@ The following must be true before production rollout:
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category threat taxonomy and four-phase testing methodology
 - [Agent Security](./security.md) — guardrails, approval workflows, and audit trails
 - [Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — cloud-hosted sandbox providers (including LangSmith Sandboxes) used to isolate parallel eval trials
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — configuration-regression evals, incident-to-eval feedback, and the feedback-loop play
 
 ## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [Introducing Devin](https://docs.devin.ai/get-started/devin-intro): verification and task-scoping guidance.
+- [OpenHands in Your SDLC](https://docs.openhands.dev/openhands/usage/essential-guidelines/sdlc-integration): testing, review, and governance examples.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for harness-level eval categories, adversarial test scenarios, and launch gates checklist
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
 - [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Anthropic Engineering (2026). Source for capability vs regression evals, pass@k/pass^k metrics, grader design patterns, eval lifecycle roadmap, and Braintrust/Harbor framework references.
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for configuration-regression evals, incident-to-eval feedback, feedback loop with failing-test-first bug-fix workflow, and protected test files during agent fixes.

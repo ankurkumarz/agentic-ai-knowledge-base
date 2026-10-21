@@ -15,6 +15,7 @@ OpenAI's contributions to agentic AI include foundational design pattern documen
 
 | Product / Area | One-liner | Wiki Reference |
 |---|---|---|
+| Internal software factory | Interview-based reporting on Codex-driven delivery, Perf Factory, and human-directed Sevbot; accessible excerpt only ([article](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) | [SoftwareAIFactory/openai-software-factory.md](../SoftwareAIFactory/openai-software-factory.md) |
 | OpenAI Codex | Cloud coding agent — isolated sandbox, parallel tasks, Skills, Automations, computer-use via GPT-5.4, Codex Security | [AICodingAgents/ai-coding-agents.md](../AICodingAgents/ai-coding-agents.md) |
 | Agentic Design Patterns | OpenAI's canonical taxonomy of agent workflow patterns (reflection, tool use, planning, multi-agent) | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
 | Practical Guide to Building Agents | End-to-end production guide covering agent definition, model/tool/instruction design, orchestration (single-agent, manager, decentralized), guardrails, and HITL — distilled from OpenAI customer deployments | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
@@ -24,6 +25,12 @@ OpenAI's contributions to agentic AI include foundational design pattern documen
 
 ## See Also
 
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md)
+
 - [Design Patterns Overview](../DesignPatterns/Readme.md)
 - [Agentic AI Industry Standards](../Standards/agentic-ai-foundation.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
+
+## References
+
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): Gergely Orosz's reporting; linked here as an internal-practice case study, not product documentation.

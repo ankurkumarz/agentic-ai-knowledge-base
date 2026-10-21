@@ -25,6 +25,7 @@ SECTION_COLORS = {
     'RAG':                     '#6b7af0',
     'ProductionBestPractices': '#e04060',
     'AgentHarness':            '#f0d060',
+    'SoftwareAIFactory':       '#6098d0',
     'AIGovernance':            '#60d0a0',
     'AllThingsAnthropic':      '#d05bf0',
     'AllThingsGoogle':         '#40c0f0',

@@ -3,7 +3,7 @@ type: Playbook
 title: Agent Observability
 description: "This section provides comprehensive coverage of observability solutions, best practices, and methodologies for monitoring and understanding agentic AI systems in production"
 tags: [observability, production, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Agent Observability
 
@@ -301,11 +301,28 @@ Observability for agentic AI systems goes beyond traditional application monitor
 
 This comprehensive observability framework provides the foundation for maintaining reliable, performant, and cost-effective agentic AI systems while ensuring transparency and accountability in AI decision-making processes.
 
+### SDLC Observability Patterns (Anthropic AI-native SDLC)
+
+Anthropic's AI-native SDLC playbook contributes three observability patterns relevant to agent-driven software pipelines ([Anthropic, AI-native SDLC playbook, 2026](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)):
+
+- **Verification evidence attached to the PR.** The agent must paste the literal output of the test run, build log, or screenshot diff into the PR, so evidence comes from the toolchain and the reviewer and any later auditor can both see it.
+- **Per-gate timing from hook decisions.** Every hook decision (allow/block, with a timestamp) is logged to the OpenTelemetry export, so time spent waiting on each approval gate is visible per gate and per stage.
+- **Deterministic drift detection.** A version-controlled script computes mean/standard deviation over a rolling window with Western Electric-style rules on a stable metric (e.g., CI test failure rate, post-deploy 5xx rate, PR cycle time); response tiers live in version-controlled `bands.yaml` — 1σ log, 2σ agent diagnoses read-only, 3σ agent acts via PR or pre-approved runbook — and findings flow back into the SDLC as `intent.md`.
+
+See [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) for the full stage-by-stage treatment.
+
 ## See Also
 
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Framework observability features
 - **[Agent Ops](../AgentOps/README.md)**: Operational practices and methodologies
 - **[Evaluation Frameworks](../EvaluationFrameworks/Readme.md)**: Evaluation and monitoring approaches
 - **[AI Evaluation and Observability Platforms (AEOPs)](../EvaluationFrameworks/platforms.md)**: Gartner market definition, AEOP capability taxonomy, and platform comparison
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform observability capabilities
 - **[Production Observability](../ProductionBestPractices/observability.md)**: Production tracing, cost visibility, and regression practices
+- **[AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md)**: SDLC observability patterns — verification evidence in PRs, per-gate timing, deterministic drift detection
+
+## References
+
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the SDLC Observability Patterns subsection.

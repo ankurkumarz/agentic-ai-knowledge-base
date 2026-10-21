@@ -3,7 +3,7 @@ type: Playbook
 title: "Production Best Practices & Guidelines"
 description: A consolidated reference for teams moving agentic AI systems from prototype to production
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Production Best Practices & Guidelines
 
@@ -27,7 +27,7 @@ Industry guidance from the major AI providers on building production-ready agent
 
 | Vendor | Key Resources |
 |---|---|
-| Anthropic | [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) · [Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) · [Long-Running Agent Harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) · [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) |
+| Anthropic | [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) · [Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) · [Long-Running Agent Harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) · [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) · [AI-Native SDLC Playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) |
 | Google | [Introduction to Agents](https://www.kaggle.com/whitepaper-introduction-to-agents) · [Agent Tools & MCP Interoperability](https://www.kaggle.com/whitepaper-agent-tools-and-interoperability-with-mcp) · [Context Engineering: Sessions & Memory](https://www.kaggle.com/whitepaper-context-engineering-sessions-and-memory) · [Agent Quality](https://www.kaggle.com/whitepaper-agent-quality) · [Prototype to Production](https://www.kaggle.com/whitepaper-prototype-to-production) |
 | Microsoft | [AI Agents for Beginners – 12 Lessons](https://github.com/microsoft/ai-agents-for-beginners) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) · [AutoGen Docs](https://microsoft.github.io/autogen/) · [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/) |
 | OpenAI | [A Practical Guide to Building Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) · [OpenAI Cookbook](https://github.com/openai/openai-cookbook) · [Safety Best Practices](https://platform.openai.com/docs/guides/safety-best-practices) |
@@ -43,3 +43,11 @@ Industry guidance from the major AI providers on building production-ready agent
 | Test continuously in production | One-time pre-deployment evaluation misses quality drift over time |
 | Design for graceful degradation | Agents should fail safely — define fallback behaviors and HITL escalation paths |
 | Enforce tenant isolation everywhere | Memory, caches, and tool configs must be strictly namespaced in multi-tenant deployments |
+
+## See Also
+
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — the six-stage loop that this section's guidance applies to end-to-end, from intent capture to autonomous loop closure
+
+## References
+
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the AI-Native SDLC Playbook entry in the Anthropic vendor row above.
