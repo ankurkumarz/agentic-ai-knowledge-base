@@ -3,7 +3,7 @@ type: Concept
 title: Foundation Models
 description: "Foundation models are large-scale AI models trained on broad data that can be adapted to a wide range of downstream tasks"
 tags: [concepts, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Foundation Models
 
@@ -17,12 +17,13 @@ GPT-4, Claude, Gemini, and Llama are all foundation models. They are also called
 
 **Language models** encode statistical information about language — how likely a word (or token) is to appear in a given context. The basic unit is a *token*, which can be a character, word, or sub-word. GPT-4 uses ~¾ words per token on average.
 
-Two types of language models:
+Common language model types include:
 
 | Type | How It Works | Primary Use Case |
 |---|---|---|
 | **Masked LM** (e.g., BERT) | Predicts missing tokens anywhere in a sequence (fill-in-the-blank) | Classification, sentiment analysis, code debugging |
 | **Autoregressive LM** (e.g., GPT) | Predicts the next token based on preceding tokens | Text generation, chat, coding, reasoning |
+| **Diffusion LM** (e.g., Inception Mercury) | Generates text through a diffusion process rather than one-token-at-a-time autoregression; Inception reports 1,000+ tokens/s generation | Real-time, latency-sensitive applications (voice, interactive tutoring, search) |
 
 Autoregressive models dominate modern AI applications because they generate open-ended outputs.
 
@@ -50,7 +51,7 @@ Pre-training and post-training differ in goal, not process — both update model
 
 ## Sampling and Generation
 
-Foundation models are probabilistic: given a prompt, they generate a probability distribution over the next token, sample from it, append the token, and repeat. This probabilistic nature explains both the creativity and the inconsistency of AI outputs.
+Foundation models are probabilistic — for autoregressive models: given a prompt, they generate a probability distribution over the next token, sample from it, append the token, and repeat. This probabilistic nature explains both the creativity and the inconsistency of AI outputs.
 
 Key sampling parameters:
 
@@ -63,6 +64,24 @@ Key sampling parameters:
 **Test-time compute (TTC)**: Allocating more compute at inference time (e.g., chain-of-thought, majority voting, best-of-N sampling) can significantly improve output quality without retraining. OpenAI's o1/o3 series explicitly trades tokens for reasoning quality.
 
 **Structured outputs**: Models can be constrained to produce valid JSON, XML, or code by modifying the sampling process to only generate tokens consistent with the expected format (constrained decoding). This is critical for production systems that parse model outputs programmatically.
+
+## Diffusion LLMs: Mercury 3 (Inception Labs, October 2026)
+
+Autoregression is not the only text-generation paradigm. Inception Labs' **Mercury** family is a commercial effort to scale **diffusion-based LLMs**. Mercury 1 demonstrated that diffusion LLMs could be built for commercial applications; the open question was whether they could scale to compete with autoregressive models on complex use cases. With Mercury 3 (announced October 19, 2026), Inception claims they can, reporting that the scaling laws that drove progress in autoregressive models also hold for diffusion.
+
+| Attribute | Mercury 3 (Inception-reported) |
+|---|---|
+| Scale | More than 40× Mercury 1 in total parameters; intelligence across standard benchmarks up 3× from Mercury 1 (mini) |
+| Context window | 1M tokens (up from 260K for Mercury 2.5) |
+| Speed | 1,068 tokens/s on NVIDIA GPUs; described as "just as fast" as Mercury 1 despite the size increase |
+| Quality | On par with or better than frontier speed-optimized models (GPT-6 Luna, Claude Haiku 5.5) per Inception, while running 4–8× faster |
+| Agentic use | Completed 50% of 50 live Mind2Web navigation tasks in Inception's production web-agent harness — reported as significantly more than GPT-6.1-Sol — using the same token volume and agent steps as a frontier model at a fraction of the per-token cost |
+| Pricing | $0.20 per million input tokens / $0.70 per million output tokens; 50% launch discount ($0.10/$0.35); cached input tokens 90% off |
+| Availability | Inception API Platform, OpenRouter, Baseten, Vercel; OpenAI API-compatible; 100M free trial tokens; enterprise dedicated capacity, autoscaling, compliance controls, configurable data retention |
+
+Inception positions Mercury 3 for latency-sensitive agentic workloads — browser-use agents, interactive education, real-time search, and customer support — where agents wait on the model at every step and small delays compound. The portfolio also includes **Mercury Voice** (optimized for time-to-first-answer-token in voice applications; reported in use at Audivi AI, Altur, and OpenCall) and **Mercury Decide** (high-volume classification decision model; reported to outperform Jev on JevBench and LegalBench).
+
+**Caveats**: All benchmark, speed, and pricing figures are vendor-reported. The announcement names benchmarks (Mind2Web, JevBench, LegalBench) but does not publish per-benchmark scores, evaluation methodology, parameter counts, training details, or third-party evaluations. Treat the GPT-6 Luna / Claude Haiku 5.5 comparisons as Inception's own claims until independently verified.
 
 ## Probabilistic Nature and Hallucinations
 
@@ -111,3 +130,4 @@ Model selection involves trade-offs across multiple dimensions:
 - [AI Engineering: Building Applications with Foundation Models](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) — Chip Huyen, O'Reilly, 2025. Chapters 1–2.
 - [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774) — OpenAI, 2023.
 - [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) — Radford et al., OpenAI, 2021.
+- [Diffusion at Scale: Introducing Mercury 3 — Inception Labs](https://www.inceptionlabs.ai/blog/introducing-mercury-3) — vendor announcement (Oct 19, 2026): Mercury 3 scale, context, speed, Mind2Web web-agent results, pricing, and availability; all figures vendor-reported

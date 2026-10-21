@@ -3,7 +3,7 @@ type: Playbook
 title: Cost Management for Agentic AI
 description: "Cost management is a first-class production concern for agentic AI systems"
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Cost Management for Agentic AI
 
@@ -221,6 +221,11 @@ Use evaluation frameworks (see [Agent Testing & Evaluations](../EvaluationFramew
 - Cross-region inference for availability and cost balancing
 - [Bedrock pricing](https://aws.amazon.com/bedrock/pricing/)
 
+### Inception (Mercury diffusion LLMs)
+- Diffusion LLMs as a cost/latency option for real-time agentic workloads: Mercury 3 lists at $0.20 per million input tokens / $0.70 per million output tokens, with a 50% launch discount ($0.10/$0.35) and cached input tokens at 90% off the input price
+- Inception reports 1,068 tokens/s and parity with frontier speed-optimized models at 4–8× their speed — relevant when model routing for latency-sensitive agents (browser-use, voice, search); 100M free trial tokens; OpenAI API-compatible
+- All figures vendor-reported (announcement dated Oct 2026)
+
 ## Balancing Speed, Reliability, and Cost
 
 Scaling an agent always involves three competing goals. Optimizing for one affects the others:
@@ -242,3 +247,7 @@ Scaling an agent always involves three competing goals. Optimizing for one affec
 - **[Context Engineering](../ContextEngineering/README.md)**: Context compaction to reduce token usage
 - **[Deployment](../AgentOps/README.md)**: Infrastructure cost management in AgentOps
 - **[Agent Testing & Evaluations](../EvaluationFrameworks/Readme.md)**: Validating quality after cost optimizations
+
+## References
+
+- [Diffusion at Scale: Introducing Mercury 3 — Inception Labs](https://www.inceptionlabs.ai/blog/introducing-mercury-3) — Mercury 3 pricing (list, launch discount, cached-token discount) and speed claims; vendor-reported, Oct 2026
