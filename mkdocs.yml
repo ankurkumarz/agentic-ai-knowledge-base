@@ -75,6 +75,7 @@ nav:
   - 4a. AI Coding Agents:
     - 4a.1 AI Coding Agents Overview: 'AICodingAgents/ai-coding-agents.md'
     - 4a.2 Claude Code: 'AICodingAgents/claude-code.md'
+    - 4a.3 Maxwell (doubleAI): 'AICodingAgents/maxwell.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.1.1 Thoughtworks Tech Radar — Agentic AI (Vol. 34, Apr 2026): 'AgenticTechStack/thoughtworks-radar-vol34.md'

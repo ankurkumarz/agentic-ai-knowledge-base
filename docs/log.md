@@ -23,6 +23,18 @@
   * Extended: `docs/index.md` (AgentOps bullet, References)
   * Extended: `mkdocs.yml` (section 13.4 Lifecycle Playbooks)
 
+* **Ingest**: [Maxwell: The first Code Execution Model — doubleAI] → AICodingAgents, Architecture, index — https://heymaxwell.ai/
+  * Created: `docs/AICodingAgents/maxwell.md`
+  * Extended: `docs/AICodingAgents/ai-coding-agents.md` (Complementary Tools section, See Also, References)
+  * Extended: `docs/Architecture/inference-optimization.md` (Runtime Code Optimization section, See Also, References)
+  * Extended: `docs/index.md` (AI Coding Agents bullet)
+  * Extended: `mkdocs.yml` (section 4a.3)
+
+* **Ingest**: [Diffusion at Scale: Introducing Mercury 3 — Inception Labs] → Concepts, ProductionBestPractices, index — https://www.inceptionlabs.ai/blog/introducing-mercury-3
+  * Extended: `docs/Concepts/foundation-models.md` (diffusion LM type, autoregressive qualifier, Mercury 3 section, References)
+  * Extended: `docs/ProductionBestPractices/cost-management.md` (Inception vendor cost guidance)
+  * Extended: `docs/index.md` (Foundation Models bullet)
+
 ## 2026-10-18
 
 * **Ingest**: [8 Chunking Strategies for RAG — ByteByteGo (EP229)] → RAG, ReferenceArchitecture, index — https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag

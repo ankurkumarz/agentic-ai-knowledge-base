@@ -1904,6 +1904,65 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - **Eight strategies** compared in one table: fixed-size (token-count cuts with small overlap), recursive (paragraphs → lines → words → characters, only when still too big), document-based (headings, chapters, HTML tags), semantic (sentence-embedding similarity drops), LLM-based (standalone propositions; high quality, expensive at corpus scale), agentic (per-file method selection by document type), late chunking (full-document embedding, then mean-pooling within boundaries), hierarchical (sections → paragraphs → sentences)
 - The source does not rank the strategies; the page's selection guidance is derived from the source descriptions only
 
+---
+
+## [2026-10-20] ingest | Maxwell: The first Code Execution Model (doubleAI) | sections touched: AICodingAgents/maxwell.md, AICodingAgents/ai-coding-agents.md, Architecture/inference-optimization.md, index.md, mkdocs.yml
+
+**Source**: https://heymaxwell.ai/
+**Type**: Vendor product page (doubleAI)
+**Primary section**: AICodingAgents
+**Secondary sections**: Architecture (inference optimization), AgentHarness (self-evolution, See Also only)
+**Availability note**: Controlled availability / early access; no pricing; page does not state a product release date (site legal notices dated Oct 17–19, 2026); all performance figures are vendor-reported demonstrations
+
+**Files modified:**
+
+| Change | File |
+|---|---|
+| Created | `docs/AICodingAgents/maxwell.md` |
+| Extended | `docs/AICodingAgents/ai-coding-agents.md` (Complementary Tools section, See Also, References) |
+| Extended | `docs/Architecture/inference-optimization.md` (Runtime Code Optimization section, See Also, References) |
+| Extended | `docs/index.md` (AI Coding Agents bullet) |
+| Extended | `mkdocs.yml` (section 4a.3) |
+| Extended | `docs/log.md` |
+| Extended | `docs/ingest-log.md` |
+
+**Key knowledge added:**
+
+- **Code Execution Model (CEM)** concept: AI positioned "between code and silicon" that observes a running program and rewrites the binary underneath it, leaving source unchanged; complementary to coding agents (agents write source, Maxwell optimizes execution)
+- **Formal verification approach**: every replacement carries a machine-checkable proof of semantic equivalence (conditional proofs with guards; Rice's theorem limit acknowledged); doubleAI claims a complete formalization of Python including dynamic behavior; proofs composed from reusable "proof gadgets"; contrasts with compilers/JITs (torch.compile, PyPy — fixed transformations) and superoptimizers (STOKE — short static fragments)
+- **Self-improving optimization**: proven-faster versions become the baseline for the next attempt; program keeps improving while it runs; re-optimizes as hardware/data change
+- **Vendor-reported performance** (all doubleAI demonstrations, conditions noted on page): 38× data pipelines; 4.25× AI inference kernels; LTX-2.5 4K video 1.87× (250 s → 134 s, two B200s, 12+ changes, visually indistinguishable output); Whisper-small 180 transcriptions 106.23 s → 49.82 s (RTX 4090, identical transcripts); NetworkX betweenness centrality 61.44 s → 17.50 s (15 runs); beats NVIDIA PyTorch baselines on 90% of SOL-ExecBench Blackwell kernels after one day of search; cuGraph 3.6× average; pandas kernels rewritten from scratch
+- **Relevance to agents**: unreviewed autonomous changes to running code justified by proofs rather than testing — the trust problem coding agents face, solved differently
+
+---
+
+## [2026-10-20] ingest | Diffusion at Scale: Introducing Mercury 3 (Inception Labs) | sections touched: Concepts/foundation-models.md, ProductionBestPractices/cost-management.md, index.md
+
+**Source**: https://www.inceptionlabs.ai/blog/introducing-mercury-3
+**Type**: Vendor blog announcement (published Oct 19, 2026)
+**Primary section**: Concepts (foundation models)
+**Secondary sections**: ProductionBestPractices (cost management)
+**Provenance note**: all benchmark, speed, and pricing figures are vendor-reported; the announcement names benchmarks (Mind2Web, JevBench, LegalBench) but does not publish per-benchmark scores, evaluation methodology, parameter counts, or third-party evaluations
+
+**Files modified:**
+
+| Change | File |
+|---|---|
+| Extended | `docs/Concepts/foundation-models.md` (diffusion LM row in LM types table, autoregressive qualifier on sampling description, Mercury 3 section, References) |
+| Extended | `docs/ProductionBestPractices/cost-management.md` (Inception vendor cost guidance) |
+| Extended | `docs/index.md` (Foundation Models bullet) |
+| Extended | `docs/log.md` |
+| Extended | `docs/ingest-log.md` |
+
+**Key knowledge added:**
+
+- **Diffusion LLMs scale**: Inception claims Mercury 3 (announced Oct 19, 2026) is the most capable diffusion LLM released to date, 40×+ Mercury 1 in parameters, 1M-token context (up from 260K in Mercury 2.5), 3× intelligence vs Mercury 1 (mini), with autoregressive scaling laws claimed to hold for diffusion
+- **Speed/quality positioning**: 1,068 tokens/s on NVIDIA GPUs; on par or better than GPT-6 Luna and Claude Haiku 5.5 per Inception while 4–8× faster
+- **Agentic results**: 50% completion on 50 live Mind2Web navigation tasks in Inception's production web-agent harness (significantly more than GPT-6.1-Sol per the vendor), same token volume and agent steps as a frontier model at a fraction of per-token cost
+- **Portfolio**: Mercury Voice (TTFAT-optimized for voice agents; reported at Audivi AI, Altur, OpenCall); Mercury Decide (high-volume classification; claimed to outperform Jev on JevBench and LegalBench)
+- **Pricing/availability**: $0.20/$0.70 per M input/output tokens; 50% launch discount ($0.10/$0.35); cached input 90% off; OpenAI API-compatible; Inception API Platform, OpenRouter, Baseten, Vercel; 100M free tokens; enterprise dedicated capacity, autoscaling, compliance controls, configurable data retention
+- **Production cost guidance**: diffusion LLMs added as a model-routing option for latency-sensitive agentic workloads (browser-use, voice, search)
+
 ## [2026-10-20] ingest | The AI-native SDLC playbook — Anthropic | sections touched: AgentOps/ai-native-sdlc.md (new), AICodingAgents/claude-code.md, AgentHarness/loop-engineering.md, AgentOps/genops.md, Standards/skills.md, AgentPlatforms/claude-managed-agents.md, AllThingsAnthropic/README.md, ProductionBestPractices/README.md, ProductionBestPractices/deployment.md, ProductionBestPractices/testing-evaluations.md, ProductionBestPractices/security.md, ProductionBestPractices/observability.md, EvaluationFrameworks/agent-evals-design.md, SecurityFrameworks/anthropic-sandbox-runtime.md, Observability/Readme.md, index.md, mkdocs.yml (log.md and ingest-log.md updated with this ingest)
 
 **Source**: https://claude.com/resources/articles/the-ai-native-sdlc-playbook

@@ -44,6 +44,7 @@ Our comprehensive knowledge base structure provides systematic coverage of all a
 - **AI Engineering**: The discipline of building applications on top of foundation models — prompt engineering, RAG, finetuning, and agents as the four core adaptation techniques; AI engineering stack (infrastructure, model, application layers); AI engineering vs. ML engineering comparison (Huyen, O'Reilly 2025)
 - **References**: Key research papers and foundational materials
 - **2026 AI Predictions (You.com)**: 35 predictions by Richard Socher and Bryan McCann covering workforce transformation, reward engineering, 10-person unicorns, software development, vertical AI agents, space computing, biotech, and consumer media
+- **Foundation Models**: Core concepts — training phases, sampling, hallucinations, and model selection; now covers diffusion LLMs as an autoregressive alternative (Inception Mercury 3, Oct 2026) — [Foundation Models](Concepts/foundation-models.md)
 
 ### **4. Architecture and Design Patterns**
 - **Agentic Architecture Components**: Selection criteria for system components
@@ -68,7 +69,7 @@ Comprehensive coverage of major development frameworks:
 - **PydanticAI**: Type-safe GenAI development
 - **Spring AI**: Java ecosystem integration
 - **Haystack**: Production-ready LLM applications and RAG pipelines
-- **AI Coding Agents**: Claude Code, OpenAI Codex, Kiro (AWS's ground-up replacement for Amazon Q Developer), Cursor, Devin, GitHub Copilot, and more; **Google Antigravity** (CLI/2.0/SDK/IDE) supersedes Gemini CLI (sunsetting Jun 2026 for Free/Pro/Ultra tiers); **Snowflake CoCo** (formerly Cortex Code) and **Databricks Genie Code** bring data-native and lakehouse-native coding agents into the comparison
+- **AI Coding Agents**: Claude Code, OpenAI Codex, Kiro (AWS's ground-up replacement for Amazon Q Developer), Cursor, Devin, GitHub Copilot, and more; **Google Antigravity** (CLI/2.0/SDK/IDE) supersedes Gemini CLI (sunsetting Jun 2026 for Free/Pro/Ultra tiers); **Snowflake CoCo** (formerly Cortex Code) and **Databricks Genie Code** bring data-native and lakehouse-native coding agents into the comparison; **Maxwell (doubleAI)** is a complementary Code Execution Model that rewrites the running binary with formally proven optimizations, leaving agent-written source unchanged
 - **FreePHDLabor**: Open-source multiagent framework (smolagents-based) automating the scientific research lifecycle via a ManagerAgent orchestrating Ideation, Experimentation, Writeup, Reviewer, and Proofreading agents
 
 ### **6. Agent Technology Stack**
