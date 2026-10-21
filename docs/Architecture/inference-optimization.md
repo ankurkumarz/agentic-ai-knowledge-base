@@ -3,7 +3,7 @@ type: Architecture
 title: Inference Optimization
 description: Inference optimization makes AI models faster and cheaper to run in production
 tags: [architecture, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Inference Optimization
 
@@ -148,6 +148,10 @@ For models that don't fit on a single GPU:
 | **Data parallelism** | Runs multiple copies of the model; routes different requests to different copies | High throughput, inference serving |
 | **Expert parallelism** | For MoE models: each GPU hosts a subset of experts | Mixture-of-experts inference |
 
+## Runtime Code Optimization (Code Execution Models)
+
+Beyond model- and serving-level techniques, a newer class of tools optimizes the running program rather than the model. **Maxwell (doubleAI)** — positioned as the first "Code Execution Model" — observes a running program and rewrites the binary underneath it with replacements specialized to the exact hardware and observed data, each backed by a machine-checkable formal proof of semantic equivalence; source code is left unchanged. doubleAI reports 4.25× faster AI inference kernels and 38× faster data-processing pipelines, and a 2.1× speedup on a Whisper-small transcription workload (106 s → 50 s on an RTX 4090), with identical outputs. For self-hosted inference workloads in Python/PyTorch, this is an emerging alternative to hand-written kernels and ahead-of-time compiler optimizations — currently in controlled availability. See [Maxwell](../AICodingAgents/maxwell.md).
+
 ## Key Inference Frameworks
 
 | Framework | Strengths |
@@ -177,6 +181,7 @@ For models that don't fit on a single GPU:
 - [Cost Management](../ProductionBestPractices/cost-management.md)
 - [Observability](../Observability/Readme.md)
 - [RAG Reference Architecture](../ReferenceArchitecture/rag-architecture.md)
+- [Maxwell (doubleAI)](../AICodingAgents/maxwell.md) — runtime, formally proven code optimization
 
 ## References
 
@@ -184,3 +189,4 @@ For models that don't fit on a single GPU:
 - [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180) — Kwon et al. (vLLM), 2023.
 - [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691) — Dao, 2023.
 - [Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192) — Leviathan et al., 2022.
+- [Maxwell: The first Code Execution Model — doubleAI](https://heymaxwell.ai/) — vendor-reported runtime optimization claims for inference kernels and data pipelines (controlled availability)

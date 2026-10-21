@@ -3,7 +3,7 @@ type: AI Tool
 title: AI Coding Agents
 description: "AI coding agents are purpose-built autonomous tools that read codebases, plan changes, execute them using real development tools (terminal, editor, browser), and iterate on the results"
 tags: [frameworks, agentic-ai]
-timestamp: 2026-09-13T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # AI Coding Agents
 
@@ -817,6 +817,10 @@ Gartner notes an industry-wide shift from per-seat subscriptions toward **hybrid
 
 ---
 
+## Complementary Tools
+
+Coding agents write and edit source code; a new class of tools optimizes how that code executes. **Maxwell (doubleAI)** is a "Code Execution Model" that observes a running program and rewrites the binary underneath it — with a machine-checkable formal proof that each replacement is semantically equivalent — leaving the source (including code written by agents like Claude Code) untouched. doubleAI reports 2–4× speedups on inference and data-processing workloads (e.g., 106 s → 50 s for 180 Whisper-small transcriptions on an RTX 4090) and positions it explicitly as complementary to coding agents. See [Maxwell](maxwell.md) for details.
+
 ## Positioning Map
 
 These tools occupy distinct positions across two axes: **interface** (terminal ↔ full IDE) and **autonomy** (HITL-first ↔ fully autonomous).
@@ -900,6 +904,7 @@ TERMINAL ─────────────────────┼─�
 - [AllThingsOpenAI](../AllThingsOpenAI/README.md)
 - [AllThingsGoogle](../AllThingsGoogle/README.md)
 - [AllThingsAWS](../AllThingsAWS/README.md)
+- [Maxwell (doubleAI)](maxwell.md) — runtime code optimization complementary to coding agents
 
 ## References
 
@@ -928,3 +933,4 @@ TERMINAL ─────────────────────┼─�
 - [Factory AI](https://factory.ai) — Agent-native SDLC platform; Droid fleet; Terminal-Bench #1 (58.75%)
 - [Warp](https://www.warp.dev) — AI-native terminal; Cloud Agents; agent marketplace; MCP support
 - [IBM Bob announcement](https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software) — GA April 2026; 80,000+ IBM employees; role-based SDLC agents; multi-model routing
+- [Maxwell: The first Code Execution Model — doubleAI](https://heymaxwell.ai/) — runtime super-optimization of agent-written code via formally proven binary rewriting
