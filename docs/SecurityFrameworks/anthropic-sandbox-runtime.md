@@ -79,7 +79,7 @@ Linux requires `bubblewrap`, `socat`, and `ripgrep` as system dependencies.
 - [Agentic AI Security Overview](./Readme.md)
 - [Agent Governance Toolkit (Microsoft)](./agent-governance-toolkit.md)
 - [Anthropic — Agentic AI Overview](../AllThingsAnthropic/README.md)
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the managed-settings sandbox configuration this playbook recommends for agent CI/CD jobs (network allowlist, credential-file denial, `failIfUnavailable` as a hard gate)
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — the managed-settings sandbox configuration this playbook recommends for agent CI/CD jobs (network allowlist, credential-file denial, `failIfUnavailable` as a hard gate)
 
 ## References
 

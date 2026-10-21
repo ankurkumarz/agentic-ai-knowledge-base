@@ -41,7 +41,7 @@ The category spans terminal-first CLIs, IDE extensions, cloud sandboxes, and sta
 | **Pi** | earendil.works | Terminal CLI | MIT | 15+ providers | Radical minimalism: 4 tools, sub-1K-token system prompt |  |
 | **Aider** | Paul Gauthier (open source) | Terminal CLI | Apache 2.0 | Claude, DeepSeek, GPT-4o, local | Git-native: every edit is a commit; 15B tokens/week |  |
 | **Augment Code** | Augment (enterprise) | IDE + CLI + code review | Proprietary | Multi-provider (MCP) | 200K-token Context Engine; 70% win rate vs Copilot |  |
-| **Factory AI** | Factory | Web + API + integrations | Proprietary | Claude (multi-model) | Specialized Droid agents for full SDLC; #1 on Terminal-Bench |  |
+| **Factory AI** | Factory | Terminal + IDE + browser + integrations | Proprietary | Claude, GPT, Gemini | Droid workflows, multi-agent Missions, and headless execution ([Factory](https://docs.factory.ai/cli/getting-started/overview)) | [Software AI Factory](../SoftwareAIFactory/factory-ai.md) |
 | **Warp** | Warp | AI-native terminal | Freemium | Claude 3.5 Sonnet, GPT-4o | Terminal-as-IDE; Cloud Agents; agent marketplace; MCP |  |
 | **IBM Bob** | IBM | IDE + web + enterprise integrations | Proprietary (SaaS) | Claude, Mistral, IBM Granite | Role-based SDLC agents; 80K IBM employees; enterprise governance |  |
 
@@ -588,6 +588,12 @@ Augment is built specifically for large, complex codebases — the use cases whe
 
 ## Factory AI
 
+The canonical platform page is now [Factory AI](../SoftwareAIFactory/factory-ai.md) under [Software AI Factory](../SoftwareAIFactory/README.md). It covers the current documented CLI, Missions, Custom Droids, skills, MCP, hooks, and headless execution; model choice extends beyond Claude to GPT and Gemini ([Factory CLI](https://docs.factory.ai/cli/getting-started/overview), [Factory Droids](https://factory.com/product/droids)).
+
+The earlier survey below is retained as historical context, not a current benchmark ranking or a verified list of current Droid product SKUs. In particular, the role names and 2025 benchmark numbers below were not revalidated in this update; use the dedicated page for current sourced coverage.
+
+### Historical Survey
+
 **Type**: Agent-native software development platform (Droids)
 **Vendor**: Factory
 **Docs**: [factory.ai](https://factory.ai)
@@ -626,6 +632,8 @@ Factory positions itself as the first agent-native software development platform
 ---
 
 ## Warp
+
+Warp's standing software-delivery platform is covered separately in [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, stages, repository-controlled merge authority, and scored improvement extend beyond the interactive terminal discussed below ([Factories documentation](https://docs.warp.dev/factories/)).
 
 **Type**: AI-native terminal / agentic development environment
 **Vendor**: Warp
@@ -890,6 +898,13 @@ TERMINAL ─────────────────────┼─�
 
 ## See Also
 
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [Software AI Factory](../SoftwareAIFactory/README.md): lifecycle playbooks and delivery platforms, distinct from individual coding tools.
+- [Factory AI](../SoftwareAIFactory/factory-ai.md)
+- [Devin](../SoftwareAIFactory/devin.md)
+- [OpenHands](../SoftwareAIFactory/openhands.md)
 - [Agent Development Frameworks Overview](../AgenticFrameworks/README.md)
 - [Frameworks Technology Radar](../AgenticFrameworks/solutions.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
@@ -908,6 +923,13 @@ TERMINAL ─────────────────────┼─�
 
 ## References
 
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [Factory Droid CLI](https://docs.factory.ai/cli/getting-started/overview): current execution and customization surfaces.
+- [Factory Droids](https://factory.com/product/droids): current model choice, interfaces, and autonomy.
+- [Introducing Devin](https://docs.devin.ai/get-started/devin-intro): delegated engineering tasks.
+- [OpenHands introduction](https://docs.openhands.dev/overview/introduction): component responsibilities and deployment surfaces.
 - [Gartner Magic Quadrant for Enterprise AI Coding Agents (May 2026)](https://www.gartner.com/doc/reprints?id=1-2NE1VQ48&ct=260519&st=sb) — ID G00841434; Leaders: Anthropic, Cursor, GitHub, OpenAI; Challengers: AWS, Cognition, Alibaba Cloud; Visionaries: Tabnine; Niche Players: Atlassian, BytePlus, JetBrains
 
 - [Claude Code product page](https://www.anthropic.com/product/claude-code) — Anthropic's agentic coding system

@@ -72,6 +72,15 @@ Comprehensive coverage of major development frameworks:
 - **AI Coding Agents**: Claude Code, OpenAI Codex, Kiro (AWS's ground-up replacement for Amazon Q Developer), Cursor, Devin, GitHub Copilot, and more; **Google Antigravity** (CLI/2.0/SDK/IDE) supersedes Gemini CLI (sunsetting Jun 2026 for Free/Pro/Ultra tiers); **Snowflake CoCo** (formerly Cortex Code) and **Databricks Genie Code** bring data-native and lakehouse-native coding agents into the comparison; **Maxwell (doubleAI)** is a complementary Code Execution Model that rewrites the running binary with formally proven optimizations, leaving agent-written source unchanged
 - **FreePHDLabor**: Open-source multiagent framework (smolagents-based) automating the scientific research lifecycle via a ManagerAgent orchestrating Ideation, Experimentation, Writeup, Reviewer, and Proofreading agents
 
+### Software AI Factory
+
+- **Overview**: [Software AI Factory](SoftwareAIFactory/README.md) groups lifecycle operating models and platforms for governed agent-driven software delivery.
+- **Anthropic Playbook**: [AI-Native SDLC](SoftwareAIFactory/ai-native-sdlc.md) is now housed here, with its six-stage artifact chain and approval gates.
+- **Cursor Workshop**: [Building Your Own Software Factory](SoftwareAIFactory/building-your-own-software-factory.md) covers runnable environments, isolated agents, verification artifacts, and feedback loops, including Q&A.
+- **OpenAI Case Study**: [OpenAI's Agentic Software Factory](SoftwareAIFactory/openai-software-factory.md) covers the accessible reporting on CI/review loops, supervised rollout, Perf Factory, and Sevbot, with an explicit partial-access boundary.
+- **Platforms**: [Factory AI](SoftwareAIFactory/factory-ai.md), [Devin](SoftwareAIFactory/devin.md), and [OpenHands](SoftwareAIFactory/openhands.md) have dedicated sourced pages; individual coding tools remain in the AI Coding Agents category.
+- **Warp Factories**: [Standing factory orchestration](SoftwareAIFactory/warp-factories.md) adds foreman-led work items, definitions as code, explicit hosting/approval boundaries, and reviewed improvement.
+
 ### **6. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview
 - **Semantic Data Layer Technology Radar**: Thoughtworks-style radar of cloud-native semantic layers (Snowflake Semantic Views, Databricks Metric Views, Power BI/Fabric semantic models, AWS QuickSight Topics, Google Looker/LookML) vs. universal semantic layers and metrics stores (dbt Semantic Layer, Cube, AtScale, Denodo, Honeydew, Bright Analytics) and the emerging Open Semantic Interchange (OSI) standard
@@ -136,7 +145,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Memory Solutions**: Mem0, MemMachine, Zep, AgentFS, cloud-managed memory services (AWS AgentCore, Vertex, Azure, Anthropic Managed Agents, Salesforce Agentic Memory, Cloudflare Agent Memory), agentmemory, MinnsDB, and framework-native memory (LangGraph, LlamaIndex, CrewAI) — full Technology Radar comparison
 
 ### **Deployment**
-- **AgentOps & GenOps**: Evolution of MLOps for generative AI systems; includes Anthropic's AI-native SDLC playbook — a six-stage loop from intent capture to autonomous loop closure
+- **AgentOps & GenOps**: Evolution of MLOps for generative AI systems; lifecycle playbooks and software-delivery platforms are cross-linked from the separate [Software AI Factory](SoftwareAIFactory/README.md) category.
 - **Lifecycle Management**: Development, testing, deployment, and operations; **OpenGeni** (Apache-2.0) is a self-hostable agentic runtime for durable, replayable sessions, human approvals, and governed credentials/memory
 - **Production Operations**: Container orchestration, auto-scaling, and multi-agent coordination
 - **Kubernetes-Native Agent Orchestration**: kagent (CNCF Sandbox), Agentic Ops Framework (AOF), and KAOS run agents, tools, and models as Kubernetes Custom Resources; the separate Kubernetes SIG Apps "Agent Sandbox" subproject standardizes isolated execution environments for individual agent tool calls
@@ -301,8 +310,24 @@ This knowledge base builds upon the incredible work of the open source community
 
 ## References
 
+- [Warp Factories overview](https://docs.warp.dev/factories/): source for the Warp Factories platform page.
+
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): partial-access case-study ingest.
+
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; full-transcript workshop ingest.
+
+- [Factory Droid CLI](https://docs.factory.ai/cli/getting-started/overview): Factory AI platform scope.
+- [Introducing Devin](https://docs.devin.ai/get-started/devin-intro): Devin engineering workflows.
+- [OpenHands introduction](https://docs.openhands.dev/overview/introduction): OpenHands platform components.
 - [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the AI-native SDLC playbook noted in the AgentOps & GenOps section above.
 
 ## See Also
 
-- [AI-Native SDLC (Anthropic playbook)](AgentOps/ai-native-sdlc.md) — six-stage loop from intent capture to autonomous loop closure
+- [Warp Factories](SoftwareAIFactory/warp-factories.md)
+
+- [OpenAI's Agentic Software Factory](SoftwareAIFactory/openai-software-factory.md)
+
+- [Building Your Own Software Factory](SoftwareAIFactory/building-your-own-software-factory.md)
+
+- [Software AI Factory](SoftwareAIFactory/README.md)
+- [AI-Native SDLC (Anthropic playbook)](SoftwareAIFactory/ai-native-sdlc.md) — six-stage loop from intent capture to autonomous loop closure

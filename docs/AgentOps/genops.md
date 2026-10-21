@@ -186,7 +186,7 @@ Reward engineering sits above prompt engineering in the abstraction stack and is
 - [Agent Definition](../Concepts/agent-definition.md)
 - [Production Best Practices: Testing & Evaluations](../ProductionBestPractices/testing-evaluations.md)
 - [Observability](../Observability/Readme.md)
-- [AI-Native SDLC (Anthropic playbook)](./ai-native-sdlc.md)
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md)
 
 ## References
 

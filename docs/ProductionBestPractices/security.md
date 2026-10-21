@@ -28,6 +28,9 @@ Google's three-layer defense model addresses both:
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Editable workflow policy confused with authorization | Warp's spec/question checkpoints are foreman instructions and review verdicts are advisory | Factory roles do not control specification or PR approval; repository permissions and branch protection govern merges | Enforce required review outside the agent's instructions; separately scope inference credentials, execution secrets, harness authentication, and repository identity ([Warp lifecycle](https://docs.warp.dev/factories/how-factories-work/); [infrastructure](https://docs.warp.dev/factories/infrastructure-and-security/)) |
+| PR approval conflated with permission to deploy or mitigate | OpenAI reporting permits low-risk auto-approval in opted-in areas but separately describes human production approval and engineer-directed Sevbot mitigation | Autonomous incident mitigation is a stated goal, not the reported current default | Model PR acceptance, production release, and incident-action authorization as distinct decisions; do not infer one grant from another ([Pragmatic Engineer, section 3](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) |
+| Approval policy assumed identical across software-factory sources | Cursor describes delegated approval of some low-risk PRs; Anthropic's model retains human code-owner approval | These are different source-specific governance choices, not interchangeable defaults | Choose policy explicitly; retain human judgment for critical security, authentication, payment, and database decisions rather than inferring broad auto-merge permission ([Cursor workshop, 27:38–31:53](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz); [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook)) |
 | Prompt injection | Malicious content in retrieved documents or user inputs hijacks agent behavior | Trusted all inputs equally; agents executed injected instructions | Treat user input and retrieved content as untrusted; use input classifiers (e.g., Perspective API) before passing to agent |
 | Overprivileged agents | Agents granted broad tool access use capabilities beyond their intended scope | Gave agents all tools for flexibility; scope creep led to unintended actions | Apply principle of least privilege — grant only the tools and permissions required for the specific task; in multi-agent systems, use AWS STS to generate time-limited, scoped credentials per task |
 | Prompt injection propagation in multi-agent systems | Malicious content processed by one agent is forwarded to the next, compounding the attack | Trusted content that had already passed through one agent; downstream agents executed injected instructions | Treat all externally-originated content as untrusted regardless of how many agents have processed it; apply Amazon Bedrock Guardrails at every agent boundary, not just the entry point |
@@ -166,6 +169,12 @@ When a threat is detected in production, the response follows: **contain → tri
 | Scalable state management exploits | Memory stored across interactions can be exploited for cross-session attacks | Strict tenant isolation in all memory stores; audit access patterns regularly |
 
 ## See Also
+
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [Software AI Factory](../SoftwareAIFactory/README.md)
+- [Factory AI](../SoftwareAIFactory/factory-ai.md): configurable approval and execution boundaries.
 - [Observability](./observability.md) — Security monitoring as part of observability; Evolving Security section
 - [Deployment](./deployment.md) — Secure deployment practices
 - [Context Engineering](./context-engineering.md) — Context isolation and sanitization
@@ -175,9 +184,14 @@ When a threat is detected in production, the response follows: **contain → tri
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md) — Stream Governance, field-level encryption, and retention policies for event-driven agent pipelines
 - [Agentic AI Red Teaming Guide (CSA)](../SecurityFrameworks/agentic-ai-red-teaming-guide.md) — 12-category adversarial testing taxonomy for autonomous agents
 - [Agent Testing & Evaluations](./testing-evaluations.md) — adversarial test cases and launch gates
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — advisory-vs-deterministic controls, bypass-resistant managed settings, OS-level sandbox, and recurring security scans
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — advisory-vs-deterministic controls, bypass-resistant managed settings, OS-level sandbox, and recurring security scans
 
 ## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [Factory Droid CLI](https://docs.factory.ai/cli/getting-started/overview): approval workflows and tool integration surfaces.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for layered guardrail taxonomy, approval record format, and threat category model
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for Stream Governance, field-level encryption, and GDPR-aligned retention guidance
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)

@@ -455,7 +455,7 @@ Note: Claude Managed Agents is stateful by design — not eligible for Zero Data
 - [Anthropic Overview](../AllThingsAnthropic/README.md)
 - [Evaluation Frameworks](../EvaluationFrameworks/Readme.md)
 - [Multi-Agent System Architecture](../Architecture/multi-agent-system.md)
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md)
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md)
 
 ## References
 

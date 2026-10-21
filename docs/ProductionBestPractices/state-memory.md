@@ -3,7 +3,7 @@ type: Playbook
 title: "State & Memory Management"
 description: "Effective memory management determines whether an agent feels like a persistent, intelligent system or a stateless chatbot"
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # State & Memory Management
 
@@ -25,6 +25,7 @@ Agent memory operates across three functional tiers:
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Repeated corrections disappear between coding sessions | Useful human feedback remains buried in transcripts or merged PR comments | The speaker describes a transcript-to-rule plugin as an alternative to repeatedly writing rules by hand; this is not model-weight training | Preserve review feedback and extract recurring lessons into durable rules or memories; wiki recommendation: review extracted rules before promoting them to shared policy ([Cursor workshop, 27:01–30:40 and 42:40–44:08](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz)) |
 | Context window overflow | Long sessions exceed model token limits, causing truncation or errors | Tried increasing context window size; costs scaled quadratically | Implement sliding window or recursive summarization to compress old history |
 | State loss between sessions | Agents forget user preferences and prior decisions across sessions | Stored full conversation history; retrieval became slow and noisy | Extract and persist key facts (entity extraction) to a structured store; retrieve on demand |
 | Conflicting memory updates | Multiple agents writing to shared memory create inconsistencies | Used a single shared vector DB; concurrent writes caused stale reads | Implement optimistic locking or event-sourced memory with a temporal knowledge graph (Zep/Graphiti) |
@@ -138,6 +139,7 @@ This complements the AWS three-tier shared-state model above: task state and int
 
 ## See Also
 
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - [Context Engineering](./context-engineering.md)
 - [Observability](./observability.md)
 - [Deployment](./deployment.md)
@@ -149,3 +151,7 @@ This complements the AWS three-tier shared-state model above: task state and int
 - [Workflow Orchestration — Temporal](../WorkflowBuilders/orchestration.md)
 - [Loop Engineering](../AgentHarness/loop-engineering.md) — externalized state as the "spine" of a scheduled, self-feeding agent loop
 - [AI Governance — Best Practices](../AIGovernance/governance-best-practices.md)
+
+## References
+
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; transcript-to-rule extraction, retained feedback, and the distinction from model-weight training.

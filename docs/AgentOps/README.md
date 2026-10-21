@@ -427,6 +427,9 @@ This pillar structure parallels Google Cloud's GenOps framing above but is organ
 
 ## See Also
 
+- [Software AI Factory](../SoftwareAIFactory/README.md): separate category for agent-driven software delivery.
+- [Anthropic AI-Native SDLC](../SoftwareAIFactory/ai-native-sdlc.md): relocated lifecycle playbook.
+
 - **[Observability](../Observability/Readme.md)**: Monitoring and observability practices
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform operational features
 - **[Maturity Models](../MaturityModels/README.md)**: Operational maturity assessment
@@ -440,4 +443,5 @@ This pillar structure parallels Google Cloud's GenOps framing above but is organ
 
 ## References
 
+- [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook): lifecycle guidance now indexed under Software AI Factory.
 - [AgentOps: Operationalize agentic AI at scale with Amazon Bedrock AgentCore (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore/) — introduces the four-pillar AgentOps framework (Governance & Security, Build & Operations, Evaluation, Observability & Monitoring)

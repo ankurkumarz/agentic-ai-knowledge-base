@@ -76,6 +76,15 @@ nav:
     - 4a.1 AI Coding Agents Overview: 'AICodingAgents/ai-coding-agents.md'
     - 4a.2 Claude Code: 'AICodingAgents/claude-code.md'
     - 4a.3 Maxwell (doubleAI): 'AICodingAgents/maxwell.md'
+  - 4b. Software AI Factory:
+    - 4b.1 Overview: 'SoftwareAIFactory/README.md'
+    - 4b.2 Anthropic AI-Native SDLC Playbook: 'SoftwareAIFactory/ai-native-sdlc.md'
+    - 4b.3 Factory AI: 'SoftwareAIFactory/factory-ai.md'
+    - 4b.4 Devin (Cognition): 'SoftwareAIFactory/devin.md'
+    - 4b.5 OpenHands: 'SoftwareAIFactory/openhands.md'
+    - 4b.6 Building Your Own Software Factory (Cursor): 'SoftwareAIFactory/building-your-own-software-factory.md'
+    - 4b.7 OpenAI's Agentic Software Factory: 'SoftwareAIFactory/openai-software-factory.md'
+    - 4b.8 Warp Factories: 'SoftwareAIFactory/warp-factories.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.1.1 Thoughtworks Tech Radar — Agentic AI (Vol. 34, Apr 2026): 'AgenticTechStack/thoughtworks-radar-vol34.md'
@@ -200,8 +209,6 @@ nav:
       - 13.3.1 kagent (CNCF): 'AgentOps/kagent.md'
       - 13.3.2 Agentic Ops Framework (AOF): 'AgentOps/agentic-ops-framework.md'
       - 13.3.3 KAOS (K8s Agent Orchestration System): 'AgentOps/kaos.md'
-    - 13.4 Lifecycle Playbooks:
-      - 13.4.1 AI-Native SDLC (Anthropic): 'AgentOps/ai-native-sdlc.md'
   - 14. Agentic AI Maturity Models:
     - 14.1 Gartner's Perspective: 'MaturityModels/gartner.md'
     - 14.2 AWS's Perspective:

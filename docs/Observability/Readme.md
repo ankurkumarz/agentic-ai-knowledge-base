@@ -309,18 +309,20 @@ Anthropic's AI-native SDLC playbook contributes three observability patterns rel
 - **Per-gate timing from hook decisions.** Every hook decision (allow/block, with a timestamp) is logged to the OpenTelemetry export, so time spent waiting on each approval gate is visible per gate and per stage.
 - **Deterministic drift detection.** A version-controlled script computes mean/standard deviation over a rolling window with Western Electric-style rules on a stable metric (e.g., CI test failure rate, post-deploy 5xx rate, PR cycle time); response tiers live in version-controlled `bands.yaml` — 1σ log, 2σ agent diagnoses read-only, 3σ agent acts via PR or pre-approved runbook — and findings flow back into the SDLC as `intent.md`.
 
-See [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) for the full stage-by-stage treatment.
+See [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) for the full stage-by-stage treatment.
 
 ## See Also
 
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - **[Agent Development Frameworks](../AgenticFrameworks/README.md)**: Framework observability features
 - **[Agent Ops](../AgentOps/README.md)**: Operational practices and methodologies
 - **[Evaluation Frameworks](../EvaluationFrameworks/Readme.md)**: Evaluation and monitoring approaches
 - **[AI Evaluation and Observability Platforms (AEOPs)](../EvaluationFrameworks/platforms.md)**: Gartner market definition, AEOP capability taxonomy, and platform comparison
 - **[Agent Platforms](../AgentPlatforms/README.md)**: Platform observability capabilities
 - **[Production Observability](../ProductionBestPractices/observability.md)**: Production tracing, cost visibility, and regression practices
-- **[AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md)**: SDLC observability patterns — verification evidence in PRs, per-gate timing, deterministic drift detection
+- **[AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md)**: SDLC observability patterns — verification evidence in PRs, per-gate timing, deterministic drift detection
 
 ## References
 
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
 - [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for the SDLC Observability Patterns subsection.

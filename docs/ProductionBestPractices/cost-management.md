@@ -58,6 +58,10 @@ Match task complexity to model capability. Not every agent step requires a front
 
 ## Budget Controls and Alerting
 
+Warp Factories documents median cost per PR as a comparison metric rather than an invoice, with incomplete external-inference coverage possible. Self-hosting removes hosted compute charges but not platform charges, so compare provider bills and customer-managed compute alongside platform usage rather than treating the dashboard as total cost ([Warp measurement guide](https://docs.warp.dev/factories/measure-and-improve/), [infrastructure and metering](https://docs.warp.dev/factories/infrastructure-and-security/)).
+
+The Cursor software-factory workshop describes automatically dispatching cloud agents from Linear and Slack events, but the speaker explicitly warns that running an agent for every issue can be costly and is not recommended for every team. Wiki recommendation: start with selected event types, cap concurrent work, and measure useful outcomes before expanding automatic dispatch; the source does not provide a general per-task cost estimate ([workshop, 1:08:19–1:11:09](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz)).
+
 ### Per-Request Budgets
 
 Set hard token limits per agent invocation to prevent runaway loops:
@@ -242,6 +246,8 @@ Scaling an agent always involves three competing goals. Optimizing for one affec
 
 ## See Also
 
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): cost caveats for event-triggered cloud agents.
 - **[Efficiency Frontier Framework](../ContextEngineering/efficiency-frontier.md)**: Deployment-aware cost-performance optimization for context strategies
 - **[Observability](../Observability/Readme.md)**: Cost monitoring as part of observability
 - **[Context Engineering](../ContextEngineering/README.md)**: Context compaction to reduce token usage
@@ -250,4 +256,6 @@ Scaling an agent always involves three competing goals. Optimizing for one affec
 
 ## References
 
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): event-triggered software maintenance and the speaker's cost caution.
 - [Diffusion at Scale: Introducing Mercury 3 — Inception Labs](https://www.inceptionlabs.ai/blog/introducing-mercury-3) — Mercury 3 pricing (list, launch discount, cached-token discount) and speed claims; vendor-reported, Oct 2026

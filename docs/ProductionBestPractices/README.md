@@ -46,7 +46,7 @@ Industry guidance from the major AI providers on building production-ready agent
 
 ## See Also
 
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the six-stage loop that this section's guidance applies to end-to-end, from intent capture to autonomous loop closure
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — the six-stage loop that this section's guidance applies to end-to-end, from intent capture to autonomous loop closure
 
 ## References
 

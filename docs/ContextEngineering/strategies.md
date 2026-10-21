@@ -166,6 +166,7 @@ Only after mastering fundamentals:
 
 ## See Also
 
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - [Efficiency Frontier: Cost-Performance Optimization](./efficiency-frontier.md)
 - [Key Challenges in Context Management](./challenges.md)
 - [Manus Context Engineering](./manus.md)
@@ -180,6 +181,7 @@ Only after mastering fundamentals:
 
 ## References
 
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
 - [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026
 - [Context Engineering for Agents — Lance Martin, LangChain](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 - [How to Fix Your Context — Drew Breunig](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html)

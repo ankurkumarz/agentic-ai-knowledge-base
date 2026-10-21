@@ -137,6 +137,8 @@ The AI-Native Software Engineering Maturity Model defines five levels of organiz
 
 ## See Also
 
+- [Software AI Factory](../SoftwareAIFactory/README.md): lifecycle and platform context for coding-agent execution.
+
 - [AI Coding Agents Overview](ai-coding-agents.md)
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)
 - [Loop Engineering](../AgentHarness/loop-engineering.md)
@@ -146,7 +148,7 @@ The AI-Native Software Engineering Maturity Model defines five levels of organiz
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)
 - [LifeOS](../AgentPlatforms/lifeos.md) — personal AI operating system distributed as a single Claude Code skill (persistent memory, intent routing, self-improvement loop)
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the end-to-end SDLC built around Claude Code's plan mode, skills, hooks, and artifact chain
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — the end-to-end SDLC built around Claude Code's plan mode, skills, hooks, and artifact chain
 
 ## References
 

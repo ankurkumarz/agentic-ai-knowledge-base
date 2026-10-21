@@ -238,7 +238,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 - [SkillOpt — Automated Skill Document Optimization](../PromptEngineering/skillopt.md) — Microsoft text-space optimizer that learns skill.md contents from trajectory rollouts
 - [Open Knowledge Format (OKF)](./open-knowledge-format.md) — complementary convention for reference knowledge vs. SKILLS.md's on-demand workflows
 - [Eve](../AgenticFrameworks/eve.md) — Vercel's agent framework applying a parallel filesystem-discovery convention (`instructions.md` + auto-registered `tools/`) to whole-agent definition rather than on-demand skills
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — Anthropic's SDLC playbook that uses skills as the institutional-knowledge layer, with hooks as the deterministic enforcement behind them
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — Anthropic's SDLC playbook that uses skills as the institutional-knowledge layer, with hooks as the deterministic enforcement behind them
 
 ## References
 

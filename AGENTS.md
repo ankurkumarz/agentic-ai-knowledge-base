@@ -25,6 +25,15 @@ docs/
 ├── AICodingAgents/                 # Coding agents: Claude Code, Kiro, Cursor, Devin, etc.
 │   ├── ai-coding-agents.md         # Comparison table, per-tool deep dives, positioning map
 │   └── claude-code.md              # Claude Code plugins, maturity model, persona setups
+├── SoftwareAIFactory/              # End-to-end software delivery playbooks and platforms
+│   ├── README.md                   # Scope, selection criteria, platform index
+│   ├── ai-native-sdlc.md            # Anthropic lifecycle playbook (canonical home)
+│   ├── building-your-own-software-factory.md # Cursor workshop and practical factory guidance
+│   ├── openai-software-factory.md   # OpenAI internal-practice case study (partial-access source)
+│   ├── factory-ai.md               # Factory AI / Droids
+│   ├── warp-factories.md            # Warp standing factories and execution/governance boundaries
+│   ├── devin.md                    # Cognition Devin
+│   └── openhands.md                # OpenHands ecosystem and execution components
 ├── AgentHarness/                   # Agent harness concepts and engineering practices
 │   ├── agent-harness.md            # What an agent harness is, components, patterns
 │   └── harness-engineering.md      # Engineering practices, implementation guidance
@@ -80,6 +89,7 @@ When a raw source arrives, use this table to decide which `docs/` directory and 
 |---|---|---|
 | Agent definition, terminology, types | `Concepts/` | `agent-definition.md`, `agent-types.md`, `agent-foundational.md` |
 | AI coding agents, coding tools (Claude Code, Cursor, Devin, Kiro, etc.) | `AICodingAgents/` | `ai-coding-agents.md`, `claude-code.md` (create per-tool page if warranted) |
+| End-to-end agentic software delivery, software factories, AI-native SDLC, lifecycle automation platforms | `SoftwareAIFactory/` | `README.md`, `ai-native-sdlc.md`, `<platform>.md`; link individual coding-tool comparisons back to `AICodingAgents/` rather than duplicating them |
 | Agent harness concepts, components, patterns | `AgentHarness/` | `agent-harness.md` |
 | Agent harness engineering, implementation, tooling | `AgentHarness/` | `harness-engineering.md` |
 | Architecture components, system design | `Architecture/` | `components-selection.md`, `multi-agent-system.md` |
@@ -385,6 +395,7 @@ This is the **complete, approved set** of `type` values for this wiki. Do not us
 | Directory | `type` |
 |---|---|
 | `AICodingAgents/` | `AI Tool` |
+| `SoftwareAIFactory/` | `Reference` for the overview and case studies; `Playbook` for lifecycle guidance; `Platform` for execution platforms |
 | `Concepts/` | `Concept` |
 | `AgentHarness/` | `Playbook` |
 | `AgentMemory/` | `Reference` |

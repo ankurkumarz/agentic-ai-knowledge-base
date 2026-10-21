@@ -3,7 +3,7 @@ type: Playbook
 title: Context Engineering
 description: "Context engineering is the discipline of deciding what information goes into an agent's context window, when, and in what form"
 tags: [production, best-practices, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 # Context Engineering
 
@@ -25,6 +25,8 @@ The context window is the agent's working memory — expensive, limited, and cri
 
 | Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
 |---|---|---|---|
+| Specialist labels mistaken for specialist review | The OpenAI case study describes domain-configured reviewers with rich code/documentation access | The author's explanation stresses domain context and focused scope rather than a persona label alone | Supply relevant system evidence and constrain each review lens; internal access reported at OpenAI is not a public-product guarantee ([Pragmatic Engineer, section 3](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) |
+| Async coding work starts with incomplete intent | Longer autonomous tasks need the plan and external context up front | The speaker describes front-loading specs and planning synchronously before asynchronous execution | Dispatch scoped tasks with a plan, relevant context, and verification criteria; reserve human decisions instead of copying fragments repeatedly ([Cursor workshop, 19:17–20:33 and 58:13–1:02:24](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz)) |
 | Context rot | Context quality degrades over long sessions as irrelevant information accumulates | Kept full conversation history; later turns were confused by early irrelevant content | Implement periodic compaction — summarize and prune history at defined intervals or token thresholds |
 | Context poisoning | Malicious or misleading content in retrieved documents corrupts agent reasoning | Trusted all retrieved content equally; agents acted on injected instructions | Validate and sanitize retrieved content; use separate trust levels for user input vs. retrieved data |
 | Context distraction | Too much context causes the agent to focus on the wrong information | Added more context hoping for better answers; quality dropped | Apply context minimalism — include only information directly relevant to the current task |
@@ -114,6 +116,9 @@ Prompt caching reduces costs significantly for agents with large, stable system 
 | Google Gemini | Significant reduction | [Context Caching on Vertex AI](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview) |
 
 ## See Also
+
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - [Efficiency Frontier: Cost-Performance Optimization](../ContextEngineering/efficiency-frontier.md)
 - [State & Memory Management](./state-memory.md)
 - [Cost Management](./cost-management.md)
@@ -122,5 +127,8 @@ Prompt caching reduces costs significantly for agents with large, stable system 
 - [Semantic Data Layer Technology Radar](../AgenticTechStack/semantic-data-layer-radar.md) — governed semantic layers as the query surface agents consume instead of raw schemas
 
 ## References
+
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
 - [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026. Introduces deployment-aware strategy selection via amortized cost modeling.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for context assembly tiers, trust label framework, and compaction handoff format

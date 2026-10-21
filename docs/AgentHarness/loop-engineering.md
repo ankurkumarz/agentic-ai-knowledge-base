@@ -182,6 +182,12 @@ Each example is a self-contained prompt/skill that maps onto the automations + s
 
 ## See Also
 
+- [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
+- [OpenAI's Agentic Software Factory](../SoftwareAIFactory/openai-software-factory.md): reported CI/review, supervised rollout, and production feedback.
+- [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
+- [Software AI Factory](../SoftwareAIFactory/README.md): end-to-end delivery workflows that use these loop primitives.
+- [Factory AI](../SoftwareAIFactory/factory-ai.md): headless Droid Exec and multi-agent Missions.
+
 - [Harness Engineering](./harness-engineering.md) — the per-run guides/sensors discipline that loop engineering builds on top of
 - [Agent Harness](./agent-harness.md) — core harness components (hooks, orchestration, memory) referenced by loop primitives
 - [Claude Code Orchestration Primitives — Decision Guide](../WorkflowBuilders/claude-orchestration-guide.md) — decision framework for Skills, Subagents, Agent Teams, MCP within a single Claude Code session
@@ -192,9 +198,14 @@ Each example is a self-contained prompt/skill that maps onto the automations + s
 - [Production Best Practices: State & Memory](../ProductionBestPractices/state-memory.md) — externalized state patterns for long-running agents
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)
 - [AllThingsOpenAI](../AllThingsOpenAI/README.md)
-- [AI-Native SDLC (Anthropic playbook)](../AgentOps/ai-native-sdlc.md) — the same closed-loop pattern applied to the full software development lifecycle
+- [AI-Native SDLC (Anthropic playbook)](../SoftwareAIFactory/ai-native-sdlc.md) — the same closed-loop pattern applied to the full software development lifecycle
 
 ## References
+
+- [Warp Factories overview](https://docs.warp.dev/factories/): canonical source for the related factory platform and operating model.
+- [Inside OpenAI's agentic software factory](https://newsletter.pragmaticengineer.com/p/openai-software-factory): interview-based account; accessible sections only, not public-product documentation.
+- [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
+- [Factory Droid CLI](https://docs.factory.ai/cli/getting-started/overview): Missions, hooks, and headless execution.
 
 - [Loop Engineering — Addy Osmani](https://addyosmani.com/blog/loop-engineering/) — source for the five-plus-one primitive framework, the Codex app/Claude Code comparison table, and the verification/comprehension-rot/cognitive-surrender risks of unattended loops
 - [cobusgreyling/loop-engineering — Claude Code examples](https://github.com/cobusgreyling/loop-engineering/tree/main/examples/claude-code) — example loop prompts (changelog-drafter, ci-sweeper, daily-triage, dependency-sweeper, issue-triage, post-merge-cleanup, pr-babysitter)
