@@ -2134,3 +2134,18 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Key knowledge added**: Gateway, sandboxes, policies, and providers; kernel-level enforcement claim; credential injection only at approved endpoints; policy verification claim; platform and Helm requirements; default-on telemetry; Apache-2.0; 0.1.x version line.
 
 **Provenance limits**: The supervisor component is named but not described on the project page. The formal-verification and kernel-instrumentation statements are the project's own claims and have not been independently verified.
+
+## [2026-10-24] ingest | OpenEnv | sections touched: EvaluationFrameworks, index
+
+**Source**: https://github.com/openenv/OpenEnv (README; links to Hugging Face OpenEnv documentation and catalog)
+
+**Type**: Open-source project README and linked documentation (fetched 2026-10-24).
+
+**Files modified**:
+- Created `docs/EvaluationFrameworks/openenv.md` (type Framework).
+- Extended `docs/EvaluationFrameworks/Readme.md` (See Also), `docs/index.md` (Agent Testing & Evaluations), `mkdocs.yml` (10.9).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Docker-packaged environments; Gymnasium-style API over sync and WebSocket; MCP exposure at `/mcp`; rubric rewards; Inspect AI evaluation; CLI; training integrations (TRL, Unsloth, SkyRL, and others); BSD-3-Clause; early-development API caveat; technical committee.
+
+**Provenance limits**: Repository location is ambiguous (README badges point to the Hugging Face organization). Star and activity counts are a point-in-time snapshot.
