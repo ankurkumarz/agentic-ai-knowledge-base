@@ -131,6 +131,7 @@ nav:
     - 6.13 W3C AI Agent Protocol: 'Standards/w3c-agent-protocol.md'
     - 6.14 NIST AI Agent Standards Initiative: 'Standards/nist-ai-agent-standards.md'
     - 6.15 DESIGN.md (Google Labs): 'Standards/design-md.md'
+    - 6.16 Open Responses: 'Standards/open-responses.md'
   - 7. Agentic AI Reference Architecture:
     - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
     - 7.2 AI Engineering Architecture (Huyen): 'ReferenceArchitecture/ai-engineering-architecture.md'

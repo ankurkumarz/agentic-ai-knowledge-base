@@ -2149,3 +2149,18 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Key knowledge added**: Docker-packaged environments; Gymnasium-style API over sync and WebSocket; MCP exposure at `/mcp`; rubric rewards; Inspect AI evaluation; CLI; training integrations (TRL, Unsloth, SkyRL, and others); BSD-3-Clause; early-development API caveat; technical committee.
 
 **Provenance limits**: Repository location is ambiguous (README badges point to the Hugging Face organization). Star and activity counts are a point-in-time snapshot.
+
+## [2026-10-24] ingest | Open Responses | sections touched: Standards, AllThingsOpenAI, index
+
+**Source**: https://www.openresponses.org/ (direct fetch failed with a DNS error during ingest; content taken from search results summarizing the site and from Simon Willison's January 15, 2026 write-up at https://simonwillison.net/2026/Jan/15/open-responses/).
+
+**Type**: Specification site and secondary commentary. Lower-confidence ingest: the authoritative specification text was not read.
+
+**Files modified**:
+- Created `docs/Standards/open-responses.md` (type Standard).
+- Extended `docs/AllThingsOpenAI/README.md` (hub row), `docs/index.md` (Standards), `mkdocs.yml` (6.16).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Purpose (shared schema for model calls, streaming, agent workflows); derivation from the OpenAI Responses API; vendor-neutral framing from secondary coverage; launch partners; conformance-suite gap; relationship to MCP, A2A, and ACP.
+
+**Provenance limits**: Event types and field semantics unverified. Vendor-neutrality is secondary-source framing. Re-ingest against openresponses.org when it is reachable.

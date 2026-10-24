@@ -4,6 +4,10 @@
 
 ## 2026-10-24
 
+* **Ingest**: Open Responses — https://www.openresponses.org/ (search-only; direct fetch unavailable) → Standards, AllThingsOpenAI, index — https://www.openresponses.org/
+  * Created: `docs/Standards/open-responses.md`
+  * Extended: `docs/AllThingsOpenAI/README.md` (hub row), `docs/index.md` (Standards), `mkdocs.yml` (6.16)
+
 * **Ingest**: OpenEnv — https://github.com/openenv/OpenEnv → EvaluationFrameworks, index — https://github.com/openenv/OpenEnv
   * Created: `docs/EvaluationFrameworks/openenv.md`
   * Extended: `docs/EvaluationFrameworks/Readme.md` (See Also), `docs/index.md` (Agent Testing & Evaluations), `mkdocs.yml` (10.9)
