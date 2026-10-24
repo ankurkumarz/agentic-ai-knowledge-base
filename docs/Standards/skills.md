@@ -227,6 +227,7 @@ Skills orchestrate *how* an agent uses its available tools — they do not add n
 
 ## See Also
 
+- [Knowledge Work Plugins (Anthropic)](../Marketplace/knowledge-work-plugins.md) — role-specific plugins that package skills with commands and connectors
 - [AGENTS.md Standard](./agents-md.md)
 - [Model Context Protocol](./mcp.md)
 - [Agent Harness Engineering](../AgentHarness/harness-engineering.md)

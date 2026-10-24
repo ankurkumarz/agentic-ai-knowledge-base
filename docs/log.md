@@ -7,6 +7,10 @@
 * **Ingest**: Agent Substrate (GitHub README) — https://github.com/agent-substrate/substrate → Standards, index — https://github.com/agent-substrate/substrate
   * Extended: `docs/Standards/k8s-agent-sandbox.md` (Agent Substrate repository detail, See Also, References)
 
+* **Ingest**: knowledge-work-plugins (Anthropic) — https://github.com/anthropics/knowledge-work-plugins → Marketplace, AllThingsAnthropic, AICodingAgents, Standards, index — https://github.com/anthropics/knowledge-work-plugins
+  * Created: `docs/Marketplace/knowledge-work-plugins.md`
+  * Extended: `docs/AllThingsAnthropic/README.md` (hub row), `docs/AICodingAgents/claude-code.md`, `docs/Marketplace/anthropic-marketplace.md`, `docs/Standards/skills.md` (See Also), `docs/index.md` (Agents Marketplace), `mkdocs.yml` (15.6)
+
 * **Ingest**: Google Cloud Agent Identity overview and SPIFFE — https://docs.cloud.google.com/iam/docs/agent-identity-overview; https://spiffe.io/ (both fetched via search only; direct fetch unavailable) → SecurityFrameworks, Standards, AllThingsGoogle, index — https://docs.cloud.google.com/iam/docs/agent-identity-overview
   * Created: `docs/SecurityFrameworks/agent-identity.md`, `docs/Standards/spiffe-spire.md`
   * Extended: `docs/AllThingsGoogle/README.md` (hub row), `docs/AgentPlatforms/gemini-enterprise-agent-platform.md`, `docs/SecurityFrameworks/agent-governance-toolkit.md`, `docs/SecurityFrameworks/openshell.md`, `docs/Standards/nist-ai-agent-standards.md` (See Also), `docs/index.md`, `mkdocs.yml` (6.17, 11.11)

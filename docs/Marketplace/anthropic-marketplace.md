@@ -70,6 +70,7 @@ Key enterprise partners building agents on Claude:
 
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
 - [Claude Managed Agents](../AgentPlatforms/claude-managed-agents.md)
+- [Knowledge Work Plugins (Anthropic)](knowledge-work-plugins.md) — role-specific plugins for Cowork and Claude Code
 - [AWS AI Agents Marketplace](../Marketplace/aws-marketplace.md)
 - [Google Cloud Agents Marketplace](../Marketplace/google-cloud-marketplace.md)
 - [Agents Marketplace Overview](../Marketplace/Readme.md)

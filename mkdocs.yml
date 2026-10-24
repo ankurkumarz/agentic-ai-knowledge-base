@@ -230,6 +230,7 @@ nav:
     - 15.3 Google Cloud Agent Gallery: 'Marketplace/google-cloud-marketplace.md'
     - 15.4 Anthropic Marketplace Presence: 'Marketplace/anthropic-marketplace.md'
     - 15.5 Miscellaneous: 'Marketplace/Readme.md'
+    - 15.6 Knowledge Work Plugins (Anthropic): 'Marketplace/knowledge-work-plugins.md'
   - 16. Production Best Practices & Guidelines:
     - 16.1 Overview: 'ProductionBestPractices/README.md'
     - 16.2 Observability: 'ProductionBestPractices/observability.md'

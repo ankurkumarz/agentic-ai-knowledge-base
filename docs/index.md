@@ -121,6 +121,7 @@ Comprehensive coverage of major development frameworks:
 - **AWS AI Agents Marketplace**: Enterprise agent solutions and platforms
 - **AgentOps Marketplace**: Operational tools and services
 - **Miscellaneous Platforms**: Community and specialized marketplaces
+- **Knowledge Work Plugins (Anthropic)**: Apache-2.0 catalog of file-based, role-specific plugins (sales, legal, finance, support, product, data, and more) for Claude Cowork and Claude Code; connectors are the main access-control surface
 
 ### **11. AI Agents Best Practices**
 - **Anthropic**: Building effective agents and safety considerations

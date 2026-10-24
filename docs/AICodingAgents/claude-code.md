@@ -144,6 +144,7 @@ The AI-Native Software Engineering Maturity Model defines five levels of organiz
 - [Loop Engineering](../AgentHarness/loop-engineering.md)
 - [Pi (pi.dev)](../AgentHarness/pi-dev.md)
 - [Model Context Protocol (MCP)](../Standards/mcp.md)
+- [Knowledge Work Plugins (Anthropic)](../Marketplace/knowledge-work-plugins.md): role-specific plugin catalog that also loads in Claude Code.
 - [Agent Skills / SKILLS.md](../Standards/skills.md)
 - [Context Engineering Strategies](../ContextEngineering/strategies.md)
 - [AllThingsAnthropic](../AllThingsAnthropic/README.md)

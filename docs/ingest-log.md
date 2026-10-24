@@ -2193,3 +2193,18 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Key knowledge added**: Actor-to-worker model with snapshotting; component list (`ateapi`, `atelet`, `atecontroller`, `atenet`, `ate-idp-server`, worker helpers, `kubectl-ate`); gVisor and Cloud Hypervisor isolation; per-actor SPIFFE certificates and egress-gateway credential injection; default-deny networking; framework compatibility; pre-1.0 status; Apache-2.0.
 
 **Provenance limits**: Performance figures (resume under 400 ms, over 1,500 activations per second, about 10× density) are the README's own claims and are labelled as such. Repo statistics were not recorded.
+
+## [2026-10-24] ingest | knowledge-work-plugins (Anthropic) | sections touched: Marketplace, AllThingsAnthropic, AICodingAgents, Standards, index
+
+**Source**: https://github.com/anthropics/knowledge-work-plugins (README and plugin layout; fetched 2026-10-24).
+
+**Type**: Open-source repository README (Apache-2.0).
+
+**Files modified**:
+- Created `docs/Marketplace/knowledge-work-plugins.md` (type Reference).
+- Extended `docs/AllThingsAnthropic/README.md` (hub row), `docs/AICodingAgents/claude-code.md`, `docs/Marketplace/anthropic-marketplace.md`, `docs/Standards/skills.md` (See Also), `docs/index.md` (Agents Marketplace), `mkdocs.yml` (15.6).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Eleven documented plugins with example connectors; undocumented folders noted; plugin file layout (manifest, `.mcp.json`, commands, skills); Cowork and Claude Code install paths; customization model; connector and skill-enforcement considerations.
+
+**Provenance limits**: Plugin list and install commands are from the README summary. Undocumented folders were not inspected. Repository statistics are a point-in-time snapshot.
