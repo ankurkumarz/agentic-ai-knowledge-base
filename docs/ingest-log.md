@@ -2164,3 +2164,18 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Key knowledge added**: Purpose (shared schema for model calls, streaming, agent workflows); derivation from the OpenAI Responses API; vendor-neutral framing from secondary coverage; launch partners; conformance-suite gap; relationship to MCP, A2A, and ACP.
 
 **Provenance limits**: Event types and field semantics unverified. Vendor-neutrality is secondary-source framing. Re-ingest against openresponses.org when it is reachable.
+
+## [2026-10-24] ingest | Google Cloud Agent Identity + SPIFFE/SPIRE | sections touched: SecurityFrameworks, Standards, AllThingsGoogle, AgentPlatforms, index
+
+**Sources**: https://docs.cloud.google.com/iam/docs/agent-identity-overview and https://spiffe.io/. Both direct fetches failed with DNS errors during ingest. Content comes from search summaries of the Google Cloud documentation and of SPIFFE/SPIRE secondary coverage. Lower-confidence ingest.
+
+**Files modified**:
+- Created `docs/SecurityFrameworks/agent-identity.md` (type Playbook).
+- Created `docs/Standards/spiffe-spire.md` (type Standard).
+- Extended `docs/AllThingsGoogle/README.md` (hub row), `docs/AgentPlatforms/gemini-enterprise-agent-platform.md`, `docs/SecurityFrameworks/agent-governance-toolkit.md`, `docs/SecurityFrameworks/openshell.md`, `docs/Standards/nist-ai-agent-standards.md` (See Also).
+- Extended `docs/index.md` (Standards and Agent Security) and `mkdocs.yml` (6.17, 11.11).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: SPIFFE ID and SVID formats; Workload API; SPIRE attestation; Google Agent Identity SPIFFE ID format, non-impersonable identities, no long-lived keys, auth manager, mTLS/DPoP transport; comparison of shared service accounts, per-agent identity, and sandboxed actor identity.
+
+**Provenance limits**: Google's transport split and key policies come from search summaries, not the live documentation. Conflicting CNCF timelines for SPIFFE/SPIRE are recorded on the page; sources agree on 2022 graduation. SPIRE default lifetimes come from one secondary source.

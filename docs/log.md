@@ -4,6 +4,10 @@
 
 ## 2026-10-24
 
+* **Ingest**: Google Cloud Agent Identity overview and SPIFFE — https://docs.cloud.google.com/iam/docs/agent-identity-overview; https://spiffe.io/ (both fetched via search only; direct fetch unavailable) → SecurityFrameworks, Standards, AllThingsGoogle, index — https://docs.cloud.google.com/iam/docs/agent-identity-overview
+  * Created: `docs/SecurityFrameworks/agent-identity.md`, `docs/Standards/spiffe-spire.md`
+  * Extended: `docs/AllThingsGoogle/README.md` (hub row), `docs/AgentPlatforms/gemini-enterprise-agent-platform.md`, `docs/SecurityFrameworks/agent-governance-toolkit.md`, `docs/SecurityFrameworks/openshell.md`, `docs/Standards/nist-ai-agent-standards.md` (See Also), `docs/index.md`, `mkdocs.yml` (6.17, 11.11)
+
 * **Ingest**: Open Responses — https://www.openresponses.org/ (search-only; direct fetch unavailable) → Standards, AllThingsOpenAI, index — https://www.openresponses.org/
   * Created: `docs/Standards/open-responses.md`
   * Extended: `docs/AllThingsOpenAI/README.md` (hub row), `docs/index.md` (Standards), `mkdocs.yml` (6.16)

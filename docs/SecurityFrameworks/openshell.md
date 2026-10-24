@@ -59,6 +59,7 @@ Extensibility is described through middleware, interceptors, and compute drivers
 - [Agent Sandboxing](agent-sandboxing.md) — isolation tiers and the general sandboxing guidance this runtime is one implementation of
 - [Anthropic Sandbox Runtime (srt)](anthropic-sandbox-runtime.md) — OS-level process sandboxing for MCP servers, an alternative at a lighter isolation tier
 - [Agent Governance Toolkit](agent-governance-toolkit.md) — policy-engine governance that operates at the agent-action layer
+- [Agent Identity](agent-identity.md) — the identity model behind credential brokering in this runtime
 - [Kubernetes Agent Sandbox](../Standards/k8s-agent-sandbox.md) — Kubernetes-native sandbox API for agent tool-call execution
 - [OpenClaw](../AgentPlatforms/openclaw.md) — a personal agent platform that lists OpenShell as a sandbox backend
 - [Agent Harness](../AgentHarness/agent-harness.md) — where sandboxed execution fits in the harness
