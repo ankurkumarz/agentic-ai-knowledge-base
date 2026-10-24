@@ -102,9 +102,23 @@ Agent Substrate is a distinct Google open-source project — not a renamed or me
 - Intended as the foundation for agents, agent harnesses, and agent runtimes — including a newly announced "Agent Executor" project
 - One active optimization direction: bringing data locality into the scheduler core, so agent state and scheduling decisions are co-located to reduce overhead
 
+**Repository detail (`github.com/agent-substrate/substrate`, Apache-2.0):**
+
+- **Model.** Maps many stateful *actors* onto a smaller pool of *workers*, snapshotting idle actors out of memory and restoring them when a request arrives. The README claims resume in under 400 ms, more than 1,500 activations per second, and about 10× density over standard containers. These are the project's own benchmark claims and were not independently verified.
+- **Components.** `ateapi` (gRPC control-plane API for actor and worker lifecycles), `atelet` (node-level DaemonSet supervising worker pods and snapshotting), `atecontroller` (reconciles WorkerPool resources), `atenet` (Envoy routing and proxy sidecars), `ate-idp-server` (serves the discovery document and keys for verifying actor JWTs), `ateworker-gvisor` / `ateworker-microvm` (run actors in gVisor or Cloud Hypervisor microVMs), and `kubectl-ate`.
+- **Isolation.** Actors run in gVisor (`runsc`) or a Cloud Hypervisor microVM. The README states that plain Linux containers are not supported.
+- **Identity and credentials.** Each actor receives a short-lived SPIFFE X.509 certificate by default, and the egress gateway can mint per-actor JWTs. Actors hold no identity tokens, API keys, or cloud credentials; the egress gateway (`atenet-egress`) injects credentials into approved outbound requests from outside the sandbox. See [Agent Identity](../SecurityFrameworks/agent-identity.md) for the identity model this relies on.
+- **Network.** Default-deny: no inbound path except the ingress router, and no lateral actor-to-actor or control-plane access. The egress gateway can serve as a replaceable enforcement point for authorization, data-loss prevention, or prompt-injection scanning.
+- **Framework compatibility.** Runs standard OCI images without SDK changes. The README names ADK, LangChain, Claude Code, Codex, Antigravity, and MCP servers.
+- **Maturity.** The README calls Agent Substrate pre-1.0, with no backward-compatibility guarantee, and targets the latest stable Kubernetes release plus the previous minor. The contributing guide says the project is "VERY young" and may not accept contributions outside its near-term core and demo focus.
+- **Contrast with OpenShell.** [OpenShell](../SecurityFrameworks/openshell.md) takes a host- and policy-centred approach to the same credential-isolation problem; Substrate is cluster-scheduled and snapshot-centred.
+
 ## See Also
 
 - [KAOS (K8s Agent Orchestration System)](../AgentOps/kaos.md) — independent, similarly-named community project for Kubernetes-native multi-agent orchestration
+- [OpenShell (NVIDIA)](../SecurityFrameworks/openshell.md) — policy-governed sandbox runtime; a host- and policy-centred alternative to Substrate's cluster-scheduled model
+- [Agent Identity](../SecurityFrameworks/agent-identity.md) — per-agent identity model that Substrate's SPIFFE-based actor identity implements
+- [SPIFFE and SPIRE](spiffe-spire.md) — workload identity standard behind actor certificates
 - [kagent](../AgentOps/kagent.md) — CNCF Sandbox project for running agents as Kubernetes CRDs
 - [Agentic Ops Framework (AOF)](../AgentOps/agentic-ops-framework.md)
 - [SecurityFrameworks: Agent Sandboxing](../SecurityFrameworks/agent-sandboxing.md) — general agent sandboxing security practices
@@ -118,3 +132,4 @@ Agent Substrate is a distinct Google open-source project — not a renamed or me
 - [Running Agents on Kubernetes with Agent Sandbox (Kubernetes Blog, March 2026)](https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/)
 - [Agent Sandbox — Official Documentation](https://agent-sandbox.sigs.k8s.io/docs) — full CRD reference, SDK docs, use-case guides, runtime templates; CC BY 4.0
 - [Agent Sandbox — GitHub (kubernetes-sigs)](https://github.com/kubernetes-sigs/agent-sandbox) — source repository; last updated April 2026
+- [Agent Substrate — GitHub (agent-substrate)](https://github.com/agent-substrate/substrate) — repository README, architecture, and security guide; Apache-2.0, pre-1.0

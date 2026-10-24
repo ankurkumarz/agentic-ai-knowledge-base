@@ -2118,3 +2118,93 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Provenance limits**: Managed self-hosting does not make control-plane run data local-only or guarantee provider retention. A review verdict is advisory, not merge authorization. Autonomy measures absence of human code pushes, not absence of human review/approval. Cost per PR is an attributed comparison metric, not an invoice or total-cost estimate; no current pricing or performance results were asserted.
 
 **Batch validation**: All 195 concept documents pass OKF verification with zero errors/warnings. All 37 changed wiki Markdown files have valid relative Markdown links; canonical video/OpenAI/Warp sources appear in References wherever used. Normal MkDocs build succeeds; its 11-warning set matches the pristine baseline. Tests remain 14 passed/8 failed with the same eight failures verified on a clean pre-change archive. Graph generation includes 195 nodes/1,292 edges and all eight category pages, with no missing reciprocal edges from SoftwareAIFactory pages. `git diff --check` is clean.
+
+## [2026-10-24] ingest | OpenShell (NVIDIA) | sections touched: SecurityFrameworks, index
+
+**Source**: https://github.com/NVIDIA/OpenShell (README; NVIDIA documentation linked from it)
+
+**Type**: Open-source project README and first-party documentation (fetched 2026-10-24).
+
+**Files modified**:
+- Created `docs/SecurityFrameworks/openshell.md` (type Reference).
+- Extended `docs/SecurityFrameworks/agent-sandboxing.md` (See Also).
+- Extended `docs/index.md` (Agent Sandboxing area) and `mkdocs.yml` (11.10).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Gateway, sandboxes, policies, and providers; kernel-level enforcement claim; credential injection only at approved endpoints; policy verification claim; platform and Helm requirements; default-on telemetry; Apache-2.0; 0.1.x version line.
+
+**Provenance limits**: The supervisor component is named but not described on the project page. The formal-verification and kernel-instrumentation statements are the project's own claims and have not been independently verified.
+
+## [2026-10-24] ingest | OpenEnv | sections touched: EvaluationFrameworks, index
+
+**Source**: https://github.com/openenv/OpenEnv (README; links to Hugging Face OpenEnv documentation and catalog)
+
+**Type**: Open-source project README and linked documentation (fetched 2026-10-24).
+
+**Files modified**:
+- Created `docs/EvaluationFrameworks/openenv.md` (type Framework).
+- Extended `docs/EvaluationFrameworks/Readme.md` (See Also), `docs/index.md` (Agent Testing & Evaluations), `mkdocs.yml` (10.9).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Docker-packaged environments; Gymnasium-style API over sync and WebSocket; MCP exposure at `/mcp`; rubric rewards; Inspect AI evaluation; CLI; training integrations (TRL, Unsloth, SkyRL, and others); BSD-3-Clause; early-development API caveat; technical committee.
+
+**Provenance limits**: Repository location is ambiguous (README badges point to the Hugging Face organization). Star and activity counts are a point-in-time snapshot.
+
+## [2026-10-24] ingest | Open Responses | sections touched: Standards, AllThingsOpenAI, index
+
+**Source**: https://www.openresponses.org/ (direct fetch failed with a DNS error during ingest; content taken from search results summarizing the site and from Simon Willison's January 15, 2026 write-up at https://simonwillison.net/2026/Jan/15/open-responses/).
+
+**Type**: Specification site and secondary commentary. Lower-confidence ingest: the authoritative specification text was not read.
+
+**Files modified**:
+- Created `docs/Standards/open-responses.md` (type Standard).
+- Extended `docs/AllThingsOpenAI/README.md` (hub row), `docs/index.md` (Standards), `mkdocs.yml` (6.16).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Purpose (shared schema for model calls, streaming, agent workflows); derivation from the OpenAI Responses API; vendor-neutral framing from secondary coverage; launch partners; conformance-suite gap; relationship to MCP, A2A, and ACP.
+
+**Provenance limits**: Event types and field semantics unverified. Vendor-neutrality is secondary-source framing. Re-ingest against openresponses.org when it is reachable.
+
+## [2026-10-24] ingest | Google Cloud Agent Identity + SPIFFE/SPIRE | sections touched: SecurityFrameworks, Standards, AllThingsGoogle, AgentPlatforms, index
+
+**Sources**: https://docs.cloud.google.com/iam/docs/agent-identity-overview and https://spiffe.io/. Both direct fetches failed with DNS errors during ingest. Content comes from search summaries of the Google Cloud documentation and of SPIFFE/SPIRE secondary coverage. Lower-confidence ingest.
+
+**Files modified**:
+- Created `docs/SecurityFrameworks/agent-identity.md` (type Playbook).
+- Created `docs/Standards/spiffe-spire.md` (type Standard).
+- Extended `docs/AllThingsGoogle/README.md` (hub row), `docs/AgentPlatforms/gemini-enterprise-agent-platform.md`, `docs/SecurityFrameworks/agent-governance-toolkit.md`, `docs/SecurityFrameworks/openshell.md`, `docs/Standards/nist-ai-agent-standards.md` (See Also).
+- Extended `docs/index.md` (Standards and Agent Security) and `mkdocs.yml` (6.17, 11.11).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: SPIFFE ID and SVID formats; Workload API; SPIRE attestation; Google Agent Identity SPIFFE ID format, non-impersonable identities, no long-lived keys, auth manager, mTLS/DPoP transport; comparison of shared service accounts, per-agent identity, and sandboxed actor identity.
+
+**Provenance limits**: Google's transport split and key policies come from search summaries, not the live documentation. Conflicting CNCF timelines for SPIFFE/SPIRE are recorded on the page; sources agree on 2022 graduation. SPIRE default lifetimes come from one secondary source.
+
+## [2026-10-24] ingest | Agent Substrate (GitHub) | sections touched: Standards
+
+**Source**: https://github.com/agent-substrate/substrate (README, linked security guide, architecture, and contributing guide; fetched 2026-10-24).
+
+**Type**: Open-source project README and linked documentation.
+
+**Files modified**:
+- Extended `docs/Standards/k8s-agent-sandbox.md` (repository detail subsection under Agent Substrate, See Also, References).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Actor-to-worker model with snapshotting; component list (`ateapi`, `atelet`, `atecontroller`, `atenet`, `ate-idp-server`, worker helpers, `kubectl-ate`); gVisor and Cloud Hypervisor isolation; per-actor SPIFFE certificates and egress-gateway credential injection; default-deny networking; framework compatibility; pre-1.0 status; Apache-2.0.
+
+**Provenance limits**: Performance figures (resume under 400 ms, over 1,500 activations per second, about 10× density) are the README's own claims and are labelled as such. Repo statistics were not recorded.
+
+## [2026-10-24] ingest | knowledge-work-plugins (Anthropic) | sections touched: Marketplace, AllThingsAnthropic, AICodingAgents, Standards, index
+
+**Source**: https://github.com/anthropics/knowledge-work-plugins (README and plugin layout; fetched 2026-10-24).
+
+**Type**: Open-source repository README (Apache-2.0).
+
+**Files modified**:
+- Created `docs/Marketplace/knowledge-work-plugins.md` (type Reference).
+- Extended `docs/AllThingsAnthropic/README.md` (hub row), `docs/AICodingAgents/claude-code.md`, `docs/Marketplace/anthropic-marketplace.md`, `docs/Standards/skills.md` (See Also), `docs/index.md` (Agents Marketplace), `mkdocs.yml` (15.6).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Eleven documented plugins with example connectors; undocumented folders noted; plugin file layout (manifest, `.mcp.json`, commands, skills); Cowork and Claude Code install paths; customization model; connector and skill-enforcement considerations.
+
+**Provenance limits**: Plugin list and install commands are from the README summary. Undocumented folders were not inspected. Repository statistics are a point-in-time snapshot.

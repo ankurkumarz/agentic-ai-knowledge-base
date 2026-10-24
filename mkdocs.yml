@@ -131,6 +131,8 @@ nav:
     - 6.13 W3C AI Agent Protocol: 'Standards/w3c-agent-protocol.md'
     - 6.14 NIST AI Agent Standards Initiative: 'Standards/nist-ai-agent-standards.md'
     - 6.15 DESIGN.md (Google Labs): 'Standards/design-md.md'
+    - 6.16 Open Responses: 'Standards/open-responses.md'
+    - 6.17 SPIFFE and SPIRE: 'Standards/spiffe-spire.md'
   - 7. Agentic AI Reference Architecture:
     - 7.1 Reference Architecture Overview: 'ReferenceArchitecture/README.md'
     - 7.2 AI Engineering Architecture (Huyen): 'ReferenceArchitecture/ai-engineering-architecture.md'
@@ -181,6 +183,7 @@ nav:
     - 10.6 Evaluation Reference Frameworks: 'EvaluationFrameworks/Readme.md'
     - 10.7 Reference Documentation: 'Benchmarks/Readme.md'
     - 10.8 Evaluation Tech Radar: 'EvaluationFrameworks/tech-radar.md'
+    - 10.9 OpenEnv: 'EvaluationFrameworks/openenv.md'
   - 11. Agentic AI Security:
     - 11.1 Security Standards:
       - 11.1.1 NIST AI RMF (Risk Management Framework): 'SecurityFrameworks/nist-ai-rmf.md'
@@ -195,6 +198,8 @@ nav:
     - 11.7 Skill Security Scanners: 'SecurityFrameworks/skill-scanners.md'
     - 11.8 Agentic AI Red Teaming Guide (CSA): 'SecurityFrameworks/agentic-ai-red-teaming-guide.md'
     - 11.9 Learn Prompt Hacking: 'SecurityFrameworks/learn-prompt-hacking.md'
+    - 11.10 OpenShell (NVIDIA): 'SecurityFrameworks/openshell.md'
+    - 11.11 Agent Identity: 'SecurityFrameworks/agent-identity.md'
   - 12. Agent Observability:
     - 12.1 Goals & Objectives: 'Observability/goals.md'
     - 12.2 Observability Solutions: 'Observability/solutions.md'
@@ -225,6 +230,7 @@ nav:
     - 15.3 Google Cloud Agent Gallery: 'Marketplace/google-cloud-marketplace.md'
     - 15.4 Anthropic Marketplace Presence: 'Marketplace/anthropic-marketplace.md'
     - 15.5 Miscellaneous: 'Marketplace/Readme.md'
+    - 15.6 Knowledge Work Plugins (Anthropic): 'Marketplace/knowledge-work-plugins.md'
   - 16. Production Best Practices & Guidelines:
     - 16.1 Overview: 'ProductionBestPractices/README.md'
     - 16.2 Observability: 'ProductionBestPractices/observability.md'

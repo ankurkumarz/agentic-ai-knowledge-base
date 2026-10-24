@@ -141,6 +141,7 @@ AGT enforces governance at the Python middleware layer, not the OS kernel level.
 ## See Also
 
 - [Security Frameworks Overview](./Readme.md)
+- [Agent Identity](agent-identity.md): identity model that policy enforcement relies on
 - [NIST AI RMF](./nist-ai-rmf.md)
 - [Google SAIF](./google-saif.md)
 - [Agent Security (Production Best Practices)](../ProductionBestPractices/security.md)

@@ -17,6 +17,7 @@ OpenAI's contributions to agentic AI include foundational design pattern documen
 |---|---|---|
 | Internal software factory | Interview-based reporting on Codex-driven delivery, Perf Factory, and human-directed Sevbot; accessible excerpt only ([article](https://newsletter.pragmaticengineer.com/p/openai-software-factory)) | [SoftwareAIFactory/openai-software-factory.md](../SoftwareAIFactory/openai-software-factory.md) |
 | OpenAI Codex | Cloud coding agent — isolated sandbox, parallel tasks, Skills, Automations, computer-use via GPT-5.4, Codex Security | [AICodingAgents/ai-coding-agents.md](../AICodingAgents/ai-coding-agents.md) |
+| Open Responses | Open-source, vendor-neutral specification built on the OpenAI Responses API for interoperable model calls, streaming, and agent workflows across providers | [Standards/open-responses.md](../Standards/open-responses.md) |
 | Agentic Design Patterns | OpenAI's canonical taxonomy of agent workflow patterns (reflection, tool use, planning, multi-agent) | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
 | Practical Guide to Building Agents | End-to-end production guide covering agent definition, model/tool/instruction design, orchestration (single-agent, manager, decentralized), guardrails, and HITL — distilled from OpenAI customer deployments | [DesignPatterns/openai-patterns.md](../DesignPatterns/openai-patterns.md) |
 | AutoGPT | Early open-source autonomous agent demonstrating long-horizon goal decomposition | [AgenticFrameworks/autogpt.md](../AgenticFrameworks/autogpt.md) |

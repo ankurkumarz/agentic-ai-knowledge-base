@@ -97,7 +97,9 @@ Comprehensive coverage of major development frameworks:
 - **AIDLC Workflows (AWS)**: Methodology-first AI-driven development lifecycle with structured Inception → Construction phases, approval gates, and a built-in evaluator for CI/CD quality gates
 - **Open Knowledge Format (OKF)**: Google Cloud's open specification (v0.1, June 2026) for portable, agent- and human-readable knowledge bundles — markdown files with YAML frontmatter, no SDK or runtime required; formalizes Karpathy's "LLM-wiki" pattern
 - **Cloud Security Alliance (CSA)**: Industry standards body for Agentic AI testing and governance — Agentic AI Red Teaming Guide (12-category threat taxonomy) and the MAESTRO threat-modeling framework
+- **SPIFFE and SPIRE**: CNCF workload-identity standard (SPIFFE IDs, X.509/JWT SVIDs, attestation-based issuance in SPIRE) used as the basis for per-agent identity
 - **Agent Client Protocol (ACP)**: Zed Industries' open standard (JSON-RPC over stdio) for editor-agent integration — session lifecycle, tool-call reporting, and permission requests; adopted natively by Gemini CLI and via JetBrains' ACP Agent Registry, with adapters for Claude Code and Codex CLI
+- **Open Responses**: Open-source, vendor-neutral specification built on the OpenAI Responses API, aiming for one interoperable schema for model calls, streaming, and agent workflows across providers; conformance test suite still missing per secondary coverage
 - **Kubernetes Agent Sandbox**: Kubernetes SIG Apps subproject (launched KubeCon Atlanta, November 2025) standardizing isolated execution environments for agent tool calls via Sandbox/SandboxTemplate/SandboxClaim CRDs, plus WarmPools for sub-second cold starts; GKE productization now GA, plus **Agent Substrate**, a new minimal-control-plane open-source project for ultra-scale, sub-second tool-call agent fleets
 
 ### **8. Agentic AI Reference Architecture**
@@ -119,6 +121,7 @@ Comprehensive coverage of major development frameworks:
 - **AWS AI Agents Marketplace**: Enterprise agent solutions and platforms
 - **AgentOps Marketplace**: Operational tools and services
 - **Miscellaneous Platforms**: Community and specialized marketplaces
+- **Knowledge Work Plugins (Anthropic)**: Apache-2.0 catalog of file-based, role-specific plugins (sales, legal, finance, support, product, data, and more) for Claude Cowork and Claude Code; connectors are the main access-control surface
 
 ### **11. AI Agents Best Practices**
 - **Anthropic**: Building effective agents and safety considerations
@@ -155,6 +158,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **AI as a Judge**: Using foundation models to evaluate other AI outputs — three usage patterns (absolute scoring, reference comparison, pairwise), prompt design for AI judges, limitations (inconsistency, length bias, positional bias), and judge model selection guidance (Huyen, 2025; Zheng et al., 2023 — 85% GPT-4/human agreement on MT-Bench)
 - **Agent Benchmarks**: METR, Terminal Bench, VisualWebArena, GAIA, BrowseComp (open-web needle-in-haystack), τ2-bench (adversarial multi-turn customer service), and DeepResearch Bench (RACE/FACT evaluation of deep research agents); Terminal-Bench 2.0/2.1 now run via the open-source [Harbor](EvaluationFrameworks/platforms.md#harbor) evaluation harness
 - **Evaluation Platforms**: Galileo, Google Stax, LastMile AI, Harbor (distributed benchmark/RL-rollout harness), AWS Agent-EvalKit, Google LLM EvalKit (open-source, no-code prompt engineering and evaluation hub on Vertex AI), AWS Bedrock Evaluations (managed model/RAG/human evaluation, GA Mar 2025), and Azure AI Foundry Evaluation (quality + risk/safety evaluators)
+- **OpenEnv**: BSD-3 framework packaging agent environments as isolated Docker services with a Gymnasium-style `reset`/`step`/`state` API; used for agentic RL rollouts, rubric rewards, and Inspect AI evaluation; early-stage API
 - **Evaluation Tech Radar**: Adopt/Trial/Assess/Hold mapping of open-source evaluation frameworks (DeepEval, RAGAS, MLFlow) and managed platforms (Galileo, LangSmith, Bedrock Evaluations, Foundry Evaluation)
 
 ### **Context Engineering**
@@ -171,6 +175,8 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Microsoft Perspective**: Agent Governance Toolkit — runtime governance with deterministic policy enforcement (YAML/OPA/Cedar), zero-trust identity, execution sandboxing, MCP Security Gateway; covers all 10 OWASP Agentic Top 10 risks
 - **CSA Perspective**: Agentic AI Red Teaming Guide — 12-category adversarial testing taxonomy (authorization hijacking, checker-out-of-the-loop, hallucination exploitation, blast radius, knowledge base poisoning, multi-agent exploitation, and more) with a four-phase Preparation/Execution/Analysis/Reporting methodology
 - **Risk Management**: Rogue actions, data disclosure, prompt injection, and mitigation strategies
+- **Agent Identity**: Per-agent, short-lived identities for autonomous agents — Google Cloud Agent Identity (SPIFFE-based, not impersonable, with an auth manager for outbound credentials) as the worked example
+- **OpenShell (NVIDIA)**: Apache-2.0 runtime for agent fleets — sandboxes governed by declared filesystem, network, and process policies, with credentials injected only at approved endpoints; early 0.1.x release line
 - **Agent Sandboxing**: Isolation taxonomy spanning OS-level policy, container, microVM, and cloud-hosted tiers — E2B, Daytona, Modal, LangSmith Sandboxes, AWS Lambda MicroVMs, Firecracker, gVisor, Kata Containers, Anthropic srt, and nsjail
 - **Prompt Hacking Education**: Learn Prompt Hacking — open-source course covering jailbreaks, prompt injection against GPT Assistants/custom GPTs, and red team/blue team LLM defenses
 

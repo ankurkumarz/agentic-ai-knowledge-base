@@ -82,6 +82,7 @@ The initiative specifically targets challenges unique to agentic AI that are not
 ## See Also
 
 - [NIST AI RMF (Risk Management Framework)](../SecurityFrameworks/nist-ai-rmf.md)
+- [SPIFFE and SPIRE](spiffe-spire.md): workload identity standard named in the agent-identity direction
 - [W3C AI Agent Protocol Community Group](./w3c-agent-protocol.md)
 - [Cloud Security Alliance (CSA)](./csa.md)
 - [Agentic AI Foundation](./agentic-ai-foundation.md)

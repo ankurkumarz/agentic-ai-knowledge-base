@@ -105,6 +105,7 @@ Gemini Enterprise Agent Platform is the direct successor to Vertex AI, and its s
 ## See Also
 
 - [Google ADK](../AgenticFrameworks/google-adk.md)
+- [Agent Identity](../SecurityFrameworks/agent-identity.md): per-agent SPIFFE-based identity and credential brokering
 - [Agent Platforms Overview](README.md)
 - [AllThingsGoogle](../AllThingsGoogle/README.md)
 - [AgentOps / GenOps](../AgentOps/genops.md)

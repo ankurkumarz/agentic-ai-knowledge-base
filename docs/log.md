@@ -2,6 +2,31 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-24
+
+* **Ingest**: Agent Substrate (GitHub README) — https://github.com/agent-substrate/substrate → Standards, index — https://github.com/agent-substrate/substrate
+  * Extended: `docs/Standards/k8s-agent-sandbox.md` (Agent Substrate repository detail, See Also, References)
+
+* **Ingest**: knowledge-work-plugins (Anthropic) — https://github.com/anthropics/knowledge-work-plugins → Marketplace, AllThingsAnthropic, AICodingAgents, Standards, index — https://github.com/anthropics/knowledge-work-plugins
+  * Created: `docs/Marketplace/knowledge-work-plugins.md`
+  * Extended: `docs/AllThingsAnthropic/README.md` (hub row), `docs/AICodingAgents/claude-code.md`, `docs/Marketplace/anthropic-marketplace.md`, `docs/Standards/skills.md` (See Also), `docs/index.md` (Agents Marketplace), `mkdocs.yml` (15.6)
+
+* **Ingest**: Google Cloud Agent Identity overview and SPIFFE — https://docs.cloud.google.com/iam/docs/agent-identity-overview; https://spiffe.io/ (both fetched via search only; direct fetch unavailable) → SecurityFrameworks, Standards, AllThingsGoogle, index — https://docs.cloud.google.com/iam/docs/agent-identity-overview
+  * Created: `docs/SecurityFrameworks/agent-identity.md`, `docs/Standards/spiffe-spire.md`
+  * Extended: `docs/AllThingsGoogle/README.md` (hub row), `docs/AgentPlatforms/gemini-enterprise-agent-platform.md`, `docs/SecurityFrameworks/agent-governance-toolkit.md`, `docs/SecurityFrameworks/openshell.md`, `docs/Standards/nist-ai-agent-standards.md` (See Also), `docs/index.md`, `mkdocs.yml` (6.17, 11.11)
+
+* **Ingest**: Open Responses — https://www.openresponses.org/ (search-only; direct fetch unavailable) → Standards, AllThingsOpenAI, index — https://www.openresponses.org/
+  * Created: `docs/Standards/open-responses.md`
+  * Extended: `docs/AllThingsOpenAI/README.md` (hub row), `docs/index.md` (Standards), `mkdocs.yml` (6.16)
+
+* **Ingest**: OpenEnv — https://github.com/openenv/OpenEnv → EvaluationFrameworks, index — https://github.com/openenv/OpenEnv
+  * Created: `docs/EvaluationFrameworks/openenv.md`
+  * Extended: `docs/EvaluationFrameworks/Readme.md` (See Also), `docs/index.md` (Agent Testing & Evaluations), `mkdocs.yml` (10.9)
+
+* **Ingest**: OpenShell (NVIDIA) — https://github.com/NVIDIA/OpenShell → SecurityFrameworks, index — https://github.com/NVIDIA/OpenShell
+  * Created: `docs/SecurityFrameworks/openshell.md`
+  * Extended: `docs/SecurityFrameworks/agent-sandboxing.md` (See Also), `docs/index.md` (Agent Sandboxing bullet area), `mkdocs.yml` (11.10)
+
 ## 2026-10-20
 
 * **Ingest**: Warp Factories documentation: https://docs.warp.dev/factories/
