@@ -4,6 +4,9 @@
 
 ## 2026-10-24
 
+* **Ingest**: Agent Substrate (GitHub README) — https://github.com/agent-substrate/substrate → Standards, index — https://github.com/agent-substrate/substrate
+  * Extended: `docs/Standards/k8s-agent-sandbox.md` (Agent Substrate repository detail, See Also, References)
+
 * **Ingest**: Google Cloud Agent Identity overview and SPIFFE — https://docs.cloud.google.com/iam/docs/agent-identity-overview; https://spiffe.io/ (both fetched via search only; direct fetch unavailable) → SecurityFrameworks, Standards, AllThingsGoogle, index — https://docs.cloud.google.com/iam/docs/agent-identity-overview
   * Created: `docs/SecurityFrameworks/agent-identity.md`, `docs/Standards/spiffe-spire.md`
   * Extended: `docs/AllThingsGoogle/README.md` (hub row), `docs/AgentPlatforms/gemini-enterprise-agent-platform.md`, `docs/SecurityFrameworks/agent-governance-toolkit.md`, `docs/SecurityFrameworks/openshell.md`, `docs/Standards/nist-ai-agent-standards.md` (See Also), `docs/index.md`, `mkdocs.yml` (6.17, 11.11)

@@ -2179,3 +2179,17 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Key knowledge added**: SPIFFE ID and SVID formats; Workload API; SPIRE attestation; Google Agent Identity SPIFFE ID format, non-impersonable identities, no long-lived keys, auth manager, mTLS/DPoP transport; comparison of shared service accounts, per-agent identity, and sandboxed actor identity.
 
 **Provenance limits**: Google's transport split and key policies come from search summaries, not the live documentation. Conflicting CNCF timelines for SPIFFE/SPIRE are recorded on the page; sources agree on 2022 graduation. SPIRE default lifetimes come from one secondary source.
+
+## [2026-10-24] ingest | Agent Substrate (GitHub) | sections touched: Standards
+
+**Source**: https://github.com/agent-substrate/substrate (README, linked security guide, architecture, and contributing guide; fetched 2026-10-24).
+
+**Type**: Open-source project README and linked documentation.
+
+**Files modified**:
+- Extended `docs/Standards/k8s-agent-sandbox.md` (repository detail subsection under Agent Substrate, See Also, References).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Actor-to-worker model with snapshotting; component list (`ateapi`, `atelet`, `atecontroller`, `atenet`, `ate-idp-server`, worker helpers, `kubectl-ate`); gVisor and Cloud Hypervisor isolation; per-actor SPIFFE certificates and egress-gateway credential injection; default-deny networking; framework compatibility; pre-1.0 status; Apache-2.0.
+
+**Provenance limits**: Performance figures (resume under 400 ms, over 1,500 activations per second, about 10× density) are the README's own claims and are labelled as such. Repo statistics were not recorded.
