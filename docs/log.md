@@ -2,6 +2,12 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-24
+
+* **Ingest**: OpenShell (NVIDIA) — https://github.com/NVIDIA/OpenShell → SecurityFrameworks, index — https://github.com/NVIDIA/OpenShell
+  * Created: `docs/SecurityFrameworks/openshell.md`
+  * Extended: `docs/SecurityFrameworks/agent-sandboxing.md` (See Also), `docs/index.md` (Agent Sandboxing bullet area), `mkdocs.yml` (11.10)
+
 ## 2026-10-20
 
 * **Ingest**: Warp Factories documentation: https://docs.warp.dev/factories/

@@ -171,6 +171,7 @@ A dedicated section consolidating all production-readiness guidance — cross-cu
 - **Microsoft Perspective**: Agent Governance Toolkit — runtime governance with deterministic policy enforcement (YAML/OPA/Cedar), zero-trust identity, execution sandboxing, MCP Security Gateway; covers all 10 OWASP Agentic Top 10 risks
 - **CSA Perspective**: Agentic AI Red Teaming Guide — 12-category adversarial testing taxonomy (authorization hijacking, checker-out-of-the-loop, hallucination exploitation, blast radius, knowledge base poisoning, multi-agent exploitation, and more) with a four-phase Preparation/Execution/Analysis/Reporting methodology
 - **Risk Management**: Rogue actions, data disclosure, prompt injection, and mitigation strategies
+- **OpenShell (NVIDIA)**: Apache-2.0 runtime for agent fleets — sandboxes governed by declared filesystem, network, and process policies, with credentials injected only at approved endpoints; early 0.1.x release line
 - **Agent Sandboxing**: Isolation taxonomy spanning OS-level policy, container, microVM, and cloud-hosted tiers — E2B, Daytona, Modal, LangSmith Sandboxes, AWS Lambda MicroVMs, Firecracker, gVisor, Kata Containers, Anthropic srt, and nsjail
 - **Prompt Hacking Education**: Learn Prompt Hacking — open-source course covering jailbreaks, prompt injection against GPT Assistants/custom GPTs, and red team/blue team LLM defenses
 

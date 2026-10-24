@@ -2118,3 +2118,19 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Provenance limits**: Managed self-hosting does not make control-plane run data local-only or guarantee provider retention. A review verdict is advisory, not merge authorization. Autonomy measures absence of human code pushes, not absence of human review/approval. Cost per PR is an attributed comparison metric, not an invoice or total-cost estimate; no current pricing or performance results were asserted.
 
 **Batch validation**: All 195 concept documents pass OKF verification with zero errors/warnings. All 37 changed wiki Markdown files have valid relative Markdown links; canonical video/OpenAI/Warp sources appear in References wherever used. Normal MkDocs build succeeds; its 11-warning set matches the pristine baseline. Tests remain 14 passed/8 failed with the same eight failures verified on a clean pre-change archive. Graph generation includes 195 nodes/1,292 edges and all eight category pages, with no missing reciprocal edges from SoftwareAIFactory pages. `git diff --check` is clean.
+
+## [2026-10-24] ingest | OpenShell (NVIDIA) | sections touched: SecurityFrameworks, index
+
+**Source**: https://github.com/NVIDIA/OpenShell (README; NVIDIA documentation linked from it)
+
+**Type**: Open-source project README and first-party documentation (fetched 2026-10-24).
+
+**Files modified**:
+- Created `docs/SecurityFrameworks/openshell.md` (type Reference).
+- Extended `docs/SecurityFrameworks/agent-sandboxing.md` (See Also).
+- Extended `docs/index.md` (Agent Sandboxing area) and `mkdocs.yml` (11.10).
+- Appended `docs/log.md` and this file.
+
+**Key knowledge added**: Gateway, sandboxes, policies, and providers; kernel-level enforcement claim; credential injection only at approved endpoints; policy verification claim; platform and Helm requirements; default-on telemetry; Apache-2.0; 0.1.x version line.
+
+**Provenance limits**: The supervisor component is named but not described on the project page. The formal-verification and kernel-instrumentation statements are the project's own claims and have not been independently verified.

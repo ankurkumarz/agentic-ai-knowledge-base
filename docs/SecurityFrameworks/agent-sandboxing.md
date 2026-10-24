@@ -315,6 +315,7 @@ Sandboxing addresses **execution isolation** — it constrains what a running pr
 - [Warp Factories](../SoftwareAIFactory/warp-factories.md): foreman-led work items, reviewed handoff, and execution/inference boundaries.
 - [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - [OpenHands](../SoftwareAIFactory/openhands.md): Agent Server and Sandbox Server are distinct execution components.
+- [OpenShell (NVIDIA)](openshell.md): policy-governed sandbox runtime with kernel-level enforcement and credential injection at approved endpoints.
 
 - [Anthropic Sandbox Runtime](./anthropic-sandbox-runtime.md)
 - [Kubernetes Agent Sandbox (kubernetes-sigs)](../Standards/k8s-agent-sandbox.md)

@@ -195,6 +195,7 @@ nav:
     - 11.7 Skill Security Scanners: 'SecurityFrameworks/skill-scanners.md'
     - 11.8 Agentic AI Red Teaming Guide (CSA): 'SecurityFrameworks/agentic-ai-red-teaming-guide.md'
     - 11.9 Learn Prompt Hacking: 'SecurityFrameworks/learn-prompt-hacking.md'
+    - 11.10 OpenShell (NVIDIA): 'SecurityFrameworks/openshell.md'
   - 12. Agent Observability:
     - 12.1 Goals & Objectives: 'Observability/goals.md'
     - 12.2 Observability Solutions: 'Observability/solutions.md'
