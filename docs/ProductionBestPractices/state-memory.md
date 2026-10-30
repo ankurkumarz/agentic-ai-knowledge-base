@@ -155,3 +155,38 @@ This complements the AWS three-tier shared-state model above: task state and int
 ## References
 
 - [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; transcript-to-rule extraction, retained feedback, and the distinction from model-weight training.
+
+## Four-Tier Memory Architecture for Production Agents (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Packt, 2026) defines the four-tier memory hierarchy as a production design requirement, not an optional optimization.
+
+| Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
+|---|---|---|---|
+| Context window as memory | Using the context window as the only state store — no session or long-term persistence | Relied on in-context history for all state; sessions reset on every new conversation | Separate working memory (context window) from session memory (Tier 2) from long-term episodic recall (Tier 3) from the immutable audit trail (Tier 4) |
+| Schema migration Day 2 outage | A session schema change incompatible with in-flight sessions causes a runtime crash on first access | Changed session schema without migration path; all active sessions broke | Implement **lazy migration chains**: agents re-hydrate old session schemas on first access; store schema version in session metadata; migration scripts version-controlled with agent code |
+| Graceful amnesia missing | Hydration failure (schema gap too large to bridge) causes a hard error rather than a graceful fallback | Failed hard on incompatible schemas; users lost context with no recovery | When hydration fails, load only the session summary and prompt the user to re-establish context — graceful amnesia is better than confabulation |
+| Outcome without reasoning | Audit logs capture what the agent decided but not why; compliance cannot reconstruct the reasoning | Logged output responses; reasoning traces were discarded | Capture the full **reasoning trace** (tool calls, intermediate conclusions, context sources) alongside outcomes; near-miss events carry equal audit weight to actual errors |
+| The forgotten deletion pipeline | PII-containing memory records accumulate without a retention or deletion policy | Created memory records at ingestion; no TTL or deletion path designed | Design the deletion pipeline at the same time as the ingestion pipeline; right-to-delete (GDPR) must traverse all four tiers |
+| Long-running workflow resume failure | Agents cannot resume a paused workflow (e.g., waiting for human approval) after a restart | Stored workflow state in-memory only; restart lost all progress | Implement the **hydration/dehydration lifecycle**: serialize workflow state to durable storage on pause; reload on resume; use a session-status field (e.g., `WAITING_FOR_APPROVAL`) to distinguish resume from new-session |
+
+### The Four-Tier Memory Hierarchy (Google ADK Mapping)
+
+| Tier | Name | Scope | ADK Primitive | Backing Store | Use Case |
+|---|---|---|---|---|---|
+| **Tier 1** | Working memory | Turn-scoped | Context window | In-process | Active reasoning; current tool results |
+| **Tier 2** | Session memory | Session-scoped | `SessionService` | Firestore / Redis / AlloyDB | Conversation continuity; task state across turns |
+| **Tier 3** | Long-term / episodic memory | Persistent | `MemoryService` | AlloyDB / vector store | Cross-session recall; user preferences; prior outcomes |
+| **Tier 4** | Audit trail | Immutable | Custom writer | Cloud Spanner / BigQuery | Compliance; decision replay; dispute resolution |
+
+**Session-rewind capability** (recent ADK releases): operators can programmatically roll a session back to the state before a specified invocation, enabling compliance review, debugging, and re-execution with different inputs. App-level and user-level artifacts are not restored — only the session event log is rewound.
+
+### Storage Decision Matrix
+
+| Factor | Tier 2 (Session) | Tier 3 (LTM) | Tier 4 (Audit) |
+|---|---|---|---|
+| Access pattern | Low-latency reads, session TTL | Semantic retrieval, cross-session | Append-only, compliance queries |
+| Mutability | Read/write | Read/write with extraction | Immutable |
+| Example services | Firestore, Redis | AlloyDB + pgvector, Vertex Vector Search | Cloud Spanner, BigQuery |
+| Retention | TTL (days–weeks) | Indefinite (with deletion pipeline) | Indefinite (regulatory minimum) |
+
+- [Building the Agentic Enterprise (Pantsjoha, Packt 2026)](../SoftwareAIFactory/building-the-agentic-enterprise.md) — source for four-tier hierarchy, schema migration Day 2 pattern, graceful amnesia, hydration/dehydration lifecycle, and audit trail design

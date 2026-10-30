@@ -231,3 +231,32 @@ The following must be true before production rollout:
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
 - [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Anthropic Engineering (2026). Source for capability vs regression evals, pass@k/pass^k metrics, grader design patterns, eval lifecycle roadmap, and Braintrust/Harbor framework references.
 - [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for configuration-regression evals, incident-to-eval feedback, feedback loop with failing-test-first bug-fix workflow, and protected test files during agent fixes.
+
+## AgentOps / EvalOps Discipline (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Pantsjoha, Packt 2026) formalises the **EvalOps** discipline as the evaluation layer within a broader Agent Governance Stack. Key additions:
+
+| Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
+|---|---|---|---|
+| Traditional Ops breaks for agentic systems | Deterministic monitoring, binary test assertions, and fixed alert thresholds don't fit non-deterministic agents | Tried adapting standard APM tools; missed quality regressions that looked like normal variance | Apply statistical correctness: correctness is a distribution, not a value. Use pass-rate thresholds not exact assertions |
+| Eval pyramid vs test pyramid | Traditional test pyramid assumes binary pass/fail; upper agent eval layers are statistical | Assumed trajectory and judge evals could use the same binary pass/fail model | Mirror the Test Pyramid with a statistical top: component tests (deterministic) → integration tests (semi-deterministic) → trajectory evaluation → LLM-as-judge |
+| Trajectory evaluation blind spots | Measuring only final output quality misses wrong reasoning paths that happen to produce acceptable output | Evaluated only final outputs; missed agents that got lucky | Evaluate the full reasoning trace — which tools were called, in what order, with what parameters — not just the conclusion |
+| LLM judge drift | The judge model's rubric drifts from the intended standard over time; evaluation scores become incomparable across weeks | Trusted judge output indefinitely without recalibration | Re-calibrate judge rubric against human ratings periodically; treat judge drift as a production incident when detected |
+| HITL scaling failure | Placing a human at every agent output decision creates a review bottleneck that doesn't scale | Tried approval at every decision; reviewers disengaged within two weeks | Place humans at goal-setting, constraint-definition, and approval boundaries rather than at output review; humans govern scope, agents execute within it |
+| Saturation ceiling | Adding more agents does not linearly improve system output; coordination overhead eventually dominates | Kept adding agents to increase throughput; system slowed at scale | Research on scaling agent systems shows a saturation ceiling; measure coordination overhead and add agents only when specialization benefit exceeds coordination cost |
+| Agent ownership gap | Agents deployed without a named owner default back onto the delivery team post-launch | Did not assign owners at deployment time; discovered ownership gap at first incident | Assign the agent owner before scaling, not during the first incident — retroactive ownership assignment requires an operating-model redesign |
+
+### The Evaluation Pyramid
+
+Four evaluation layers, each more expensive and more realistic:
+
+| Layer | Test Type | What It Checks | Pass/Fail Model | Cost |
+|---|---|---|---|---|
+| **Component tests** | Deterministic | Tool contracts, schema validation, output format | Binary | Low |
+| **Integration tests** | Semi-deterministic | Agent-tool interactions, handoff schema compliance | Binary + sampling | Medium |
+| **Trajectory evaluation** | Statistical | Did the agent take the right sequence of steps? | Score threshold | High |
+| **LLM-as-judge** | Statistical | End-to-end quality scored against golden outputs | Score threshold | Highest |
+
+Key trajectory metrics: tool-call accuracy, step completion rate, context utilization, goal achievement rate. The **adversarial gate** — running new revisions against adversarial eval suites before canary promotion — is a prerequisite for production entry. A failed domain gate (e.g., source verification rate for a research agent) blocks promotion entirely.
+
+- [Building the Agentic Enterprise (Pantsjoha, Packt 2026)](../SoftwareAIFactory/building-the-agentic-enterprise.md) — source for EvalOps discipline, Evaluation Pyramid, adversarial gate pattern, HITL scaling, and saturation ceiling

@@ -196,3 +196,53 @@ When a threat is detected in production, the response follows: **contain → tri
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for Stream Governance, field-level encryption, and GDPR-aligned retention guidance
 - [Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — Cloud Security Alliance (Aug 2025)
 - [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for advisory-vs-deterministic controls (skills + hooks), managed settings that cannot be locally widened, OS-level sandbox enforcement against shell egress, separation of duties in PR approval, and recurring codebase scans.
+
+## Agentic Enterprise Security Patterns (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Packt, 2026) provides a Google Cloud–focused security architecture for production agentic systems.
+
+| Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
+|---|---|---|---|
+| Long-lived service account keys | Per-agent service account keys rotate infrequently, accumulate, and become the primary attack surface | Created one key per agent; key rotation was manual and inconsistent | Implement **Workload Identity Federation**: the agent process gets a cryptographic identity without long-lived keys; short-lived tokens issued per invocation |
+| Service account per agent instance | Creating individual service accounts per agent instance leads to IAM sprawl | Created per-instance service accounts for fine-grained control; hundreds of accounts with overlapping permissions | Create service accounts per **role** (not per agent instance), scoped to the minimum privilege set for that role |
+| Tool-level authorization in prompts | Authorization logic in agent instructions can be bypassed by prompt injection | Encoded "only call this tool for X" in the system prompt; adversarial inputs circumvented it | Enforce authorization at the **tool boundary in code** — not in instructions. Code-level guards (e.g., rejecting non-SELECT queries) cannot be bypassed through prompt manipulation |
+| PII leakage through RAG | Knowledge base entries containing PII are retrieved and included in agent context | Assumed retrieval pipeline would respect data classification; PII appeared in agent outputs and tool calls | Apply DLP scanning to RAG knowledge bases at ingestion time; field-level encryption for sensitive attributes; separate retrieval corpora by data classification tier |
+| MCP tool response injection | Malicious content embedded in MCP tool responses re-enters agent reasoning as trusted context | Treated all tool responses as safe since they came from registered servers | Apply **Model Armor sanitization** on all MCP tool responses before they re-enter agent context; never trust tool response content unconditionally |
+| Rogue MCP servers (shadow tools) | An attacker registers an MCP server masquerading as a legitimate tool endpoint | Allowed agents to connect to any MCP endpoint declared in config | Maintain a signed MCP manifest; agents may only connect to **registered, verified MCP endpoints**; centralized MCP proxy pattern |
+| Data exfiltration via tool calls | An agent manipulated via prompt injection attempts to exfiltrate data through write-capable tools | Relied on the model to refuse malicious instructions | VPC Service Controls prevent unauthorized data paths at the network level; model decisions are not the security boundary for exfiltration prevention |
+| No audit trail for agent decisions | Compliance teams cannot reconstruct why an agent made a specific decision | Logged outputs but not the reasoning trace; audit was incomplete | Capture the full **reasoning trace** (tool calls, intermediate conclusions, context used) and write it to an immutable audit store (Cloud Spanner / BigQuery) |
+| Security review gate skipped | Agents go live without formal security review; compliance teams discover issues post-deployment | Relied on general code review; security teams weren't in the loop | Implement a formal **security review gate** before production: ADRs submitted in advance, guardrail evidence documented, exceptions with rationale; treat it as educational, not adversarial |
+
+### The Concentric Security Model (Six Layers)
+
+Agentic security in progressively tighter concentric layers:
+
+| Layer | Control | What It Prevents |
+|---|---|---|
+| 1. Edge WAF | Network perimeter | External attacks before they reach the agent surface |
+| 2. VPC Service Controls | Data exfiltration boundary | Unauthorized data paths even if the model is compromised |
+| 3. Workload Identity Federation | Cryptographic agent identity | Long-lived credential exposure; identity spoofing |
+| 4. Tool-level RBAC | Authorization at action boundary | Privilege escalation through tool manipulation |
+| 5. Agent guardrails (3 rails) | Input / action / output | Prompt injection, unauthorized actions, policy violations in output |
+| 6. Data controls | Field-level encryption, DLP | PII leakage; cross-tenant data access |
+
+**Defense in depth principle**: do not rely on the model to enforce security. Models can be manipulated through prompt injection. Infrastructure controls sit outside the reasoning loop and cannot be bypassed by the model.
+
+### The Least Agency Principle
+
+Every agent should have the **minimum capability set** required to complete its task. Authority is never granted speculatively. Applied at three levels:
+
+1. **Tool surface** — only expose tools the agent's role genuinely requires; decompose omni-capable agents into specialists with focused tool sets
+2. **Data access** — read-only by default; write-back requires explicit authorization at the tool boundary
+3. **Network reach** — agents access only the services declared in their VPC configuration; no unrestricted egress
+
+### OWASP Agentic AI Top 10 Mapping
+
+The book maps OWASP agentic risks (ASI01–ASI10) to mitigations:
+
+| OWASP Risk | Mitigation |
+|---|---|
+| ASI01–ASI05 (Agent-level threats) | Tool-level RBAC, input guardrails, Workload Identity Federation, Model Armor |
+| ASI06–ASI10 (System-level threats) | VPC Service Controls, signed MCP manifests, centralized MCP proxy, Agentic SOC, immutable audit trail |
+
+- [Building the Agentic Enterprise (Pantsjoha, Packt 2026)](../SoftwareAIFactory/building-the-agentic-enterprise.md) — source for Workload Identity Federation, concentric security model, Least Agency principle, MCP threat model, OWASP mapping

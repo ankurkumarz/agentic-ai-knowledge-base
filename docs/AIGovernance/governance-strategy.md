@@ -111,3 +111,78 @@ The intersection of impact scope and autonomy level determines the required gove
 - [NIST AI Risk Management Framework 1.0](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf) — voluntary US federal AI risk framework
 - [EU AI Act](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689) — EU regulation with risk-based classification
 - [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) — international AI management systems standard
+
+## Agentic Enterprise Governance Model (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Packt, 2026) extends governance strategy to cover the organizational transformation required for production agentic systems — not just technical controls.
+
+### The Transformation Paradox
+
+Most organizations measure AI success by productivity gains. But when every organization has AI assistants doing the same activities incrementally faster, that efficiency is the new baseline — not a differentiator. The transformational opportunity is **process reinvention**: rebuilding business processes around agentic players rather than making existing processes faster.
+
+This creates a paradox: incremental improvements are achievable quickly and demonstrate value; structural reinvention is where durable competitive advantage lies but requires governance and operating model change that organizations are not ready for.
+
+### Agentic Maturity Stages (Discovery → Run)
+
+| Stage | Business Impact | AI Adoption Profile | Governance Readiness |
+|---|---|---|---|
+| **Discovery** | Pre-measurable | AI on the roadmap; no production systems | Basic: policies drafted, no enforcement |
+| **Crawl** | < 25% | AI SaaS tools in pockets; isolated wins | Emerging: vendor contracts, some controls |
+| **Walk** | < 50% | Human-plus-AI enablement across teams | Structured: platform teams, eval pipelines |
+| **Run** | Structural | Agentic players in the operating model | Mature: AgentOps, AICCoE, named owners |
+
+Governance cannot leapfrog maturity stages. Organizations at Crawl cannot safely run Tier 3 (fully autonomous) agent workflows; the controls and operating culture are not yet in place.
+
+### The Agency Scope Framework
+
+Matching autonomy level to organizational readiness:
+
+| Tier | Autonomy Level | Human Role | Governance Requirement |
+|---|---|---|---|
+| **Tier 1** | Agent reads and summarizes; no external writes | Reviews all outputs | Basic output review; no special governance |
+| **Tier 2** | Agent drafts; human approves before external actions | Approval gate on writes | Named approver; approval logged; rollback procedure |
+| **Tier 3** | Agent acts autonomously within defined scope | Sets scope; reviews anomalies | Named owner; AgentOps discipline; circuit breakers; audit trail |
+
+**Accountability principle**: in a fully agentic enterprise, development, quality assurance, testing, validation, and evaluation are all part of the same continuous delivery loop — and each tier requires a named human owner accountable for the supervised output.
+
+### Organizational Roles for Agentic Systems
+
+| Role | Responsibility | Gap Risk |
+|---|---|---|
+| **Agent Owner** | Named human accountable for a running agent system; signs off before go-live | Without a named owner, accountability defaults to the delivery team indefinitely |
+| **Applied AI Engineer** | Hybrid role spanning architecture, operations, product, and AI; the "Mini-CEO" of the agent system | Single-hat hiring (pure dev, pure ML, pure ops) fails — no single discipline is sufficient |
+| **AICCoE Lead** | Governs the internal developer platform, Agent Gateway, and Agent Registry; prevents agent sprawl | Without central governance, agent proliferation creates an ungovernable fleet |
+| **Release Manager** | Authorizes production promotion; signs the release manifest | Without a named release manager, the promotion gate is informal and bypassed under pressure |
+
+### The AI Center of Excellence (AICCoE) Mandate
+
+The AICCoE prevents the **pervasive AI problem** — hundreds of agents built independently with no shared standards, infrastructure, or governance. Core mandates:
+
+1. **Publish versioned platform modules** — RAG pipeline, eval harness, deploy templates — that teams consume rather than rebuild
+2. **Operate the Agent Gateway** — all agent traffic passes through; security policy, Model Armor, and cost attribution enforced at the gateway
+3. **Maintain the Agent Registry** — the single source of truth for approved agents, which agents are approved, by whom, and for what scope
+4. **Run the InnerSource model** — product teams contribute improvements back to the platform; the platform evolves with production use
+
+The success metric for the AICCoE is **time-to-production for a new agent team**: if it takes weeks to bootstrap a new agent team, the platform is not working. The target is hours.
+
+### The "Culture as Code" Principle
+
+Organizational purpose, values, and decision constraints must be codified as machine-readable policy files — not left as implicit institutional knowledge in people's heads. This closes the loop between "context as competitive moat" and organizational design: the organization's proprietary context includes its decision principles, not just its data.
+
+Implementation steps:
+1. **Inventory the implicit** — document values, priorities, and constraints that are currently only in people's heads
+2. **Structure the strategic** — encode them as versioned policy files, injected into agent context at the platform level
+3. **Govern like infrastructure** — version-controlled, reviewed by stakeholders, tested against agent behavior in eval suites
+
+### Anti-Patterns in Agentic Transformation
+
+| Anti-Pattern | Description | Consequence |
+|---|---|---|
+| **Efficiency trap** | AI investment optimized for cost reduction rather than capability expansion | Competitive differentiation erodes as every organization achieves the same 20–50% gains |
+| **The Hollow Middle** | AI at the top (executive tools) and bottom (dev tools) but nothing in the operational middle | Value-creating business processes remain untransformed |
+| **Context Amnesia** | Organizational knowledge is not codified; agents cannot access institutional context | Agents make decisions inconsistent with organizational values; trust erodes |
+| **Vibe Scaling** | Scaling prototype patterns to enterprise load without re-architecture | Fragility, compliance exposure, and operational chaos at scale |
+| **The AI Silo** | AI initiatives isolated from core business processes and decision-making | Pilots succeed; transformation fails |
+| **Agent Sprawl** | Agents proliferate without a registry, lifecycle governance, or named owners | Ungovernable fleet; no baseline for incident response; regulatory exposure |
+
+- [Building the Agentic Enterprise (Pantsjoha, Packt 2026)](../SoftwareAIFactory/building-the-agentic-enterprise.md) — source for transformation paradox, Agency Scope Framework, AICCoE mandate, Culture as Code principle, and transformation anti-patterns

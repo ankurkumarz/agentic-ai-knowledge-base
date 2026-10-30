@@ -2,6 +2,21 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-27
+
+* **Ingest**: [Building the Agentic Enterprise — Pantsjoha, Packt 2026] → SoftwareAIFactory, Architecture, AgentOps, ProductionBestPractices, AIGovernance, ContextEngineering, AllThingsGoogle — `raw/9781807604455_Watermark_Ebook 1.pdf`
+  * Created: `docs/SoftwareAIFactory/building-the-agentic-enterprise.md`
+  * Extended: `docs/Architecture/multi-agent-system.md` (Multi-Agent Design Principles: Three Cs, decision heuristic, orchestration maturity model, runaway autonomy failure modes, orchestration vs choreography)
+  * Extended: `docs/ProductionBestPractices/testing-evaluations.md` (AgentOps/EvalOps discipline, Evaluation Pyramid, adversarial gate, HITL scaling, saturation ceiling)
+  * Extended: `docs/ProductionBestPractices/deployment.md` (governance stage gates, Agent Runtime vs Cloud Run, shadow/canary, AI-BOM, five-layer inference pricing)
+  * Extended: `docs/ProductionBestPractices/security.md` (Concentric Security Model, Workload Identity Federation, Least Agency, OWASP mapping, MCP threat model)
+  * Extended: `docs/ProductionBestPractices/state-memory.md` (four-tier memory hierarchy ADK mapping, schema migration Day 2, graceful amnesia, hydration/dehydration, session-rewind)
+  * Extended: `docs/ProductionBestPractices/context-engineering.md` (context-as-moat, prompting vs context engineering, context quality dimensions, RAG vs tools decision)
+  * Extended: `docs/AIGovernance/governance-strategy.md` (transformation paradox, agentic maturity stages, Agency Scope Framework, AICCoE mandate, Culture as Code, transformation anti-patterns)
+  * Extended: `docs/AllThingsGoogle/README.md` (hub row for Building the Agentic Enterprise)
+  * Extended: `docs/index.md` (SoftwareAIFactory bullet for the field guide)
+  * Extended: `mkdocs.yml` (4b.9 entry)
+
 ## 2026-10-24
 
 * **Ingest**: Agent Substrate (GitHub README) — https://github.com/agent-substrate/substrate → Standards, index — https://github.com/agent-substrate/substrate

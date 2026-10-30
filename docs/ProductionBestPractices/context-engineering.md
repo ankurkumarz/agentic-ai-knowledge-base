@@ -132,3 +132,46 @@ Prompt caching reduces costs significantly for agents with large, stable system 
 - [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
 - [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026. Introduces deployment-aware strategy selection via amortized cost modeling.
 - [agents-best-practices — DenisSergeevitch (2025)](https://github.com/DenisSergeevitch/agents-best-practices) — source for context assembly tiers, trust label framework, and compaction handoff format
+
+## Context as Strategic Moat (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Packt, 2026) argues that context engineering is the primary source of durable competitive advantage in the agentic era — as models commoditize, proprietary context becomes the moat.
+
+| Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
+|---|---|---|---|
+| Prompting conflated with context engineering | Teams treat prompt tuning and context assembly as the same discipline | Spent engineering cycles refining prompt phrasing when the data being retrieved was the problem | Separate the disciplines: prompt engineering = static instruction layer (changes when behavior changes); context engineering = dynamic runtime assembly (changes on every request) |
+| Kitchen sink retrieval | Fetching everything semantically adjacent and letting the model sort out relevance | Retrieved broad document sets; model reasoning degraded on high-noise context | Apply a **context budget**: allocate token regions explicitly (system prompt, working memory, tool results, history); evict low-relevance content before it enters the context window |
+| Stale by schedule | Context refreshed on a timer rather than on detected relevance degradation | Set a 24h refresh schedule; agents reasoned on data that had changed hours earlier | Replace schedule-based refresh with **drift detection**: monitor retrieval quality metrics and semantic similarity to the current task; refresh when drift exceeds threshold |
+| Context privilege escalation | One agent's context scope creeps into another's domain, exposing cross-domain data | Did not enforce per-agent context boundaries; shared retrieval corpus across all agents | Enforce per-agent context scopes at the retrieval layer; treat agent context boundaries as security boundaries |
+| Context drift in long sessions | Context gradually diverges from task relevance over multi-turn conversations | Kept appending tool results; context grew until irrelevant to current sub-task | Monitor context relevance metrics per turn; apply summarization and eviction for older turns; keep the current task frame always visible |
+
+### Prompting vs Context Engineering (Comparison)
+
+| Dimension | Prompt Engineering | Context Engineering |
+|---|---|---|
+| Focus | Static instruction — how to phrase the task | Dynamic assembly — what information the model reasons over |
+| Cadence | Changes when behavior needs to change | Changes on every request |
+| Primary owner | Model/agent developer | Platform/data engineering |
+| Failure mode | Model ignores or misinterprets instructions | Model applies valid reasoning to incorrect or stale source data — correct logic, wrong inputs |
+| Stability | High — rarely changes in production | Low — assembled fresh per request |
+
+### Context Quality Dimensions
+
+Context quality is measured on four axes; failure on any dimension leads to agents applying correct reasoning to incorrect inputs:
+
+| Dimension | Question | Failure Mode |
+|---|---|---|
+| **Currency** | Is it fresh enough for this decision? | Agent acts on outdated information |
+| **Accuracy** | Does it reflect ground truth? | Agent reasons correctly toward wrong conclusions |
+| **Relevance** | Is it actually useful for the current task? | Agent ignores or is distracted by off-task content |
+| **Authority** | Is it from the right source for this decision? | Agent cites unreliable or inappropriate sources |
+
+### RAG vs Tools Decision (Production Default)
+
+| Use RAG | Use Tools | Layer Both |
+|---|---|---|
+| Large static knowledge corpus | Real-time, authoritative data | Most production agents |
+| Semantic match acceptable | Transactional accuracy required | Default: RAG for knowledge + tools for real-time data + session state for conversation continuity |
+| Unstructured text | Structured data | Priority ranking: tools > RAG when freshness matters |
+
+- [Building the Agentic Enterprise (Pantsjoha, Packt 2026)](../SoftwareAIFactory/building-the-agentic-enterprise.md) — source for context-as-moat thesis, prompting vs context engineering distinction, context quality dimensions, drift detection, and kitchen sink anti-pattern

@@ -33,6 +33,7 @@ Google's agentic AI portfolio spans foundational research, developer frameworks,
 | Looker Semantic Layer (LookML) | Mature BI-native semantic modeling language — single source of truth for business metrics, grounding gen AI trustworthiness; OSI ecosystem participant | [AgenticTechStack/semantic-data-layer-radar.md](../AgenticTechStack/semantic-data-layer-radar.md) |
 | LLM EvalKit | Open-source, self-hostable app on Vertex AI SDKs — no-code UI centralizing prompt creation, testing, versioning, and metric-driven evaluation | [EvaluationFrameworks/platforms.md](../EvaluationFrameworks/platforms.md) |
 | DESIGN.md | Google Labs format spec for giving coding agents a persistent, structured understanding of a product's visual identity — YAML design tokens + markdown rationale prose | [Standards/design-md.md](../Standards/design-md.md) |
+| Building the Agentic Enterprise (Pantsjoha, 2026) | Practical field guide to designing, deploying, and operating agentic AI systems on Google Cloud using ADK — covers the Three Pillars, RAO loop, architectural patterns, AgentOps/EvalOps, platform engineering, and operating model transformation | [SoftwareAIFactory/building-the-agentic-enterprise.md](../SoftwareAIFactory/building-the-agentic-enterprise.md) |
 
 ## See Also
 

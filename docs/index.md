@@ -80,6 +80,7 @@ Comprehensive coverage of major development frameworks:
 - **OpenAI Case Study**: [OpenAI's Agentic Software Factory](SoftwareAIFactory/openai-software-factory.md) covers the accessible reporting on CI/review loops, supervised rollout, Perf Factory, and Sevbot, with an explicit partial-access boundary.
 - **Platforms**: [Factory AI](SoftwareAIFactory/factory-ai.md), [Devin](SoftwareAIFactory/devin.md), and [OpenHands](SoftwareAIFactory/openhands.md) have dedicated sourced pages; individual coding tools remain in the AI Coding Agents category.
 - **Warp Factories**: [Standing factory orchestration](SoftwareAIFactory/warp-factories.md) adds foreman-led work items, definitions as code, explicit hosting/approval boundaries, and reviewed improvement.
+- **Agentic Enterprise Field Guide**: [Building the Agentic Enterprise (Pantsjoha, 2026)](SoftwareAIFactory/building-the-agentic-enterprise.md) covers the Three Pillars (Skills/Context/Culture), RAO loop, eight architectural patterns, AgentOps/EvalOps, platform engineering with AICCoE, and organizational transformation from PoC to production on Google Cloud/ADK.
 
 ### **6. Agent Technology Stack**
 - **Tech Stack References**: Comprehensive technology landscape overview

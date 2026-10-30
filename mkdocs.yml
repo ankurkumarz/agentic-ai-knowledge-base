@@ -85,6 +85,7 @@ nav:
     - 4b.6 Building Your Own Software Factory (Cursor): 'SoftwareAIFactory/building-your-own-software-factory.md'
     - 4b.7 OpenAI's Agentic Software Factory: 'SoftwareAIFactory/openai-software-factory.md'
     - 4b.8 Warp Factories: 'SoftwareAIFactory/warp-factories.md'
+    - 4b.9 Building the Agentic Enterprise (Pantsjoha): 'SoftwareAIFactory/building-the-agentic-enterprise.md'
   - 5. Agent Technology Stack:
     - 5.1 Agent Tech Stack References: 'AgenticTechStack/README.md'
     - 5.1.1 Thoughtworks Tech Radar — Agentic AI (Vol. 34, Apr 2026): 'AgenticTechStack/thoughtworks-radar-vol34.md'

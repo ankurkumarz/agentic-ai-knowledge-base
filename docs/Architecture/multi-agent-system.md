@@ -508,6 +508,72 @@ Google Cloud's reference architecture for multi-tenant agentic AI systems addres
 
 **Tenant isolation strategies** described in the architecture mirror the [Four Planes](#the-four-planes-of-a-multi-agent-system-aws) framing — identity/auth, data, compute, and control-plane isolation each need a tenant-scoping decision — but Google's treatment is specifically about *one deployment, many tenants* rather than *one tenant, many agents*. The two concerns compose: a multi-tenant deployment still needs an internal multi-agent architecture (centralized, decentralized, hierarchical, or hybrid) for each tenant's agent roster.
 
+## Multi-Agent Design Principles (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Packt, 2026) adds a practitioner perspective on multi-agent orchestration grounded in production delivery on Google Cloud.
+
+### The Single-Agent Decision Heuristic
+
+Before building a multi-agent system, apply this sequence in order:
+
+1. Start with a single agent. Can it coherently handle the full problem?
+2. If yes, stay single-agent with MCP tool empowerment. Resist adding agents.
+3. If no, identify the natural decomposition — what are the genuinely distinct roles?
+4. Design role boundaries with clear responsibilities and explicit handoffs.
+5. Choose the simplest context-sharing mechanism that fits.
+
+**The tool-sprawl threshold**: a municipal-sector agent with ~50 tools fell below 60% tool-selection accuracy — effectively random selection. Decomposing into specialist agents with focused tool surfaces restored accuracy above 90%.
+
+### The Three Cs of Agent Handoffs
+
+Every handoff between agents must satisfy all three properties:
+
+| Property | What It Means | Failure Mode |
+|---|---|---|
+| **Coherent** | The receiving agent has enough context to continue the task | Agent restarts from scratch or asks clarifying questions mid-workflow |
+| **Consistent** | The handoff schema is identical to what the receiving agent expects | Schema mismatch causes silent data loss or incorrect parsing |
+| **Complete** | All required fields are present; no implicit knowledge assumed | Receiving agent invents missing information (hallucination at handoff) |
+
+The Three Cs give technical readiness. Operational readiness still requires a **named human owner** standing behind the supervisor's output — the Three Cs do not create accountability.
+
+### Orchestration Maturity Model
+
+Three progressive levels of orchestration complexity, each demanding more operational maturity:
+
+| Level | Description | Operational Requirement |
+|---|---|---|
+| **Default** | Single agent, single model, linear tool use | Basic monitoring and prompt governance |
+| **Delegation** | Supervisor delegates to specialized sub-agents | Handoff schema governance; per-agent evaluation |
+| **Teams** | Hierarchical multi-layer orchestration with independent agent crews | Full AgentOps discipline; distributed tracing; owner per supervisor |
+
+The important movement is along the operational axis: **orchestration complexity rises with operational overhead**. Add levels deliberately, not because the architecture diagram looks more impressive.
+
+### Preventing Runaway Autonomy
+
+Five failure modes unique to multi-agent systems with mitigations:
+
+| Failure Mode | Description | Mitigation |
+|---|---|---|
+| **Infinite loop** | Agent cycles through the same plan without terminating | Loop detection; max-turn circuit breakers with hardcoded escalation |
+| **Context starvation** | Agent loses task context across handoffs | Explicit handoff schemas; the Three Cs applied at every boundary |
+| **Conflicting actions** | Two agents write to the same resource simultaneously | Shared state locking; supervisor arbitration protocol |
+| **Runaway autonomy** | Agent acquires or exercises authority beyond its scope | Scope enforcement; Least Agency principle |
+| **Blame diffusion** | No agent can be held accountable for a wrong outcome | Named owner per supervisor output; accountability logged per invocation |
+
+**Circuit breakers**: each agent has a maximum budget (turns, tokens, wall time) and a hardcoded escalation path when limits are hit. The supervisor never trusts agents to self-terminate.
+
+### Orchestration vs Choreography (Enterprise Comparison)
+
+| Dimension | Orchestration | Choreography |
+|---|---|---|
+| Control | Centralized supervisor directs agents | Distributed; agents react to shared state/events |
+| Observability | High — single place to trace decisions | Lower — causal chains cross agent boundaries |
+| Failure isolation | Clear escalation path through supervisor | Complex; emergent failures harder to attribute |
+| Enterprise fit | Preferred for regulated, auditable workloads | Better for loosely coupled, high-throughput pipelines |
+| ADK implementation | SequentialAgent / supervisor pattern | Event-driven with Pub/Sub triggers |
+
+In enterprise delivery, **orchestration wins** primarily because of auditability: compliance teams need to trace "which agent decided what, when, based on what context." Choreography makes that trace reconstruction expensive.
+
 ## See Also
 - [Event-Driven Design Patterns for Multi-Agent Systems (Confluent)](../DesignPatterns/event-driven-patterns.md)
 - [Agent Development Frameworks](../AgenticFrameworks/README.md)
@@ -529,3 +595,4 @@ Google Cloud's reference architecture for multi-tenant agentic AI systems addres
 - [Mastering Multi-Agent Systems eBook](https://galileo.ai) — Galileo, 2026. Author: Pratik Bhavsar. Seven benefits, failure modes, decision framework, four architectures, context engineering, LangGraph production example with Galileo observability.
 - [Multi-tenant agentic AI system architecture](https://docs.cloud.google.com/architecture/multi-tenant-agentic-ai-system) — Google Cloud Architecture Center. Reference architecture for serving multiple tenants from a single multi-agent deployment using Cloud Run, GKE, the Gemini Enterprise Agent Platform, Model Armor, ADK, and A2A.
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for Supervisor vs. Swarm comparison and Agent Router pattern.
+- Pantsjoha, J. (2026). *Building the Agentic Enterprise*. Packt Publishing. ISBN 9781807604455. — Source for the Single-Agent Decision Heuristic, Three Cs of handoffs, orchestration maturity model, circuit breakers, and Orchestration vs Choreography enterprise comparison.

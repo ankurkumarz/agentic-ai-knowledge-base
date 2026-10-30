@@ -2208,3 +2208,57 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 **Key knowledge added**: Eleven documented plugins with example connectors; undocumented folders noted; plugin file layout (manifest, `.mcp.json`, commands, skills); Cowork and Claude Code install paths; customization model; connector and skill-enforcement considerations.
 
 **Provenance limits**: Plugin list and install commands are from the README summary. Undocumented folders were not inspected. Repository statistics are a point-in-time snapshot.
+
+---
+
+## [2026-10-27] ingest | Building the Agentic Enterprise (Pantsjoha, Packt 2026) | sections touched: SoftwareAIFactory, Architecture, AgentOps, ProductionBestPractices/testing-evaluations, ProductionBestPractices/deployment, ProductionBestPractices/security, ProductionBestPractices/state-memory, ProductionBestPractices/context-engineering, AIGovernance, ContextEngineering, AllThingsGoogle, index, mkdocs.yml
+
+**Source**: `raw/9781807604455_Watermark_Ebook 1.pdf`
+**Type**: Technical book (774 pages, Packt Publishing, 2026)
+**Author**: Jaroslav Pantsjoha (Solutions Architect; two decades in cloud, microservices, and AI; three years taking agentic systems to production)
+**ISBN**: 9781807604455
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/SoftwareAIFactory/building-the-agentic-enterprise.md` | Created | New comprehensive page: Three Pillars, PoC trap, RAO loop, ADK primitives, eight architectural patterns, harness layer, multi-agent orchestration, context engineering, security/identity, memory hierarchy, AgentOps/EvalOps, platform engineering (IDP/AICCoE), operating models, B2A shift, AI Squad model, Applied AI Engineering, MREP reference architecture, anti-patterns |
+| `docs/Architecture/multi-agent-system.md` | Extended | Added Multi-Agent Design Principles section: single-agent decision heuristic, Three Cs of handoffs, orchestration maturity model (Default/Delegation/Teams), five runaway autonomy failure modes and mitigations, orchestration vs choreography enterprise comparison; updated References |
+| `docs/ProductionBestPractices/testing-evaluations.md` | Extended | Added AgentOps/EvalOps Discipline section: seven new best-practice rows covering traditional ops break, eval pyramid, trajectory evaluation, judge drift, HITL scaling failure, saturation ceiling, and agent ownership gap; added structured Evaluation Pyramid table |
+| `docs/ProductionBestPractices/deployment.md` | Extended | Added Agentic Enterprise Deployment Patterns section: seven new best-practice rows covering governance stage gates, Agent Runtime vs Cloud Run, shadow vs canary, AI-BOM, promotion integrity, operational acceptance, canary split granularity; added Agent Runtime vs Cloud Run decision matrix; five-layer inference pricing model |
+| `docs/ProductionBestPractices/security.md` | Extended | Added Agentic Enterprise Security Patterns section: nine new best-practice rows covering Workload Identity Federation, RBAC-in-code, PII/RAG leakage, MCP injection, shadow tools, VPC exfiltration prevention, audit trail, security review gate; Concentric Security Model (six layers); Least Agency principle; OWASP ASI mapping |
+| `docs/ProductionBestPractices/state-memory.md` | Extended | Added Four-Tier Memory Architecture section: six new best-practice rows covering context-window-as-memory, schema migration Day 2, graceful amnesia, outcome-without-reasoning, forgotten deletion pipeline, long-running resume; ADK-mapped four-tier hierarchy table; storage decision matrix; session-rewind capability |
+| `docs/ProductionBestPractices/context-engineering.md` | Extended | Added Context as Strategic Moat section: five new best-practice rows covering prompting vs context engineering, kitchen sink retrieval, stale by schedule, context privilege escalation, drift in long sessions; prompting vs context engineering comparison table; context quality dimensions; RAG vs tools production default |
+| `docs/AIGovernance/governance-strategy.md` | Extended | Added Agentic Enterprise Governance Model section: transformation paradox, maturity stages table (Discovery→Run), Agency Scope Framework (three tiers), organizational roles (Agent Owner, Applied AI Engineer, AICCoE Lead, Release Manager), AICCoE mandate, Culture as Code principle, transformation anti-patterns (seven named) |
+| `docs/AllThingsGoogle/README.md` | Extended | Added hub row for Building the Agentic Enterprise with backlink |
+| `docs/index.md` | Extended | Added bullet for Agentic Enterprise Field Guide under Software AI Factory section |
+| `mkdocs.yml` | Extended | Added 4b.9 entry for building-the-agentic-enterprise.md |
+
+### Key Knowledge Added
+
+- **Three Pillars of Agentic Engineering**: Skills (hybrid role gap), Context (proprietary context as strategic moat), Culture (process reinvention, not incremental speedup) — the production gap framework
+- **The PoC trap and Day 2 problem**: structural analysis of why 40%+ of agentic pilots never reach production; organizational failure vs model failure
+- **Eight architectural patterns**: Planner-Executor, Controller-Worker, Reactive, Deliberative, Event-Driven, Workflow-Driven, Reflection (Trifecta), Routing — with characteristic failure modes per pattern
+- **Harness layer / separation of control and execution**: control = harness decides what happens; execution = model decides what to do within bounds; anti-pattern "smart tools" collapses this boundary
+- **Three Cs of agent handoffs**: Coherent, Consistent, Complete — technical readiness criteria; distinct from accountability (which requires a named owner)
+- **Orchestration maturity model**: Default → Delegation → Teams; operational complexity rises with orchestration complexity
+- **Evaluation Pyramid**: four statistical layers (component, integration, trajectory, LLM-as-judge); adversarial gate as prerequisite for canary promotion; judge drift as named anti-pattern
+- **Concentric Security Model**: six progressive layers (WAF → VPC-SC → Workload Identity → Tool RBAC → Guardrails → Data controls); defense in depth — models cannot enforce security
+- **Least Agency principle**: minimum capability set per agent; tool surface, data access, and network reach all scoped to role
+- **Four-tier memory hierarchy with ADK mapping**: Working memory → SessionService → MemoryService → immutable audit trail; schema migration Day 2 pattern; graceful amnesia; hydration/dehydration lifecycle; session-rewind capability
+- **Agency Scope Framework**: three tiers matching autonomy to governance readiness
+- **AICCoE mandate and IDP paved road**: preventing agent sprawl through centralized platform with self-service APIs; Agent Gateway as enforcement point; InnerSource model
+- **Applied AI Engineering as emerging discipline**: synthesis of solutions architecture, platform engineering, product ownership, AI/ML operations, and security
+- **Business-to-Agent (B2A) commerce shift**: agent-to-agent transactions; APIs become agent interfaces; trust via cryptographic identity
+- **Culture as Code**: codifying organizational purpose as machine-readable policy files injected into agent context
+- **MREP Decision Register**: worked reference architecture with documented load-bearing design decisions (single vs multi-agent, orchestration vs choreography, RAG vs tools, centralized vs federated, HITL placement, Agent Runtime vs Cloud Run)
+- **Fourteen named anti-patterns**: vibe coding, agent in name only, prototype is production, omnipotent agent, self-evaluating agent, MCP tool sprawl, silent fail, eval-free zone, agent sprawl, efficiency trap, context amnesia, vibe scaling, AI silo, the hollow middle
+
+### Source Characteristics
+
+- 774 pages; 12 chapters + MREP appendix
+- Continuous case study: Macro Research & Education Platform (MREP) by fictional ACME Research
+- Google Cloud / ADK primary technical lens (non-exclusive — patterns applicable across clouds)
+- Published 2026; reflects ADK 1.x, Gemini 3/3.1, Agent Runtime GA, Gemini Enterprise Agent Platform
+- Author's framing: field guide from production delivery experience, not theory — explicitly distances from "written from the outside looking in" category

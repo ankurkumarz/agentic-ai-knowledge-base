@@ -228,3 +228,42 @@ Arsanjani & Bustos (2026) define a five-level robustness maturity spectrum. The 
 - Arsanjani, A., & Bustos, J.P. (2026). *Agentic Architectural Patterns for Building Multi-Agent Systems*. Packt Publishing. ISBN 978-1-80602-957-0. — Source for robustness patterns: Watchdog Timeout, Adaptive Retry with Prompt Mutation, Auto-Healing, Incremental Checkpointing, Rate-Limited Invocation, Fallback Model Invocation, Delayed Escalation.
 - Falconer, S. (2025). *A Guide to Event-Driven Design for Agents and Multi-Agent Systems*. Confluent, Inc. — source for idempotent processing and dead-letter queue fault recovery patterns.
 - [The AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) — Anthropic (Aug 21, 2026). Source for CI/CD judgment steps, tiered environment autonomy, sandboxed agent jobs with no standing production credentials, and rehearsed rollback.
+
+## Agentic Enterprise Deployment Patterns (Pantsjoha, 2026)
+
+*Building the Agentic Enterprise* (Packt, 2026) adds Google Cloud–specific deployment patterns and governance stage gates for production agent delivery.
+
+| Key Challenge | Description | Lessons Learned & Alternatives Considered | Solution Applied |
+|---|---|---|---|
+| No governance stage gates | Agents move from PoC to production without governance checkpoints | Treated deployment as binary: dev or prod; no intermediate stages | Define formal governance stages: PoC → pilot → controlled release → production; each requires named sign-off and a passing eval suite |
+| Agent Runtime vs Cloud Run choice | Choosing the wrong runtime adds unnecessary complexity or loses state management | Defaulted to Cloud Run for all agents including stateful ones | Use **Agent Runtime** (managed) for long-running stateful agents needing session persistence; use **Cloud Run** for stateless, short-lived request/response agents |
+| Shadow vs canary confusion | Teams use canary when shadow is safer for initial validation | Promoted straight to canary; users received degraded outputs from unvalidated revisions | Run shadow deployment first (new revision receives live traffic but outputs are discarded and compared offline); promote to canary only after shadow metrics pass |
+| Agent Bill of Materials missing | No inventory of which models, tools, MCP endpoints, and dependencies a deployed agent uses | Deployed agents without a manifest; incident response had no baseline | Produce an **Agent Bill of Materials (AI-BOM)** per deployment: model versions, tool bindings, MCP endpoints, prompt template hashes, IAM bindings |
+| Promotion integrity gap | Agent revisions promoted without verifying the deployed artifact matches what was evaluated | Evaluated one build artifact, deployed another due to manual steps | Use a signed **release manifest** that ties the eval results to the exact artifact hash; the deployment pipeline verifies the signature before promoting |
+| Deployed is not live | Teams treat a successful deployment as "go-live" — skipping operational acceptance | Ran eval suite pre-deployment but not post-deployment on live traffic | Separate deployment from go-live: after deployment, run **operational acceptance** — lightweight eval on live traffic sample — before routing business traffic |
+| Canary split granularity | Splitting traffic at the request level can split multi-turn sessions across revisions | Split all traffic randomly; users experienced inconsistent behavior mid-session | Define what splits — model revision, prompt revision, or full agent flow — and ensure session-level routing consistency |
+
+### Agent Runtime vs Cloud Run Decision Matrix
+
+| Factor | Agent Runtime | Cloud Run |
+|---|---|---|
+| Session state required | Yes — built-in SessionService | No — stateless or externally managed |
+| Long-running workflows (minutes–hours) | Yes | Limited by request timeout |
+| Cold start tolerance | Sub-second (managed) | Configurable (can be slow) |
+| Managed memory tiers | Yes (SessionService + MemoryService) | No |
+| Custom infrastructure control | Limited | Full |
+| Best for | Conversational agents, multi-turn workflows | Stateless tools, API wrappers, batch agents |
+
+### The Five-Layer Inference Pricing Model
+
+Cost-aware deployment requires modeling inference at five layers, not just per-token pricing:
+
+1. **Input tokens** — context window content per call
+2. **Output tokens** — generated response tokens
+3. **Tool call overhead** — additional tokens per tool invocation (schema, result)
+4. **Thinking tokens** — extended reasoning compute (Gemini thinking levels: LOW/MEDIUM/HIGH)
+5. **Coordination overhead** — multi-agent context sharing and handoff tokens
+
+In multi-agent systems, one user request may trigger multiple agent invocations. Cost cannot be estimated by user count; model it by workflow path and expected tool-call depth.
+
+- [Building the Agentic Enterprise (Pantsjoha, Packt 2026)](../SoftwareAIFactory/building-the-agentic-enterprise.md) — source for governance stage gates, Agent Runtime vs Cloud Run decision, shadow/canary patterns, AI-BOM, and five-layer inference pricing model
