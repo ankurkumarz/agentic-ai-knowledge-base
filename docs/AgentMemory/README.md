@@ -148,6 +148,7 @@ Quick reference for working memory techniques:
 
 ## See Also
 
+- **[Knowledge Graph Memory for AI Agents](knowledge-graph-memory.md)**: The Goldfish Problem, graph-as-memory architecture, GraphRAG/HybridRAG, confidence propagation, neurosymbolic patterns, and Graphify
 - **[Memory Solutions & Technology Radar](solutions.md)**: Vendor comparison with Adopt/Trial/Assess/Caution ratings
 - **[The Four Memory Types](functional-tiers.md)**: CoALA taxonomy — working, semantic, episodic, procedural
 - **[Long-term Memory Strategies](ltm-strategies.md)**: Strategy patterns per memory type

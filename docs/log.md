@@ -2,6 +2,25 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-10-30
+
+* **Ingest**: [The Memory Layer — Safi Shamsi (2026)] → AgentMemory, RAG — the-memory-layer (PDF attachment)
+  * Created: `docs/AgentMemory/knowledge-graph-memory.md` (new page: Goldfish Problem, graph types, confidence system, GraphRAG/HybridRAG, Graphify, neurosymbolic AI, multi-agent graphs, future of machine memory)
+  * Extended: `docs/AgentMemory/ltm-strategies.md` (Knowledge Graphs section — Graphify reference, compression insight, link to new page; added book to References and See Also)
+  * Extended: `docs/AgentMemory/README.md` (See Also — link to knowledge-graph-memory.md)
+  * Extended: `docs/RAG/Readme.md` (Graph RAG and HybridRAG section — GraphRAG, LightRAG, HybridRAG α-blend formula, structural blindness of pure vector RAG; link to new page; added book to References)
+  * Extended: `mkdocs.yml` (9.6 entry for knowledge-graph-memory.md; renumbered 9.7 for overview)
+
+* **Ingest**: [Cache Engineering for Agents — Fu et al., arXiv:2610.28577] → ContextEngineering — https://arxiv.org/abs/2610.28577
+  * Created: `docs/ContextEngineering/cache-engineering.md`
+  * Extended: `docs/ContextEngineering/strategies.md` (Strategy 5a: Cache Engineering; updated Strategy Comparison table; added See Also and References entries)
+
+## 2026-10-30
+
+* **Ingest**: [Lightpanda headless browser] → AgenticTechStack, AgentHarness — https://github.com/lightpanda-io/browser
+  * Extended: `docs/AgenticTechStack/README.md` (Web Search and Data Extraction section — Lightpanda entry)
+  * Extended: `docs/AgentHarness/agent-harness.md` (Sandboxes section — Lightpanda as lightweight CDP/MCP browser for agent harnesses)
+
 ## 2026-10-27
 
 * **Ingest**: [Building the Agentic Enterprise — Pantsjoha, Packt 2026] → SoftwareAIFactory, Architecture, AgentOps, ProductionBestPractices, AIGovernance, ContextEngineering, AllThingsGoogle — `raw/9781807604455_Watermark_Ebook 1.pdf`

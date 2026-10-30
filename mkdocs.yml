@@ -171,7 +171,8 @@ nav:
     - 9.3 Memory Solutions & Technology Radar: 'AgentMemory/solutions.md'
     - 9.4 Research Papers & Technical White Papers: 'AgentMemory/research-papers.md'
     - 9.5 Working Memory Management: 'AgentMemory/short-term.md'
-    - 9.6 Memory Management Overview: 'AgentMemory/README.md'
+    - 9.6 Knowledge Graph Memory: 'AgentMemory/knowledge-graph-memory.md'
+    - 9.7 Memory Management Overview: 'AgentMemory/README.md'
   - 10. Agentic AI Evaluation:
     - 10.1 LLM Evaluation Frameworks: 'EvaluationFrameworks/llm-frameworks.md'
     - 10.1.1 LLM App Evaluation Metrics: 'EvaluationFrameworks/llm-eval-metrics.md'

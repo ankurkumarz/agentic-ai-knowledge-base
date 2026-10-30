@@ -50,6 +50,21 @@ RAG and finetuning are complementary: RAG provides current knowledge retrieval; 
 
 An emerging paradigm where language models generate code to assemble task-specific retrieval pipelines on demand, rather than routing through fixed pipelines. See [Search as Code](search-as-code.md) for Perplexity's full architecture — Models as Control Plane, Compute Sandboxes, and Agentic Search SDK — including the WANDR benchmark and CVE case study showing 85.1% token reduction.
 
+## Graph RAG and HybridRAG
+
+**GraphRAG** (Microsoft, 2024): Instead of chunking text and retrieving by similarity, GraphRAG builds a community-structured knowledge graph from the source corpus first, then retrieves at two levels: *local search* (specific entity queries) and *global search* (community consensus queries). Measurably better on multi-hop questions (Edge et al., 2024). Graph community detection (Leiden algorithm) plays a key role — disconnected communities produce semantically meaningless clusters.
+
+**LightRAG** (October 2024): Keeps GraphRAG's dual-level retrieval at lower preprocessing cost. Same intuition, lighter infrastructure burden.
+
+**HybridRAG**: Fuses vector similarity and graph traversal into a single relevance score:
+`result = α · vector_score + (1 - α) · graph_score`
+
+The α weight is tunable per query type: structural/relational queries push α → 0 (graph-dominant); semantic/conversational queries push α → 1 (vector-dominant). The question is no longer "graph or vector?" — it is "how do you weight them?" Structure disciplines semantics.
+
+**Vector RAG fatal flaw**: RAG retrieves chunks, not understanding. It finds paragraphs that *mention* "authentication" and "billing" but misses the node between them — the user model that links auth state to subscription tier. The relationship lives in the white space between chunks. See [Knowledge Graph Memory for AI Agents](../AgentMemory/knowledge-graph-memory.md) for the full treatment.
+
+*Source: [The Memory Layer — Safi Shamsi (2026)](https://pypi.org/project/graphify/)*
+
 ## RAG Engines
 
 - [Contextual AI RAG Agents](https://contextual.ai): enterprise solution for building and deploying specialized RAG agents with Reranker
@@ -83,7 +98,9 @@ Agentic contextual retrieval:
 - [Search as Code](search-as-code.md)
 - [Chunking Strategies for RAG](chunking-strategies.md)
 - [Semantic Data Layer Technology Radar](../AgenticTechStack/semantic-data-layer-radar.md)
+- [Knowledge Graph Memory for AI Agents](../AgentMemory/knowledge-graph-memory.md) — deep dive on GraphRAG, HybridRAG, Graphify, and graph-based persistent memory
 
 ## References
 
 - [AI Engineering: Building Applications with Foundation Models](https://www.oreilly.com/library/view/ai-engineering/9781098166304/) — Chip Huyen, O'Reilly, 2024. Chapter 6.
+- [*The Memory Layer* — Safi Shamsi (2026)](https://pypi.org/project/graphify/) — GraphRAG, HybridRAG, the four-layer knowledge graph stack, and the Graphify open-source engine

@@ -2262,3 +2262,25 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - Google Cloud / ADK primary technical lens (non-exclusive — patterns applicable across clouds)
 - Published 2026; reflects ADK 1.x, Gemini 3/3.1, Agent Runtime GA, Gemini Enterprise Agent Platform
 - Author's framing: field guide from production delivery experience, not theory — explicitly distances from "written from the outside looking in" category
+
+## [2026-10-30] ingest | Lightpanda headless browser | sections touched: AgenticTechStack, AgentHarness
+
+**Source**: https://github.com/lightpanda-io/browser
+**Type**: Open-source project README (GitHub)
+**Processed by**: Kiro
+
+### Files Modified
+
+| File | Change Type | Notes |
+|---|---|---|
+| `docs/AgenticTechStack/README.md` | Extended | Added Lightpanda under Web Search and Data Extraction; added reference |
+| `docs/AgentHarness/agent-harness.md` | Extended | Added Lightpanda paragraph under Sandboxes section; added reference |
+
+### Key Knowledge Added
+
+- Lightpanda is a headless browser written from scratch in Zig — not a Chromium/WebKit fork
+- Benchmark: 16× less memory (123 MB vs 2 GB peak, 100 pages) and 9× faster (5 s vs 46 s) than headless Chrome on AWS EC2 m5.large
+- Drop-in CDP server replacement: existing Puppeteer/Playwright scripts connect without code changes
+- Also supports WebDriver Bidi and an MCP server (stdio + HTTP; per-connection session isolation for multi-agent use)
+- Native `lightpanda agent` mode: drives browser with natural-language commands, outputs a **PandaScript** (vanilla JS + browser primitives) replayable without an LLM at runtime
+- License: Apache 2.0; available via Homebrew, AUR, Docker, pre-built Linux/macOS binaries

@@ -94,7 +94,9 @@ Dense-only retrieval fails for DevOps-style queries involving exact version stri
 
 **Advantages**: Precise factual recall, explainable reasoning paths, handles complex relationships.
 
-**Solutions**: [Graphiti by Zep](https://github.com/getzep/graphiti) — a temporal knowledge graph that tracks how facts evolve over time.
+**Solutions**: [Graphiti by Zep](https://github.com/getzep/graphiti) — a temporal knowledge graph that tracks how facts evolve over time. [Graphify (Shamsi, 2026)](https://pypi.org/project/graphify/) — open-source engine that builds a knowledge graph from any folder (code, PDF, images, audio) using Tree-sitter AST parsing + LLM semantic extraction + Leiden community detection; outputs `graph.json`, Cypher, and an interactive HTML visualization. All extraction runs locally with no egress.
+
+**The Goldfish Problem (Shamsi, 2026)**: LLMs without graph memory are stateless — every session starts from zero. A medium-sized codebase (~10K files) compresses to roughly 12,400 nodes and 38,200 edges (~28:1 compression ratio), making the full structural map fit in a single context window query. For deep detail on graph memory architecture, confidence propagation, the four-layer modern stack, and neurosymbolic patterns, see [Knowledge Graph Memory for AI Agents](./knowledge-graph-memory.md).
 
 ---
 
@@ -383,6 +385,7 @@ Most production systems combine multiple strategies:
 
 ## See Also
 
+- [Knowledge Graph Memory for AI Agents](knowledge-graph-memory.md) — the complete guide to graph-based persistent memory: Goldfish Problem, confidence propagation, HybridRAG, neurosymbolic patterns, Graphify
 - [Four Memory Types](functional-tiers.md)
 - [Short-term / Working Memory Management](short-term.md)
 - [Agent Memory README](README.md)
@@ -396,6 +399,7 @@ Most production systems combine multiple strategies:
 
 ## References
 
+- [*The Memory Layer* — Safi Shamsi (2026)](https://pypi.org/project/graphify/) — "Knowledge Graphs, AI Agents, and the 48-Hour Tool That Caught Elon's Eye"; covers the Goldfish Problem, graph types (weighted, directed, multigraph, hyperedge), GraphRAG/HybridRAG, confidence propagation, Leiden community detection, neurosymbolic architecture, and Graphify's four-layer stack
 - [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AWS "Building Agentic Systems on AWS" series; covers memory taxonomy, vector store selection (HNSW vs IVF+PQ), Graph RAG with Neo4j, Redis/MongoDB hot-cold handoff, AgentCore Memory extraction tiers, and memory governance
 - [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) — Park et al. (Stanford/Google, 2023); foundational paper for Reflection/Consolidation strategy
 - [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) — Packer et al. (UC Berkeley, 2023); OS-inspired working memory management, basis for Letta

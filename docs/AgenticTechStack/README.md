@@ -61,6 +61,7 @@ Agents' ability to spin up fully-isolated environments to safely execute AI-gene
 
 ### Web Search and Data Extraction
 - **AgentQL**: [AgentQL.com](https://www.agentql.com/) - Query language and Playwright integrations for interacting with elements and extracting data quickly
+- **Lightpanda**: [github.com/lightpanda-io/browser](https://github.com/lightpanda-io/browser) — Headless browser built from scratch in Zig for AI agents and automation. Not a Chromium fork: 16× less memory (123 MB vs 2 GB peak for 100 pages) and 9× faster execution (5 s vs 46 s) than headless Chrome on the same benchmark workload. Exposes a CDP server (drop-in replacement for Chrome DevTools Protocol), WebDriver Bidi, and an MCP server, so existing Puppeteer/Playwright scripts connect without code changes. Native `lightpanda agent` mode drives the browser with natural-language commands and outputs a **PandaScript** (vanilla JS with browser primitives) that can be replayed deterministically without an LLM at runtime — useful for prototyping with an LLM and shipping the script to production. Supports Anthropic, OpenAI, Gemini, Vertex AI, Mistral, OpenRouter, Ollama, and any OpenAI-compatible endpoint. Apache 2.0. Available via Homebrew, AUR, Docker, and pre-built binaries for Linux/macOS.
 
 ### Context Engines for Coding Agents
 - **Unblocked**: [getunblocked.com](https://getunblocked.com/) - AI "context engine" that indexes a codebase alongside its documentation, tickets, and team conversations into a knowledge graph, surfaced to coding agents and developers via Slack, terminal, web, and MCP. Raised a $20M Series A; positions itself as the missing institutional-knowledge layer that pure code-search tools lack — answering "why" a piece of code exists, not just "what" it does.
@@ -133,3 +134,4 @@ For full radar assessments, decision criteria, and selection guidance see **[Age
 
 - [Unblocked](https://getunblocked.com/) — AI context engine indexing codebase, docs, tickets, and conversations into a knowledge graph
 - [Novu — GitHub](https://github.com/novuhq/novu) — Open-source Agent Communication Infrastructure connecting agents to messaging channels
+- [Lightpanda — GitHub](https://github.com/lightpanda-io/browser) — Headless browser built in Zig for AI agents; 16× less memory, 9× faster than headless Chrome; CDP/Bidi/MCP server; native agent mode with PandaScript output

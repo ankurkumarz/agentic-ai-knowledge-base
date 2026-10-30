@@ -71,6 +71,19 @@ The user operates as the board of directors:
 
 ---
 
+## Four Pillars
+
+Paperclip's product is organized around four operational pillars:
+
+| Pillar | Primary users | Key capabilities |
+|---|---|---|
+| **Agentic Task Manager** | Everyone, daily | Tasks, approvals & review gates; proactive agent coworkers; auditable routines & workflows; verify from diffs, screenshots & tests |
+| **Org Chart for Agents** | Managers | Mixed human + agent org chart; responsibilities, delegation, specialization; governance: who can do what; scoped secrets & company boundaries; connection permissions & responsible-user identities |
+| **Agent Employee Training** | Enablers | Skill Studio & shared org-wide skills; evals & saved test runs; active learning loops & quality metrics; performance reviews for agents; saved test inputs; skill version history & restore; reusable team templates |
+| **Agentic OS** | IT & platform | Cross-provider runtime: any model, any agent; sandboxing, integrations & MCP servers; SSO, GRC, RBAC & cost controls; data privacy, internal trace collection, compounding data value; personal & shared app connections; run history & opt-in tracing |
+
+---
+
 ## Architecture
 
 | Component | Detail |
@@ -85,18 +98,22 @@ The user operates as the board of directors:
 
 ### Bring Your Own Agent
 
-Paperclip supports any agent that can receive a heartbeat:
+Paperclip supports any agent that can receive a heartbeat. The full confirmed roster includes:
 
 | Agent | Notes |
 |---|---|
-| Claude Code | Anthropic coding agent |
-| Codex | OpenAI coding agent |
-| Cursor | IDE-embedded coding agent |
-| Gemini | Google LLM-backed agent |
-| Hermes | Nous Research personal agent |
+| Claude Code | Anthropic agentic coding agent |
 | OpenClaw | Local-first personal agent |
-| Pi | Inflection AI conversational agent |
-| OpenCode | Open-source coding agent |
+| Codex | OpenAI cloud coding agent |
+| Cursor + Cloud | IDE-embedded + cloud agent |
+| Gemini CLI | Google terminal coding agent |
+| OpenCode | Open-source terminal coding agent |
+| Pi | earendil.works minimal CLI agent |
+| Hermes + Gateway | Nous Research personal agent with gateway routing |
+| Grok Build | xAI coding agent |
+| Kimi Code | Moonshot AI coding agent |
+
+Custom processes, HTTP endpoints, and external adapter packages extend the roster further.
 
 Adapters connect Paperclip to whatever execution environment the agent uses (Claude Code sessions, OpenClaw bots, Python scripts, shell commands, HTTP webhooks).
 
@@ -147,6 +164,7 @@ Paperclip sits one layer above individual agents — it is the company operating
 - Governance controls scope what agents can do *to Paperclip* (e.g., hiring); securing the agents themselves (prompt injection, credential handling) remains the user's responsibility
 - Continuous agent mode requires the user to configure the agent's own security boundaries independently
 - Local embedded Postgres simplifies setup but limits horizontal scaling without migration to external Postgres
+- **Paperclip Cloud** (always-on hosted mode) is on the roadmap — a waitlist is open but the hosted tier is not yet generally available as of October 2026
 
 ---
 

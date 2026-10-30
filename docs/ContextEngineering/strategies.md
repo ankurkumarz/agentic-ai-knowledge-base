@@ -83,7 +83,23 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 - Claude Code's subagents are deliberately limited to answering questions, not writing code, precisely because they lack the main agent's full context.
 - Multi-agent parallelism is best suited to breadth-first tasks (research, information gathering) rather than tasks with many interdependencies (most coding tasks).
 
-## Strategy 5: Cache Context
+## Strategy 5a: Cache Engineering (KV-Layer Control)
+
+**Core idea**: Rather than modifying the text trajectory (which triggers expensive re-prefill), agents directly control their active KV cache using `drop` and `repos` operations, retaining all text while reducing attention scope.
+
+**Usage**: Long-horizon agent loops with repeated tool calls; cost reduction without accuracy loss; trajectories approaching position limits.
+
+**How it works**: Cache engineering (Fu et al., Tsinghua 2026) introduces three primitive operations: `append` (standard KV update), `drop` (excludes selected KV entries from future attention without removing the token), and `repos` (repositions retained keys' position encodings via RoPE rotation to prevent index exhaustion). The text trajectory is never modified, so no re-prefill is required for retained context.
+
+**Why this matters**: Context engineering's core dilemma is re-prefill cost vs. information retention — editing earlier context invalidates all downstream KV states. Cache engineering bypasses this entirely by operating on the KV layer.
+
+**Production results**: Tool-response rolling-drop policy (drop older tool-response KV, retain reasoning and recent rounds) reduces average cost by **27.7%** and improves average benchmark scores by **1.7 points** vs. threshold-triggered summarization, across 3 LLMs and 4 agent benchmarks (BCP, GAIA-Text, xbench-DS, SWE-Verified). The AKV serving engine achieves **1.2× throughput** and **1.5× P95 latency speedup**. Recursive self-improvement (RSI) of cache policies adds a further **7.1% cost reduction** over expert design.
+
+**Serving consideration**: Cache states are history-dependent — identical token sequences produce different KV states under different `drop` orderings. Standard prefix caching is insufficient; the AKV engine extends the radix tree with drop nodes to handle this correctly.
+
+See [Cache Engineering for Agents](./cache-engineering.md) for full detail.
+
+## Strategy 5b: Prompt Cache Context
 
 **Core idea**: Store frequently used context elements (system prompts, tool descriptions, agent instructions) in a cache to reduce cost and latency.
 
@@ -106,7 +122,8 @@ Lance Martin (LangChain) groups the strategies into four buckets: **write, selec
 | Reduce (Compaction) | Long conversations, agent handoffs | Information loss | Claude Code auto-compact, LangGraph DeepAgent, Cognition fine-tuned summarizer |
 | Retrieve (RAG) | Large knowledge bases, dynamic data, many tools | Latency, retrieval quality | Claude Code just-in-time, Tool RAG, Windsurf code retrieval |
 | Isolate (Multi-agent) | Breadth-first research, parallelizable tasks | Context clash, 15x token cost | Anthropic researcher, HuggingFace CodeAgent |
-| Cache | Stable system prompts, repeated tool descriptions | Cache invalidation, prefix instability | Manus KV-cache, Gemini Context Caching |
+| Cache Engineering (KV) | Long tool-heavy trajectories; break accuracy-cost tradeoff | History-dependent serving requires AKV-style engine | Tool-response rolling-drop (Fu et al., 2026); RSI policy refinement |
+| Prompt Cache | Stable system prompts, repeated tool descriptions | Cache invalidation, prefix instability | Manus KV-cache, Gemini Context Caching |
 
 ## Cost-Performance Trade-offs Across Strategies
 
@@ -169,6 +186,7 @@ Only after mastering fundamentals:
 - [Building Your Own Software Factory](../SoftwareAIFactory/building-your-own-software-factory.md): runnable environments, isolated agents, verification, and feedback loops.
 - [Efficiency Frontier: Cost-Performance Optimization](./efficiency-frontier.md)
 - [Key Challenges in Context Management](./challenges.md)
+- [Cache Engineering for Agents](./cache-engineering.md) — KV-layer cache control; breaks the re-prefill dilemma without modifying the text trajectory
 - [Manus Context Engineering](./manus.md)
 - [Anthropic Multi-Agent Research System](./anthropic.md)
 - [LangGraph Context Engineering](./langgraph.md)
@@ -181,6 +199,7 @@ Only after mastering fundamentals:
 
 ## References
 
+- [Cache Engineering for Agents — Fu et al., arXiv:2610.28577 (Tsinghua University, October 2026)](https://arxiv.org/abs/2610.28577) — KV-layer `drop`/`repos` operations; AKV serving engine; 27.7% cost reduction + 1.7-point accuracy gain vs. summarization
 - [Building your own software factory](https://youtu.be/rnDm57Py54A?is=bkOS_zVfmSgXgxSz): Eric Zakariasson, Cursor; workshop and Q&A on delegated software delivery.
 - [The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management](https://arxiv.org/abs/2605.23071) — Shen et al., May 2026
 - [Context Engineering for Agents — Lance Martin, LangChain](https://rlancemartin.github.io/2025/06/23/context_engineering/)
