@@ -162,8 +162,11 @@ One signal points specifically to new system-of-record opportunities:
 | Incumbent lock-in | Existing systems of record will restrict API access and raise egress fees | Build in the execution path at commit time; incumbents cannot insert themselves into an orchestration layer they were never part of |
 | Precedent reuse | Same edge cases re-litigated every quarter | Captured decision traces become searchable precedent; automate similar cases progressively as the library grows |
 
+---
+
 ## See Also
 
+- [Building Context Graphs with Neo4j](./neo4j-context-graph.md) — `create-context-graph` CLI and NAMS managed memory service
 - [Context Engineering Challenges](./challenges.md) — context rot, poisoning, distraction, confusion, clash
 - [Context Engineering Strategies](./strategies.md) — offload, reduce, retrieve, isolate, cache
 - [Agent Memory Management](../AgentMemory/README.md) — persistent memory strategies including episodic and semantic memory
@@ -176,3 +179,5 @@ One signal points specifically to new system-of-record opportunities:
 
 - [Context Graphs — AI's Trillion-Dollar Opportunity](https://foundationcapital.com/ideas/context-graphs-ais-trillion-dollar-opportunity) — Foundation Capital essay on context graphs as the durable decision-trace layer for agentic enterprise systems (2025)
 - [Context Graph (arXiv:2406.11160v3)](https://arxiv.org/html/2406.11160v3) — Xu et al., IDEA Research: formal definition of Context Graphs, CGR³ reasoning paradigm, and benchmark results on KGC and KGQA tasks (2024)
+- [create-context-graph (GitHub)](https://github.com/neo4j-labs/create-context-graph) — Neo4j Labs CLI scaffolding tool for domain-specific context graph apps with 8 agent frameworks and 27 industry domains
+- [A Tour of the Neo4j Agent Memory Service (NAMS)](https://neo4j.com/blog/genai/a-tour-of-the-neo4j-agent-memory-service-nams/) — Neo4j walkthrough of NAMS: three-memory-type architecture, console tabs, HITL resolution, ontology management, and platform integrations

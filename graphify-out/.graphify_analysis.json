@@ -1,131 +1,310 @@
 {
   "communities": {
     "0": [
-      "docs_agenticframeworks_crewai_crewai",
-      "docs_agenticframeworks_freephdlabor_ai_scientist_v2",
-      "docs_agenticframeworks_freephdlabor_arxiv_2510_15624",
-      "docs_agenticframeworks_freephdlabor_freephdlabor",
-      "docs_agenticframeworks_freephdlabor_github_ltjed_freephdlabor",
-      "docs_agenticframeworks_freephdlabor_llm_config_yaml",
-      "docs_agenticframeworks_freephdlabor_phoenix",
-      "docs_agenticframeworks_freephdlabor_smolagents",
-      "docs_agenticframeworks_google_adk_google_adk",
-      "docs_agenticframeworks_haystack_chroma",
-      "docs_agenticframeworks_haystack_deepset",
-      "docs_agenticframeworks_haystack_haystack",
-      "docs_agenticframeworks_haystack_huggingface",
-      "docs_agenticframeworks_haystack_marqo",
-      "docs_agenticframeworks_haystack_openai",
-      "docs_agenticframeworks_index_index",
-      "docs_agenticframeworks_langchain_langchain",
-      "docs_agenticframeworks_langgraph_langgraph",
-      "docs_agenticframeworks_llamaindex_liteparse",
-      "docs_agenticframeworks_llamaindex_llamaindex",
-      "docs_agenticframeworks_llamaindex_llamaparse",
-      "docs_agenticframeworks_mastra_mastra",
-      "docs_agenticframeworks_microsoft_framework_autogen",
-      "docs_agenticframeworks_microsoft_framework_microsoft_agent_framework",
-      "docs_agenticframeworks_pydantic_ai_pydantic_ai",
-      "docs_agenticframeworks_semantic_kernel_semantic_kernel",
-      "docs_agenticframeworks_solutions_solutions",
-      "docs_agentictechstack_thoughtworks_radar_vol34_thoughtworks_radar_vol34",
-      "docs_architecture_multi_agent_system_multi_agent_system"
+      "docs_standards_mcp_foundation_donation",
+      "docs_standards_mcp_implementation_guide",
+      "docs_standards_mcp_integration_with_a2a_protocol",
+      "docs_standards_mcp_mcp_ecosystem",
+      "docs_standards_mcp_model_context_protocol_mcp",
+      "docs_standards_mcp_protocol_specifications",
+      "docs_standards_mcp_research_and_development",
+      "docs_standards_mcp_technical_architecture",
+      "docs_standards_w3c_agent_protocol_published_drafts",
+      "docs_standards_w3c_agent_protocol_relationship_to_other_standards",
+      "docs_standards_w3c_agent_protocol_scope_of_work",
+      "docs_standards_w3c_agent_protocol_strategic_significance",
+      "docs_standards_w3c_agent_protocol_w3c_ai_agent_protocol_community_group",
+      "docs_standards_w3c_agent_protocol_who_should_engage",
+      "docs_workflowbuilders_claude_orchestration_guide_capability_orchestration_composition_patterns",
+      "docs_workflowbuilders_claude_orchestration_guide_claude_code_orchestration_primitives_decision_guide",
+      "docs_workflowbuilders_claude_orchestration_guide_decision_flowchart",
+      "docs_workflowbuilders_claude_orchestration_guide_mcp_the_capability_layer_not_an_orchestration_choice",
+      "docs_workflowbuilders_claude_orchestration_guide_summary_decision_table",
+      "docs_workflowbuilders_claude_orchestration_guide_the_primitives_at_a_glance",
+      "docs_workflowbuilders_claude_orchestration_guide_when_to_use_each_primitive",
+      "docs_workflowbuilders_dynamic_workflows_architecture_and_runtime",
+      "docs_workflowbuilders_dynamic_workflows_bundled_and_saved_workflows",
+      "docs_workflowbuilders_dynamic_workflows_comparison_with_perplexity_search_as_code",
+      "docs_workflowbuilders_dynamic_workflows_dynamic_workflows_claude_code",
+      "docs_workflowbuilders_dynamic_workflows_orchestration_primitives_compared",
+      "docs_workflowbuilders_dynamic_workflows_the_plan_in_code_pattern",
+      "docs_workflowbuilders_open_source_community_and_support",
+      "docs_workflowbuilders_open_source_comparison_matrix",
+      "docs_workflowbuilders_open_source_major_open_source_platforms",
+      "docs_workflowbuilders_open_source_open_source_workflow_engines_mit_or_apache",
+      "docs_workflowbuilders_open_source_technical_considerations",
+      "docs_workflowbuilders_orchestration_comparison_with_other_orchestration_solutions",
+      "docs_workflowbuilders_orchestration_major_orchestration_platforms",
+      "docs_workflowbuilders_orchestration_workflow_orchestration",
+      "docs_workflowbuilders_readme_comparison_with_other_workflow_solutions",
+      "docs_workflowbuilders_readme_major_saas_no_code_platforms",
+      "docs_workflowbuilders_readme_saas_no_code_workflow_solutions",
+      "docs_workflowbuilders_readme_selection_criteria",
+      "docs_workflowbuilders_self_hosted_comparison_with_other_platforms",
+      "docs_workflowbuilders_self_hosted_major_platforms",
+      "docs_workflowbuilders_self_hosted_self_hosted_limited_open_source"
     ],
     "1": [
-      "docs_EvaluationFrameworks_platforms_agent_evaluation_platforms",
-      "docs_EvaluationFrameworks_tech_radar_evaluation_tech_radar",
-      "docs_Marketplace_Readme_agents_marketplace",
-      "docs_Marketplace_agentops_agentops_marketplace",
-      "docs_Marketplace_anthropic_marketplace_presence_anthropic_agents_marketplace_presence",
-      "docs_Marketplace_aws_marketplace_aws_ai_agents_marketplace",
-      "docs_Marketplace_google_cloud_marketplace_google_cloud_agents_marketplace_agent_gallery",
-      "docs_Observability_Readme_agent_observability",
-      "platform_agentpex",
-      "platform_agenttrace",
-      "platform_aws_agent_evalkit",
-      "platform_aws_bedrock_evaluations",
-      "platform_azure_ai_foundry_evaluation",
-      "platform_braintrust",
-      "platform_deepeval",
-      "platform_galileo",
-      "platform_google_llm_evalkit",
-      "platform_google_stax",
-      "platform_harbor",
-      "platform_langchain_openevals",
-      "platform_langfuse",
-      "platform_langsmith",
-      "platform_lastmile_ai",
-      "platform_meta_mlgym",
-      "platform_mlflow_llm_evaluate",
-      "platform_openlit",
-      "platform_opentelemetry",
-      "platform_ragas"
+      "docs_productionbestpractices_deployment_deployment",
+      "docs_productionbestpractices_deployment_evaluation_gated_deployment",
+      "docs_productionbestpractices_deployment_three_phase_ci_cd_pipeline_google_agentops",
+      "docs_productionbestpractices_observability_key_metrics_reference",
+      "docs_productionbestpractices_observability_observability",
+      "docs_productionbestpractices_observability_trace_grading",
+      "docs_productionbestpractices_security_agent_security",
+      "docs_productionbestpractices_security_layered_guardrail_taxonomy",
+      "docs_productionbestpractices_security_security_response_playbook",
+      "docs_productionbestpractices_state_memory_event_sourcing_for_multi_agent_state_consistency_confluent_pattern",
+      "docs_productionbestpractices_state_memory_memory_governance_lineage_retention_pii_right_to_delete",
+      "docs_productionbestpractices_state_memory_state_memory_management",
+      "docs_productionbestpractices_testing_evaluations_agent_testing_evaluations",
+      "docs_productionbestpractices_testing_evaluations_launch_gates",
+      "docs_productionbestpractices_testing_evaluations_measuring_non_determinism_pass_k_and_pass_k",
+      "docs_securityframeworks_agent_governance_toolkit_conformance_testing",
+      "docs_securityframeworks_agent_governance_toolkit_microsoft_agent_governance_toolkit",
+      "docs_securityframeworks_agent_governance_toolkit_owasp_agentic_top_10_coverage",
+      "docs_securityframeworks_agent_sandboxing_agent_sandboxing",
+      "docs_securityframeworks_agent_sandboxing_isolation_taxonomy",
+      "docs_securityframeworks_agent_sandboxing_selection_guide",
+      "docs_securityframeworks_anthropic_sandbox_runtime_anthropic_sandbox_runtime",
+      "docs_securityframeworks_anthropic_sandbox_runtime_architecture",
+      "docs_securityframeworks_anthropic_sandbox_runtime_primary_use_case_sandboxing_mcp_servers",
+      "docs_securityframeworks_nist_ai_rmf_integration",
+      "docs_securityframeworks_nist_ai_rmf_nist_ai_rmf_risk_management_framework",
+      "docs_standards_aidlc_ai_driven_development_life_cycle_aidlc",
+      "docs_standards_aidlc_artifact_structure",
+      "docs_standards_aidlc_three_phase_adaptive_workflow",
+      "docs_standards_k8s_agent_sandbox_core_crd_api_reference",
+      "docs_standards_k8s_agent_sandbox_gke_productization_ga_and_agent_substrate",
+      "docs_standards_k8s_agent_sandbox_kubernetes_agent_sandbox",
+      "docs_standards_nist_ai_agent_standards_active_workstreams_as_of_2026",
+      "docs_standards_nist_ai_agent_standards_nist_ai_agent_standards_initiative",
+      "docs_standards_nist_ai_agent_standards_strategic_pillars",
+      "docs_standards_openspec_artifact_structure",
+      "docs_standards_openspec_openspec",
+      "docs_standards_openspec_primary_workflow_opsx_commands",
+      "docs_standards_skills_agent_skills_skills_md",
+      "docs_standards_skills_architecture_and_discovery",
+      "docs_standards_skills_skill_file_format"
     ],
     "2": [
-      "docs_benchmarks_agent-benchmarks_agentbench",
-      "docs_benchmarks_agent-benchmarks_ale-bench",
-      "docs_benchmarks_agent-benchmarks_deepresearch_bench",
-      "docs_benchmarks_agent-benchmarks_finance-agent-v2",
-      "docs_benchmarks_agent-benchmarks_gaia",
-      "docs_benchmarks_agent-benchmarks_longmemeval",
-      "docs_benchmarks_agent-benchmarks_longmemeval_v2",
-      "docs_benchmarks_agent-benchmarks_metr",
-      "docs_benchmarks_agent-benchmarks_osworld",
-      "docs_benchmarks_agent-benchmarks_osworld_verified",
-      "docs_benchmarks_agent-benchmarks_page",
-      "docs_benchmarks_agent-benchmarks_swe-bench",
-      "docs_benchmarks_agent-benchmarks_swe-bench-pro",
-      "docs_benchmarks_agent-benchmarks_tau-bench",
-      "docs_benchmarks_agent-benchmarks_terminal-bench",
-      "docs_benchmarks_agent-benchmarks_terminalbench_2",
-      "docs_benchmarks_agent-benchmarks_terminalbench_2_1",
-      "docs_benchmarks_agent-benchmarks_visualwebarena",
-      "docs_benchmarks_agent-benchmarks_wandr",
-      "docs_benchmarks_llm-benchmarks_page",
-      "docs_designpatterns_event-driven-patterns_page",
-      "docs_evaluationframeworks_ai-as-judge_page",
-      "docs_evaluationframeworks_platforms_harbor",
-      "docs_evaluationframeworks_readme_page",
-      "docs_llm-benchmarks_berkeley_function_calling_leaderboard",
-      "docs_llm-benchmarks_galileo_agent_leaderboard",
-      "docs_llm-benchmarks_lmsys_chatbot_arena",
-      "docs_llm-benchmarks_vellum_board"
+      "docs_agenticframeworks_solutions_page",
+      "docs_agenticframeworks_solutions_radar_assessment_criteria",
+      "docs_agenticframeworks_solutions_selection_guide",
+      "docs_agenticframeworks_solutions_technology_radar",
+      "docs_agentmemory_knowledge_graph_memory_community_detection_leiden_over_louvain",
+      "docs_agentmemory_knowledge_graph_memory_confidence_propagation_along_paths",
+      "docs_agentmemory_knowledge_graph_memory_graph_types_that_matter_for_agent_memory",
+      "docs_agentmemory_knowledge_graph_memory_page",
+      "docs_agentmemory_knowledge_graph_memory_the_goldfish_problem",
+      "docs_allthingsanthropic_readme_key_offerings",
+      "docs_allthingsanthropic_readme_page",
+      "docs_architecture_multi_agent_system_blackboard_architecture",
+      "docs_architecture_multi_agent_system_communication_protocols",
+      "docs_architecture_multi_agent_system_hierarchical_organization",
+      "docs_architecture_multi_agent_system_page",
+      "docs_architecture_multi_agent_system_peer_to_peer_network",
+      "docs_contextengineering_cache_engineering_core_cache_operations",
+      "docs_contextengineering_cache_engineering_page",
+      "docs_contextengineering_cache_engineering_the_akv_serving_engine",
+      "docs_contextengineering_cache_engineering_the_context_engineering_dilemma",
+      "docs_contextengineering_cache_engineering_tool_response_rolling_drop",
+      "docs_contextengineering_strategies_page",
+      "docs_contextengineering_strategies_strategy_1_offload_context_write_to_file_system",
+      "docs_contextengineering_strategies_strategy_2_reduce_context_compaction_summarization",
+      "docs_contextengineering_strategies_strategy_3_retrieve_context_rag_and_just_in_time_loading",
+      "docs_contextengineering_strategies_strategy_4_isolate_context_multi_agent_quarantine",
+      "docs_marketplace_anthropic_marketplace_claude_ai_enterprise",
+      "docs_marketplace_anthropic_marketplace_cloud_provider_marketplaces",
+      "docs_marketplace_anthropic_marketplace_mcp_ecosystem_open_marketplace_equivalent",
+      "docs_marketplace_anthropic_marketplace_page",
+      "docs_marketplace_anthropic_marketplace_partner_and_integration_ecosystem",
+      "docs_marketplace_knowledge_work_plugins_customization",
+      "docs_marketplace_knowledge_work_plugins_knowledge_work_plugins_anthropic",
+      "docs_marketplace_knowledge_work_plugins_plugin_structure",
+      "docs_productionbestpractices_context_engineering_compaction_handoff_format",
+      "docs_productionbestpractices_context_engineering_context_assembly_tiers",
+      "docs_productionbestpractices_context_engineering_context_caching",
+      "docs_productionbestpractices_context_engineering_page",
+      "docs_productionbestpractices_context_engineering_trust_labels"
     ],
     "3": [
-      "docs_agenticframeworks_ai-coding-agents_doc",
-      "docs_agenticframeworks_autogen_doc",
-      "docs_agenticframeworks_autogpt_doc",
-      "docs_agenticframeworks_aws-strands_doc",
-      "docs_agenticframeworks_crewai_doc",
-      "docs_agenticframeworks_flue_doc",
-      "docs_agenticframeworks_langgraph_concept",
-      "docs_agenticframeworks_llamaindex_concept",
-      "docs_agenticframeworks_readme_doc",
-      "docs_agentplatforms_aws-agentcore_doc",
-      "docs_agentplatforms_claude-managed-agents_doc",
-      "docs_agentplatforms_claude-managed-agents_dreaming_feature",
-      "docs_agentplatforms_claude-managed-agents_memory_feature",
-      "docs_agentplatforms_claude-managed-agents_multiagent_feature",
-      "docs_agentplatforms_claude-managed-agents_outcomes_feature",
-      "docs_agentplatforms_databricks-genie_doc",
-      "docs_agentplatforms_gemini-enterprise-agent-platform_doc",
-      "docs_agentplatforms_hermes-agent_doc",
-      "docs_agentplatforms_hermes-agent_nous_hermes_models_concept",
-      "docs_agentplatforms_index_doc",
-      "docs_agentplatforms_lifeos_doc",
-      "docs_agentplatforms_openclaw_clawhavoc_concept",
-      "docs_agentplatforms_openclaw_doc",
-      "docs_agentplatforms_openhuman_doc",
-      "docs_agentplatforms_readme_doc",
-      "docs_agentplatforms_vertex_ai_concept"
+      "docs_architecture_12_factor_agents_12_factor_agents",
+      "docs_architecture_12_factor_agents_i_codebase",
+      "docs_architecture_12_factor_agents_ii_dependencies",
+      "docs_architecture_12_factor_agents_iii_config",
+      "docs_architecture_12_factor_agents_iv_backing_services",
+      "docs_architecture_12_factor_agents_the_twelve_factors",
+      "docs_architecture_12_factor_agents_v_build_release_run",
+      "docs_architecture_12_factor_agents_vi_processes",
+      "docs_architecture_12_factor_agents_vii_port_binding",
+      "docs_architecture_components_selection_agent_anatomy_internal_building_blocks",
+      "docs_architecture_components_selection_agent_framework",
+      "docs_architecture_components_selection_agentic_architecture_components_selection",
+      "docs_architecture_components_selection_architecture_patterns",
+      "docs_architecture_components_selection_core_components",
+      "docs_architecture_components_selection_language_model_layer",
+      "docs_architecture_components_selection_memory_system",
+      "docs_architecture_components_selection_selection_framework",
+      "docs_architecture_components_selection_tool_integration_layer",
+      "docs_designpatterns_arsanjani_patterns_adaptive_retry_with_prompt_mutation",
+      "docs_designpatterns_arsanjani_patterns_agent_composition_topologies",
+      "docs_designpatterns_arsanjani_patterns_agent_router_intent_based_routing",
+      "docs_designpatterns_arsanjani_patterns_agentic_architectural_patterns_arsanjani_bustos",
+      "docs_designpatterns_arsanjani_patterns_auto_healing_agent_resuscitation",
+      "docs_designpatterns_arsanjani_patterns_coordination_patterns",
+      "docs_designpatterns_arsanjani_patterns_delayed_escalation_strategy",
+      "docs_designpatterns_arsanjani_patterns_fractal_chain_of_thought_embedding_fcot",
+      "docs_designpatterns_arsanjani_patterns_incremental_checkpointing",
+      "docs_designpatterns_arsanjani_patterns_instruction_fidelity_auditing",
+      "docs_designpatterns_arsanjani_patterns_parallel_execution_consensus",
+      "docs_designpatterns_arsanjani_patterns_part_1_multi_agent_coordination_patterns",
+      "docs_designpatterns_arsanjani_patterns_part_2_explainability_and_compliance_patterns",
+      "docs_designpatterns_arsanjani_patterns_part_3_robustness_and_fault_tolerance_patterns",
+      "docs_designpatterns_arsanjani_patterns_pattern_composition_for_systemic_reliability",
+      "docs_designpatterns_arsanjani_patterns_pattern_maturity_level_mapping",
+      "docs_designpatterns_arsanjani_patterns_persistent_instruction_anchoring",
+      "docs_designpatterns_arsanjani_patterns_robustness_maturity_spectrum_five_levels",
+      "docs_designpatterns_arsanjani_patterns_shared_epistemic_memory",
+      "docs_designpatterns_arsanjani_patterns_task_delegation_frameworks",
+      "docs_designpatterns_arsanjani_patterns_watchdog_timeout_supervisor"
     ],
     "4": [
+      "docs_evaluationframeworks_ai_as_judge_absolute_scoring",
+      "docs_evaluationframeworks_ai_as_judge_human_judge_validation",
+      "docs_evaluationframeworks_ai_as_judge_page",
+      "docs_evaluationframeworks_ai_as_judge_pairwise_comparison",
+      "docs_evaluationframeworks_ai_as_judge_position_and_length_bias",
+      "docs_evaluationframeworks_ai_as_judge_reference_comparison",
+      "docs_evaluationframeworks_tech_radar_deepeval",
+      "docs_evaluationframeworks_tech_radar_evaluation_radar_rings",
+      "docs_evaluationframeworks_tech_radar_langsmith",
+      "docs_evaluationframeworks_tech_radar_mlflow",
+      "docs_evaluationframeworks_tech_radar_page",
+      "docs_evaluationframeworks_tech_radar_ragas",
+      "docs_observability_goals_behavior_analysis",
+      "docs_observability_goals_cost_management",
+      "docs_observability_goals_page",
+      "docs_observability_goals_quality_assurance",
+      "docs_observability_goals_security_and_compliance",
+      "docs_observability_goals_traces_metrics_logs_evaluations",
+      "docs_observability_otel_genai_conventions_genai_client_spans",
+      "docs_observability_otel_genai_conventions_genai_span_attributes",
+      "docs_observability_otel_genai_conventions_mcp_instrumentation",
+      "docs_observability_otel_genai_conventions_opentelemetry_genai_semantic_conventions",
+      "docs_observability_otel_genai_conventions_token_usage_attributes",
+      "docs_observability_solutions_development_platforms_with_observability",
+      "docs_observability_solutions_opentelemetry_genai_semantic_conventions",
+      "docs_observability_solutions_page",
+      "docs_observability_solutions_selection_guidance",
+      "docs_observability_solutions_specialized_observability_platforms",
+      "docs_observability_tech_radar_agentops",
+      "docs_observability_tech_radar_langfuse",
+      "docs_observability_tech_radar_langsmith",
+      "docs_observability_tech_radar_observability_radar_rings",
+      "docs_observability_tech_radar_opentelemetry",
+      "docs_observability_tech_radar_page",
+      "docs_observability_tech_radar_prometheus_and_grafana",
+      "docs_observability_tech_radar_signoz"
+    ],
+    "5": [
+      "docs_softwareaifactory_ai_native_sdlc_ai_native_sdlc",
+      "docs_softwareaifactory_ai_native_sdlc_cross_cutting_themes",
+      "docs_softwareaifactory_ai_native_sdlc_six_stages_and_plays",
+      "docs_softwareaifactory_ai_native_sdlc_the_core_idea_the_artifact_chain",
+      "docs_softwareaifactory_building_your_own_software_factory_building_your_own_software_factory",
+      "docs_softwareaifactory_building_your_own_software_factory_feedback_loops_and_automations",
+      "docs_softwareaifactory_building_your_own_software_factory_foundation_runnable_accessible_verifiable",
+      "docs_softwareaifactory_building_your_own_software_factory_running_and_scaling_the_factory",
+      "docs_softwareaifactory_devin_devin",
+      "docs_softwareaifactory_devin_factory_oriented_workflows",
+      "docs_softwareaifactory_devin_product_surfaces",
+      "docs_softwareaifactory_factory_ai_adoption_guidance_and_limitations",
+      "docs_softwareaifactory_factory_ai_capabilities_and_execution_model",
+      "docs_softwareaifactory_factory_ai_factory_ai",
+      "docs_softwareaifactory_factory_ai_lifecycle_coverage",
+      "docs_softwareaifactory_openai_software_factory_access_and_provenance",
+      "docs_softwareaifactory_openai_software_factory_openai_s_agentic_software_factory",
+      "docs_softwareaifactory_openai_software_factory_reported_factory_pipeline",
+      "docs_softwareaifactory_openai_software_factory_what_makes_the_example_distinctive",
+      "docs_softwareaifactory_openhands_component_boundaries",
+      "docs_softwareaifactory_openhands_deployment_licensing_and_governance",
+      "docs_softwareaifactory_openhands_lifecycle_integration",
+      "docs_softwareaifactory_openhands_openhands",
+      "docs_softwareaifactory_readme_playbooks_and_platforms",
+      "docs_softwareaifactory_readme_selection_and_adoption_guidance",
+      "docs_softwareaifactory_readme_software_ai_factory",
+      "docs_softwareaifactory_readme_working_model",
+      "docs_softwareaifactory_warp_factories_configuration_and_work_intake",
+      "docs_softwareaifactory_warp_factories_execution_inference_and_credentials",
+      "docs_softwareaifactory_warp_factories_warp_factories",
+      "docs_softwareaifactory_warp_factories_work_items_agents_and_lifecycle"
+    ],
+    "6": [
+      "docs_referencearchitecture_agent0_page",
+      "docs_referencearchitecture_ai_assistant_architecture_action_execution_layer",
+      "docs_referencearchitecture_ai_assistant_architecture_cognitive_processing_layer",
+      "docs_referencearchitecture_ai_assistant_architecture_knowledge_management_layer",
+      "docs_referencearchitecture_ai_assistant_architecture_page",
+      "docs_referencearchitecture_ai_assistant_architecture_second_brain_ai_assistant",
+      "docs_referencearchitecture_ai_automation_hierarchical_agent_structure",
+      "docs_referencearchitecture_ai_automation_inter_agent_messaging",
+      "docs_referencearchitecture_ai_automation_langmanus",
+      "docs_referencearchitecture_ai_automation_page",
+      "docs_referencearchitecture_ai_automation_shared_memory",
+      "docs_referencearchitecture_langmanus_page",
+      "docs_referencearchitecture_readme_capabilities",
+      "docs_referencearchitecture_readme_governance",
+      "docs_referencearchitecture_readme_orchestration",
+      "docs_referencearchitecture_readme_page",
+      "docs_referencearchitecture_self_learning_agents_agent0",
+      "docs_referencearchitecture_self_learning_agents_curriculum_agent",
+      "docs_referencearchitecture_self_learning_agents_dreaming",
+      "docs_referencearchitecture_self_learning_agents_executor_agent",
+      "docs_referencearchitecture_self_learning_agents_outcomes",
+      "docs_referencearchitecture_self_learning_agents_page",
+      "docs_referencearchitecture_specialized_blueprints_content_synthesis",
+      "docs_referencearchitecture_specialized_blueprints_cross_modal_retrieval",
+      "docs_referencearchitecture_specialized_blueprints_page",
+      "docs_referencearchitecture_specialized_blueprints_video_ingestion",
+      "docs_referencearchitecture_specialized_blueprints_video_search_and_summarization_agent"
+    ],
+    "7": [
+      "docs_promptengineering_gepa_full_traces",
+      "docs_promptengineering_gepa_gepa",
+      "docs_promptengineering_gepa_page",
+      "docs_promptengineering_gepa_pareto_frontier",
+      "docs_promptengineering_gepa_reflective_mutation",
+      "docs_promptengineering_readme_defensive_prompt_engineering",
+      "docs_promptengineering_readme_few_shot",
+      "docs_promptengineering_readme_in_context_learning",
+      "docs_promptengineering_readme_page",
+      "docs_promptengineering_readme_prompt_decomposition",
+      "docs_promptengineering_readme_structured_outputs",
+      "docs_promptengineering_readme_system_prompt",
+      "docs_promptengineering_readme_version_your_prompts",
+      "docs_promptengineering_skillopt_best_skill_md",
+      "docs_promptengineering_skillopt_held_out_selection_gate",
+      "docs_promptengineering_skillopt_page",
+      "docs_promptengineering_skillopt_rejected_edit_buffer",
+      "docs_promptengineering_skillopt_skill_document_as_trainable_state",
+      "docs_promptengineering_skillopt_text_space_optimization_loop",
+      "docs_referencearchitecture_ai_engineering_architecture_caches",
+      "docs_referencearchitecture_ai_engineering_architecture_enhance_context",
+      "docs_referencearchitecture_ai_engineering_architecture_input_guardrails",
+      "docs_referencearchitecture_ai_engineering_architecture_model_gateway",
+      "docs_referencearchitecture_ai_engineering_architecture_model_router",
+      "docs_referencearchitecture_ai_engineering_architecture_output_guardrails",
+      "docs_referencearchitecture_ai_engineering_architecture_page"
+    ],
+    "8": [
       "tests_test_section_completeness",
       "tests_test_section_completeness_py_given",
       "tests_test_section_completeness_py_settings",
       "tests_test_section_completeness_rationale_145",
       "tests_test_section_completeness_rationale_172",
       "tests_test_section_completeness_rationale_190",
+      "tests_test_section_completeness_rationale_2",
       "tests_test_section_completeness_rationale_214",
       "tests_test_section_completeness_rationale_22",
       "tests_test_section_completeness_rationale_237",
@@ -146,39 +325,14 @@
       "tests_test_section_completeness_testsectioncompleteness_test_link_preservation_in_content",
       "tests_test_section_completeness_testsectioncompleteness_test_navigation_references_preserved_content"
     ],
-    "5": [
-      "docs_agentharness_agent-harness_page",
-      "docs_agentharness_code-as-agent-harness_survey_paper",
-      "docs_agentharness_harness-optimization_meta-harness_paper",
-      "docs_agentharness_loop-engineering_page",
-      "docs_aicodingagents_ai-coding-agents_antigravity_cli",
-      "docs_aicodingagents_ai-coding-agents_cline",
-      "docs_aicodingagents_ai-coding-agents_databricks_genie_code",
-      "docs_aicodingagents_ai-coding-agents_devin",
-      "docs_aicodingagents_ai-coding-agents_gemini_cli",
-      "docs_aicodingagents_ai-coding-agents_goose",
-      "docs_aicodingagents_ai-coding-agents_kiro",
-      "docs_aicodingagents_ai-coding-agents_openai_codex",
-      "docs_aicodingagents_ai-coding-agents_opencode",
-      "docs_aicodingagents_ai-coding-agents_page",
-      "docs_aicodingagents_ai-coding-agents_snowflake_coco",
-      "docs_aicodingagents_claude-code_claude_code",
-      "docs_aicodingagents_claude-code_plugin_bmad_method",
-      "docs_aicodingagents_claude-code_plugin_graphify",
-      "docs_aicodingagents_claude-code_plugin_neuralmind",
-      "docs_aicodingagents_claude-code_plugin_ponytail",
-      "docs_aicodingagents_claude-code_plugin_superpowers",
-      "docs_standards_agent-client-protocol_page",
-      "docs_standards_mcp_page",
-      "docs_standards_skills_page"
-    ],
-    "6": [
+    "9": [
       "tests_test_mkdocs_config",
       "tests_test_mkdocs_config_py_given",
       "tests_test_mkdocs_config_py_settings",
       "tests_test_mkdocs_config_rationale_127",
       "tests_test_mkdocs_config_rationale_145",
       "tests_test_mkdocs_config_rationale_162",
+      "tests_test_mkdocs_config_rationale_2",
       "tests_test_mkdocs_config_rationale_21",
       "tests_test_mkdocs_config_rationale_25",
       "tests_test_mkdocs_config_rationale_31",
@@ -197,12 +351,13 @@
       "tests_test_mkdocs_config_testmkdocsconfiguration_test_required_mkdocs_fields_present",
       "tests_test_mkdocs_config_testmkdocsconfiguration_test_yaml_structure_integrity"
     ],
-    "7": [
+    "10": [
       "tests_test_vendor_consistency",
       "tests_test_vendor_consistency_py_given",
       "tests_test_vendor_consistency_py_settings",
       "tests_test_vendor_consistency_rationale_137",
       "tests_test_vendor_consistency_rationale_167",
+      "tests_test_vendor_consistency_rationale_2",
       "tests_test_vendor_consistency_rationale_21",
       "tests_test_vendor_consistency_rationale_25",
       "tests_test_vendor_consistency_rationale_37",
@@ -220,7 +375,74 @@
       "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_section_completeness",
       "tests_test_vendor_consistency_testvendorsectionconsistency_test_vendor_section_consistency_property"
     ],
-    "8": [
+    "11": [
+      "docs_designpatterns_event_driven_patterns_blackboard_pattern",
+      "docs_designpatterns_event_driven_patterns_event_sourcing",
+      "docs_designpatterns_event_driven_patterns_hierarchical_agent_pattern",
+      "docs_designpatterns_event_driven_patterns_kafka_consumer_groups",
+      "docs_designpatterns_event_driven_patterns_market_based_pattern",
+      "docs_designpatterns_event_driven_patterns_orchestrator_worker_pattern",
+      "docs_designpatterns_event_driven_patterns_page",
+      "docs_designpatterns_gartner_patterns_agent_to_agent_handoff",
+      "docs_designpatterns_gartner_patterns_dynamic_plan",
+      "docs_designpatterns_gartner_patterns_page",
+      "docs_designpatterns_gartner_patterns_prescribed_plan",
+      "docs_designpatterns_gartner_patterns_react",
+      "docs_designpatterns_gartner_patterns_security_patterns",
+      "docs_designpatterns_gartner_patterns_solo_agent",
+      "docs_designpatterns_openai_patterns_decentralized_pattern",
+      "docs_designpatterns_openai_patterns_guardrails",
+      "docs_designpatterns_openai_patterns_human_in_the_loop",
+      "docs_designpatterns_openai_patterns_manager_pattern",
+      "docs_designpatterns_openai_patterns_model_tools_instructions",
+      "docs_designpatterns_openai_patterns_page",
+      "docs_designpatterns_openai_patterns_single_agent_pattern"
+    ],
+    "12": [
+      "docs_aigovernance_governance_best_practices_audit_trail_requirements",
+      "docs_aigovernance_governance_best_practices_bias_and_fairness_monitoring",
+      "docs_aigovernance_governance_best_practices_data_governance",
+      "docs_aigovernance_governance_best_practices_google_agentic_roi_framework",
+      "docs_aigovernance_governance_best_practices_governance_best_practices",
+      "docs_aigovernance_governance_best_practices_governance_metrics",
+      "docs_aigovernance_governance_best_practices_human_in_the_loop_hitl_controls",
+      "docs_aigovernance_governance_best_practices_incident_response",
+      "docs_aigovernance_governance_best_practices_model_and_prompt_versioning",
+      "docs_aigovernance_governance_best_practices_red_teaming_and_adversarial_testing",
+      "docs_aigovernance_governance_solutions_commercial_governance_platforms",
+      "docs_aigovernance_governance_solutions_governance_solutions",
+      "docs_aigovernance_governance_solutions_integration_patterns",
+      "docs_aigovernance_governance_solutions_open_source_tools",
+      "docs_aigovernance_governance_solutions_solution_selection_criteria",
+      "docs_aigovernance_governance_solutions_vendor_native_governance_offerings",
+      "docs_aigovernance_overview_ai_governance",
+      "docs_aigovernance_overview_key_topics",
+      "docs_aigovernance_overview_scope",
+      "docs_aigovernance_overview_why_governance_matters_for_agentic_ai"
+    ],
+    "13": [
+      "docs_securityframeworks_agent_identity_agent_identity",
+      "docs_securityframeworks_agent_identity_case_study_google_cloud_agent_identity",
+      "docs_securityframeworks_agent_identity_comparing_identity_models",
+      "docs_securityframeworks_agent_identity_key_concepts",
+      "docs_securityframeworks_berkeley_agentic_ai_risk_profile_four_risk_management_functions",
+      "docs_securityframeworks_berkeley_agentic_ai_risk_profile_from_model_risk_to_system_risk",
+      "docs_securityframeworks_berkeley_agentic_ai_risk_profile_high_priority_subcategories",
+      "docs_securityframeworks_berkeley_agentic_ai_risk_profile_uc_berkeley_agentic_ai_risk_management_standards_profile",
+      "docs_securityframeworks_openshell_enforcement_and_policy_model",
+      "docs_securityframeworks_openshell_key_concepts_architecture",
+      "docs_securityframeworks_openshell_openshell_nvidia",
+      "docs_securityframeworks_openshell_platforms_and_deployment",
+      "docs_softwareaifactory_building_the_agentic_enterprise_building_the_agentic_enterprise",
+      "docs_softwareaifactory_building_the_agentic_enterprise_llm_applications_vs_agentic_systems",
+      "docs_softwareaifactory_building_the_agentic_enterprise_the_poc_trap_and_the_day_2_problem",
+      "docs_softwareaifactory_building_the_agentic_enterprise_the_three_pillars_of_agentic_engineering",
+      "docs_standards_spiffe_spire_governance_and_status",
+      "docs_standards_spiffe_spire_key_concepts_architecture",
+      "docs_standards_spiffe_spire_spiffe_and_spire",
+      "docs_standards_spiffe_spire_where_spiffe_appears_in_this_wiki"
+    ],
+    "14": [
       "scripts_okf_frontmatter",
       "scripts_okf_frontmatter_build_frontmatter",
       "scripts_okf_frontmatter_extract_description",
@@ -234,6 +456,7 @@
       "scripts_okf_frontmatter_rationale_177",
       "scripts_okf_frontmatter_rationale_182",
       "scripts_okf_frontmatter_rationale_192",
+      "scripts_okf_frontmatter_rationale_2",
       "scripts_okf_frontmatter_rationale_228",
       "scripts_okf_frontmatter_rationale_233",
       "scripts_okf_frontmatter_rationale_248",
@@ -241,44 +464,104 @@
       "scripts_okf_frontmatter_slug_to_title",
       "scripts_okf_frontmatter_yaml_str"
     ],
-    "9": [
-      "docs_standards_agents_md_agents_md",
-      "docs_standards_aidlc_aidlc",
-      "docs_standards_csa_csa",
-      "docs_standards_index_index",
-      "docs_standards_k8s_agent_sandbox_k8s_agent_sandbox",
-      "docs_standards_mcp_mcp",
-      "docs_standards_open_knowledge_format_open_knowledge_format",
-      "docs_standards_openspec_openspec",
-      "docs_standards_skills_skills",
-      "docs_wizard_index_index",
-      "docs_wizard_readme_recommendation_wizard",
-      "docs_workflowbuilders_business_process_business_process",
-      "docs_workflowbuilders_claude_orchestration_guide_claude_orchestration_guide",
-      "docs_workflowbuilders_dynamic_workflows_dynamic_workflows",
-      "docs_workflowbuilders_open_source_open_source",
-      "docs_workflowbuilders_orchestration_orchestration",
-      "docs_workflowbuilders_readme_saas_no_code",
-      "docs_workflowbuilders_self_hosted_self_hosted"
+    "15": [
+      "docs_agentplatforms_microsoft_azure_architecture_components",
+      "docs_agentplatforms_microsoft_azure_documentation_and_resources",
+      "docs_agentplatforms_microsoft_azure_getting_started",
+      "docs_agentplatforms_microsoft_azure_integration_patterns",
+      "docs_agentplatforms_microsoft_azure_key_features",
+      "docs_agentplatforms_microsoft_azure_microsoft_azure_ai_agent_service",
+      "docs_agentplatforms_microsoft_azure_microsoft_build_2026_updates",
+      "docs_agentplatforms_microsoft_azure_pricing_and_cost_management",
+      "docs_agentplatforms_microsoft_azure_security_and_compliance",
+      "docs_agentplatforms_microsoft_azure_use_cases",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_agent_skills_for_power_bi",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_azure_cosmos_db_announcements",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_azure_horizondb_public_preview",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_azure_sql_sql_server_agentic_tooling",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_fabric_iq_generally_available",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_gpu_accelerated_fabric_data_warehouse",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_microsoft_build_2026_fabric_databases_for_agentic_apps",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_microsoft_iq_unified_intelligence_layer",
+      "docs_agentplatforms_microsoft_fabric_databases_2026_rayfin_public_preview"
     ],
-    "10": [
-      "docs_agentharness_harness_engineering_page",
-      "docs_observability_otel_genai_conventions_playbook",
-      "docs_observability_solutions_playbook",
-      "docs_productionbestpractices_observability_playbook",
-      "external_agents_best_practices_denissergeevitch_2025",
-      "external_bockeler_martinfowler_2026",
-      "external_langfuse",
-      "external_lopopolo_openai_2026",
-      "external_meng_et_al_arxiv_260529682_2026",
-      "external_meta_harness_lee_2026",
-      "external_ning_et_al_arxiv_260518747_2026",
-      "external_open_telemetry_semantic_conventions_genai_repo",
-      "external_openlit_io",
-      "external_picrew_openreview_2026",
-      "external_trivedy_langchain_2026"
+    "16": [
+      "docs_marketplace_agentops_agentops_marketplace",
+      "docs_marketplace_agentops_deployment_automation",
+      "docs_marketplace_agentops_monitoring_and_observability_solutions",
+      "docs_marketplace_agentops_security_and_compliance",
+      "docs_marketplace_aws_marketplace_aws_ai_agents_marketplace",
+      "docs_marketplace_aws_marketplace_aws_marketplace_procurement",
+      "docs_marketplace_aws_marketplace_aws_service_integration",
+      "docs_marketplace_aws_marketplace_marketplace_deployment_models",
+      "docs_marketplace_google_cloud_marketplace_a2a_protocol",
+      "docs_marketplace_google_cloud_marketplace_agent_gateway",
+      "docs_marketplace_google_cloud_marketplace_gemini_enterprise_agent_platform",
+      "docs_marketplace_google_cloud_marketplace_google_agent_gallery",
+      "docs_marketplace_google_cloud_marketplace_it_approval_governance",
+      "docs_marketplace_google_cloud_marketplace_page",
+      "docs_marketplace_readme_agent_marketplace_selection_criteria",
+      "docs_marketplace_readme_marketplace_ecosystems",
+      "docs_marketplace_readme_marketplace_governance",
+      "docs_marketplace_readme_page",
+      "docs_observability_goals_performance_monitoring"
     ],
-    "11": [
+    "17": [
+      "docs_agenticframeworks_langchain_langchain",
+      "docs_agenticframeworks_langchain_memory_management",
+      "docs_agenticframeworks_langchain_react_pattern",
+      "docs_agenticframeworks_langchain_tool_integration",
+      "docs_agenticframeworks_langgraph_graph_based_workflows",
+      "docs_agenticframeworks_langgraph_langgraph",
+      "docs_agenticframeworks_langgraph_persistent_state",
+      "docs_agenticframeworks_mastra_existing_api_integration",
+      "docs_agenticframeworks_mastra_graph_based_state_machines",
+      "docs_agenticframeworks_mastra_mastra",
+      "docs_agenticframeworks_pydantic_ai_pydantic_graph",
+      "docs_agenticframeworks_pydantic_ai_pydantic_logfire",
+      "docs_agenticframeworks_pydantic_ai_pydanticai",
+      "docs_agenticframeworks_spring_ai_advisors_api",
+      "docs_agenticframeworks_spring_ai_rag_support",
+      "docs_agenticframeworks_spring_ai_spring_ai",
+      "docs_agenticframeworks_spring_ai_spring_ecosystem_integration"
+    ],
+    "18": [
+      "docs_maturitymodels_aws_aws_maturity_assessment",
+      "docs_maturitymodels_aws_envision",
+      "docs_maturitymodels_aws_experiment",
+      "docs_maturitymodels_aws_launch",
+      "docs_maturitymodels_aws_page",
+      "docs_maturitymodels_aws_scale",
+      "docs_maturitymodels_google_enterprise_scale",
+      "docs_maturitymodels_google_operational_maturity",
+      "docs_maturitymodels_google_organizational_maturity",
+      "docs_maturitymodels_google_page",
+      "docs_maturitymodels_google_technical_maturity",
+      "docs_maturitymodels_readme_maturity_assessment",
+      "docs_maturitymodels_readme_operational_maturity",
+      "docs_maturitymodels_readme_organizational_maturity",
+      "docs_maturitymodels_readme_page",
+      "docs_maturitymodels_readme_technical_maturity"
+    ],
+    "19": [
+      "docs_standards_open_knowledge_format_design_principles",
+      "docs_standards_open_knowledge_format_key_concepts_architecture",
+      "docs_standards_open_knowledge_format_key_features",
+      "docs_standards_open_knowledge_format_open_knowledge_format_okf",
+      "docs_standards_open_knowledge_format_reference_implementations",
+      "docs_standards_open_knowledge_format_relation_to_other_conventions",
+      "docs_standards_open_knowledge_format_use_cases",
+      "llm_wiki_architecture",
+      "llm_wiki_indexing_and_logging",
+      "llm_wiki_llm_wiki",
+      "llm_wiki_note",
+      "llm_wiki_operations",
+      "llm_wiki_optional_cli_tools",
+      "llm_wiki_the_core_idea",
+      "llm_wiki_tips_and_tricks",
+      "llm_wiki_why_this_works"
+    ],
+    "20": [
       "scripts_generate_okf_indexes",
       "scripts_generate_okf_indexes_dir_description",
       "scripts_generate_okf_indexes_extract_first_sentence",
@@ -291,591 +574,1195 @@
       "scripts_generate_okf_indexes_rationale_120",
       "scripts_generate_okf_indexes_rationale_135",
       "scripts_generate_okf_indexes_rationale_175",
+      "scripts_generate_okf_indexes_rationale_2",
       "scripts_generate_okf_indexes_rationale_74",
       "scripts_generate_okf_indexes_rationale_86",
       "scripts_generate_okf_indexes_read_frontmatter"
     ],
-    "12": [
-      "docs_allthingsgoogle_readme_google_agentic_ai_overview",
-      "docs_architecture_index_architecture_overview",
-      "docs_concepts_agent_foundational_agent_foundational",
+    "21": [
+      "docs_agenticframeworks_autogen_asynchronous_messaging",
+      "docs_agenticframeworks_autogen_autogen",
+      "docs_agenticframeworks_autogen_autogen_studio_ui",
+      "docs_agenticframeworks_autogen_multi_agent_conversation_framework",
+      "docs_agenticframeworks_crewai_crewai",
+      "docs_agenticframeworks_crewai_role_based_agents",
+      "docs_agenticframeworks_microsoft_framework_agent_threads",
+      "docs_agenticframeworks_microsoft_framework_graph_based_workflow_orchestration",
+      "docs_agenticframeworks_microsoft_framework_human_in_the_loop_integration",
+      "docs_agenticframeworks_microsoft_framework_microsoft_agent_framework",
+      "docs_agenticframeworks_semantic_kernel_enterprise_integration",
+      "docs_agenticframeworks_semantic_kernel_semantic_kernel",
+      "docs_agenticframeworks_semantic_kernel_semantic_kernel_agent_framework",
+      "docs_agenticframeworks_semantic_kernel_semantic_kernel_process_framework"
+    ],
+    "22": [
+      "docs_benchmarks_rag_benchmarks_page",
+      "docs_evaluationframeworks_llm_eval_metrics_page",
+      "docs_evaluationframeworks_llm_eval_metrics_retriever_metrics",
+      "docs_evaluationframeworks_llm_eval_metrics_session_metrics",
+      "docs_evaluationframeworks_llm_eval_metrics_tool_metrics",
+      "docs_evaluationframeworks_llm_eval_metrics_trace_level_metrics",
+      "docs_evaluationframeworks_llm_frameworks_evaluation_pipeline_design",
+      "docs_evaluationframeworks_llm_frameworks_llm_as_judge",
+      "docs_evaluationframeworks_llm_frameworks_open_source_frameworks",
+      "docs_evaluationframeworks_llm_frameworks_page",
+      "docs_evaluationframeworks_llm_frameworks_reference_based_evaluation",
+      "docs_rag_chunking_strategies_page",
+      "docs_rag_chunking_strategies_selection_guidance",
+      "docs_rag_chunking_strategies_the_eight_strategies"
+    ],
+    "23": [
+      "docs_maturitymodels_agentic_engineering_levels_autonomous_agent_teams",
+      "docs_maturitymodels_agentic_engineering_levels_background_agents",
+      "docs_maturitymodels_agentic_engineering_levels_compounding_engineering",
+      "docs_maturitymodels_agentic_engineering_levels_context_engineering",
+      "docs_maturitymodels_agentic_engineering_levels_harness_engineering_feedback_loops",
+      "docs_maturitymodels_agentic_engineering_levels_mcp_and_skills",
+      "docs_maturitymodels_agentic_engineering_levels_page",
+      "docs_maturitymodels_arsanjani_genai_maturity_agentic_stack",
+      "docs_maturitymodels_arsanjani_genai_maturity_contextual_enhancement_rag",
+      "docs_maturitymodels_arsanjani_genai_maturity_data_foundation",
+      "docs_maturitymodels_arsanjani_genai_maturity_grounding_and_evaluation",
+      "docs_maturitymodels_arsanjani_genai_maturity_multi_agent_systems",
+      "docs_maturitymodels_arsanjani_genai_maturity_page",
+      "docs_maturitymodels_arsanjani_genai_maturity_single_agent_systems"
+    ],
+    "24": [
+      "docs_agentplatforms_aws_agentcore_aws_agentcore",
+      "docs_agentplatforms_aws_agentcore_documentation_and_resources",
+      "docs_agentplatforms_aws_agentcore_framework_compatibility",
+      "docs_agentplatforms_aws_agentcore_getting_started",
+      "docs_agentplatforms_aws_agentcore_integration_with_aws_services",
+      "docs_agentplatforms_aws_agentcore_key_components",
+      "docs_agentplatforms_aws_agentcore_key_features",
+      "docs_agentplatforms_aws_agentcore_pricing_model",
+      "docs_agentplatforms_aws_agentcore_the_13_agentic_ai_capability_domains_aws_framework",
+      "docs_agentplatforms_aws_agentcore_use_cases",
+      "docs_agentplatforms_databricks_genie_architecture",
+      "docs_agentplatforms_databricks_genie_databricks_genie",
+      "docs_agentplatforms_databricks_genie_key_components"
+    ],
+    "25": [
+      "docs_agentplatforms_hermes_agent_architecture",
+      "docs_agentplatforms_hermes_agent_community_and_ecosystem",
+      "docs_agentplatforms_hermes_agent_comparison_with_related_agents",
+      "docs_agentplatforms_hermes_agent_hermes_agent_nous_research",
+      "docs_agentplatforms_hermes_agent_hermes_model_family_nous_research",
+      "docs_agentplatforms_hermes_agent_key_capabilities",
+      "docs_agentplatforms_hermes_agent_limitations",
+      "docs_agentplatforms_hermes_agent_security_considerations",
+      "docs_agentplatforms_hermes_agent_suitable_for",
+      "docs_agentplatforms_lifeos_key_concepts_architecture",
+      "docs_agentplatforms_lifeos_licensing",
+      "docs_agentplatforms_lifeos_lifeos",
+      "docs_agentplatforms_lifeos_notable_design_patterns"
+    ],
+    "26": [
+      "docs_agentharness_agent_harness_agent_harness",
+      "docs_agentharness_agent_harness_core_components",
+      "docs_agentharness_agent_harness_orchestration_for_long_horizon_work",
+      "docs_agentharness_agent_harness_why_harnesses_exist_working_backwards_from_model_limitations",
+      "docs_agentharness_harness_engineering_bounded_contexts_of_harness",
+      "docs_agentharness_harness_engineering_computational_vs_inferential_controls",
+      "docs_agentharness_harness_engineering_feedforward_and_feedback",
+      "docs_agentharness_harness_engineering_harness_engineering",
+      "docs_agentharness_pi_dev_component_packages",
+      "docs_agentharness_pi_dev_core_architecture",
+      "docs_agentharness_pi_dev_customization_framework",
+      "docs_agentharness_pi_dev_pi_pi_dev"
+    ],
+    "27": [
+      "docs_agentharness_loop_engineering_automations_the_heartbeat",
+      "docs_agentharness_loop_engineering_loop_engineering",
+      "docs_agentharness_loop_engineering_the_six_pieces_of_a_loop",
+      "docs_agentharness_loop_engineering_worktrees_parallel_without_chaos",
+      "docs_aicodingagents_ai_coding_agents_ai_coding_agents",
+      "docs_aicodingagents_ai_coding_agents_claude_code",
+      "docs_aicodingagents_ai_coding_agents_comparison_table",
+      "docs_aicodingagents_ai_coding_agents_openai_codex",
+      "docs_aicodingagents_claude_code_claude_code",
+      "docs_aicodingagents_claude_code_claude_code_plugins_skills_matrix",
+      "docs_aicodingagents_claude_code_comparison_matrix",
+      "docs_aicodingagents_claude_code_persona_based_claude_code_plugin_setups"
+    ],
+    "28": [
+      "docs_agentmemory_ltm_strategies_core_ltm_strategies",
+      "docs_agentmemory_ltm_strategies_hybrid_approaches",
+      "docs_agentmemory_ltm_strategies_long_term_memory_ltm_strategies",
+      "docs_agentmemory_ltm_strategies_memory_type_strategy_mapping",
+      "docs_agentmemory_readme_agent_memory_management",
+      "docs_agentmemory_readme_core_concepts_of_memory_management",
+      "docs_agentmemory_readme_management_techniques",
+      "docs_agentmemory_readme_the_four_memory_types_coala_taxonomy",
+      "docs_agentplatforms_claude_managed_agents_claude_managed_agents",
+      "docs_agentplatforms_claude_managed_agents_core_concepts",
+      "docs_agentplatforms_claude_managed_agents_feature_1_memory_public_beta",
+      "docs_agentplatforms_claude_managed_agents_feature_2_dreaming_research_preview"
+    ],
+    "29": [
+      "docs_agentops_agentic_ops_framework_agentic_ops_framework_aof",
+      "docs_agentops_agentic_ops_framework_key_concepts_architecture",
+      "docs_agentops_agentic_ops_framework_key_features",
+      "docs_agentops_agentic_ops_framework_status",
+      "docs_agentops_kagent_governance_and_status",
+      "docs_agentops_kagent_kagent",
+      "docs_agentops_kagent_key_concepts_architecture",
+      "docs_agentops_kagent_key_features",
+      "docs_agentops_kaos_kaos_k8s_agent_orchestration_system",
+      "docs_agentops_kaos_key_concepts_architecture",
+      "docs_agentops_kaos_key_features",
+      "docs_agentops_kaos_status"
+    ],
+    "30": [
+      "docs_agentplatforms_agent_company_platforms_full_comparison_table",
+      "docs_agentplatforms_agent_company_platforms_layer_1_agent_control_planes",
+      "docs_agentplatforms_agent_company_platforms_layer_2_oss_orchestration_frameworks",
+      "docs_agentplatforms_agent_company_platforms_page",
+      "docs_agentplatforms_agent_workforce_saas_agent_workforce_saas_platforms",
+      "docs_agentplatforms_agent_workforce_saas_comparison_table",
+      "docs_agentplatforms_agent_workforce_saas_positioning_vs_agent_control_planes",
+      "docs_agentplatforms_paperclip_budget_controls",
+      "docs_agentplatforms_paperclip_goal_alignment",
+      "docs_agentplatforms_paperclip_heartbeat_scheduling",
+      "docs_agentplatforms_paperclip_org_chart_model",
+      "docs_agentplatforms_paperclip_page"
+    ],
+    "31": [
+      "docs_agentmemory_research_papers_foundational_research_papers",
+      "docs_agentmemory_research_papers_key_research_themes",
+      "docs_agentmemory_research_papers_research_papers_technical_white_papers_on_agent_memory",
+      "docs_agentmemory_research_papers_technical_white_papers_and_blogs",
+      "docs_agentmemory_solutions_agent_memory_solutions",
+      "docs_agentmemory_solutions_aws_memory_architecture_guide",
+      "docs_agentmemory_solutions_framework_native_memory",
+      "docs_agentmemory_solutions_radar_assessment_criteria",
+      "docs_agentmemory_solutions_radar_summary_table",
+      "docs_agentmemory_solutions_selection_guide",
+      "docs_agentmemory_solutions_technology_radar"
+    ],
+    "32": [
+      "docs_aicodingagents_maxwell_page",
+      "docs_architecture_inference_optimization_continuous_batching",
+      "docs_architecture_inference_optimization_page",
+      "docs_architecture_inference_optimization_prefill_vs_decode",
+      "docs_architecture_inference_optimization_quantization",
+      "docs_architecture_inference_optimization_speculative_decoding",
+      "docs_concepts_foundation_models_model_architecture",
+      "docs_concepts_foundation_models_page",
+      "docs_concepts_foundation_models_probabilistic_nature_and_hallucinations",
+      "docs_concepts_foundation_models_sampling_and_generation",
+      "docs_concepts_foundation_models_training_phases"
+    ],
+    "33": [
+      "docs_securityframeworks_google_saif_page",
+      "docs_securityframeworks_readme_ai_agent_skill_security_scanners",
+      "docs_securityframeworks_readme_google_saif",
+      "docs_securityframeworks_readme_nist_ai_rmf",
+      "docs_securityframeworks_readme_page",
+      "docs_securityframeworks_skill_scanners_behavioral_analysis",
+      "docs_securityframeworks_skill_scanners_cisco_ai_defense_skill_scanner",
+      "docs_securityframeworks_skill_scanners_llm_based_semantic_analysis",
+      "docs_securityframeworks_skill_scanners_nvidia_skillspector",
+      "docs_securityframeworks_skill_scanners_page",
+      "docs_securityframeworks_skill_scanners_static_analysis"
+    ],
+    "34": [
+      "requirements_hypothesis",
+      "requirements_mkdocs",
+      "requirements_mkdocs_glightbox",
+      "requirements_mkdocs_macros_plugin",
+      "requirements_mkdocs_material",
+      "requirements_mkdocs_mermaid2_plugin",
+      "requirements_pdfplumber",
+      "requirements_pymdown_extensions",
+      "requirements_pytest",
+      "requirements_pyyaml",
+      "requirements_requirements_txt"
+    ],
+    "35": [
+      "docs_agentharness_code_as_agent_harness_application_domains",
+      "docs_agentharness_code_as_agent_harness_code_as_agent_harness",
+      "docs_agentharness_code_as_agent_harness_relationship_to_agent_harness_concepts",
+      "docs_agentharness_code_as_agent_harness_three_layer_framework",
+      "docs_agentharness_harness_self_evolution_harness_components_subject_to_self_evolution",
+      "docs_agentharness_harness_self_evolution_harness_self_evolution",
+      "docs_agentharness_harness_self_evolution_implications_for_system_design",
+      "docs_agentharness_harness_self_evolution_key_findings",
+      "docs_agentharness_harness_self_evolution_relationship_to_automated_harness_optimization",
+      "docs_agentharness_harness_self_evolution_the_update_benefit_distinction"
+    ],
+    "36": [
+      "docs_benchmarks_agent_benchmarks_agent_memory_benchmarks",
+      "docs_benchmarks_agent_benchmarks_general_purpose_agent_benchmarks",
+      "docs_benchmarks_agent_benchmarks_page",
+      "docs_benchmarks_agent_benchmarks_software_development_benchmarks",
+      "docs_benchmarks_agent_benchmarks_web_and_computer_interaction_benchmarks",
+      "docs_benchmarks_llm_benchmarks_academic_and_standardized_benchmarks",
+      "docs_benchmarks_llm_benchmarks_benchmark_selection_guide",
+      "docs_benchmarks_llm_benchmarks_community_driven_leaderboards",
+      "docs_benchmarks_llm_benchmarks_inference_performance_benchmarks",
+      "docs_benchmarks_llm_benchmarks_page"
+    ],
+    "37": [
+      "docs_observability_readme_core_observability_objectives",
+      "docs_observability_readme_distributed_tracing_for_multi_agent_systems",
+      "docs_observability_readme_key_metrics_for_ai_observability",
+      "docs_observability_readme_observability_as_code",
+      "docs_observability_readme_page",
+      "docs_productionbestpractices_cost_management_caching_strategies",
+      "docs_productionbestpractices_cost_management_cost_attribution_and_chargeback",
+      "docs_productionbestpractices_cost_management_model_routing",
+      "docs_productionbestpractices_cost_management_page",
+      "docs_productionbestpractices_cost_management_per_request_budgets"
+    ],
+    "38": [
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_agent_authorization_and_control_hijacking",
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_agent_knowledge_base_poisoning",
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_agent_memory_and_context_manipulation",
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_maestro",
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_page",
+      "docs_securityframeworks_agentic_ai_red_teaming_guide_testing_methodology",
+      "docs_securityframeworks_learn_prompt_hacking_defensive_techniques",
+      "docs_securityframeworks_learn_prompt_hacking_jailbreak",
+      "docs_securityframeworks_learn_prompt_hacking_page",
+      "docs_securityframeworks_learn_prompt_hacking_prompt_injection"
+    ],
+    "39": [
+      "docs_standards_agentic_ai_foundation_agents_md_standard",
+      "docs_standards_agentic_ai_foundation_goose_project",
+      "docs_standards_agentic_ai_foundation_page",
+      "docs_standards_agentic_ai_foundation_vendor_neutrality",
+      "docs_standards_agents_md_agents_md",
+      "docs_standards_agents_md_capabilities",
+      "docs_standards_agents_md_constraints",
+      "docs_standards_agents_md_core_behavior",
+      "docs_standards_agents_md_error_handling",
+      "docs_standards_agents_md_page"
+    ],
+    "40": [
+      "docs_agentharness_llm_harness_survey_agent_harness_engineering_survey_taxonomy",
+      "docs_agentharness_llm_harness_survey_eight_future_directions_meng_et_al_arxiv_2605_29682",
+      "docs_agentharness_llm_harness_survey_empirical_evidence",
+      "docs_agentharness_llm_harness_survey_formal_model_h_e_t_c_s_l_v",
+      "docs_agentharness_llm_harness_survey_harness_completeness_matrix",
+      "docs_agentharness_llm_harness_survey_historical_timeline_1997_2026",
+      "docs_agentharness_llm_harness_survey_nine_technical_challenges",
+      "docs_agentharness_llm_harness_survey_paper_coverage",
+      "docs_agentharness_llm_harness_survey_the_etclovg_seven_layer_taxonomy"
+    ],
+    "41": [
+      "docs_agentplatforms_openclaw_gateway",
+      "docs_agentplatforms_openclaw_local_first_memory_system",
+      "docs_agentplatforms_openclaw_multi_agent_routing",
+      "docs_agentplatforms_openclaw_openclaw",
+      "docs_agentplatforms_openclaw_skills_and_clawhub",
+      "docs_agentplatforms_openhuman_automatic_model_routing",
+      "docs_agentplatforms_openhuman_neocortex_memory_layer",
+      "docs_agentplatforms_openhuman_openhuman_tinyhumans_ai",
+      "docs_agentplatforms_openhuman_tokenjuice_compression"
+    ],
+    "42": [
+      "docs_allthingsaws_readme_key_offerings",
+      "docs_allthingsaws_readme_page",
+      "docs_allthingsgoogle_readme_key_offerings",
+      "docs_allthingsgoogle_readme_page",
+      "docs_evaluationframeworks_platforms_core_aeop_capabilities",
+      "docs_evaluationframeworks_platforms_enterprise_evaluation_platforms",
+      "docs_evaluationframeworks_platforms_evaluation_platform_comparison",
+      "docs_evaluationframeworks_platforms_open_source_and_developer_platforms",
+      "docs_evaluationframeworks_platforms_page"
+    ],
+    "43": [
+      "docs_architecture_dataset_engineering_data_acquisition_and_annotation",
+      "docs_architecture_dataset_engineering_data_coverage",
+      "docs_architecture_dataset_engineering_data_processing",
+      "docs_architecture_dataset_engineering_data_quality",
+      "docs_architecture_dataset_engineering_data_quantity",
+      "docs_architecture_dataset_engineering_data_synthesis",
+      "docs_architecture_dataset_engineering_dataset_engineering",
+      "docs_architecture_dataset_engineering_evaluating_dataset_quality",
+      "docs_architecture_dataset_engineering_sources"
+    ],
+    "44": [
+      "docs_architecture_finetuning_finetuning",
+      "docs_architecture_finetuning_finetuning_tactics",
+      "docs_architecture_finetuning_finetuning_vs_rag_decision_framework",
+      "docs_architecture_finetuning_memory_bottlenecks",
+      "docs_architecture_finetuning_model_merging",
+      "docs_architecture_finetuning_parameter_efficient_finetuning_peft",
+      "docs_architecture_finetuning_reasons_not_to_finetune",
+      "docs_architecture_finetuning_reasons_to_finetune",
+      "docs_architecture_finetuning_when_to_finetune"
+    ],
+    "45": [
+      "docs_concepts_agent_definition_agent_architecture_components",
+      "docs_concepts_agent_definition_agent_definition",
+      "docs_concepts_agent_definition_ai_engineering_definition_huyen_2025",
+      "docs_concepts_agent_definition_chat_engine_vs_do_engine_you_com_2026",
+      "docs_concepts_agent_definition_environmental_awareness",
+      "docs_concepts_agent_definition_goal_oriented_behavior",
+      "docs_concepts_agent_definition_key_characteristics",
+      "docs_concepts_agent_definition_openai_definition_practical_guide_2024",
+      "docs_concepts_agent_definition_what_is_an_ai_agent"
+    ],
+    "46": [
       "docs_concepts_agent_types_agent_types",
-      "docs_concepts_ai_engineering_ai_engineering",
-      "docs_concepts_foundation_models_foundation_models",
-      "docs_concepts_index_core_concepts_index",
-      "docs_concepts_readme_concepts_overview",
+      "docs_concepts_agent_types_by_application_domain",
+      "docs_concepts_agent_types_by_architecture_type",
+      "docs_concepts_agent_types_by_capability_level",
+      "docs_concepts_agent_types_classification_of_ai_agents",
+      "docs_concepts_agent_types_emerging_agent_types",
+      "docs_concepts_agent_types_goal_based_agents",
+      "docs_concepts_agent_types_model_based_reflex_agents",
+      "docs_concepts_agent_types_simple_reflex_agents"
+    ],
+    "47": [
+      "docs_concepts_ai_predictions_2026_2026_ai_predictions_you_com_whitepaper",
+      "docs_concepts_ai_predictions_2026_agentic_ai_and_workforce_transformation",
+      "docs_concepts_ai_predictions_2026_biotech_and_biology_engineering",
+      "docs_concepts_ai_predictions_2026_consumer_and_media",
+      "docs_concepts_ai_predictions_2026_industry_specific_ai_and_vertical_agents",
+      "docs_concepts_ai_predictions_2026_macro_themes",
+      "docs_concepts_ai_predictions_2026_search_and_data_infrastructure",
+      "docs_concepts_ai_predictions_2026_software_development_transformation",
+      "docs_concepts_ai_predictions_2026_space_computing"
+    ],
+    "48": [
+      "docs_concepts_readme_agent_definition",
+      "docs_concepts_readme_agent_types",
+      "docs_concepts_readme_classification_by_architecture",
+      "docs_concepts_readme_classification_by_domain",
+      "docs_concepts_readme_classification_by_functionality",
+      "docs_concepts_readme_concepts",
+      "docs_concepts_readme_foundational_concepts",
+      "docs_concepts_readme_key_definitions_and_resources",
+      "docs_concepts_readme_terminology_glossary"
+    ],
+    "49": [
+      "docs_concepts_references_academic_resources",
+      "docs_concepts_references_books_and_publications",
+      "docs_concepts_references_foundational_papers_and_research",
+      "docs_concepts_references_industry_resources",
+      "docs_concepts_references_industry_standards_and_specifications",
+      "docs_concepts_references_latest_research_and_developments",
+      "docs_concepts_references_online_resources",
       "docs_concepts_references_references",
-      "docs_designpatterns_gartner_patterns_gartner_patterns",
-      "docs_designpatterns_index_design_patterns_index",
-      "docs_designpatterns_readme_design_patterns_overview",
-      "docs_evaluationframeworks_index_evaluation_frameworks",
-      "external_kaggle_agents_intro_whitepaper"
+      "docs_concepts_references_seminal_works_on_ai_agents"
     ],
-    "13": [
-      "docs_contextengineering_anthropic_clear_tool_uses_20250919",
-      "docs_contextengineering_anthropic_compact_20260112",
-      "docs_contextengineering_anthropic_memory_20250818",
-      "docs_contextengineering_anthropic_page",
-      "docs_contextengineering_challenges_page",
-      "docs_contextengineering_context-graph_page",
-      "docs_contextengineering_devin_page",
-      "docs_contextengineering_efficiency-frontier_page",
-      "docs_contextengineering_langgraph_page",
-      "docs_contextengineering_manus_page",
-      "docs_contextengineering_readme_page",
-      "docs_contextengineering_strategies_page"
+    "50": [
+      "docs_contextengineering_anthropic_anthropic_context_engineering",
+      "docs_contextengineering_anthropic_context_as_a_finite_attention_budget",
+      "docs_contextengineering_anthropic_context_management_api_primitives_cookbook",
+      "docs_contextengineering_anthropic_effective_context_engineering_for_ai_agents",
+      "docs_contextengineering_anthropic_how_anthropic_built_their_multi_agent_research_system",
+      "docs_contextengineering_anthropic_just_in_time_context_retrieval",
+      "docs_contextengineering_anthropic_long_horizon_context_techniques",
+      "docs_contextengineering_anthropic_system_prompt_design",
+      "docs_contextengineering_anthropic_tool_design"
     ],
-    "14": [
-      "docs_productionbestpractices_testing_evaluations_testing_evaluations",
-      "docs_securityframeworks_agent_governance_toolkit_agent_governance_toolkit",
-      "docs_securityframeworks_agent_sandboxing_agent_sandboxing",
-      "docs_securityframeworks_agentic_ai_red_teaming_guide_agentic_ai_red_teaming_guide",
-      "docs_securityframeworks_anthropic_sandbox_runtime_anthropic_sandbox_runtime",
-      "docs_securityframeworks_learn_prompt_hacking_learn_prompt_hacking",
-      "docs_securityframeworks_nist_ai_rmf_nist_ai_rmf",
-      "docs_securityframeworks_readme_agentic_ai_security",
-      "docs_securityframeworks_skill_scanners_ai_agent_skill_security_scanners"
+    "51": [
+      "docs_contextengineering_challenges_common_anti_patterns",
+      "docs_contextengineering_challenges_context_rot",
+      "docs_contextengineering_challenges_context_size_thresholds_and_recommended_approaches",
+      "docs_contextengineering_challenges_empirical_evidence_for_each_failure_mode",
+      "docs_contextengineering_challenges_four_types_of_context",
+      "docs_contextengineering_challenges_impact_on_agent_performance",
+      "docs_contextengineering_challenges_key_challenges_in_context_management",
+      "docs_contextengineering_challenges_memory_vs_context_the_fundamental_distinction",
+      "docs_contextengineering_challenges_the_five_context_failure_modes"
     ],
-    "15": [
-      "docs_aigovernance_overview_page",
-      "docs_log_page",
-      "docs_observability_otel_genai_conventions_page",
-      "docs_observability_solutions_page",
-      "docs_standards_design_md_page",
-      "docs_standards_nist_ai_agent_standards_page",
-      "docs_standards_w3c_agent_protocol_page",
-      "mkdocs_page"
+    "52": [
+      "docs_contextengineering_context_graph_benchmark_results",
+      "docs_contextengineering_context_graph_categories_of_contextual_data",
+      "docs_contextengineering_context_graph_cgr_reasoning_paradigm",
+      "docs_contextengineering_context_graph_context_extraction_pipeline",
+      "docs_contextengineering_context_graph_context_graph",
+      "docs_contextengineering_context_graph_formal_definition",
+      "docs_contextengineering_context_graph_limitations_of_triple_based_knowledge_graphs",
+      "docs_contextengineering_context_graph_part_1_technical_definition_idea_research_2024",
+      "docs_contextengineering_context_graph_part_2_context_graphs_as_agentic_business_assets_foundation_capital_2025"
     ],
-    "16": [
-      "docs_promptengineering_gepa_gepa",
-      "docs_promptengineering_readme_prompt_engineering",
-      "docs_promptengineering_skillopt_skillopt",
-      "docs_rag_readme_rag_overview",
-      "docs_rag_search_as_code_search_as_code",
-      "docs_referencearchitecture_rag_architecture_rag_reference_architecture",
-      "docs_referencearchitecture_readme_agentic_ai_reference_architecture"
+    "53": [
+      "docs_contextengineering_devin_analysis_of_real_world_agent_designs",
+      "docs_contextengineering_devin_cognition_devin_context_engineering_principles",
+      "docs_contextengineering_devin_compression_based_extension",
+      "docs_contextengineering_devin_principle_1_share_context_full_agent_traces_not_just_individual_messages",
+      "docs_contextengineering_devin_principle_2_actions_carry_implicit_decisions_conflicting_decisions_carry_bad_results",
+      "docs_contextengineering_devin_recommended_architectures",
+      "docs_contextengineering_devin_relationship_to_other_approaches",
+      "docs_contextengineering_devin_single_threaded_linear_agent_default",
+      "docs_contextengineering_devin_two_core_principles"
     ],
-    "17": [
+    "54": [
+      "docs_contextengineering_efficiency_frontier_decision_patterns_across_regimes",
+      "docs_contextengineering_efficiency_frontier_efficiency_frontier_analysis",
+      "docs_contextengineering_efficiency_frontier_evaluation_results",
+      "docs_contextengineering_efficiency_frontier_key_concepts",
+      "docs_contextengineering_efficiency_frontier_practical_implications",
+      "docs_contextengineering_efficiency_frontier_relationship_to_existing_context_strategies",
+      "docs_contextengineering_efficiency_frontier_the_efficiency_frontier_cost_performance_optimization_in_llm_context_management",
+      "docs_contextengineering_efficiency_frontier_three_strategies_compared",
+      "docs_contextengineering_efficiency_frontier_unified_objective_function"
+    ],
+    "55": [
+      "docs_contextengineering_langgraph_context_engineering_for_agents_blog_post",
+      "docs_contextengineering_langgraph_deepagent_summarization_as_middleware",
+      "docs_contextengineering_langgraph_isolate_context_split_across_subagents",
+      "docs_contextengineering_langgraph_langgraph_context_engineering",
+      "docs_contextengineering_langgraph_offload_brief_saved_to_state",
+      "docs_contextengineering_langgraph_open_deep_research_a_reference_implementation",
+      "docs_contextengineering_langgraph_reduce_summarize_tool_call_observations",
+      "docs_contextengineering_langgraph_retrieve_context_windsurf_s_approach",
+      "docs_contextengineering_langgraph_the_four_strategy_framework"
+    ],
+    "56": [
+      "docs_contextengineering_manus_design_around_the_kv_cache",
+      "docs_contextengineering_manus_don_t_get_few_shotted",
+      "docs_contextengineering_manus_keep_the_wrong_stuff_in",
+      "docs_contextengineering_manus_key_principles",
+      "docs_contextengineering_manus_manipulate_attention_through_recitation",
+      "docs_contextengineering_manus_manus_context_engineering",
+      "docs_contextengineering_manus_mask_don_t_remove_tool_management",
+      "docs_contextengineering_manus_summary_of_strategies_used",
+      "docs_contextengineering_manus_use_the_file_system_as_context"
+    ],
+    "57": [
+      "docs_agentmemory_functional_tiers_aws_duration_scope_memory_taxonomy",
+      "docs_agentmemory_functional_tiers_how_the_four_types_work_together",
+      "docs_agentmemory_functional_tiers_memory_type_1_working_memory",
+      "docs_agentmemory_functional_tiers_memory_type_2_semantic_memory",
+      "docs_agentmemory_functional_tiers_memory_type_3_episodic_memory",
+      "docs_agentmemory_functional_tiers_memory_type_4_procedural_memory",
+      "docs_agentmemory_functional_tiers_memory_type_comparison",
+      "docs_agentmemory_functional_tiers_the_four_memory_types_of_agent_memory"
+    ],
+    "58": [
+      "docs_agentmemory_short_term_context_window_token_budget_layout",
+      "docs_agentmemory_short_term_langgraph_checkpointer_pattern",
+      "docs_agentmemory_short_term_letta_memgpt_os_inspired_memory",
+      "docs_agentmemory_short_term_the_core_challenge",
+      "docs_agentmemory_short_term_windowing_strategy_comparison",
+      "docs_agentmemory_short_term_working_memory_management",
+      "docs_agentmemory_short_term_working_memory_solutions",
+      "docs_agentmemory_short_term_working_memory_techniques"
+    ],
+    "59": [
+      "docs_agentops_genops_core_genops_components",
+      "docs_agentops_genops_genops_evolution_of_mlops_for_genai",
+      "docs_agentops_genops_google_cloud_genops_perspective",
+      "docs_agentops_genops_key_differences_from_traditional_mlops",
+      "docs_agentplatforms_gemini_enterprise_agent_platform_architecture",
+      "docs_agentplatforms_gemini_enterprise_agent_platform_gemini_enterprise_agent_platform",
+      "docs_agentplatforms_gemini_enterprise_agent_platform_key_components",
+      "docs_agentplatforms_gemini_enterprise_agent_platform_use_cases"
+    ],
+    "60": [
+      "docs_agentops_readme_agentic_ai_operations_agentops",
+      "docs_agentops_readme_agentops_implementation_framework",
+      "docs_agentops_readme_best_practices_for_agentops",
+      "docs_agentops_readme_google_cloud_perspective",
+      "docs_agentplatforms_readme_agent_categories",
+      "docs_agentplatforms_readme_coding_software_development_agents",
+      "docs_agentplatforms_readme_popular_ai_agents",
+      "docs_agentplatforms_readme_voice_agents"
+    ],
+    "61": [
+      "docs_agentplatforms_enterprise_platforms_2026_enterprise_agentic_ai_platforms_2026",
+      "docs_agentplatforms_enterprise_platforms_2026_platform_details",
+      "docs_agentplatforms_enterprise_platforms_2026_platform_quick_reference",
+      "docs_agentplatforms_enterprise_platforms_2026_selection_guide",
+      "docs_agentplatforms_saas_platforms_development_and_workflow_platforms",
+      "docs_agentplatforms_saas_platforms_major_saas_platforms",
+      "docs_agentplatforms_saas_platforms_other_saas_platforms",
+      "docs_agentplatforms_saas_platforms_specialized_agent_platforms"
+    ],
+    "62": [
+      "docs_concepts_agent_foundational_agent_foundational",
+      "docs_concepts_agent_foundational_agentic_architecture",
+      "docs_concepts_agent_foundational_agentic_workflows",
+      "docs_concepts_agent_foundational_architecture_layers",
+      "docs_concepts_agent_foundational_definition",
+      "docs_concepts_agent_foundational_free_courses",
+      "docs_concepts_agent_foundational_llm_foundation",
+      "docs_concepts_agent_foundational_retrieval_strategies_for_agents"
+    ],
+    "63": [
+      "docs_evaluationframeworks_readme_agent_evaluation_benchmarks",
+      "docs_evaluationframeworks_readme_agent_evaluation_platforms",
+      "docs_evaluationframeworks_readme_llm_evaluation_frameworks",
+      "docs_evaluationframeworks_readme_page",
+      "docs_evaluationframeworks_readme_red_teaming_adversarial_testing",
+      "docs_productionbestpractices_readme_page",
+      "docs_productionbestpractices_readme_universal_production_principles",
+      "docs_productionbestpractices_readme_vendor_best_practices"
+    ],
+    "64": [
       "scripts_migrate_ingest_log",
       "scripts_migrate_ingest_log_build_log_md",
       "scripts_migrate_ingest_log_format_entry",
       "scripts_migrate_ingest_log_parse_entries",
       "scripts_migrate_ingest_log_rationale_109",
+      "scripts_migrate_ingest_log_rationale_2",
       "scripts_migrate_ingest_log_rationale_39",
       "scripts_migrate_ingest_log_rationale_82"
     ],
-    "18": [
-      "docs_agentmemory_functional_tiers_the_four_memory_types_of_agent_memory",
-      "docs_agentmemory_ltm_strategies_long_term_memory_ltm_strategies",
-      "docs_agentmemory_readme_agent_memory_management",
-      "docs_agentmemory_research_papers_research_papers_on_agent_memory",
-      "docs_agentmemory_short_term_working_memory_management",
-      "docs_agentmemory_solutions_agent_memory_solutions"
-    ],
-    "19": [
-      "docs_agentops_agentic_ops_framework_agentic_ops_framework_aof",
-      "docs_agentops_genops_genops",
-      "docs_agentops_index_agent_operations_index",
-      "docs_agentops_kagent_kagent",
-      "docs_agentops_kaos_kaos",
-      "docs_agentops_readme_agentops"
-    ],
-    "20": [
-      "docs_ProductionBestPractices_README_production_best_practices_guidelines",
-      "docs_ProductionBestPractices_context_engineering_context_engineering",
-      "docs_ProductionBestPractices_cost_management_cost_management_for_agentic_ai",
-      "docs_ProductionBestPractices_deployment_deployment",
-      "docs_ProductionBestPractices_state_memory_state_and_memory_management"
-    ],
-    "21": [
-      "docs_agentictechstack_readme_agent_technology_stack",
-      "docs_allthingsaws_readme_aws_agentcore",
-      "docs_allthingsaws_readme_aws_agentic_ai_overview",
-      "docs_allthingsaws_readme_aws_strands_agents",
-      "docs_allthingsaws_readme_kiro"
-    ],
-    "22": [
+    "65": [
+      "docs_agentharness_harness_optimization_experimental_results",
       "docs_agentharness_harness_optimization_harness_optimization",
-      "docs_agentharness_harness_self_evolution_harness_self_evolution",
-      "docs_agentharness_index_agent_harness_index",
-      "docs_agentharness_llm_harness_survey_agent_harness_survey"
+      "docs_agentharness_harness_optimization_implications",
+      "docs_agentharness_harness_optimization_meta_harness_system_architecture",
+      "docs_agentharness_harness_optimization_productization_databricks_omnigent",
+      "docs_agentharness_harness_optimization_relationship_to_prior_optimization_work",
+      "docs_agentharness_harness_optimization_the_harness_optimization_problem"
     ],
-    "23": [
+    "66": [
+      "docs_rag_search_as_code_agentic_search_sdk",
+      "docs_rag_search_as_code_compute_sandboxes",
+      "docs_rag_search_as_code_models_as_control_plane",
+      "docs_rag_search_as_code_page",
+      "docs_rag_search_as_code_task_specific_pipelines",
+      "docs_rag_search_as_code_wandr_benchmark",
+      "docs_securityframeworks_readme_agent_sandboxing"
+    ],
+    "67": [
+      "docs_requirements_mkdocs_awesome_pages_plugin",
+      "docs_requirements_mkdocs_glightbox",
+      "docs_requirements_mkdocs_macros_plugin",
+      "docs_requirements_mkdocs_markdown_filter",
+      "docs_requirements_mkdocs_material",
+      "docs_requirements_mkdocs_mermaid2_plugin",
+      "docs_requirements_requirements_txt"
+    ],
+    "68": [
+      "docs_standards_agent2agent_agent_cards",
+      "docs_standards_agent2agent_agent_registry",
+      "docs_standards_agent2agent_distributed_tracing",
+      "docs_standards_agent2agent_mcp",
+      "docs_standards_agent2agent_page",
+      "docs_standards_agent2agent_stateful",
+      "docs_standards_agentic_ai_foundation_model_context_protocol"
+    ],
+    "69": [
+      "docs_standards_design_md_colors",
+      "docs_standards_design_md_design_md_visual_identity_format_for_coding_agents",
+      "docs_standards_design_md_file_structure",
+      "docs_standards_design_md_maturity_and_status",
+      "docs_standards_design_md_relationship_to_coding_agent_workflows",
+      "docs_standards_design_md_token_schema",
+      "docs_standards_design_md_tooling"
+    ],
+    "70": [
+      "docs_concepts_ai_engineering_ai_engineering",
+      "docs_concepts_ai_engineering_ai_engineering_vs_ml_engineering",
+      "docs_concepts_ai_engineering_foundation_model_use_cases",
+      "docs_concepts_ai_engineering_planning_ai_applications",
+      "docs_concepts_ai_engineering_the_ai_engineering_stack",
+      "docs_concepts_ai_engineering_the_rise_of_ai_engineering"
+    ],
+    "71": [
+      "docs_contextengineering_readme_common_strategies_for_context_management_strategies_md",
+      "docs_contextengineering_readme_context_engineering",
+      "docs_contextengineering_readme_context_implementation_references",
+      "docs_contextengineering_readme_key_challenges_in_context_management_challenges_md",
+      "docs_contextengineering_readme_section_contents",
+      "docs_contextengineering_readme_why_it_matters"
+    ],
+    "72": [
+      "docs_evaluationframeworks_agent_evals_design_capability_vs_regression_evals",
+      "docs_evaluationframeworks_agent_evals_design_core_terminology",
+      "docs_evaluationframeworks_agent_evals_design_handling_non_determinism",
+      "docs_evaluationframeworks_agent_evals_design_page",
+      "docs_evaluationframeworks_agent_evals_design_types_of_graders",
+      "docs_evaluationframeworks_openenv_page"
+    ],
+    "73": [
+      "docs_maturitymodels_idc_agentic_applications",
+      "docs_maturitymodels_idc_agentic_ecosystems",
+      "docs_maturitymodels_idc_ai_enhanced_applications",
+      "docs_maturitymodels_idc_ai_native_applications",
+      "docs_maturitymodels_idc_page",
+      "docs_maturitymodels_idc_traditional_applications"
+    ],
+    "74": [
+      "docs_rag_readme_graph_rag_and_hybridrag",
+      "docs_rag_readme_rag_overview",
+      "docs_rag_readme_search_as_code_sac",
+      "docs_referencearchitecture_rag_architecture_comprehensive_rag_architecture",
+      "docs_referencearchitecture_rag_architecture_rag_reference_architecture",
+      "docs_referencearchitecture_rag_architecture_related_architectures"
+    ],
+    "75": [
+      "docs_agenticframeworks_flue_agent_harness",
+      "docs_agenticframeworks_flue_flue",
+      "docs_agenticframeworks_flue_session_persistence",
+      "docs_agenticframeworks_flue_skills_system",
+      "docs_agenticframeworks_flue_virtual_sandbox"
+    ],
+    "76": [
+      "docs_agenticframeworks_haystack_haystack",
+      "docs_agenticframeworks_haystack_rag_pipelines",
+      "docs_agenticframeworks_llamaindex_llamacloud",
+      "docs_agenticframeworks_llamaindex_llamaindex",
+      "docs_agenticframeworks_llamaindex_llamaparse"
+    ],
+    "77": [
+      "docs_agentictechstack_readme_agent_communication_infrastructure",
+      "docs_agentictechstack_readme_context_engines_for_coding_agents",
+      "docs_agentictechstack_readme_infrastructure_and_hosting",
+      "docs_agentictechstack_readme_key_components",
+      "docs_agentictechstack_readme_page"
+    ],
+    "78": [
+      "docs_benchmarks_readme_benchmarks_overview",
+      "docs_benchmarks_readme_evaluation_benchmarks",
+      "docs_benchmarks_readme_llm_evaluation_dashboards",
+      "docs_benchmarks_readme_llm_inference_benchmarks_research",
+      "docs_benchmarks_readme_solutions_benchmark"
+    ],
+    "79": [
+      "docs_maturitymodels_gartner_gartner_agentic_ai_maturity",
+      "docs_maturitymodels_gartner_market_shapers",
+      "docs_maturitymodels_gartner_no_code_agent_builder_quadrant",
+      "docs_maturitymodels_gartner_pace_setters",
+      "docs_maturitymodels_gartner_page"
+    ],
+    "80": [
+      "docs_standards_readme_ag_ui",
+      "docs_standards_readme_bidirectional",
+      "docs_standards_readme_event_based_communication",
+      "docs_standards_readme_page",
+      "docs_standards_readme_real_time"
+    ],
+    "81": [
+      "agents_agents_md_agentic_ai_knowledge_base",
+      "agents_repository_layout",
+      "agents_section_mapping_guide",
+      "agents_what_this_repository_is"
+    ],
+    "82": [
+      "claude_agents_md_agentic_ai_knowledge_base",
+      "claude_repository_layout",
+      "claude_section_mapping_guide",
+      "claude_what_this_repository_is"
+    ],
+    "83": [
+      "docs_agenticframeworks_autogpt_autogpt",
+      "docs_agenticframeworks_autogpt_continuous_agents",
+      "docs_agenticframeworks_autogpt_low_code_workflows",
+      "docs_agenticframeworks_autogpt_multi_llm_support"
+    ],
+    "84": [
+      "docs_agenticframeworks_readme_agentic_frameworks",
+      "docs_agenticframeworks_readme_crewai",
+      "docs_agenticframeworks_readme_langchain",
+      "docs_agenticframeworks_readme_langgraph"
+    ],
+    "85": [
+      "docs_agentictechstack_semantic_data_layer_radar_open_semantic_interchange",
+      "docs_agentictechstack_semantic_data_layer_radar_semantic_data_layer_technology_radar",
+      "docs_agentictechstack_semantic_data_layer_radar_semantic_layer",
+      "docs_agentictechstack_semantic_data_layer_radar_universal_semantic_layers"
+    ],
+    "86": [
+      "docs_agentictechstack_thoughtworks_radar_vol34_harness_engineering",
+      "docs_agentictechstack_thoughtworks_radar_vol34_securing_permission_hungry_agents",
+      "docs_agentictechstack_thoughtworks_radar_vol34_technology_radar",
+      "docs_agentictechstack_thoughtworks_radar_vol34_thoughtworks_technology_radar_vol_34_agentic_ai_digest"
+    ],
+    "87": [
+      "docs_aigovernance_governance_strategy_governance_strategy",
+      "docs_aigovernance_governance_strategy_organizational_governance_structures",
+      "docs_aigovernance_governance_strategy_regulatory_landscape",
+      "docs_aigovernance_governance_strategy_risk_classification_for_agentic_systems"
+    ],
+    "88": [
+      "docs_allthingsmicrosoft_readme_autogen",
+      "docs_allthingsmicrosoft_readme_microsoft_agent_framework",
+      "docs_allthingsmicrosoft_readme_microsoft_agentic_ai_overview",
+      "docs_allthingsmicrosoft_readme_semantic_kernel"
+    ],
+    "89": [
+      "docs_designpatterns_readme_design_patterns",
+      "docs_designpatterns_readme_design_patterns_overview",
+      "docs_designpatterns_readme_genai_design_patterns",
+      "docs_designpatterns_readme_multi_agent_architecture_patterns"
+    ],
+    "90": [
+      "docs_introduction_readme_agentic_ai_knowledge_base_scope",
+      "docs_introduction_readme_agentic_ai_selection_criteria",
+      "docs_introduction_readme_page",
+      "docs_introduction_readme_topic_navigation"
+    ],
+    "91": [
+      "gemini_agents_md_agentic_ai_knowledge_base",
+      "gemini_repository_layout",
+      "gemini_section_mapping_guide",
+      "gemini_what_this_repository_is"
+    ],
+    "92": [
       "hooks_graph_hook",
       "hooks_graph_hook_on_pre_build",
       "hooks_graph_hook_page_url",
       "hooks_graph_hook_py_path"
     ],
-    "24": [
-      "agents_md",
-      "docs_dir",
-      "raw_dir"
+    "93": [
+      "readme_agentic_ai_knowledge_base",
+      "readme_executive_overview",
+      "readme_knowledge_base_structure",
+      "readme_target_audiences"
     ],
-    "25": [
-      "docs_agentops_agentic-ops-framework_page",
-      "docs_agentops_kagent_page",
-      "docs_securityframeworks_agent-sandboxing_page"
-    ],
-    "26": [
-      "docs_aigovernance_governance-strategy_page",
-      "standards_eu_ai_act",
-      "standards_nist_ai_rmf"
-    ],
-    "27": [
-      "docs_allthingsanthropic_readme_anthropic_agentic_ai_overview",
-      "docs_allthingsanthropic_readme_claude_code",
-      "docs_allthingsanthropic_readme_mcp"
-    ],
-    "28": [
-      "docs_architecture_components_selection_page",
-      "docs_concepts_agent_definition_page",
-      "docs_index_index"
-    ],
-    "29": [
-      "docs_standards_agentic_ai_foundation_standard",
-      "docs_standards_nist_ai_agent_standards_standard",
-      "docs_standards_w3c_agent_protocol_standard"
-    ],
-    "30": [
+    "94": [
       "tests_run_tests",
       "tests_run_tests_main",
-      "tests_run_tests_rationale_11"
+      "tests_run_tests_rationale_11",
+      "tests_run_tests_rationale_2"
     ],
-    "31": [
-      "docs_agentplatforms_microsoft-azure_doc",
-      "docs_agentplatforms_microsoft-fabric-databases-2026_doc"
+    "95": [
+      "docs_agenticframeworks_google_adk_google_adk_agent_development_kit",
+      "docs_agenticframeworks_google_adk_multi_agent_coordination",
+      "docs_agenticframeworks_google_adk_tool_invocation"
     ],
-    "32": [
-      "docs_aigovernance_governance-best-practices_page",
-      "docs_aigovernance_governance-solutions_page"
+    "96": [
+      "docs_agentplatforms_discovery_loop_discovery_loop",
+      "docs_agentplatforms_discovery_loop_funding_and_backing",
+      "docs_agentplatforms_discovery_loop_key_concepts_architecture"
     ],
-    "33": [
-      "docs_designpatterns_arsanjani-patterns_page",
-      "docs_designpatterns_openai-patterns_page"
+    "97": [
+      "docs_graph_knowledge_graph",
+      "docs_wizard_readme_how_it_works",
+      "docs_wizard_readme_recommendation_wizard"
     ],
-    "34": [
-      "docs_graph_graph",
-      "external_cytoscape_js"
+    "98": [
+      "docs_introduction_disclaimer_independent_evaluation",
+      "docs_introduction_disclaimer_knowledge_base_disclaimer",
+      "docs_introduction_disclaimer_page"
     ],
-    "35": [
-      "docs_referencearchitecture_agent0_agent0",
-      "docs_referencearchitecture_self_learning_agents_self_learning_agents"
+    "99": [
+      "docs_maturitymodels_aws_genai_aws_generative_ai_integration",
+      "docs_maturitymodels_aws_genai_aws_generative_ai_maturity_model",
+      "docs_maturitymodels_aws_genai_page"
     ],
-    "36": [
-      "docs_standards_agent2agent_agent2agent",
-      "docs_standards_agent_client_protocol_agent_client_protocol"
+    "100": [
+      "docs_standards_agent_client_protocol_agent_client_protocol_acp",
+      "docs_standards_agent_client_protocol_ecosystem_and_adoption",
+      "docs_standards_agent_client_protocol_relationship_to_mcp"
     ],
-    "37": [
-      "person_ankur_kumar",
-      "readme_readme"
+    "101": [
+      "docs_standards_csa_cloud_security_alliance_csa",
+      "docs_standards_csa_key_artifacts",
+      "docs_standards_csa_relationship_to_other_standards"
     ],
-    "38": [
+    "102": [
+      "docs_standards_open_responses_key_concepts_architecture",
+      "docs_standards_open_responses_open_responses",
+      "docs_standards_open_responses_relationship_to_other_standards"
+    ],
+    "103": [
+      "docs_workflowbuilders_business_process_business_process_workflow_engines",
+      "docs_workflowbuilders_business_process_comparison_with_other_workflow_platforms",
+      "docs_workflowbuilders_business_process_major_business_process_platforms"
+    ],
+    "104": [
+      "docs_agenticframeworks_aws_strands_aws_strands_agents",
+      "docs_agenticframeworks_aws_strands_multi_agent_coordination_primitives"
+    ],
+    "105": [
+      "docs_agenticframeworks_eve_eve",
+      "docs_agenticframeworks_eve_filesystem_first_agent_definition"
+    ],
+    "106": [
+      "docs_agenticframeworks_freephdlabor_continual_research",
+      "docs_agenticframeworks_freephdlabor_freephdlabor"
+    ],
+    "107": [
+      "docs_allthingsopenai_readme_key_offerings",
+      "docs_allthingsopenai_readme_page"
+    ],
+    "108": [
+      "docs_assets_images_agent0_framework_overview_agent0_curriculum_and_executor_training_flow",
+      "docs_assets_images_reference_agent0_framework_overview_agent0_curriculum_and_executor_training_flow_duplicate"
+    ],
+    "109": [
+      "docs_assets_images_agent0_vl_multimodal_agent0_vl_solver_verifier_training_flow",
+      "docs_assets_images_reference_agent0_vl_multimodal_agent0_vl_solver_verifier_training_flow_duplicate"
+    ],
+    "110": [
+      "docs_assets_images_agent_definition_diagram_ai_agent_component_flow",
+      "docs_assets_images_concepts_agent_definition_diagram_ai_agent_component_flow_duplicate"
+    ],
+    "111": [
+      "docs_assets_images_agent_memory_architecture_three_tier_agent_memory_architecture",
+      "docs_assets_images_memory_architecture_overview_three_tier_agent_memory_architecture_duplicate"
+    ],
+    "112": [
+      "docs_assets_images_agent_types_comparison_ai_agents_and_agentic_ai_comparison",
+      "docs_assets_images_concepts_agent_types_comparison_ai_agents_and_agentic_ai_comparison_duplicate"
+    ],
+    "113": [
+      "docs_assets_images_agentic_mesh_patterns_agentic_mesh_reliability_patterns_collage",
+      "docs_assets_images_architecture_agentic_mesh_patterns_agentic_mesh_reliability_patterns_duplicate"
+    ],
+    "114": [
+      "docs_assets_images_architecture_components_agent_system_component_architecture_duplicate",
+      "docs_assets_images_architecture_components_overview_agent_system_component_architecture"
+    ],
+    "115": [
+      "docs_assets_images_architecture_design_patterns_selection_generative_ai_design_patterns_poster",
+      "docs_assets_images_design_patterns_overview_generative_ai_design_patterns_duplicate"
+    ],
+    "116": [
+      "docs_assets_images_architecture_multi_agent_system_multi_agent_topology_comparison",
+      "docs_assets_images_multi_agent_architecture_multi_agent_topology_comparison_duplicate"
+    ],
+    "117": [
+      "docs_assets_images_architecture_openai_agentic_patterns_openai_agentic_patterns_chart",
+      "docs_assets_images_openai_agentic_patterns_openai_agentic_patterns_chart_duplicate"
+    ],
+    "118": [
+      "docs_assets_images_autogen_architecture_autogen_ecosystem_architecture",
+      "docs_assets_images_frameworks_autogen_architecture_autogen_ecosystem_architecture_duplicate"
+    ],
+    "119": [
+      "docs_assets_images_crewai_framework_overview_crewai_agent_process_and_tasks",
+      "docs_assets_images_frameworks_crewai_framework_overview_crewai_agent_process_and_tasks_duplicate"
+    ],
+    "120": [
+      "docs_assets_images_frameworks_google_adk_architecture_google_adk_agent_development_capabilities",
+      "docs_assets_images_google_adk_architecture_google_adk_agent_development_capabilities_duplicate"
+    ],
+    "121": [
+      "docs_assets_images_frameworks_langchain_architecture_langchain_langgraph_langsmith_stack",
+      "docs_assets_images_langchain_architecture_langchain_langgraph_langsmith_stack_duplicate"
+    ],
+    "122": [
+      "docs_assets_images_frameworks_langgraph_platform_langgraph_studio_server_and_sdks_flow",
+      "docs_assets_images_langgraph_platform_langgraph_studio_server_and_sdks_flow_duplicate"
+    ],
+    "123": [
+      "docs_assets_images_frameworks_microsoft_agent_framework_microsoft_agent_framework_overview_banner",
+      "docs_assets_images_microsoft_agent_framework_microsoft_agent_framework_overview_banner_duplicate"
+    ],
+    "124": [
+      "docs_assets_images_frameworks_microsoft_agent_overview_microsoft_agent_framework_combines_semantic_kernel_and_autogen",
+      "docs_assets_images_microsoft_agent_overview_microsoft_agent_framework_combines_semantic_kernel_and_autogen_duplicate"
+    ],
+    "125": [
+      "docs_assets_images_frameworks_semantic_kernel_architecture_semantic_kernel_application_model_flow",
+      "docs_assets_images_semantic_kernel_architecture_semantic_kernel_application_model_flow_duplicate"
+    ],
+    "126": [
+      "docs_assets_images_frameworks_strands_agentic_loop_strands_agentic_loop",
+      "docs_assets_images_strands_agentic_loop_strands_agentic_loop_duplicate"
+    ],
+    "127": [
+      "docs_assets_images_langmanus_hierarchical_architecture_langmanus_coordinator_planner_supervisor_worker_hierarchy",
+      "docs_assets_images_reference_langmanus_hierarchical_architecture_langmanus_coordinator_planner_supervisor_worker_hierarchy_duplicate"
+    ],
+    "128": [
+      "docs_assets_images_letta_context_letta_context_window_anatomy",
+      "docs_assets_images_untitled_design_letta_context_window_anatomy_duplicate"
+    ],
+    "129": [
+      "docs_assets_images_mem0_architecture_mem0_memory_extraction_and_update_phases",
+      "docs_assets_images_memory_mem0_architecture_mem0_memory_extraction_and_update_phases_duplicate"
+    ],
+    "130": [
+      "docs_assets_images_nvidia_video_summarizer_architecture_nvidia_video_summarizer_pipeline",
+      "docs_assets_images_reference_nvidia_video_summarizer_architecture_nvidia_video_summarizer_pipeline_duplicate"
+    ],
+    "131": [
+      "docs_assets_images_rag_comprehensive_architecture_comprehensive_rag_system_architecture",
+      "docs_assets_images_reference_rag_comprehensive_architecture_comprehensive_rag_system_architecture_duplicate"
+    ],
+    "132": [
+      "docs_assets_images_reference_second_brain_agentic_flow_second_brain_agentic_flow_architecture",
+      "docs_assets_images_second_brain_agentic_flow_second_brain_agentic_flow_architecture_duplicate"
+    ],
+    "133": [
+      "docs_index_agentic_ai_knowledge_base",
+      "docs_index_knowledge_base_structure"
+    ],
+    "134": [
+      "docs_ingest_log_ingest_log",
+      "docs_log_directory_update_log"
+    ],
+    "135": [
+      "readthedocs_read_the_docs_configuration_file",
+      "readthedocs_read_the_docs_mkdocs_build_configuration"
+    ],
+    "136": [
+      "scripts_okf_verify",
+      "scripts_okf_verify_rationale_2"
+    ],
+    "137": [
       "utils_doc2md",
       "utils_doc2md_sh__entry"
     ],
-    "39": [
-      "claude_md"
+    "138": [
+      "docs_agentops_ai_native_sdlc_page"
     ],
-    "40": [
-      "docs_Introduction_README_introduction"
+    "139": [
+      "docs_agentskills_catalog_agent_skills_catalog"
     ],
-    "41": [
-      "docs_Introduction_disclaimer_disclaimer_and_usage_guidelines"
+    "140": [
+      "docs_assets_images_agentic_header_agentic_ai_banner"
     ],
-    "42": [
-      "docs_Introduction_index_index"
+    "141": [
+      "docs_assets_images_agentops_genops_platform_components_genops_platform_responsibility_split"
     ],
-    "43": [
-      "docs_Marketplace_index_index"
+    "142": [
+      "docs_assets_images_agentops_genops_team_diagram_genops_team_responsibility_split"
     ],
-    "44": [
-      "docs_MaturityModels_README_agentic_ai_maturity_models"
+    "143": [
+      "docs_assets_images_agentops_google_cloud_perspective_google_cloud_agentops_capabilities_map"
     ],
-    "45": [
-      "docs_MaturityModels_agentic_engineering_levels_8_levels_of_agentic_engineering"
+    "144": [
+      "docs_assets_images_bestpractices_microsoft_12_lessons_microsoft_ai_agent_lesson_index"
     ],
-    "46": [
-      "docs_MaturityModels_arsanjani_genai_maturity_arsanjani_genai_maturity_model"
+    "145": [
+      "docs_assets_images_frameworks_autogpt_platform_components_autogpt_server_and_frontend_components"
     ],
-    "47": [
-      "docs_MaturityModels_aws_aws_perspective_on_agentic_ai_maturity"
+    "146": [
+      "docs_assets_images_frameworks_haystack_architecture_haystack_model_and_retrieval_integrations"
     ],
-    "48": [
-      "docs_MaturityModels_aws_genai_aws_maturity_model_for_generative_ai"
+    "147": [
+      "docs_assets_images_frameworks_llamaindex_overview_llamaindex_open_source_components"
     ],
-    "49": [
-      "docs_MaturityModels_gartner_gartner_perspective_agentic_ai_maturity"
+    "148": [
+      "docs_assets_images_frameworks_microsoft_agent_release_microsoft_agent_framework_preview_component_map"
     ],
-    "50": [
-      "docs_MaturityModels_google_google_perspective_agentic_ai_maturity"
+    "149": [
+      "docs_assets_images_frameworks_pydantic_ai_components_pydanticai_single_and_multi_agent_components"
     ],
-    "51": [
-      "docs_MaturityModels_idc_idc_perspective_agentic_ai_maturity"
+    "150": [
+      "docs_assets_images_frameworks_spring_ai_agentic_systems_spring_ai_llm_retrieval_tools_and_memory_flow"
     ],
-    "52": [
-      "docs_MaturityModels_index_index"
+    "151": [
+      "docs_assets_images_marketplace_agentops_screenshot_agentops_marketplace_partners_screenshot"
     ],
-    "53": [
-      "docs_Observability_goals_observability_goals_and_objectives"
+    "152": [
+      "docs_assets_images_maturity_aws_genai_capabilities_chart_aws_generative_ai_maturity_table"
     ],
-    "54": [
-      "docs_Observability_index_index"
+    "153": [
+      "docs_assets_images_maturity_aws_genai_detailed_chart_aws_generative_ai_maturity_detailed_chart"
     ],
-    "55": [
-      "docs_Observability_tech_radar_agent_observability_tech_radar"
+    "154": [
+      "docs_assets_images_maturity_aws_genai_levels_aws_generative_ai_maturity_stages"
     ],
-    "56": [
-      "docs_ProductionBestPractices_index_index"
+    "155": [
+      "docs_assets_images_maturity_aws_genai_table_aws_generative_ai_maturity_levels_table"
     ],
-    "57": [
-      "docs_ProductionBestPractices_security_agent_security"
+    "156": [
+      "docs_assets_images_maturity_idc_agentic_evolution_idc_agentic_application_evolution_chart"
     ],
-    "58": [
-      "docs_agentharness_agent_harness_page"
+    "157": [
+      "docs_assets_images_observability_ai_systems_overview_ai_observability_pyramid"
     ],
-    "59": [
-      "docs_agentharness_code-as-agent-harness_page"
+    "158": [
+      "docs_assets_images_observability_structure_diagram_end_to_end_llm_observability_architecture"
     ],
-    "60": [
-      "docs_agentharness_loop_engineering_loop_engineering"
+    "159": [
+      "docs_assets_images_platforms_agent_tech_stack_overview_agentic_ai_technology_stack_map"
     ],
-    "61": [
-      "docs_agentharness_pi_dev_pi_dev"
+    "160": [
+      "docs_assets_images_platforms_aws_agentcore_architecture_aws_agentcore_service_architecture"
     ],
-    "62": [
-      "docs_agenticframeworks_eve_doc"
+    "161": [
+      "docs_assets_images_platforms_aws_agentcore_detailed_aws_agentcore_create_deploy_invoke_workflow"
     ],
-    "63": [
-      "docs_agenticframeworks_langchain_page"
+    "162": [
+      "docs_assets_images_platforms_eclipse_lmos_reference_architecture_eclipse_lmos_multi_agent_architecture"
     ],
-    "64": [
-      "docs_agenticframeworks_langgraph_langsmith"
+    "163": [
+      "docs_assets_images_platforms_google_vertex_agent_builder_google_vertex_agent_builder_capabilities"
     ],
-    "65": [
-      "docs_agenticframeworks_spring_ai_spring_ai"
+    "164": [
+      "docs_assets_images_security_aws_scoping_matrix_aws_agentic_ai_security_scoping_matrix"
     ],
-    "66": [
-      "docs_agentictechstack_index_index"
+    "165": [
+      "docs_assets_images_security_google_agent_risks_principles_google_agent_risk_layers_diagram"
     ],
-    "67": [
-      "docs_agentictechstack_semantic_data_layer_radar_semantic_data_layer_radar"
+    "166": [
+      "docs_assets_images_security_google_saif_framework_google_saif_framework_architecture"
     ],
-    "68": [
-      "docs_agentmemory_functional_tiers_page"
+    "167": [
+      "docs_assets_images_security_google_three_layers_defense_google_agent_security_control_principles"
     ],
-    "69": [
-      "docs_agentmemory_index_agent_memory_index"
+    "168": [
+      "docs_assets_images_security_nist_ai_rmf_circular_diagram_nist_ai_risk_lifecycle_circular_diagram"
     ],
-    "70": [
-      "docs_agentmemory_ltm_strategies_page"
+    "169": [
+      "docs_assets_images_security_nist_ai_rmf_framework_diagram_nist_ai_rmf_lifecycle_and_actors_table"
     ],
-    "71": [
-      "docs_agentmemory_short_term_page"
+    "170": [
+      "docs_assets_images_security_nist_ai_rmf_overview_nist_ai_rmf_navigator_screenshot"
     ],
-    "72": [
-      "docs_agentops_kaos_page"
+    "171": [
+      "docs_assets_images_standards_a2a_mcp_integration_a2a_and_mcp_integration_diagram"
     ],
-    "73": [
-      "docs_agentplatforms_aws_agentcore_page"
+    "172": [
+      "docs_assets_images_standards_a2a_vs_mcp_overview_a2a_and_mcp_plus_vertex_stack_overview"
     ],
-    "74": [
-      "docs_agentplatforms_databricks-genie_page"
+    "173": [
+      "docs_assets_images_standards_ag_ui_protocol_overview_ag_ui_protocol_application_flow"
     ],
-    "75": [
-      "docs_agentplatforms_discovery-loop_doc"
+    "174": [
+      "docs_assets_images_standards_agents_md_overview_readme_versus_agents_md_instruction_comparison"
     ],
-    "76": [
-      "docs_agentplatforms_enterprise-platforms-2026_doc"
+    "175": [
+      "docs_assets_images_standards_mcp_a2a_comparison_a2a_and_mcp_combined_architecture"
     ],
-    "77": [
-      "docs_agentplatforms_gemini-enterprise-agent-platform_page"
+    "176": [
+      "docs_assets_images_standards_mcp_protocol_diagram_mcp_client_server_data_flow"
     ],
-    "78": [
-      "docs_agentplatforms_gemini_enterprise_agent_platform_page"
+    "177": [
+      "docs_docs_aicodingagents_maxwell_comparison_to_existing_optimizers"
     ],
-    "79": [
-      "docs_agentplatforms_saas-platforms_doc"
+    "178": [
+      "docs_docs_aicodingagents_maxwell_how_it_works"
     ],
-    "80": [
-      "docs_aicodingagents_ai_coding_agents_page"
+    "179": [
+      "docs_docs_aicodingagents_maxwell_relevance_to_coding_agents"
     ],
-    "81": [
-      "docs_aicodingagents_index_page"
+    "180": [
+      "docs_docs_benchmarks_rag_benchmarks_1_needleinahaystack_niah"
     ],
-    "82": [
-      "docs_aigovernance_index_ai_governance"
+    "181": [
+      "docs_docs_benchmarks_rag_benchmarks_2_beir"
     ],
-    "83": [
-      "docs_allthingsanthropic_index_anthropic_agentic_ai"
+    "182": [
+      "docs_docs_benchmarks_rag_benchmarks_3_frames"
     ],
-    "84": [
-      "docs_allthingsaws_index_aws_agentic_ai"
+    "183": [
+      "docs_docs_benchmarks_rag_benchmarks_benchmark_selection_guide"
     ],
-    "85": [
-      "docs_allthingsaws_readme_page"
+    "184": [
+      "docs_docs_evaluationframeworks_openenv_key_concepts_architecture"
     ],
-    "86": [
-      "docs_allthingsgoogle_index_google_agentic_ai"
+    "185": [
+      "docs_docs_evaluationframeworks_openenv_maturity_and_governance"
     ],
-    "87": [
-      "docs_allthingsmicrosoft_index_microsoft_agentic_ai"
+    "186": [
+      "docs_docs_evaluationframeworks_openenv_training_integrations"
     ],
-    "88": [
-      "docs_allthingsmicrosoft_readme_microsoft_agentic_ai_overview"
+    "187": [
+      "docs_referencearchitecture_ai_assistant_page"
     ],
-    "89": [
-      "docs_allthingsopenai_index_openai_agentic_ai"
+    "188": [
+      "mkdocs_mkdocs_navigation"
     ],
-    "90": [
-      "docs_allthingsopenai_readme_openai_agentic_ai_overview"
-    ],
-    "91": [
-      "docs_architecture_12_factor_agents_12_factor_agents"
-    ],
-    "92": [
-      "docs_architecture_components_selection_components_selection"
-    ],
-    "93": [
-      "docs_architecture_dataset_engineering_dataset_engineering"
-    ],
-    "94": [
-      "docs_architecture_finetuning_finetuning"
-    ],
-    "95": [
-      "docs_architecture_inference_optimization_inference_optimization"
-    ],
-    "96": [
-      "docs_benchmarks_index_page"
-    ],
-    "97": [
-      "docs_benchmarks_readme_benchmarks_overview"
-    ],
-    "98": [
-      "docs_concepts_ai_predictions_2026_ai_predictions_2026"
-    ],
-    "99": [
-      "docs_contextengineering_index_context_engineering"
-    ],
-    "100": [
-      "docs_evaluationframeworks_llm_frameworks_page"
-    ],
-    "101": [
-      "docs_ingest_log_page"
-    ],
-    "102": [
-      "docs_observability_goals_page"
-    ],
-    "103": [
-      "docs_productionbestpractices_state_memory_page"
-    ],
-    "104": [
-      "docs_promptengineering_index_index"
-    ],
-    "105": [
-      "docs_rag_index_index"
-    ],
-    "106": [
-      "docs_referencearchitecture_ai_assistant_ai_assistant"
-    ],
-    "107": [
-      "docs_referencearchitecture_ai_assistant_architecture_ai_assistant_architecture"
-    ],
-    "108": [
-      "docs_referencearchitecture_ai_automation_ai_automation"
-    ],
-    "109": [
-      "docs_referencearchitecture_ai_engineering_architecture_ai_engineering_architecture"
-    ],
-    "110": [
-      "docs_referencearchitecture_index_index"
-    ],
-    "111": [
-      "docs_referencearchitecture_langmanus_langmanus"
-    ],
-    "112": [
-      "docs_referencearchitecture_rag_architecture_page"
-    ],
-    "113": [
-      "docs_referencearchitecture_specialized_blueprints_specialized_domain_blueprints"
-    ],
-    "114": [
-      "docs_requirements_requirements"
-    ],
-    "115": [
-      "docs_securityframeworks_google_saif_google_saif"
-    ],
-    "116": [
-      "docs_securityframeworks_index_index"
-    ],
-    "117": [
-      "docs_standards_design_md_standard"
-    ],
-    "118": [
-      "docs_standards_readme_ag_ui_protocol"
-    ],
-    "119": [
-      "docs_wizard_readme"
-    ],
-    "120": [
-      "docs_workflowbuilders_index_workflow_builders"
-    ],
-    "121": [
-      "gemini_md"
-    ],
-    "122": [
-      "llm_wiki_page"
-    ],
-    "123": [
+    "189": [
       "okf_preview_indexes"
     ],
-    "124": [
-      "platform_agentops"
-    ],
-    "125": [
-      "platform_comet_opik"
-    ],
-    "126": [
-      "platform_datadog"
-    ],
-    "127": [
-      "platform_dynatrace"
-    ],
-    "128": [
-      "platform_jaeger"
-    ],
-    "129": [
-      "platform_new_relic"
-    ],
-    "130": [
-      "platform_prometheus_grafana"
-    ],
-    "131": [
-      "platform_signoz"
-    ],
-    "132": [
-      "platform_wandb_weave"
-    ],
-    "133": [
-      "platform_zipkin"
-    ],
-    "134": [
-      "readthedocs_yaml_page"
-    ],
-    "135": [
-      "requirements_txt_page"
-    ],
-    "136": [
-      "scripts_okf_verify"
-    ],
-    "137": [
+    "190": [
       "utils_convert_to_doc"
     ]
   },
   "cohesion": {
-    "0": 0.09113300492610837,
-    "1": 0.08994708994708994,
-    "2": 0.07671957671957672,
-    "3": 0.09846153846153846,
-    "4": 0.08333333333333333,
-    "5": 0.08333333333333333,
-    "6": 0.09090909090909091,
-    "7": 0.09523809523809523,
-    "8": 0.16374269005847952,
-    "9": 0.24836601307189543,
-    "10": 0.14285714285714285,
-    "11": 0.2571428571428571,
-    "12": 0.17582417582417584,
-    "13": 0.25757575757575757,
-    "14": 0.25,
-    "15": 0.32142857142857145,
-    "16": 0.42857142857142855,
-    "17": 0.3333333333333333,
-    "18": 1.0,
-    "19": 0.6,
-    "20": 0.4,
-    "21": 0.4,
-    "22": 0.6666666666666666,
-    "23": 0.8333333333333334,
-    "24": 0.6666666666666666,
-    "25": 0.6666666666666666,
-    "26": 0.6666666666666666,
-    "27": 0.6666666666666666,
-    "28": 0.6666666666666666,
-    "29": 0.6666666666666666,
-    "30": 0.6666666666666666,
-    "31": 1.0,
-    "32": 1.0,
-    "33": 1.0,
-    "34": 1.0,
-    "35": 1.0,
-    "36": 1.0,
-    "37": 1.0,
-    "38": 1.0,
-    "39": 1.0,
-    "40": 1.0,
-    "41": 1.0,
-    "42": 1.0,
-    "43": 1.0,
-    "44": 1.0,
-    "45": 1.0,
-    "46": 1.0,
-    "47": 1.0,
-    "48": 1.0,
-    "49": 1.0,
-    "50": 1.0,
-    "51": 1.0,
-    "52": 1.0,
-    "53": 1.0,
-    "54": 1.0,
-    "55": 1.0,
-    "56": 1.0,
-    "57": 1.0,
-    "58": 1.0,
-    "59": 1.0,
-    "60": 1.0,
-    "61": 1.0,
-    "62": 1.0,
-    "63": 1.0,
-    "64": 1.0,
-    "65": 1.0,
-    "66": 1.0,
-    "67": 1.0,
-    "68": 1.0,
-    "69": 1.0,
-    "70": 1.0,
-    "71": 1.0,
-    "72": 1.0,
-    "73": 1.0,
-    "74": 1.0,
-    "75": 1.0,
-    "76": 1.0,
-    "77": 1.0,
-    "78": 1.0,
-    "79": 1.0,
-    "80": 1.0,
-    "81": 1.0,
-    "82": 1.0,
-    "83": 1.0,
-    "84": 1.0,
-    "85": 1.0,
-    "86": 1.0,
-    "87": 1.0,
-    "88": 1.0,
-    "89": 1.0,
-    "90": 1.0,
-    "91": 1.0,
-    "92": 1.0,
-    "93": 1.0,
-    "94": 1.0,
-    "95": 1.0,
-    "96": 1.0,
-    "97": 1.0,
-    "98": 1.0,
-    "99": 1.0,
-    "100": 1.0,
-    "101": 1.0,
-    "102": 1.0,
-    "103": 1.0,
+    "0": 0.053426248548199766,
+    "1": 0.06585365853658537,
+    "2": 0.05263157894736842,
+    "3": 0.05128205128205128,
+    "4": 0.06031746031746032,
+    "5": 0.0967741935483871,
+    "6": 0.08831908831908832,
+    "7": 0.08307692307692308,
+    "8": 0.08307692307692308,
+    "9": 0.09057971014492754,
+    "10": 0.09090909090909091,
+    "11": 0.10476190476190476,
+    "12": 0.10526315789473684,
+    "13": 0.1,
+    "14": 0.15263157894736842,
+    "15": 0.10526315789473684,
+    "16": 0.12280701754385964,
+    "17": 0.11764705882352941,
+    "18": 0.125,
+    "19": 0.125,
+    "20": 0.23333333333333334,
+    "21": 0.14285714285714285,
+    "22": 0.15384615384615385,
+    "23": 0.15384615384615385,
+    "24": 0.15384615384615385,
+    "25": 0.15384615384615385,
+    "26": 0.18181818181818182,
+    "27": 0.18181818181818182,
+    "28": 0.18181818181818182,
+    "29": 0.18181818181818182,
+    "30": 0.19696969696969696,
+    "31": 0.18181818181818182,
+    "32": 0.18181818181818182,
+    "33": 0.2,
+    "34": 0.18181818181818182,
+    "35": 0.2,
+    "36": 0.2,
+    "37": 0.2,
+    "38": 0.2,
+    "39": 0.2222222222222222,
+    "40": 0.2222222222222222,
+    "41": 0.2222222222222222,
+    "42": 0.2222222222222222,
+    "43": 0.2222222222222222,
+    "44": 0.2222222222222222,
+    "45": 0.2222222222222222,
+    "46": 0.2222222222222222,
+    "47": 0.2222222222222222,
+    "48": 0.2222222222222222,
+    "49": 0.2222222222222222,
+    "50": 0.2222222222222222,
+    "51": 0.2222222222222222,
+    "52": 0.2222222222222222,
+    "53": 0.2222222222222222,
+    "54": 0.2222222222222222,
+    "55": 0.2222222222222222,
+    "56": 0.2222222222222222,
+    "57": 0.25,
+    "58": 0.25,
+    "59": 0.25,
+    "60": 0.25,
+    "61": 0.25,
+    "62": 0.25,
+    "63": 0.25,
+    "64": 0.2857142857142857,
+    "65": 0.2857142857142857,
+    "66": 0.2857142857142857,
+    "67": 0.2857142857142857,
+    "68": 0.2857142857142857,
+    "69": 0.2857142857142857,
+    "70": 0.3333333333333333,
+    "71": 0.3333333333333333,
+    "72": 0.3333333333333333,
+    "73": 0.3333333333333333,
+    "74": 0.3333333333333333,
+    "75": 0.4,
+    "76": 0.4,
+    "77": 0.4,
+    "78": 0.4,
+    "79": 0.4,
+    "80": 0.4,
+    "81": 0.5,
+    "82": 0.5,
+    "83": 0.5,
+    "84": 0.5,
+    "85": 0.5,
+    "86": 0.5,
+    "87": 0.5,
+    "88": 0.5,
+    "89": 0.5,
+    "90": 0.5,
+    "91": 0.5,
+    "92": 0.8333333333333334,
+    "93": 0.5,
+    "94": 0.5,
+    "95": 0.6666666666666666,
+    "96": 0.6666666666666666,
+    "97": 0.6666666666666666,
+    "98": 0.6666666666666666,
+    "99": 0.6666666666666666,
+    "100": 0.6666666666666666,
+    "101": 0.6666666666666666,
+    "102": 0.6666666666666666,
+    "103": 0.6666666666666666,
     "104": 1.0,
     "105": 1.0,
     "106": 1.0,
@@ -909,22 +1796,85 @@
     "134": 1.0,
     "135": 1.0,
     "136": 1.0,
-    "137": 1.0
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0,
+    "147": 1.0,
+    "148": 1.0,
+    "149": 1.0,
+    "150": 1.0,
+    "151": 1.0,
+    "152": 1.0,
+    "153": 1.0,
+    "154": 1.0,
+    "155": 1.0,
+    "156": 1.0,
+    "157": 1.0,
+    "158": 1.0,
+    "159": 1.0,
+    "160": 1.0,
+    "161": 1.0,
+    "162": 1.0,
+    "163": 1.0,
+    "164": 1.0,
+    "165": 1.0,
+    "166": 1.0,
+    "167": 1.0,
+    "168": 1.0,
+    "169": 1.0,
+    "170": 1.0,
+    "171": 1.0,
+    "172": 1.0,
+    "173": 1.0,
+    "174": 1.0,
+    "175": 1.0,
+    "176": 1.0,
+    "177": 1.0,
+    "178": 1.0,
+    "179": 1.0,
+    "180": 1.0,
+    "181": 1.0,
+    "182": 1.0,
+    "183": 1.0,
+    "184": 1.0,
+    "185": 1.0,
+    "186": 1.0,
+    "187": 1.0,
+    "188": 1.0,
+    "189": 1.0,
+    "190": 1.0
   },
   "gods": [
     {
-      "id": "docs_benchmarks_agent-benchmarks_page",
-      "label": "Agent Evaluation Benchmarks",
+      "id": "docs_designpatterns_arsanjani_patterns_agentic_architectural_patterns_arsanjani_bustos",
+      "label": "Agentic Architectural Patterns — Arsanjani & Bustos",
       "degree": 21
     },
     {
-      "id": "docs_EvaluationFrameworks_platforms_agent_evaluation_platforms",
-      "label": "Agent Evaluation Platforms",
+      "id": "docs_agentmemory_functional_tiers_the_four_memory_types_of_agent_memory",
+      "label": "The Four Memory Types of Agent Memory",
       "degree": 14
     },
     {
-      "id": "docs_aicodingagents_ai-coding-agents_page",
-      "label": "AI Coding Agents (page)",
+      "id": "docs_contextengineering_challenges_key_challenges_in_context_management",
+      "label": "Key Challenges in Context Management",
+      "degree": 14
+    },
+    {
+      "id": "docs_agentplatforms_aws_agentcore_aws_agentcore",
+      "label": "AWS AgentCore",
+      "degree": 13
+    },
+    {
+      "id": "docs_concepts_agent_definition_agent_definition",
+      "label": "Agent Definition",
       "degree": 13
     },
     {
@@ -933,128 +1883,118 @@
       "degree": 12
     },
     {
-      "id": "docs_EvaluationFrameworks_tech_radar_evaluation_tech_radar",
-      "label": "Evaluation Tech Radar",
+      "id": "docs_evaluationframeworks_readme_page",
+      "label": "Agentic AI Evaluation",
       "degree": 12
     },
     {
-      "id": "tests_test_mkdocs_config_testmkdocsconfiguration",
-      "label": "TestMkDocsConfiguration",
-      "degree": 11
+      "id": "docs_agentharness_llm_harness_survey_agent_harness_engineering_survey_taxonomy",
+      "label": "Agent Harness Engineering: Survey & Taxonomy",
+      "degree": 12
     },
     {
-      "id": "tests_test_vendor_consistency_testvendorsectionconsistency",
-      "label": "TestVendorSectionConsistency",
-      "degree": 10
+      "id": "docs_architecture_components_selection_agentic_architecture_components_selection",
+      "label": "Agentic Architecture Components Selection",
+      "degree": 12
     },
     {
-      "id": "docs_agentharness_harness_engineering_page",
-      "label": "Harness Engineering",
-      "degree": 9
-    },
-    {
-      "id": "docs_aicodingagents_claude-code_claude_code",
-      "label": "Claude Code (page)",
-      "degree": 9
-    },
-    {
-      "id": "scripts_okf_frontmatter_build_frontmatter",
-      "label": "build_frontmatter()",
-      "degree": 8
+      "id": "docs_concepts_agent_types_agent_types",
+      "label": "Agent Types",
+      "degree": 12
     }
   ],
   "surprises": [
     {
-      "source": "Harness Engineering",
-      "target": "Birgitta Böckeler — Harness Engineering (martinfowler.com, 2026)",
+      "source": "Harness Optimization",
+      "target": "Harness Self-Evolution",
       "source_files": [
-        "docs/AgentHarness/harness-engineering.md",
-        "https://martinfowler.com/articles/harness-engineering.html"
+        "docs/AgentHarness/harness-optimization.md",
+        "docs/AgentHarness/harness-self-evolution.md"
       ],
-      "confidence": "EXTRACTED",
-      "relation": "cites",
-      "why": "connects across different repos/directories; peripheral node `Birgitta Böckeler — Harness Engineering (martinfowler.com, 2026)` unexpectedly reaches hub `Harness Engineering`"
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
     },
     {
-      "source": "Harness Engineering",
-      "target": "Meng et al., arXiv:2605.29682 (2026)",
+      "source": "The Four Memory Types of Agent Memory",
+      "target": "Working Memory Management",
       "source_files": [
-        "docs/AgentHarness/harness-engineering.md",
-        "https://arxiv.org/pdf/2605.29682"
+        "docs/AgentMemory/functional-tiers.md",
+        "docs/AgentMemory/short-term.md"
       ],
-      "confidence": "EXTRACTED",
-      "relation": "cites",
-      "why": "connects across different repos/directories; peripheral node `Meng et al., arXiv:2605.29682 (2026)` unexpectedly reaches hub `Harness Engineering`"
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
     },
     {
-      "source": "Harness Engineering",
-      "target": "Meta-Harness — Lee et al., arXiv:2603.28052 (2026)",
+      "source": "CrewAI",
+      "target": "AutoGen",
       "source_files": [
-        "docs/AgentHarness/harness-engineering.md",
-        "https://arxiv.org/abs/2603.28052"
+        "docs/AgenticFrameworks/crewai.md",
+        "docs/AgenticFrameworks/autogen.md"
       ],
-      "confidence": "EXTRACTED",
-      "relation": "cites",
-      "why": "connects across different repos/directories; peripheral node `Meta-Harness — Lee et al., arXiv:2603.28052 (2026)` unexpectedly reaches hub `Harness Engineering`"
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link; peripheral node `CrewAI` unexpectedly reaches hub `AutoGen`"
     },
     {
-      "source": "Harness Engineering",
-      "target": "Ning et al., Code as Agent Harness, arXiv:2605.18747 (2026)",
+      "source": "Open Knowledge Format (OKF)",
+      "target": "LLM Wiki",
       "source_files": [
-        "docs/AgentHarness/harness-engineering.md",
-        "https://arxiv.org/abs/2605.18747"
+        "docs/Standards/open-knowledge-format.md",
+        "llm-wiki.md"
       ],
-      "confidence": "EXTRACTED",
-      "relation": "cites",
-      "why": "connects across different repos/directories; peripheral node `Ning et al., Code as Agent Harness, arXiv:2605.18747 (2026)` unexpectedly reaches hub `Harness Engineering`"
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
     },
     {
-      "source": "Multi-Agent Systems",
-      "target": "Google — Agentic AI Overview",
+      "source": "OpenEnv",
+      "target": "Agentic AI Evaluation",
       "source_files": [
-        "docs/Architecture/multi-agent-system.md",
-        "docs/AllThingsGoogle/README.md"
+        "docs/EvaluationFrameworks/openenv.md",
+        "docs/EvaluationFrameworks/Readme.md"
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "bridges separate communities; peripheral node `Google — Agentic AI Overview` unexpectedly reaches hub `Multi-Agent Systems`"
+      "why": "bridges separate communities; peripheral node `OpenEnv` unexpectedly reaches hub `Agentic AI Evaluation`"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `Multi-Agent Systems` connect `Agentic Frameworks Index` to `Agent Foundational`?",
-      "why": "High betweenness centrality (0.004) - this node is a cross-community bridge."
+      "question": "Why does `Agentic Architecture Components Selection` connect `Community 3` to `Community 45`, `Community 47`?",
+      "why": "High betweenness centrality (0.006) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `Google — Agentic AI Overview` connect `Agent Foundational` to `Agentic Frameworks Index`?",
-      "why": "High betweenness centrality (0.003) - this node is a cross-community bridge."
+      "question": "Why does `Agent Definition` connect `Community 45` to `Community 3`, `Community 70`, `Community 46`, `Community 47`, `Community 49`?",
+      "why": "High betweenness centrality (0.005) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Observability Solutions` connect `Community 4` to `Community 2`, `Community 42`, `Community 22`, `Community 63`?",
+      "why": "High betweenness centrality (0.005) - this node is a cross-community bridge."
     },
     {
       "type": "isolated_nodes",
-      "question": "What connects `doc2md.sh script`, `AI-Scientist-v2`, `GitHub — ltjed/freephdlabor` to the rest of the system?",
-      "why": "184 weakly-connected nodes found - possible documentation gaps or missing edges."
+      "question": "What connects `doc2md.sh script`, `What This Repository Is`, `Repository Layout` to the rest of the system?",
+      "why": "904 weakly-connected nodes found - possible documentation gaps or missing edges."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `Agentic Frameworks Index` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.09113300492610837 - nodes in this community are weakly interconnected."
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.053426248548199766 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `Agent Marketplace Platforms` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.08994708994708994 - nodes in this community are weakly interconnected."
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06585365853658537 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `Agent Evaluation Benchmarks` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.07671957671957672 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `AI Coding Agent Frameworks` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.09846153846153846 - nodes in this community are weakly interconnected."
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected."
     }
   ]
 }

@@ -154,6 +154,7 @@ nav:
     - 8.1 Key Challenges in Context Management: 'ContextEngineering/challenges.md'
     - 8.2 Common Strategies for Context Management: 'ContextEngineering/strategies.md'
     - 8.3 Context Graph: 'ContextEngineering/context-graph.md'
+    - 8.3.1 Building Context Graphs with Neo4j: 'ContextEngineering/neo4j-context-graph.md'
     - 8.4 Prompt Engineering:
       - 8.4.0 Overview: 'PromptEngineering/README.md'
       - 8.4.1 SkillOpt (Microsoft): 'PromptEngineering/skillopt.md'

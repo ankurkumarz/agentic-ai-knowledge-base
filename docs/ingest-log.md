@@ -2284,3 +2284,43 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 - Also supports WebDriver Bidi and an MCP server (stdio + HTTP; per-connection session isolation for multi-agent use)
 - Native `lightpanda agent` mode: drives browser with natural-language commands, outputs a **PandaScript** (vanilla JS + browser primitives) replayable without an LLM at runtime
 - License: Apache 2.0; available via Homebrew, AUR, Docker, pre-built Linux/macOS binaries
+
+## [2026-11-03] ingest | Neo4j create-context-graph (GitHub) | sections touched: ContextEngineering/context-graph.md
+
+**Source**: https://github.com/neo4j-labs/create-context-graph
+**Type**: GitHub README / Neo4j Labs OSS project documentation
+
+**Key knowledge added:**
+- Interactive CLI scaffolding tool (`uvx create-context-graph`) generating full-stack context graph apps (FastAPI + Next.js + Neo4j)
+- Three-memory-type architecture: short-term (messages), long-term (POLE+O entity graph), reasoning (decision traces)
+- Two memory backends: NAMS (hosted, default) and self-hosted Neo4j bolt
+- 8 supported agent frameworks: Strands, PydanticAI, Claude Agent SDK, OpenAI Agents SDK, LangGraph, CrewAI, Google ADK, Anthropic Tools
+- 27 industry domain ontologies with synthetic demo data generation
+- SaaS connectors: GitHub, Slack, Linear, Google Workspace, Claude Code, Claude AI, ChatGPT, Salesforce, Jira, Notion, Gmail
+- MCP server generation (--with-mcp) for Claude Desktop dual-interface architecture
+- LiteLLM provider injection for memory LLM and embeddings
+
+**Files modified:**
+- `docs/ContextEngineering/context-graph.md` — added Part 3 section
+
+---
+
+## [2026-11-03] ingest | A Tour of the Neo4j Agent Memory Service (NAMS) | sections touched: ContextEngineering/context-graph.md
+
+**Source**: https://neo4j.com/blog/genai/a-tour-of-the-neo4j-agent-memory-service-nams/
+**Type**: Vendor blog post (Neo4j, 2025)
+
+**Key knowledge added:**
+- NAMS is a managed cloud service (Neo4j Labs) exposing graph-native agent memory via REST and MCP
+- Three memory types coexist in one Neo4j graph: short-term (conversation/messages), long-term (POLE+O entity knowledge graph), reasoning (agent steps + tool calls)
+- Asynchronous background pipeline: entity extraction → embedding → deduplication → compression (observations → active reflection)
+- /context endpoint returns all three tiers ready for prompt injection
+- HITL entity resolution: type-strict cascade (exact → fuzzy → semantic); ambiguous pairs queued for human review
+- Ontology management: clone domain templates (healthcare, legal, finserv, etc.) or import RDF/TTL; strict/permissive/review validation modes; immutable revisions with audit trail
+- Console: Dashboard, Memory Browser, HITL Resolution, Entity Explorer, Observations, Query Console, Ontologies, Database, Settings
+- Bring-your-own-database option for data residency; full Cypher export/import
+- Platform integrations: Salesforce Agentforce (live); GCP Gemini, AWS AgentCore, Microsoft Foundry (in progress)
+- MCP server with 12 memory_* tools; OAuth DCR support; scoped API keys
+
+**Files modified:**
+- `docs/ContextEngineering/context-graph.md` — added NAMS subsection inside Part 3

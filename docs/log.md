@@ -2,6 +2,19 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-11-03
+
+* **Creation**: [Building Context Graphs with Neo4j] → ContextEngineering
+  * Created: `docs/ContextEngineering/neo4j-context-graph.md` (separated from context-graph.md: create-context-graph CLI + NAMS)
+  * Extended: `docs/ContextEngineering/context-graph.md` (Part 3 removed; cross-link to new page added)
+  * Extended: `mkdocs.yml` (8.3.1 entry added)
+
+* **Ingest**: [Neo4j create-context-graph (GitHub)] → ContextEngineering — https://github.com/neo4j-labs/create-context-graph
+  * Extended: `docs/ContextEngineering/context-graph.md` (Part 3: Neo4j scaffolding tool — three-memory-type architecture, 8 agent frameworks, 27 domains, SaaS connectors, NAMS backend, MCP integration)
+
+* **Ingest**: [A Tour of the Neo4j Agent Memory Service (NAMS)] → ContextEngineering, AgentMemory — https://neo4j.com/blog/genai/a-tour-of-the-neo4j-agent-memory-service-nams/
+  * Extended: `docs/ContextEngineering/context-graph.md` (NAMS subsection: three-memory-type graph, background compression pipeline, console tabs, HITL entity resolution, ontology management, platform integrations)
+
 ## 2026-10-30
 
 * **Ingest**: [The Memory Layer — Safi Shamsi (2026)] → AgentMemory, RAG — the-memory-layer (PDF attachment)

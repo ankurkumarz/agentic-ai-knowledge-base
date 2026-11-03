@@ -20,3 +20,8 @@ raw/
 docs/assets/graph-data.json
 docs/graph-data.json
 .hypothesis/
+
+
+# graphify-out — all generated output; only .graphifyrc and .graphifyignore should be tracked
+graphify-out/
+.graphify/
