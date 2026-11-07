@@ -486,7 +486,7 @@ ByteRover (formerly Cipher) is a portable memory layer optimized for coding agen
 Interesting solutions worth understanding and monitoring. Not yet proven at scale or too narrowly scoped for general recommendation.
 
 #### Atris
-**Type**: Open-source CLI for repository-local project memory (MIT, per the npm package)
+**Type**: Open-source CLI for repository-local project memory (MIT)
 **Memory types served**: Semantic (project wiki and code index), Episodic (daily logs)
 **GitHub**: [atrislabs/atris](https://github.com/atrislabs/atris), 71 stars (November 2026)
 **Docs**: [Atris README](https://github.com/atrislabs/atris#readme); [memory guide](https://atris.ai/blog/memory-for-coding-agents); [npm package](https://www.npmjs.com/package/atris)
@@ -503,7 +503,7 @@ Atris stores project memory in Markdown under `atris/`. It includes a `MAP.md` i
 |---|---|
 | Research | No independent research identified |
 | GitHub stars | 71 (November 2026) |
-| Open source | Yes (MIT, per the npm package) |
+| Open source | Yes (MIT) |
 | Production readiness | Available as an npm CLI; independent production evidence not established |
 | Backing | Atris Labs, Inc. (startup) |
 
