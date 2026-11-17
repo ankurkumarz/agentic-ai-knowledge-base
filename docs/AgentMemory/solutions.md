@@ -3,7 +3,7 @@ type: Reference
 title: Agent Memory Solutions
 description: "This page consolidates all memory solutions — open-source libraries, managed cloud services, and specialized platforms — and maps them to a **Technology Radar** adapted from the [Thoughtworks Radar..."
 tags: [memory, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+timestamp: 2026-11-06T00:00:00Z
 ---
 # Agent Memory Solutions
 
@@ -55,6 +55,7 @@ quadrantChart
     ByteRover: [0.65, 0.45]
     LanceDB: [0.73, 0.32]
     LangMem: [0.40, 0.70]
+    Atris: [0.30, 0.40]
     OpenViking: [0.30, 0.85]
     agentmemory: [0.45, 0.85]
     AgentFS: [0.20, 0.30]
@@ -484,6 +485,30 @@ ByteRover (formerly Cipher) is a portable memory layer optimized for coding agen
 
 Interesting solutions worth understanding and monitoring. Not yet proven at scale or too narrowly scoped for general recommendation.
 
+#### Atris
+**Type**: Open-source CLI for repository-local project memory (MIT)
+**Memory types served**: Semantic (project wiki and code index), Episodic (daily logs)
+**GitHub**: [atrislabs/atris](https://github.com/atrislabs/atris), 71 stars (November 2026)
+**Docs**: [Atris README](https://github.com/atrislabs/atris#readme); [memory guide](https://atris.ai/blog/memory-for-coding-agents); [npm package](https://www.npmjs.com/package/atris)
+
+Atris stores project memory in Markdown under `atris/`. It includes a `MAP.md` index with file and line references, a wiki with `[[links]]`, and daily logs. Typed wiki links are stored in `atris/wiki/.graph.json` and read by `atris wiki related`. The repository documents use with Claude Code, Codex, and Cursor. Install the CLI with `npm install -g atris && atris init`.
+
+**Why Assess**: The repository-local format is relevant to coding teams that need shared project context. Its community is small, and no independent research or benchmark is available to establish retrieval quality or production performance.
+
+**Best for**: Teams using coding agents across a shared repository that want inspectable project documentation and history.
+
+**Limitations**: Project memory is not a dedicated chat or user memory system. The described local memory does not provide vector search. There is no independent benchmark.
+
+| Dimension | Signal |
+|---|---|
+| Research | No independent research identified |
+| GitHub stars | 71 (November 2026) |
+| Open source | Yes (MIT) |
+| Production readiness | Available as an npm CLI; independent production evidence not established |
+| Backing | Atris Labs, Inc. (startup) |
+
+---
+
 #### OpenViking (Volcano Engine / ByteDance)
 **Type**: Open-source context database / hierarchical filesystem memory (Apache 2.0)
 **Memory types served**: Working (session), Semantic, Episodic, Procedural (skills)
@@ -880,6 +905,7 @@ See [LangChain](../AgenticFrameworks/langchain.md), [LlamaIndex](../AgenticFrame
 | **Azure AI Foundry Memory** | 🔵 Trial | Working, Semantic | No | N/A | Microsoft |
 | **Anthropic Managed Agents Memory** | 🔵 Trial | Working, Semantic, Episodic, Procedural | No | N/A | Anthropic |
 | **Salesforce Agentic Memory** | 🔵 Trial | Working, Semantic, Episodic | No | N/A | Salesforce |
+| **Atris** | 🟡 Assess | Semantic (project), Episodic (logs) | Yes (MIT) | 71 | Atris Labs, Inc. |
 | **OpenViking** | 🟡 Assess | Working, Semantic, Episodic, Procedural | Yes (Apache 2.0) | ~15K+ | Volcano Engine / ByteDance |
 | **agentmemory** | 🟡 Assess | Working, Semantic, Episodic | Yes (Apache 2.0) | 24K+ | Independent |
 | **Cloudflare Agent Memory** | 🟡 Assess | Working, Semantic, Episodic, Procedural | No | N/A | Cloudflare |
@@ -914,6 +940,7 @@ Use this to narrow down options based on your constraints.
 | Managed memory on Azure | **Azure AI Foundry Memory** |
 | Memory + self-grading + multiagent orchestration in one managed harness | **Anthropic Claude Managed Agents Memory** |
 | Governed memory tied to existing CRM/Agentforce identity | **Salesforce Agentic Memory** |
+| Repository-local project memory shared across coding agents | **Atris** |
 | Hierarchical filesystem context with 80%+ token savings | **OpenViking** |
 | MCP-based shared memory across many coding-agent CLIs (Claude Code, Cursor, Codex) | **agentmemory** (verify adoption claims independently) |
 | Managed memory on Cloudflare Workers, extract-not-replay design | **Cloudflare Agent Memory** (private beta) |
@@ -958,6 +985,9 @@ Each solution was assessed on the following dimensions. Ratings are as of May–
 - [LangChain](../AgenticFrameworks/langchain.md), [LlamaIndex](../AgenticFrameworks/llamaindex.md), [CrewAI](../AgenticFrameworks/crewai.md) — framework-native memory subsystems
 
 ## References
+
+- [Atris GitHub repository](https://github.com/atrislabs/atris) — CLI, license, project memory, and coding-agent integration
+- [Atris on npm](https://www.npmjs.com/package/atris) — package distribution and installation
 
 - [AWS Marketplace — Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AWS "Building Agentic Systems on AWS" series; memory taxonomy (duration × scope), context window management strategies, vector index architectures (HNSW/IVF/flat), hybrid search + re-ranking, Graph RAG with Neo4j, Redis/MongoDB architecture patterns, shared cross-agent memory with DynamoDB, PII governance with Bedrock Guardrails, memory consolidation patterns (scheduled and threshold-triggered)
 
