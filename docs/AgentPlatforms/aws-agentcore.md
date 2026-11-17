@@ -1,9 +1,9 @@
 ---
 type: Platform
 title: AWS AgentCore
-description: "Launched in July 2025, Amazon Bedrock AgentCore enables you to deploy and operate Enterprise AI agents securely, at scale"
-tags: [platforms, agentic-ai]
-timestamp: 2026-07-17T00:00:00Z
+description: "Amazon Bedrock AgentCore is a modular agentic platform for building, deploying, and operating AI agents securely at scale using any framework and foundation model."
+tags: [platforms, agentic-ai, aws]
+timestamp: 2026-11-16T00:00:00Z
 ---
 # AWS AgentCore
 
@@ -11,9 +11,9 @@ timestamp: 2026-07-17T00:00:00Z
 
 Launched in July 2025, Amazon Bedrock AgentCore enables you to deploy and operate Enterprise AI agents securely, at scale. It provides a comprehensive agentic platform for building, deploying, and operating highly effective agents using any framework and foundation model.
 
-![AWS AgentCore architecture overview showing the enterprise agentic platform for secure agent deployment](../assets/images/platforms-aws-agentcore-architecture.png)
+![AgentCore all components — official AWS diagram showing the 13 modular AgentCore services](https://docs.aws.amazon.com/images/bedrock-agentcore/latest/devguide/images/agentcore_all_components_final.png)
 
-*Source: [AWS Bedrock AgentCore Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)*
+*Source: [What is Amazon Bedrock AgentCore? — AWS Developer Guide](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)*
 
 ## The 13 Agentic AI Capability Domains (AWS Framework)
 
@@ -37,20 +37,25 @@ AWS organizes the full production-ready agentic stack into 13 capability domains
 
 AWS Marketplace provides 2,800+ agentic AI tools and capabilities mapped to these 13 domains.
 
-## Key Components
+## Core Services
 
-### Core Services
-- **AgentCore Runtime**: Scalable execution environment for agents
-- **Memory Management**: Persistent and session-based memory systems — short-term session memory (events per session, up to 365-day retention, KMS encryption) and long-term persistent knowledge extracted via the Extraction → Consolidation → Reflection pipeline. Three extraction strategy tiers: Built-in (zero config), Built-in with overrides (custom prompts), and Custom self-managed (external DB integration). Retrieval via `RetrieveMemoryRecords` semantic search with metadata filters.
-- **Observability**: Comprehensive monitoring and logging capabilities
-- **Identity & Access Management**: Fine-grained security and permissions
-- **Gateway**: API gateway for agent interactions
-- **Browser Tool**: Web-based agent interactions and browser automation
-- **Code Interpreter**: Secure code execution environment
+Amazon Bedrock AgentCore consists of 13 modular services that can be used together or independently. All services integrate with any open-source framework (CrewAI, LangGraph, LlamaIndex, Strands Agents, OpenAI Agents SDK, Google ADK) and any foundation model.
 
-AgentCore has 6 different capabilities (see [FAQ](https://aws.amazon.com/bedrock/agentcore/faqs/)) as **Runtime, Memory, Gateway, Browser Tool, Code Interpreter, Identity, and Observability**.
-
-![AgentCoreServices](https://i.postimg.cc/MKQ9KHPB/aws-agentcore.jpg)
+| Service | Description | Key Integrations |
+|---|---|---|
+| **Harness** | Managed agent loop — declare model, system prompt, and tools; AgentCore handles orchestration, tool execution, memory, and response generation. Each session runs in an isolated microVM with filesystem and shell access. Supports bring-your-own container, S3/EFS mounts, immutable versioning, named endpoints, and A/B rollouts. Powered by Strands Agents. | Bedrock, OpenAI, Gemini, any LiteLLM provider; AgentCore Memory, Gateway, Browser, Code Interpreter, Observability |
+| **Runtime** | Secure, serverless execution environment for deploying dynamic agents and tools. Provides fast cold starts, extended async runtime, true session isolation, built-in identity, and multi-modal / multi-agent workload support. | Any open-source framework; any foundation model; MCP and A2A protocols |
+| **Memory** | Short-term session memory and long-term persistent memory that survives across sessions. Extraction → Consolidation → Reflection pipeline. Three extraction tiers: Built-in (zero config), Built-in with overrides (custom prompts), Custom self-managed (external DB). Up to 365-day retention with KMS encryption. Retrieval via semantic search with metadata filters. | LangGraph, LangChain, Strands, LlamaIndex |
+| **Gateway** | Converts APIs, Lambda functions, and existing services into MCP-compatible tools and connects to pre-existing MCP servers. Exposes tools to agents through governed Gateway endpoints. Used for A/B traffic splitting in Optimization. | Any API, Lambda, MCP servers; Salesforce, Zoom, JIRA, Slack and other popular SaaS integrations |
+| **Identity** | Agent identity, access, and authentication management compatible with existing identity providers. Eliminates user migration. Stores sensitive credentials (wallet keys, payment secrets) securely. | Cognito, Okta, Microsoft Entra ID, Auth0 and any IdP |
+| **Code Interpreter** | Isolated sandbox for agents to execute code. Improves accuracy on complex end-to-end tasks. | Python, JavaScript, TypeScript |
+| **Browser** | Fully managed cloud browser runtime. Agents interact with web applications, fill forms, navigate sites, and extract information. | Playwright, BrowserUse, any foundation model |
+| **Observability** | Unified trace, debug, and monitor view for production agents. Detailed step-by-step visualizations, intermediate output auditing, and performance bottleneck detection. Emits OpenTelemetry-compatible telemetry. | Any OTEL-compatible monitoring stack; Amazon CloudWatch, AWS X-Ray |
+| **Payments** | Fully managed microtransaction service for agent-to-service payments using the x402 protocol and Machine Payments Protocol (MPP). Configurable per-session budget limits, stablecoin wallet integration, and 10,000+ pre-discovered x402 endpoints via Coinbase x402 Bazaar MCP server. | Coinbase CDP, Stripe (Privy) wallet providers; AgentCore Gateway, Identity, Observability |
+| **Evaluations** | Purpose-built evaluation service for automated, consistent, data-driven agent assessment. Measures task execution, edge-case handling, and output reliability. Integrates Strands and LangGraph session traces instrumented via OpenTelemetry or OpenInference. | Strands Agents, LangGraph; Amazon CloudWatch |
+| **Optimization** | Continuous improvement service with AI-generated recommendations, versioned configuration bundles, and A/B testing. Analyzes failure patterns from agent traces to produce optimized prompts and tool descriptions, then validates improvements with statistically significant traffic splits. | AgentCore Evaluations, Gateway (for traffic splitting); OTEL instrumentation |
+| **Policy** | Deterministic guardrail layer for agents. Author fine-grained rules in natural language or Dogwood policy language (Cedar-compatible). Intercepts every tool call before execution via AgentCore Gateway to enforce which tools agents can access, what actions they can perform, and under what conditions. | AgentCore Gateway; Cedar policy language |
+| **Registry (AWS Agent Registry)** | Fully managed discovery catalog for publishing, curating, and discovering MCP servers, agents, tools, skills, and custom resources across your organization. Governed approval workflow, hybrid semantic + keyword search, catalog browsing, and a native MCP endpoint. Cross-account sharing via AWS RAM; EventBridge notifications; supports IAM and JWT authorization. | Any MCP server, agent, skill, or custom resource; AWS Organizations, AWS RAM, EventBridge, CloudTrail |
 
 ### Architecture Overview
 
@@ -82,26 +87,25 @@ AgentCore services work together or independently with any open-source framework
 - **Custom Models**: Support for fine-tuned and custom models
 - **Model Routing**: Intelligent routing based on task requirements
 
-## Key Features
+## Key Capabilities by Theme
 
-### Enterprise Security
-- **IAM Integration**: Native AWS Identity and Access Management
-- **VPC Support**: Deploy agents within your virtual private cloud
-- **Encryption**: End-to-end encryption for data and communications
-- **Audit Logging**: Comprehensive audit trails for compliance
-- **Policy Enforcement**: Fine-grained policy controls
+### Agent Execution
+The **Harness** is the highest-level abstraction — declare a model, instructions, and tools, and AgentCore runs the full agent loop in a secure isolated microVM. Session state persists across harness restarts; memory and files survive even when the underlying microVM expires. The **Runtime** sits one level lower and is the right choice when you need to bring an existing framework (LangGraph, CrewAI, etc.) and want serverless scale without managing containers.
 
-### Scalability and Performance
-- **Auto-scaling**: Automatic scaling based on demand
-- **Multi-region**: Deploy agents across multiple AWS regions
-- **High Availability**: Built-in redundancy and failover
-- **Performance Optimization**: Optimized for low-latency interactions
+### Memory and Context
+AgentCore **Memory** supports both in-session (short-term) and cross-session (long-term) state. The extraction pipeline runs Extraction → Consolidation → Reflection on conversation history to build durable knowledge. Three extraction modes let teams choose between fully automatic, prompt-guided, and custom-managed approaches. Retention is configurable up to 365 days with KMS encryption.
 
-### Developer Experience
-- **Framework Agnostic**: Use any development framework
-- **API-first Design**: RESTful APIs for all operations
-- **SDK Support**: SDKs for popular programming languages
-- **Local Development**: Tools for local agent development and testing
+### Tool Connectivity and Policy
+**Gateway** wraps any HTTP API, Lambda function, or OpenAPI spec into an MCP-compatible tool endpoint in a few lines of code. **Policy** intercepts every tool call at the Gateway layer, enforcing Cedar-compatible rules authored in natural language or the Dogwood policy language. Together they let teams grant agents broad capability while keeping deterministic guardrails on what any individual agent can actually do.
+
+### Payments
+**Payments** solves the microtransaction problem for agents: traditional payment rails impose minimum fees that make sub-dollar API calls uneconomical. AgentCore Payments uses the x402 protocol over HTTP 402 responses and the Machine Payments Protocol (MPP), managing the full transaction lifecycle (wallet credential storage via Identity, budget enforcement, signing, payment proof return). Developers can browse 10,000+ pay-per-use endpoints through the integrated Coinbase x402 Bazaar MCP server.
+
+### Evaluation and Continuous Improvement
+**Evaluations** provides automated quality scoring from agent session traces (Strands or LangGraph, instrumented via OTEL or OpenInference). **Optimization** closes the loop: it analyzes failure patterns, generates AI-recommended improvements to system prompts and tool descriptions, packages them as immutable configuration bundles, and validates them through A/B traffic splits on Gateway — all without code redeployment.
+
+### Discovery and Governance
+**Registry (AWS Agent Registry)** provides a governed catalog for the whole organization: MCP servers, agents, skills, and custom resources are published through an approval workflow, then discoverable via hybrid semantic + keyword search or a native MCP endpoint. Cross-account sharing via AWS RAM and EventBridge notifications round out enterprise-scale governance.
 
 ## Use Cases
 
@@ -198,7 +202,12 @@ AgentCore services work together or independently with any open-source framework
 
 ## References
 
+- [AWS Bedrock AgentCore Documentation — What is AgentCore?](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html) — Official overview of all 13 AgentCore services
+- [AgentCore Harness](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/harness.html) — Managed agent loop, isolated microVM sessions, versioning, and A/B rollouts
+- [AgentCore Payments](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html) — Microtransaction service using x402 and MPP protocols
+- [AgentCore Optimization](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/optimization.html) — AI-generated recommendations, configuration bundles, and A/B testing
+- [AWS Agent Registry](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry.html) — Governed catalog for discovering and managing agents, MCP servers, tools, and skills
 - [AWS Marketplace — Building Agentic Systems: Multi-Agent Architectures (Module 4)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/multi-agent-architectures) — Workshop covering the 13-domain capability stack, four planes of multi-agent systems, and AWS service mappings
 - [AWS Marketplace — Building Agentic Systems: Agent Memory Systems (Module 7)](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems) — AgentCore Memory short-term/long-term architecture, extraction strategy tiers, partner memory stack (Redis Cloud, MongoDB Atlas, Neo4j AuraDB), memory governance
-- [AWS Bedrock AgentCore Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)
 - [AgentOps: Operationalize agentic AI at scale with Amazon Bedrock AgentCore (AWS Machine Learning Blog)](https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore/)
+- [Introducing Amazon Bedrock AgentCore (AWS Blog)](https://aws.amazon.com/blogs/aws/introducing-amazon-bedrock-agentcore-securely-deploy-and-operate-ai-agents-at-any-scale/)

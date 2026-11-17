@@ -2324,3 +2324,24 @@ All five URLs returned `EGRESS_BLOCKED` from the network proxy on direct WebFetc
 
 **Files modified:**
 - `docs/ContextEngineering/context-graph.md` — added NAMS subsection inside Part 3
+
+## [2026-11-16] ingest | Amazon Bedrock AgentCore Developer Guide | sections touched: AgentPlatforms, AllThingsAWS
+
+**Source type:** Official AWS documentation (web fetch)
+**URL:** https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html
+**Additional pages fetched:** harness.html, payments.html, optimization.html, registry.html
+
+**Key knowledge added:**
+- Complete 13-service AgentCore inventory: Harness, Runtime, Memory, Gateway, Identity, Code Interpreter, Browser, Observability, Payments, Evaluations, Optimization, Policy, Registry
+- AgentCore Harness: managed agent loop in isolated microVM, any LiteLLM-compatible model, bring-your-own container, S3/EFS mounts, versioned endpoints, Strands Agents powered
+- AgentCore Payments: x402 / MPP microtransaction protocols, Coinbase CDP + Stripe (Privy) wallet integration, 10,000+ x402 endpoints via Bazaar MCP server, configurable budget limits per session
+- AgentCore Optimization: AI-generated prompt/tool-description recommendations from real traces, immutable configuration bundles, A/B testing via Gateway with statistical significance
+- AgentCore Policy: deterministic guardrails using Dogwood/Cedar policy language, intercepts tool calls at Gateway
+- AWS Agent Registry: governed discovery catalog, hybrid semantic+keyword search, native MCP endpoint, cross-account sharing via AWS RAM, EventBridge notifications
+
+**Files modified:**
+| File | Change |
+|---|---|
+| `docs/AgentPlatforms/aws-agentcore.md` | Restructured Core Services as 13-service table; added Harness, Payments, Optimization, Policy, Registry; replaced Key Features section with Key Capabilities by Theme; updated References; bumped timestamp |
+| `docs/AllThingsAWS/README.md` | Added hub rows for AgentCore Harness, Payments, Optimization, Policy, AWS Agent Registry; bumped timestamp |
+| `docs/log.md` | Added 2026-11-16 ingest entry |

@@ -2,6 +2,12 @@
 
 > OKF-conformant log (§7). Full ingest details remain in [ingest-log.md](ingest-log.md).
 
+## 2026-11-16
+
+* **Ingest**: [Amazon Bedrock AgentCore Developer Guide] → AgentPlatforms, AllThingsAWS — https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html
+  * Extended: `docs/AgentPlatforms/aws-agentcore.md` (Added Harness, Payments, Optimization, Policy, Registry services; restructured Core Services as 13-service table; replaced Key Features with Key Capabilities by Theme; updated References)
+  * Extended: `docs/AllThingsAWS/README.md` (Added hub rows for AgentCore Harness, Payments, Optimization, Policy, AWS Agent Registry)
+
 ## 2026-11-03
 
 * **Creation**: [Building Context Graphs with Neo4j] → ContextEngineering

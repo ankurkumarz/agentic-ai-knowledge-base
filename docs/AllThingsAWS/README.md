@@ -3,7 +3,7 @@ type: Vendor Hub
 title: AWS — Agentic AI Overview
 description: "Amazon Web Services offers a broad portfolio of agentic AI services spanning agent development frameworks, managed runtime platforms, maturity guidance, and a growing agent marketplace"
 tags: [aws, vendor, agentic-ai]
-timestamp: 2026-08-07T00:00:00Z
+timestamp: 2026-11-16T00:00:00Z
 ---
 # AWS — Agentic AI Overview
 
@@ -31,6 +31,11 @@ Amazon Web Services offers a broad portfolio of agentic AI services spanning age
 | AWS AgentCore Memory | Fully managed short-term + long-term memory service; Extraction → Consolidation → Reflection pipeline; configurable retention up to 365 days; three extraction tiers (zero-config / guided / custom) | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
 | Agent Memory Systems (Module 7 Workshop) | Deep-dive on memory taxonomy, HNSW vs IVF+PQ vector indexes, hybrid BM25+dense+RRF+reranker pipeline, GraphRAG with Neo4j, Redis/MongoDB hot-cold handoff, memory governance (lineage, retention, PII, right-to-delete) | [AgentMemory/ltm-strategies.md](../AgentMemory/ltm-strategies.md) |
 | AWS Bedrock Evaluations | Managed Bedrock evaluation service — model comparison, LLM-as-a-judge (GA Mar 2025), Knowledge Bases RAG evaluation, and SageMaker Ground Truth human review | [EvaluationFrameworks/platforms.md](../EvaluationFrameworks/platforms.md) |
+| AgentCore Harness | Managed agent loop — declare model, tools, and system prompt; AgentCore runs the full loop in an isolated microVM with filesystem, shell, memory, and observability. Supports any LiteLLM-compatible model, bring-your-own container, S3/EFS mounts, versioned endpoints, and A/B rollouts. Powered by Strands Agents. | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
+| AgentCore Payments | Fully managed microtransaction service for agent-to-service payments using x402 and MPP protocols; configurable per-session budget limits; 10,000+ discoverable x402 endpoints via Coinbase x402 Bazaar MCP server; wallet integration with Coinbase CDP and Stripe (Privy) | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
+| AgentCore Optimization | Continuous improvement loop for agents — AI-generated recommendations for system prompts and tool descriptions from real traces, immutable configuration bundles, and A/B testing via Gateway with statistical significance reporting | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
+| AgentCore Policy | Deterministic guardrail layer using natural language rules or Dogwood/Cedar policy language; intercepts every tool call before execution via AgentCore Gateway to enforce fine-grained agent access controls | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
+| AWS Agent Registry | Fully managed governed catalog for discovering and managing MCP servers, agents, tools, skills, and custom resources; hybrid semantic + keyword search; native MCP endpoint; cross-account sharing via AWS RAM; EventBridge notifications | [AgentPlatforms/aws-agentcore.md](../AgentPlatforms/aws-agentcore.md) |
 
 ## See Also
 
