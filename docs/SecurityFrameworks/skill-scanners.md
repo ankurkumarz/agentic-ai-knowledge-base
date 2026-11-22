@@ -111,6 +111,19 @@ Produces a 0–100 severity score per skill with actionable recommendations per 
 
 Static and LLM analysis cannot evaluate runtime behavior; encrypted or binary code cannot be assessed.
 
+## Other Open-Source Skill Scanners
+
+### Ironheights
+
+**Repository**: [Frank-Masciopinto/ironheights](https://github.com/Frank-Masciopinto/ironheights)
+
+A smaller, early-stage TypeScript CLI (Apache 2.0, run with `npx -y ironheights scan ./my-skill`) that scans skill folders for OpenClaw/ClawHub, Claude Code, Codex and Cursor before install. It runs locally with deterministic rules only (an LLM pass is opt-in), and each finding shows the evidence line, why it matters and a safe next step.
+
+- **Detection**: instruction override, hidden text, credential reads, exfiltration, remote-exec install steps and persistence patterns; JSON, SARIF, Markdown and HTML output
+- **Drift check**: `ironheights drift approve` records a reviewed skill or MCP tool description, and `drift check` flags later changes (rug-pull detection)
+- **Integrations**: GitHub Action, and a local MCP server (`ironheights mcp`) so an agent can call `check_skill` before installing a skill
+- **Key limitation**: rule-based matching still misses some attacks written as plain-language instructions; a clean result means no rule matched, not that the skill is safe
+
 ## Detection Threat Model Comparison
 
 | Threat Category | Cisco Skill Scanner | NVIDIA SkillSpector |
@@ -152,3 +165,4 @@ Static and LLM analysis cannot evaluate runtime behavior; encrypted or binary co
 
 - [cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner) — Open-source multi-engine skill security scanner from Cisco AI Defense; detects prompt injection, data exfiltration, and malicious code patterns
 - [nvidia/skillspector](https://github.com/nvidia/skillspector) — Open-source two-stage skill scanner from NVIDIA; 64 vulnerability patterns across 16 categories with live OSV.dev CVE lookup and LangGraph pipeline
+- [Frank-Masciopinto/ironheights](https://github.com/Frank-Masciopinto/ironheights) — Early-stage, local rule-based skill scanner (Apache 2.0) with drift detection for approved skills and MCP tool descriptions, a GitHub Action and an MCP server mode
